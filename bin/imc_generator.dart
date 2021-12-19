@@ -229,13 +229,13 @@ void _writeMessageClass(String name, String abbrev, String msgId,
 
   var msgStringClass = '''abstract class $abbrev extends $extentionClass
     implements Built<$abbrev, ${abbrev}Builder> {
-  static const static_id = $msgId;
+  static const staticId = $msgId;
   $abbrev._();
   factory $abbrev([void Function(${abbrev}Builder b)? updates]) =
       _\$$abbrev;
 
   @override
-  int get msgId => static_id;
+  int get msgId => staticId;
   @override
   String get abbrev => '$abbrev';
 ''';
@@ -688,17 +688,17 @@ void _writeMessageSerializer(
         break;
       case 'uint16_t':
         fStr =
-            '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setUint16(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case 'uint32_t':
         fStr =
-            '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setUint32(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case 'uint64_t':
         fStr =
-            '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setUint64(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case 'int8_t':
@@ -708,33 +708,33 @@ void _writeMessageSerializer(
         break;
       case 'int16_t':
         fStr =
-            '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setInt16(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 2;\n';
         break;
       case 'int32_t':
         fStr =
-            '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setInt32(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case 'int64_t':
         fStr =
-            '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setInt64(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case 'fp32_t':
         fStr =
-            '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setFloat32(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 4;\n';
         break;
       case 'fp64_t':
         fStr =
-            '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endian_ser);\n''';
+            '''    byteData.setFloat64(byteOffset, message.$fieldName$enumLike, imc.endianSer);\n''';
         fStr += '    byteOffset += 8;\n';
         break;
       case 'rawdata':
         fStr = '''    var ${fieldName}SSize = message.$fieldName.length;\n''';
         fStr +=
-            '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
+            '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endianSer);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    if (${fieldName}SSize > 0) {\n';
         fStr += '      for (var b in message.$fieldName) {\n'
@@ -747,7 +747,7 @@ void _writeMessageSerializer(
             '    var ${fieldName}Encoded = utf8.encode(message.$fieldName);\n';
         fStr += '''    var ${fieldName}SSize = ${fieldName}Encoded.length;\n''';
         fStr +=
-            '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
+            '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endianSer);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    for (var b in ${fieldName}Encoded) {\n'
             '      byteData.setUint8(byteOffset++, b);\n'
@@ -756,14 +756,14 @@ void _writeMessageSerializer(
       case 'message':
         fStr = '    if (message.$fieldName == null) {\n';
         fStr +=
-            '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);\n';
+            '      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
         fStr += '      var id = message.$fieldName!.msgId;\n';
         fStr +=
             '      var pMsgSerializer = imc.messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]?.call();\n';
         fStr += '      if (pMsgSerializer != null) {\n';
-        fStr += '        byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
+        fStr += '        byteData.setUint16(byteOffset, id, imc.endianSer);\n';
         fStr += '        byteOffset += 2;\n';
         fStr +=
             '        var mPSize = pMsgSerializer.serializePayload(message.$fieldName, byteData, byteOffset);\n';
@@ -773,7 +773,7 @@ void _writeMessageSerializer(
         break;
       case 'message-list':
         fStr = '    if (message.$fieldName.isEmpty) {\n';
-        fStr += '      byteData.setUint16(byteOffset, 0, imc.endian_ser);\n';
+        fStr += '      byteData.setUint16(byteOffset, 0, imc.endianSer);\n';
         fStr += '      byteOffset += 2;\n';
         fStr += '    } else {\n';
         fStr += '      var msgsCounter = 0;\n';
@@ -787,7 +787,7 @@ void _writeMessageSerializer(
         fStr += '            ?.call();\n';
         fStr += '        if (pMsgSerializer != null) {\n';
         fStr +=
-            '          byteData.setUint16(byteOffset, id, imc.endian_ser);\n';
+            '          byteData.setUint16(byteOffset, id, imc.endianSer);\n';
         fStr += '          byteOffset += 2;\n';
         fStr +=
             '          var mPSize = pMsgSerializer.serializePayload(message.$fieldName[i], byteData, byteOffset);\n';
@@ -795,7 +795,7 @@ void _writeMessageSerializer(
         fStr += '          msgsCounter++;\n';
         fStr += '        }\n';
         fStr +=
-            '        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);\n';
+            '        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
@@ -821,7 +821,7 @@ void _writeMessageSerializer(
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.$abbrev.static_id) {
+    if (msgId != imc.$abbrev.staticId) {
       return null;
     }
 
@@ -832,11 +832,11 @@ void _writeMessageSerializer(
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -854,7 +854,7 @@ void _writeMessageSerializer(
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1227,7 +1227,9 @@ void _writeEnumLikeWorker(
   var eNameList = '';
   var c = 0;
   var prefix = field.getAttribute('prefix')?.toLowerCase() ?? '';
-  if (prefix.isNotEmpty) prefix += '_';
+  if (prefix.isNotEmpty) {
+    prefix = _replaceMiddleUnderscoreLetterWithUpercaseLetter(prefix);
+  }
   var vLst = field.findElements('value');
   for (var f in vLst) {
     var eValueAbbrev = f.getAttribute('abbrev');
@@ -1239,7 +1241,9 @@ void _writeEnumLikeWorker(
     var commaSep = vLst.length > 1 ? ',' : '';
     if (++c % 1 == 0) eList += '\n        ';
     if (++c % 1 == 0) eNameList += '\n        ';
-    var ab = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
+    var ab = _accountForReservedName(prefix +
+        _toSentenceCase(_replaceMiddleUnderscoreLetterWithUpercaseLetter(
+            eValueAbbrev.toLowerCase())));
     eList += '$ab$commaSep';
     eNameList += "$ab: '''${f.getAttribute('name')}'''$commaSep";
   }
@@ -1269,7 +1273,10 @@ void _writeEnumLikeWorker(
           'Enum value ${f.name} of enum $eName is missing abbrev! Skipping!');
     }
 
-    var vName = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
+    var vName = _toSentenceCase(
+        _replaceMiddleUnderscoreLetterWithUpercaseLetter(
+            eValueAbbrev.toLowerCase()));
+    vName = _accountForReservedName(prefix + vName);
     var vVal = f.getAttribute('id');
     var bodyV = '''  static const $vName = $eName($vVal);
 ''';
@@ -1516,12 +1523,12 @@ void main(List<String> args) async {
 
   var msgElm = document.findElements('messages').first;
   sinks[_idxMsg]
-      .write("const String VERSION = '${msgElm.getAttribute('version')}';\n");
+      .write("const String version = '${msgElm.getAttribute('version')}';\n");
 
   var headerElm = msgElm.findElements('header').first;
   var syncElm = headerElm.findElements('field').first;
   sinks[_idxMsg]
-      .write('const int SYNC_NUMBER = ${syncElm.getAttribute("value")};\n');
+      .write('const int syncNumber = ${syncElm.getAttribute("value")};\n');
 
   var syncValue = syncElm.getAttribute('value');
   if (syncValue == null || syncValue.isEmpty) {
@@ -1532,10 +1539,10 @@ void main(List<String> args) async {
   var sNmbr = int.parse(syncValue);
   var rSNmbr = ((sNmbr & 0xFF) << 8 | sNmbr >> 8);
   sinks[_idxMsg].write(
-      'const int SYNC_NUMBER_REVERSED = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
+      'const int syncNumberReversed = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
 
-  sinks[_idxMsg].write("const String GIT_HASH_STRING = '$xmlGitHash';\n");
-  sinks[_idxMsg].write("const String MD5_SUM = '$imcDigest';\n");
+  sinks[_idxMsg].write("const String gitHashString = '$xmlGitHash';\n");
+  sinks[_idxMsg].write("const String md5Sum = '$imcDigest';\n");
 
   sinks[_idxMsg].write('\n');
 
@@ -1543,7 +1550,7 @@ void main(List<String> args) async {
 ///
 abstract class ImcMessage extends Message {
   @override
-  int get sync => SYNC_NUMBER;
+  int get sync => syncNumber;
 }
 ''');
 

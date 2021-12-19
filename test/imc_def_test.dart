@@ -257,7 +257,7 @@ void main() {
           ..srcEnt = 0x31 //(49),
           ..dst = 0xffff //(65535),
           ..dstEnt = 0xff //(255),
-          ..validity = imc.DistanceEnumValidity.dv_valid
+          ..validity = imc.DistanceEnumValidity.dvValid
           ..location = [
             (imc.DeviceStateBuilder.fromHeader(msgBuilderDistance)
                   ..x = 0
@@ -455,84 +455,84 @@ void main() {
   });
 
   test('enum like comparison test', () {
-    var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
-    expect(su1 == imc.SpeedUnitsEnum.sunits_meters_ps, true);
+    var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunitsMetersPs.value);
+    expect(su1 == imc.SpeedUnitsEnum.sunitsMetersPs, true);
 
-    var su2 = imc.ZUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
-    expect(su2 == imc.SpeedUnitsEnum.sunits_meters_ps, false);
+    var su2 = imc.ZUnitsEnum(imc.SpeedUnitsEnum.sunitsMetersPs.value);
+    expect(su2 == imc.SpeedUnitsEnum.sunitsMetersPs, false);
   });
 
   test('bitfields hasBits test', () {
-    var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
+    var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic;
     var su2 = imc.CommSystemsQueryBitfieldCommInterface(
-        imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic.value);
+        imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic.value);
     var su3 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+      imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
+      imc.CommSystemsQueryBitfieldCommInterface.ciqSatellite,
     ]);
 
     expect(
         su1.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
         ]),
         true);
     expect(
         su1.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqGsm,
         ]),
         false);
     expect(su1.hasBits(null), false);
 
     expect(
         su2.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
         ]),
         true);
     expect(
         su2.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqGsm,
         ]),
         false);
     expect(su2.hasBits(null), false);
 
     expect(
         su3.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
         ]),
         true);
     expect(
         su3.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqSatellite,
         ]),
         true);
     expect(
         su3.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqSatellite,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqGsm,
         ]),
         false);
     expect(
         su3.hasBits([
-          imc.CommSystemsQueryBitfieldCommInterface.ciq_gsm,
+          imc.CommSystemsQueryBitfieldCommInterface.ciqGsm,
         ]),
         false);
     expect(su3.hasBits(null), false);
   });
 
   test('enumerations toPrettyString() test', () {
-    var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunits_meters_ps.value);
+    var su1 = imc.SpeedUnitsEnum(imc.SpeedUnitsEnum.sunitsMetersPs.value);
     expect(su1.toPrettyString() == 'Meters per second', true);
     var su2 = imc.SpeedUnitsEnum(9);
     expect(su2.toPrettyString() == su2.toString(), true);
   });
 
   test('bitfields toPrettyString() test', () {
-    var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic;
+    var su1 = imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic;
     var su2 = imc.CommSystemsQueryBitfieldCommInterface.fromBits([
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_acoustic,
-      imc.CommSystemsQueryBitfieldCommInterface.ciq_satellite,
+      imc.CommSystemsQueryBitfieldCommInterface.ciqAcoustic,
+      imc.CommSystemsQueryBitfieldCommInterface.ciqSatellite,
     ]);
     var su3 = imc.CommSystemsQueryBitfieldCommInterface(0);
     var su4 = imc.CommSystemsQueryBitfieldCommInterface(0x80);

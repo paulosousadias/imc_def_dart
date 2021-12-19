@@ -698,7 +698,7 @@ class EntityStateSerializer
     // field description
     var descriptionEncoded = utf8.encode(message.description);
     var descriptionSSize = descriptionEncoded.length;
-    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in descriptionEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -720,7 +720,7 @@ class EntityStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityState.static_id) {
+    if (msgId != imc.EntityState.staticId) {
       return null;
     }
 
@@ -731,11 +731,11 @@ class EntityStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -753,7 +753,7 @@ class EntityStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -832,7 +832,7 @@ class QueryEntityStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.QueryEntityState.static_id) {
+    if (msgId != imc.QueryEntityState.staticId) {
       return null;
     }
 
@@ -843,11 +843,11 @@ class QueryEntityStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -865,7 +865,7 @@ class QueryEntityStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -917,7 +917,7 @@ class EntityInfoSerializer
     // field label
     var labelEncoded = utf8.encode(message.label);
     var labelSSize = labelEncoded.length;
-    byteData.setUint16(byteOffset, labelSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, labelSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in labelEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -925,16 +925,16 @@ class EntityInfoSerializer
     // field component
     var componentEncoded = utf8.encode(message.component);
     var componentSSize = componentEncoded.length;
-    byteData.setUint16(byteOffset, componentSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, componentSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in componentEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field actTime
-    byteData.setUint16(byteOffset, message.actTime, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.actTime, imc.endianSer);
     byteOffset += 2;
     // field deactTime
-    byteData.setUint16(byteOffset, message.deactTime, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.deactTime, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -953,7 +953,7 @@ class EntityInfoSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityInfo.static_id) {
+    if (msgId != imc.EntityInfo.staticId) {
       return null;
     }
 
@@ -964,11 +964,11 @@ class EntityInfoSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -986,7 +986,7 @@ class EntityInfoSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1081,7 +1081,7 @@ class QueryEntityInfoSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.QueryEntityInfo.static_id) {
+    if (msgId != imc.QueryEntityInfo.staticId) {
       return null;
     }
 
@@ -1092,11 +1092,11 @@ class QueryEntityInfoSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1114,7 +1114,7 @@ class QueryEntityInfoSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1170,7 +1170,7 @@ class EntityListSerializer
     // field list
     var listEncoded = utf8.encode(message.list);
     var listSSize = listEncoded.length;
-    byteData.setUint16(byteOffset, listSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, listSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in listEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -1192,7 +1192,7 @@ class EntityListSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityList.static_id) {
+    if (msgId != imc.EntityList.staticId) {
       return null;
     }
 
@@ -1203,11 +1203,11 @@ class EntityListSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1225,7 +1225,7 @@ class EntityListSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1304,7 +1304,7 @@ class CpuUsageSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CpuUsage.static_id) {
+    if (msgId != imc.CpuUsage.staticId) {
       return null;
     }
 
@@ -1315,11 +1315,11 @@ class CpuUsageSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1337,7 +1337,7 @@ class CpuUsageSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1391,13 +1391,13 @@ class TransportBindingsSerializer extends imc
     // field consumer
     var consumerEncoded = utf8.encode(message.consumer);
     var consumerSSize = consumerEncoded.length;
-    byteData.setUint16(byteOffset, consumerSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, consumerSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in consumerEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field messageId
-    byteData.setUint16(byteOffset, message.messageId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.messageId, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -1416,7 +1416,7 @@ class TransportBindingsSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TransportBindings.static_id) {
+    if (msgId != imc.TransportBindings.staticId) {
       return null;
     }
 
@@ -1427,11 +1427,11 @@ class TransportBindingsSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1449,7 +1449,7 @@ class TransportBindingsSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1529,7 +1529,7 @@ class RestartSystemSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RestartSystem.static_id) {
+    if (msgId != imc.RestartSystem.staticId) {
       return null;
     }
 
@@ -1540,11 +1540,11 @@ class RestartSystemSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1562,7 +1562,7 @@ class RestartSystemSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1633,7 +1633,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DevCalibrationControl.static_id) {
+    if (msgId != imc.DevCalibrationControl.staticId) {
       return null;
     }
 
@@ -1644,11 +1644,11 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1666,7 +1666,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1726,7 +1726,7 @@ class DevCalibrationStateSerializer extends imc
     // field step
     var stepEncoded = utf8.encode(message.step);
     var stepSSize = stepEncoded.length;
-    byteData.setUint16(byteOffset, stepSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, stepSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in stepEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -1751,7 +1751,7 @@ class DevCalibrationStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DevCalibrationState.static_id) {
+    if (msgId != imc.DevCalibrationState.staticId) {
       return null;
     }
 
@@ -1762,11 +1762,11 @@ class DevCalibrationStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1784,7 +1784,7 @@ class DevCalibrationStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1857,7 +1857,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
     // field error
     var errorEncoded = utf8.encode(message.error);
     var errorSSize = errorEncoded.length;
-    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, errorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in errorEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -1879,7 +1879,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityActivationState.static_id) {
+    if (msgId != imc.EntityActivationState.staticId) {
       return null;
     }
 
@@ -1890,11 +1890,11 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -1912,7 +1912,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -1990,7 +1990,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.QueryEntityActivationState.static_id) {
+    if (msgId != imc.QueryEntityActivationState.staticId) {
       return null;
     }
 
@@ -2001,11 +2001,11 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2023,7 +2023,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2074,55 +2074,55 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field speedMin
-    byteData.setFloat32(byteOffset, message.speedMin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speedMin, imc.endianSer);
     byteOffset += 4;
     // field speedMax
-    byteData.setFloat32(byteOffset, message.speedMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speedMax, imc.endianSer);
     byteOffset += 4;
     // field longAccel
-    byteData.setFloat32(byteOffset, message.longAccel, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.longAccel, imc.endianSer);
     byteOffset += 4;
     // field altMaxMsl
-    byteData.setFloat32(byteOffset, message.altMaxMsl, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.altMaxMsl, imc.endianSer);
     byteOffset += 4;
     // field diveFractionMax
-    byteData.setFloat32(byteOffset, message.diveFractionMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.diveFractionMax, imc.endianSer);
     byteOffset += 4;
     // field climbFractionMax
-    byteData.setFloat32(byteOffset, message.climbFractionMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.climbFractionMax, imc.endianSer);
     byteOffset += 4;
     // field bankMax
-    byteData.setFloat32(byteOffset, message.bankMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.bankMax, imc.endianSer);
     byteOffset += 4;
     // field pMax
-    byteData.setFloat32(byteOffset, message.pMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.pMax, imc.endianSer);
     byteOffset += 4;
     // field pitchMin
-    byteData.setFloat32(byteOffset, message.pitchMin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.pitchMin, imc.endianSer);
     byteOffset += 4;
     // field pitchMax
-    byteData.setFloat32(byteOffset, message.pitchMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.pitchMax, imc.endianSer);
     byteOffset += 4;
     // field qMax
-    byteData.setFloat32(byteOffset, message.qMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.qMax, imc.endianSer);
     byteOffset += 4;
     // field gMin
-    byteData.setFloat32(byteOffset, message.gMin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.gMin, imc.endianSer);
     byteOffset += 4;
     // field gMax
-    byteData.setFloat32(byteOffset, message.gMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.gMax, imc.endianSer);
     byteOffset += 4;
     // field gLatMax
-    byteData.setFloat32(byteOffset, message.gLatMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.gLatMax, imc.endianSer);
     byteOffset += 4;
     // field rpmMin
-    byteData.setFloat32(byteOffset, message.rpmMin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rpmMin, imc.endianSer);
     byteOffset += 4;
     // field rpmMax
-    byteData.setFloat32(byteOffset, message.rpmMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rpmMax, imc.endianSer);
     byteOffset += 4;
     // field rpmRateMax
-    byteData.setFloat32(byteOffset, message.rpmRateMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rpmRateMax, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -2141,7 +2141,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleOperationalLimits.static_id) {
+    if (msgId != imc.VehicleOperationalLimits.staticId) {
       return null;
     }
 
@@ -2152,11 +2152,11 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2174,7 +2174,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2278,7 +2278,7 @@ class MsgListSerializer
 
     // field msgs
     if (message.msgs.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -2290,14 +2290,14 @@ class MsgListSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.msgs[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -2317,7 +2317,7 @@ class MsgListSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.MsgList.static_id) {
+    if (msgId != imc.MsgList.staticId) {
       return null;
     }
 
@@ -2328,11 +2328,11 @@ class MsgListSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2350,7 +2350,7 @@ class MsgListSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2422,58 +2422,58 @@ class SimulatedStateSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field height
-    byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.height, imc.endianSer);
     byteOffset += 4;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
     // field u
-    byteData.setFloat32(byteOffset, message.u, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.u, imc.endianSer);
     byteOffset += 4;
     // field v
-    byteData.setFloat32(byteOffset, message.v, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.v, imc.endianSer);
     byteOffset += 4;
     // field w
-    byteData.setFloat32(byteOffset, message.w, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.w, imc.endianSer);
     byteOffset += 4;
     // field p
-    byteData.setFloat32(byteOffset, message.p, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.p, imc.endianSer);
     byteOffset += 4;
     // field q
-    byteData.setFloat32(byteOffset, message.q, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.q, imc.endianSer);
     byteOffset += 4;
     // field r
-    byteData.setFloat32(byteOffset, message.r, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.r, imc.endianSer);
     byteOffset += 4;
     // field svx
-    byteData.setFloat32(byteOffset, message.svx, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.svx, imc.endianSer);
     byteOffset += 4;
     // field svy
-    byteData.setFloat32(byteOffset, message.svy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.svy, imc.endianSer);
     byteOffset += 4;
     // field svz
-    byteData.setFloat32(byteOffset, message.svz, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.svz, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -2492,7 +2492,7 @@ class SimulatedStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SimulatedState.static_id) {
+    if (msgId != imc.SimulatedState.staticId) {
       return null;
     }
 
@@ -2503,11 +2503,11 @@ class SimulatedStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2525,7 +2525,7 @@ class SimulatedStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2633,7 +2633,7 @@ class LeakSimulationSerializer
     // field entities
     var entitiesEncoded = utf8.encode(message.entities);
     var entitiesSSize = entitiesEncoded.length;
-    byteData.setUint16(byteOffset, entitiesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, entitiesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in entitiesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -2655,7 +2655,7 @@ class LeakSimulationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LeakSimulation.static_id) {
+    if (msgId != imc.LeakSimulation.staticId) {
       return null;
     }
 
@@ -2666,11 +2666,11 @@ class LeakSimulationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2688,7 +2688,7 @@ class LeakSimulationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2752,11 +2752,11 @@ class UASimulationSerializer
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field speed
-    byteData.setUint16(byteOffset, message.speed, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.speed, imc.endianSer);
     byteOffset += 2;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -2780,7 +2780,7 @@ class UASimulationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UASimulation.static_id) {
+    if (msgId != imc.UASimulation.staticId) {
       return null;
     }
 
@@ -2791,11 +2791,11 @@ class UASimulationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2813,7 +2813,7 @@ class UASimulationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2879,10 +2879,10 @@ class DynamicsSimParamSerializer extends imc
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field tas2accPgain
-    byteData.setFloat32(byteOffset, message.tas2accPgain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.tas2accPgain, imc.endianSer);
     byteOffset += 4;
     // field bank2pPgain
-    byteData.setFloat32(byteOffset, message.bank2pPgain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.bank2pPgain, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -2901,7 +2901,7 @@ class DynamicsSimParamSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DynamicsSimParam.static_id) {
+    if (msgId != imc.DynamicsSimParam.staticId) {
       return null;
     }
 
@@ -2912,11 +2912,11 @@ class DynamicsSimParamSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -2934,7 +2934,7 @@ class DynamicsSimParamSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -2992,7 +2992,7 @@ class StorageUsageSerializer
     var byteOffset = offset;
 
     // field available
-    byteData.setUint32(byteOffset, message.available, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.available, imc.endianSer);
     byteOffset += 4;
     // field value
     byteData.setUint8(byteOffset, message.value);
@@ -3014,7 +3014,7 @@ class StorageUsageSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.StorageUsage.static_id) {
+    if (msgId != imc.StorageUsage.staticId) {
       return null;
     }
 
@@ -3025,11 +3025,11 @@ class StorageUsageSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3047,7 +3047,7 @@ class StorageUsageSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3107,14 +3107,14 @@ class CacheControlSerializer
     // field snapshot
     var snapshotEncoded = utf8.encode(message.snapshot);
     var snapshotSSize = snapshotEncoded.length;
-    byteData.setUint16(byteOffset, snapshotSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, snapshotSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in snapshotEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field message
     if (message.message == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.message!.msgId;
@@ -3122,7 +3122,7 @@ class CacheControlSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.message, byteData, byteOffset);
@@ -3146,7 +3146,7 @@ class CacheControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CacheControl.static_id) {
+    if (msgId != imc.CacheControl.staticId) {
       return null;
     }
 
@@ -3157,11 +3157,11 @@ class CacheControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3179,7 +3179,7 @@ class CacheControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3265,7 +3265,7 @@ class LoggingControlSerializer
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -3287,7 +3287,7 @@ class LoggingControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LoggingControl.static_id) {
+    if (msgId != imc.LoggingControl.staticId) {
       return null;
     }
 
@@ -3298,11 +3298,11 @@ class LoggingControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3320,7 +3320,7 @@ class LoggingControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3384,12 +3384,12 @@ class LogBookEntrySerializer
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field htime
-    byteData.setFloat64(byteOffset, message.htime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.htime, imc.endianSer);
     byteOffset += 8;
     // field context
     var contextEncoded = utf8.encode(message.context);
     var contextSSize = contextEncoded.length;
-    byteData.setUint16(byteOffset, contextSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, contextSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in contextEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -3397,7 +3397,7 @@ class LogBookEntrySerializer
     // field text
     var textEncoded = utf8.encode(message.text);
     var textSSize = textEncoded.length;
-    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, textSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in textEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -3419,7 +3419,7 @@ class LogBookEntrySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LogBookEntry.static_id) {
+    if (msgId != imc.LogBookEntry.staticId) {
       return null;
     }
 
@@ -3430,11 +3430,11 @@ class LogBookEntrySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3452,7 +3452,7 @@ class LogBookEntrySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3528,11 +3528,11 @@ class LogBookControlSerializer
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field htime
-    byteData.setFloat64(byteOffset, message.htime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.htime, imc.endianSer);
     byteOffset += 8;
     // field msg
     if (message.msg.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -3544,14 +3544,14 @@ class LogBookControlSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.msg[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -3571,7 +3571,7 @@ class LogBookControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LogBookControl.static_id) {
+    if (msgId != imc.LogBookControl.staticId) {
       return null;
     }
 
@@ -3582,11 +3582,11 @@ class LogBookControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3604,7 +3604,7 @@ class LogBookControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3688,7 +3688,7 @@ class ReplayControlSerializer
     // field file
     var fileEncoded = utf8.encode(message.file);
     var fileSSize = fileEncoded.length;
-    byteData.setUint16(byteOffset, fileSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, fileSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in fileEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -3710,7 +3710,7 @@ class ReplayControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ReplayControl.static_id) {
+    if (msgId != imc.ReplayControl.staticId) {
       return null;
     }
 
@@ -3721,11 +3721,11 @@ class ReplayControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3743,7 +3743,7 @@ class ReplayControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3807,7 +3807,7 @@ class ClockControlSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field clock
-    byteData.setFloat64(byteOffset, message.clock, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.clock, imc.endianSer);
     byteOffset += 8;
     // field tz
     byteData.setInt8(byteOffset, message.tz);
@@ -3829,7 +3829,7 @@ class ClockControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ClockControl.static_id) {
+    if (msgId != imc.ClockControl.staticId) {
       return null;
     }
 
@@ -3840,11 +3840,11 @@ class ClockControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3862,7 +3862,7 @@ class ClockControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -3920,13 +3920,13 @@ class HistoricCTDSerializer
     var byteOffset = offset;
 
     // field conductivity
-    byteData.setFloat32(byteOffset, message.conductivity, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.conductivity, imc.endianSer);
     byteOffset += 4;
     // field temperature
-    byteData.setFloat32(byteOffset, message.temperature, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.temperature, imc.endianSer);
     byteOffset += 4;
     // field depth
-    byteData.setFloat32(byteOffset, message.depth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.depth, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -3945,7 +3945,7 @@ class HistoricCTDSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricCTD.static_id) {
+    if (msgId != imc.HistoricCTD.staticId) {
       return null;
     }
 
@@ -3956,11 +3956,11 @@ class HistoricCTDSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -3978,7 +3978,7 @@ class HistoricCTDSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4036,19 +4036,19 @@ class HistoricTelemetrySerializer extends imc
     var byteOffset = offset;
 
     // field altitude
-    byteData.setFloat32(byteOffset, message.altitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.altitude, imc.endianSer);
     byteOffset += 4;
     // field roll
-    byteData.setUint16(byteOffset, message.roll, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.roll, imc.endianSer);
     byteOffset += 2;
     // field pitch
-    byteData.setUint16(byteOffset, message.pitch, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.pitch, imc.endianSer);
     byteOffset += 2;
     // field yaw
-    byteData.setUint16(byteOffset, message.yaw, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.yaw, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setInt16(byteOffset, message.speed, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.speed, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -4067,7 +4067,7 @@ class HistoricTelemetrySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricTelemetry.static_id) {
+    if (msgId != imc.HistoricTelemetry.staticId) {
       return null;
     }
 
@@ -4078,11 +4078,11 @@ class HistoricTelemetrySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4100,7 +4100,7 @@ class HistoricTelemetrySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4164,26 +4164,26 @@ class HistoricSonarDataSerializer extends imc
     var byteOffset = offset;
 
     // field altitude
-    byteData.setFloat32(byteOffset, message.altitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.altitude, imc.endianSer);
     byteOffset += 4;
     // field width
-    byteData.setFloat32(byteOffset, message.width, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.width, imc.endianSer);
     byteOffset += 4;
     // field length
-    byteData.setFloat32(byteOffset, message.length, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.length, imc.endianSer);
     byteOffset += 4;
     // field bearing
-    byteData.setFloat32(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 4;
     // field pxl
-    byteData.setInt16(byteOffset, message.pxl, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.pxl, imc.endianSer);
     byteOffset += 2;
     // field encoding
     byteData.setUint8(byteOffset, message.encoding.value);
     byteOffset += 1;
     // field sonarData
     var sonarDataSSize = message.sonarData.length;
-    byteData.setUint16(byteOffset, sonarDataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sonarDataSSize, imc.endianSer);
     byteOffset += 2;
     if (sonarDataSSize > 0) {
       for (var b in message.sonarData) {
@@ -4207,7 +4207,7 @@ class HistoricSonarDataSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricSonarData.static_id) {
+    if (msgId != imc.HistoricSonarData.staticId) {
       return null;
     }
 
@@ -4218,11 +4218,11 @@ class HistoricSonarDataSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4240,7 +4240,7 @@ class HistoricSonarDataSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4318,7 +4318,7 @@ class HistoricEventSerializer
     // field text
     var textEncoded = utf8.encode(message.text);
     var textSSize = textEncoded.length;
-    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, textSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in textEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -4343,7 +4343,7 @@ class HistoricEventSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricEvent.static_id) {
+    if (msgId != imc.HistoricEvent.staticId) {
       return null;
     }
 
@@ -4354,11 +4354,11 @@ class HistoricEventSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4376,7 +4376,7 @@ class HistoricEventSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4444,7 +4444,7 @@ class VerticalProfileSerializer extends imc
     byteOffset += 1;
     // field samples
     if (message.samples.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -4456,21 +4456,21 @@ class VerticalProfileSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.samples[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -4489,7 +4489,7 @@ class VerticalProfileSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VerticalProfile.static_id) {
+    if (msgId != imc.VerticalProfile.staticId) {
       return null;
     }
 
@@ -4500,11 +4500,11 @@ class VerticalProfileSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4522,7 +4522,7 @@ class VerticalProfileSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4607,10 +4607,10 @@ class ProfileSampleSerializer
     var byteOffset = offset;
 
     // field depth
-    byteData.setUint16(byteOffset, message.depth, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.depth, imc.endianSer);
     byteOffset += 2;
     // field avg
-    byteData.setFloat32(byteOffset, message.avg, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.avg, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -4629,7 +4629,7 @@ class ProfileSampleSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ProfileSample.static_id) {
+    if (msgId != imc.ProfileSample.staticId) {
       return null;
     }
 
@@ -4640,11 +4640,11 @@ class ProfileSampleSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4662,7 +4662,7 @@ class ProfileSampleSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4731,7 +4731,7 @@ class HeartbeatSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Heartbeat.static_id) {
+    if (msgId != imc.Heartbeat.staticId) {
       return null;
     }
 
@@ -4742,11 +4742,11 @@ class HeartbeatSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4764,7 +4764,7 @@ class HeartbeatSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4813,7 +4813,7 @@ class AnnounceSerializer
     // field sysName
     var sysNameEncoded = utf8.encode(message.sysName);
     var sysNameSSize = sysNameEncoded.length;
-    byteData.setUint16(byteOffset, sysNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -4822,21 +4822,21 @@ class AnnounceSerializer
     byteData.setUint8(byteOffset, message.sysType.value);
     byteOffset += 1;
     // field owner
-    byteData.setUint16(byteOffset, message.owner, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.owner, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field height
-    byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.height, imc.endianSer);
     byteOffset += 4;
     // field services
     var servicesEncoded = utf8.encode(message.services);
     var servicesSSize = servicesEncoded.length;
-    byteData.setUint16(byteOffset, servicesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, servicesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in servicesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -4858,7 +4858,7 @@ class AnnounceSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Announce.static_id) {
+    if (msgId != imc.Announce.staticId) {
       return null;
     }
 
@@ -4869,11 +4869,11 @@ class AnnounceSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -4891,7 +4891,7 @@ class AnnounceSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -4975,7 +4975,7 @@ class AnnounceServiceSerializer extends imc
     // field service
     var serviceEncoded = utf8.encode(message.service);
     var serviceSSize = serviceEncoded.length;
-    byteData.setUint16(byteOffset, serviceSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, serviceSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in serviceEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -5000,7 +5000,7 @@ class AnnounceServiceSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AnnounceService.static_id) {
+    if (msgId != imc.AnnounceService.staticId) {
       return null;
     }
 
@@ -5011,11 +5011,11 @@ class AnnounceServiceSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5033,7 +5033,7 @@ class AnnounceServiceSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5093,7 +5093,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -5112,7 +5112,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RSSI.static_id) {
+    if (msgId != imc.RSSI.staticId) {
       return null;
     }
 
@@ -5123,11 +5123,11 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5145,7 +5145,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5195,7 +5195,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -5214,7 +5214,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VSWR.static_id) {
+    if (msgId != imc.VSWR.staticId) {
       return null;
     }
 
@@ -5225,11 +5225,11 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5247,7 +5247,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5298,7 +5298,7 @@ class LinkLevelSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -5317,7 +5317,7 @@ class LinkLevelSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LinkLevel.static_id) {
+    if (msgId != imc.LinkLevel.staticId) {
       return null;
     }
 
@@ -5328,11 +5328,11 @@ class LinkLevelSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5350,7 +5350,7 @@ class LinkLevelSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5402,18 +5402,18 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
     // field number
     var numberEncoded = utf8.encode(message.number);
     var numberSSize = numberEncoded.length;
-    byteData.setUint16(byteOffset, numberSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, numberSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in numberEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field contents
     var contentsEncoded = utf8.encode(message.contents);
     var contentsSSize = contentsEncoded.length;
-    byteData.setUint16(byteOffset, contentsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, contentsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in contentsEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -5435,7 +5435,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Sms.static_id) {
+    if (msgId != imc.Sms.staticId) {
       return null;
     }
 
@@ -5446,11 +5446,11 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5468,7 +5468,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5536,22 +5536,22 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
     var byteOffset = offset;
 
     // field seq
-    byteData.setUint32(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.seq, imc.endianSer);
     byteOffset += 4;
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -5575,7 +5575,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SmsTx.static_id) {
+    if (msgId != imc.SmsTx.staticId) {
       return null;
     }
 
@@ -5586,11 +5586,11 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5608,7 +5608,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5680,14 +5680,14 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
     // field source
     var sourceEncoded = utf8.encode(message.source);
     var sourceSSize = sourceEncoded.length;
-    byteData.setUint16(byteOffset, sourceSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sourceSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sourceEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -5711,7 +5711,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SmsRx.static_id) {
+    if (msgId != imc.SmsRx.staticId) {
       return null;
     }
 
@@ -5722,11 +5722,11 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5744,7 +5744,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5809,7 +5809,7 @@ class SmsStateSerializer
     var byteOffset = offset;
 
     // field seq
-    byteData.setUint32(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.seq, imc.endianSer);
     byteOffset += 4;
     // field state
     byteData.setUint8(byteOffset, message.state.value);
@@ -5817,7 +5817,7 @@ class SmsStateSerializer
     // field error
     var errorEncoded = utf8.encode(message.error);
     var errorSSize = errorEncoded.length;
-    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, errorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in errorEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -5839,7 +5839,7 @@ class SmsStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SmsState.static_id) {
+    if (msgId != imc.SmsState.staticId) {
       return null;
     }
 
@@ -5850,11 +5850,11 @@ class SmsStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -5872,7 +5872,7 @@ class SmsStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -5938,7 +5938,7 @@ class TextMessageSerializer
     // field origin
     var originEncoded = utf8.encode(message.origin);
     var originSSize = originEncoded.length;
-    byteData.setUint16(byteOffset, originSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, originSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in originEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -5946,7 +5946,7 @@ class TextMessageSerializer
     // field text
     var textEncoded = utf8.encode(message.text);
     var textSSize = textEncoded.length;
-    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, textSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in textEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -5968,7 +5968,7 @@ class TextMessageSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TextMessage.static_id) {
+    if (msgId != imc.TextMessage.staticId) {
       return null;
     }
 
@@ -5979,11 +5979,11 @@ class TextMessageSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6001,7 +6001,7 @@ class TextMessageSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6070,23 +6070,23 @@ class IridiumMsgRxSerializer
     // field origin
     var originEncoded = utf8.encode(message.origin);
     var originSSize = originEncoded.length;
-    byteData.setUint16(byteOffset, originSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, originSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in originEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field htime
-    byteData.setFloat64(byteOffset, message.htime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.htime, imc.endianSer);
     byteOffset += 8;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -6110,7 +6110,7 @@ class IridiumMsgRxSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.IridiumMsgRx.static_id) {
+    if (msgId != imc.IridiumMsgRx.staticId) {
       return null;
     }
 
@@ -6121,11 +6121,11 @@ class IridiumMsgRxSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6143,7 +6143,7 @@ class IridiumMsgRxSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6218,22 +6218,22 @@ class IridiumMsgTxSerializer
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field ttl
-    byteData.setUint16(byteOffset, message.ttl, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.ttl, imc.endianSer);
     byteOffset += 2;
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -6257,7 +6257,7 @@ class IridiumMsgTxSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.IridiumMsgTx.static_id) {
+    if (msgId != imc.IridiumMsgTx.staticId) {
       return null;
     }
 
@@ -6268,11 +6268,11 @@ class IridiumMsgTxSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6290,7 +6290,7 @@ class IridiumMsgTxSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6362,7 +6362,7 @@ class IridiumTxStatusSerializer extends imc
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field status
     byteData.setUint8(byteOffset, message.status.value);
@@ -6370,7 +6370,7 @@ class IridiumTxStatusSerializer extends imc
     // field text
     var textEncoded = utf8.encode(message.text);
     var textSSize = textEncoded.length;
-    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, textSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in textEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -6392,7 +6392,7 @@ class IridiumTxStatusSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.IridiumTxStatus.static_id) {
+    if (msgId != imc.IridiumTxStatus.staticId) {
       return null;
     }
 
@@ -6403,11 +6403,11 @@ class IridiumTxStatusSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6425,7 +6425,7 @@ class IridiumTxStatusSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6492,13 +6492,13 @@ class GroupMembershipStateSerializer extends imc
     // field groupName
     var groupNameEncoded = utf8.encode(message.groupName);
     var groupNameSSize = groupNameEncoded.length;
-    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in groupNameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field links
-    byteData.setUint32(byteOffset, message.links, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.links, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -6517,7 +6517,7 @@ class GroupMembershipStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GroupMembershipState.static_id) {
+    if (msgId != imc.GroupMembershipState.staticId) {
       return null;
     }
 
@@ -6528,11 +6528,11 @@ class GroupMembershipStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6550,7 +6550,7 @@ class GroupMembershipStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6613,7 +6613,7 @@ class SystemGroupSerializer
     // field groupName
     var groupNameEncoded = utf8.encode(message.groupName);
     var groupNameSSize = groupNameEncoded.length;
-    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in groupNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -6624,7 +6624,7 @@ class SystemGroupSerializer
     // field groupList
     var groupListEncoded = utf8.encode(message.groupList);
     var groupListSSize = groupListEncoded.length;
-    byteData.setUint16(byteOffset, groupListSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, groupListSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in groupListEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -6646,7 +6646,7 @@ class SystemGroupSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SystemGroup.static_id) {
+    if (msgId != imc.SystemGroup.staticId) {
       return null;
     }
 
@@ -6657,11 +6657,11 @@ class SystemGroupSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6679,7 +6679,7 @@ class SystemGroupSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6749,10 +6749,10 @@ class LinkLatencySerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field sysSrc
-    byteData.setUint16(byteOffset, message.sysSrc, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.sysSrc, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -6771,7 +6771,7 @@ class LinkLatencySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LinkLatency.static_id) {
+    if (msgId != imc.LinkLatency.staticId) {
       return null;
     }
 
@@ -6782,11 +6782,11 @@ class LinkLatencySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6804,7 +6804,7 @@ class LinkLatencySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6859,7 +6859,7 @@ class ExtendedRSSISerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field units
     byteData.setUint8(byteOffset, message.units.value);
@@ -6881,7 +6881,7 @@ class ExtendedRSSISerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ExtendedRSSI.static_id) {
+    if (msgId != imc.ExtendedRSSI.staticId) {
       return null;
     }
 
@@ -6892,11 +6892,11 @@ class ExtendedRSSISerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -6914,7 +6914,7 @@ class ExtendedRSSISerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -6969,17 +6969,17 @@ class HistoricDataSerializer
     var byteOffset = offset;
 
     // field baseLat
-    byteData.setFloat32(byteOffset, message.baseLat, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseLat, imc.endianSer);
     byteOffset += 4;
     // field baseLon
-    byteData.setFloat32(byteOffset, message.baseLon, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseLon, imc.endianSer);
     byteOffset += 4;
     // field baseTime
-    byteData.setFloat32(byteOffset, message.baseTime, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseTime, imc.endianSer);
     byteOffset += 4;
     // field data
     if (message.data.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -6991,14 +6991,14 @@ class HistoricDataSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.data[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -7018,7 +7018,7 @@ class HistoricDataSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricData.static_id) {
+    if (msgId != imc.HistoricData.staticId) {
       return null;
     }
 
@@ -7029,11 +7029,11 @@ class HistoricDataSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7051,7 +7051,7 @@ class HistoricDataSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -7132,17 +7132,17 @@ class CompressedHistorySerializer extends imc
     var byteOffset = offset;
 
     // field baseLat
-    byteData.setFloat32(byteOffset, message.baseLat, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseLat, imc.endianSer);
     byteOffset += 4;
     // field baseLon
-    byteData.setFloat32(byteOffset, message.baseLon, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseLon, imc.endianSer);
     byteOffset += 4;
     // field baseTime
-    byteData.setFloat32(byteOffset, message.baseTime, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseTime, imc.endianSer);
     byteOffset += 4;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -7166,7 +7166,7 @@ class CompressedHistorySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CompressedHistory.static_id) {
+    if (msgId != imc.CompressedHistory.staticId) {
       return null;
     }
 
@@ -7177,11 +7177,11 @@ class CompressedHistorySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7199,7 +7199,7 @@ class CompressedHistorySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -7265,26 +7265,26 @@ class HistoricSampleSerializer
     var byteOffset = offset;
 
     // field sysId
-    byteData.setUint16(byteOffset, message.sysId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.sysId, imc.endianSer);
     byteOffset += 2;
     // field priority
     byteData.setInt8(byteOffset, message.priority);
     byteOffset += 1;
     // field x
-    byteData.setInt16(byteOffset, message.x, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.x, imc.endianSer);
     byteOffset += 2;
     // field y
-    byteData.setInt16(byteOffset, message.y, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.y, imc.endianSer);
     byteOffset += 2;
     // field z
-    byteData.setInt16(byteOffset, message.z, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.z, imc.endianSer);
     byteOffset += 2;
     // field t
-    byteData.setInt16(byteOffset, message.t, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.t, imc.endianSer);
     byteOffset += 2;
     // field sample
     if (message.sample == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.sample!.msgId;
@@ -7292,7 +7292,7 @@ class HistoricSampleSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.sample, byteData, byteOffset);
@@ -7316,7 +7316,7 @@ class HistoricSampleSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricSample.static_id) {
+    if (msgId != imc.HistoricSample.staticId) {
       return null;
     }
 
@@ -7327,11 +7327,11 @@ class HistoricSampleSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7349,7 +7349,7 @@ class HistoricSampleSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -7436,17 +7436,17 @@ class HistoricDataQuerySerializer extends imc
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field maxSize
-    byteData.setUint16(byteOffset, message.maxSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.maxSize, imc.endianSer);
     byteOffset += 2;
     // field data
     if (message.data == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.data!.msgId;
@@ -7454,7 +7454,7 @@ class HistoricDataQuerySerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.data, byteData, byteOffset);
@@ -7478,7 +7478,7 @@ class HistoricDataQuerySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HistoricDataQuery.static_id) {
+    if (msgId != imc.HistoricDataQuery.staticId) {
       return null;
     }
 
@@ -7489,11 +7489,11 @@ class HistoricDataQuerySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7511,7 +7511,7 @@ class HistoricDataQuerySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -7589,17 +7589,17 @@ class RemoteCommandSerializer
     var byteOffset = offset;
 
     // field originalSource
-    byteData.setUint16(byteOffset, message.originalSource, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.originalSource, imc.endianSer);
     byteOffset += 2;
     // field destination
-    byteData.setUint16(byteOffset, message.destination, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.destination, imc.endianSer);
     byteOffset += 2;
     // field timeout
-    byteData.setFloat64(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 8;
     // field cmd
     if (message.cmd == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.cmd!.msgId;
@@ -7607,7 +7607,7 @@ class RemoteCommandSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.cmd, byteData, byteOffset);
@@ -7631,7 +7631,7 @@ class RemoteCommandSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RemoteCommand.static_id) {
+    if (msgId != imc.RemoteCommand.staticId) {
       return null;
     }
 
@@ -7642,11 +7642,11 @@ class RemoteCommandSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7664,7 +7664,7 @@ class RemoteCommandSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -7745,15 +7745,15 @@ class CommSystemsQuerySerializer extends imc
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field commInterface
-    byteData.setUint16(byteOffset, message.commInterface.value, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.commInterface.value, imc.endianSer);
     byteOffset += 2;
     // field model
-    byteData.setUint16(byteOffset, message.model.value, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.model.value, imc.endianSer);
     byteOffset += 2;
     // field list
     var listEncoded = utf8.encode(message.list);
     var listSSize = listEncoded.length;
-    byteData.setUint16(byteOffset, listSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, listSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in listEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -7775,7 +7775,7 @@ class CommSystemsQuerySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CommSystemsQuery.static_id) {
+    if (msgId != imc.CommSystemsQuery.staticId) {
       return null;
     }
 
@@ -7786,11 +7786,11 @@ class CommSystemsQuerySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7808,7 +7808,7 @@ class CommSystemsQuerySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -7881,10 +7881,10 @@ class TelemetryMsgSerializer
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field reqId
-    byteData.setUint32(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 4;
     // field ttl
-    byteData.setUint16(byteOffset, message.ttl, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.ttl, imc.endianSer);
     byteOffset += 2;
     // field code
     byteData.setUint8(byteOffset, message.code.value);
@@ -7892,7 +7892,7 @@ class TelemetryMsgSerializer
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -7900,7 +7900,7 @@ class TelemetryMsgSerializer
     // field source
     var sourceEncoded = utf8.encode(message.source);
     var sourceSSize = sourceEncoded.length;
-    byteData.setUint16(byteOffset, sourceSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sourceSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sourceEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -7913,7 +7913,7 @@ class TelemetryMsgSerializer
     byteOffset += 1;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -7937,7 +7937,7 @@ class TelemetryMsgSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TelemetryMsg.static_id) {
+    if (msgId != imc.TelemetryMsg.staticId) {
       return null;
     }
 
@@ -7948,11 +7948,11 @@ class TelemetryMsgSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -7970,7 +7970,7 @@ class TelemetryMsgSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -8066,7 +8066,7 @@ class LblRangeSerializer
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -8085,7 +8085,7 @@ class LblRangeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LblRange.static_id) {
+    if (msgId != imc.LblRange.staticId) {
       return null;
     }
 
@@ -8096,11 +8096,11 @@ class LblRangeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -8118,7 +8118,7 @@ class LblRangeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -8174,19 +8174,19 @@ class LblBeaconSerializer
     // field beacon
     var beaconEncoded = utf8.encode(message.beacon);
     var beaconSSize = beaconEncoded.length;
-    byteData.setUint16(byteOffset, beaconSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, beaconSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in beaconEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field depth
-    byteData.setFloat32(byteOffset, message.depth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.depth, imc.endianSer);
     byteOffset += 4;
     // field queryChannel
     byteData.setUint8(byteOffset, message.queryChannel);
@@ -8214,7 +8214,7 @@ class LblBeaconSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LblBeacon.static_id) {
+    if (msgId != imc.LblBeacon.staticId) {
       return null;
     }
 
@@ -8225,11 +8225,11 @@ class LblBeaconSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -8247,7 +8247,7 @@ class LblBeaconSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -8326,7 +8326,7 @@ class LblConfigSerializer
     byteOffset += 1;
     // field beacons
     if (message.beacons.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -8338,14 +8338,14 @@ class LblConfigSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.beacons[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -8365,7 +8365,7 @@ class LblConfigSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LblConfig.static_id) {
+    if (msgId != imc.LblConfig.staticId) {
       return null;
     }
 
@@ -8376,11 +8376,11 @@ class LblConfigSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -8398,7 +8398,7 @@ class LblConfigSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -8474,7 +8474,7 @@ class AcousticMessageSerializer extends imc
 
     // field message
     if (message.message == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.message!.msgId;
@@ -8482,7 +8482,7 @@ class AcousticMessageSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.message, byteData, byteOffset);
@@ -8506,7 +8506,7 @@ class AcousticMessageSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticMessage.static_id) {
+    if (msgId != imc.AcousticMessage.staticId) {
       return null;
     }
 
@@ -8517,11 +8517,11 @@ class AcousticMessageSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -8539,7 +8539,7 @@ class AcousticMessageSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -8608,29 +8608,29 @@ class SimAcousticMessageSerializer extends imc
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field depth
-    byteData.setFloat32(byteOffset, message.depth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.depth, imc.endianSer);
     byteOffset += 4;
     // field sentence
     var sentenceEncoded = utf8.encode(message.sentence);
     var sentenceSSize = sentenceEncoded.length;
-    byteData.setUint16(byteOffset, sentenceSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sentenceSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sentenceEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field txtime
-    byteData.setFloat64(byteOffset, message.txtime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.txtime, imc.endianSer);
     byteOffset += 8;
     // field modemType
     var modemTypeEncoded = utf8.encode(message.modemType);
     var modemTypeSSize = modemTypeEncoded.length;
-    byteData.setUint16(byteOffset, modemTypeSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, modemTypeSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in modemTypeEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -8638,18 +8638,18 @@ class SimAcousticMessageSerializer extends imc
     // field sysSrc
     var sysSrcEncoded = utf8.encode(message.sysSrc);
     var sysSrcSSize = sysSrcEncoded.length;
-    byteData.setUint16(byteOffset, sysSrcSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysSrcSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysSrcEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field seq
-    byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.seq, imc.endianSer);
     byteOffset += 2;
     // field sysDst
     var sysDstEncoded = utf8.encode(message.sysDst);
     var sysDstSSize = sysDstEncoded.length;
-    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysDstEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -8659,7 +8659,7 @@ class SimAcousticMessageSerializer extends imc
     byteOffset += 1;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -8683,7 +8683,7 @@ class SimAcousticMessageSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SimAcousticMessage.static_id) {
+    if (msgId != imc.SimAcousticMessage.staticId) {
       return null;
     }
 
@@ -8694,11 +8694,11 @@ class SimAcousticMessageSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -8716,7 +8716,7 @@ class SimAcousticMessageSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -8833,17 +8833,17 @@ class AcousticOperationSerializer extends imc
     // field system
     var systemEncoded = utf8.encode(message.system);
     var systemSSize = systemEncoded.length;
-    byteData.setUint16(byteOffset, systemSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, systemSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in systemEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
     // field msg
     if (message.msg == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.msg!.msgId;
@@ -8851,7 +8851,7 @@ class AcousticOperationSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.msg, byteData, byteOffset);
@@ -8875,7 +8875,7 @@ class AcousticOperationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticOperation.static_id) {
+    if (msgId != imc.AcousticOperation.staticId) {
       return null;
     }
 
@@ -8886,11 +8886,11 @@ class AcousticOperationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -8908,7 +8908,7 @@ class AcousticOperationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9007,7 +9007,7 @@ class AcousticSystemsQuerySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticSystemsQuery.static_id) {
+    if (msgId != imc.AcousticSystemsQuery.staticId) {
       return null;
     }
 
@@ -9018,11 +9018,11 @@ class AcousticSystemsQuerySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9040,7 +9040,7 @@ class AcousticSystemsQuerySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9090,7 +9090,7 @@ class AcousticSystemsSerializer extends imc
     // field list
     var listEncoded = utf8.encode(message.list);
     var listSSize = listEncoded.length;
-    byteData.setUint16(byteOffset, listSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, listSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in listEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -9112,7 +9112,7 @@ class AcousticSystemsSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticSystems.static_id) {
+    if (msgId != imc.AcousticSystems.staticId) {
       return null;
     }
 
@@ -9123,11 +9123,11 @@ class AcousticSystemsSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9145,7 +9145,7 @@ class AcousticSystemsSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9205,16 +9205,16 @@ class AcousticLinkSerializer
     // field peer
     var peerEncoded = utf8.encode(message.peer);
     var peerSSize = peerEncoded.length;
-    byteData.setUint16(byteOffset, peerSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, peerSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in peerEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field rssi
-    byteData.setFloat32(byteOffset, message.rssi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rssi, imc.endianSer);
     byteOffset += 4;
     // field integrity
-    byteData.setUint16(byteOffset, message.integrity, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.integrity, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -9233,7 +9233,7 @@ class AcousticLinkSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticLink.static_id) {
+    if (msgId != imc.AcousticLink.staticId) {
       return null;
     }
 
@@ -9244,11 +9244,11 @@ class AcousticLinkSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9266,7 +9266,7 @@ class AcousticLinkSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9330,28 +9330,28 @@ class AcousticRequestSerializer extends imc
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field timeout
-    byteData.setFloat64(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 8;
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field msg
     if (message.msg == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.msg!.msgId;
@@ -9359,7 +9359,7 @@ class AcousticRequestSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.msg, byteData, byteOffset);
@@ -9383,7 +9383,7 @@ class AcousticRequestSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticRequest.static_id) {
+    if (msgId != imc.AcousticRequest.staticId) {
       return null;
     }
 
@@ -9394,11 +9394,11 @@ class AcousticRequestSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9416,7 +9416,7 @@ class AcousticRequestSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9506,7 +9506,7 @@ class AcousticStatusSerializer
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
@@ -9517,13 +9517,13 @@ class AcousticStatusSerializer
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -9542,7 +9542,7 @@ class AcousticStatusSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AcousticStatus.static_id) {
+    if (msgId != imc.AcousticStatus.staticId) {
       return null;
     }
 
@@ -9553,11 +9553,11 @@ class AcousticStatusSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9575,7 +9575,7 @@ class AcousticStatusSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9644,7 +9644,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setInt16(byteOffset, message.value, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.value, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -9663,7 +9663,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Rpm.static_id) {
+    if (msgId != imc.Rpm.staticId) {
       return null;
     }
 
@@ -9674,11 +9674,11 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9696,7 +9696,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9747,7 +9747,7 @@ class VoltageSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -9766,7 +9766,7 @@ class VoltageSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Voltage.static_id) {
+    if (msgId != imc.Voltage.staticId) {
       return null;
     }
 
@@ -9777,11 +9777,11 @@ class VoltageSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9799,7 +9799,7 @@ class VoltageSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9850,7 +9850,7 @@ class CurrentSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -9869,7 +9869,7 @@ class CurrentSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Current.static_id) {
+    if (msgId != imc.Current.staticId) {
       return null;
     }
 
@@ -9880,11 +9880,11 @@ class CurrentSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -9902,7 +9902,7 @@ class CurrentSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -9953,13 +9953,13 @@ class GpsFixSerializer
     var byteOffset = offset;
 
     // field validity
-    byteData.setUint16(byteOffset, message.validity.value, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.validity.value, imc.endianSer);
     byteOffset += 2;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field utcYear
-    byteData.setUint16(byteOffset, message.utcYear, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.utcYear, imc.endianSer);
     byteOffset += 2;
     // field utcMonth
     byteData.setUint8(byteOffset, message.utcMonth);
@@ -9968,37 +9968,37 @@ class GpsFixSerializer
     byteData.setUint8(byteOffset, message.utcDay);
     byteOffset += 1;
     // field utcTime
-    byteData.setFloat32(byteOffset, message.utcTime, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.utcTime, imc.endianSer);
     byteOffset += 4;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field height
-    byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.height, imc.endianSer);
     byteOffset += 4;
     // field satellites
     byteData.setUint8(byteOffset, message.satellites);
     byteOffset += 1;
     // field cog
-    byteData.setFloat32(byteOffset, message.cog, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.cog, imc.endianSer);
     byteOffset += 4;
     // field sog
-    byteData.setFloat32(byteOffset, message.sog, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.sog, imc.endianSer);
     byteOffset += 4;
     // field hdop
-    byteData.setFloat32(byteOffset, message.hdop, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.hdop, imc.endianSer);
     byteOffset += 4;
     // field vdop
-    byteData.setFloat32(byteOffset, message.vdop, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vdop, imc.endianSer);
     byteOffset += 4;
     // field hacc
-    byteData.setFloat32(byteOffset, message.hacc, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.hacc, imc.endianSer);
     byteOffset += 4;
     // field vacc
-    byteData.setFloat32(byteOffset, message.vacc, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vacc, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -10017,7 +10017,7 @@ class GpsFixSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GpsFix.static_id) {
+    if (msgId != imc.GpsFix.staticId) {
       return null;
     }
 
@@ -10028,11 +10028,11 @@ class GpsFixSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10050,7 +10050,7 @@ class GpsFixSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10148,19 +10148,19 @@ class EulerAnglesSerializer
     var byteOffset = offset;
 
     // field time
-    byteData.setFloat64(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.time, imc.endianSer);
     byteOffset += 8;
     // field phi
-    byteData.setFloat64(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.phi, imc.endianSer);
     byteOffset += 8;
     // field theta
-    byteData.setFloat64(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.theta, imc.endianSer);
     byteOffset += 8;
     // field psi
-    byteData.setFloat64(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.psi, imc.endianSer);
     byteOffset += 8;
     // field psiMagnetic
-    byteData.setFloat64(byteOffset, message.psiMagnetic, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.psiMagnetic, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -10179,7 +10179,7 @@ class EulerAnglesSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EulerAngles.static_id) {
+    if (msgId != imc.EulerAngles.staticId) {
       return null;
     }
 
@@ -10190,11 +10190,11 @@ class EulerAnglesSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10212,7 +10212,7 @@ class EulerAnglesSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10276,19 +10276,19 @@ class EulerAnglesDeltaSerializer extends imc
     var byteOffset = offset;
 
     // field time
-    byteData.setFloat64(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.time, imc.endianSer);
     byteOffset += 8;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
     // field timestep
-    byteData.setFloat32(byteOffset, message.timestep, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timestep, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -10307,7 +10307,7 @@ class EulerAnglesDeltaSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EulerAnglesDelta.static_id) {
+    if (msgId != imc.EulerAnglesDelta.staticId) {
       return null;
     }
 
@@ -10318,11 +10318,11 @@ class EulerAnglesDeltaSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10340,7 +10340,7 @@ class EulerAnglesDeltaSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10404,16 +10404,16 @@ class AngularVelocitySerializer extends imc
     var byteOffset = offset;
 
     // field time
-    byteData.setFloat64(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.time, imc.endianSer);
     byteOffset += 8;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -10432,7 +10432,7 @@ class AngularVelocitySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AngularVelocity.static_id) {
+    if (msgId != imc.AngularVelocity.staticId) {
       return null;
     }
 
@@ -10443,11 +10443,11 @@ class AngularVelocitySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10465,7 +10465,7 @@ class AngularVelocitySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10526,16 +10526,16 @@ class AccelerationSerializer
     var byteOffset = offset;
 
     // field time
-    byteData.setFloat64(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.time, imc.endianSer);
     byteOffset += 8;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -10554,7 +10554,7 @@ class AccelerationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Acceleration.static_id) {
+    if (msgId != imc.Acceleration.staticId) {
       return null;
     }
 
@@ -10565,11 +10565,11 @@ class AccelerationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10587,7 +10587,7 @@ class AccelerationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10648,16 +10648,16 @@ class MagneticFieldSerializer
     var byteOffset = offset;
 
     // field time
-    byteData.setFloat64(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.time, imc.endianSer);
     byteOffset += 8;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -10676,7 +10676,7 @@ class MagneticFieldSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.MagneticField.static_id) {
+    if (msgId != imc.MagneticField.staticId) {
       return null;
     }
 
@@ -10687,11 +10687,11 @@ class MagneticFieldSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10709,7 +10709,7 @@ class MagneticFieldSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10773,13 +10773,13 @@ class GroundVelocitySerializer
     byteData.setUint8(byteOffset, message.validity.value);
     byteOffset += 1;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -10798,7 +10798,7 @@ class GroundVelocitySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GroundVelocity.static_id) {
+    if (msgId != imc.GroundVelocity.staticId) {
       return null;
     }
 
@@ -10809,11 +10809,11 @@ class GroundVelocitySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10831,7 +10831,7 @@ class GroundVelocitySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -10896,13 +10896,13 @@ class WaterVelocitySerializer
     byteData.setUint8(byteOffset, message.validity.value);
     byteOffset += 1;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -10921,7 +10921,7 @@ class WaterVelocitySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.WaterVelocity.static_id) {
+    if (msgId != imc.WaterVelocity.staticId) {
       return null;
     }
 
@@ -10932,11 +10932,11 @@ class WaterVelocitySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -10954,7 +10954,7 @@ class WaterVelocitySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11016,16 +11016,16 @@ class VelocityDeltaSerializer
     var byteOffset = offset;
 
     // field time
-    byteData.setFloat64(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.time, imc.endianSer);
     byteOffset += 8;
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -11044,7 +11044,7 @@ class VelocityDeltaSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VelocityDelta.static_id) {
+    if (msgId != imc.VelocityDelta.staticId) {
       return null;
     }
 
@@ -11055,11 +11055,11 @@ class VelocityDeltaSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11077,7 +11077,7 @@ class VelocityDeltaSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11141,7 +11141,7 @@ class DistanceSerializer
     byteOffset += 1;
     // field location
     if (message.location.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -11153,19 +11153,19 @@ class DistanceSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.location[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field beamConfig
     if (message.beamConfig.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -11177,18 +11177,18 @@ class DistanceSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.beamConfig[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11207,7 +11207,7 @@ class DistanceSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Distance.static_id) {
+    if (msgId != imc.Distance.staticId) {
       return null;
     }
 
@@ -11218,11 +11218,11 @@ class DistanceSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11240,7 +11240,7 @@ class DistanceSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11341,7 +11341,7 @@ class TemperatureSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11360,7 +11360,7 @@ class TemperatureSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Temperature.static_id) {
+    if (msgId != imc.Temperature.staticId) {
       return null;
     }
 
@@ -11371,11 +11371,11 @@ class TemperatureSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11393,7 +11393,7 @@ class TemperatureSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11444,7 +11444,7 @@ class PressureSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -11463,7 +11463,7 @@ class PressureSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Pressure.static_id) {
+    if (msgId != imc.Pressure.staticId) {
       return null;
     }
 
@@ -11474,11 +11474,11 @@ class PressureSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11496,7 +11496,7 @@ class PressureSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11546,7 +11546,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11565,7 +11565,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Depth.static_id) {
+    if (msgId != imc.Depth.staticId) {
       return null;
     }
 
@@ -11576,11 +11576,11 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11598,7 +11598,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11650,7 +11650,7 @@ class DepthOffsetSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11669,7 +11669,7 @@ class DepthOffsetSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DepthOffset.static_id) {
+    if (msgId != imc.DepthOffset.staticId) {
       return null;
     }
 
@@ -11680,11 +11680,11 @@ class DepthOffsetSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11702,7 +11702,7 @@ class DepthOffsetSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11753,7 +11753,7 @@ class SoundSpeedSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11772,7 +11772,7 @@ class SoundSpeedSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SoundSpeed.static_id) {
+    if (msgId != imc.SoundSpeed.staticId) {
       return null;
     }
 
@@ -11783,11 +11783,11 @@ class SoundSpeedSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11805,7 +11805,7 @@ class SoundSpeedSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11857,7 +11857,7 @@ class WaterDensitySerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11876,7 +11876,7 @@ class WaterDensitySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.WaterDensity.static_id) {
+    if (msgId != imc.WaterDensity.staticId) {
       return null;
     }
 
@@ -11887,11 +11887,11 @@ class WaterDensitySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -11909,7 +11909,7 @@ class WaterDensitySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -11961,7 +11961,7 @@ class ConductivitySerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -11980,7 +11980,7 @@ class ConductivitySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Conductivity.static_id) {
+    if (msgId != imc.Conductivity.staticId) {
       return null;
     }
 
@@ -11991,11 +11991,11 @@ class ConductivitySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12013,7 +12013,7 @@ class ConductivitySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12064,7 +12064,7 @@ class SalinitySerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -12083,7 +12083,7 @@ class SalinitySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Salinity.static_id) {
+    if (msgId != imc.Salinity.staticId) {
       return null;
     }
 
@@ -12094,11 +12094,11 @@ class SalinitySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12116,7 +12116,7 @@ class SalinitySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12167,13 +12167,13 @@ class WindSpeedSerializer
     var byteOffset = offset;
 
     // field direction
-    byteData.setFloat32(byteOffset, message.direction, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.direction, imc.endianSer);
     byteOffset += 4;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field turbulence
-    byteData.setFloat32(byteOffset, message.turbulence, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.turbulence, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -12192,7 +12192,7 @@ class WindSpeedSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.WindSpeed.static_id) {
+    if (msgId != imc.WindSpeed.staticId) {
       return null;
     }
 
@@ -12203,11 +12203,11 @@ class WindSpeedSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12225,7 +12225,7 @@ class WindSpeedSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12283,7 +12283,7 @@ class RelativeHumiditySerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -12302,7 +12302,7 @@ class RelativeHumiditySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RelativeHumidity.static_id) {
+    if (msgId != imc.RelativeHumidity.staticId) {
       return null;
     }
 
@@ -12313,11 +12313,11 @@ class RelativeHumiditySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12335,7 +12335,7 @@ class RelativeHumiditySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12389,7 +12389,7 @@ class DevDataTextSerializer
     // field value
     var valueEncoded = utf8.encode(message.value);
     var valueSSize = valueEncoded.length;
-    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, valueSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in valueEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -12411,7 +12411,7 @@ class DevDataTextSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DevDataText.static_id) {
+    if (msgId != imc.DevDataText.staticId) {
       return null;
     }
 
@@ -12422,11 +12422,11 @@ class DevDataTextSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12444,7 +12444,7 @@ class DevDataTextSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12503,7 +12503,7 @@ class DevDataBinarySerializer
 
     // field value
     var valueSSize = message.value.length;
-    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, valueSSize, imc.endianSer);
     byteOffset += 2;
     if (valueSSize > 0) {
       for (var b in message.value) {
@@ -12527,7 +12527,7 @@ class DevDataBinarySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DevDataBinary.static_id) {
+    if (msgId != imc.DevDataBinary.staticId) {
       return null;
     }
 
@@ -12538,11 +12538,11 @@ class DevDataBinarySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12560,7 +12560,7 @@ class DevDataBinarySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12615,7 +12615,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -12634,7 +12634,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Force.static_id) {
+    if (msgId != imc.Force.staticId) {
       return null;
     }
 
@@ -12645,11 +12645,11 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12667,7 +12667,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12721,23 +12721,23 @@ class SonarDataSerializer
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field frequency
-    byteData.setUint32(byteOffset, message.frequency, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.frequency, imc.endianSer);
     byteOffset += 4;
     // field minRange
-    byteData.setUint16(byteOffset, message.minRange, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.minRange, imc.endianSer);
     byteOffset += 2;
     // field maxRange
-    byteData.setUint16(byteOffset, message.maxRange, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.maxRange, imc.endianSer);
     byteOffset += 2;
     // field bitsPerPoint
     byteData.setUint8(byteOffset, message.bitsPerPoint);
     byteOffset += 1;
     // field scaleFactor
-    byteData.setFloat32(byteOffset, message.scaleFactor, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.scaleFactor, imc.endianSer);
     byteOffset += 4;
     // field beamConfig
     if (message.beamConfig.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -12749,19 +12749,19 @@ class SonarDataSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.beamConfig[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -12785,7 +12785,7 @@ class SonarDataSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SonarData.static_id) {
+    if (msgId != imc.SonarData.staticId) {
       return null;
     }
 
@@ -12796,11 +12796,11 @@ class SonarDataSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12818,7 +12818,7 @@ class SonarDataSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -12929,7 +12929,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Pulse.static_id) {
+    if (msgId != imc.Pulse.staticId) {
       return null;
     }
 
@@ -12940,11 +12940,11 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -12962,7 +12962,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13029,7 +13029,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PulseDetectionControl.static_id) {
+    if (msgId != imc.PulseDetectionControl.staticId) {
       return null;
     }
 
@@ -13040,11 +13040,11 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13062,7 +13062,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13113,15 +13113,15 @@ class FuelLevelSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field confidence
-    byteData.setFloat32(byteOffset, message.confidence, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.confidence, imc.endianSer);
     byteOffset += 4;
     // field opmodes
     var opmodesEncoded = utf8.encode(message.opmodes);
     var opmodesSSize = opmodesEncoded.length;
-    byteData.setUint16(byteOffset, opmodesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, opmodesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in opmodesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -13143,7 +13143,7 @@ class FuelLevelSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FuelLevel.static_id) {
+    if (msgId != imc.FuelLevel.staticId) {
       return null;
     }
 
@@ -13154,11 +13154,11 @@ class FuelLevelSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13176,7 +13176,7 @@ class FuelLevelSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13239,49 +13239,49 @@ class GpsNavDataSerializer
     var byteOffset = offset;
 
     // field itow
-    byteData.setUint32(byteOffset, message.itow, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.itow, imc.endianSer);
     byteOffset += 4;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field heightEll
-    byteData.setFloat32(byteOffset, message.heightEll, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.heightEll, imc.endianSer);
     byteOffset += 4;
     // field heightSea
-    byteData.setFloat32(byteOffset, message.heightSea, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.heightSea, imc.endianSer);
     byteOffset += 4;
     // field hacc
-    byteData.setFloat32(byteOffset, message.hacc, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.hacc, imc.endianSer);
     byteOffset += 4;
     // field vacc
-    byteData.setFloat32(byteOffset, message.vacc, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vacc, imc.endianSer);
     byteOffset += 4;
     // field velN
-    byteData.setFloat32(byteOffset, message.velN, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.velN, imc.endianSer);
     byteOffset += 4;
     // field velE
-    byteData.setFloat32(byteOffset, message.velE, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.velE, imc.endianSer);
     byteOffset += 4;
     // field velD
-    byteData.setFloat32(byteOffset, message.velD, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.velD, imc.endianSer);
     byteOffset += 4;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field gspeed
-    byteData.setFloat32(byteOffset, message.gspeed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.gspeed, imc.endianSer);
     byteOffset += 4;
     // field heading
-    byteData.setFloat32(byteOffset, message.heading, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.heading, imc.endianSer);
     byteOffset += 4;
     // field sacc
-    byteData.setFloat32(byteOffset, message.sacc, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.sacc, imc.endianSer);
     byteOffset += 4;
     // field cacc
-    byteData.setFloat32(byteOffset, message.cacc, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.cacc, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -13300,7 +13300,7 @@ class GpsNavDataSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GpsNavData.static_id) {
+    if (msgId != imc.GpsNavData.staticId) {
       return null;
     }
 
@@ -13311,11 +13311,11 @@ class GpsNavDataSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13333,7 +13333,7 @@ class GpsNavDataSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13430,7 +13430,7 @@ class ServoPositionSerializer
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -13449,7 +13449,7 @@ class ServoPositionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ServoPosition.static_id) {
+    if (msgId != imc.ServoPosition.staticId) {
       return null;
     }
 
@@ -13460,11 +13460,11 @@ class ServoPositionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13482,7 +13482,7 @@ class ServoPositionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13537,22 +13537,22 @@ class DeviceStateSerializer
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -13571,7 +13571,7 @@ class DeviceStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DeviceState.static_id) {
+    if (msgId != imc.DeviceState.staticId) {
       return null;
     }
 
@@ -13582,11 +13582,11 @@ class DeviceStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13604,7 +13604,7 @@ class DeviceStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13670,10 +13670,10 @@ class BeamConfigSerializer
     var byteOffset = offset;
 
     // field beamWidth
-    byteData.setFloat32(byteOffset, message.beamWidth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.beamWidth, imc.endianSer);
     byteOffset += 4;
     // field beamHeight
-    byteData.setFloat32(byteOffset, message.beamHeight, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.beamHeight, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -13692,7 +13692,7 @@ class BeamConfigSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.BeamConfig.static_id) {
+    if (msgId != imc.BeamConfig.staticId) {
       return null;
     }
 
@@ -13703,11 +13703,11 @@ class BeamConfigSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13725,7 +13725,7 @@ class BeamConfigSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13798,7 +13798,7 @@ class DataSanitySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DataSanity.static_id) {
+    if (msgId != imc.DataSanity.staticId) {
       return null;
     }
 
@@ -13809,11 +13809,11 @@ class DataSanitySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13831,7 +13831,7 @@ class DataSanitySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13883,7 +13883,7 @@ class RhodamineDyeSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -13902,7 +13902,7 @@ class RhodamineDyeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RhodamineDye.static_id) {
+    if (msgId != imc.RhodamineDye.staticId) {
       return null;
     }
 
@@ -13913,11 +13913,11 @@ class RhodamineDyeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -13935,7 +13935,7 @@ class RhodamineDyeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -13986,7 +13986,7 @@ class CrudeOilSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14005,7 +14005,7 @@ class CrudeOilSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CrudeOil.static_id) {
+    if (msgId != imc.CrudeOil.staticId) {
       return null;
     }
 
@@ -14016,11 +14016,11 @@ class CrudeOilSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14038,7 +14038,7 @@ class CrudeOilSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14089,7 +14089,7 @@ class FineOilSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14108,7 +14108,7 @@ class FineOilSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FineOil.static_id) {
+    if (msgId != imc.FineOil.staticId) {
       return null;
     }
 
@@ -14119,11 +14119,11 @@ class FineOilSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14141,7 +14141,7 @@ class FineOilSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14192,7 +14192,7 @@ class TurbiditySerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14211,7 +14211,7 @@ class TurbiditySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Turbidity.static_id) {
+    if (msgId != imc.Turbidity.staticId) {
       return null;
     }
 
@@ -14222,11 +14222,11 @@ class TurbiditySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14244,7 +14244,7 @@ class TurbiditySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14296,7 +14296,7 @@ class ChlorophyllSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14315,7 +14315,7 @@ class ChlorophyllSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Chlorophyll.static_id) {
+    if (msgId != imc.Chlorophyll.staticId) {
       return null;
     }
 
@@ -14326,11 +14326,11 @@ class ChlorophyllSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14348,7 +14348,7 @@ class ChlorophyllSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14400,7 +14400,7 @@ class FluoresceinSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14419,7 +14419,7 @@ class FluoresceinSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Fluorescein.static_id) {
+    if (msgId != imc.Fluorescein.staticId) {
       return null;
     }
 
@@ -14430,11 +14430,11 @@ class FluoresceinSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14452,7 +14452,7 @@ class FluoresceinSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14504,7 +14504,7 @@ class PhycocyaninSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14523,7 +14523,7 @@ class PhycocyaninSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Phycocyanin.static_id) {
+    if (msgId != imc.Phycocyanin.staticId) {
       return null;
     }
 
@@ -14534,11 +14534,11 @@ class PhycocyaninSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14556,7 +14556,7 @@ class PhycocyaninSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14608,7 +14608,7 @@ class PhycoerythrinSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14627,7 +14627,7 @@ class PhycoerythrinSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Phycoerythrin.static_id) {
+    if (msgId != imc.Phycoerythrin.staticId) {
       return null;
     }
 
@@ -14638,11 +14638,11 @@ class PhycoerythrinSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14660,7 +14660,7 @@ class PhycoerythrinSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14711,49 +14711,49 @@ class GpsFixRtkSerializer
     var byteOffset = offset;
 
     // field validity
-    byteData.setUint16(byteOffset, message.validity.value, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.validity.value, imc.endianSer);
     byteOffset += 2;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field tow
-    byteData.setUint32(byteOffset, message.tow, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.tow, imc.endianSer);
     byteOffset += 4;
     // field baseLat
-    byteData.setFloat64(byteOffset, message.baseLat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.baseLat, imc.endianSer);
     byteOffset += 8;
     // field baseLon
-    byteData.setFloat64(byteOffset, message.baseLon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.baseLon, imc.endianSer);
     byteOffset += 8;
     // field baseHeight
-    byteData.setFloat32(byteOffset, message.baseHeight, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.baseHeight, imc.endianSer);
     byteOffset += 4;
     // field n
-    byteData.setFloat32(byteOffset, message.n, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.n, imc.endianSer);
     byteOffset += 4;
     // field e
-    byteData.setFloat32(byteOffset, message.e, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.e, imc.endianSer);
     byteOffset += 4;
     // field d
-    byteData.setFloat32(byteOffset, message.d, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.d, imc.endianSer);
     byteOffset += 4;
     // field vN
-    byteData.setFloat32(byteOffset, message.vN, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vN, imc.endianSer);
     byteOffset += 4;
     // field vE
-    byteData.setFloat32(byteOffset, message.vE, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vE, imc.endianSer);
     byteOffset += 4;
     // field vD
-    byteData.setFloat32(byteOffset, message.vD, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vD, imc.endianSer);
     byteOffset += 4;
     // field satellites
     byteData.setUint8(byteOffset, message.satellites);
     byteOffset += 1;
     // field iarHyp
-    byteData.setUint16(byteOffset, message.iarHyp, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.iarHyp, imc.endianSer);
     byteOffset += 2;
     // field iarRatio
-    byteData.setFloat32(byteOffset, message.iarRatio, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.iarRatio, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -14772,7 +14772,7 @@ class GpsFixRtkSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GpsFixRtk.static_id) {
+    if (msgId != imc.GpsFixRtk.staticId) {
       return null;
     }
 
@@ -14783,11 +14783,11 @@ class GpsFixRtkSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14805,7 +14805,7 @@ class GpsFixRtkSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -14901,7 +14901,7 @@ class ExternalNavDataSerializer extends imc
 
     // field state
     if (message.state == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.state!.msgId;
@@ -14909,7 +14909,7 @@ class ExternalNavDataSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.state, byteData, byteOffset);
@@ -14936,7 +14936,7 @@ class ExternalNavDataSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ExternalNavData.static_id) {
+    if (msgId != imc.ExternalNavData.staticId) {
       return null;
     }
 
@@ -14947,11 +14947,11 @@ class ExternalNavDataSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -14969,7 +14969,7 @@ class ExternalNavDataSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15041,7 +15041,7 @@ class DissolvedOxygenSerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15060,7 +15060,7 @@ class DissolvedOxygenSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DissolvedOxygen.static_id) {
+    if (msgId != imc.DissolvedOxygen.staticId) {
       return null;
     }
 
@@ -15071,11 +15071,11 @@ class DissolvedOxygenSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15093,7 +15093,7 @@ class DissolvedOxygenSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15145,7 +15145,7 @@ class AirSaturationSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15164,7 +15164,7 @@ class AirSaturationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AirSaturation.static_id) {
+    if (msgId != imc.AirSaturation.staticId) {
       return null;
     }
 
@@ -15175,11 +15175,11 @@ class AirSaturationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15197,7 +15197,7 @@ class AirSaturationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15248,7 +15248,7 @@ class ThrottleSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -15267,7 +15267,7 @@ class ThrottleSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Throttle.static_id) {
+    if (msgId != imc.Throttle.staticId) {
       return null;
     }
 
@@ -15278,11 +15278,11 @@ class ThrottleSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15300,7 +15300,7 @@ class ThrottleSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15350,7 +15350,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15369,7 +15369,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PH.static_id) {
+    if (msgId != imc.PH.staticId) {
       return null;
     }
 
@@ -15380,11 +15380,11 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15402,7 +15402,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15452,7 +15452,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15471,7 +15471,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Redox.static_id) {
+    if (msgId != imc.Redox.staticId) {
       return null;
     }
 
@@ -15482,11 +15482,11 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15504,7 +15504,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15580,7 +15580,7 @@ class CameraZoomSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CameraZoom.static_id) {
+    if (msgId != imc.CameraZoom.staticId) {
       return null;
     }
 
@@ -15591,11 +15591,11 @@ class CameraZoomSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15613,7 +15613,7 @@ class CameraZoomSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15674,7 +15674,7 @@ class SetThrusterActuationSerializer extends imc
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15693,7 +15693,7 @@ class SetThrusterActuationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetThrusterActuation.static_id) {
+    if (msgId != imc.SetThrusterActuation.staticId) {
       return null;
     }
 
@@ -15704,11 +15704,11 @@ class SetThrusterActuationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15726,7 +15726,7 @@ class SetThrusterActuationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15784,7 +15784,7 @@ class SetServoPositionSerializer extends imc
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15803,7 +15803,7 @@ class SetServoPositionSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetServoPosition.static_id) {
+    if (msgId != imc.SetServoPosition.staticId) {
       return null;
     }
 
@@ -15814,11 +15814,11 @@ class SetServoPositionSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15836,7 +15836,7 @@ class SetServoPositionSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -15894,7 +15894,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field angle
-    byteData.setFloat32(byteOffset, message.angle, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.angle, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -15914,7 +15914,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetControlSurfaceDeflection.static_id) {
+    if (msgId != imc.SetControlSurfaceDeflection.staticId) {
       return null;
     }
 
@@ -15925,11 +15925,11 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -15947,7 +15947,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16007,7 +16007,7 @@ class RemoteActionsRequestSerializer extends imc
     // field actions
     var actionsEncoded = utf8.encode(message.actions);
     var actionsSSize = actionsEncoded.length;
-    byteData.setUint16(byteOffset, actionsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, actionsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in actionsEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -16029,7 +16029,7 @@ class RemoteActionsRequestSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RemoteActionsRequest.static_id) {
+    if (msgId != imc.RemoteActionsRequest.staticId) {
       return null;
     }
 
@@ -16040,11 +16040,11 @@ class RemoteActionsRequestSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16062,7 +16062,7 @@ class RemoteActionsRequestSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16125,7 +16125,7 @@ class RemoteActionsSerializer
     // field actions
     var actionsEncoded = utf8.encode(message.actions);
     var actionsSSize = actionsEncoded.length;
-    byteData.setUint16(byteOffset, actionsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, actionsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in actionsEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -16147,7 +16147,7 @@ class RemoteActionsSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RemoteActions.static_id) {
+    if (msgId != imc.RemoteActions.staticId) {
       return null;
     }
 
@@ -16158,11 +16158,11 @@ class RemoteActionsSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16180,7 +16180,7 @@ class RemoteActionsSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16260,7 +16260,7 @@ class ButtonEventSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ButtonEvent.static_id) {
+    if (msgId != imc.ButtonEvent.staticId) {
       return null;
     }
 
@@ -16271,11 +16271,11 @@ class ButtonEventSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16293,7 +16293,7 @@ class ButtonEventSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16352,7 +16352,7 @@ class LcdControlSerializer
     // field text
     var textEncoded = utf8.encode(message.text);
     var textSSize = textEncoded.length;
-    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, textSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in textEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -16374,7 +16374,7 @@ class LcdControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LcdControl.static_id) {
+    if (msgId != imc.LcdControl.staticId) {
       return null;
     }
 
@@ -16385,11 +16385,11 @@ class LcdControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16407,7 +16407,7 @@ class LcdControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16471,10 +16471,10 @@ class PowerOperationSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field timeRemain
-    byteData.setFloat32(byteOffset, message.timeRemain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeRemain, imc.endianSer);
     byteOffset += 4;
     // field schedTime
-    byteData.setFloat64(byteOffset, message.schedTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.schedTime, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -16493,7 +16493,7 @@ class PowerOperationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PowerOperation.static_id) {
+    if (msgId != imc.PowerOperation.staticId) {
       return null;
     }
 
@@ -16504,11 +16504,11 @@ class PowerOperationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16526,7 +16526,7 @@ class PowerOperationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16586,7 +16586,7 @@ class PowerChannelControlSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -16595,7 +16595,7 @@ class PowerChannelControlSerializer extends imc
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field schedTime
-    byteData.setFloat64(byteOffset, message.schedTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.schedTime, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -16614,7 +16614,7 @@ class PowerChannelControlSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PowerChannelControl.static_id) {
+    if (msgId != imc.PowerChannelControl.staticId) {
       return null;
     }
 
@@ -16625,11 +16625,11 @@ class PowerChannelControlSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16647,7 +16647,7 @@ class PowerChannelControlSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16726,7 +16726,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.QueryPowerChannelState.static_id) {
+    if (msgId != imc.QueryPowerChannelState.staticId) {
       return null;
     }
 
@@ -16737,11 +16737,11 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16759,7 +16759,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16809,7 +16809,7 @@ class PowerChannelStateSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -16834,7 +16834,7 @@ class PowerChannelStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PowerChannelState.static_id) {
+    if (msgId != imc.PowerChannelState.staticId) {
       return null;
     }
 
@@ -16845,11 +16845,11 @@ class PowerChannelStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16867,7 +16867,7 @@ class PowerChannelStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -16931,7 +16931,7 @@ class LedBrightnessSerializer
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -16956,7 +16956,7 @@ class LedBrightnessSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LedBrightness.static_id) {
+    if (msgId != imc.LedBrightness.staticId) {
       return null;
     }
 
@@ -16967,11 +16967,11 @@ class LedBrightnessSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -16989,7 +16989,7 @@ class LedBrightnessSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17052,7 +17052,7 @@ class QueryLedBrightnessSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -17074,7 +17074,7 @@ class QueryLedBrightnessSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.QueryLedBrightness.static_id) {
+    if (msgId != imc.QueryLedBrightness.staticId) {
       return null;
     }
 
@@ -17085,11 +17085,11 @@ class QueryLedBrightnessSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17107,7 +17107,7 @@ class QueryLedBrightnessSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17167,7 +17167,7 @@ class SetLedBrightnessSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -17192,7 +17192,7 @@ class SetLedBrightnessSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetLedBrightness.static_id) {
+    if (msgId != imc.SetLedBrightness.staticId) {
       return null;
     }
 
@@ -17203,11 +17203,11 @@ class SetLedBrightnessSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17225,7 +17225,7 @@ class SetLedBrightnessSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17288,10 +17288,10 @@ class SetPWMSerializer
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field period
-    byteData.setUint32(byteOffset, message.period, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.period, imc.endianSer);
     byteOffset += 4;
     // field dutyCycle
-    byteData.setUint32(byteOffset, message.dutyCycle, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.dutyCycle, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -17310,7 +17310,7 @@ class SetPWMSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetPWM.static_id) {
+    if (msgId != imc.SetPWM.staticId) {
       return null;
     }
 
@@ -17321,11 +17321,11 @@ class SetPWMSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17343,7 +17343,7 @@ class SetPWMSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17402,10 +17402,10 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field period
-    byteData.setUint32(byteOffset, message.period, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.period, imc.endianSer);
     byteOffset += 4;
     // field dutyCycle
-    byteData.setUint32(byteOffset, message.dutyCycle, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.dutyCycle, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -17424,7 +17424,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PWM.static_id) {
+    if (msgId != imc.PWM.staticId) {
       return null;
     }
 
@@ -17435,11 +17435,11 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17457,7 +17457,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17515,64 +17515,64 @@ class EstimatedStateSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field height
-    byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.height, imc.endianSer);
     byteOffset += 4;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
     // field u
-    byteData.setFloat32(byteOffset, message.u, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.u, imc.endianSer);
     byteOffset += 4;
     // field v
-    byteData.setFloat32(byteOffset, message.v, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.v, imc.endianSer);
     byteOffset += 4;
     // field w
-    byteData.setFloat32(byteOffset, message.w, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.w, imc.endianSer);
     byteOffset += 4;
     // field vx
-    byteData.setFloat32(byteOffset, message.vx, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vx, imc.endianSer);
     byteOffset += 4;
     // field vy
-    byteData.setFloat32(byteOffset, message.vy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vy, imc.endianSer);
     byteOffset += 4;
     // field vz
-    byteData.setFloat32(byteOffset, message.vz, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vz, imc.endianSer);
     byteOffset += 4;
     // field p
-    byteData.setFloat32(byteOffset, message.p, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.p, imc.endianSer);
     byteOffset += 4;
     // field q
-    byteData.setFloat32(byteOffset, message.q, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.q, imc.endianSer);
     byteOffset += 4;
     // field r
-    byteData.setFloat32(byteOffset, message.r, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.r, imc.endianSer);
     byteOffset += 4;
     // field depth
-    byteData.setFloat32(byteOffset, message.depth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.depth, imc.endianSer);
     byteOffset += 4;
     // field alt
-    byteData.setFloat32(byteOffset, message.alt, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.alt, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -17591,7 +17591,7 @@ class EstimatedStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EstimatedState.static_id) {
+    if (msgId != imc.EstimatedState.staticId) {
       return null;
     }
 
@@ -17602,11 +17602,11 @@ class EstimatedStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17624,7 +17624,7 @@ class EstimatedStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17733,13 +17733,13 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -17758,7 +17758,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EstimatedStreamVelocity.static_id) {
+    if (msgId != imc.EstimatedStreamVelocity.staticId) {
       return null;
     }
 
@@ -17769,11 +17769,11 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17791,7 +17791,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17849,7 +17849,7 @@ class IndicatedSpeedSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -17868,7 +17868,7 @@ class IndicatedSpeedSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.IndicatedSpeed.static_id) {
+    if (msgId != imc.IndicatedSpeed.staticId) {
       return null;
     }
 
@@ -17879,11 +17879,11 @@ class IndicatedSpeedSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -17901,7 +17901,7 @@ class IndicatedSpeedSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -17952,7 +17952,7 @@ class TrueSpeedSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -17971,7 +17971,7 @@ class TrueSpeedSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrueSpeed.static_id) {
+    if (msgId != imc.TrueSpeed.staticId) {
       return null;
     }
 
@@ -17982,11 +17982,11 @@ class TrueSpeedSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18004,7 +18004,7 @@ class TrueSpeedSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18056,46 +18056,46 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
     // field p
-    byteData.setFloat32(byteOffset, message.p, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.p, imc.endianSer);
     byteOffset += 4;
     // field q
-    byteData.setFloat32(byteOffset, message.q, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.q, imc.endianSer);
     byteOffset += 4;
     // field r
-    byteData.setFloat32(byteOffset, message.r, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.r, imc.endianSer);
     byteOffset += 4;
     // field u
-    byteData.setFloat32(byteOffset, message.u, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.u, imc.endianSer);
     byteOffset += 4;
     // field v
-    byteData.setFloat32(byteOffset, message.v, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.v, imc.endianSer);
     byteOffset += 4;
     // field w
-    byteData.setFloat32(byteOffset, message.w, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.w, imc.endianSer);
     byteOffset += 4;
     // field biasPsi
-    byteData.setFloat32(byteOffset, message.biasPsi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.biasPsi, imc.endianSer);
     byteOffset += 4;
     // field biasR
-    byteData.setFloat32(byteOffset, message.biasR, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.biasR, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -18114,7 +18114,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.NavigationUncertainty.static_id) {
+    if (msgId != imc.NavigationUncertainty.staticId) {
       return null;
     }
 
@@ -18125,11 +18125,11 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18147,7 +18147,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18238,31 +18238,31 @@ class NavigationDataSerializer
     var byteOffset = offset;
 
     // field biasPsi
-    byteData.setFloat32(byteOffset, message.biasPsi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.biasPsi, imc.endianSer);
     byteOffset += 4;
     // field biasR
-    byteData.setFloat32(byteOffset, message.biasR, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.biasR, imc.endianSer);
     byteOffset += 4;
     // field cog
-    byteData.setFloat32(byteOffset, message.cog, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.cog, imc.endianSer);
     byteOffset += 4;
     // field cyaw
-    byteData.setFloat32(byteOffset, message.cyaw, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.cyaw, imc.endianSer);
     byteOffset += 4;
     // field lblRejLevel
-    byteData.setFloat32(byteOffset, message.lblRejLevel, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lblRejLevel, imc.endianSer);
     byteOffset += 4;
     // field gpsRejLevel
-    byteData.setFloat32(byteOffset, message.gpsRejLevel, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.gpsRejLevel, imc.endianSer);
     byteOffset += 4;
     // field customX
-    byteData.setFloat32(byteOffset, message.customX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.customX, imc.endianSer);
     byteOffset += 4;
     // field customY
-    byteData.setFloat32(byteOffset, message.customY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.customY, imc.endianSer);
     byteOffset += 4;
     // field customZ
-    byteData.setFloat32(byteOffset, message.customZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.customZ, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -18281,7 +18281,7 @@ class NavigationDataSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.NavigationData.static_id) {
+    if (msgId != imc.NavigationData.staticId) {
       return null;
     }
 
@@ -18292,11 +18292,11 @@ class NavigationDataSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18314,7 +18314,7 @@ class NavigationDataSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18390,7 +18390,7 @@ class GpsFixRejectionSerializer extends imc
     var byteOffset = offset;
 
     // field utcTime
-    byteData.setFloat32(byteOffset, message.utcTime, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.utcTime, imc.endianSer);
     byteOffset += 4;
     // field reason
     byteData.setUint8(byteOffset, message.reason.value);
@@ -18412,7 +18412,7 @@ class GpsFixRejectionSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GpsFixRejection.static_id) {
+    if (msgId != imc.GpsFixRejection.staticId) {
       return null;
     }
 
@@ -18423,11 +18423,11 @@ class GpsFixRejectionSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18445,7 +18445,7 @@ class GpsFixRejectionSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18504,7 +18504,7 @@ class LblRangeAcceptanceSerializer extends imc
     byteData.setUint8(byteOffset, message.id);
     byteOffset += 1;
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
     // field acceptance
     byteData.setUint8(byteOffset, message.acceptance.value);
@@ -18526,7 +18526,7 @@ class LblRangeAcceptanceSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LblRangeAcceptance.static_id) {
+    if (msgId != imc.LblRangeAcceptance.staticId) {
       return null;
     }
 
@@ -18537,11 +18537,11 @@ class LblRangeAcceptanceSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18559,7 +18559,7 @@ class LblRangeAcceptanceSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18624,10 +18624,10 @@ class DvlRejectionSerializer
     byteData.setUint8(byteOffset, message.reason.value);
     byteOffset += 1;
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field timestep
-    byteData.setFloat32(byteOffset, message.timestep, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timestep, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -18646,7 +18646,7 @@ class DvlRejectionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DvlRejection.static_id) {
+    if (msgId != imc.DvlRejection.staticId) {
       return null;
     }
 
@@ -18657,11 +18657,11 @@ class DvlRejectionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18679,7 +18679,7 @@ class DvlRejectionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18741,7 +18741,7 @@ class LblEstimateSerializer
 
     // field beacon
     if (message.beacon == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.beacon!.msgId;
@@ -18749,7 +18749,7 @@ class LblEstimateSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.beacon, byteData, byteOffset);
@@ -18757,19 +18757,19 @@ class LblEstimateSerializer
       }
     }
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field varX
-    byteData.setFloat32(byteOffset, message.varX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.varX, imc.endianSer);
     byteOffset += 4;
     // field varY
-    byteData.setFloat32(byteOffset, message.varY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.varY, imc.endianSer);
     byteOffset += 4;
     // field distance
-    byteData.setFloat32(byteOffset, message.distance, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.distance, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -18788,7 +18788,7 @@ class LblEstimateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LblEstimate.static_id) {
+    if (msgId != imc.LblEstimate.staticId) {
       return null;
     }
 
@@ -18799,11 +18799,11 @@ class LblEstimateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18821,7 +18821,7 @@ class LblEstimateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -18924,7 +18924,7 @@ class AlignmentStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AlignmentState.static_id) {
+    if (msgId != imc.AlignmentState.staticId) {
       return null;
     }
 
@@ -18935,11 +18935,11 @@ class AlignmentStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -18957,7 +18957,7 @@ class AlignmentStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19009,13 +19009,13 @@ class GroupStreamVelocitySerializer extends imc
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -19034,7 +19034,7 @@ class GroupStreamVelocitySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GroupStreamVelocity.static_id) {
+    if (msgId != imc.GroupStreamVelocity.staticId) {
       return null;
     }
 
@@ -19045,11 +19045,11 @@ class GroupStreamVelocitySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19067,7 +19067,7 @@ class GroupStreamVelocitySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19124,13 +19124,13 @@ class AirflowSerializer
     var byteOffset = offset;
 
     // field va
-    byteData.setFloat32(byteOffset, message.va, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.va, imc.endianSer);
     byteOffset += 4;
     // field aoa
-    byteData.setFloat32(byteOffset, message.aoa, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.aoa, imc.endianSer);
     byteOffset += 4;
     // field ssa
-    byteData.setFloat32(byteOffset, message.ssa, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssa, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -19149,7 +19149,7 @@ class AirflowSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Airflow.static_id) {
+    if (msgId != imc.Airflow.staticId) {
       return null;
     }
 
@@ -19160,11 +19160,11 @@ class AirflowSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19182,7 +19182,7 @@ class AirflowSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19240,7 +19240,7 @@ class DesiredHeadingSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -19259,7 +19259,7 @@ class DesiredHeadingSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredHeading.static_id) {
+    if (msgId != imc.DesiredHeading.staticId) {
       return null;
     }
 
@@ -19270,11 +19270,11 @@ class DesiredHeadingSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19292,7 +19292,7 @@ class DesiredHeadingSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19343,7 +19343,7 @@ class DesiredZSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
@@ -19365,7 +19365,7 @@ class DesiredZSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredZ.static_id) {
+    if (msgId != imc.DesiredZ.staticId) {
       return null;
     }
 
@@ -19376,11 +19376,11 @@ class DesiredZSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19398,7 +19398,7 @@ class DesiredZSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19453,7 +19453,7 @@ class DesiredSpeedSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -19475,7 +19475,7 @@ class DesiredSpeedSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredSpeed.static_id) {
+    if (msgId != imc.DesiredSpeed.staticId) {
       return null;
     }
 
@@ -19486,11 +19486,11 @@ class DesiredSpeedSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19508,7 +19508,7 @@ class DesiredSpeedSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19563,7 +19563,7 @@ class DesiredRollSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -19582,7 +19582,7 @@ class DesiredRollSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredRoll.static_id) {
+    if (msgId != imc.DesiredRoll.staticId) {
       return null;
     }
 
@@ -19593,11 +19593,11 @@ class DesiredRollSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19615,7 +19615,7 @@ class DesiredRollSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19667,7 +19667,7 @@ class DesiredPitchSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -19686,7 +19686,7 @@ class DesiredPitchSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredPitch.static_id) {
+    if (msgId != imc.DesiredPitch.staticId) {
       return null;
     }
 
@@ -19697,11 +19697,11 @@ class DesiredPitchSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19719,7 +19719,7 @@ class DesiredPitchSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19771,7 +19771,7 @@ class DesiredVerticalRateSerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -19790,7 +19790,7 @@ class DesiredVerticalRateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredVerticalRate.static_id) {
+    if (msgId != imc.DesiredVerticalRate.staticId) {
       return null;
     }
 
@@ -19801,11 +19801,11 @@ class DesiredVerticalRateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19823,7 +19823,7 @@ class DesiredVerticalRateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -19875,40 +19875,40 @@ class DesiredPathSerializer
     var byteOffset = offset;
 
     // field pathRef
-    byteData.setUint32(byteOffset, message.pathRef, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.pathRef, imc.endianSer);
     byteOffset += 4;
     // field startLat
-    byteData.setFloat64(byteOffset, message.startLat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.startLat, imc.endianSer);
     byteOffset += 8;
     // field startLon
-    byteData.setFloat64(byteOffset, message.startLon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.startLon, imc.endianSer);
     byteOffset += 8;
     // field startZ
-    byteData.setFloat32(byteOffset, message.startZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.startZ, imc.endianSer);
     byteOffset += 4;
     // field startZUnits
     byteData.setUint8(byteOffset, message.startZUnits.value);
     byteOffset += 1;
     // field endLat
-    byteData.setFloat64(byteOffset, message.endLat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.endLat, imc.endianSer);
     byteOffset += 8;
     // field endLon
-    byteData.setFloat64(byteOffset, message.endLon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.endLon, imc.endianSer);
     byteOffset += 8;
     // field endZ
-    byteData.setFloat32(byteOffset, message.endZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.endZ, imc.endianSer);
     byteOffset += 4;
     // field endZUnits
     byteData.setUint8(byteOffset, message.endZUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field lradius
-    byteData.setFloat32(byteOffset, message.lradius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lradius, imc.endianSer);
     byteOffset += 4;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
@@ -19930,7 +19930,7 @@ class DesiredPathSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredPath.static_id) {
+    if (msgId != imc.DesiredPath.staticId) {
       return null;
     }
 
@@ -19941,11 +19941,11 @@ class DesiredPathSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -19963,7 +19963,7 @@ class DesiredPathSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20051,22 +20051,22 @@ class DesiredControlSerializer
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
     // field k
-    byteData.setFloat64(byteOffset, message.k, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.k, imc.endianSer);
     byteOffset += 8;
     // field m
-    byteData.setFloat64(byteOffset, message.m, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.m, imc.endianSer);
     byteOffset += 8;
     // field n
-    byteData.setFloat64(byteOffset, message.n, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.n, imc.endianSer);
     byteOffset += 8;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
@@ -20088,7 +20088,7 @@ class DesiredControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredControl.static_id) {
+    if (msgId != imc.DesiredControl.staticId) {
       return null;
     }
 
@@ -20099,11 +20099,11 @@ class DesiredControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20121,7 +20121,7 @@ class DesiredControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20192,7 +20192,7 @@ class DesiredHeadingRateSerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -20211,7 +20211,7 @@ class DesiredHeadingRateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredHeadingRate.static_id) {
+    if (msgId != imc.DesiredHeadingRate.staticId) {
       return null;
     }
 
@@ -20222,11 +20222,11 @@ class DesiredHeadingRateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20244,7 +20244,7 @@ class DesiredHeadingRateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20296,22 +20296,22 @@ class DesiredVelocitySerializer extends imc
     var byteOffset = offset;
 
     // field u
-    byteData.setFloat64(byteOffset, message.u, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.u, imc.endianSer);
     byteOffset += 8;
     // field v
-    byteData.setFloat64(byteOffset, message.v, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.v, imc.endianSer);
     byteOffset += 8;
     // field w
-    byteData.setFloat64(byteOffset, message.w, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.w, imc.endianSer);
     byteOffset += 8;
     // field p
-    byteData.setFloat64(byteOffset, message.p, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.p, imc.endianSer);
     byteOffset += 8;
     // field q
-    byteData.setFloat64(byteOffset, message.q, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.q, imc.endianSer);
     byteOffset += 8;
     // field r
-    byteData.setFloat64(byteOffset, message.r, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.r, imc.endianSer);
     byteOffset += 8;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
@@ -20333,7 +20333,7 @@ class DesiredVelocitySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredVelocity.static_id) {
+    if (msgId != imc.DesiredVelocity.staticId) {
       return null;
     }
 
@@ -20344,11 +20344,11 @@ class DesiredVelocitySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20366,7 +20366,7 @@ class DesiredVelocitySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20437,61 +20437,61 @@ class PathControlStateSerializer extends imc
     var byteOffset = offset;
 
     // field pathRef
-    byteData.setUint32(byteOffset, message.pathRef, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.pathRef, imc.endianSer);
     byteOffset += 4;
     // field startLat
-    byteData.setFloat64(byteOffset, message.startLat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.startLat, imc.endianSer);
     byteOffset += 8;
     // field startLon
-    byteData.setFloat64(byteOffset, message.startLon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.startLon, imc.endianSer);
     byteOffset += 8;
     // field startZ
-    byteData.setFloat32(byteOffset, message.startZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.startZ, imc.endianSer);
     byteOffset += 4;
     // field startZUnits
     byteData.setUint8(byteOffset, message.startZUnits.value);
     byteOffset += 1;
     // field endLat
-    byteData.setFloat64(byteOffset, message.endLat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.endLat, imc.endianSer);
     byteOffset += 8;
     // field endLon
-    byteData.setFloat64(byteOffset, message.endLon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.endLon, imc.endianSer);
     byteOffset += 8;
     // field endZ
-    byteData.setFloat32(byteOffset, message.endZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.endZ, imc.endianSer);
     byteOffset += 4;
     // field endZUnits
     byteData.setUint8(byteOffset, message.endZUnits.value);
     byteOffset += 1;
     // field lradius
-    byteData.setFloat32(byteOffset, message.lradius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lradius, imc.endianSer);
     byteOffset += 4;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field vx
-    byteData.setFloat32(byteOffset, message.vx, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vx, imc.endianSer);
     byteOffset += 4;
     // field vy
-    byteData.setFloat32(byteOffset, message.vy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vy, imc.endianSer);
     byteOffset += 4;
     // field vz
-    byteData.setFloat32(byteOffset, message.vz, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vz, imc.endianSer);
     byteOffset += 4;
     // field courseError
-    byteData.setFloat32(byteOffset, message.courseError, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.courseError, imc.endianSer);
     byteOffset += 4;
     // field eta
-    byteData.setUint16(byteOffset, message.eta, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.eta, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -20510,7 +20510,7 @@ class PathControlStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PathControlState.static_id) {
+    if (msgId != imc.PathControlState.staticId) {
       return null;
     }
 
@@ -20521,11 +20521,11 @@ class PathControlStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20543,7 +20543,7 @@ class PathControlStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20650,13 +20650,13 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
 
     // field k
-    byteData.setFloat64(byteOffset, message.k, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.k, imc.endianSer);
     byteOffset += 8;
     // field m
-    byteData.setFloat64(byteOffset, message.m, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.m, imc.endianSer);
     byteOffset += 8;
     // field n
-    byteData.setFloat64(byteOffset, message.n, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.n, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -20675,7 +20675,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AllocatedControlTorques.static_id) {
+    if (msgId != imc.AllocatedControlTorques.staticId) {
       return null;
     }
 
@@ -20686,11 +20686,11 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20708,7 +20708,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20766,16 +20766,16 @@ class ControlParcelSerializer
     var byteOffset = offset;
 
     // field p
-    byteData.setFloat32(byteOffset, message.p, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.p, imc.endianSer);
     byteOffset += 4;
     // field i
-    byteData.setFloat32(byteOffset, message.i, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.i, imc.endianSer);
     byteOffset += 4;
     // field d
-    byteData.setFloat32(byteOffset, message.d, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.d, imc.endianSer);
     byteOffset += 4;
     // field a
-    byteData.setFloat32(byteOffset, message.a, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.a, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -20794,7 +20794,7 @@ class ControlParcelSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ControlParcel.static_id) {
+    if (msgId != imc.ControlParcel.staticId) {
       return null;
     }
 
@@ -20805,11 +20805,11 @@ class ControlParcelSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20827,7 +20827,7 @@ class ControlParcelSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20905,7 +20905,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Brake.static_id) {
+    if (msgId != imc.Brake.staticId) {
       return null;
     }
 
@@ -20916,11 +20916,11 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -20938,7 +20938,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -20990,34 +20990,34 @@ class DesiredLinearStateSerializer extends imc
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat64(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.x, imc.endianSer);
     byteOffset += 8;
     // field y
-    byteData.setFloat64(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.y, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat64(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.z, imc.endianSer);
     byteOffset += 8;
     // field vx
-    byteData.setFloat64(byteOffset, message.vx, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.vx, imc.endianSer);
     byteOffset += 8;
     // field vy
-    byteData.setFloat64(byteOffset, message.vy, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.vy, imc.endianSer);
     byteOffset += 8;
     // field vz
-    byteData.setFloat64(byteOffset, message.vz, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.vz, imc.endianSer);
     byteOffset += 8;
     // field ax
-    byteData.setFloat64(byteOffset, message.ax, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.ax, imc.endianSer);
     byteOffset += 8;
     // field ay
-    byteData.setFloat64(byteOffset, message.ay, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.ay, imc.endianSer);
     byteOffset += 8;
     // field az
-    byteData.setFloat64(byteOffset, message.az, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.az, imc.endianSer);
     byteOffset += 8;
     // field flags
-    byteData.setUint16(byteOffset, message.flags.value, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.flags.value, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -21036,7 +21036,7 @@ class DesiredLinearStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredLinearState.static_id) {
+    if (msgId != imc.DesiredLinearState.staticId) {
       return null;
     }
 
@@ -21047,11 +21047,11 @@ class DesiredLinearStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21069,7 +21069,7 @@ class DesiredLinearStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -21149,7 +21149,7 @@ class DesiredThrottleSerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -21168,7 +21168,7 @@ class DesiredThrottleSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DesiredThrottle.static_id) {
+    if (msgId != imc.DesiredThrottle.staticId) {
       return null;
     }
 
@@ -21179,11 +21179,11 @@ class DesiredThrottleSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21201,7 +21201,7 @@ class DesiredThrottleSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -21251,39 +21251,39 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field roll
-    byteData.setFloat64(byteOffset, message.roll, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.roll, imc.endianSer);
     byteOffset += 8;
     // field pitch
-    byteData.setFloat64(byteOffset, message.pitch, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.pitch, imc.endianSer);
     byteOffset += 8;
     // field yaw
-    byteData.setFloat64(byteOffset, message.yaw, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.yaw, imc.endianSer);
     byteOffset += 8;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -21305,7 +21305,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Goto.static_id) {
+    if (msgId != imc.Goto.staticId) {
       return null;
     }
 
@@ -21316,11 +21316,11 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21338,7 +21338,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -21424,31 +21424,31 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
@@ -21456,7 +21456,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -21478,7 +21478,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PopUp.static_id) {
+    if (msgId != imc.PopUp.staticId) {
       return null;
     }
 
@@ -21489,11 +21489,11 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21511,7 +21511,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -21601,7 +21601,7 @@ class TeleoperationSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -21623,7 +21623,7 @@ class TeleoperationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Teleoperation.static_id) {
+    if (msgId != imc.Teleoperation.staticId) {
       return null;
     }
 
@@ -21634,11 +21634,11 @@ class TeleoperationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21656,7 +21656,7 @@ class TeleoperationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -21713,25 +21713,25 @@ class LoiterSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -21740,13 +21740,13 @@ class LoiterSerializer
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
     // field length
-    byteData.setFloat32(byteOffset, message.length, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.length, imc.endianSer);
     byteOffset += 4;
     // field bearing
-    byteData.setFloat64(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 8;
     // field direction
     byteData.setUint8(byteOffset, message.direction.value);
@@ -21754,7 +21754,7 @@ class LoiterSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -21776,7 +21776,7 @@ class LoiterSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Loiter.static_id) {
+    if (msgId != imc.Loiter.staticId) {
       return null;
     }
 
@@ -21787,11 +21787,11 @@ class LoiterSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21809,7 +21809,7 @@ class LoiterSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -21906,12 +21906,12 @@ class IdleManeuverSerializer
     var byteOffset = offset;
 
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -21933,7 +21933,7 @@ class IdleManeuverSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.IdleManeuver.static_id) {
+    if (msgId != imc.IdleManeuver.staticId) {
       return null;
     }
 
@@ -21944,11 +21944,11 @@ class IdleManeuverSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -21966,7 +21966,7 @@ class IdleManeuverSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22028,7 +22028,7 @@ class LowLevelControlSerializer extends imc
 
     // field control
     if (message.control == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.control!.msgId;
@@ -22036,7 +22036,7 @@ class LowLevelControlSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.control, byteData, byteOffset);
@@ -22044,12 +22044,12 @@ class LowLevelControlSerializer extends imc
       }
     }
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -22071,7 +22071,7 @@ class LowLevelControlSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LowLevelControl.static_id) {
+    if (msgId != imc.LowLevelControl.staticId) {
       return null;
     }
 
@@ -22082,11 +22082,11 @@ class LowLevelControlSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -22104,7 +22104,7 @@ class LowLevelControlSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22183,40 +22183,40 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field bearing
-    byteData.setFloat64(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 8;
     // field crossAngle
-    byteData.setFloat64(byteOffset, message.crossAngle, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.crossAngle, imc.endianSer);
     byteOffset += 8;
     // field width
-    byteData.setFloat32(byteOffset, message.width, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.width, imc.endianSer);
     byteOffset += 4;
     // field length
-    byteData.setFloat32(byteOffset, message.length, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.length, imc.endianSer);
     byteOffset += 4;
     // field hstep
-    byteData.setFloat32(byteOffset, message.hstep, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.hstep, imc.endianSer);
     byteOffset += 4;
     // field coff
     byteData.setUint8(byteOffset, message.coff);
@@ -22230,7 +22230,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -22252,7 +22252,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Rows.static_id) {
+    if (msgId != imc.Rows.staticId) {
       return null;
     }
 
@@ -22263,11 +22263,11 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -22285,7 +22285,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22387,29 +22387,29 @@ class FollowPathSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field points
     if (message.points.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -22421,20 +22421,20 @@ class FollowPathSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.points[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -22456,7 +22456,7 @@ class FollowPathSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FollowPath.static_id) {
+    if (msgId != imc.FollowPath.staticId) {
       return null;
     }
 
@@ -22467,11 +22467,11 @@ class FollowPathSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -22489,7 +22489,7 @@ class FollowPathSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22590,13 +22590,13 @@ class PathPointSerializer
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -22615,7 +22615,7 @@ class PathPointSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PathPoint.static_id) {
+    if (msgId != imc.PathPoint.staticId) {
       return null;
     }
 
@@ -22626,11 +22626,11 @@ class PathPointSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -22648,7 +22648,7 @@ class PathPointSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22704,28 +22704,28 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field amplitude
-    byteData.setFloat32(byteOffset, message.amplitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.amplitude, imc.endianSer);
     byteOffset += 4;
     // field pitch
-    byteData.setFloat32(byteOffset, message.pitch, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.pitch, imc.endianSer);
     byteOffset += 4;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -22733,7 +22733,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -22755,7 +22755,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.YoYo.static_id) {
+    if (msgId != imc.YoYo.staticId) {
       return null;
     }
 
@@ -22766,11 +22766,11 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -22788,7 +22788,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22888,7 +22888,7 @@ class TeleoperationDoneSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TeleoperationDone.static_id) {
+    if (msgId != imc.TeleoperationDone.staticId) {
       return null;
     }
 
@@ -22899,11 +22899,11 @@ class TeleoperationDoneSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -22921,7 +22921,7 @@ class TeleoperationDoneSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -22969,25 +22969,25 @@ class StationKeepingSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -22995,7 +22995,7 @@ class StationKeepingSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -23017,7 +23017,7 @@ class StationKeepingSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.StationKeeping.static_id) {
+    if (msgId != imc.StationKeeping.staticId) {
       return null;
     }
 
@@ -23028,11 +23028,11 @@ class StationKeepingSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -23050,7 +23050,7 @@ class StationKeepingSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -23131,34 +23131,34 @@ class ElevatorSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
     byteOffset += 1;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field startZ
-    byteData.setFloat32(byteOffset, message.startZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.startZ, imc.endianSer);
     byteOffset += 4;
     // field startZUnits
     byteData.setUint8(byteOffset, message.startZUnits.value);
     byteOffset += 1;
     // field endZ
-    byteData.setFloat32(byteOffset, message.endZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.endZ, imc.endianSer);
     byteOffset += 4;
     // field endZUnits
     byteData.setUint8(byteOffset, message.endZUnits.value);
     byteOffset += 1;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -23166,7 +23166,7 @@ class ElevatorSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -23188,7 +23188,7 @@ class ElevatorSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Elevator.static_id) {
+    if (msgId != imc.Elevator.staticId) {
       return null;
     }
 
@@ -23199,11 +23199,11 @@ class ElevatorSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -23221,7 +23221,7 @@ class ElevatorSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -23312,29 +23312,29 @@ class FollowTrajectorySerializer extends imc
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field points
     if (message.points.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -23346,20 +23346,20 @@ class FollowTrajectorySerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.points[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -23381,7 +23381,7 @@ class FollowTrajectorySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FollowTrajectory.static_id) {
+    if (msgId != imc.FollowTrajectory.staticId) {
       return null;
     }
 
@@ -23392,11 +23392,11 @@ class FollowTrajectorySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -23414,7 +23414,7 @@ class FollowTrajectorySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -23516,16 +23516,16 @@ class TrajectoryPointSerializer extends imc
     var byteOffset = offset;
 
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field t
-    byteData.setFloat32(byteOffset, message.t, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.t, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -23544,7 +23544,7 @@ class TrajectoryPointSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrajectoryPoint.static_id) {
+    if (msgId != imc.TrajectoryPoint.staticId) {
       return null;
     }
 
@@ -23555,11 +23555,11 @@ class TrajectoryPointSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -23577,7 +23577,7 @@ class TrajectoryPointSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -23638,12 +23638,12 @@ class CustomManeuverSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -23651,7 +23651,7 @@ class CustomManeuverSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -23673,7 +23673,7 @@ class CustomManeuverSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CustomManeuver.static_id) {
+    if (msgId != imc.CustomManeuver.staticId) {
       return null;
     }
 
@@ -23684,11 +23684,11 @@ class CustomManeuverSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -23706,7 +23706,7 @@ class CustomManeuverSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -23776,26 +23776,26 @@ class VehicleFormationSerializer extends imc
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field points
     if (message.points.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -23807,19 +23807,19 @@ class VehicleFormationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.points[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field participants
     if (message.participants.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -23831,23 +23831,23 @@ class VehicleFormationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.participants[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field startTime
-    byteData.setFloat64(byteOffset, message.startTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.startTime, imc.endianSer);
     byteOffset += 8;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -23869,7 +23869,7 @@ class VehicleFormationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleFormation.static_id) {
+    if (msgId != imc.VehicleFormation.staticId) {
       return null;
     }
 
@@ -23880,11 +23880,11 @@ class VehicleFormationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -23902,7 +23902,7 @@ class VehicleFormationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24029,16 +24029,16 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
 
     // field vid
-    byteData.setUint16(byteOffset, message.vid, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.vid, imc.endianSer);
     byteOffset += 2;
     // field offX
-    byteData.setFloat32(byteOffset, message.offX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.offX, imc.endianSer);
     byteOffset += 4;
     // field offY
-    byteData.setFloat32(byteOffset, message.offY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.offY, imc.endianSer);
     byteOffset += 4;
     // field offZ
-    byteData.setFloat32(byteOffset, message.offZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.offZ, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -24058,7 +24058,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleFormationParticipant.static_id) {
+    if (msgId != imc.VehicleFormationParticipant.staticId) {
       return null;
     }
 
@@ -24069,11 +24069,11 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24091,7 +24091,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24167,7 +24167,7 @@ class StopManeuverSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.StopManeuver.static_id) {
+    if (msgId != imc.StopManeuver.staticId) {
       return null;
     }
 
@@ -24178,11 +24178,11 @@ class StopManeuverSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24200,7 +24200,7 @@ class StopManeuverSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24248,7 +24248,7 @@ class RegisterManeuverSerializer extends imc
     var byteOffset = offset;
 
     // field mid
-    byteData.setUint16(byteOffset, message.mid, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.mid, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -24267,7 +24267,7 @@ class RegisterManeuverSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RegisterManeuver.static_id) {
+    if (msgId != imc.RegisterManeuver.staticId) {
       return null;
     }
 
@@ -24278,11 +24278,11 @@ class RegisterManeuverSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24300,7 +24300,7 @@ class RegisterManeuverSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24355,12 +24355,12 @@ class ManeuverControlStateSerializer extends imc
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
     // field eta
-    byteData.setUint16(byteOffset, message.eta, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.eta, imc.endianSer);
     byteOffset += 2;
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -24382,7 +24382,7 @@ class ManeuverControlStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ManeuverControlState.static_id) {
+    if (msgId != imc.ManeuverControlState.staticId) {
       return null;
     }
 
@@ -24393,11 +24393,11 @@ class ManeuverControlStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24415,7 +24415,7 @@ class ManeuverControlStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24480,25 +24480,25 @@ class FollowSystemSerializer
     var byteOffset = offset;
 
     // field system
-    byteData.setUint16(byteOffset, message.system, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.system, imc.endianSer);
     byteOffset += 2;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
@@ -24520,7 +24520,7 @@ class FollowSystemSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FollowSystem.static_id) {
+    if (msgId != imc.FollowSystem.staticId) {
       return null;
     }
 
@@ -24531,11 +24531,11 @@ class FollowSystemSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24553,7 +24553,7 @@ class FollowSystemSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24625,28 +24625,28 @@ class CommsRelaySerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field sysA
-    byteData.setUint16(byteOffset, message.sysA, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.sysA, imc.endianSer);
     byteOffset += 2;
     // field sysB
-    byteData.setUint16(byteOffset, message.sysB, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.sysB, imc.endianSer);
     byteOffset += 2;
     // field moveThreshold
-    byteData.setFloat32(byteOffset, message.moveThreshold, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.moveThreshold, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -24665,7 +24665,7 @@ class CommsRelaySerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CommsRelay.static_id) {
+    if (msgId != imc.CommsRelay.staticId) {
       return null;
     }
 
@@ -24676,11 +24676,11 @@ class CommsRelaySerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24698,7 +24698,7 @@ class CommsRelaySerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24770,26 +24770,26 @@ class CoverAreaSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field polygon
     if (message.polygon.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -24801,20 +24801,20 @@ class CoverAreaSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.polygon[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -24836,7 +24836,7 @@ class CoverAreaSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CoverArea.static_id) {
+    if (msgId != imc.CoverArea.staticId) {
       return null;
     }
 
@@ -24847,11 +24847,11 @@ class CoverAreaSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -24869,7 +24869,7 @@ class CoverAreaSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -24968,10 +24968,10 @@ class PolygonVertexSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -24990,7 +24990,7 @@ class PolygonVertexSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PolygonVertex.static_id) {
+    if (msgId != imc.PolygonVertex.staticId) {
       return null;
     }
 
@@ -25001,11 +25001,11 @@ class PolygonVertexSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -25023,7 +25023,7 @@ class PolygonVertexSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -25078,37 +25078,37 @@ class CompassCalibrationSerializer extends imc
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field pitch
-    byteData.setFloat32(byteOffset, message.pitch, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.pitch, imc.endianSer);
     byteOffset += 4;
     // field amplitude
-    byteData.setFloat32(byteOffset, message.amplitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.amplitude, imc.endianSer);
     byteOffset += 4;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
     // field direction
     byteData.setUint8(byteOffset, message.direction.value);
@@ -25116,7 +25116,7 @@ class CompassCalibrationSerializer extends imc
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25138,7 +25138,7 @@ class CompassCalibrationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CompassCalibration.static_id) {
+    if (msgId != imc.CompassCalibration.staticId) {
       return null;
     }
 
@@ -25149,11 +25149,11 @@ class CompassCalibrationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -25171,7 +25171,7 @@ class CompassCalibrationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -25268,7 +25268,7 @@ class FormationParametersSerializer extends imc
     // field formationName
     var formationNameEncoded = utf8.encode(message.formationName);
     var formationNameSSize = formationNameEncoded.length;
-    byteData.setUint16(byteOffset, formationNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, formationNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in formationNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25278,7 +25278,7 @@ class FormationParametersSerializer extends imc
     byteOffset += 1;
     // field participants
     if (message.participants.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -25290,20 +25290,20 @@ class FormationParametersSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.participants[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25325,7 +25325,7 @@ class FormationParametersSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationParameters.static_id) {
+    if (msgId != imc.FormationParameters.staticId) {
       return null;
     }
 
@@ -25336,11 +25336,11 @@ class FormationParametersSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -25358,7 +25358,7 @@ class FormationParametersSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -25456,7 +25456,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     // field groupName
     var groupNameEncoded = utf8.encode(message.groupName);
     var groupNameSSize = groupNameEncoded.length;
-    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in groupNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25464,7 +25464,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     // field formationName
     var formationNameEncoded = utf8.encode(message.formationName);
     var formationNameSSize = formationNameEncoded.length;
-    byteData.setUint16(byteOffset, formationNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, formationNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in formationNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25472,7 +25472,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25480,42 +25480,42 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     // field description
     var descriptionEncoded = utf8.encode(message.description);
     var descriptionSSize = descriptionEncoded.length;
-    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in descriptionEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field leaderSpeed
-    byteData.setFloat32(byteOffset, message.leaderSpeed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderSpeed, imc.endianSer);
     byteOffset += 4;
     // field leaderBankLim
-    byteData.setFloat32(byteOffset, message.leaderBankLim, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderBankLim, imc.endianSer);
     byteOffset += 4;
     // field posSimErrLim
-    byteData.setFloat32(byteOffset, message.posSimErrLim, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.posSimErrLim, imc.endianSer);
     byteOffset += 4;
     // field posSimErrWrn
-    byteData.setFloat32(byteOffset, message.posSimErrWrn, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.posSimErrWrn, imc.endianSer);
     byteOffset += 4;
     // field posSimErrTimeout
-    byteData.setUint16(byteOffset, message.posSimErrTimeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.posSimErrTimeout, imc.endianSer);
     byteOffset += 2;
     // field convergMax
-    byteData.setFloat32(byteOffset, message.convergMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.convergMax, imc.endianSer);
     byteOffset += 4;
     // field convergTimeout
-    byteData.setUint16(byteOffset, message.convergTimeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.convergTimeout, imc.endianSer);
     byteOffset += 2;
     // field commsTimeout
-    byteData.setUint16(byteOffset, message.commsTimeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.commsTimeout, imc.endianSer);
     byteOffset += 2;
     // field turbLim
-    byteData.setFloat32(byteOffset, message.turbLim, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.turbLim, imc.endianSer);
     byteOffset += 4;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -25537,7 +25537,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationPlanExecution.static_id) {
+    if (msgId != imc.FormationPlanExecution.staticId) {
       return null;
     }
 
@@ -25548,11 +25548,11 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -25570,7 +25570,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -25691,19 +25691,19 @@ class FollowReferenceSerializer extends imc
     var byteOffset = offset;
 
     // field controlSrc
-    byteData.setUint16(byteOffset, message.controlSrc, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.controlSrc, imc.endianSer);
     byteOffset += 2;
     // field controlEnt
     byteData.setUint8(byteOffset, message.controlEnt);
     byteOffset += 1;
     // field timeout
-    byteData.setFloat32(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 4;
     // field loiterRadius
-    byteData.setFloat32(byteOffset, message.loiterRadius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.loiterRadius, imc.endianSer);
     byteOffset += 4;
     // field altitudeInterval
-    byteData.setFloat32(byteOffset, message.altitudeInterval, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.altitudeInterval, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -25722,7 +25722,7 @@ class FollowReferenceSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FollowReference.static_id) {
+    if (msgId != imc.FollowReference.staticId) {
       return null;
     }
 
@@ -25733,11 +25733,11 @@ class FollowReferenceSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -25755,7 +25755,7 @@ class FollowReferenceSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -25822,7 +25822,7 @@ class ReferenceSerializer
     byteOffset += 1;
     // field speed
     if (message.speed == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.speed!.msgId;
@@ -25830,7 +25830,7 @@ class ReferenceSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.speed, byteData, byteOffset);
@@ -25839,7 +25839,7 @@ class ReferenceSerializer
     }
     // field z
     if (message.z == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.z!.msgId;
@@ -25847,7 +25847,7 @@ class ReferenceSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.z, byteData, byteOffset);
@@ -25855,13 +25855,13 @@ class ReferenceSerializer
       }
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -25880,7 +25880,7 @@ class ReferenceSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Reference.static_id) {
+    if (msgId != imc.Reference.staticId) {
       return null;
     }
 
@@ -25891,11 +25891,11 @@ class ReferenceSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -25913,7 +25913,7 @@ class ReferenceSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -26014,14 +26014,14 @@ class FollowRefStateSerializer
     var byteOffset = offset;
 
     // field controlSrc
-    byteData.setUint16(byteOffset, message.controlSrc, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.controlSrc, imc.endianSer);
     byteOffset += 2;
     // field controlEnt
     byteData.setUint8(byteOffset, message.controlEnt);
     byteOffset += 1;
     // field reference
     if (message.reference == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.reference!.msgId;
@@ -26029,7 +26029,7 @@ class FollowRefStateSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.reference, byteData, byteOffset);
@@ -26059,7 +26059,7 @@ class FollowRefStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FollowRefState.static_id) {
+    if (msgId != imc.FollowRefState.staticId) {
       return null;
     }
 
@@ -26070,11 +26070,11 @@ class FollowRefStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -26092,7 +26092,7 @@ class FollowRefStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -26174,62 +26174,62 @@ class FormationMonitorSerializer extends imc
     var byteOffset = offset;
 
     // field axCmd
-    byteData.setFloat32(byteOffset, message.axCmd, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.axCmd, imc.endianSer);
     byteOffset += 4;
     // field ayCmd
-    byteData.setFloat32(byteOffset, message.ayCmd, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ayCmd, imc.endianSer);
     byteOffset += 4;
     // field azCmd
-    byteData.setFloat32(byteOffset, message.azCmd, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.azCmd, imc.endianSer);
     byteOffset += 4;
     // field axDes
-    byteData.setFloat32(byteOffset, message.axDes, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.axDes, imc.endianSer);
     byteOffset += 4;
     // field ayDes
-    byteData.setFloat32(byteOffset, message.ayDes, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ayDes, imc.endianSer);
     byteOffset += 4;
     // field azDes
-    byteData.setFloat32(byteOffset, message.azDes, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.azDes, imc.endianSer);
     byteOffset += 4;
     // field virtErrX
-    byteData.setFloat32(byteOffset, message.virtErrX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.virtErrX, imc.endianSer);
     byteOffset += 4;
     // field virtErrY
-    byteData.setFloat32(byteOffset, message.virtErrY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.virtErrY, imc.endianSer);
     byteOffset += 4;
     // field virtErrZ
-    byteData.setFloat32(byteOffset, message.virtErrZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.virtErrZ, imc.endianSer);
     byteOffset += 4;
     // field surfFdbkX
-    byteData.setFloat32(byteOffset, message.surfFdbkX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.surfFdbkX, imc.endianSer);
     byteOffset += 4;
     // field surfFdbkY
-    byteData.setFloat32(byteOffset, message.surfFdbkY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.surfFdbkY, imc.endianSer);
     byteOffset += 4;
     // field surfFdbkZ
-    byteData.setFloat32(byteOffset, message.surfFdbkZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.surfFdbkZ, imc.endianSer);
     byteOffset += 4;
     // field surfUnknX
-    byteData.setFloat32(byteOffset, message.surfUnknX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.surfUnknX, imc.endianSer);
     byteOffset += 4;
     // field surfUnknY
-    byteData.setFloat32(byteOffset, message.surfUnknY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.surfUnknY, imc.endianSer);
     byteOffset += 4;
     // field surfUnknZ
-    byteData.setFloat32(byteOffset, message.surfUnknZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.surfUnknZ, imc.endianSer);
     byteOffset += 4;
     // field ssX
-    byteData.setFloat32(byteOffset, message.ssX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssX, imc.endianSer);
     byteOffset += 4;
     // field ssY
-    byteData.setFloat32(byteOffset, message.ssY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssY, imc.endianSer);
     byteOffset += 4;
     // field ssZ
-    byteData.setFloat32(byteOffset, message.ssZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssZ, imc.endianSer);
     byteOffset += 4;
     // field relState
     if (message.relState.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -26241,14 +26241,14 @@ class FormationMonitorSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.relState[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -26268,7 +26268,7 @@ class FormationMonitorSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationMonitor.static_id) {
+    if (msgId != imc.FormationMonitor.staticId) {
       return null;
     }
 
@@ -26279,11 +26279,11 @@ class FormationMonitorSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -26301,7 +26301,7 @@ class FormationMonitorSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -26429,73 +26429,73 @@ class RelativeStateSerializer
     // field sId
     var sIdEncoded = utf8.encode(message.sId);
     var sIdSSize = sIdEncoded.length;
-    byteData.setUint16(byteOffset, sIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field dist
-    byteData.setFloat32(byteOffset, message.dist, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.dist, imc.endianSer);
     byteOffset += 4;
     // field err
-    byteData.setFloat32(byteOffset, message.err, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.err, imc.endianSer);
     byteOffset += 4;
     // field ctrlImp
-    byteData.setFloat32(byteOffset, message.ctrlImp, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ctrlImp, imc.endianSer);
     byteOffset += 4;
     // field relDirX
-    byteData.setFloat32(byteOffset, message.relDirX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.relDirX, imc.endianSer);
     byteOffset += 4;
     // field relDirY
-    byteData.setFloat32(byteOffset, message.relDirY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.relDirY, imc.endianSer);
     byteOffset += 4;
     // field relDirZ
-    byteData.setFloat32(byteOffset, message.relDirZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.relDirZ, imc.endianSer);
     byteOffset += 4;
     // field errX
-    byteData.setFloat32(byteOffset, message.errX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.errX, imc.endianSer);
     byteOffset += 4;
     // field errY
-    byteData.setFloat32(byteOffset, message.errY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.errY, imc.endianSer);
     byteOffset += 4;
     // field errZ
-    byteData.setFloat32(byteOffset, message.errZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.errZ, imc.endianSer);
     byteOffset += 4;
     // field rfErrX
-    byteData.setFloat32(byteOffset, message.rfErrX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rfErrX, imc.endianSer);
     byteOffset += 4;
     // field rfErrY
-    byteData.setFloat32(byteOffset, message.rfErrY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rfErrY, imc.endianSer);
     byteOffset += 4;
     // field rfErrZ
-    byteData.setFloat32(byteOffset, message.rfErrZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rfErrZ, imc.endianSer);
     byteOffset += 4;
     // field rfErrVx
-    byteData.setFloat32(byteOffset, message.rfErrVx, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rfErrVx, imc.endianSer);
     byteOffset += 4;
     // field rfErrVy
-    byteData.setFloat32(byteOffset, message.rfErrVy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rfErrVy, imc.endianSer);
     byteOffset += 4;
     // field rfErrVz
-    byteData.setFloat32(byteOffset, message.rfErrVz, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rfErrVz, imc.endianSer);
     byteOffset += 4;
     // field ssX
-    byteData.setFloat32(byteOffset, message.ssX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssX, imc.endianSer);
     byteOffset += 4;
     // field ssY
-    byteData.setFloat32(byteOffset, message.ssY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssY, imc.endianSer);
     byteOffset += 4;
     // field ssZ
-    byteData.setFloat32(byteOffset, message.ssZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ssZ, imc.endianSer);
     byteOffset += 4;
     // field virtErrX
-    byteData.setFloat32(byteOffset, message.virtErrX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.virtErrX, imc.endianSer);
     byteOffset += 4;
     // field virtErrY
-    byteData.setFloat32(byteOffset, message.virtErrY, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.virtErrY, imc.endianSer);
     byteOffset += 4;
     // field virtErrZ
-    byteData.setFloat32(byteOffset, message.virtErrZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.virtErrZ, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -26514,7 +26514,7 @@ class RelativeStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RelativeState.static_id) {
+    if (msgId != imc.RelativeState.staticId) {
       return null;
     }
 
@@ -26525,11 +26525,11 @@ class RelativeStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -26547,7 +26547,7 @@ class RelativeStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -26667,10 +26667,10 @@ class DislodgeSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field rpm
-    byteData.setFloat32(byteOffset, message.rpm, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rpm, imc.endianSer);
     byteOffset += 4;
     // field direction
     byteData.setUint8(byteOffset, message.direction.value);
@@ -26678,7 +26678,7 @@ class DislodgeSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -26700,7 +26700,7 @@ class DislodgeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Dislodge.static_id) {
+    if (msgId != imc.Dislodge.staticId) {
       return null;
     }
 
@@ -26711,11 +26711,11 @@ class DislodgeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -26733,7 +26733,7 @@ class DislodgeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -26802,7 +26802,7 @@ class FormationSerializer
     // field formationName
     var formationNameEncoded = utf8.encode(message.formationName);
     var formationNameSSize = formationNameEncoded.length;
-    byteData.setUint16(byteOffset, formationNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, formationNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in formationNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -26816,7 +26816,7 @@ class FormationSerializer
     // field groupName
     var groupNameEncoded = utf8.encode(message.groupName);
     var groupNameSSize = groupNameEncoded.length;
-    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in groupNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -26824,7 +26824,7 @@ class FormationSerializer
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -26832,7 +26832,7 @@ class FormationSerializer
     // field description
     var descriptionEncoded = utf8.encode(message.description);
     var descriptionSSize = descriptionEncoded.length;
-    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in descriptionEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -26842,7 +26842,7 @@ class FormationSerializer
     byteOffset += 1;
     // field participants
     if (message.participants.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -26854,56 +26854,56 @@ class FormationSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.participants[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field leaderBankLim
-    byteData.setFloat32(byteOffset, message.leaderBankLim, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderBankLim, imc.endianSer);
     byteOffset += 4;
     // field leaderSpeedMin
-    byteData.setFloat32(byteOffset, message.leaderSpeedMin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderSpeedMin, imc.endianSer);
     byteOffset += 4;
     // field leaderSpeedMax
-    byteData.setFloat32(byteOffset, message.leaderSpeedMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderSpeedMax, imc.endianSer);
     byteOffset += 4;
     // field leaderAltMin
-    byteData.setFloat32(byteOffset, message.leaderAltMin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderAltMin, imc.endianSer);
     byteOffset += 4;
     // field leaderAltMax
-    byteData.setFloat32(byteOffset, message.leaderAltMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leaderAltMax, imc.endianSer);
     byteOffset += 4;
     // field posSimErrLim
-    byteData.setFloat32(byteOffset, message.posSimErrLim, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.posSimErrLim, imc.endianSer);
     byteOffset += 4;
     // field posSimErrWrn
-    byteData.setFloat32(byteOffset, message.posSimErrWrn, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.posSimErrWrn, imc.endianSer);
     byteOffset += 4;
     // field posSimErrTimeout
-    byteData.setUint16(byteOffset, message.posSimErrTimeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.posSimErrTimeout, imc.endianSer);
     byteOffset += 2;
     // field convergMax
-    byteData.setFloat32(byteOffset, message.convergMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.convergMax, imc.endianSer);
     byteOffset += 4;
     // field convergTimeout
-    byteData.setUint16(byteOffset, message.convergTimeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.convergTimeout, imc.endianSer);
     byteOffset += 2;
     // field commsTimeout
-    byteData.setUint16(byteOffset, message.commsTimeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.commsTimeout, imc.endianSer);
     byteOffset += 2;
     // field turbLim
-    byteData.setFloat32(byteOffset, message.turbLim, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.turbLim, imc.endianSer);
     byteOffset += 4;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -26925,7 +26925,7 @@ class FormationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Formation.static_id) {
+    if (msgId != imc.Formation.staticId) {
       return null;
     }
 
@@ -26936,11 +26936,11 @@ class FormationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -26958,7 +26958,7 @@ class FormationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -27122,22 +27122,22 @@ class LaunchSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -27145,7 +27145,7 @@ class LaunchSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -27167,7 +27167,7 @@ class LaunchSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Launch.static_id) {
+    if (msgId != imc.Launch.staticId) {
       return null;
     }
 
@@ -27178,11 +27178,11 @@ class LaunchSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -27200,7 +27200,7 @@ class LaunchSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -27277,22 +27277,22 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -27300,7 +27300,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -27322,7 +27322,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Drop.static_id) {
+    if (msgId != imc.Drop.staticId) {
       return null;
     }
 
@@ -27333,11 +27333,11 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -27355,7 +27355,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -27434,22 +27434,22 @@ class ScheduledGotoSerializer
     var byteOffset = offset;
 
     // field arrivalTime
-    byteData.setFloat64(byteOffset, message.arrivalTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.arrivalTime, imc.endianSer);
     byteOffset += 8;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field travelZ
-    byteData.setFloat32(byteOffset, message.travelZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.travelZ, imc.endianSer);
     byteOffset += 4;
     // field travelZUnits
     byteData.setUint8(byteOffset, message.travelZUnits.value);
@@ -27474,7 +27474,7 @@ class ScheduledGotoSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ScheduledGoto.static_id) {
+    if (msgId != imc.ScheduledGoto.staticId) {
       return null;
     }
 
@@ -27485,11 +27485,11 @@ class ScheduledGotoSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -27507,7 +27507,7 @@ class ScheduledGotoSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -27581,43 +27581,43 @@ class RowsCoverageSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field bearing
-    byteData.setFloat64(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 8;
     // field crossAngle
-    byteData.setFloat64(byteOffset, message.crossAngle, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.crossAngle, imc.endianSer);
     byteOffset += 8;
     // field width
-    byteData.setFloat32(byteOffset, message.width, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.width, imc.endianSer);
     byteOffset += 4;
     // field length
-    byteData.setFloat32(byteOffset, message.length, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.length, imc.endianSer);
     byteOffset += 4;
     // field coff
     byteData.setUint8(byteOffset, message.coff);
     byteOffset += 1;
     // field angAperture
-    byteData.setFloat32(byteOffset, message.angAperture, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.angAperture, imc.endianSer);
     byteOffset += 4;
     // field range
-    byteData.setUint16(byteOffset, message.range, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.range, imc.endianSer);
     byteOffset += 2;
     // field overlap
     byteData.setUint8(byteOffset, message.overlap);
@@ -27628,7 +27628,7 @@ class RowsCoverageSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -27650,7 +27650,7 @@ class RowsCoverageSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RowsCoverage.static_id) {
+    if (msgId != imc.RowsCoverage.staticId) {
       return null;
     }
 
@@ -27661,11 +27661,11 @@ class RowsCoverageSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -27683,7 +27683,7 @@ class RowsCoverageSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -27786,22 +27786,22 @@ class SampleSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -27818,7 +27818,7 @@ class SampleSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -27840,7 +27840,7 @@ class SampleSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Sample.static_id) {
+    if (msgId != imc.Sample.staticId) {
       return null;
     }
 
@@ -27851,11 +27851,11 @@ class SampleSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -27873,7 +27873,7 @@ class SampleSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -27976,7 +27976,7 @@ class ImageTrackingSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ImageTracking.static_id) {
+    if (msgId != imc.ImageTracking.staticId) {
       return null;
     }
 
@@ -27987,11 +27987,11 @@ class ImageTrackingSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -28009,7 +28009,7 @@ class ImageTrackingSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -28056,30 +28056,30 @@ class TakeoffSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field takeoffPitch
-    byteData.setFloat32(byteOffset, message.takeoffPitch, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.takeoffPitch, imc.endianSer);
     byteOffset += 4;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28101,7 +28101,7 @@ class TakeoffSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Takeoff.static_id) {
+    if (msgId != imc.Takeoff.staticId) {
       return null;
     }
 
@@ -28112,11 +28112,11 @@ class TakeoffSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -28134,7 +28134,7 @@ class TakeoffSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -28211,39 +28211,39 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field abortZ
-    byteData.setFloat32(byteOffset, message.abortZ, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.abortZ, imc.endianSer);
     byteOffset += 4;
     // field bearing
-    byteData.setFloat64(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 8;
     // field glideSlope
     byteData.setUint8(byteOffset, message.glideSlope);
     byteOffset += 1;
     // field glideSlopeAlt
-    byteData.setFloat32(byteOffset, message.glideSlopeAlt, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.glideSlopeAlt, imc.endianSer);
     byteOffset += 4;
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28265,7 +28265,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Land.static_id) {
+    if (msgId != imc.Land.staticId) {
       return null;
     }
 
@@ -28276,11 +28276,11 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -28298,7 +28298,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -28386,13 +28386,13 @@ class AutonomousSectionSerializer extends imc
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -28401,17 +28401,17 @@ class AutonomousSectionSerializer extends imc
     byteData.setUint8(byteOffset, message.limits.value);
     byteOffset += 1;
     // field maxDepth
-    byteData.setFloat64(byteOffset, message.maxDepth, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.maxDepth, imc.endianSer);
     byteOffset += 8;
     // field minAlt
-    byteData.setFloat64(byteOffset, message.minAlt, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.minAlt, imc.endianSer);
     byteOffset += 8;
     // field timeLimit
-    byteData.setFloat64(byteOffset, message.timeLimit, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.timeLimit, imc.endianSer);
     byteOffset += 8;
     // field areaLimits
     if (message.areaLimits.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -28423,20 +28423,20 @@ class AutonomousSectionSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.areaLimits[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field controller
     var controllerEncoded = utf8.encode(message.controller);
     var controllerSSize = controllerEncoded.length;
-    byteData.setUint16(byteOffset, controllerSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, controllerSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in controllerEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28444,7 +28444,7 @@ class AutonomousSectionSerializer extends imc
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28466,7 +28466,7 @@ class AutonomousSectionSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AutonomousSection.static_id) {
+    if (msgId != imc.AutonomousSection.staticId) {
       return null;
     }
 
@@ -28477,11 +28477,11 @@ class AutonomousSectionSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -28499,7 +28499,7 @@ class AutonomousSectionSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -28616,25 +28616,25 @@ class FollowPointSerializer
     // field target
     var targetEncoded = utf8.encode(message.target);
     var targetSSize = targetEncoded.length;
-    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, targetSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in targetEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field maxSpeed
-    byteData.setFloat32(byteOffset, message.maxSpeed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.maxSpeed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
@@ -28642,7 +28642,7 @@ class FollowPointSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28664,7 +28664,7 @@ class FollowPointSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FollowPoint.static_id) {
+    if (msgId != imc.FollowPoint.staticId) {
       return null;
     }
 
@@ -28675,11 +28675,11 @@ class FollowPointSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -28697,7 +28697,7 @@ class FollowPointSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -28781,16 +28781,16 @@ class AlignmentSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
@@ -28798,7 +28798,7 @@ class AlignmentSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28820,7 +28820,7 @@ class AlignmentSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Alignment.static_id) {
+    if (msgId != imc.Alignment.staticId) {
       return null;
     }
 
@@ -28831,11 +28831,11 @@ class AlignmentSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -28853,7 +28853,7 @@ class AlignmentSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -28926,34 +28926,34 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field radius
-    byteData.setFloat32(byteOffset, message.radius, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.radius, imc.endianSer);
     byteOffset += 4;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field popupPeriod
-    byteData.setUint16(byteOffset, message.popupPeriod, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.popupPeriod, imc.endianSer);
     byteOffset += 2;
     // field popupDuration
-    byteData.setUint16(byteOffset, message.popupDuration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.popupDuration, imc.endianSer);
     byteOffset += 2;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
@@ -28961,7 +28961,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -28983,7 +28983,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.StationKeepingExtended.static_id) {
+    if (msgId != imc.StationKeepingExtended.staticId) {
       return null;
     }
 
@@ -28994,11 +28994,11 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29016,7 +29016,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -29123,7 +29123,7 @@ class ManeuverDoneSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ManeuverDone.static_id) {
+    if (msgId != imc.ManeuverDone.staticId) {
       return null;
     }
 
@@ -29134,11 +29134,11 @@ class ManeuverDoneSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29156,7 +29156,7 @@ class ManeuverDoneSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -29204,31 +29204,31 @@ class MagnetometerSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint16(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field speedUnits
     byteData.setUint8(byteOffset, message.speedUnits.value);
     byteOffset += 1;
     // field bearing
-    byteData.setFloat64(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 8;
     // field width
-    byteData.setFloat32(byteOffset, message.width, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.width, imc.endianSer);
     byteOffset += 4;
     // field direction
     byteData.setUint8(byteOffset, message.direction.value);
@@ -29236,7 +29236,7 @@ class MagnetometerSerializer
     // field custom
     var customEncoded = utf8.encode(message.custom);
     var customSSize = customEncoded.length;
-    byteData.setUint16(byteOffset, customSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, customSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in customEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -29258,7 +29258,7 @@ class MagnetometerSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Magnetometer.static_id) {
+    if (msgId != imc.Magnetometer.staticId) {
       return null;
     }
 
@@ -29269,11 +29269,11 @@ class MagnetometerSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29291,7 +29291,7 @@ class MagnetometerSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -29388,22 +29388,22 @@ class VehicleStateSerializer
     // field errorEnts
     var errorEntsEncoded = utf8.encode(message.errorEnts);
     var errorEntsSSize = errorEntsEncoded.length;
-    byteData.setUint16(byteOffset, errorEntsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, errorEntsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in errorEntsEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field maneuverType
-    byteData.setUint16(byteOffset, message.maneuverType, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.maneuverType, imc.endianSer);
     byteOffset += 2;
     // field maneuverStime
-    byteData.setFloat64(byteOffset, message.maneuverStime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.maneuverStime, imc.endianSer);
     byteOffset += 8;
     // field maneuverEta
-    byteData.setUint16(byteOffset, message.maneuverEta, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.maneuverEta, imc.endianSer);
     byteOffset += 2;
     // field controlLoops
-    byteData.setUint32(byteOffset, message.controlLoops.value, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.controlLoops.value, imc.endianSer);
     byteOffset += 4;
     // field flags
     byteData.setUint8(byteOffset, message.flags.value);
@@ -29411,13 +29411,13 @@ class VehicleStateSerializer
     // field lastError
     var lastErrorEncoded = utf8.encode(message.lastError);
     var lastErrorSSize = lastErrorEncoded.length;
-    byteData.setUint16(byteOffset, lastErrorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, lastErrorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in lastErrorEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lastErrorTime
-    byteData.setFloat64(byteOffset, message.lastErrorTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lastErrorTime, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -29436,7 +29436,7 @@ class VehicleStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleState.static_id) {
+    if (msgId != imc.VehicleState.staticId) {
       return null;
     }
 
@@ -29447,11 +29447,11 @@ class VehicleStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29469,7 +29469,7 @@ class VehicleStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -29565,14 +29565,14 @@ class VehicleCommandSerializer
     byteData.setUint8(byteOffset, message.type.value);
     byteOffset += 1;
     // field requestId
-    byteData.setUint16(byteOffset, message.requestId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.requestId, imc.endianSer);
     byteOffset += 2;
     // field command
     byteData.setUint8(byteOffset, message.command.value);
     byteOffset += 1;
     // field maneuver
     if (message.maneuver == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.maneuver!.msgId;
@@ -29580,7 +29580,7 @@ class VehicleCommandSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.maneuver, byteData, byteOffset);
@@ -29588,12 +29588,12 @@ class VehicleCommandSerializer
       }
     }
     // field calibTime
-    byteData.setUint16(byteOffset, message.calibTime, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.calibTime, imc.endianSer);
     byteOffset += 2;
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -29615,7 +29615,7 @@ class VehicleCommandSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleCommand.static_id) {
+    if (msgId != imc.VehicleCommand.staticId) {
       return null;
     }
 
@@ -29626,11 +29626,11 @@ class VehicleCommandSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29648,7 +29648,7 @@ class VehicleCommandSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -29744,7 +29744,7 @@ class MonitorEntityStateSerializer extends imc
     // field entities
     var entitiesEncoded = utf8.encode(message.entities);
     var entitiesSSize = entitiesEncoded.length;
-    byteData.setUint16(byteOffset, entitiesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, entitiesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in entitiesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -29766,7 +29766,7 @@ class MonitorEntityStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.MonitorEntityState.static_id) {
+    if (msgId != imc.MonitorEntityState.staticId) {
       return null;
     }
 
@@ -29777,11 +29777,11 @@ class MonitorEntityStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29799,7 +29799,7 @@ class MonitorEntityStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -29866,7 +29866,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     // field mnames
     var mnamesEncoded = utf8.encode(message.mnames);
     var mnamesSSize = mnamesEncoded.length;
-    byteData.setUint16(byteOffset, mnamesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, mnamesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in mnamesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -29877,7 +29877,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     // field enames
     var enamesEncoded = utf8.encode(message.enames);
     var enamesSSize = enamesEncoded.length;
-    byteData.setUint16(byteOffset, enamesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, enamesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in enamesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -29888,7 +29888,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     // field cnames
     var cnamesEncoded = utf8.encode(message.cnames);
     var cnamesSSize = cnamesEncoded.length;
-    byteData.setUint16(byteOffset, cnamesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, cnamesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in cnamesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -29896,13 +29896,13 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     // field lastError
     var lastErrorEncoded = utf8.encode(message.lastError);
     var lastErrorSSize = lastErrorEncoded.length;
-    byteData.setUint16(byteOffset, lastErrorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, lastErrorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in lastErrorEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lastErrorTime
-    byteData.setFloat64(byteOffset, message.lastErrorTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lastErrorTime, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -29921,7 +29921,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityMonitoringState.static_id) {
+    if (msgId != imc.EntityMonitoringState.staticId) {
       return null;
     }
 
@@ -29932,11 +29932,11 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -29954,7 +29954,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30054,37 +30054,37 @@ class OperationalLimitsSerializer extends imc
     byteData.setUint8(byteOffset, message.mask.value);
     byteOffset += 1;
     // field maxDepth
-    byteData.setFloat32(byteOffset, message.maxDepth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.maxDepth, imc.endianSer);
     byteOffset += 4;
     // field minAltitude
-    byteData.setFloat32(byteOffset, message.minAltitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.minAltitude, imc.endianSer);
     byteOffset += 4;
     // field maxAltitude
-    byteData.setFloat32(byteOffset, message.maxAltitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.maxAltitude, imc.endianSer);
     byteOffset += 4;
     // field minSpeed
-    byteData.setFloat32(byteOffset, message.minSpeed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.minSpeed, imc.endianSer);
     byteOffset += 4;
     // field maxSpeed
-    byteData.setFloat32(byteOffset, message.maxSpeed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.maxSpeed, imc.endianSer);
     byteOffset += 4;
     // field maxVrate
-    byteData.setFloat32(byteOffset, message.maxVrate, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.maxVrate, imc.endianSer);
     byteOffset += 4;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field orientation
-    byteData.setFloat32(byteOffset, message.orientation, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.orientation, imc.endianSer);
     byteOffset += 4;
     // field width
-    byteData.setFloat32(byteOffset, message.width, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.width, imc.endianSer);
     byteOffset += 4;
     // field length
-    byteData.setFloat32(byteOffset, message.length, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.length, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -30103,7 +30103,7 @@ class OperationalLimitsSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.OperationalLimits.static_id) {
+    if (msgId != imc.OperationalLimits.staticId) {
       return null;
     }
 
@@ -30114,11 +30114,11 @@ class OperationalLimitsSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30136,7 +30136,7 @@ class OperationalLimitsSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30236,7 +30236,7 @@ class GetOperationalLimitsSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GetOperationalLimits.static_id) {
+    if (msgId != imc.GetOperationalLimits.staticId) {
       return null;
     }
 
@@ -30247,11 +30247,11 @@ class GetOperationalLimitsSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30269,7 +30269,7 @@ class GetOperationalLimitsSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30317,7 +30317,7 @@ class CalibrationSerializer
     var byteOffset = offset;
 
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -30336,7 +30336,7 @@ class CalibrationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Calibration.static_id) {
+    if (msgId != imc.Calibration.staticId) {
       return null;
     }
 
@@ -30347,11 +30347,11 @@ class CalibrationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30369,7 +30369,7 @@ class CalibrationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30424,10 +30424,10 @@ class ControlLoopsSerializer
     byteData.setUint8(byteOffset, message.enable.value);
     byteOffset += 1;
     // field mask
-    byteData.setUint32(byteOffset, message.mask.value, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.mask.value, imc.endianSer);
     byteOffset += 4;
     // field scopeRef
-    byteData.setUint32(byteOffset, message.scopeRef, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.scopeRef, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -30446,7 +30446,7 @@ class ControlLoopsSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ControlLoops.static_id) {
+    if (msgId != imc.ControlLoops.staticId) {
       return null;
     }
 
@@ -30457,11 +30457,11 @@ class ControlLoopsSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30479,7 +30479,7 @@ class ControlLoopsSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30557,7 +30557,7 @@ class VehicleMediumSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleMedium.static_id) {
+    if (msgId != imc.VehicleMedium.staticId) {
       return null;
     }
 
@@ -30568,11 +30568,11 @@ class VehicleMediumSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30590,7 +30590,7 @@ class VehicleMediumSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30641,7 +30641,7 @@ class CollisionSerializer
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
@@ -30663,7 +30663,7 @@ class CollisionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Collision.static_id) {
+    if (msgId != imc.Collision.staticId) {
       return null;
     }
 
@@ -30674,11 +30674,11 @@ class CollisionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30696,7 +30696,7 @@ class CollisionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30750,13 +30750,13 @@ class FormStateSerializer
     var byteOffset = offset;
 
     // field posSimErr
-    byteData.setFloat32(byteOffset, message.posSimErr, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.posSimErr, imc.endianSer);
     byteOffset += 4;
     // field converg
-    byteData.setFloat32(byteOffset, message.converg, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.converg, imc.endianSer);
     byteOffset += 4;
     // field turbulence
-    byteData.setFloat32(byteOffset, message.turbulence, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.turbulence, imc.endianSer);
     byteOffset += 4;
     // field posSimMon
     byteData.setUint8(byteOffset, message.posSimMon.value);
@@ -30784,7 +30784,7 @@ class FormStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormState.static_id) {
+    if (msgId != imc.FormState.staticId) {
       return null;
     }
 
@@ -30795,11 +30795,11 @@ class FormStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30817,7 +30817,7 @@ class FormStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -30891,7 +30891,7 @@ class AutopilotModeSerializer
     // field mode
     var modeEncoded = utf8.encode(message.mode);
     var modeSSize = modeEncoded.length;
-    byteData.setUint16(byteOffset, modeSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, modeSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in modeEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -30913,7 +30913,7 @@ class AutopilotModeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.AutopilotMode.static_id) {
+    if (msgId != imc.AutopilotMode.staticId) {
       return null;
     }
 
@@ -30924,11 +30924,11 @@ class AutopilotModeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -30946,7 +30946,7 @@ class AutopilotModeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31014,13 +31014,13 @@ class FormationStateSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field posSimErr
-    byteData.setFloat32(byteOffset, message.posSimErr, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.posSimErr, imc.endianSer);
     byteOffset += 4;
     // field converg
-    byteData.setFloat32(byteOffset, message.converg, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.converg, imc.endianSer);
     byteOffset += 4;
     // field turbulence
-    byteData.setFloat32(byteOffset, message.turbulence, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.turbulence, imc.endianSer);
     byteOffset += 4;
     // field posSimMon
     byteData.setUint8(byteOffset, message.posSimMon.value);
@@ -31048,7 +31048,7 @@ class FormationStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationState.static_id) {
+    if (msgId != imc.FormationState.staticId) {
       return null;
     }
 
@@ -31059,11 +31059,11 @@ class FormationStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -31081,7 +31081,7 @@ class FormationStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31163,12 +31163,12 @@ class ReportControlSerializer
     byteData.setUint8(byteOffset, message.commInterface.value);
     byteOffset += 1;
     // field period
-    byteData.setUint16(byteOffset, message.period, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.period, imc.endianSer);
     byteOffset += 2;
     // field sysDst
     var sysDstEncoded = utf8.encode(message.sysDst);
     var sysDstSSize = sysDstEncoded.length;
-    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysDstEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -31190,7 +31190,7 @@ class ReportControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ReportControl.static_id) {
+    if (msgId != imc.ReportControl.staticId) {
       return null;
     }
 
@@ -31201,11 +31201,11 @@ class ReportControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -31223,7 +31223,7 @@ class ReportControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31291,25 +31291,25 @@ class StateReportSerializer
     var byteOffset = offset;
 
     // field stime
-    byteData.setUint32(byteOffset, message.stime, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.stime, imc.endianSer);
     byteOffset += 4;
     // field latitude
-    byteData.setFloat32(byteOffset, message.latitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.latitude, imc.endianSer);
     byteOffset += 4;
     // field longitude
-    byteData.setFloat32(byteOffset, message.longitude, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.longitude, imc.endianSer);
     byteOffset += 4;
     // field altitude
-    byteData.setUint16(byteOffset, message.altitude, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.altitude, imc.endianSer);
     byteOffset += 2;
     // field depth
-    byteData.setUint16(byteOffset, message.depth, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.depth, imc.endianSer);
     byteOffset += 2;
     // field heading
-    byteData.setUint16(byteOffset, message.heading, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.heading, imc.endianSer);
     byteOffset += 2;
     // field speed
-    byteData.setInt16(byteOffset, message.speed, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.speed, imc.endianSer);
     byteOffset += 2;
     // field fuel
     byteData.setInt8(byteOffset, message.fuel);
@@ -31318,7 +31318,7 @@ class StateReportSerializer
     byteData.setInt8(byteOffset, message.execState);
     byteOffset += 1;
     // field planChecksum
-    byteData.setUint16(byteOffset, message.planChecksum, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.planChecksum, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -31337,7 +31337,7 @@ class StateReportSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.StateReport.static_id) {
+    if (msgId != imc.StateReport.staticId) {
       return null;
     }
 
@@ -31348,11 +31348,11 @@ class StateReportSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -31370,7 +31370,7 @@ class StateReportSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31449,7 +31449,7 @@ class TransmissionRequestSerializer extends imc
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field commMean
     byteData.setUint8(byteOffset, message.commMean.value);
@@ -31457,23 +31457,23 @@ class TransmissionRequestSerializer extends imc
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field deadline
-    byteData.setFloat64(byteOffset, message.deadline, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.deadline, imc.endianSer);
     byteOffset += 8;
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
     // field dataMode
     byteData.setUint8(byteOffset, message.dataMode.value);
     byteOffset += 1;
     // field msgData
     if (message.msgData == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.msgData!.msgId;
@@ -31481,7 +31481,7 @@ class TransmissionRequestSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.msgData, byteData, byteOffset);
@@ -31491,14 +31491,14 @@ class TransmissionRequestSerializer extends imc
     // field txtData
     var txtDataEncoded = utf8.encode(message.txtData);
     var txtDataSSize = txtDataEncoded.length;
-    byteData.setUint16(byteOffset, txtDataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, txtDataSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in txtDataEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field rawData
     var rawDataSSize = message.rawData.length;
-    byteData.setUint16(byteOffset, rawDataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, rawDataSSize, imc.endianSer);
     byteOffset += 2;
     if (rawDataSSize > 0) {
       for (var b in message.rawData) {
@@ -31522,7 +31522,7 @@ class TransmissionRequestSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TransmissionRequest.static_id) {
+    if (msgId != imc.TransmissionRequest.staticId) {
       return null;
     }
 
@@ -31533,11 +31533,11 @@ class TransmissionRequestSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -31555,7 +31555,7 @@ class TransmissionRequestSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31667,18 +31667,18 @@ class TransmissionStatusSerializer extends imc
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field status
     byteData.setUint8(byteOffset, message.status.value);
     byteOffset += 1;
     // field range
-    byteData.setFloat32(byteOffset, message.range, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.range, imc.endianSer);
     byteOffset += 4;
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -31700,7 +31700,7 @@ class TransmissionStatusSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TransmissionStatus.static_id) {
+    if (msgId != imc.TransmissionStatus.staticId) {
       return null;
     }
 
@@ -31711,11 +31711,11 @@ class TransmissionStatusSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -31733,7 +31733,7 @@ class TransmissionStatusSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31800,23 +31800,23 @@ class SmsRequestSerializer
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field timeout
-    byteData.setFloat64(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 8;
     // field smsText
     var smsTextEncoded = utf8.encode(message.smsText);
     var smsTextSSize = smsTextEncoded.length;
-    byteData.setUint16(byteOffset, smsTextSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, smsTextSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in smsTextEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -31838,7 +31838,7 @@ class SmsRequestSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SmsRequest.static_id) {
+    if (msgId != imc.SmsRequest.staticId) {
       return null;
     }
 
@@ -31849,11 +31849,11 @@ class SmsRequestSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -31871,7 +31871,7 @@ class SmsRequestSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -31943,7 +31943,7 @@ class SmsStatusSerializer
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field status
     byteData.setUint8(byteOffset, message.status.value);
@@ -31951,7 +31951,7 @@ class SmsStatusSerializer
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -31973,7 +31973,7 @@ class SmsStatusSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SmsStatus.static_id) {
+    if (msgId != imc.SmsStatus.staticId) {
       return null;
     }
 
@@ -31984,11 +31984,11 @@ class SmsStatusSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32006,7 +32006,7 @@ class SmsStatusSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -32088,7 +32088,7 @@ class VtolStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VtolState.static_id) {
+    if (msgId != imc.VtolState.staticId) {
       return null;
     }
 
@@ -32099,11 +32099,11 @@ class VtolStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32121,7 +32121,7 @@ class VtolStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -32192,7 +32192,7 @@ class ArmingStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ArmingState.static_id) {
+    if (msgId != imc.ArmingState.staticId) {
       return null;
     }
 
@@ -32203,11 +32203,11 @@ class ArmingStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32225,7 +32225,7 @@ class ArmingStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -32276,22 +32276,22 @@ class TCPRequestSerializer
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field destination
     var destinationEncoded = utf8.encode(message.destination);
     var destinationSSize = destinationEncoded.length;
-    byteData.setUint16(byteOffset, destinationSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destinationSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destinationEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field timeout
-    byteData.setFloat64(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 8;
     // field msgData
     if (message.msgData == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.msgData!.msgId;
@@ -32299,7 +32299,7 @@ class TCPRequestSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.msgData, byteData, byteOffset);
@@ -32323,7 +32323,7 @@ class TCPRequestSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TCPRequest.static_id) {
+    if (msgId != imc.TCPRequest.staticId) {
       return null;
     }
 
@@ -32334,11 +32334,11 @@ class TCPRequestSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32356,7 +32356,7 @@ class TCPRequestSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -32439,7 +32439,7 @@ class TCPStatusSerializer
     var byteOffset = offset;
 
     // field reqId
-    byteData.setUint16(byteOffset, message.reqId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.reqId, imc.endianSer);
     byteOffset += 2;
     // field status
     byteData.setUint8(byteOffset, message.status.value);
@@ -32447,7 +32447,7 @@ class TCPStatusSerializer
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -32469,7 +32469,7 @@ class TCPStatusSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TCPStatus.static_id) {
+    if (msgId != imc.TCPStatus.staticId) {
       return null;
     }
 
@@ -32480,11 +32480,11 @@ class TCPStatusSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32502,7 +32502,7 @@ class TCPStatusSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -32579,7 +32579,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Abort.static_id) {
+    if (msgId != imc.Abort.staticId) {
       return null;
     }
 
@@ -32590,11 +32590,11 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32612,7 +32612,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -32662,7 +32662,7 @@ class PlanSpecificationSerializer extends imc
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -32670,7 +32670,7 @@ class PlanSpecificationSerializer extends imc
     // field description
     var descriptionEncoded = utf8.encode(message.description);
     var descriptionSSize = descriptionEncoded.length;
-    byteData.setUint16(byteOffset, descriptionSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, descriptionSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in descriptionEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -32678,14 +32678,14 @@ class PlanSpecificationSerializer extends imc
     // field vnamespace
     var vnamespaceEncoded = utf8.encode(message.vnamespace);
     var vnamespaceSSize = vnamespaceEncoded.length;
-    byteData.setUint16(byteOffset, vnamespaceSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, vnamespaceSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in vnamespaceEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field variables
     if (message.variables.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -32697,27 +32697,27 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.variables[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field startManId
     var startManIdEncoded = utf8.encode(message.startManId);
     var startManIdSSize = startManIdEncoded.length;
-    byteData.setUint16(byteOffset, startManIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, startManIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in startManIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field maneuvers
     if (message.maneuvers.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -32729,19 +32729,19 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.maneuvers[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field transitions
     if (message.transitions.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -32753,19 +32753,19 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.transitions[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field startActions
     if (message.startActions.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -32777,19 +32777,19 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.startActions[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field endActions
     if (message.endActions.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -32801,14 +32801,14 @@ class PlanSpecificationSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.endActions[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -32828,7 +32828,7 @@ class PlanSpecificationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanSpecification.static_id) {
+    if (msgId != imc.PlanSpecification.staticId) {
       return null;
     }
 
@@ -32839,11 +32839,11 @@ class PlanSpecificationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -32861,7 +32861,7 @@ class PlanSpecificationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -33067,14 +33067,14 @@ class PlanManeuverSerializer
     // field maneuverId
     var maneuverIdEncoded = utf8.encode(message.maneuverId);
     var maneuverIdSSize = maneuverIdEncoded.length;
-    byteData.setUint16(byteOffset, maneuverIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, maneuverIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in maneuverIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field data
     if (message.data == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.data!.msgId;
@@ -33082,7 +33082,7 @@ class PlanManeuverSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.data, byteData, byteOffset);
@@ -33091,7 +33091,7 @@ class PlanManeuverSerializer
     }
     // field startActions
     if (message.startActions.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -33103,19 +33103,19 @@ class PlanManeuverSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.startActions[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
     // field endActions
     if (message.endActions.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -33127,14 +33127,14 @@ class PlanManeuverSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.endActions[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -33154,7 +33154,7 @@ class PlanManeuverSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanManeuver.static_id) {
+    if (msgId != imc.PlanManeuver.staticId) {
       return null;
     }
 
@@ -33165,11 +33165,11 @@ class PlanManeuverSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -33187,7 +33187,7 @@ class PlanManeuverSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -33315,7 +33315,7 @@ class PlanTransitionSerializer
     // field sourceMan
     var sourceManEncoded = utf8.encode(message.sourceMan);
     var sourceManSSize = sourceManEncoded.length;
-    byteData.setUint16(byteOffset, sourceManSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sourceManSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sourceManEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -33323,7 +33323,7 @@ class PlanTransitionSerializer
     // field destMan
     var destManEncoded = utf8.encode(message.destMan);
     var destManSSize = destManEncoded.length;
-    byteData.setUint16(byteOffset, destManSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, destManSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in destManEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -33331,14 +33331,14 @@ class PlanTransitionSerializer
     // field conditions
     var conditionsEncoded = utf8.encode(message.conditions);
     var conditionsSSize = conditionsEncoded.length;
-    byteData.setUint16(byteOffset, conditionsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, conditionsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in conditionsEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field actions
     if (message.actions.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -33350,14 +33350,14 @@ class PlanTransitionSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.actions[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -33377,7 +33377,7 @@ class PlanTransitionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanTransition.static_id) {
+    if (msgId != imc.PlanTransition.staticId) {
       return null;
     }
 
@@ -33388,11 +33388,11 @@ class PlanTransitionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -33410,7 +33410,7 @@ class PlanTransitionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -33513,7 +33513,7 @@ class EmergencyControlSerializer extends imc
     byteOffset += 1;
     // field plan
     if (message.plan == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.plan!.msgId;
@@ -33521,7 +33521,7 @@ class EmergencyControlSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.plan, byteData, byteOffset);
@@ -33545,7 +33545,7 @@ class EmergencyControlSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EmergencyControl.static_id) {
+    if (msgId != imc.EmergencyControl.staticId) {
       return null;
     }
 
@@ -33556,11 +33556,11 @@ class EmergencyControlSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -33578,7 +33578,7 @@ class EmergencyControlSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -33656,7 +33656,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -33681,7 +33681,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EmergencyControlState.static_id) {
+    if (msgId != imc.EmergencyControlState.staticId) {
       return null;
     }
 
@@ -33692,11 +33692,11 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -33714,7 +33714,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -33784,19 +33784,19 @@ class PlanDBSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field requestId
-    byteData.setUint16(byteOffset, message.requestId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.requestId, imc.endianSer);
     byteOffset += 2;
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field arg
     if (message.arg == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.arg!.msgId;
@@ -33804,7 +33804,7 @@ class PlanDBSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.arg, byteData, byteOffset);
@@ -33814,7 +33814,7 @@ class PlanDBSerializer
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -33836,7 +33836,7 @@ class PlanDBSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanDB.static_id) {
+    if (msgId != imc.PlanDB.staticId) {
       return null;
     }
 
@@ -33847,11 +33847,11 @@ class PlanDBSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -33869,7 +33869,7 @@ class PlanDBSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -33965,28 +33965,28 @@ class PlanDBStateSerializer
     var byteOffset = offset;
 
     // field planCount
-    byteData.setUint16(byteOffset, message.planCount, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.planCount, imc.endianSer);
     byteOffset += 2;
     // field planSize
-    byteData.setUint32(byteOffset, message.planSize, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.planSize, imc.endianSer);
     byteOffset += 4;
     // field changeTime
-    byteData.setFloat64(byteOffset, message.changeTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.changeTime, imc.endianSer);
     byteOffset += 8;
     // field changeSid
-    byteData.setUint16(byteOffset, message.changeSid, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.changeSid, imc.endianSer);
     byteOffset += 2;
     // field changeSname
     var changeSnameEncoded = utf8.encode(message.changeSname);
     var changeSnameSSize = changeSnameEncoded.length;
-    byteData.setUint16(byteOffset, changeSnameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, changeSnameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in changeSnameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field md5
     var md5SSize = message.md5.length;
-    byteData.setUint16(byteOffset, md5SSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, md5SSize, imc.endianSer);
     byteOffset += 2;
     if (md5SSize > 0) {
       for (var b in message.md5) {
@@ -33995,7 +33995,7 @@ class PlanDBStateSerializer
     }
     // field plansInfo
     if (message.plansInfo.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -34007,14 +34007,14 @@ class PlanDBStateSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.plansInfo[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -34034,7 +34034,7 @@ class PlanDBStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanDBState.static_id) {
+    if (msgId != imc.PlanDBState.staticId) {
       return null;
     }
 
@@ -34045,11 +34045,11 @@ class PlanDBStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -34067,7 +34067,7 @@ class PlanDBStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -34170,31 +34170,31 @@ class PlanDBInformationSerializer extends imc
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field planSize
-    byteData.setUint16(byteOffset, message.planSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.planSize, imc.endianSer);
     byteOffset += 2;
     // field changeTime
-    byteData.setFloat64(byteOffset, message.changeTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.changeTime, imc.endianSer);
     byteOffset += 8;
     // field changeSid
-    byteData.setUint16(byteOffset, message.changeSid, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.changeSid, imc.endianSer);
     byteOffset += 2;
     // field changeSname
     var changeSnameEncoded = utf8.encode(message.changeSname);
     var changeSnameSSize = changeSnameEncoded.length;
-    byteData.setUint16(byteOffset, changeSnameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, changeSnameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in changeSnameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field md5
     var md5SSize = message.md5.length;
-    byteData.setUint16(byteOffset, md5SSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, md5SSize, imc.endianSer);
     byteOffset += 2;
     if (md5SSize > 0) {
       for (var b in message.md5) {
@@ -34218,7 +34218,7 @@ class PlanDBInformationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanDBInformation.static_id) {
+    if (msgId != imc.PlanDBInformation.staticId) {
       return null;
     }
 
@@ -34229,11 +34229,11 @@ class PlanDBInformationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -34251,7 +34251,7 @@ class PlanDBInformationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -34341,22 +34341,22 @@ class PlanControlSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field requestId
-    byteData.setUint16(byteOffset, message.requestId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.requestId, imc.endianSer);
     byteOffset += 2;
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field flags
-    byteData.setUint16(byteOffset, message.flags.value, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.flags.value, imc.endianSer);
     byteOffset += 2;
     // field arg
     if (message.arg == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.arg!.msgId;
@@ -34364,7 +34364,7 @@ class PlanControlSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.arg, byteData, byteOffset);
@@ -34374,7 +34374,7 @@ class PlanControlSerializer
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -34396,7 +34396,7 @@ class PlanControlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanControl.static_id) {
+    if (msgId != imc.PlanControl.staticId) {
       return null;
     }
 
@@ -34407,11 +34407,11 @@ class PlanControlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -34429,7 +34429,7 @@ class PlanControlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -34534,30 +34534,30 @@ class PlanControlStateSerializer extends imc
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field planEta
-    byteData.setInt32(byteOffset, message.planEta, imc.endian_ser);
+    byteData.setInt32(byteOffset, message.planEta, imc.endianSer);
     byteOffset += 4;
     // field planProgress
-    byteData.setFloat32(byteOffset, message.planProgress, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.planProgress, imc.endianSer);
     byteOffset += 4;
     // field manId
     var manIdEncoded = utf8.encode(message.manId);
     var manIdSSize = manIdEncoded.length;
-    byteData.setUint16(byteOffset, manIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, manIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in manIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field manType
-    byteData.setUint16(byteOffset, message.manType, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.manType, imc.endianSer);
     byteOffset += 2;
     // field manEta
-    byteData.setInt32(byteOffset, message.manEta, imc.endian_ser);
+    byteData.setInt32(byteOffset, message.manEta, imc.endianSer);
     byteOffset += 4;
     // field lastOutcome
     byteData.setUint8(byteOffset, message.lastOutcome.value);
@@ -34579,7 +34579,7 @@ class PlanControlStateSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanControlState.static_id) {
+    if (msgId != imc.PlanControlState.staticId) {
       return null;
     }
 
@@ -34590,11 +34590,11 @@ class PlanControlStateSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -34612,7 +34612,7 @@ class PlanControlStateSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -34701,7 +34701,7 @@ class PlanVariableSerializer
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -34709,7 +34709,7 @@ class PlanVariableSerializer
     // field value
     var valueEncoded = utf8.encode(message.value);
     var valueSSize = valueEncoded.length;
-    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, valueSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in valueEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -34737,7 +34737,7 @@ class PlanVariableSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanVariable.static_id) {
+    if (msgId != imc.PlanVariable.staticId) {
       return null;
     }
 
@@ -34748,11 +34748,11 @@ class PlanVariableSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -34770,7 +34770,7 @@ class PlanVariableSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -34851,7 +34851,7 @@ class PlanGenerationSerializer
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -34859,7 +34859,7 @@ class PlanGenerationSerializer
     // field params
     var paramsEncoded = utf8.encode(message.params);
     var paramsSSize = paramsEncoded.length;
-    byteData.setUint16(byteOffset, paramsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, paramsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in paramsEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -34881,7 +34881,7 @@ class PlanGenerationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanGeneration.static_id) {
+    if (msgId != imc.PlanGeneration.staticId) {
       return null;
     }
 
@@ -34892,11 +34892,11 @@ class PlanGenerationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -34914,7 +34914,7 @@ class PlanGenerationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -34989,7 +34989,7 @@ class LeaderStateSerializer
     // field groupName
     var groupNameEncoded = utf8.encode(message.groupName);
     var groupNameSSize = groupNameEncoded.length;
-    byteData.setUint16(byteOffset, groupNameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, groupNameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in groupNameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -34998,58 +34998,58 @@ class LeaderStateSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field height
-    byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.height, imc.endianSer);
     byteOffset += 4;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
     // field vx
-    byteData.setFloat32(byteOffset, message.vx, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vx, imc.endianSer);
     byteOffset += 4;
     // field vy
-    byteData.setFloat32(byteOffset, message.vy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vy, imc.endianSer);
     byteOffset += 4;
     // field vz
-    byteData.setFloat32(byteOffset, message.vz, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.vz, imc.endianSer);
     byteOffset += 4;
     // field p
-    byteData.setFloat32(byteOffset, message.p, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.p, imc.endianSer);
     byteOffset += 4;
     // field q
-    byteData.setFloat32(byteOffset, message.q, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.q, imc.endianSer);
     byteOffset += 4;
     // field r
-    byteData.setFloat32(byteOffset, message.r, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.r, imc.endianSer);
     byteOffset += 4;
     // field svx
-    byteData.setFloat32(byteOffset, message.svx, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.svx, imc.endianSer);
     byteOffset += 4;
     // field svy
-    byteData.setFloat32(byteOffset, message.svy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.svy, imc.endianSer);
     byteOffset += 4;
     // field svz
-    byteData.setFloat32(byteOffset, message.svz, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.svz, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -35068,7 +35068,7 @@ class LeaderStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.LeaderState.static_id) {
+    if (msgId != imc.LeaderState.staticId) {
       return null;
     }
 
@@ -35079,11 +35079,11 @@ class LeaderStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -35101,7 +35101,7 @@ class LeaderStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -35218,7 +35218,7 @@ class PlanStatisticsSerializer
     // field planId
     var planIdEncoded = utf8.encode(message.planId);
     var planIdSSize = planIdEncoded.length;
-    byteData.setUint16(byteOffset, planIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, planIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in planIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35232,7 +35232,7 @@ class PlanStatisticsSerializer
     // field durations
     var durationsEncoded = utf8.encode(message.durations);
     var durationsSSize = durationsEncoded.length;
-    byteData.setUint16(byteOffset, durationsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, durationsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in durationsEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35240,7 +35240,7 @@ class PlanStatisticsSerializer
     // field distances
     var distancesEncoded = utf8.encode(message.distances);
     var distancesSSize = distancesEncoded.length;
-    byteData.setUint16(byteOffset, distancesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, distancesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in distancesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35248,7 +35248,7 @@ class PlanStatisticsSerializer
     // field actions
     var actionsEncoded = utf8.encode(message.actions);
     var actionsSSize = actionsEncoded.length;
-    byteData.setUint16(byteOffset, actionsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, actionsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in actionsEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35256,7 +35256,7 @@ class PlanStatisticsSerializer
     // field fuel
     var fuelEncoded = utf8.encode(message.fuel);
     var fuelSSize = fuelEncoded.length;
-    byteData.setUint16(byteOffset, fuelSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, fuelSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in fuelEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35278,7 +35278,7 @@ class PlanStatisticsSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PlanStatistics.static_id) {
+    if (msgId != imc.PlanStatistics.staticId) {
       return null;
     }
 
@@ -35289,11 +35289,11 @@ class PlanStatisticsSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -35311,7 +35311,7 @@ class PlanStatisticsSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -35412,30 +35412,30 @@ class ReportedStateSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field depth
-    byteData.setFloat64(byteOffset, message.depth, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.depth, imc.endianSer);
     byteOffset += 8;
     // field roll
-    byteData.setFloat64(byteOffset, message.roll, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.roll, imc.endianSer);
     byteOffset += 8;
     // field pitch
-    byteData.setFloat64(byteOffset, message.pitch, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.pitch, imc.endianSer);
     byteOffset += 8;
     // field yaw
-    byteData.setFloat64(byteOffset, message.yaw, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.yaw, imc.endianSer);
     byteOffset += 8;
     // field rcpTime
-    byteData.setFloat64(byteOffset, message.rcpTime, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.rcpTime, imc.endianSer);
     byteOffset += 8;
     // field sid
     var sidEncoded = utf8.encode(message.sid);
     var sidSSize = sidEncoded.length;
-    byteData.setUint16(byteOffset, sidSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sidSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sidEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35460,7 +35460,7 @@ class ReportedStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ReportedState.static_id) {
+    if (msgId != imc.ReportedState.staticId) {
       return null;
     }
 
@@ -35471,11 +35471,11 @@ class ReportedStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -35493,7 +35493,7 @@ class ReportedStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -35577,7 +35577,7 @@ class RemoteSensorInfoSerializer extends imc
     // field id
     var idEncoded = utf8.encode(message.id);
     var idSSize = idEncoded.length;
-    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, idSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in idEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35585,27 +35585,27 @@ class RemoteSensorInfoSerializer extends imc
     // field sensorClass
     var sensorClassEncoded = utf8.encode(message.sensorClass);
     var sensorClassSSize = sensorClassEncoded.length;
-    byteData.setUint16(byteOffset, sensorClassSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sensorClassSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sensorClassEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field alt
-    byteData.setFloat32(byteOffset, message.alt, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.alt, imc.endianSer);
     byteOffset += 4;
     // field heading
-    byteData.setFloat32(byteOffset, message.heading, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.heading, imc.endianSer);
     byteOffset += 4;
     // field data
     var dataEncoded = utf8.encode(message.data);
     var dataSSize = dataEncoded.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in dataEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35627,7 +35627,7 @@ class RemoteSensorInfoSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RemoteSensorInfo.static_id) {
+    if (msgId != imc.RemoteSensorInfo.staticId) {
       return null;
     }
 
@@ -35638,11 +35638,11 @@ class RemoteSensorInfoSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -35660,7 +35660,7 @@ class RemoteSensorInfoSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -35748,14 +35748,14 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
     // field id
     var idEncoded = utf8.encode(message.id);
     var idSSize = idEncoded.length;
-    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, idSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in idEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field features
     if (message.features.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -35767,14 +35767,14 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.features[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -35794,7 +35794,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Map.static_id) {
+    if (msgId != imc.Map.staticId) {
       return null;
     }
 
@@ -35805,11 +35805,11 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -35827,7 +35827,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -35909,7 +35909,7 @@ class MapFeatureSerializer
     // field id
     var idEncoded = utf8.encode(message.id);
     var idSSize = idEncoded.length;
-    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, idSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in idEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -35928,7 +35928,7 @@ class MapFeatureSerializer
     byteOffset += 1;
     // field feature
     if (message.feature.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -35940,14 +35940,14 @@ class MapFeatureSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.feature[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -35967,7 +35967,7 @@ class MapFeatureSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.MapFeature.static_id) {
+    if (msgId != imc.MapFeature.staticId) {
       return null;
     }
 
@@ -35978,11 +35978,11 @@ class MapFeatureSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36000,7 +36000,7 @@ class MapFeatureSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36093,13 +36093,13 @@ class MapPointSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field alt
-    byteData.setFloat32(byteOffset, message.alt, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.alt, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -36118,7 +36118,7 @@ class MapPointSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.MapPoint.static_id) {
+    if (msgId != imc.MapPoint.staticId) {
       return null;
     }
 
@@ -36129,11 +36129,11 @@ class MapPointSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36151,7 +36151,7 @@ class MapPointSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36213,14 +36213,14 @@ class CcuEventSerializer
     // field id
     var idEncoded = utf8.encode(message.id);
     var idSSize = idEncoded.length;
-    byteData.setUint16(byteOffset, idSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, idSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in idEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field arg
     if (message.arg == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.arg!.msgId;
@@ -36228,7 +36228,7 @@ class CcuEventSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.arg, byteData, byteOffset);
@@ -36252,7 +36252,7 @@ class CcuEventSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CcuEvent.static_id) {
+    if (msgId != imc.CcuEvent.staticId) {
       return null;
     }
 
@@ -36263,11 +36263,11 @@ class CcuEventSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36285,7 +36285,7 @@ class CcuEventSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36368,14 +36368,14 @@ class VehicleLinksSerializer
     // field localname
     var localnameEncoded = utf8.encode(message.localname);
     var localnameSSize = localnameEncoded.length;
-    byteData.setUint16(byteOffset, localnameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, localnameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in localnameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field links
     if (message.links.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -36387,14 +36387,14 @@ class VehicleLinksSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.links[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -36414,7 +36414,7 @@ class VehicleLinksSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.VehicleLinks.static_id) {
+    if (msgId != imc.VehicleLinks.staticId) {
       return null;
     }
 
@@ -36425,11 +36425,11 @@ class VehicleLinksSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36447,7 +36447,7 @@ class VehicleLinksSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36530,7 +36530,7 @@ class TrexObservationSerializer extends imc
     // field timeline
     var timelineEncoded = utf8.encode(message.timeline);
     var timelineSSize = timelineEncoded.length;
-    byteData.setUint16(byteOffset, timelineSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, timelineSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in timelineEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36538,7 +36538,7 @@ class TrexObservationSerializer extends imc
     // field predicate
     var predicateEncoded = utf8.encode(message.predicate);
     var predicateSSize = predicateEncoded.length;
-    byteData.setUint16(byteOffset, predicateSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, predicateSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in predicateEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36546,7 +36546,7 @@ class TrexObservationSerializer extends imc
     // field attributes
     var attributesEncoded = utf8.encode(message.attributes);
     var attributesSSize = attributesEncoded.length;
-    byteData.setUint16(byteOffset, attributesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, attributesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in attributesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36568,7 +36568,7 @@ class TrexObservationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrexObservation.static_id) {
+    if (msgId != imc.TrexObservation.staticId) {
       return null;
     }
 
@@ -36579,11 +36579,11 @@ class TrexObservationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36601,7 +36601,7 @@ class TrexObservationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36682,7 +36682,7 @@ class TrexCommandSerializer
     // field goalId
     var goalIdEncoded = utf8.encode(message.goalId);
     var goalIdSSize = goalIdEncoded.length;
-    byteData.setUint16(byteOffset, goalIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, goalIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in goalIdEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36690,7 +36690,7 @@ class TrexCommandSerializer
     // field goalXml
     var goalXmlEncoded = utf8.encode(message.goalXml);
     var goalXmlSSize = goalXmlEncoded.length;
-    byteData.setUint16(byteOffset, goalXmlSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, goalXmlSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in goalXmlEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36712,7 +36712,7 @@ class TrexCommandSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrexCommand.static_id) {
+    if (msgId != imc.TrexCommand.staticId) {
       return null;
     }
 
@@ -36723,11 +36723,11 @@ class TrexCommandSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36745,7 +36745,7 @@ class TrexCommandSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36820,14 +36820,14 @@ class TrexOperationSerializer
     // field goalId
     var goalIdEncoded = utf8.encode(message.goalId);
     var goalIdSSize = goalIdEncoded.length;
-    byteData.setUint16(byteOffset, goalIdSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, goalIdSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in goalIdEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field token
     if (message.token == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.token!.msgId;
@@ -36835,7 +36835,7 @@ class TrexOperationSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.token, byteData, byteOffset);
@@ -36859,7 +36859,7 @@ class TrexOperationSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrexOperation.static_id) {
+    if (msgId != imc.TrexOperation.staticId) {
       return null;
     }
 
@@ -36870,11 +36870,11 @@ class TrexOperationSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -36892,7 +36892,7 @@ class TrexOperationSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -36975,7 +36975,7 @@ class TrexAttributeSerializer
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36986,7 +36986,7 @@ class TrexAttributeSerializer
     // field min
     var minEncoded = utf8.encode(message.min);
     var minSSize = minEncoded.length;
-    byteData.setUint16(byteOffset, minSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, minSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in minEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -36994,7 +36994,7 @@ class TrexAttributeSerializer
     // field max
     var maxEncoded = utf8.encode(message.max);
     var maxSSize = maxEncoded.length;
-    byteData.setUint16(byteOffset, maxSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, maxSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in maxEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -37016,7 +37016,7 @@ class TrexAttributeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrexAttribute.static_id) {
+    if (msgId != imc.TrexAttribute.staticId) {
       return null;
     }
 
@@ -37027,11 +37027,11 @@ class TrexAttributeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37049,7 +37049,7 @@ class TrexAttributeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37130,7 +37130,7 @@ class TrexTokenSerializer
     // field timeline
     var timelineEncoded = utf8.encode(message.timeline);
     var timelineSSize = timelineEncoded.length;
-    byteData.setUint16(byteOffset, timelineSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, timelineSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in timelineEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -37138,14 +37138,14 @@ class TrexTokenSerializer
     // field predicate
     var predicateEncoded = utf8.encode(message.predicate);
     var predicateSSize = predicateEncoded.length;
-    byteData.setUint16(byteOffset, predicateSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, predicateSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in predicateEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field attributes
     if (message.attributes.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -37157,14 +37157,14 @@ class TrexTokenSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.attributes[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -37184,7 +37184,7 @@ class TrexTokenSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrexToken.static_id) {
+    if (msgId != imc.TrexToken.staticId) {
       return null;
     }
 
@@ -37195,11 +37195,11 @@ class TrexTokenSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37217,7 +37217,7 @@ class TrexTokenSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37308,14 +37308,14 @@ class TrexPlanSerializer
     // field reactor
     var reactorEncoded = utf8.encode(message.reactor);
     var reactorSSize = reactorEncoded.length;
-    byteData.setUint16(byteOffset, reactorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, reactorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in reactorEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field tokens
     if (message.tokens.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -37327,14 +37327,14 @@ class TrexPlanSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.tokens[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -37354,7 +37354,7 @@ class TrexPlanSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TrexPlan.static_id) {
+    if (msgId != imc.TrexPlan.staticId) {
       return null;
     }
 
@@ -37365,11 +37365,11 @@ class TrexPlanSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37387,7 +37387,7 @@ class TrexPlanSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37468,7 +37468,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
     // field topic
     var topicEncoded = utf8.encode(message.topic);
     var topicSSize = topicEncoded.length;
-    byteData.setUint16(byteOffset, topicSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, topicSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in topicEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -37476,7 +37476,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
     // field data
     var dataEncoded = utf8.encode(message.data);
     var dataSSize = dataEncoded.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in dataEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -37498,7 +37498,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Event.static_id) {
+    if (msgId != imc.Event.staticId) {
       return null;
     }
 
@@ -37509,11 +37509,11 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37531,7 +37531,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37602,7 +37602,7 @@ class CompressedImageSerializer extends imc
     byteOffset += 1;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -37626,7 +37626,7 @@ class CompressedImageSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CompressedImage.static_id) {
+    if (msgId != imc.CompressedImage.staticId) {
       return null;
     }
 
@@ -37637,11 +37637,11 @@ class CompressedImageSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37659,7 +37659,7 @@ class CompressedImageSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37747,7 +37747,7 @@ class ImageTxSettingsSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ImageTxSettings.static_id) {
+    if (msgId != imc.ImageTxSettings.staticId) {
       return null;
     }
 
@@ -37758,11 +37758,11 @@ class ImageTxSettingsSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37780,7 +37780,7 @@ class ImageTxSettingsSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37841,19 +37841,19 @@ class RemoteStateSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat32(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lat, imc.endianSer);
     byteOffset += 4;
     // field lon
-    byteData.setFloat32(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lon, imc.endianSer);
     byteOffset += 4;
     // field depth
     byteData.setUint8(byteOffset, message.depth);
     byteOffset += 1;
     // field speed
-    byteData.setFloat32(byteOffset, message.speed, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.speed, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -37872,7 +37872,7 @@ class RemoteStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.RemoteState.static_id) {
+    if (msgId != imc.RemoteState.staticId) {
       return null;
     }
 
@@ -37883,11 +37883,11 @@ class RemoteStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -37905,7 +37905,7 @@ class RemoteStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -37970,28 +37970,28 @@ class TargetSerializer
     // field label
     var labelEncoded = utf8.encode(message.label);
     var labelSSize = labelEncoded.length;
-    byteData.setUint16(byteOffset, labelSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, labelSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in labelEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field cog
-    byteData.setFloat32(byteOffset, message.cog, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.cog, imc.endianSer);
     byteOffset += 4;
     // field sog
-    byteData.setFloat32(byteOffset, message.sog, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.sog, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -38010,7 +38010,7 @@ class TargetSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Target.static_id) {
+    if (msgId != imc.Target.staticId) {
       return null;
     }
 
@@ -38021,11 +38021,11 @@ class TargetSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38043,7 +38043,7 @@ class TargetSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38121,7 +38121,7 @@ class EntityParameterSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -38129,7 +38129,7 @@ class EntityParameterSerializer extends imc
     // field value
     var valueEncoded = utf8.encode(message.value);
     var valueSSize = valueEncoded.length;
-    byteData.setUint16(byteOffset, valueSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, valueSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in valueEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -38151,7 +38151,7 @@ class EntityParameterSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityParameter.static_id) {
+    if (msgId != imc.EntityParameter.staticId) {
       return null;
     }
 
@@ -38162,11 +38162,11 @@ class EntityParameterSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38184,7 +38184,7 @@ class EntityParameterSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38253,14 +38253,14 @@ class EntityParametersSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field params
     if (message.params.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -38272,14 +38272,14 @@ class EntityParametersSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.params[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -38299,7 +38299,7 @@ class EntityParametersSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.EntityParameters.static_id) {
+    if (msgId != imc.EntityParameters.staticId) {
       return null;
     }
 
@@ -38310,11 +38310,11 @@ class EntityParametersSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38332,7 +38332,7 @@ class EntityParametersSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38415,7 +38415,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -38423,7 +38423,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     // field visibility
     var visibilityEncoded = utf8.encode(message.visibility);
     var visibilitySSize = visibilityEncoded.length;
-    byteData.setUint16(byteOffset, visibilitySSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, visibilitySSize, imc.endianSer);
     byteOffset += 2;
     for (var b in visibilityEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -38431,7 +38431,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     // field scope
     var scopeEncoded = utf8.encode(message.scope);
     var scopeSSize = scopeEncoded.length;
-    byteData.setUint16(byteOffset, scopeSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, scopeSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in scopeEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -38453,7 +38453,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.QueryEntityParameters.static_id) {
+    if (msgId != imc.QueryEntityParameters.staticId) {
       return null;
     }
 
@@ -38464,11 +38464,11 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38486,7 +38486,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38564,14 +38564,14 @@ class SetEntityParametersSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field params
     if (message.params.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -38583,14 +38583,14 @@ class SetEntityParametersSerializer extends imc
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.params[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -38610,7 +38610,7 @@ class SetEntityParametersSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetEntityParameters.static_id) {
+    if (msgId != imc.SetEntityParameters.staticId) {
       return null;
     }
 
@@ -38621,11 +38621,11 @@ class SetEntityParametersSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38643,7 +38643,7 @@ class SetEntityParametersSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38726,7 +38726,7 @@ class SaveEntityParametersSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -38748,7 +38748,7 @@ class SaveEntityParametersSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SaveEntityParameters.static_id) {
+    if (msgId != imc.SaveEntityParameters.staticId) {
       return null;
     }
 
@@ -38759,11 +38759,11 @@ class SaveEntityParametersSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38781,7 +38781,7 @@ class SaveEntityParametersSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38839,7 +38839,7 @@ class CreateSessionSerializer
     var byteOffset = offset;
 
     // field timeout
-    byteData.setUint32(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -38858,7 +38858,7 @@ class CreateSessionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CreateSession.static_id) {
+    if (msgId != imc.CreateSession.staticId) {
       return null;
     }
 
@@ -38869,11 +38869,11 @@ class CreateSessionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38891,7 +38891,7 @@ class CreateSessionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -38943,7 +38943,7 @@ class CloseSessionSerializer
     var byteOffset = offset;
 
     // field sessid
-    byteData.setUint32(byteOffset, message.sessid, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.sessid, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -38962,7 +38962,7 @@ class CloseSessionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.CloseSession.static_id) {
+    if (msgId != imc.CloseSession.staticId) {
       return null;
     }
 
@@ -38973,11 +38973,11 @@ class CloseSessionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -38995,7 +38995,7 @@ class CloseSessionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39047,12 +39047,12 @@ class SessionSubscriptionSerializer extends imc
     var byteOffset = offset;
 
     // field sessid
-    byteData.setUint32(byteOffset, message.sessid, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.sessid, imc.endianSer);
     byteOffset += 4;
     // field messages
     var messagesEncoded = utf8.encode(message.messages);
     var messagesSSize = messagesEncoded.length;
-    byteData.setUint16(byteOffset, messagesSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, messagesSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in messagesEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39074,7 +39074,7 @@ class SessionSubscriptionSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SessionSubscription.static_id) {
+    if (msgId != imc.SessionSubscription.staticId) {
       return null;
     }
 
@@ -39085,11 +39085,11 @@ class SessionSubscriptionSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39107,7 +39107,7 @@ class SessionSubscriptionSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39168,7 +39168,7 @@ class SessionKeepAliveSerializer extends imc
     var byteOffset = offset;
 
     // field sessid
-    byteData.setUint32(byteOffset, message.sessid, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.sessid, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -39187,7 +39187,7 @@ class SessionKeepAliveSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SessionKeepAlive.static_id) {
+    if (msgId != imc.SessionKeepAlive.staticId) {
       return null;
     }
 
@@ -39198,11 +39198,11 @@ class SessionKeepAliveSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39220,7 +39220,7 @@ class SessionKeepAliveSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39272,7 +39272,7 @@ class SessionStatusSerializer
     var byteOffset = offset;
 
     // field sessid
-    byteData.setUint32(byteOffset, message.sessid, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.sessid, imc.endianSer);
     byteOffset += 4;
     // field status
     byteData.setUint8(byteOffset, message.status.value);
@@ -39294,7 +39294,7 @@ class SessionStatusSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SessionStatus.static_id) {
+    if (msgId != imc.SessionStatus.staticId) {
       return null;
     }
 
@@ -39305,11 +39305,11 @@ class SessionStatusSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39327,7 +39327,7 @@ class SessionStatusSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39384,7 +39384,7 @@ class PushEntityParametersSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39406,7 +39406,7 @@ class PushEntityParametersSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PushEntityParameters.static_id) {
+    if (msgId != imc.PushEntityParameters.staticId) {
       return null;
     }
 
@@ -39417,11 +39417,11 @@ class PushEntityParametersSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39439,7 +39439,7 @@ class PushEntityParametersSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39499,7 +39499,7 @@ class PopEntityParametersSerializer extends imc
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39521,7 +39521,7 @@ class PopEntityParametersSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.PopEntityParameters.static_id) {
+    if (msgId != imc.PopEntityParameters.staticId) {
       return null;
     }
 
@@ -39532,11 +39532,11 @@ class PopEntityParametersSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39554,7 +39554,7 @@ class PopEntityParametersSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39616,7 +39616,7 @@ class IoEventSerializer
     // field error
     var errorEncoded = utf8.encode(message.error);
     var errorSSize = errorEncoded.length;
-    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, errorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in errorEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39638,7 +39638,7 @@ class IoEventSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.IoEvent.static_id) {
+    if (msgId != imc.IoEvent.staticId) {
       return null;
     }
 
@@ -39649,11 +39649,11 @@ class IoEventSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39671,7 +39671,7 @@ class IoEventSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39731,12 +39731,12 @@ class UamTxFrameSerializer
     var byteOffset = offset;
 
     // field seq
-    byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.seq, imc.endianSer);
     byteOffset += 2;
     // field sysDst
     var sysDstEncoded = utf8.encode(message.sysDst);
     var sysDstSSize = sysDstEncoded.length;
-    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysDstEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39746,7 +39746,7 @@ class UamTxFrameSerializer
     byteOffset += 1;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -39770,7 +39770,7 @@ class UamTxFrameSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UamTxFrame.static_id) {
+    if (msgId != imc.UamTxFrame.staticId) {
       return null;
     }
 
@@ -39781,11 +39781,11 @@ class UamTxFrameSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39803,7 +39803,7 @@ class UamTxFrameSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -39876,7 +39876,7 @@ class UamRxFrameSerializer
     // field sysSrc
     var sysSrcEncoded = utf8.encode(message.sysSrc);
     var sysSrcSSize = sysSrcEncoded.length;
-    byteData.setUint16(byteOffset, sysSrcSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysSrcSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysSrcEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39884,7 +39884,7 @@ class UamRxFrameSerializer
     // field sysDst
     var sysDstEncoded = utf8.encode(message.sysDst);
     var sysDstSSize = sysDstEncoded.length;
-    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysDstEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -39894,7 +39894,7 @@ class UamRxFrameSerializer
     byteOffset += 1;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -39918,7 +39918,7 @@ class UamRxFrameSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UamRxFrame.static_id) {
+    if (msgId != imc.UamRxFrame.staticId) {
       return null;
     }
 
@@ -39929,11 +39929,11 @@ class UamRxFrameSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -39951,7 +39951,7 @@ class UamRxFrameSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40029,7 +40029,7 @@ class UamTxStatusSerializer
     var byteOffset = offset;
 
     // field seq
-    byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.seq, imc.endianSer);
     byteOffset += 2;
     // field value
     byteData.setUint8(byteOffset, message.value.value);
@@ -40037,7 +40037,7 @@ class UamTxStatusSerializer
     // field error
     var errorEncoded = utf8.encode(message.error);
     var errorSSize = errorEncoded.length;
-    byteData.setUint16(byteOffset, errorSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, errorSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in errorEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -40059,7 +40059,7 @@ class UamTxStatusSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UamTxStatus.static_id) {
+    if (msgId != imc.UamTxStatus.staticId) {
       return null;
     }
 
@@ -40070,11 +40070,11 @@ class UamTxStatusSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40092,7 +40092,7 @@ class UamTxStatusSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40155,18 +40155,18 @@ class UamRxRangeSerializer
     var byteOffset = offset;
 
     // field seq
-    byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.seq, imc.endianSer);
     byteOffset += 2;
     // field sys
     var sysEncoded = utf8.encode(message.sys);
     var sysSSize = sysEncoded.length;
-    byteData.setUint16(byteOffset, sysSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -40185,7 +40185,7 @@ class UamRxRangeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UamRxRange.static_id) {
+    if (msgId != imc.UamRxRange.staticId) {
       return null;
     }
 
@@ -40196,11 +40196,11 @@ class UamRxRangeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40218,7 +40218,7 @@ class UamRxRangeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40281,18 +40281,18 @@ class UamTxRangeSerializer
     var byteOffset = offset;
 
     // field seq
-    byteData.setUint16(byteOffset, message.seq, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.seq, imc.endianSer);
     byteOffset += 2;
     // field sysDst
     var sysDstEncoded = utf8.encode(message.sysDst);
     var sysDstSSize = sysDstEncoded.length;
-    byteData.setUint16(byteOffset, sysDstSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, sysDstSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in sysDstEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field timeout
-    byteData.setFloat32(byteOffset, message.timeout, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeout, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -40311,7 +40311,7 @@ class UamTxRangeSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UamTxRange.static_id) {
+    if (msgId != imc.UamTxRange.staticId) {
       return null;
     }
 
@@ -40322,11 +40322,11 @@ class UamTxRangeSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40344,7 +40344,7 @@ class UamTxRangeSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40411,19 +40411,19 @@ class FormCtrlParamSerializer
     byteData.setUint8(byteOffset, message.action.value);
     byteOffset += 1;
     // field lonGain
-    byteData.setFloat32(byteOffset, message.lonGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lonGain, imc.endianSer);
     byteOffset += 4;
     // field latGain
-    byteData.setFloat32(byteOffset, message.latGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.latGain, imc.endianSer);
     byteOffset += 4;
     // field bondThick
-    byteData.setUint32(byteOffset, message.bondThick, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.bondThick, imc.endianSer);
     byteOffset += 4;
     // field leadGain
-    byteData.setFloat32(byteOffset, message.leadGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leadGain, imc.endianSer);
     byteOffset += 4;
     // field deconflGain
-    byteData.setFloat32(byteOffset, message.deconflGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.deconflGain, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -40442,7 +40442,7 @@ class FormCtrlParamSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormCtrlParam.static_id) {
+    if (msgId != imc.FormCtrlParam.staticId) {
       return null;
     }
 
@@ -40453,11 +40453,11 @@ class FormCtrlParamSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40475,7 +40475,7 @@ class FormCtrlParamSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40542,13 +40542,13 @@ class FormationEvalSerializer
     var byteOffset = offset;
 
     // field errMean
-    byteData.setFloat32(byteOffset, message.errMean, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.errMean, imc.endianSer);
     byteOffset += 4;
     // field distMinAbs
-    byteData.setFloat32(byteOffset, message.distMinAbs, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.distMinAbs, imc.endianSer);
     byteOffset += 4;
     // field distMinMean
-    byteData.setFloat32(byteOffset, message.distMinMean, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.distMinMean, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -40567,7 +40567,7 @@ class FormationEvalSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationEval.static_id) {
+    if (msgId != imc.FormationEval.staticId) {
       return null;
     }
 
@@ -40578,11 +40578,11 @@ class FormationEvalSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40600,7 +40600,7 @@ class FormationEvalSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40661,34 +40661,34 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
     byteData.setUint8(byteOffset, message.action.value);
     byteOffset += 1;
     // field lonGain
-    byteData.setFloat32(byteOffset, message.lonGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lonGain, imc.endianSer);
     byteOffset += 4;
     // field latGain
-    byteData.setFloat32(byteOffset, message.latGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.latGain, imc.endianSer);
     byteOffset += 4;
     // field bondThick
-    byteData.setFloat32(byteOffset, message.bondThick, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.bondThick, imc.endianSer);
     byteOffset += 4;
     // field leadGain
-    byteData.setFloat32(byteOffset, message.leadGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.leadGain, imc.endianSer);
     byteOffset += 4;
     // field deconflGain
-    byteData.setFloat32(byteOffset, message.deconflGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.deconflGain, imc.endianSer);
     byteOffset += 4;
     // field accelSwitchGain
-    byteData.setFloat32(byteOffset, message.accelSwitchGain, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.accelSwitchGain, imc.endianSer);
     byteOffset += 4;
     // field safeDist
-    byteData.setFloat32(byteOffset, message.safeDist, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.safeDist, imc.endianSer);
     byteOffset += 4;
     // field deconflictOffset
-    byteData.setFloat32(byteOffset, message.deconflictOffset, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.deconflictOffset, imc.endianSer);
     byteOffset += 4;
     // field accelSafeMargin
-    byteData.setFloat32(byteOffset, message.accelSafeMargin, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.accelSafeMargin, imc.endianSer);
     byteOffset += 4;
     // field accelLimX
-    byteData.setFloat32(byteOffset, message.accelLimX, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.accelLimX, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -40707,7 +40707,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationControlParams.static_id) {
+    if (msgId != imc.FormationControlParams.staticId) {
       return null;
     }
 
@@ -40718,11 +40718,11 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40740,7 +40740,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -40829,23 +40829,23 @@ class FormationEvaluationSerializer extends imc
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field errMean
-    byteData.setFloat32(byteOffset, message.errMean, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.errMean, imc.endianSer);
     byteOffset += 4;
     // field distMinAbs
-    byteData.setFloat32(byteOffset, message.distMinAbs, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.distMinAbs, imc.endianSer);
     byteOffset += 4;
     // field distMinMean
-    byteData.setFloat32(byteOffset, message.distMinMean, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.distMinMean, imc.endianSer);
     byteOffset += 4;
     // field rollRateMean
-    byteData.setFloat32(byteOffset, message.rollRateMean, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.rollRateMean, imc.endianSer);
     byteOffset += 4;
     // field time
-    byteData.setFloat32(byteOffset, message.time, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.time, imc.endianSer);
     byteOffset += 4;
     // field controlParams
     if (message.controlParams == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.controlParams!.msgId;
@@ -40853,7 +40853,7 @@ class FormationEvaluationSerializer extends imc
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize = pMsgSerializer.serializePayload(
             message.controlParams, byteData, byteOffset);
@@ -40877,7 +40877,7 @@ class FormationEvaluationSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.FormationEvaluation.static_id) {
+    if (msgId != imc.FormationEvaluation.staticId) {
       return null;
     }
 
@@ -40888,11 +40888,11 @@ class FormationEvaluationSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -40910,7 +40910,7 @@ class FormationEvaluationSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41003,16 +41003,16 @@ class SoiWaypointSerializer
     var byteOffset = offset;
 
     // field lat
-    byteData.setFloat32(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lat, imc.endianSer);
     byteOffset += 4;
     // field lon
-    byteData.setFloat32(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lon, imc.endianSer);
     byteOffset += 4;
     // field eta
-    byteData.setUint32(byteOffset, message.eta, imc.endian_ser);
+    byteData.setUint32(byteOffset, message.eta, imc.endianSer);
     byteOffset += 4;
     // field duration
-    byteData.setUint16(byteOffset, message.duration, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.duration, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -41031,7 +41031,7 @@ class SoiWaypointSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SoiWaypoint.static_id) {
+    if (msgId != imc.SoiWaypoint.staticId) {
       return null;
     }
 
@@ -41042,11 +41042,11 @@ class SoiWaypointSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41064,7 +41064,7 @@ class SoiWaypointSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41124,11 +41124,11 @@ class SoiPlanSerializer
     var byteOffset = offset;
 
     // field planId
-    byteData.setUint16(byteOffset, message.planId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.planId, imc.endianSer);
     byteOffset += 2;
     // field waypoints
     if (message.waypoints.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -41140,14 +41140,14 @@ class SoiPlanSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.waypoints[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -41167,7 +41167,7 @@ class SoiPlanSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SoiPlan.static_id) {
+    if (msgId != imc.SoiPlan.staticId) {
       return null;
     }
 
@@ -41178,11 +41178,11 @@ class SoiPlanSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41200,7 +41200,7 @@ class SoiPlanSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41282,14 +41282,14 @@ class SoiCommandSerializer
     // field settings
     var settingsEncoded = utf8.encode(message.settings);
     var settingsSSize = settingsEncoded.length;
-    byteData.setUint16(byteOffset, settingsSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, settingsSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in settingsEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field plan
     if (message.plan == null) {
-      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endian_ser);
+      byteData.setUint16(byteOffset, imc.ImcId.nullId, imc.endianSer);
       byteOffset += 2;
     } else {
       var id = message.plan!.msgId;
@@ -41297,7 +41297,7 @@ class SoiCommandSerializer
           .messagesSerializers[imc.idsToMessages[id] ?? imc.ImcId.nullId]
           ?.call();
       if (pMsgSerializer != null) {
-        byteData.setUint16(byteOffset, id, imc.endian_ser);
+        byteData.setUint16(byteOffset, id, imc.endianSer);
         byteOffset += 2;
         var mPSize =
             pMsgSerializer.serializePayload(message.plan, byteData, byteOffset);
@@ -41307,7 +41307,7 @@ class SoiCommandSerializer
     // field info
     var infoEncoded = utf8.encode(message.info);
     var infoSSize = infoEncoded.length;
-    byteData.setUint16(byteOffset, infoSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, infoSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in infoEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -41329,7 +41329,7 @@ class SoiCommandSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SoiCommand.static_id) {
+    if (msgId != imc.SoiCommand.staticId) {
       return null;
     }
 
@@ -41340,11 +41340,11 @@ class SoiCommandSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41362,7 +41362,7 @@ class SoiCommandSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41457,13 +41457,13 @@ class SoiStateSerializer
     byteData.setUint8(byteOffset, message.state.value);
     byteOffset += 1;
     // field planId
-    byteData.setUint16(byteOffset, message.planId, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.planId, imc.endianSer);
     byteOffset += 2;
     // field wptId
     byteData.setUint8(byteOffset, message.wptId);
     byteOffset += 1;
     // field settingsChk
-    byteData.setUint16(byteOffset, message.settingsChk, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.settingsChk, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -41482,7 +41482,7 @@ class SoiStateSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SoiState.static_id) {
+    if (msgId != imc.SoiState.staticId) {
       return null;
     }
 
@@ -41493,11 +41493,11 @@ class SoiStateSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41515,7 +41515,7 @@ class SoiStateSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41586,7 +41586,7 @@ class MessagePartSerializer
     byteOffset += 1;
     // field data
     var dataSSize = message.data.length;
-    byteData.setUint16(byteOffset, dataSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, dataSSize, imc.endianSer);
     byteOffset += 2;
     if (dataSSize > 0) {
       for (var b in message.data) {
@@ -41610,7 +41610,7 @@ class MessagePartSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.MessagePart.static_id) {
+    if (msgId != imc.MessagePart.staticId) {
       return null;
     }
 
@@ -41621,11 +41621,11 @@ class MessagePartSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41643,7 +41643,7 @@ class MessagePartSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41710,14 +41710,14 @@ class NeptusBlobSerializer
     // field contentType
     var contentTypeEncoded = utf8.encode(message.contentType);
     var contentTypeSSize = contentTypeEncoded.length;
-    byteData.setUint16(byteOffset, contentTypeSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, contentTypeSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in contentTypeEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field content
     var contentSSize = message.content.length;
-    byteData.setUint16(byteOffset, contentSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, contentSSize, imc.endianSer);
     byteOffset += 2;
     if (contentSSize > 0) {
       for (var b in message.content) {
@@ -41741,7 +41741,7 @@ class NeptusBlobSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.NeptusBlob.static_id) {
+    if (msgId != imc.NeptusBlob.staticId) {
       return null;
     }
 
@@ -41752,11 +41752,11 @@ class NeptusBlobSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41774,7 +41774,7 @@ class NeptusBlobSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41854,7 +41854,7 @@ class AbortedSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Aborted.static_id) {
+    if (msgId != imc.Aborted.staticId) {
       return null;
     }
 
@@ -41865,11 +41865,11 @@ class AbortedSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41887,7 +41887,7 @@ class AbortedSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -41934,13 +41934,13 @@ class UsblAnglesSerializer
     var byteOffset = offset;
 
     // field target
-    byteData.setUint16(byteOffset, message.target, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.target, imc.endianSer);
     byteOffset += 2;
     // field bearing
-    byteData.setFloat32(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 4;
     // field elevation
-    byteData.setFloat32(byteOffset, message.elevation, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.elevation, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -41959,7 +41959,7 @@ class UsblAnglesSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblAngles.static_id) {
+    if (msgId != imc.UsblAngles.staticId) {
       return null;
     }
 
@@ -41970,11 +41970,11 @@ class UsblAnglesSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -41992,7 +41992,7 @@ class UsblAnglesSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42050,16 +42050,16 @@ class UsblPositionSerializer
     var byteOffset = offset;
 
     // field target
-    byteData.setUint16(byteOffset, message.target, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.target, imc.endianSer);
     byteOffset += 2;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -42078,7 +42078,7 @@ class UsblPositionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblPosition.static_id) {
+    if (msgId != imc.UsblPosition.staticId) {
       return null;
     }
 
@@ -42089,11 +42089,11 @@ class UsblPositionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42111,7 +42111,7 @@ class UsblPositionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42171,19 +42171,19 @@ class UsblFixSerializer
     var byteOffset = offset;
 
     // field target
-    byteData.setUint16(byteOffset, message.target, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.target, imc.endianSer);
     byteOffset += 2;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -42202,7 +42202,7 @@ class UsblFixSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblFix.static_id) {
+    if (msgId != imc.UsblFix.staticId) {
       return null;
     }
 
@@ -42213,11 +42213,11 @@ class UsblFixSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42235,7 +42235,7 @@ class UsblFixSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42301,14 +42301,14 @@ class ParametersXmlSerializer
     // field locale
     var localeEncoded = utf8.encode(message.locale);
     var localeSSize = localeEncoded.length;
-    byteData.setUint16(byteOffset, localeSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, localeSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in localeEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field config
     var configSSize = message.config.length;
-    byteData.setUint16(byteOffset, configSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, configSSize, imc.endianSer);
     byteOffset += 2;
     if (configSSize > 0) {
       for (var b in message.config) {
@@ -42332,7 +42332,7 @@ class ParametersXmlSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ParametersXml.static_id) {
+    if (msgId != imc.ParametersXml.staticId) {
       return null;
     }
 
@@ -42343,11 +42343,11 @@ class ParametersXmlSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42365,7 +42365,7 @@ class ParametersXmlSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42446,7 +42446,7 @@ class GetParametersXmlSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GetParametersXml.static_id) {
+    if (msgId != imc.GetParametersXml.staticId) {
       return null;
     }
 
@@ -42457,11 +42457,11 @@ class GetParametersXmlSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42479,7 +42479,7 @@ class GetParametersXmlSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42530,10 +42530,10 @@ class SetImageCoordsSerializer
     byteData.setUint8(byteOffset, message.camId);
     byteOffset += 1;
     // field x
-    byteData.setUint16(byteOffset, message.x, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.x, imc.endianSer);
     byteOffset += 2;
     // field y
-    byteData.setUint16(byteOffset, message.y, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.y, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -42552,7 +42552,7 @@ class SetImageCoordsSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SetImageCoords.static_id) {
+    if (msgId != imc.SetImageCoords.staticId) {
       return null;
     }
 
@@ -42563,11 +42563,11 @@ class SetImageCoordsSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42585,7 +42585,7 @@ class SetImageCoordsSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42646,10 +42646,10 @@ class GetImageCoordsSerializer
     byteData.setUint8(byteOffset, message.camId);
     byteOffset += 1;
     // field x
-    byteData.setUint16(byteOffset, message.x, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.x, imc.endianSer);
     byteOffset += 2;
     // field y
-    byteData.setUint16(byteOffset, message.y, imc.endian_ser);
+    byteData.setUint16(byteOffset, message.y, imc.endianSer);
     byteOffset += 2;
 
     return byteOffset - offset;
@@ -42668,7 +42668,7 @@ class GetImageCoordsSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GetImageCoords.static_id) {
+    if (msgId != imc.GetImageCoords.staticId) {
       return null;
     }
 
@@ -42679,11 +42679,11 @@ class GetImageCoordsSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42701,7 +42701,7 @@ class GetImageCoordsSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42762,19 +42762,19 @@ class GetWorldCoordinatesSerializer extends imc
     byteData.setUint8(byteOffset, message.tracking.value);
     byteOffset += 1;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -42793,7 +42793,7 @@ class GetWorldCoordinatesSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.GetWorldCoordinates.static_id) {
+    if (msgId != imc.GetWorldCoordinates.staticId) {
       return null;
     }
 
@@ -42804,11 +42804,11 @@ class GetWorldCoordinatesSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42826,7 +42826,7 @@ class GetWorldCoordinatesSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -42895,34 +42895,34 @@ class UsblAnglesExtendedSerializer extends imc
     // field target
     var targetEncoded = utf8.encode(message.target);
     var targetSSize = targetEncoded.length;
-    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, targetSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in targetEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lbearing
-    byteData.setFloat32(byteOffset, message.lbearing, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lbearing, imc.endianSer);
     byteOffset += 4;
     // field lelevation
-    byteData.setFloat32(byteOffset, message.lelevation, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.lelevation, imc.endianSer);
     byteOffset += 4;
     // field bearing
-    byteData.setFloat32(byteOffset, message.bearing, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.bearing, imc.endianSer);
     byteOffset += 4;
     // field elevation
-    byteData.setFloat32(byteOffset, message.elevation, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.elevation, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
     // field accuracy
-    byteData.setFloat32(byteOffset, message.accuracy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.accuracy, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -42941,7 +42941,7 @@ class UsblAnglesExtendedSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblAnglesExtended.static_id) {
+    if (msgId != imc.UsblAnglesExtended.staticId) {
       return null;
     }
 
@@ -42952,11 +42952,11 @@ class UsblAnglesExtendedSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -42974,7 +42974,7 @@ class UsblAnglesExtendedSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43058,40 +43058,40 @@ class UsblPositionExtendedSerializer extends imc
     // field target
     var targetEncoded = utf8.encode(message.target);
     var targetSSize = targetEncoded.length;
-    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, targetSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in targetEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field x
-    byteData.setFloat32(byteOffset, message.x, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.x, imc.endianSer);
     byteOffset += 4;
     // field y
-    byteData.setFloat32(byteOffset, message.y, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.y, imc.endianSer);
     byteOffset += 4;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field n
-    byteData.setFloat32(byteOffset, message.n, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.n, imc.endianSer);
     byteOffset += 4;
     // field e
-    byteData.setFloat32(byteOffset, message.e, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.e, imc.endianSer);
     byteOffset += 4;
     // field d
-    byteData.setFloat32(byteOffset, message.d, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.d, imc.endianSer);
     byteOffset += 4;
     // field phi
-    byteData.setFloat32(byteOffset, message.phi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.phi, imc.endianSer);
     byteOffset += 4;
     // field theta
-    byteData.setFloat32(byteOffset, message.theta, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.theta, imc.endianSer);
     byteOffset += 4;
     // field psi
-    byteData.setFloat32(byteOffset, message.psi, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.psi, imc.endianSer);
     byteOffset += 4;
     // field accuracy
-    byteData.setFloat32(byteOffset, message.accuracy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.accuracy, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -43110,7 +43110,7 @@ class UsblPositionExtendedSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblPositionExtended.static_id) {
+    if (msgId != imc.UsblPositionExtended.staticId) {
       return null;
     }
 
@@ -43121,11 +43121,11 @@ class UsblPositionExtendedSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43143,7 +43143,7 @@ class UsblPositionExtendedSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43233,25 +43233,25 @@ class UsblFixExtendedSerializer extends imc
     // field target
     var targetEncoded = utf8.encode(message.target);
     var targetSSize = targetEncoded.length;
-    byteData.setUint16(byteOffset, targetSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, targetSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in targetEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
     byteOffset += 1;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field accuracy
-    byteData.setFloat32(byteOffset, message.accuracy, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.accuracy, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -43270,7 +43270,7 @@ class UsblFixExtendedSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblFixExtended.static_id) {
+    if (msgId != imc.UsblFixExtended.staticId) {
       return null;
     }
 
@@ -43281,11 +43281,11 @@ class UsblFixExtendedSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43303,7 +43303,7 @@ class UsblFixExtendedSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43377,19 +43377,19 @@ class UsblModemSerializer
     // field name
     var nameEncoded = utf8.encode(message.name);
     var nameSSize = nameEncoded.length;
-    byteData.setUint16(byteOffset, nameSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, nameSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in nameEncoded) {
       byteData.setUint8(byteOffset++, b);
     }
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field z
-    byteData.setFloat32(byteOffset, message.z, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.z, imc.endianSer);
     byteOffset += 4;
     // field zUnits
     byteData.setUint8(byteOffset, message.zUnits.value);
@@ -43411,7 +43411,7 @@ class UsblModemSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblModem.static_id) {
+    if (msgId != imc.UsblModem.staticId) {
       return null;
     }
 
@@ -43422,11 +43422,11 @@ class UsblModemSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43444,7 +43444,7 @@ class UsblModemSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43517,7 +43517,7 @@ class UsblConfigSerializer
     byteOffset += 1;
     // field modems
     if (message.modems.isEmpty) {
-      byteData.setUint16(byteOffset, 0, imc.endian_ser);
+      byteData.setUint16(byteOffset, 0, imc.endianSer);
       byteOffset += 2;
     } else {
       var msgsCounter = 0;
@@ -43529,14 +43529,14 @@ class UsblConfigSerializer
                 imc.idsToMessages[id] ?? imc.ImcId.nullId.toString()]
             ?.call();
         if (pMsgSerializer != null) {
-          byteData.setUint16(byteOffset, id, imc.endian_ser);
+          byteData.setUint16(byteOffset, id, imc.endianSer);
           byteOffset += 2;
           var mPSize = pMsgSerializer.serializePayload(
               message.modems[i], byteData, byteOffset);
           byteOffset += mPSize;
           msgsCounter++;
         }
-        byteData.setUint16(bufCounterPos, msgsCounter, imc.endian_ser);
+        byteData.setUint16(bufCounterPos, msgsCounter, imc.endianSer);
       }
     }
 
@@ -43556,7 +43556,7 @@ class UsblConfigSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.UsblConfig.static_id) {
+    if (msgId != imc.UsblConfig.staticId) {
       return null;
     }
 
@@ -43567,11 +43567,11 @@ class UsblConfigSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43589,7 +43589,7 @@ class UsblConfigSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43664,7 +43664,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field type
     byteData.setUint8(byteOffset, message.type.value);
@@ -43686,7 +43686,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DissolvedOrganicMatter.static_id) {
+    if (msgId != imc.DissolvedOrganicMatter.staticId) {
       return null;
     }
 
@@ -43697,11 +43697,11 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43719,7 +43719,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43775,7 +43775,7 @@ class OpticalBackscatterSerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat32(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -43794,7 +43794,7 @@ class OpticalBackscatterSerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.OpticalBackscatter.static_id) {
+    if (msgId != imc.OpticalBackscatter.staticId) {
       return null;
     }
 
@@ -43805,11 +43805,11 @@ class OpticalBackscatterSerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43827,7 +43827,7 @@ class OpticalBackscatterSerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -43879,54 +43879,53 @@ class TachographSerializer
 
     // field timestampLastService
     byteData.setFloat64(
-        byteOffset, message.timestampLastService, imc.endian_ser);
+        byteOffset, message.timestampLastService, imc.endianSer);
     byteOffset += 8;
     // field timeNextService
-    byteData.setFloat32(byteOffset, message.timeNextService, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeNextService, imc.endianSer);
     byteOffset += 4;
     // field timeMotorNextService
     byteData.setFloat32(
-        byteOffset, message.timeMotorNextService, imc.endian_ser);
+        byteOffset, message.timeMotorNextService, imc.endianSer);
     byteOffset += 4;
     // field timeIdleGround
-    byteData.setFloat32(byteOffset, message.timeIdleGround, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeIdleGround, imc.endianSer);
     byteOffset += 4;
     // field timeIdleAir
-    byteData.setFloat32(byteOffset, message.timeIdleAir, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeIdleAir, imc.endianSer);
     byteOffset += 4;
     // field timeIdleWater
-    byteData.setFloat32(byteOffset, message.timeIdleWater, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeIdleWater, imc.endianSer);
     byteOffset += 4;
     // field timeIdleUnderwater
-    byteData.setFloat32(byteOffset, message.timeIdleUnderwater, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeIdleUnderwater, imc.endianSer);
     byteOffset += 4;
     // field timeIdleUnknown
-    byteData.setFloat32(byteOffset, message.timeIdleUnknown, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeIdleUnknown, imc.endianSer);
     byteOffset += 4;
     // field timeMotorGround
-    byteData.setFloat32(byteOffset, message.timeMotorGround, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeMotorGround, imc.endianSer);
     byteOffset += 4;
     // field timeMotorAir
-    byteData.setFloat32(byteOffset, message.timeMotorAir, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeMotorAir, imc.endianSer);
     byteOffset += 4;
     // field timeMotorWater
-    byteData.setFloat32(byteOffset, message.timeMotorWater, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeMotorWater, imc.endianSer);
     byteOffset += 4;
     // field timeMotorUnderwater
-    byteData.setFloat32(
-        byteOffset, message.timeMotorUnderwater, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeMotorUnderwater, imc.endianSer);
     byteOffset += 4;
     // field timeMotorUnknown
-    byteData.setFloat32(byteOffset, message.timeMotorUnknown, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.timeMotorUnknown, imc.endianSer);
     byteOffset += 4;
     // field rpmMin
-    byteData.setInt16(byteOffset, message.rpmMin, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.rpmMin, imc.endianSer);
     byteOffset += 2;
     // field rpmMax
-    byteData.setInt16(byteOffset, message.rpmMax, imc.endian_ser);
+    byteData.setInt16(byteOffset, message.rpmMax, imc.endianSer);
     byteOffset += 2;
     // field depthMax
-    byteData.setFloat32(byteOffset, message.depthMax, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.depthMax, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -43945,7 +43944,7 @@ class TachographSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.Tachograph.static_id) {
+    if (msgId != imc.Tachograph.staticId) {
       return null;
     }
 
@@ -43956,11 +43955,11 @@ class TachographSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -43978,7 +43977,7 @@ class TachographSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -44079,7 +44078,7 @@ class ApmStatusSerializer
     // field text
     var textEncoded = utf8.encode(message.text);
     var textSSize = textEncoded.length;
-    byteData.setUint16(byteOffset, textSSize, imc.endian_ser);
+    byteData.setUint16(byteOffset, textSSize, imc.endianSer);
     byteOffset += 2;
     for (var b in textEncoded) {
       byteData.setUint8(byteOffset++, b);
@@ -44101,7 +44100,7 @@ class ApmStatusSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.ApmStatus.static_id) {
+    if (msgId != imc.ApmStatus.staticId) {
       return null;
     }
 
@@ -44112,11 +44111,11 @@ class ApmStatusSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -44134,7 +44133,7 @@ class ApmStatusSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -44198,7 +44197,7 @@ class SadcReadingsSerializer
     byteData.setInt8(byteOffset, message.channel);
     byteOffset += 1;
     // field value
-    byteData.setInt32(byteOffset, message.value, imc.endian_ser);
+    byteData.setInt32(byteOffset, message.value, imc.endianSer);
     byteOffset += 4;
     // field gain
     byteData.setUint8(byteOffset, message.gain.value);
@@ -44220,7 +44219,7 @@ class SadcReadingsSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.SadcReadings.static_id) {
+    if (msgId != imc.SadcReadings.staticId) {
       return null;
     }
 
@@ -44231,11 +44230,11 @@ class SadcReadingsSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -44253,7 +44252,7 @@ class SadcReadingsSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -44311,52 +44310,52 @@ class DmsDetectionSerializer
     var byteOffset = offset;
 
     // field ch01
-    byteData.setFloat32(byteOffset, message.ch01, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch01, imc.endianSer);
     byteOffset += 4;
     // field ch02
-    byteData.setFloat32(byteOffset, message.ch02, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch02, imc.endianSer);
     byteOffset += 4;
     // field ch03
-    byteData.setFloat32(byteOffset, message.ch03, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch03, imc.endianSer);
     byteOffset += 4;
     // field ch04
-    byteData.setFloat32(byteOffset, message.ch04, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch04, imc.endianSer);
     byteOffset += 4;
     // field ch05
-    byteData.setFloat32(byteOffset, message.ch05, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch05, imc.endianSer);
     byteOffset += 4;
     // field ch06
-    byteData.setFloat32(byteOffset, message.ch06, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch06, imc.endianSer);
     byteOffset += 4;
     // field ch07
-    byteData.setFloat32(byteOffset, message.ch07, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch07, imc.endianSer);
     byteOffset += 4;
     // field ch08
-    byteData.setFloat32(byteOffset, message.ch08, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch08, imc.endianSer);
     byteOffset += 4;
     // field ch09
-    byteData.setFloat32(byteOffset, message.ch09, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch09, imc.endianSer);
     byteOffset += 4;
     // field ch10
-    byteData.setFloat32(byteOffset, message.ch10, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch10, imc.endianSer);
     byteOffset += 4;
     // field ch11
-    byteData.setFloat32(byteOffset, message.ch11, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch11, imc.endianSer);
     byteOffset += 4;
     // field ch12
-    byteData.setFloat32(byteOffset, message.ch12, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch12, imc.endianSer);
     byteOffset += 4;
     // field ch13
-    byteData.setFloat32(byteOffset, message.ch13, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch13, imc.endianSer);
     byteOffset += 4;
     // field ch14
-    byteData.setFloat32(byteOffset, message.ch14, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch14, imc.endianSer);
     byteOffset += 4;
     // field ch15
-    byteData.setFloat32(byteOffset, message.ch15, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch15, imc.endianSer);
     byteOffset += 4;
     // field ch16
-    byteData.setFloat32(byteOffset, message.ch16, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.ch16, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -44375,7 +44374,7 @@ class DmsDetectionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.DmsDetection.static_id) {
+    if (msgId != imc.DmsDetection.staticId) {
       return null;
     }
 
@@ -44386,11 +44385,11 @@ class DmsDetectionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -44408,7 +44407,7 @@ class DmsDetectionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -44508,19 +44507,19 @@ class HomePositionSerializer
     byteData.setUint8(byteOffset, message.op.value);
     byteOffset += 1;
     // field lat
-    byteData.setFloat64(byteOffset, message.lat, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lat, imc.endianSer);
     byteOffset += 8;
     // field lon
-    byteData.setFloat64(byteOffset, message.lon, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.lon, imc.endianSer);
     byteOffset += 8;
     // field height
-    byteData.setFloat32(byteOffset, message.height, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.height, imc.endianSer);
     byteOffset += 4;
     // field depth
-    byteData.setFloat32(byteOffset, message.depth, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.depth, imc.endianSer);
     byteOffset += 4;
     // field alt
-    byteData.setFloat32(byteOffset, message.alt, imc.endian_ser);
+    byteData.setFloat32(byteOffset, message.alt, imc.endianSer);
     byteOffset += 4;
 
     return byteOffset - offset;
@@ -44539,7 +44538,7 @@ class HomePositionSerializer
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.HomePosition.static_id) {
+    if (msgId != imc.HomePosition.staticId) {
       return null;
     }
 
@@ -44550,11 +44549,11 @@ class HomePositionSerializer
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -44572,7 +44571,7 @@ class HomePositionSerializer
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 
@@ -44639,7 +44638,7 @@ class TotalMagIntensitySerializer extends imc
     var byteOffset = offset;
 
     // field value
-    byteData.setFloat64(byteOffset, message.value, imc.endian_ser);
+    byteData.setFloat64(byteOffset, message.value, imc.endianSer);
     byteOffset += 8;
 
     return byteOffset - offset;
@@ -44658,7 +44657,7 @@ class TotalMagIntensitySerializer extends imc
 
     var msgId = byteData.getUint16(byteOffset, endianness);
     byteOffset += 2;
-    if (msgId != imc.TotalMagIntensity.static_id) {
+    if (msgId != imc.TotalMagIntensity.staticId) {
       return null;
     }
 
@@ -44669,11 +44668,11 @@ class TotalMagIntensitySerializer extends imc
       return null;
     }
 
-    byteOffset = offset + imc.header_size;
+    byteOffset = offset + imc.headerSize;
 
-    var calcCrc = imc.calcCrc(byteData, offset, imc.header_size + payloadSize);
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
     var readCrc = imc.getCrcFooter(
-        byteData, offset + imc.header_size + payloadSize, endianness);
+        byteData, offset + imc.headerSize + payloadSize, endianness);
     if (calcCrc != readCrc) {
       return null;
     }
@@ -44691,7 +44690,7 @@ class TotalMagIntensitySerializer extends imc
     if (payloadSizeRead != payloadSize) {
       return null;
     }
-    byteOffset = offset + imc.header_size + payloadSize;
+    byteOffset = offset + imc.headerSize + payloadSize;
     return builder.build();
   }
 

@@ -5,11 +5,11 @@
 import 'dart:typed_data';
 import 'package:imc_def/imc_def.dart';
 
-const header_size = 20;
-const footer_size = 2;
-const endian_ser = Endian.big;
+const headerSize = 20;
+const footerSize = 2;
+const endianSer = Endian.big;
 
-const crc_table = <int>[
+const crcTable = <int>[
   0x0000,
   0xC0C1,
   0xC181,
@@ -337,23 +337,23 @@ int? deserializeHeader(
 
 Endian? getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
-  if (syncBE == SYNC_NUMBER) return Endian.big;
-  if (syncBE == SYNC_NUMBER_REVERSED) return Endian.little;
+  if (syncBE == syncNumber) return Endian.big;
+  if (syncBE == syncNumberReversed) return Endian.little;
   return null;
 }
 
 void writePayloadSize(ByteData byteData, int payloadSize) {
-  byteData.setUint16(4, payloadSize, endian_ser);
+  byteData.setUint16(4, payloadSize, endianSer);
 }
 
 int serializeHeader(ImcMessage message, ByteData byteData) {
   var byteOffset = 0;
 
-  byteData.setUint16(byteOffset, message.sync, endian_ser);
+  byteData.setUint16(byteOffset, message.sync, endianSer);
   byteOffset += 2;
-  byteData.setUint16(byteOffset, message.msgId, endian_ser);
+  byteData.setUint16(byteOffset, message.msgId, endianSer);
   byteOffset += 2;
-  byteData.setUint16(byteOffset, 0, endian_ser); // Temp size
+  byteData.setUint16(byteOffset, 0, endianSer); // Temp size
   byteOffset += 2;
   if (message.timestamp == null) {
     // This should not be null, but may happened due to the constructor default value
@@ -362,13 +362,13 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
   byteData.setFloat64(
       byteOffset,
       (message.timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
-      endian_ser);
+      endianSer);
   byteOffset += 8;
-  byteData.setUint16(byteOffset, message.src, endian_ser);
+  byteData.setUint16(byteOffset, message.src, endianSer);
   byteOffset += 2;
   byteData.setUint8(byteOffset, message.srcEnt);
   byteOffset += 1;
-  byteData.setUint16(byteOffset, message.dst, endian_ser);
+  byteData.setUint16(byteOffset, message.dst, endianSer);
   byteOffset += 2;
   byteData.setUint8(byteOffset, message.dstEnt);
   byteOffset += 1;
@@ -378,7 +378,7 @@ int serializeHeader(ImcMessage message, ByteData byteData) {
 
 void calcAndAddFooter(ByteData byteData, int offset, int lenght) {
   var crc = calcCrc(byteData, offset, lenght);
-  byteData.setUint16(offset + lenght, crc, endian_ser);
+  byteData.setUint16(offset + lenght, crc, endianSer);
 }
 
 int getCrcFooter(ByteData byteData, int offset, Endian endianness) {
@@ -395,7 +395,7 @@ int _crc16(ByteData byteData, int offset, int length) {
   var crc = 0x0000;
   var bytes = byteData.buffer.asUint8List();
   for (var i = offset; i < offset + length; i++) {
-    crc = (crc >> 8) ^ crc_table[(crc ^ bytes[i]) & 0xff];
+    crc = (crc >> 8) ^ crcTable[(crc ^ bytes[i]) & 0xff];
   }
   return crc;
 }
