@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.0] - 19 Dec 2021
+
+* Making it now a Dart package and not a Flutter.
+* Replacing flutter_lints (pedantic was deprecated) with lints.
+* Example is now null safety.
+* **Breaking change**: IMC info and version constants follow now camelcase convention.
+* **Breaking change**: Enumerated and bitfield values are now camelcase.
+* Cleanup formating warnings from lints package.
+* Updated IMC to v5.4.30 @Git#8be592a.
+
 ## [2.0.0] - 16 Apr 2021
 
 * Null safety support.
