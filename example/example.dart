@@ -15,7 +15,7 @@ void main() async {
     print('Datagram socket ready to receive');
     print('${socket.address.address}:${socket.port}');
     socket.listen((RawSocketEvent e) {
-      Datagram d = socket.receive();
+      Datagram? d = socket.receive();
       if (d == null) return;
 
       try {
@@ -44,15 +44,21 @@ void main() async {
       }
     });
 
-    var hbMsgB = imc.HeartbeatBuilder();
+    var hbMsgB = imc.HeartbeatBuilder()
+      ..src = 0x16
+      ..dst = 0x17;
+    var dstEnt = 0;
     Timer.periodic(Duration(milliseconds: 300), (Timer t) {
-      var msg = (hbMsgB..timestamp = DateTime.now()).build();
+      var msg = (hbMsgB
+            ..timestamp = DateTime.now()
+            ..dstEnt = dstEnt++ & 0xFF)
+          .build();
       //stdout.write("Sending ${msg.abbrev}  \n");
-      var dataB = imc.messagesIdsSerializers[msg.msgId]?.call()?.serialize(msg);
+      var dataB = imc.messagesIdsSerializers[msg.msgId]?.call().serialize(msg);
       var bytes =
-          dataB?.buffer?.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
-      if (bytes != null) {
-        var bs = socket.send(bytes, InternetAddress("0.0.0.0"), 6002);
+          dataB?.buffer.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
+      if (dataB != null && bytes != null) {
+        var bs = socket.send(bytes, InternetAddress("0.0.0.0"), 4444);
         print(
             "Bytes sent $bs | ${dataB.offsetInBytes}, ${dataB.lengthInBytes}");
       }
