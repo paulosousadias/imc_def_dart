@@ -19,7 +19,7 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 // **************************************************************************
 ''';
 
-const _header_gen = '''$_header
+const _headerGen = '''$_header
 import 'dart:core';
 import 'dart:core' as core; // To be used on conflicts like for imc.Map
 import 'dart:math' as math;
@@ -34,7 +34,7 @@ part 'imc_def_i.dart';
 
 ''';
 
-const _header_ser_gen = '''$_header
+const _headerSerGen = '''$_header
 import 'dart:typed_data';
 import 'dart:convert' show utf8;
 
@@ -42,7 +42,7 @@ import 'package:imc_def/imc_def_base.dart' as imc;
 import 'package:imc_def/imc_def.dart' as imc;
 ''';
 
-const _header_gen_parts = '''$_header
+const _headerGenParts = '''$_header
 part of 'imc_def_gen.dart';
 
 ''';
@@ -174,7 +174,7 @@ void _writeMessageGroup(xml.XmlElement g, IOSink sink) {
   sink.write('/// $name message group class\n///\n');
   _writeDescription(sink, g);
   var msgStringClass = '''abstract class $abbrev extends ImcMessage {}\n\n''';
-  sink.write('$msgStringClass');
+  sink.write(msgStringClass);
 
   g.findElements('message-type').forEach((t) {
     var msg = t.getAttribute('abbrev');
@@ -241,9 +241,9 @@ void _writeMessageClass(String name, String abbrev, String msgId,
   String get abbrev => '$abbrev';
 ''';
   var msgStringClassClose = '''}\n\n''';
-  sinks[_idxMsg].write('$msgStringClass');
+  sinks[_idxMsg].write(msgStringClass);
   m.findElements('field').forEach((f) => _writeMessageField(f, m, sinks));
-  sinks[_idxMsg].write('$msgStringClassClose');
+  sinks[_idxMsg].write(msgStringClassClose);
 }
 
 /// Writes a message class immutable related code
@@ -261,7 +261,7 @@ void _writeMessageImmutable(
   final int dst;
   @override
   final int dstEnt;\n''';
-  sink.write('$msgStringImmutableClass');
+  sink.write(msgStringImmutableClass);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -278,7 +278,7 @@ void _writeMessageImmutable(
 
     var fStr =
         '''\n  @override\n  final $dartType${typesData[2] == null ? '?' : ''} ${_convertToFieldName(abbrev)};''';
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var msgStringImmutableClass2 = '''\n
@@ -291,7 +291,7 @@ void _writeMessageImmutable(
       this.srcEnt = ImcEntityId.nullId,
       this.dst = ImcId.nullId,
       this.dstEnt = ImcEntityId.nullId''';
-  sink.write('$msgStringImmutableClass2');
+  sink.write(msgStringImmutableClass2);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -305,7 +305,7 @@ void _writeMessageImmutable(
 
     var fStr =
         ''',\n      ${typesData[2] == null ? '' : 'required '}this.${_convertToFieldName(abbrev)}''';
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var msgStringImmutableClass3 = '''})
@@ -327,7 +327,7 @@ void _writeMessageImmutable(
         srcEnt == other.srcEnt &&
         dst == other.dst &&
         dstEnt == other.dstEnt''';
-  sink.write('$msgStringImmutableClass3');
+  sink.write(msgStringImmutableClass3);
 
   // Getting prep for hashCode method
   var hashElements = <String>[];
@@ -388,7 +388,7 @@ void _writeMessageImmutable(
             ''' &&\n        ${_convertToFieldName(abbrev)} == other.${_convertToFieldName(abbrev)}''';
         break;
     }
-    sink.write('$fStr');
+    sink.write(fStr);
 
     hashElements.add(
         '${_convertToFieldName(abbrev)}${typesData[2] == null ? '?' : ''}.hashCode${typesData[2] == null ? ' ?? null.hashCode' : ''}');
@@ -411,7 +411,7 @@ void _writeMessageImmutable(
   int get hashCode {
     return $hashStr''';
 
-  sink.write('$msgStringImmutableClass4');
+  sink.write(msgStringImmutableClass4);
 
   var msgStringImmutableClass5 = ''';
   }
@@ -424,7 +424,7 @@ void _writeMessageImmutable(
           ..add('srcEnt', '0x\${srcEnt.toRadixString(16)} (\$srcEnt)')
           ..add('dst', '0x\${dst.toRadixString(16)} (\$dst)')
           ..add('dstEnt', '0x\${dstEnt.toRadixString(16)} (\$dstEnt)')''';
-  sink.write('$msgStringImmutableClass5');
+  sink.write(msgStringImmutableClass5);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -444,16 +444,16 @@ void _writeMessageImmutable(
 
     var fStr =
         '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var msgStringImmutableClass6 = ''')\n        .toString();
   }
 ''';
-  sink.write('$msgStringImmutableClass6');
+  sink.write(msgStringImmutableClass6);
 
   var msgStringImmutableClassClose = '''}\n\n''';
-  sink.write('$msgStringImmutableClassClose');
+  sink.write(msgStringImmutableClassClose);
 }
 
 /// Writes a message class builder related code
@@ -494,7 +494,7 @@ void _writeMessageBuilder(
   int get dstEnt => _\$this._dstEnt;
   @override
   set dstEnt(int dstEnt) => _\$this._dstEnt = dstEnt;\n''';
-  sink.write('$msgStringImmutableBuilder');
+  sink.write(msgStringImmutableBuilder);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -509,13 +509,13 @@ void _writeMessageBuilder(
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
     var initVal = typesData[2] == null ? '' : ' = ${typesData[2]}';
-    var isNullMarker = '${typesData[2] == null ? '?' : ''}';
+    var isNullMarker = typesData[2] == null ? '?' : '';
 
     var fStr =
         '''\n  $dartType$isNullMarker _${_convertToFieldName(abbrev)}$initVal;
   $dartType$isNullMarker get ${_convertToFieldName(abbrev)} => _\$this._${_convertToFieldName(abbrev)};
   set ${_convertToFieldName(abbrev)}($dartType$isNullMarker ${_convertToFieldName(abbrev)}) => _\$this._${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var msgStringImmutableBuilder1 = '''\n  ${abbrev}Builder();
@@ -535,7 +535,7 @@ void _writeMessageBuilder(
       _srcEnt = _\$v!.srcEnt;
       _dst = _\$v!.dst;
       _dstEnt = _\$v!.dstEnt;\n''';
-  sink.write('$msgStringImmutableBuilder1');
+  sink.write(msgStringImmutableBuilder1);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -546,7 +546,7 @@ void _writeMessageBuilder(
 
     var fStr =
         '''      _${_convertToFieldName(abbrev)} = _\$v!.${_convertToFieldName(abbrev)};\n''';
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var msgStringImmutableBuilder2 = '''
@@ -574,7 +574,7 @@ void _writeMessageBuilder(
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt''';
-  sink.write('$msgStringImmutableBuilder2');
+  sink.write(msgStringImmutableBuilder2);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -587,7 +587,7 @@ void _writeMessageBuilder(
 
     var fStr =
         ''',\n            ${_convertToFieldName(abbrev)}: ${_convertToFieldName(abbrev)}''';
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var msgStringImmutableBuilder3 = ''');
@@ -595,10 +595,10 @@ void _writeMessageBuilder(
     return _\$result;
   }
 ''';
-  sink.write('$msgStringImmutableBuilder3');
+  sink.write(msgStringImmutableBuilder3);
 
   var msgStringImmutableBuilderClose = '''}\n\n''';
-  sink.write('$msgStringImmutableBuilderClose');
+  sink.write(msgStringImmutableBuilderClose);
 }
 
 /// Writes a message class serializer related code
@@ -638,7 +638,7 @@ void _writeMessageSerializer(
 
     var byteOffset = offset;
 \n''';
-  sink.write('$serClassStart');
+  sink.write(serClassStart);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -786,7 +786,7 @@ void _writeMessageSerializer(
       default:
         break;
     }
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var serClass1 = '''\n    return byteOffset - offset;
@@ -847,7 +847,7 @@ void _writeMessageSerializer(
       imc.${abbrev}Builder builder, ByteData byteData, Endian endianness, int offset) {
     var byteOffset = offset;
 \n''';
-  sink.write('$serClass1');
+  sink.write(serClass1);
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
@@ -1011,14 +1011,14 @@ void _writeMessageSerializer(
       default:
         break;
     }
-    sink.write('$fStr');
+    sink.write(fStr);
   });
 
   var serClassEnd = '''\n    return byteOffset - offset;
   }
 }
 ''';
-  sink.write('$serClassEnd');
+  sink.write(serClassEnd);
 }
 
 /// Writes a message field code
@@ -1059,15 +1059,15 @@ void _writeMessageField(
 
   sinks[_idxMsg].write('\n');
   _writeDescription(sinks[_idxMsg], field, level: 1);
-  sinks[_idxMsg].write('$str');
+  sinks[_idxMsg].write(str);
 }
 
 /// Returns the field [imc related type, type for dart, null if no default value].
 List<String?> getTypesForImcAndDart(String abbrev, String type, String? unit,
     xml.XmlElement field, xml.XmlElement message) {
-  var typeImc;
-  var dartType;
-  var defaultVal;
+  String? typeImc;
+  String? dartType;
+  String? defaultVal;
   switch (type) {
     case 'uint8_t':
       typeImc = 'ImcType.typeUInt8';
@@ -1158,7 +1158,7 @@ String _getTypeForEnumLike(String fieldAbbrev, xml.XmlElement field,
   eDef = field.getAttribute('bitfield-def');
   if (eDef != null) return '${eDef}Bitfield';
 
-  var sufix;
+  String? sufix;
   switch (unit) {
     case 'Enumerated':
       sufix = 'Enum';
@@ -1179,7 +1179,7 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
         'Global enum ${def.name} is missing a correct abbrev! Skipping!');
   }
 
-  var sufix;
+  String sufix;
   switch (unit) {
     case 'Enumerated':
       sufix = 'Enum';
@@ -1213,7 +1213,7 @@ void _writeEnumLikeWorker(
   var prefix = field.getAttribute('prefix')?.toLowerCase() ?? '';
   if (prefix.isNotEmpty) prefix += '_';
   var vLst = field.findElements('value');
-  vLst.forEach((f) {
+  for (var f in vLst) {
     var eValueAbbrev = f.getAttribute('abbrev');
     if (eValueAbbrev == null || eValueAbbrev.isEmpty) {
       throw Exception(
@@ -1226,13 +1226,13 @@ void _writeEnumLikeWorker(
     var ab = _accountForReservedName(prefix + eValueAbbrev.toLowerCase());
     eList += '$ab$commaSep';
     eNameList += "$ab: '''${f.getAttribute('name')}'''$commaSep";
-  });
+  }
   if (vLst.length > 1) {
     eList += '\n      ';
     eNameList += '\n      ';
   }
 
-  var sufix;
+  String? sufix;
   switch (unit) {
     case 'Enumerated':
       sufix = 'Enum';
@@ -1376,7 +1376,7 @@ Map<String, dynamic> _getConfig() {
   final yamlString = file.readAsStringSync();
   final yamlMap = loadYaml(yamlString);
 
-  if (yamlMap == null || !(yamlMap['imc_def'] is Map)) {
+  if (yamlMap == null || yamlMap['imc_def'] is! Map) {
     stderr.writeln(Exception(
         'Your `$filePath` file does not contain a `imc_def` section.'));
   }
@@ -1491,12 +1491,12 @@ void main(List<String> args) async {
     sinkSerGen
   ];
 
-  sinkGen.write('$_header_gen');
-  sinkMessages.write('$_header_gen_parts');
-  sinkBuilders.write('$_header_gen_parts');
-  sinkEnums.write('$_header_gen_parts');
-  sinkLEnums.write('$_header_gen_parts');
-  sinkSerGen.write('$_header_ser_gen');
+  sinkGen.write(_headerGen);
+  sinkMessages.write(_headerGenParts);
+  sinkBuilders.write(_headerGenParts);
+  sinkEnums.write(_headerGenParts);
+  sinkLEnums.write(_headerGenParts);
+  sinkSerGen.write(_headerSerGen);
 
   var msgElm = document.findElements('messages').first;
   sinks[_idxMsg]
@@ -1577,7 +1577,7 @@ abstract class ImcMessage extends Message {
     print('Generating ${fxSerDef.path}');
     var sinkDef = fxSerDef.openWrite();
 
-    sinkDef.write('$_header');
+    sinkDef.write(_header);
     sinkDef.write('''
 
 library imc_def;
