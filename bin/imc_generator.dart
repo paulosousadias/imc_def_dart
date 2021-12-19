@@ -439,6 +439,8 @@ void _writeMessageImmutable(
       if (unit.startsWith('rad')) {
         unitConv =
             ' [\${${_convertToFieldName(abbrev)} * 180.0 / math.pi} (${unit.replaceFirst("rad", "deg")})]';
+      } else if (unit == 'Enumerated' || unit == 'Bitfield') {
+        unitConv = ' [\${${_convertToFieldName(abbrev)}.toPrettyString()}]';
       }
     }
 
