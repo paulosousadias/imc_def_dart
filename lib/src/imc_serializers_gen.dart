@@ -7,6 +7,7 @@
 import 'dart:typed_data';
 import 'dart:convert' show utf8;
 
+import 'package:imc_def/imc_def_base.dart' as imc;
 import 'package:imc_def/imc_def.dart' as imc;
 
 /// Signature for a function that creates a builder.
