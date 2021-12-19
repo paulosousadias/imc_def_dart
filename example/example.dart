@@ -24,9 +24,9 @@ void main() async {
         var bData = uData.buffer.asByteData();
         var msgId = imc.getMessageIdFromHeaderIfSyncNumberOk(bData, 0);
         var bytesSerStr = " [";
-        uData.forEach((b) {
+        for (var b in uData) {
           bytesSerStr += "0x${b.toRadixString(16)}, ";
-        });
+        }
         bytesSerStr += "]";
         print("Msg ID: $msgId\nsize=${uData.lengthInBytes} | $bytesSerStr");
         if (msgId == imc.ImcId.nullId) return;

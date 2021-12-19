@@ -11,3 +11,6 @@ environment:
 dependencies:
   imc_def:
     path: ../
+
+dev_dependencies:
+  lints: ^1.0.1
