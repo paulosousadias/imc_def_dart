@@ -4,7 +4,6 @@
 
 import 'dart:typed_data';
 import 'package:imc_def/imc_def.dart';
-import 'package:imc_def/imc_def_base.dart' show ImcBuilderHeaderPart;
 
 const header_size = 20;
 const footer_size = 2;
