@@ -90,7 +90,7 @@ class _$EntityState extends EntityState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
-          ..add('description', '$description'))
+          ..add('description', description))
         .toString();
   }
 }
@@ -446,8 +446,8 @@ class _$EntityInfo extends EntityInfo {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('id', '$id')
-          ..add('label', '$label')
-          ..add('component', '$component')
+          ..add('label', label)
+          ..add('component', component)
           ..add('actTime', '$actTime (s)')
           ..add('deactTime', '$deactTime (s)'))
         .toString();
@@ -1153,7 +1153,7 @@ class _$TransportBindings extends TransportBindings {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('consumer', '$consumer')
+          ..add('consumer', consumer)
           ..add('messageId', '$messageId'))
         .toString();
   }
@@ -1685,7 +1685,7 @@ class _$DevCalibrationState extends DevCalibrationState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('totalSteps', '$totalSteps')
           ..add('stepNumber', '$stepNumber')
-          ..add('step', '$step')
+          ..add('step', step)
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
@@ -1881,7 +1881,7 @@ class _$EntityActivationState extends EntityActivationState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
-          ..add('error', '$error'))
+          ..add('error', error))
         .toString();
   }
 }
@@ -3155,7 +3155,7 @@ class _$LeakSimulation extends LeakSimulation {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('entities', '$entities'))
+          ..add('entities', entities))
         .toString();
   }
 }
@@ -3900,7 +3900,7 @@ class _$CacheControl extends CacheControl {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('snapshot', '$snapshot')
+          ..add('snapshot', snapshot)
           ..add('message', '$message'))
         .toString();
   }
@@ -4084,7 +4084,7 @@ class _$LoggingControl extends LoggingControl {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('name', '$name'))
+          ..add('name', name))
         .toString();
   }
 }
@@ -4276,8 +4276,8 @@ class _$LogBookEntry extends LogBookEntry {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('htime', '$htime (s)')
-          ..add('context', '$context')
-          ..add('text', '$text'))
+          ..add('context', context)
+          ..add('text', text))
         .toString();
   }
 }
@@ -4657,7 +4657,7 @@ class _$ReplayControl extends ReplayControl {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('file', '$file'))
+          ..add('file', file))
         .toString();
   }
 }
@@ -5691,7 +5691,7 @@ class _$HistoricEvent extends HistoricEvent {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('text', '$text')
+          ..add('text', text)
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
@@ -6451,14 +6451,14 @@ class _$Announce extends Announce {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('sysName', '$sysName')
+          ..add('sysName', sysName)
           ..add(
               'sysType', '$sysType (Enumerated) [${sysType.toPrettyString()}]')
           ..add('owner', '$owner')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('height', '$height (m)')
-          ..add('services', '$services'))
+          ..add('services', services))
         .toString();
   }
 }
@@ -6665,7 +6665,7 @@ class _$AnnounceService extends AnnounceService {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('service', '$service')
+          ..add('service', service)
           ..add('serviceType',
               '$serviceType (Bitfield) [${serviceType.toPrettyString()}]'))
         .toString();
@@ -7344,9 +7344,9 @@ class _$Sms extends Sms {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('number', '$number')
+          ..add('number', number)
           ..add('timeout', '$timeout')
-          ..add('contents', '$contents'))
+          ..add('contents', contents))
         .toString();
   }
 }
@@ -7543,7 +7543,7 @@ class _$SmsTx extends SmsTx {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
-          ..add('destination', '$destination')
+          ..add('destination', destination)
           ..add('timeout', '$timeout (s)')
           ..add('data', '$data'))
         .toString();
@@ -7733,7 +7733,7 @@ class _$SmsRx extends SmsRx {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('source', '$source')
+          ..add('source', source)
           ..add('data', '$data'))
         .toString();
   }
@@ -7918,7 +7918,7 @@ class _$SmsState extends SmsState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
-          ..add('error', '$error'))
+          ..add('error', error))
         .toString();
   }
 }
@@ -8100,8 +8100,8 @@ class _$TextMessage extends TextMessage {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('origin', '$origin')
-          ..add('text', '$text'))
+          ..add('origin', origin)
+          ..add('text', text))
         .toString();
   }
 }
@@ -8299,7 +8299,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('origin', '$origin')
+          ..add('origin', origin)
           ..add('htime', '$htime (s)')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
@@ -8513,7 +8513,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
           ..add('ttl', '$ttl (s)')
-          ..add('destination', '$destination')
+          ..add('destination', destination)
           ..add('data', '$data'))
         .toString();
   }
@@ -8711,7 +8711,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
-          ..add('text', '$text'))
+          ..add('text', text))
         .toString();
   }
 }
@@ -8897,7 +8897,7 @@ class _$GroupMembershipState extends GroupMembershipState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('groupName', '$groupName')
+          ..add('groupName', groupName)
           ..add('links', '$links'))
         .toString();
   }
@@ -9083,9 +9083,9 @@ class _$SystemGroup extends SystemGroup {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('groupName', '$groupName')
+          ..add('groupName', groupName)
           ..add('action', '$action (Enumerated) [${action.toPrettyString()}]')
-          ..add('groupList', '$groupList'))
+          ..add('groupList', groupList))
         .toString();
   }
 }
@@ -10959,8 +10959,8 @@ class _$TelemetryMsg extends TelemetryMsg {
           ..add('reqId', '$reqId')
           ..add('ttl', '$ttl (s)')
           ..add('code', '$code (Enumerated) [${code.toPrettyString()}]')
-          ..add('destination', '$destination')
-          ..add('source', '$source')
+          ..add('destination', destination)
+          ..add('source', source)
           ..add('acknowledge',
               '$acknowledge (Bitfield) [${acknowledge.toPrettyString()}]')
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
@@ -11395,7 +11395,7 @@ class _$LblBeacon extends LblBeacon {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('beacon', '$beacon')
+          ..add('beacon', beacon)
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('depth', '$depth (m)')
@@ -12016,12 +12016,12 @@ class _$SimAcousticMessage extends SimAcousticMessage {
           ..add('lat', '$lat')
           ..add('lon', '$lon')
           ..add('depth', '$depth')
-          ..add('sentence', '$sentence')
+          ..add('sentence', sentence)
           ..add('txtime', '$txtime (s)')
-          ..add('modemType', '$modemType')
-          ..add('sysSrc', '$sysSrc')
+          ..add('modemType', modemType)
+          ..add('sysSrc', sysSrc)
           ..add('seq', '$seq')
-          ..add('sysDst', '$sysDst')
+          ..add('sysDst', sysDst)
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
@@ -12272,7 +12272,7 @@ class _$AcousticOperation extends AcousticOperation {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('system', '$system')
+          ..add('system', system)
           ..add('range', '$range (m)')
           ..add('msg', '$msg'))
         .toString();
@@ -12789,7 +12789,7 @@ class _$AcousticLink extends AcousticLink {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('peer', '$peer')
+          ..add('peer', peer)
           ..add('rssi', '$rssi (dB)')
           ..add('integrity', '$integrity'))
         .toString();
@@ -13003,7 +13003,7 @@ class _$AcousticRequest extends AcousticRequest {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('destination', '$destination')
+          ..add('destination', destination)
           ..add('timeout', '$timeout (s)')
           ..add('range', '$range (m)')
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
@@ -13233,7 +13233,7 @@ class _$AcousticStatus extends AcousticStatus {
           ..add('reqId', '$reqId')
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
-          ..add('info', '$info')
+          ..add('info', info)
           ..add('range', '$range (m)'))
         .toString();
   }
@@ -17831,7 +17831,7 @@ class _$DevDataText extends DevDataText {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('value', '$value'))
+          ..add('value', value))
         .toString();
   }
 }
@@ -24128,7 +24128,7 @@ class _$LcdControl extends LcdControl {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('text', '$text'))
+          ..add('text', text))
         .toString();
   }
 }
@@ -24504,7 +24504,7 @@ class _$PowerChannelControl extends PowerChannelControl {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('schedTime', '$schedTime (s)'))
         .toString();
@@ -24849,7 +24849,7 @@ class _$PowerChannelState extends PowerChannelState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
@@ -25027,7 +25027,7 @@ class _$LedBrightness extends LedBrightness {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('value', '$value'))
         .toString();
   }
@@ -25201,7 +25201,7 @@ class _$QueryLedBrightness extends QueryLedBrightness {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name'))
+          ..add('name', name))
         .toString();
   }
 }
@@ -25374,7 +25374,7 @@ class _$SetLedBrightness extends SetLedBrightness {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('value', '$value'))
         .toString();
   }
@@ -36084,7 +36084,7 @@ class _$CustomManeuver extends CustomManeuver {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('timeout', '$timeout (s)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -37098,7 +37098,7 @@ class _$ManeuverControlState extends ManeuverControlState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
           ..add('eta', '$eta (s)')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -38591,7 +38591,7 @@ class _$FormationParameters extends FormationParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('formationName', '$formationName')
+          ..add('formationName', formationName)
           ..add('referenceFrame',
               '$referenceFrame (Enumerated) [${referenceFrame.toPrettyString()}]')
           ..add('participants', '$participants')
@@ -38874,10 +38874,10 @@ class _$FormationPlanExecution extends FormationPlanExecution {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('groupName', '$groupName')
-          ..add('formationName', '$formationName')
-          ..add('planId', '$planId')
-          ..add('description', '$description')
+          ..add('groupName', groupName)
+          ..add('formationName', formationName)
+          ..add('planId', planId)
+          ..add('description', description)
           ..add('leaderSpeed', '$leaderSpeed (m/s)')
           ..add('leaderBankLim', '$leaderBankLim (m/s)')
           ..add('posSimErrLim', '$posSimErrLim (m)')
@@ -40323,7 +40323,7 @@ class _$RelativeState extends RelativeState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('sId', '$sId')
+          ..add('sId', sId)
           ..add('dist', '$dist')
           ..add('err', '$err')
           ..add('ctrlImp', '$ctrlImp')
@@ -40957,12 +40957,12 @@ class _$Formation extends Formation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('formationName', '$formationName')
+          ..add('formationName', formationName)
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('groupName', '$groupName')
-          ..add('planId', '$planId')
-          ..add('description', '$description')
+          ..add('groupName', groupName)
+          ..add('planId', planId)
+          ..add('description', description)
           ..add('referenceFrame',
               '$referenceFrame (Enumerated) [${referenceFrame.toPrettyString()}]')
           ..add('participants', '$participants')
@@ -43512,7 +43512,7 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('minAlt', '$minAlt (m)')
           ..add('timeLimit', '$timeLimit (s)')
           ..add('areaLimits', '$areaLimits')
-          ..add('controller', '$controller')
+          ..add('controller', controller)
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
@@ -43785,7 +43785,7 @@ class _$FollowPoint extends FollowPoint {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('target', '$target')
+          ..add('target', target)
           ..add('maxSpeed', '$maxSpeed (m/s)')
           ..add('speedUnits',
               '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]')
@@ -45067,14 +45067,14 @@ class _$VehicleState extends VehicleState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('opMode', '$opMode (Enumerated) [${opMode.toPrettyString()}]')
           ..add('errorCount', '$errorCount')
-          ..add('errorEnts', '$errorEnts')
+          ..add('errorEnts', errorEnts)
           ..add('maneuverType', '$maneuverType')
           ..add('maneuverStime', '$maneuverStime (s)')
           ..add('maneuverEta', '$maneuverEta (s)')
           ..add('controlLoops',
               '$controlLoops (Bitfield) [${controlLoops.toPrettyString()}]')
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
-          ..add('lastError', '$lastError')
+          ..add('lastError', lastError)
           ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
   }
@@ -45336,7 +45336,7 @@ class _$VehicleCommand extends VehicleCommand {
               'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('maneuver', '$maneuver')
           ..add('calibTime', '$calibTime (s)')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -45541,7 +45541,7 @@ class _$MonitorEntityState extends MonitorEntityState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add(
               'command', '$command (Enumerated) [${command.toPrettyString()}]')
-          ..add('entities', '$entities'))
+          ..add('entities', entities))
         .toString();
   }
 }
@@ -45764,12 +45764,12 @@ class _$EntityMonitoringState extends EntityMonitoringState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('mcount', '$mcount')
-          ..add('mnames', '$mnames')
+          ..add('mnames', mnames)
           ..add('ecount', '$ecount')
-          ..add('enames', '$enames')
+          ..add('enames', enames)
           ..add('ccount', '$ccount')
-          ..add('cnames', '$cnames')
-          ..add('lastError', '$lastError')
+          ..add('cnames', cnames)
+          ..add('lastError', lastError)
           ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
   }
@@ -47396,7 +47396,7 @@ class _$AutopilotMode extends AutopilotMode {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('autonomy',
               '$autonomy (Enumerated) [${autonomy.toPrettyString()}]')
-          ..add('mode', '$mode'))
+          ..add('mode', mode))
         .toString();
   }
 }
@@ -47856,7 +47856,7 @@ class _$ReportControl extends ReportControl {
           ..add('commInterface',
               '$commInterface (Bitfield) [${commInterface.toPrettyString()}]')
           ..add('period', '$period (s)')
-          ..add('sysDst', '$sysDst'))
+          ..add('sysDst', sysDst))
         .toString();
   }
 }
@@ -48385,13 +48385,13 @@ class _$TransmissionRequest extends TransmissionRequest {
           ..add('reqId', '$reqId')
           ..add('commMean',
               '$commMean (Enumerated) [${commMean.toPrettyString()}]')
-          ..add('destination', '$destination')
+          ..add('destination', destination)
           ..add('deadline', '$deadline')
           ..add('range', '$range (m)')
           ..add('dataMode',
               '$dataMode (Enumerated) [${dataMode.toPrettyString()}]')
           ..add('msgData', '$msgData')
-          ..add('txtData', '$txtData')
+          ..add('txtData', txtData)
           ..add('rawData', '$rawData'))
         .toString();
   }
@@ -48637,7 +48637,7 @@ class _$TransmissionStatus extends TransmissionStatus {
           ..add('reqId', '$reqId')
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
           ..add('range', '$range (m)')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -48841,9 +48841,9 @@ class _$SmsRequest extends SmsRequest {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('destination', '$destination')
+          ..add('destination', destination)
           ..add('timeout', '$timeout (s)')
-          ..add('smsText', '$smsText'))
+          ..add('smsText', smsText))
         .toString();
   }
 }
@@ -49039,7 +49039,7 @@ class _$SmsStatus extends SmsStatus {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -49564,7 +49564,7 @@ class _$TCPRequest extends TCPRequest {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
-          ..add('destination', '$destination')
+          ..add('destination', destination)
           ..add('timeout', '$timeout (s)')
           ..add('msgData', '$msgData'))
         .toString();
@@ -49762,7 +49762,7 @@ class _$TCPStatus extends TCPStatus {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('reqId', '$reqId')
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -50142,11 +50142,11 @@ class _$PlanSpecification extends PlanSpecification {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('planId', '$planId')
-          ..add('description', '$description')
-          ..add('vnamespace', '$vnamespace')
+          ..add('planId', planId)
+          ..add('description', description)
+          ..add('vnamespace', vnamespace)
           ..add('variables', '$variables')
-          ..add('startManId', '$startManId')
+          ..add('startManId', startManId)
           ..add('maneuvers', '$maneuvers')
           ..add('transitions', '$transitions')
           ..add('startActions', '$startActions')
@@ -50386,7 +50386,7 @@ class _$PlanManeuver extends PlanManeuver {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('maneuverId', '$maneuverId')
+          ..add('maneuverId', maneuverId)
           ..add('data', '$data')
           ..add('startActions', '$startActions')
           ..add('endActions', '$endActions'))
@@ -50593,9 +50593,9 @@ class _$PlanTransition extends PlanTransition {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('sourceMan', '$sourceMan')
-          ..add('destMan', '$destMan')
-          ..add('conditions', '$conditions')
+          ..add('sourceMan', sourceMan)
+          ..add('destMan', destMan)
+          ..add('conditions', conditions)
           ..add('actions', '$actions'))
         .toString();
   }
@@ -50975,7 +50975,7 @@ class _$EmergencyControlState extends EmergencyControlState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('commLevel', '$commLevel (%)'))
         .toString();
   }
@@ -51193,9 +51193,9 @@ class _$PlanDB extends PlanDB {
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('requestId', '$requestId')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('arg', '$arg')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -51434,7 +51434,7 @@ class _$PlanDBState extends PlanDBState {
           ..add('planSize', '$planSize')
           ..add('changeTime', '$changeTime (s)')
           ..add('changeSid', '$changeSid')
-          ..add('changeSname', '$changeSname')
+          ..add('changeSname', changeSname)
           ..add('md5', '$md5')
           ..add('plansInfo', '$plansInfo'))
         .toString();
@@ -51675,11 +51675,11 @@ class _$PlanDBInformation extends PlanDBInformation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('planSize', '$planSize')
           ..add('changeTime', '$changeTime')
           ..add('changeSid', '$changeSid')
-          ..add('changeSname', '$changeSname')
+          ..add('changeSname', changeSname)
           ..add('md5', '$md5'))
         .toString();
   }
@@ -51918,10 +51918,10 @@ class _$PlanControl extends PlanControl {
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('requestId', '$requestId')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('arg', '$arg')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -52171,10 +52171,10 @@ class _$PlanControlState extends PlanControlState {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('planEta', '$planEta (s)')
           ..add('planProgress', '$planProgress (%)')
-          ..add('manId', '$manId')
+          ..add('manId', manId)
           ..add('manType', '$manType')
           ..add('manEta', '$manEta (s)')
           ..add('lastOutcome',
@@ -52407,8 +52407,8 @@ class _$PlanVariable extends PlanVariable {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
-          ..add('value', '$value')
+          ..add('name', name)
+          ..add('value', value)
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('access', '$access (Enumerated) [${access.toPrettyString()}]'))
         .toString();
@@ -52614,7 +52614,7 @@ class _$PlanGeneration extends PlanGeneration {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('cmd', '$cmd (Enumerated) [${cmd.toPrettyString()}]')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('params', '$params (TupleList)'))
         .toString();
   }
@@ -52901,7 +52901,7 @@ class _$LeaderState extends LeaderState {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('groupName', '$groupName')
+          ..add('groupName', groupName)
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
@@ -53238,7 +53238,7 @@ class _$PlanStatistics extends PlanStatistics {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('planId', '$planId')
+          ..add('planId', planId)
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
           ..add('properties',
               '$properties (Bitfield) [${properties.toPrettyString()}]')
@@ -53507,7 +53507,7 @@ class _$ReportedState extends ReportedState {
           ..add('pitch', '$pitch (rad) [${pitch * 180.0 / math.pi} (deg)]')
           ..add('yaw', '$yaw (rad) [${yaw * 180.0 / math.pi} (deg)]')
           ..add('rcpTime', '$rcpTime (s)')
-          ..add('sid', '$sid')
+          ..add('sid', sid)
           ..add('sType', '$sType (Enumerated) [${sType.toPrettyString()}]'))
         .toString();
   }
@@ -53762,8 +53762,8 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('id', '$id')
-          ..add('sensorClass', '$sensorClass')
+          ..add('id', id)
+          ..add('sensorClass', sensorClass)
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('alt', '$alt (m)')
@@ -53976,7 +53976,7 @@ class _$Map extends Map {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('id', '$id')
+          ..add('id', id)
           ..add('features', '$features'))
         .toString();
   }
@@ -54181,7 +54181,7 @@ class _$MapFeature extends MapFeature {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('id', '$id')
+          ..add('id', id)
           ..add('featureType',
               '$featureType (Enumerated) [${featureType.toPrettyString()}]')
           ..add('rgbRed', '$rgbRed')
@@ -54585,7 +54585,7 @@ class _$CcuEvent extends CcuEvent {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
-          ..add('id', '$id')
+          ..add('id', id)
           ..add('arg', '$arg'))
         .toString();
   }
@@ -54768,7 +54768,7 @@ class _$VehicleLinks extends VehicleLinks {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('localname', '$localname')
+          ..add('localname', localname)
           ..add('links', '$links'))
         .toString();
   }
@@ -54952,8 +54952,8 @@ class _$TrexObservation extends TrexObservation {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('timeline', '$timeline')
-          ..add('predicate', '$predicate')
+          ..add('timeline', timeline)
+          ..add('predicate', predicate)
           ..add('attributes', '$attributes (TupleList)'))
         .toString();
   }
@@ -55145,8 +55145,8 @@ class _$TrexCommand extends TrexCommand {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add(
               'command', '$command (Enumerated) [${command.toPrettyString()}]')
-          ..add('goalId', '$goalId')
-          ..add('goalXml', '$goalXml'))
+          ..add('goalId', goalId)
+          ..add('goalXml', goalXml))
         .toString();
   }
 }
@@ -55335,7 +55335,7 @@ class _$TrexOperation extends TrexOperation {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]')
-          ..add('goalId', '$goalId')
+          ..add('goalId', goalId)
           ..add('token', '$token'))
         .toString();
   }
@@ -55532,11 +55532,11 @@ class _$TrexAttribute extends TrexAttribute {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('attrType',
               '$attrType (Enumerated) [${attrType.toPrettyString()}]')
-          ..add('min', '$min')
-          ..add('max', '$max'))
+          ..add('min', min)
+          ..add('max', max))
         .toString();
   }
 }
@@ -55731,8 +55731,8 @@ class _$TrexToken extends TrexToken {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('timeline', '$timeline')
-          ..add('predicate', '$predicate')
+          ..add('timeline', timeline)
+          ..add('predicate', predicate)
           ..add('attributes', '$attributes'))
         .toString();
   }
@@ -55916,7 +55916,7 @@ class _$TrexPlan extends TrexPlan {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('reactor', '$reactor')
+          ..add('reactor', reactor)
           ..add('tokens', '$tokens'))
         .toString();
   }
@@ -56093,7 +56093,7 @@ class _$Event extends Event {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('topic', '$topic')
+          ..add('topic', topic)
           ..add('data', '$data (TupleList)'))
         .toString();
   }
@@ -56910,7 +56910,7 @@ class _$Target extends Target {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('label', '$label')
+          ..add('label', label)
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
@@ -57123,8 +57123,8 @@ class _$EntityParameter extends EntityParameter {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
-          ..add('value', '$value'))
+          ..add('name', name)
+          ..add('value', value))
         .toString();
   }
 }
@@ -57303,7 +57303,7 @@ class _$EntityParameters extends EntityParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('params', '$params'))
         .toString();
   }
@@ -57490,9 +57490,9 @@ class _$QueryEntityParameters extends QueryEntityParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
-          ..add('visibility', '$visibility')
-          ..add('scope', '$scope'))
+          ..add('name', name)
+          ..add('visibility', visibility)
+          ..add('scope', scope))
         .toString();
   }
 }
@@ -57681,7 +57681,7 @@ class _$SetEntityParameters extends SetEntityParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('params', '$params'))
         .toString();
   }
@@ -57858,7 +57858,7 @@ class _$SaveEntityParameters extends SaveEntityParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name'))
+          ..add('name', name))
         .toString();
   }
 }
@@ -58363,7 +58363,7 @@ class _$SessionSubscription extends SessionSubscription {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('sessid', '$sessid')
-          ..add('messages', '$messages'))
+          ..add('messages', messages))
         .toString();
   }
 }
@@ -58883,7 +58883,7 @@ class _$PushEntityParameters extends PushEntityParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name'))
+          ..add('name', name))
         .toString();
   }
 }
@@ -59053,7 +59053,7 @@ class _$PopEntityParameters extends PopEntityParameters {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name'))
+          ..add('name', name))
         .toString();
   }
 }
@@ -59227,7 +59227,7 @@ class _$IoEvent extends IoEvent {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]')
-          ..add('error', '$error'))
+          ..add('error', error))
         .toString();
   }
 }
@@ -59418,7 +59418,7 @@ class _$UamTxFrame extends UamTxFrame {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
-          ..add('sysDst', '$sysDst')
+          ..add('sysDst', sysDst)
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
@@ -59622,8 +59622,8 @@ class _$UamRxFrame extends UamRxFrame {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('sysSrc', '$sysSrc')
-          ..add('sysDst', '$sysDst')
+          ..add('sysSrc', sysSrc)
+          ..add('sysDst', sysDst)
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]')
           ..add('data', '$data'))
         .toString();
@@ -59821,7 +59821,7 @@ class _$UamTxStatus extends UamTxStatus {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
           ..add('value', '$value (Enumerated) [${value.toPrettyString()}]')
-          ..add('error', '$error'))
+          ..add('error', error))
         .toString();
   }
 }
@@ -60010,7 +60010,7 @@ class _$UamRxRange extends UamRxRange {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
-          ..add('sys', '$sys')
+          ..add('sys', sys)
           ..add('value', '$value (m)'))
         .toString();
   }
@@ -60200,7 +60200,7 @@ class _$UamTxRange extends UamTxRange {
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('seq', '$seq')
-          ..add('sysDst', '$sysDst')
+          ..add('sysDst', sysDst)
           ..add('timeout', '$timeout (s)'))
         .toString();
   }
@@ -61802,7 +61802,7 @@ class _$SoiCommand extends SoiCommand {
               'command', '$command (Enumerated) [${command.toPrettyString()}]')
           ..add('settings', '$settings (TupleList)')
           ..add('plan', '$plan')
-          ..add('info', '$info'))
+          ..add('info', info))
         .toString();
   }
 }
@@ -62406,7 +62406,7 @@ class _$NeptusBlob extends NeptusBlob {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('contentType', '$contentType')
+          ..add('contentType', contentType)
           ..add('content', '$content'))
         .toString();
   }
@@ -63348,7 +63348,7 @@ class _$ParametersXml extends ParametersXml {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('locale', '$locale')
+          ..add('locale', locale)
           ..add('config', '$config'))
         .toString();
   }
@@ -64347,7 +64347,7 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('target', '$target')
+          ..add('target', target)
           ..add('lbearing',
               '$lbearing (rad) [${lbearing * 180.0 / math.pi} (deg)]')
           ..add('lelevation',
@@ -64641,7 +64641,7 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('target', '$target')
+          ..add('target', target)
           ..add('x', '$x (m)')
           ..add('y', '$y (m)')
           ..add('z', '$z (m)')
@@ -64913,7 +64913,7 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('target', '$target')
+          ..add('target', target)
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]')
@@ -65141,7 +65141,7 @@ class _$UsblModem extends UsblModem {
           ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
           ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
-          ..add('name', '$name')
+          ..add('name', name)
           ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
           ..add('z', '$z (m)')
@@ -66251,7 +66251,7 @@ class _$ApmStatus extends ApmStatus {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
           ..add('severity',
               '$severity (Enumerated) [${severity.toPrettyString()}]')
-          ..add('text', '$text'))
+          ..add('text', text))
         .toString();
   }
 }

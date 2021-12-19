@@ -428,6 +428,7 @@ void _writeMessageImmutable(
 
   m.findElements('field').forEach((f) {
     var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
 
     if (abbrev == null || abbrev.isEmpty) {
       throw Exception('Field ${f.name} is missing a proper abbrev and/or type');
@@ -444,8 +445,20 @@ void _writeMessageImmutable(
       }
     }
 
-    var fStr =
-        '''\n          ..add('${_convertToFieldName(abbrev)}', '\$${_convertToFieldName(abbrev)}${unit != null ? ' ($unit)' : ''}$unitConv')''';
+    bool isStringWithoutUnits = false;
+    switch (type) {
+      case 'plaintext':
+        if (unit == null || unit.isEmpty) isStringWithoutUnits = true;
+        break;
+      default:
+        break;
+    }
+
+    var fStr = "\n          ..add('${_convertToFieldName(abbrev)}', "
+        "${isStringWithoutUnits ? '' : "'\$"}"
+        "${_convertToFieldName(abbrev)}"
+        "${unit != null ? ' ($unit)' : ''}$unitConv"
+        "${isStringWithoutUnits ? '' : "'"})";
     sink.write(fStr);
   });
 
