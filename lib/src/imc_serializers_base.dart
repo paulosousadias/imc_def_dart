@@ -285,7 +285,7 @@ abstract class ImcSerializer<M extends Message?, B> {
   /// message to build into.
   /// returns a [int] with a serialized size
   int deserializePayload(
-      B builder, ByteData data, Endian endianness, int offset);
+      B builder, ByteData byteData, Endian endianness, int offset);
 }
 
 // Future<void> writeToFile(ByteData data, String path) {
