@@ -1431,7 +1431,7 @@ void main(List<String> args) async {
       packageName = config['package'] ?? '';
       break;
     default:
-      xmlFilePath = 'xml/IMC.xml';
+      xmlFilePath = config['imc'] ?? 'xml/IMC.xml';
       xmlGitHash = config['githash'] ?? 'unknown';
       packageName = '';
   }

@@ -32,7 +32,7 @@ executables:
   imc_generator: 
 
 imc_def:
-  imc: xml/IMC.xml
+  imc: lib/xml/IMC.xml
   githash: lsts@8be592a
   mode: local
 
