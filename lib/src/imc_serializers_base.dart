@@ -288,16 +288,16 @@ abstract class ImcSerializer<M extends Message?, B> {
       B builder, ByteData byteData, Endian endianness, int offset);
 }
 
-// Future<void> writeToFile(ByteData data, String path) {
-//   final buffer = data.buffer;
+// Future<void> writeToFile(ByteData byteData, String path) {
+//   final buffer = byteData.buffer;
 //   return File(path).writeAsBytes(
-//       buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
+//       buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
 // }
 
-int? getMessageIdFromHeaderIfSyncNumberOk(ByteData data, int offset) {
-  var endianness = getEndianness(data, offset);
+int? getMessageIdFromHeaderIfSyncNumberOk(ByteData byteData, int offset) {
+  var endianness = getEndianness(byteData, offset);
   if (endianness == null) return null;
-  var msgId = data.getUint16(offset + 2, endianness);
+  var msgId = byteData.getUint16(offset + 2, endianness);
   return msgId;
 }
 
