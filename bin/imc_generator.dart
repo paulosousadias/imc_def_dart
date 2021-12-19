@@ -738,8 +738,9 @@ void _writeMessageSerializer(
             '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
         fStr += '    if (${fieldName}SSize > 0) {\n';
-        fStr +=
-            '      message.$fieldName.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        fStr += '      for (var b in message.$fieldName) {\n'
+            '        byteData.setUint8(byteOffset++, b);\n'
+            '      }\n';
         fStr += '    }\n';
         break;
       case 'plaintext':
@@ -749,8 +750,9 @@ void _writeMessageSerializer(
         fStr +=
             '''    byteData.setUint16(byteOffset, ${fieldName}SSize, imc.endian_ser);\n''';
         fStr += '    byteOffset += 2;\n';
-        fStr +=
-            '    ${fieldName}Encoded.forEach((b) => byteData.setUint8(byteOffset++, b));\n';
+        fStr += '    for (var b in ${fieldName}Encoded) {\n'
+            '      byteData.setUint8(byteOffset++, b);\n'
+            '    }\n';
         break;
       case 'message':
         fStr = '    if (message.$fieldName == null) {\n';
