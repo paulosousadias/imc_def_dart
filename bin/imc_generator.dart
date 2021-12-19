@@ -843,7 +843,7 @@ void _writeMessageSerializer(
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);

@@ -742,7 +742,7 @@ class EntityStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -854,7 +854,7 @@ class QueryEntityStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -975,7 +975,7 @@ class EntityInfoSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1103,7 +1103,7 @@ class QueryEntityInfoSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1214,7 +1214,7 @@ class EntityListSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1326,7 +1326,7 @@ class CpuUsageSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1438,7 +1438,7 @@ class TransportBindingsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1551,7 +1551,7 @@ class RestartSystemSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1655,7 +1655,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1773,7 +1773,7 @@ class DevCalibrationStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -1901,7 +1901,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2012,7 +2012,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2163,7 +2163,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2339,7 +2339,7 @@ class MsgListSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2514,7 +2514,7 @@ class SimulatedStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2677,7 +2677,7 @@ class LeakSimulationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2802,7 +2802,7 @@ class UASimulationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -2923,7 +2923,7 @@ class DynamicsSimParamSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3036,7 +3036,7 @@ class StorageUsageSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3168,7 +3168,7 @@ class CacheControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3309,7 +3309,7 @@ class LoggingControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3441,7 +3441,7 @@ class LogBookEntrySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3593,7 +3593,7 @@ class LogBookControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3732,7 +3732,7 @@ class ReplayControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3851,7 +3851,7 @@ class ClockControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -3967,7 +3967,7 @@ class HistoricCTDSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4089,7 +4089,7 @@ class HistoricTelemetrySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4229,7 +4229,7 @@ class HistoricSonarDataSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4365,7 +4365,7 @@ class HistoricEventSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4511,7 +4511,7 @@ class VerticalProfileSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4651,7 +4651,7 @@ class ProfileSampleSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4753,7 +4753,7 @@ class HeartbeatSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -4880,7 +4880,7 @@ class AnnounceSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5022,7 +5022,7 @@ class AnnounceServiceSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5134,7 +5134,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5236,7 +5236,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5339,7 +5339,7 @@ class LinkLevelSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5457,7 +5457,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5597,7 +5597,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5733,7 +5733,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5861,7 +5861,7 @@ class SmsStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -5990,7 +5990,7 @@ class TextMessageSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6132,7 +6132,7 @@ class IridiumMsgRxSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6279,7 +6279,7 @@ class IridiumMsgTxSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6414,7 +6414,7 @@ class IridiumTxStatusSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6539,7 +6539,7 @@ class GroupMembershipStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6668,7 +6668,7 @@ class SystemGroupSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6793,7 +6793,7 @@ class LinkLatencySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -6903,7 +6903,7 @@ class ExtendedRSSISerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7040,7 +7040,7 @@ class HistoricDataSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7188,7 +7188,7 @@ class CompressedHistorySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7338,7 +7338,7 @@ class HistoricSampleSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7500,7 +7500,7 @@ class HistoricDataQuerySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7653,7 +7653,7 @@ class RemoteCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7797,7 +7797,7 @@ class CommSystemsQuerySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -7959,7 +7959,7 @@ class TelemetryMsgSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -8107,7 +8107,7 @@ class LblRangeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -8236,7 +8236,7 @@ class LblBeaconSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -8387,7 +8387,7 @@ class LblConfigSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -8528,7 +8528,7 @@ class AcousticMessageSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -8705,7 +8705,7 @@ class SimAcousticMessageSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -8897,7 +8897,7 @@ class AcousticOperationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9029,7 +9029,7 @@ class AcousticSystemsQuerySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9134,7 +9134,7 @@ class AcousticSystemsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9255,7 +9255,7 @@ class AcousticLinkSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9405,7 +9405,7 @@ class AcousticRequestSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9564,7 +9564,7 @@ class AcousticStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9685,7 +9685,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9788,7 +9788,7 @@ class VoltageSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -9891,7 +9891,7 @@ class CurrentSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10039,7 +10039,7 @@ class GpsFixSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10201,7 +10201,7 @@ class EulerAnglesSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10329,7 +10329,7 @@ class EulerAnglesDeltaSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10454,7 +10454,7 @@ class AngularVelocitySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10576,7 +10576,7 @@ class AccelerationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10698,7 +10698,7 @@ class MagneticFieldSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10820,7 +10820,7 @@ class GroundVelocitySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -10943,7 +10943,7 @@ class WaterVelocitySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11066,7 +11066,7 @@ class VelocityDeltaSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11229,7 +11229,7 @@ class DistanceSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11382,7 +11382,7 @@ class TemperatureSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11485,7 +11485,7 @@ class PressureSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11587,7 +11587,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11691,7 +11691,7 @@ class DepthOffsetSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11794,7 +11794,7 @@ class SoundSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -11898,7 +11898,7 @@ class WaterDensitySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12002,7 +12002,7 @@ class ConductivitySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12105,7 +12105,7 @@ class SalinitySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12214,7 +12214,7 @@ class WindSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12324,7 +12324,7 @@ class RelativeHumiditySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12433,7 +12433,7 @@ class DevDataTextSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12549,7 +12549,7 @@ class DevDataBinarySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12656,7 +12656,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12807,7 +12807,7 @@ class SonarDataSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -12951,7 +12951,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13051,7 +13051,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13165,7 +13165,7 @@ class FuelLevelSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13322,7 +13322,7 @@ class GpsNavDataSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13471,7 +13471,7 @@ class ServoPositionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13593,7 +13593,7 @@ class DeviceStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13714,7 +13714,7 @@ class BeamConfigSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13820,7 +13820,7 @@ class DataSanitySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -13924,7 +13924,7 @@ class RhodamineDyeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14027,7 +14027,7 @@ class CrudeOilSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14130,7 +14130,7 @@ class FineOilSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14233,7 +14233,7 @@ class TurbiditySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14337,7 +14337,7 @@ class ChlorophyllSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14441,7 +14441,7 @@ class FluoresceinSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14545,7 +14545,7 @@ class PhycocyaninSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14649,7 +14649,7 @@ class PhycoerythrinSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14794,7 +14794,7 @@ class GpsFixRtkSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -14958,7 +14958,7 @@ class ExternalNavDataSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15082,7 +15082,7 @@ class DissolvedOxygenSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15186,7 +15186,7 @@ class AirSaturationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15289,7 +15289,7 @@ class ThrottleSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15391,7 +15391,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15493,7 +15493,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15602,7 +15602,7 @@ class CameraZoomSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15715,7 +15715,7 @@ class SetThrusterActuationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15825,7 +15825,7 @@ class SetServoPositionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -15936,7 +15936,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16051,7 +16051,7 @@ class RemoteActionsRequestSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16169,7 +16169,7 @@ class RemoteActionsSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16282,7 +16282,7 @@ class ButtonEventSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16396,7 +16396,7 @@ class LcdControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16515,7 +16515,7 @@ class PowerOperationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16636,7 +16636,7 @@ class PowerChannelControlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16748,7 +16748,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16856,7 +16856,7 @@ class PowerChannelStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -16978,7 +16978,7 @@ class LedBrightnessSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17096,7 +17096,7 @@ class QueryLedBrightnessSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17214,7 +17214,7 @@ class SetLedBrightnessSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17332,7 +17332,7 @@ class SetPWMSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17446,7 +17446,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17613,7 +17613,7 @@ class EstimatedStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17780,7 +17780,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17890,7 +17890,7 @@ class IndicatedSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -17993,7 +17993,7 @@ class TrueSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18136,7 +18136,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18303,7 +18303,7 @@ class NavigationDataSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18434,7 +18434,7 @@ class GpsFixRejectionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18548,7 +18548,7 @@ class LblRangeAcceptanceSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18668,7 +18668,7 @@ class DvlRejectionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18810,7 +18810,7 @@ class LblEstimateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -18946,7 +18946,7 @@ class AlignmentStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19056,7 +19056,7 @@ class GroupStreamVelocitySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19171,7 +19171,7 @@ class AirflowSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19281,7 +19281,7 @@ class DesiredHeadingSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19387,7 +19387,7 @@ class DesiredZSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19497,7 +19497,7 @@ class DesiredSpeedSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19604,7 +19604,7 @@ class DesiredRollSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19708,7 +19708,7 @@ class DesiredPitchSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19812,7 +19812,7 @@ class DesiredVerticalRateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -19952,7 +19952,7 @@ class DesiredPathSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20110,7 +20110,7 @@ class DesiredControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20233,7 +20233,7 @@ class DesiredHeadingRateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20355,7 +20355,7 @@ class DesiredVelocitySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20532,7 +20532,7 @@ class PathControlStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20697,7 +20697,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20816,7 +20816,7 @@ class ControlParcelSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -20927,7 +20927,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21058,7 +21058,7 @@ class DesiredLinearStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21190,7 +21190,7 @@ class DesiredThrottleSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21327,7 +21327,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21500,7 +21500,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21645,7 +21645,7 @@ class TeleoperationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21798,7 +21798,7 @@ class LoiterSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -21955,7 +21955,7 @@ class IdleManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -22093,7 +22093,7 @@ class LowLevelControlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -22274,7 +22274,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -22478,7 +22478,7 @@ class FollowPathSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -22637,7 +22637,7 @@ class PathPointSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -22777,7 +22777,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -22910,7 +22910,7 @@ class TeleoperationDoneSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -23039,7 +23039,7 @@ class StationKeepingSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -23210,7 +23210,7 @@ class ElevatorSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -23403,7 +23403,7 @@ class FollowTrajectorySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -23566,7 +23566,7 @@ class TrajectoryPointSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -23695,7 +23695,7 @@ class CustomManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -23891,7 +23891,7 @@ class VehicleFormationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24080,7 +24080,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24189,7 +24189,7 @@ class StopManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24289,7 +24289,7 @@ class RegisterManeuverSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24404,7 +24404,7 @@ class ManeuverControlStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24542,7 +24542,7 @@ class FollowSystemSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24687,7 +24687,7 @@ class CommsRelaySerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -24858,7 +24858,7 @@ class CoverAreaSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -25012,7 +25012,7 @@ class PolygonVertexSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -25160,7 +25160,7 @@ class CompassCalibrationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -25347,7 +25347,7 @@ class FormationParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -25559,7 +25559,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -25744,7 +25744,7 @@ class FollowReferenceSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -25902,7 +25902,7 @@ class ReferenceSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -26081,7 +26081,7 @@ class FollowRefStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -26290,7 +26290,7 @@ class FormationMonitorSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -26536,7 +26536,7 @@ class RelativeStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -26722,7 +26722,7 @@ class DislodgeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -26947,7 +26947,7 @@ class FormationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -27189,7 +27189,7 @@ class LaunchSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -27344,7 +27344,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -27496,7 +27496,7 @@ class ScheduledGotoSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -27672,7 +27672,7 @@ class RowsCoverageSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -27862,7 +27862,7 @@ class SampleSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -27998,7 +27998,7 @@ class ImageTrackingSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -28123,7 +28123,7 @@ class TakeoffSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -28287,7 +28287,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -28488,7 +28488,7 @@ class AutonomousSectionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -28686,7 +28686,7 @@ class FollowPointSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -28842,7 +28842,7 @@ class AlignmentSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29005,7 +29005,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29145,7 +29145,7 @@ class ManeuverDoneSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29280,7 +29280,7 @@ class MagnetometerSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29458,7 +29458,7 @@ class VehicleStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29637,7 +29637,7 @@ class VehicleCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29788,7 +29788,7 @@ class MonitorEntityStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -29943,7 +29943,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30125,7 +30125,7 @@ class OperationalLimitsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30258,7 +30258,7 @@ class GetOperationalLimitsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30358,7 +30358,7 @@ class CalibrationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30468,7 +30468,7 @@ class ControlLoopsSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30579,7 +30579,7 @@ class VehicleMediumSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30685,7 +30685,7 @@ class CollisionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30806,7 +30806,7 @@ class FormStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -30935,7 +30935,7 @@ class AutopilotModeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31070,7 +31070,7 @@ class FormationStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31212,7 +31212,7 @@ class ReportControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31359,7 +31359,7 @@ class StateReportSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31544,7 +31544,7 @@ class TransmissionRequestSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31722,7 +31722,7 @@ class TransmissionStatusSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31860,7 +31860,7 @@ class SmsRequestSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -31995,7 +31995,7 @@ class SmsStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -32110,7 +32110,7 @@ class VtolStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -32214,7 +32214,7 @@ class ArmingStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -32345,7 +32345,7 @@ class TCPRequestSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -32491,7 +32491,7 @@ class TCPStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -32601,7 +32601,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -32850,7 +32850,7 @@ class PlanSpecificationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -33176,7 +33176,7 @@ class PlanManeuverSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -33399,7 +33399,7 @@ class PlanTransitionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -33567,7 +33567,7 @@ class EmergencyControlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -33703,7 +33703,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -33858,7 +33858,7 @@ class PlanDBSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -34056,7 +34056,7 @@ class PlanDBStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -34240,7 +34240,7 @@ class PlanDBInformationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -34418,7 +34418,7 @@ class PlanControlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -34601,7 +34601,7 @@ class PlanControlStateSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -34759,7 +34759,7 @@ class PlanVariableSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -34903,7 +34903,7 @@ class PlanGenerationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -35090,7 +35090,7 @@ class LeaderStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -35300,7 +35300,7 @@ class PlanStatisticsSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -35482,7 +35482,7 @@ class ReportedStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -35649,7 +35649,7 @@ class RemoteSensorInfoSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -35816,7 +35816,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -35989,7 +35989,7 @@ class MapFeatureSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -36140,7 +36140,7 @@ class MapPointSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -36274,7 +36274,7 @@ class CcuEventSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -36436,7 +36436,7 @@ class VehicleLinksSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -36590,7 +36590,7 @@ class TrexObservationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -36734,7 +36734,7 @@ class TrexCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -36881,7 +36881,7 @@ class TrexOperationSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37038,7 +37038,7 @@ class TrexAttributeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37206,7 +37206,7 @@ class TrexTokenSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37376,7 +37376,7 @@ class TrexPlanSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37520,7 +37520,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37648,7 +37648,7 @@ class CompressedImageSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37769,7 +37769,7 @@ class ImageTxSettingsSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -37894,7 +37894,7 @@ class RemoteStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38032,7 +38032,7 @@ class TargetSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38173,7 +38173,7 @@ class EntityParameterSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38321,7 +38321,7 @@ class EntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38475,7 +38475,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38632,7 +38632,7 @@ class SetEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38770,7 +38770,7 @@ class SaveEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38880,7 +38880,7 @@ class CreateSessionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -38984,7 +38984,7 @@ class CloseSessionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39096,7 +39096,7 @@ class SessionSubscriptionSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39209,7 +39209,7 @@ class SessionKeepAliveSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39316,7 +39316,7 @@ class SessionStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39428,7 +39428,7 @@ class PushEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39543,7 +39543,7 @@ class PopEntityParametersSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39660,7 +39660,7 @@ class IoEventSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39792,7 +39792,7 @@ class UamTxFrameSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -39940,7 +39940,7 @@ class UamRxFrameSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40081,7 +40081,7 @@ class UamTxStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40207,7 +40207,7 @@ class UamRxRangeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40333,7 +40333,7 @@ class UamTxRangeSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40464,7 +40464,7 @@ class FormCtrlParamSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40589,7 +40589,7 @@ class FormationEvalSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40729,7 +40729,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -40899,7 +40899,7 @@ class FormationEvaluationSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41053,7 +41053,7 @@ class SoiWaypointSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41189,7 +41189,7 @@ class SoiPlanSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41351,7 +41351,7 @@ class SoiCommandSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41504,7 +41504,7 @@ class SoiStateSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41632,7 +41632,7 @@ class MessagePartSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41763,7 +41763,7 @@ class NeptusBlobSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41876,7 +41876,7 @@ class AbortedSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -41981,7 +41981,7 @@ class UsblAnglesSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42100,7 +42100,7 @@ class UsblPositionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42224,7 +42224,7 @@ class UsblFixSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42354,7 +42354,7 @@ class ParametersXmlSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42468,7 +42468,7 @@ class GetParametersXmlSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42574,7 +42574,7 @@ class SetImageCoordsSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42690,7 +42690,7 @@ class GetImageCoordsSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42815,7 +42815,7 @@ class GetWorldCoordinatesSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -42963,7 +42963,7 @@ class UsblAnglesExtendedSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43132,7 +43132,7 @@ class UsblPositionExtendedSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43292,7 +43292,7 @@ class UsblFixExtendedSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43433,7 +43433,7 @@ class UsblModemSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43578,7 +43578,7 @@ class UsblConfigSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43708,7 +43708,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43816,7 +43816,7 @@ class OpticalBackscatterSerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -43967,7 +43967,7 @@ class TachographSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -44123,7 +44123,7 @@ class ApmStatusSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -44242,7 +44242,7 @@ class SadcReadingsSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -44397,7 +44397,7 @@ class DmsDetectionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -44561,7 +44561,7 @@ class HomePositionSerializer
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
@@ -44680,7 +44680,7 @@ class TotalMagIntensitySerializer extends imc
     }
 
     // Payload
-    var payloadSizeRead;
+    int payloadSizeRead;
     try {
       payloadSizeRead =
           deserializePayload(builder, byteData, endianness, byteOffset);
