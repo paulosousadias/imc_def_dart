@@ -66,7 +66,6 @@ Timer.periodic(Duration(milliseconds: 300), (Timer t) {
         ..timestamp = DateTime.now()
         ..dstEnt = dstEnt++ & 0xFF)
       .build();
-  //stdout.write("Sending ${msg.abbrev}  \n");
   var dataB = imc.messagesIdsSerializers[msg.msgId]?.call().serialize(msg);
   var bytes =
       dataB?.buffer.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
