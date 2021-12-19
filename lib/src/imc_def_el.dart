@@ -57,7 +57,7 @@ class EntityStateBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -222,7 +222,7 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -805,7 +805,7 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1009,7 +1009,7 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1077,7 +1077,7 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1239,7 +1239,7 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1370,7 +1370,7 @@ class SimAcousticMessageBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1700,7 +1700,7 @@ class GpsFixBitfieldValidity extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1795,7 +1795,7 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -1849,7 +1849,7 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -2026,7 +2026,7 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -2485,7 +2485,7 @@ class DvlRejectionBitfieldType extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -2678,7 +2678,7 @@ class DesiredPathBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -2750,7 +2750,7 @@ class DesiredControlBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -2822,7 +2822,7 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -2892,7 +2892,7 @@ class PathControlStateBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3013,7 +3013,7 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3075,7 +3075,7 @@ class PopUpBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3187,7 +3187,7 @@ class RowsBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3232,7 +3232,7 @@ class ElevatorBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3397,7 +3397,7 @@ class ReferenceBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3490,7 +3490,7 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3710,7 +3710,7 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3764,7 +3764,7 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3811,7 +3811,7 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -3932,7 +3932,7 @@ class VehicleStateBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -4170,7 +4170,7 @@ class CollisionBitfieldType extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -4556,7 +4556,7 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -5144,7 +5144,7 @@ class PlanControlBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -5466,7 +5466,7 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -5821,7 +5821,7 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -5872,7 +5872,7 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;

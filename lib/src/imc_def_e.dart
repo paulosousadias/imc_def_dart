@@ -280,7 +280,7 @@ class CLoopsMaskBitfield extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
@@ -340,7 +340,7 @@ class OpLimitsMaskBitfield extends BitfieldType {
 
   @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;

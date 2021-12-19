@@ -1278,7 +1278,7 @@ void _writeEnumLikeWorker(
     case 'Bitfield':
       bodyBitfield = '''\n  @override
   String toPrettyString() {
-    var ret;
+    String? ret;
     if (value == 0) return '';
 
     var valNot = value;
