@@ -282,7 +282,7 @@ void _writeMessageImmutable(
 
   var msgStringImmutableClass2 = '''\n
   factory _\$$abbrev([void Function(${abbrev}Builder b)? updates]) =>
-      (${abbrev}Builder()..update(updates)).build();
+      (${abbrev}Builder()..update(updates)).build() as _\$$abbrev;
 
   _\$$abbrev._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -580,7 +580,7 @@ void _writeMessageBuilder(
   }
 
   @override
-  _\$$abbrev build() {
+  $abbrev build() {
     final result = _\$v ??
         _\$$abbrev._(
             timestamp: timestamp ?? DateTime.now(),

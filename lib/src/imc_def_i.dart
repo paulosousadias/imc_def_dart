@@ -28,7 +28,7 @@ class _$EntityState extends EntityState {
   final String description;
 
   factory _$EntityState([void Function(EntityStateBuilder b)? updates]) =>
-      (EntityStateBuilder()..update(updates)).build();
+      (EntityStateBuilder()..update(updates)).build() as _$EntityState;
 
   _$EntityState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -180,7 +180,7 @@ class EntityStateBuilder extends Object
   }
 
   @override
-  _$EntityState build() {
+  EntityState build() {
     final result = _$v ??
         _$EntityState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -212,7 +212,8 @@ class _$QueryEntityState extends QueryEntityState {
 
   factory _$QueryEntityState(
           [void Function(QueryEntityStateBuilder b)? updates]) =>
-      (QueryEntityStateBuilder()..update(updates)).build();
+      (QueryEntityStateBuilder()..update(updates)).build()
+          as _$QueryEntityState;
 
   _$QueryEntityState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -334,7 +335,7 @@ class QueryEntityStateBuilder extends Object
   }
 
   @override
-  _$QueryEntityState build() {
+  QueryEntityState build() {
     final result = _$v ??
         _$QueryEntityState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -373,7 +374,7 @@ class _$EntityInfo extends EntityInfo {
   final int deactTime;
 
   factory _$EntityInfo([void Function(EntityInfoBuilder b)? updates]) =>
-      (EntityInfoBuilder()..update(updates)).build();
+      (EntityInfoBuilder()..update(updates)).build() as _$EntityInfo;
 
   _$EntityInfo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -549,7 +550,7 @@ class EntityInfoBuilder extends Object
   }
 
   @override
-  _$EntityInfo build() {
+  EntityInfo build() {
     final result = _$v ??
         _$EntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
@@ -586,7 +587,7 @@ class _$QueryEntityInfo extends QueryEntityInfo {
 
   factory _$QueryEntityInfo(
           [void Function(QueryEntityInfoBuilder b)? updates]) =>
-      (QueryEntityInfoBuilder()..update(updates)).build();
+      (QueryEntityInfoBuilder()..update(updates)).build() as _$QueryEntityInfo;
 
   _$QueryEntityInfo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -719,7 +720,7 @@ class QueryEntityInfoBuilder extends Object
   }
 
   @override
-  _$QueryEntityInfo build() {
+  QueryEntityInfo build() {
     final result = _$v ??
         _$QueryEntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
@@ -753,7 +754,7 @@ class _$EntityList extends EntityList {
   final String list;
 
   factory _$EntityList([void Function(EntityListBuilder b)? updates]) =>
-      (EntityListBuilder()..update(updates)).build();
+      (EntityListBuilder()..update(updates)).build() as _$EntityList;
 
   _$EntityList._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -895,7 +896,7 @@ class EntityListBuilder extends Object
   }
 
   @override
-  _$EntityList build() {
+  EntityList build() {
     final result = _$v ??
         _$EntityList._(
             timestamp: timestamp ?? DateTime.now(),
@@ -928,7 +929,7 @@ class _$CpuUsage extends CpuUsage {
   final int value;
 
   factory _$CpuUsage([void Function(CpuUsageBuilder b)? updates]) =>
-      (CpuUsageBuilder()..update(updates)).build();
+      (CpuUsageBuilder()..update(updates)).build() as _$CpuUsage;
 
   _$CpuUsage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1060,7 +1061,7 @@ class CpuUsageBuilder extends Object
   }
 
   @override
-  _$CpuUsage build() {
+  CpuUsage build() {
     final result = _$v ??
         _$CpuUsage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -1095,7 +1096,8 @@ class _$TransportBindings extends TransportBindings {
 
   factory _$TransportBindings(
           [void Function(TransportBindingsBuilder b)? updates]) =>
-      (TransportBindingsBuilder()..update(updates)).build();
+      (TransportBindingsBuilder()..update(updates)).build()
+          as _$TransportBindings;
 
   _$TransportBindings._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1240,7 +1242,7 @@ class TransportBindingsBuilder extends Object
   }
 
   @override
-  _$TransportBindings build() {
+  TransportBindings build() {
     final result = _$v ??
         _$TransportBindings._(
             timestamp: timestamp ?? DateTime.now(),
@@ -1273,7 +1275,7 @@ class _$RestartSystem extends RestartSystem {
   final RestartSystemEnumType type;
 
   factory _$RestartSystem([void Function(RestartSystemBuilder b)? updates]) =>
-      (RestartSystemBuilder()..update(updates)).build();
+      (RestartSystemBuilder()..update(updates)).build() as _$RestartSystem;
 
   _$RestartSystem._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1405,7 +1407,7 @@ class RestartSystemBuilder extends Object
   }
 
   @override
-  _$RestartSystem build() {
+  RestartSystem build() {
     final result = _$v ??
         _$RestartSystem._(
             timestamp: timestamp ?? DateTime.now(),
@@ -1438,7 +1440,8 @@ class _$DevCalibrationControl extends DevCalibrationControl {
 
   factory _$DevCalibrationControl(
           [void Function(DevCalibrationControlBuilder b)? updates]) =>
-      (DevCalibrationControlBuilder()..update(updates)).build();
+      (DevCalibrationControlBuilder()..update(updates)).build()
+          as _$DevCalibrationControl;
 
   _$DevCalibrationControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1576,7 +1579,7 @@ class DevCalibrationControlBuilder extends Object
   }
 
   @override
-  _$DevCalibrationControl build() {
+  DevCalibrationControl build() {
     final result = _$v ??
         _$DevCalibrationControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -1615,7 +1618,8 @@ class _$DevCalibrationState extends DevCalibrationState {
 
   factory _$DevCalibrationState(
           [void Function(DevCalibrationStateBuilder b)? updates]) =>
-      (DevCalibrationStateBuilder()..update(updates)).build();
+      (DevCalibrationStateBuilder()..update(updates)).build()
+          as _$DevCalibrationState;
 
   _$DevCalibrationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1784,7 +1788,7 @@ class DevCalibrationStateBuilder extends Object
   }
 
   @override
-  _$DevCalibrationState build() {
+  DevCalibrationState build() {
     final result = _$v ??
         _$DevCalibrationState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -1822,7 +1826,8 @@ class _$EntityActivationState extends EntityActivationState {
 
   factory _$EntityActivationState(
           [void Function(EntityActivationStateBuilder b)? updates]) =>
-      (EntityActivationStateBuilder()..update(updates)).build();
+      (EntityActivationStateBuilder()..update(updates)).build()
+          as _$EntityActivationState;
 
   _$EntityActivationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1970,7 +1975,7 @@ class EntityActivationStateBuilder extends Object
   }
 
   @override
-  _$EntityActivationState build() {
+  EntityActivationState build() {
     final result = _$v ??
         _$EntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -2001,7 +2006,8 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
 
   factory _$QueryEntityActivationState(
           [void Function(QueryEntityActivationStateBuilder b)? updates]) =>
-      (QueryEntityActivationStateBuilder()..update(updates)).build();
+      (QueryEntityActivationStateBuilder()..update(updates)).build()
+          as _$QueryEntityActivationState;
 
   _$QueryEntityActivationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -2128,7 +2134,7 @@ class QueryEntityActivationStateBuilder extends Object
   }
 
   @override
-  _$QueryEntityActivationState build() {
+  QueryEntityActivationState build() {
     final result = _$v ??
         _$QueryEntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -2194,7 +2200,8 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
 
   factory _$VehicleOperationalLimits(
           [void Function(VehicleOperationalLimitsBuilder b)? updates]) =>
-      (VehicleOperationalLimitsBuilder()..update(updates)).build();
+      (VehicleOperationalLimitsBuilder()..update(updates)).build()
+          as _$VehicleOperationalLimits;
 
   _$VehicleOperationalLimits._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -2504,7 +2511,7 @@ class VehicleOperationalLimitsBuilder extends Object
   }
 
   @override
-  _$VehicleOperationalLimits build() {
+  VehicleOperationalLimits build() {
     final result = _$v ??
         _$VehicleOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
@@ -2553,7 +2560,7 @@ class _$MsgList extends MsgList {
   final List<ImcMessage> msgs;
 
   factory _$MsgList([void Function(MsgListBuilder b)? updates]) =>
-      (MsgListBuilder()..update(updates)).build();
+      (MsgListBuilder()..update(updates)).build() as _$MsgList;
 
   _$MsgList._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -2685,7 +2692,7 @@ class MsgListBuilder extends Object
   }
 
   @override
-  _$MsgList build() {
+  MsgList build() {
     final result = _$v ??
         _$MsgList._(
             timestamp: timestamp ?? DateTime.now(),
@@ -2751,7 +2758,7 @@ class _$SimulatedState extends SimulatedState {
   final double svz;
 
   factory _$SimulatedState([void Function(SimulatedStateBuilder b)? updates]) =>
-      (SimulatedStateBuilder()..update(updates)).build();
+      (SimulatedStateBuilder()..update(updates)).build() as _$SimulatedState;
 
   _$SimulatedState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3047,7 +3054,7 @@ class SimulatedStateBuilder extends Object
   }
 
   @override
-  _$SimulatedState build() {
+  SimulatedState build() {
     final result = _$v ??
         _$SimulatedState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -3098,7 +3105,7 @@ class _$LeakSimulation extends LeakSimulation {
   final String entities;
 
   factory _$LeakSimulation([void Function(LeakSimulationBuilder b)? updates]) =>
-      (LeakSimulationBuilder()..update(updates)).build();
+      (LeakSimulationBuilder()..update(updates)).build() as _$LeakSimulation;
 
   _$LeakSimulation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3240,7 +3247,7 @@ class LeakSimulationBuilder extends Object
   }
 
   @override
-  _$LeakSimulation build() {
+  LeakSimulation build() {
     final result = _$v ??
         _$LeakSimulation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -3277,7 +3284,7 @@ class _$UASimulation extends UASimulation {
   final List<int> data;
 
   factory _$UASimulation([void Function(UASimulationBuilder b)? updates]) =>
-      (UASimulationBuilder()..update(updates)).build();
+      (UASimulationBuilder()..update(updates)).build() as _$UASimulation;
 
   _$UASimulation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3429,7 +3436,7 @@ class UASimulationBuilder extends Object
   }
 
   @override
-  _$UASimulation build() {
+  UASimulation build() {
     final result = _$v ??
         _$UASimulation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -3468,7 +3475,8 @@ class _$DynamicsSimParam extends DynamicsSimParam {
 
   factory _$DynamicsSimParam(
           [void Function(DynamicsSimParamBuilder b)? updates]) =>
-      (DynamicsSimParamBuilder()..update(updates)).build();
+      (DynamicsSimParamBuilder()..update(updates)).build()
+          as _$DynamicsSimParam;
 
   _$DynamicsSimParam._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3624,7 +3632,7 @@ class DynamicsSimParamBuilder extends Object
   }
 
   @override
-  _$DynamicsSimParam build() {
+  DynamicsSimParam build() {
     final result = _$v ??
         _$DynamicsSimParam._(
             timestamp: timestamp ?? DateTime.now(),
@@ -3660,7 +3668,7 @@ class _$StorageUsage extends StorageUsage {
   final int value;
 
   factory _$StorageUsage([void Function(StorageUsageBuilder b)? updates]) =>
-      (StorageUsageBuilder()..update(updates)).build();
+      (StorageUsageBuilder()..update(updates)).build() as _$StorageUsage;
 
   _$StorageUsage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3802,7 +3810,7 @@ class StorageUsageBuilder extends Object
   }
 
   @override
-  _$StorageUsage build() {
+  StorageUsage build() {
     final result = _$v ??
         _$StorageUsage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -3839,7 +3847,7 @@ class _$CacheControl extends CacheControl {
   final ImcMessage? message;
 
   factory _$CacheControl([void Function(CacheControlBuilder b)? updates]) =>
-      (CacheControlBuilder()..update(updates)).build();
+      (CacheControlBuilder()..update(updates)).build() as _$CacheControl;
 
   _$CacheControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3991,7 +3999,7 @@ class CacheControlBuilder extends Object
   }
 
   @override
-  _$CacheControl build() {
+  CacheControl build() {
     final result = _$v ??
         _$CacheControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -4027,7 +4035,7 @@ class _$LoggingControl extends LoggingControl {
   final String name;
 
   factory _$LoggingControl([void Function(LoggingControlBuilder b)? updates]) =>
-      (LoggingControlBuilder()..update(updates)).build();
+      (LoggingControlBuilder()..update(updates)).build() as _$LoggingControl;
 
   _$LoggingControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4169,7 +4177,7 @@ class LoggingControlBuilder extends Object
   }
 
   @override
-  _$LoggingControl build() {
+  LoggingControl build() {
     final result = _$v ??
         _$LoggingControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -4208,7 +4216,7 @@ class _$LogBookEntry extends LogBookEntry {
   final String text;
 
   factory _$LogBookEntry([void Function(LogBookEntryBuilder b)? updates]) =>
-      (LogBookEntryBuilder()..update(updates)).build();
+      (LogBookEntryBuilder()..update(updates)).build() as _$LogBookEntry;
 
   _$LogBookEntry._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4372,7 +4380,7 @@ class LogBookEntryBuilder extends Object
   }
 
   @override
-  _$LogBookEntry build() {
+  LogBookEntry build() {
     final result = _$v ??
         _$LogBookEntry._(
             timestamp: timestamp ?? DateTime.now(),
@@ -4411,7 +4419,7 @@ class _$LogBookControl extends LogBookControl {
   final List<LogBookEntry> msg;
 
   factory _$LogBookControl([void Function(LogBookControlBuilder b)? updates]) =>
-      (LogBookControlBuilder()..update(updates)).build();
+      (LogBookControlBuilder()..update(updates)).build() as _$LogBookControl;
 
   _$LogBookControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4564,7 +4572,7 @@ class LogBookControlBuilder extends Object
   }
 
   @override
-  _$LogBookControl build() {
+  LogBookControl build() {
     final result = _$v ??
         _$LogBookControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -4600,7 +4608,7 @@ class _$ReplayControl extends ReplayControl {
   final String file;
 
   factory _$ReplayControl([void Function(ReplayControlBuilder b)? updates]) =>
-      (ReplayControlBuilder()..update(updates)).build();
+      (ReplayControlBuilder()..update(updates)).build() as _$ReplayControl;
 
   _$ReplayControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4742,7 +4750,7 @@ class ReplayControlBuilder extends Object
   }
 
   @override
-  _$ReplayControl build() {
+  ReplayControl build() {
     final result = _$v ??
         _$ReplayControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -4779,7 +4787,7 @@ class _$ClockControl extends ClockControl {
   final int tz;
 
   factory _$ClockControl([void Function(ClockControlBuilder b)? updates]) =>
-      (ClockControlBuilder()..update(updates)).build();
+      (ClockControlBuilder()..update(updates)).build() as _$ClockControl;
 
   _$ClockControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4931,7 +4939,7 @@ class ClockControlBuilder extends Object
   }
 
   @override
-  _$ClockControl build() {
+  ClockControl build() {
     final result = _$v ??
         _$ClockControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -4969,7 +4977,7 @@ class _$HistoricCTD extends HistoricCTD {
   final double depth;
 
   factory _$HistoricCTD([void Function(HistoricCTDBuilder b)? updates]) =>
-      (HistoricCTDBuilder()..update(updates)).build();
+      (HistoricCTDBuilder()..update(updates)).build() as _$HistoricCTD;
 
   _$HistoricCTD._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5123,7 +5131,7 @@ class HistoricCTDBuilder extends Object
   }
 
   @override
-  _$HistoricCTD build() {
+  HistoricCTD build() {
     final result = _$v ??
         _$HistoricCTD._(
             timestamp: timestamp ?? DateTime.now(),
@@ -5166,7 +5174,8 @@ class _$HistoricTelemetry extends HistoricTelemetry {
 
   factory _$HistoricTelemetry(
           [void Function(HistoricTelemetryBuilder b)? updates]) =>
-      (HistoricTelemetryBuilder()..update(updates)).build();
+      (HistoricTelemetryBuilder()..update(updates)).build()
+          as _$HistoricTelemetry;
 
   _$HistoricTelemetry._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5345,7 +5354,7 @@ class HistoricTelemetryBuilder extends Object
   }
 
   @override
-  _$HistoricTelemetry build() {
+  HistoricTelemetry build() {
     final result = _$v ??
         _$HistoricTelemetry._(
             timestamp: timestamp ?? DateTime.now(),
@@ -5394,7 +5403,8 @@ class _$HistoricSonarData extends HistoricSonarData {
 
   factory _$HistoricSonarData(
           [void Function(HistoricSonarDataBuilder b)? updates]) =>
-      (HistoricSonarDataBuilder()..update(updates)).build();
+      (HistoricSonarDataBuilder()..update(updates)).build()
+          as _$HistoricSonarData;
 
   _$HistoricSonarData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5595,7 +5605,7 @@ class HistoricSonarDataBuilder extends Object
   }
 
   @override
-  _$HistoricSonarData build() {
+  HistoricSonarData build() {
     final result = _$v ??
         _$HistoricSonarData._(
             timestamp: timestamp ?? DateTime.now(),
@@ -5635,7 +5645,7 @@ class _$HistoricEvent extends HistoricEvent {
   final HistoricEventEnumType type;
 
   factory _$HistoricEvent([void Function(HistoricEventBuilder b)? updates]) =>
-      (HistoricEventBuilder()..update(updates)).build();
+      (HistoricEventBuilder()..update(updates)).build() as _$HistoricEvent;
 
   _$HistoricEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5777,7 +5787,7 @@ class HistoricEventBuilder extends Object
   }
 
   @override
-  _$HistoricEvent build() {
+  HistoricEvent build() {
     final result = _$v ??
         _$HistoricEvent._(
             timestamp: timestamp ?? DateTime.now(),
@@ -5819,7 +5829,7 @@ class _$VerticalProfile extends VerticalProfile {
 
   factory _$VerticalProfile(
           [void Function(VerticalProfileBuilder b)? updates]) =>
-      (VerticalProfileBuilder()..update(updates)).build();
+      (VerticalProfileBuilder()..update(updates)).build() as _$VerticalProfile;
 
   _$VerticalProfile._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5998,7 +6008,7 @@ class VerticalProfileBuilder extends Object
   }
 
   @override
-  _$VerticalProfile build() {
+  VerticalProfile build() {
     final result = _$v ??
         _$VerticalProfile._(
             timestamp: timestamp ?? DateTime.now(),
@@ -6036,7 +6046,7 @@ class _$ProfileSample extends ProfileSample {
   final double avg;
 
   factory _$ProfileSample([void Function(ProfileSampleBuilder b)? updates]) =>
-      (ProfileSampleBuilder()..update(updates)).build();
+      (ProfileSampleBuilder()..update(updates)).build() as _$ProfileSample;
 
   _$ProfileSample._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6178,7 +6188,7 @@ class ProfileSampleBuilder extends Object
   }
 
   @override
-  _$ProfileSample build() {
+  ProfileSample build() {
     final result = _$v ??
         _$ProfileSample._(
             timestamp: timestamp ?? DateTime.now(),
@@ -6208,7 +6218,7 @@ class _$Heartbeat extends Heartbeat {
   final int dstEnt;
 
   factory _$Heartbeat([void Function(HeartbeatBuilder b)? updates]) =>
-      (HeartbeatBuilder()..update(updates)).build();
+      (HeartbeatBuilder()..update(updates)).build() as _$Heartbeat;
 
   _$Heartbeat._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6328,7 +6338,7 @@ class HeartbeatBuilder extends Object
   }
 
   @override
-  _$Heartbeat build() {
+  Heartbeat build() {
     final result = _$v ??
         _$Heartbeat._(
             timestamp: timestamp ?? DateTime.now(),
@@ -6371,7 +6381,7 @@ class _$Announce extends Announce {
   final String services;
 
   factory _$Announce([void Function(AnnounceBuilder b)? updates]) =>
-      (AnnounceBuilder()..update(updates)).build();
+      (AnnounceBuilder()..update(updates)).build() as _$Announce;
 
   _$Announce._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6568,7 +6578,7 @@ class AnnounceBuilder extends Object
   }
 
   @override
-  _$Announce build() {
+  Announce build() {
     final result = _$v ??
         _$Announce._(
             timestamp: timestamp ?? DateTime.now(),
@@ -6609,7 +6619,7 @@ class _$AnnounceService extends AnnounceService {
 
   factory _$AnnounceService(
           [void Function(AnnounceServiceBuilder b)? updates]) =>
-      (AnnounceServiceBuilder()..update(updates)).build();
+      (AnnounceServiceBuilder()..update(updates)).build() as _$AnnounceService;
 
   _$AnnounceService._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6755,7 +6765,7 @@ class AnnounceServiceBuilder extends Object
   }
 
   @override
-  _$AnnounceService build() {
+  AnnounceService build() {
     final result = _$v ??
         _$AnnounceService._(
             timestamp: timestamp ?? DateTime.now(),
@@ -6788,7 +6798,7 @@ class _$RSSI extends RSSI {
   final double value;
 
   factory _$RSSI([void Function(RSSIBuilder b)? updates]) =>
-      (RSSIBuilder()..update(updates)).build();
+      (RSSIBuilder()..update(updates)).build() as _$RSSI;
 
   _$RSSI._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6920,7 +6930,7 @@ class RSSIBuilder extends Object
   }
 
   @override
-  _$RSSI build() {
+  RSSI build() {
     final result = _$v ??
         _$RSSI._(
             timestamp: timestamp ?? DateTime.now(),
@@ -6952,7 +6962,7 @@ class _$VSWR extends VSWR {
   final double value;
 
   factory _$VSWR([void Function(VSWRBuilder b)? updates]) =>
-      (VSWRBuilder()..update(updates)).build();
+      (VSWRBuilder()..update(updates)).build() as _$VSWR;
 
   _$VSWR._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7084,7 +7094,7 @@ class VSWRBuilder extends Object
   }
 
   @override
-  _$VSWR build() {
+  VSWR build() {
     final result = _$v ??
         _$VSWR._(
             timestamp: timestamp ?? DateTime.now(),
@@ -7116,7 +7126,7 @@ class _$LinkLevel extends LinkLevel {
   final double value;
 
   factory _$LinkLevel([void Function(LinkLevelBuilder b)? updates]) =>
-      (LinkLevelBuilder()..update(updates)).build();
+      (LinkLevelBuilder()..update(updates)).build() as _$LinkLevel;
 
   _$LinkLevel._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7248,7 +7258,7 @@ class LinkLevelBuilder extends Object
   }
 
   @override
-  _$LinkLevel build() {
+  LinkLevel build() {
     final result = _$v ??
         _$LinkLevel._(
             timestamp: timestamp ?? DateTime.now(),
@@ -7284,7 +7294,7 @@ class _$Sms extends Sms {
   final String contents;
 
   factory _$Sms([void Function(SmsBuilder b)? updates]) =>
-      (SmsBuilder()..update(updates)).build();
+      (SmsBuilder()..update(updates)).build() as _$Sms;
 
   _$Sms._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7436,7 +7446,7 @@ class SmsBuilder extends Object
   }
 
   @override
-  _$Sms build() {
+  Sms build() {
     final result = _$v ??
         _$Sms._(
             timestamp: timestamp ?? DateTime.now(),
@@ -7476,7 +7486,7 @@ class _$SmsTx extends SmsTx {
   final List<int> data;
 
   factory _$SmsTx([void Function(SmsTxBuilder b)? updates]) =>
-      (SmsTxBuilder()..update(updates)).build();
+      (SmsTxBuilder()..update(updates)).build() as _$SmsTx;
 
   _$SmsTx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7640,7 +7650,7 @@ class SmsTxBuilder extends Object
   }
 
   @override
-  _$SmsTx build() {
+  SmsTx build() {
     final result = _$v ??
         _$SmsTx._(
             timestamp: timestamp ?? DateTime.now(),
@@ -7677,7 +7687,7 @@ class _$SmsRx extends SmsRx {
   final List<int> data;
 
   factory _$SmsRx([void Function(SmsRxBuilder b)? updates]) =>
-      (SmsRxBuilder()..update(updates)).build();
+      (SmsRxBuilder()..update(updates)).build() as _$SmsRx;
 
   _$SmsRx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7819,7 +7829,7 @@ class SmsRxBuilder extends Object
   }
 
   @override
-  _$SmsRx build() {
+  SmsRx build() {
     final result = _$v ??
         _$SmsRx._(
             timestamp: timestamp ?? DateTime.now(),
@@ -7856,7 +7866,7 @@ class _$SmsState extends SmsState {
   final String error;
 
   factory _$SmsState([void Function(SmsStateBuilder b)? updates]) =>
-      (SmsStateBuilder()..update(updates)).build();
+      (SmsStateBuilder()..update(updates)).build() as _$SmsState;
 
   _$SmsState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8008,7 +8018,7 @@ class SmsStateBuilder extends Object
   }
 
   @override
-  _$SmsState build() {
+  SmsState build() {
     final result = _$v ??
         _$SmsState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -8044,7 +8054,7 @@ class _$TextMessage extends TextMessage {
   final String text;
 
   factory _$TextMessage([void Function(TextMessageBuilder b)? updates]) =>
-      (TextMessageBuilder()..update(updates)).build();
+      (TextMessageBuilder()..update(updates)).build() as _$TextMessage;
 
   _$TextMessage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8186,7 +8196,7 @@ class TextMessageBuilder extends Object
   }
 
   @override
-  _$TextMessage build() {
+  TextMessage build() {
     final result = _$v ??
         _$TextMessage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -8227,7 +8237,7 @@ class _$IridiumMsgRx extends IridiumMsgRx {
   final List<int> data;
 
   factory _$IridiumMsgRx([void Function(IridiumMsgRxBuilder b)? updates]) =>
-      (IridiumMsgRxBuilder()..update(updates)).build();
+      (IridiumMsgRxBuilder()..update(updates)).build() as _$IridiumMsgRx;
 
   _$IridiumMsgRx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8403,7 +8413,7 @@ class IridiumMsgRxBuilder extends Object
   }
 
   @override
-  _$IridiumMsgRx build() {
+  IridiumMsgRx build() {
     final result = _$v ??
         _$IridiumMsgRx._(
             timestamp: timestamp ?? DateTime.now(),
@@ -8445,7 +8455,7 @@ class _$IridiumMsgTx extends IridiumMsgTx {
   final List<int> data;
 
   factory _$IridiumMsgTx([void Function(IridiumMsgTxBuilder b)? updates]) =>
-      (IridiumMsgTxBuilder()..update(updates)).build();
+      (IridiumMsgTxBuilder()..update(updates)).build() as _$IridiumMsgTx;
 
   _$IridiumMsgTx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8609,7 +8619,7 @@ class IridiumMsgTxBuilder extends Object
   }
 
   @override
-  _$IridiumMsgTx build() {
+  IridiumMsgTx build() {
     final result = _$v ??
         _$IridiumMsgTx._(
             timestamp: timestamp ?? DateTime.now(),
@@ -8649,7 +8659,7 @@ class _$IridiumTxStatus extends IridiumTxStatus {
 
   factory _$IridiumTxStatus(
           [void Function(IridiumTxStatusBuilder b)? updates]) =>
-      (IridiumTxStatusBuilder()..update(updates)).build();
+      (IridiumTxStatusBuilder()..update(updates)).build() as _$IridiumTxStatus;
 
   _$IridiumTxStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8802,7 +8812,7 @@ class IridiumTxStatusBuilder extends Object
   }
 
   @override
-  _$IridiumTxStatus build() {
+  IridiumTxStatus build() {
     final result = _$v ??
         _$IridiumTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -8839,7 +8849,8 @@ class _$GroupMembershipState extends GroupMembershipState {
 
   factory _$GroupMembershipState(
           [void Function(GroupMembershipStateBuilder b)? updates]) =>
-      (GroupMembershipStateBuilder()..update(updates)).build();
+      (GroupMembershipStateBuilder()..update(updates)).build()
+          as _$GroupMembershipState;
 
   _$GroupMembershipState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8986,7 +8997,7 @@ class GroupMembershipStateBuilder extends Object
   }
 
   @override
-  _$GroupMembershipState build() {
+  GroupMembershipState build() {
     final result = _$v ??
         _$GroupMembershipState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -9023,7 +9034,7 @@ class _$SystemGroup extends SystemGroup {
   final String groupList;
 
   factory _$SystemGroup([void Function(SystemGroupBuilder b)? updates]) =>
-      (SystemGroupBuilder()..update(updates)).build();
+      (SystemGroupBuilder()..update(updates)).build() as _$SystemGroup;
 
   _$SystemGroup._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9175,7 +9186,7 @@ class SystemGroupBuilder extends Object
   }
 
   @override
-  _$SystemGroup build() {
+  SystemGroup build() {
     final result = _$v ??
         _$SystemGroup._(
             timestamp: timestamp ?? DateTime.now(),
@@ -9211,7 +9222,7 @@ class _$LinkLatency extends LinkLatency {
   final int sysSrc;
 
   factory _$LinkLatency([void Function(LinkLatencyBuilder b)? updates]) =>
-      (LinkLatencyBuilder()..update(updates)).build();
+      (LinkLatencyBuilder()..update(updates)).build() as _$LinkLatency;
 
   _$LinkLatency._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9353,7 +9364,7 @@ class LinkLatencyBuilder extends Object
   }
 
   @override
-  _$LinkLatency build() {
+  LinkLatency build() {
     final result = _$v ??
         _$LinkLatency._(
             timestamp: timestamp ?? DateTime.now(),
@@ -9388,7 +9399,7 @@ class _$ExtendedRSSI extends ExtendedRSSI {
   final RSSIUnitsEnum units;
 
   factory _$ExtendedRSSI([void Function(ExtendedRSSIBuilder b)? updates]) =>
-      (ExtendedRSSIBuilder()..update(updates)).build();
+      (ExtendedRSSIBuilder()..update(updates)).build() as _$ExtendedRSSI;
 
   _$ExtendedRSSI._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9530,7 +9541,7 @@ class ExtendedRSSIBuilder extends Object
   }
 
   @override
-  _$ExtendedRSSI build() {
+  ExtendedRSSI build() {
     final result = _$v ??
         _$ExtendedRSSI._(
             timestamp: timestamp ?? DateTime.now(),
@@ -9569,7 +9580,7 @@ class _$HistoricData extends HistoricData {
   final List<RemoteData> data;
 
   factory _$HistoricData([void Function(HistoricDataBuilder b)? updates]) =>
-      (HistoricDataBuilder()..update(updates)).build();
+      (HistoricDataBuilder()..update(updates)).build() as _$HistoricData;
 
   _$HistoricData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9733,7 +9744,7 @@ class HistoricDataBuilder extends Object
   }
 
   @override
-  _$HistoricData build() {
+  HistoricData build() {
     final result = _$v ??
         _$HistoricData._(
             timestamp: timestamp ?? DateTime.now(),
@@ -9775,7 +9786,8 @@ class _$CompressedHistory extends CompressedHistory {
 
   factory _$CompressedHistory(
           [void Function(CompressedHistoryBuilder b)? updates]) =>
-      (CompressedHistoryBuilder()..update(updates)).build();
+      (CompressedHistoryBuilder()..update(updates)).build()
+          as _$CompressedHistory;
 
   _$CompressedHistory._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9942,7 +9954,7 @@ class CompressedHistoryBuilder extends Object
   }
 
   @override
-  _$CompressedHistory build() {
+  CompressedHistory build() {
     final result = _$v ??
         _$CompressedHistory._(
             timestamp: timestamp ?? DateTime.now(),
@@ -9989,7 +10001,7 @@ class _$HistoricSample extends HistoricSample {
   final ImcMessage? sample;
 
   factory _$HistoricSample([void Function(HistoricSampleBuilder b)? updates]) =>
-      (HistoricSampleBuilder()..update(updates)).build();
+      (HistoricSampleBuilder()..update(updates)).build() as _$HistoricSample;
 
   _$HistoricSample._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10185,7 +10197,7 @@ class HistoricSampleBuilder extends Object
   }
 
   @override
-  _$HistoricSample build() {
+  HistoricSample build() {
     final result = _$v ??
         _$HistoricSample._(
             timestamp: timestamp ?? DateTime.now(),
@@ -10230,7 +10242,8 @@ class _$HistoricDataQuery extends HistoricDataQuery {
 
   factory _$HistoricDataQuery(
           [void Function(HistoricDataQueryBuilder b)? updates]) =>
-      (HistoricDataQueryBuilder()..update(updates)).build();
+      (HistoricDataQueryBuilder()..update(updates)).build()
+          as _$HistoricDataQuery;
 
   _$HistoricDataQuery._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10397,7 +10410,7 @@ class HistoricDataQueryBuilder extends Object
   }
 
   @override
-  _$HistoricDataQuery build() {
+  HistoricDataQuery build() {
     final result = _$v ??
         _$HistoricDataQuery._(
             timestamp: timestamp ?? DateTime.now(),
@@ -10438,7 +10451,7 @@ class _$RemoteCommand extends RemoteCommand {
   final ImcMessage? cmd;
 
   factory _$RemoteCommand([void Function(RemoteCommandBuilder b)? updates]) =>
-      (RemoteCommandBuilder()..update(updates)).build();
+      (RemoteCommandBuilder()..update(updates)).build() as _$RemoteCommand;
 
   _$RemoteCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10603,7 +10616,7 @@ class RemoteCommandBuilder extends Object
   }
 
   @override
-  _$RemoteCommand build() {
+  RemoteCommand build() {
     final result = _$v ??
         _$RemoteCommand._(
             timestamp: timestamp ?? DateTime.now(),
@@ -10645,7 +10658,8 @@ class _$CommSystemsQuery extends CommSystemsQuery {
 
   factory _$CommSystemsQuery(
           [void Function(CommSystemsQueryBuilder b)? updates]) =>
-      (CommSystemsQueryBuilder()..update(updates)).build();
+      (CommSystemsQueryBuilder()..update(updates)).build()
+          as _$CommSystemsQuery;
 
   _$CommSystemsQuery._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10815,7 +10829,7 @@ class CommSystemsQueryBuilder extends Object
   }
 
   @override
-  _$CommSystemsQuery build() {
+  CommSystemsQuery build() {
     final result = _$v ??
         _$CommSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
@@ -10866,7 +10880,7 @@ class _$TelemetryMsg extends TelemetryMsg {
   final List<int> data;
 
   factory _$TelemetryMsg([void Function(TelemetryMsgBuilder b)? updates]) =>
-      (TelemetryMsgBuilder()..update(updates)).build();
+      (TelemetryMsgBuilder()..update(updates)).build() as _$TelemetryMsg;
 
   _$TelemetryMsg._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11086,7 +11100,7 @@ class TelemetryMsgBuilder extends Object
   }
 
   @override
-  _$TelemetryMsg build() {
+  TelemetryMsg build() {
     final result = _$v ??
         _$TelemetryMsg._(
             timestamp: timestamp ?? DateTime.now(),
@@ -11128,7 +11142,7 @@ class _$LblRange extends LblRange {
   final double range;
 
   factory _$LblRange([void Function(LblRangeBuilder b)? updates]) =>
-      (LblRangeBuilder()..update(updates)).build();
+      (LblRangeBuilder()..update(updates)).build() as _$LblRange;
 
   _$LblRange._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11270,7 +11284,7 @@ class LblRangeBuilder extends Object
   }
 
   @override
-  _$LblRange build() {
+  LblRange build() {
     final result = _$v ??
         _$LblRange._(
             timestamp: timestamp ?? DateTime.now(),
@@ -11315,7 +11329,7 @@ class _$LblBeacon extends LblBeacon {
   final int transponderDelay;
 
   factory _$LblBeacon([void Function(LblBeaconBuilder b)? updates]) =>
-      (LblBeaconBuilder()..update(updates)).build();
+      (LblBeaconBuilder()..update(updates)).build() as _$LblBeacon;
 
   _$LblBeacon._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11512,7 +11526,7 @@ class LblBeaconBuilder extends Object
   }
 
   @override
-  _$LblBeacon build() {
+  LblBeacon build() {
     final result = _$v ??
         _$LblBeacon._(
             timestamp: timestamp ?? DateTime.now(),
@@ -11552,7 +11566,7 @@ class _$LblConfig extends LblConfig {
   final List<LblBeacon> beacons;
 
   factory _$LblConfig([void Function(LblConfigBuilder b)? updates]) =>
-      (LblConfigBuilder()..update(updates)).build();
+      (LblConfigBuilder()..update(updates)).build() as _$LblConfig;
 
   _$LblConfig._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11694,7 +11708,7 @@ class LblConfigBuilder extends Object
   }
 
   @override
-  _$LblConfig build() {
+  LblConfig build() {
     final result = _$v ??
         _$LblConfig._(
             timestamp: timestamp ?? DateTime.now(),
@@ -11728,7 +11742,7 @@ class _$AcousticMessage extends AcousticMessage {
 
   factory _$AcousticMessage(
           [void Function(AcousticMessageBuilder b)? updates]) =>
-      (AcousticMessageBuilder()..update(updates)).build();
+      (AcousticMessageBuilder()..update(updates)).build() as _$AcousticMessage;
 
   _$AcousticMessage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11861,7 +11875,7 @@ class AcousticMessageBuilder extends Object
   }
 
   @override
-  _$AcousticMessage build() {
+  AcousticMessage build() {
     final result = _$v ??
         _$AcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -11914,7 +11928,8 @@ class _$SimAcousticMessage extends SimAcousticMessage {
 
   factory _$SimAcousticMessage(
           [void Function(SimAcousticMessageBuilder b)? updates]) =>
-      (SimAcousticMessageBuilder()..update(updates)).build();
+      (SimAcousticMessageBuilder()..update(updates)).build()
+          as _$SimAcousticMessage;
 
   _$SimAcousticMessage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12154,7 +12169,7 @@ class SimAcousticMessageBuilder extends Object
   }
 
   @override
-  _$SimAcousticMessage build() {
+  SimAcousticMessage build() {
     final result = _$v ??
         _$SimAcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -12203,7 +12218,8 @@ class _$AcousticOperation extends AcousticOperation {
 
   factory _$AcousticOperation(
           [void Function(AcousticOperationBuilder b)? updates]) =>
-      (AcousticOperationBuilder()..update(updates)).build();
+      (AcousticOperationBuilder()..update(updates)).build()
+          as _$AcousticOperation;
 
   _$AcousticOperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12370,7 +12386,7 @@ class AcousticOperationBuilder extends Object
   }
 
   @override
-  _$AcousticOperation build() {
+  AcousticOperation build() {
     final result = _$v ??
         _$AcousticOperation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -12403,7 +12419,8 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
 
   factory _$AcousticSystemsQuery(
           [void Function(AcousticSystemsQueryBuilder b)? updates]) =>
-      (AcousticSystemsQueryBuilder()..update(updates)).build();
+      (AcousticSystemsQueryBuilder()..update(updates)).build()
+          as _$AcousticSystemsQuery;
 
   _$AcousticSystemsQuery._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12528,7 +12545,7 @@ class AcousticSystemsQueryBuilder extends Object
   }
 
   @override
-  _$AcousticSystemsQuery build() {
+  AcousticSystemsQuery build() {
     final result = _$v ??
         _$AcousticSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
@@ -12560,7 +12577,7 @@ class _$AcousticSystems extends AcousticSystems {
 
   factory _$AcousticSystems(
           [void Function(AcousticSystemsBuilder b)? updates]) =>
-      (AcousticSystemsBuilder()..update(updates)).build();
+      (AcousticSystemsBuilder()..update(updates)).build() as _$AcousticSystems;
 
   _$AcousticSystems._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12693,7 +12710,7 @@ class AcousticSystemsBuilder extends Object
   }
 
   @override
-  _$AcousticSystems build() {
+  AcousticSystems build() {
     final result = _$v ??
         _$AcousticSystems._(
             timestamp: timestamp ?? DateTime.now(),
@@ -12729,7 +12746,7 @@ class _$AcousticLink extends AcousticLink {
   final int integrity;
 
   factory _$AcousticLink([void Function(AcousticLinkBuilder b)? updates]) =>
-      (AcousticLinkBuilder()..update(updates)).build();
+      (AcousticLinkBuilder()..update(updates)).build() as _$AcousticLink;
 
   _$AcousticLink._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12881,7 +12898,7 @@ class AcousticLinkBuilder extends Object
   }
 
   @override
-  _$AcousticLink build() {
+  AcousticLink build() {
     final result = _$v ??
         _$AcousticLink._(
             timestamp: timestamp ?? DateTime.now(),
@@ -12926,7 +12943,7 @@ class _$AcousticRequest extends AcousticRequest {
 
   factory _$AcousticRequest(
           [void Function(AcousticRequestBuilder b)? updates]) =>
-      (AcousticRequestBuilder()..update(updates)).build();
+      (AcousticRequestBuilder()..update(updates)).build() as _$AcousticRequest;
 
   _$AcousticRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13113,7 +13130,7 @@ class AcousticRequestBuilder extends Object
   }
 
   @override
-  _$AcousticRequest build() {
+  AcousticRequest build() {
     final result = _$v ??
         _$AcousticRequest._(
             timestamp: timestamp ?? DateTime.now(),
@@ -13158,7 +13175,7 @@ class _$AcousticStatus extends AcousticStatus {
   final double range;
 
   factory _$AcousticStatus([void Function(AcousticStatusBuilder b)? updates]) =>
-      (AcousticStatusBuilder()..update(updates)).build();
+      (AcousticStatusBuilder()..update(updates)).build() as _$AcousticStatus;
 
   _$AcousticStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13334,7 +13351,7 @@ class AcousticStatusBuilder extends Object
   }
 
   @override
-  _$AcousticStatus build() {
+  AcousticStatus build() {
     final result = _$v ??
         _$AcousticStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -13370,7 +13387,7 @@ class _$Rpm extends Rpm {
   final int value;
 
   factory _$Rpm([void Function(RpmBuilder b)? updates]) =>
-      (RpmBuilder()..update(updates)).build();
+      (RpmBuilder()..update(updates)).build() as _$Rpm;
 
   _$Rpm._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13502,7 +13519,7 @@ class RpmBuilder extends Object
   }
 
   @override
-  _$Rpm build() {
+  Rpm build() {
     final result = _$v ??
         _$Rpm._(
             timestamp: timestamp ?? DateTime.now(),
@@ -13534,7 +13551,7 @@ class _$Voltage extends Voltage {
   final double value;
 
   factory _$Voltage([void Function(VoltageBuilder b)? updates]) =>
-      (VoltageBuilder()..update(updates)).build();
+      (VoltageBuilder()..update(updates)).build() as _$Voltage;
 
   _$Voltage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13666,7 +13683,7 @@ class VoltageBuilder extends Object
   }
 
   @override
-  _$Voltage build() {
+  Voltage build() {
     final result = _$v ??
         _$Voltage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -13698,7 +13715,7 @@ class _$Current extends Current {
   final double value;
 
   factory _$Current([void Function(CurrentBuilder b)? updates]) =>
-      (CurrentBuilder()..update(updates)).build();
+      (CurrentBuilder()..update(updates)).build() as _$Current;
 
   _$Current._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13830,7 +13847,7 @@ class CurrentBuilder extends Object
   }
 
   @override
-  _$Current build() {
+  Current build() {
     final result = _$v ??
         _$Current._(
             timestamp: timestamp ?? DateTime.now(),
@@ -13892,7 +13909,7 @@ class _$GpsFix extends GpsFix {
   final double vacc;
 
   factory _$GpsFix([void Function(GpsFixBuilder b)? updates]) =>
-      (GpsFixBuilder()..update(updates)).build();
+      (GpsFixBuilder()..update(updates)).build() as _$GpsFix;
 
   _$GpsFix._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14173,7 +14190,7 @@ class GpsFixBuilder extends Object
   }
 
   @override
-  _$GpsFix build() {
+  GpsFix build() {
     final result = _$v ??
         _$GpsFix._(
             timestamp: timestamp ?? DateTime.now(),
@@ -14228,7 +14245,7 @@ class _$EulerAngles extends EulerAngles {
   final double psiMagnetic;
 
   factory _$EulerAngles([void Function(EulerAnglesBuilder b)? updates]) =>
-      (EulerAnglesBuilder()..update(updates)).build();
+      (EulerAnglesBuilder()..update(updates)).build() as _$EulerAngles;
 
   _$EulerAngles._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14406,7 +14423,7 @@ class EulerAnglesBuilder extends Object
   }
 
   @override
-  _$EulerAngles build() {
+  EulerAngles build() {
     final result = _$v ??
         _$EulerAngles._(
             timestamp: timestamp ?? DateTime.now(),
@@ -14451,7 +14468,8 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
 
   factory _$EulerAnglesDelta(
           [void Function(EulerAnglesDeltaBuilder b)? updates]) =>
-      (EulerAnglesDeltaBuilder()..update(updates)).build();
+      (EulerAnglesDeltaBuilder()..update(updates)).build()
+          as _$EulerAnglesDelta;
 
   _$EulerAnglesDelta._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14629,7 +14647,7 @@ class EulerAnglesDeltaBuilder extends Object
   }
 
   @override
-  _$EulerAnglesDelta build() {
+  EulerAnglesDelta build() {
     final result = _$v ??
         _$EulerAnglesDelta._(
             timestamp: timestamp ?? DateTime.now(),
@@ -14672,7 +14690,7 @@ class _$AngularVelocity extends AngularVelocity {
 
   factory _$AngularVelocity(
           [void Function(AngularVelocityBuilder b)? updates]) =>
-      (AngularVelocityBuilder()..update(updates)).build();
+      (AngularVelocityBuilder()..update(updates)).build() as _$AngularVelocity;
 
   _$AngularVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14837,7 +14855,7 @@ class AngularVelocityBuilder extends Object
   }
 
   @override
-  _$AngularVelocity build() {
+  AngularVelocity build() {
     final result = _$v ??
         _$AngularVelocity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -14878,7 +14896,7 @@ class _$Acceleration extends Acceleration {
   final double z;
 
   factory _$Acceleration([void Function(AccelerationBuilder b)? updates]) =>
-      (AccelerationBuilder()..update(updates)).build();
+      (AccelerationBuilder()..update(updates)).build() as _$Acceleration;
 
   _$Acceleration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15042,7 +15060,7 @@ class AccelerationBuilder extends Object
   }
 
   @override
-  _$Acceleration build() {
+  Acceleration build() {
     final result = _$v ??
         _$Acceleration._(
             timestamp: timestamp ?? DateTime.now(),
@@ -15083,7 +15101,7 @@ class _$MagneticField extends MagneticField {
   final double z;
 
   factory _$MagneticField([void Function(MagneticFieldBuilder b)? updates]) =>
-      (MagneticFieldBuilder()..update(updates)).build();
+      (MagneticFieldBuilder()..update(updates)).build() as _$MagneticField;
 
   _$MagneticField._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15247,7 +15265,7 @@ class MagneticFieldBuilder extends Object
   }
 
   @override
-  _$MagneticField build() {
+  MagneticField build() {
     final result = _$v ??
         _$MagneticField._(
             timestamp: timestamp ?? DateTime.now(),
@@ -15288,7 +15306,7 @@ class _$GroundVelocity extends GroundVelocity {
   final double z;
 
   factory _$GroundVelocity([void Function(GroundVelocityBuilder b)? updates]) =>
-      (GroundVelocityBuilder()..update(updates)).build();
+      (GroundVelocityBuilder()..update(updates)).build() as _$GroundVelocity;
 
   _$GroundVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15454,7 +15472,7 @@ class GroundVelocityBuilder extends Object
   }
 
   @override
-  _$GroundVelocity build() {
+  GroundVelocity build() {
     final result = _$v ??
         _$GroundVelocity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -15495,7 +15513,7 @@ class _$WaterVelocity extends WaterVelocity {
   final double z;
 
   factory _$WaterVelocity([void Function(WaterVelocityBuilder b)? updates]) =>
-      (WaterVelocityBuilder()..update(updates)).build();
+      (WaterVelocityBuilder()..update(updates)).build() as _$WaterVelocity;
 
   _$WaterVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15661,7 +15679,7 @@ class WaterVelocityBuilder extends Object
   }
 
   @override
-  _$WaterVelocity build() {
+  WaterVelocity build() {
     final result = _$v ??
         _$WaterVelocity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -15702,7 +15720,7 @@ class _$VelocityDelta extends VelocityDelta {
   final double z;
 
   factory _$VelocityDelta([void Function(VelocityDeltaBuilder b)? updates]) =>
-      (VelocityDeltaBuilder()..update(updates)).build();
+      (VelocityDeltaBuilder()..update(updates)).build() as _$VelocityDelta;
 
   _$VelocityDelta._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15866,7 +15884,7 @@ class VelocityDeltaBuilder extends Object
   }
 
   @override
-  _$VelocityDelta build() {
+  VelocityDelta build() {
     final result = _$v ??
         _$VelocityDelta._(
             timestamp: timestamp ?? DateTime.now(),
@@ -15907,7 +15925,7 @@ class _$Distance extends Distance {
   final double value;
 
   factory _$Distance([void Function(DistanceBuilder b)? updates]) =>
-      (DistanceBuilder()..update(updates)).build();
+      (DistanceBuilder()..update(updates)).build() as _$Distance;
 
   _$Distance._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16073,7 +16091,7 @@ class DistanceBuilder extends Object
   }
 
   @override
-  _$Distance build() {
+  Distance build() {
     final result = _$v ??
         _$Distance._(
             timestamp: timestamp ?? DateTime.now(),
@@ -16108,7 +16126,7 @@ class _$Temperature extends Temperature {
   final double value;
 
   factory _$Temperature([void Function(TemperatureBuilder b)? updates]) =>
-      (TemperatureBuilder()..update(updates)).build();
+      (TemperatureBuilder()..update(updates)).build() as _$Temperature;
 
   _$Temperature._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16240,7 +16258,7 @@ class TemperatureBuilder extends Object
   }
 
   @override
-  _$Temperature build() {
+  Temperature build() {
     final result = _$v ??
         _$Temperature._(
             timestamp: timestamp ?? DateTime.now(),
@@ -16272,7 +16290,7 @@ class _$Pressure extends Pressure {
   final double value;
 
   factory _$Pressure([void Function(PressureBuilder b)? updates]) =>
-      (PressureBuilder()..update(updates)).build();
+      (PressureBuilder()..update(updates)).build() as _$Pressure;
 
   _$Pressure._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16404,7 +16422,7 @@ class PressureBuilder extends Object
   }
 
   @override
-  _$Pressure build() {
+  Pressure build() {
     final result = _$v ??
         _$Pressure._(
             timestamp: timestamp ?? DateTime.now(),
@@ -16436,7 +16454,7 @@ class _$Depth extends Depth {
   final double value;
 
   factory _$Depth([void Function(DepthBuilder b)? updates]) =>
-      (DepthBuilder()..update(updates)).build();
+      (DepthBuilder()..update(updates)).build() as _$Depth;
 
   _$Depth._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16568,7 +16586,7 @@ class DepthBuilder extends Object
   }
 
   @override
-  _$Depth build() {
+  Depth build() {
     final result = _$v ??
         _$Depth._(
             timestamp: timestamp ?? DateTime.now(),
@@ -16600,7 +16618,7 @@ class _$DepthOffset extends DepthOffset {
   final double value;
 
   factory _$DepthOffset([void Function(DepthOffsetBuilder b)? updates]) =>
-      (DepthOffsetBuilder()..update(updates)).build();
+      (DepthOffsetBuilder()..update(updates)).build() as _$DepthOffset;
 
   _$DepthOffset._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16732,7 +16750,7 @@ class DepthOffsetBuilder extends Object
   }
 
   @override
-  _$DepthOffset build() {
+  DepthOffset build() {
     final result = _$v ??
         _$DepthOffset._(
             timestamp: timestamp ?? DateTime.now(),
@@ -16764,7 +16782,7 @@ class _$SoundSpeed extends SoundSpeed {
   final double value;
 
   factory _$SoundSpeed([void Function(SoundSpeedBuilder b)? updates]) =>
-      (SoundSpeedBuilder()..update(updates)).build();
+      (SoundSpeedBuilder()..update(updates)).build() as _$SoundSpeed;
 
   _$SoundSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16896,7 +16914,7 @@ class SoundSpeedBuilder extends Object
   }
 
   @override
-  _$SoundSpeed build() {
+  SoundSpeed build() {
     final result = _$v ??
         _$SoundSpeed._(
             timestamp: timestamp ?? DateTime.now(),
@@ -16928,7 +16946,7 @@ class _$WaterDensity extends WaterDensity {
   final double value;
 
   factory _$WaterDensity([void Function(WaterDensityBuilder b)? updates]) =>
-      (WaterDensityBuilder()..update(updates)).build();
+      (WaterDensityBuilder()..update(updates)).build() as _$WaterDensity;
 
   _$WaterDensity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17060,7 +17078,7 @@ class WaterDensityBuilder extends Object
   }
 
   @override
-  _$WaterDensity build() {
+  WaterDensity build() {
     final result = _$v ??
         _$WaterDensity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -17092,7 +17110,7 @@ class _$Conductivity extends Conductivity {
   final double value;
 
   factory _$Conductivity([void Function(ConductivityBuilder b)? updates]) =>
-      (ConductivityBuilder()..update(updates)).build();
+      (ConductivityBuilder()..update(updates)).build() as _$Conductivity;
 
   _$Conductivity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17224,7 +17242,7 @@ class ConductivityBuilder extends Object
   }
 
   @override
-  _$Conductivity build() {
+  Conductivity build() {
     final result = _$v ??
         _$Conductivity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -17256,7 +17274,7 @@ class _$Salinity extends Salinity {
   final double value;
 
   factory _$Salinity([void Function(SalinityBuilder b)? updates]) =>
-      (SalinityBuilder()..update(updates)).build();
+      (SalinityBuilder()..update(updates)).build() as _$Salinity;
 
   _$Salinity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17388,7 +17406,7 @@ class SalinityBuilder extends Object
   }
 
   @override
-  _$Salinity build() {
+  Salinity build() {
     final result = _$v ??
         _$Salinity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -17424,7 +17442,7 @@ class _$WindSpeed extends WindSpeed {
   final double turbulence;
 
   factory _$WindSpeed([void Function(WindSpeedBuilder b)? updates]) =>
-      (WindSpeedBuilder()..update(updates)).build();
+      (WindSpeedBuilder()..update(updates)).build() as _$WindSpeed;
 
   _$WindSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17578,7 +17596,7 @@ class WindSpeedBuilder extends Object
   }
 
   @override
-  _$WindSpeed build() {
+  WindSpeed build() {
     final result = _$v ??
         _$WindSpeed._(
             timestamp: timestamp ?? DateTime.now(),
@@ -17613,7 +17631,8 @@ class _$RelativeHumidity extends RelativeHumidity {
 
   factory _$RelativeHumidity(
           [void Function(RelativeHumidityBuilder b)? updates]) =>
-      (RelativeHumidityBuilder()..update(updates)).build();
+      (RelativeHumidityBuilder()..update(updates)).build()
+          as _$RelativeHumidity;
 
   _$RelativeHumidity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17747,7 +17766,7 @@ class RelativeHumidityBuilder extends Object
   }
 
   @override
-  _$RelativeHumidity build() {
+  RelativeHumidity build() {
     final result = _$v ??
         _$RelativeHumidity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -17779,7 +17798,7 @@ class _$DevDataText extends DevDataText {
   final String value;
 
   factory _$DevDataText([void Function(DevDataTextBuilder b)? updates]) =>
-      (DevDataTextBuilder()..update(updates)).build();
+      (DevDataTextBuilder()..update(updates)).build() as _$DevDataText;
 
   _$DevDataText._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17911,7 +17930,7 @@ class DevDataTextBuilder extends Object
   }
 
   @override
-  _$DevDataText build() {
+  DevDataText build() {
     final result = _$v ??
         _$DevDataText._(
             timestamp: timestamp ?? DateTime.now(),
@@ -17943,7 +17962,7 @@ class _$DevDataBinary extends DevDataBinary {
   final List<int> value;
 
   factory _$DevDataBinary([void Function(DevDataBinaryBuilder b)? updates]) =>
-      (DevDataBinaryBuilder()..update(updates)).build();
+      (DevDataBinaryBuilder()..update(updates)).build() as _$DevDataBinary;
 
   _$DevDataBinary._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18075,7 +18094,7 @@ class DevDataBinaryBuilder extends Object
   }
 
   @override
-  _$DevDataBinary build() {
+  DevDataBinary build() {
     final result = _$v ??
         _$DevDataBinary._(
             timestamp: timestamp ?? DateTime.now(),
@@ -18107,7 +18126,7 @@ class _$Force extends Force {
   final double value;
 
   factory _$Force([void Function(ForceBuilder b)? updates]) =>
-      (ForceBuilder()..update(updates)).build();
+      (ForceBuilder()..update(updates)).build() as _$Force;
 
   _$Force._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18239,7 +18258,7 @@ class ForceBuilder extends Object
   }
 
   @override
-  _$Force build() {
+  Force build() {
     final result = _$v ??
         _$Force._(
             timestamp: timestamp ?? DateTime.now(),
@@ -18285,7 +18304,7 @@ class _$SonarData extends SonarData {
   final List<int> data;
 
   factory _$SonarData([void Function(SonarDataBuilder b)? updates]) =>
-      (SonarDataBuilder()..update(updates)).build();
+      (SonarDataBuilder()..update(updates)).build() as _$SonarData;
 
   _$SonarData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18493,7 +18512,7 @@ class SonarDataBuilder extends Object
   }
 
   @override
-  _$SonarData build() {
+  SonarData build() {
     final result = _$v ??
         _$SonarData._(
             timestamp: timestamp ?? DateTime.now(),
@@ -18529,7 +18548,7 @@ class _$Pulse extends Pulse {
   final int dstEnt;
 
   factory _$Pulse([void Function(PulseBuilder b)? updates]) =>
-      (PulseBuilder()..update(updates)).build();
+      (PulseBuilder()..update(updates)).build() as _$Pulse;
 
   _$Pulse._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18649,7 +18668,7 @@ class PulseBuilder extends Object
   }
 
   @override
-  _$Pulse build() {
+  Pulse build() {
     final result = _$v ??
         _$Pulse._(
             timestamp: timestamp ?? DateTime.now(),
@@ -18681,7 +18700,8 @@ class _$PulseDetectionControl extends PulseDetectionControl {
 
   factory _$PulseDetectionControl(
           [void Function(PulseDetectionControlBuilder b)? updates]) =>
-      (PulseDetectionControlBuilder()..update(updates)).build();
+      (PulseDetectionControlBuilder()..update(updates)).build()
+          as _$PulseDetectionControl;
 
   _$PulseDetectionControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18819,7 +18839,7 @@ class PulseDetectionControlBuilder extends Object
   }
 
   @override
-  _$PulseDetectionControl build() {
+  PulseDetectionControl build() {
     final result = _$v ??
         _$PulseDetectionControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -18855,7 +18875,7 @@ class _$FuelLevel extends FuelLevel {
   final String opmodes;
 
   factory _$FuelLevel([void Function(FuelLevelBuilder b)? updates]) =>
-      (FuelLevelBuilder()..update(updates)).build();
+      (FuelLevelBuilder()..update(updates)).build() as _$FuelLevel;
 
   _$FuelLevel._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19008,7 +19028,7 @@ class FuelLevelBuilder extends Object
   }
 
   @override
-  _$FuelLevel build() {
+  FuelLevel build() {
     final result = _$v ??
         _$FuelLevel._(
             timestamp: timestamp ?? DateTime.now(),
@@ -19070,7 +19090,7 @@ class _$GpsNavData extends GpsNavData {
   final double cacc;
 
   factory _$GpsNavData([void Function(GpsNavDataBuilder b)? updates]) =>
-      (GpsNavDataBuilder()..update(updates)).build();
+      (GpsNavDataBuilder()..update(updates)).build() as _$GpsNavData;
 
   _$GpsNavData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19343,7 +19363,7 @@ class GpsNavDataBuilder extends Object
   }
 
   @override
-  _$GpsNavData build() {
+  GpsNavData build() {
     final result = _$v ??
         _$GpsNavData._(
             timestamp: timestamp ?? DateTime.now(),
@@ -19391,7 +19411,7 @@ class _$ServoPosition extends ServoPosition {
   final double value;
 
   factory _$ServoPosition([void Function(ServoPositionBuilder b)? updates]) =>
-      (ServoPositionBuilder()..update(updates)).build();
+      (ServoPositionBuilder()..update(updates)).build() as _$ServoPosition;
 
   _$ServoPosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19533,7 +19553,7 @@ class ServoPositionBuilder extends Object
   }
 
   @override
-  _$ServoPosition build() {
+  ServoPosition build() {
     final result = _$v ??
         _$ServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
@@ -19576,7 +19596,7 @@ class _$DeviceState extends DeviceState {
   final double psi;
 
   factory _$DeviceState([void Function(DeviceStateBuilder b)? updates]) =>
-      (DeviceStateBuilder()..update(updates)).build();
+      (DeviceStateBuilder()..update(updates)).build() as _$DeviceState;
 
   _$DeviceState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19762,7 +19782,7 @@ class DeviceStateBuilder extends Object
   }
 
   @override
-  _$DeviceState build() {
+  DeviceState build() {
     final result = _$v ??
         _$DeviceState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -19801,7 +19821,7 @@ class _$BeamConfig extends BeamConfig {
   final double beamHeight;
 
   factory _$BeamConfig([void Function(BeamConfigBuilder b)? updates]) =>
-      (BeamConfigBuilder()..update(updates)).build();
+      (BeamConfigBuilder()..update(updates)).build() as _$BeamConfig;
 
   _$BeamConfig._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19946,7 +19966,7 @@ class BeamConfigBuilder extends Object
   }
 
   @override
-  _$BeamConfig build() {
+  BeamConfig build() {
     final result = _$v ??
         _$BeamConfig._(
             timestamp: timestamp ?? DateTime.now(),
@@ -19979,7 +19999,7 @@ class _$DataSanity extends DataSanity {
   final DataSanityEnumSane sane;
 
   factory _$DataSanity([void Function(DataSanityBuilder b)? updates]) =>
-      (DataSanityBuilder()..update(updates)).build();
+      (DataSanityBuilder()..update(updates)).build() as _$DataSanity;
 
   _$DataSanity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20111,7 +20131,7 @@ class DataSanityBuilder extends Object
   }
 
   @override
-  _$DataSanity build() {
+  DataSanity build() {
     final result = _$v ??
         _$DataSanity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -20143,7 +20163,7 @@ class _$RhodamineDye extends RhodamineDye {
   final double value;
 
   factory _$RhodamineDye([void Function(RhodamineDyeBuilder b)? updates]) =>
-      (RhodamineDyeBuilder()..update(updates)).build();
+      (RhodamineDyeBuilder()..update(updates)).build() as _$RhodamineDye;
 
   _$RhodamineDye._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20275,7 +20295,7 @@ class RhodamineDyeBuilder extends Object
   }
 
   @override
-  _$RhodamineDye build() {
+  RhodamineDye build() {
     final result = _$v ??
         _$RhodamineDye._(
             timestamp: timestamp ?? DateTime.now(),
@@ -20307,7 +20327,7 @@ class _$CrudeOil extends CrudeOil {
   final double value;
 
   factory _$CrudeOil([void Function(CrudeOilBuilder b)? updates]) =>
-      (CrudeOilBuilder()..update(updates)).build();
+      (CrudeOilBuilder()..update(updates)).build() as _$CrudeOil;
 
   _$CrudeOil._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20439,7 +20459,7 @@ class CrudeOilBuilder extends Object
   }
 
   @override
-  _$CrudeOil build() {
+  CrudeOil build() {
     final result = _$v ??
         _$CrudeOil._(
             timestamp: timestamp ?? DateTime.now(),
@@ -20471,7 +20491,7 @@ class _$FineOil extends FineOil {
   final double value;
 
   factory _$FineOil([void Function(FineOilBuilder b)? updates]) =>
-      (FineOilBuilder()..update(updates)).build();
+      (FineOilBuilder()..update(updates)).build() as _$FineOil;
 
   _$FineOil._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20603,7 +20623,7 @@ class FineOilBuilder extends Object
   }
 
   @override
-  _$FineOil build() {
+  FineOil build() {
     final result = _$v ??
         _$FineOil._(
             timestamp: timestamp ?? DateTime.now(),
@@ -20635,7 +20655,7 @@ class _$Turbidity extends Turbidity {
   final double value;
 
   factory _$Turbidity([void Function(TurbidityBuilder b)? updates]) =>
-      (TurbidityBuilder()..update(updates)).build();
+      (TurbidityBuilder()..update(updates)).build() as _$Turbidity;
 
   _$Turbidity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20767,7 +20787,7 @@ class TurbidityBuilder extends Object
   }
 
   @override
-  _$Turbidity build() {
+  Turbidity build() {
     final result = _$v ??
         _$Turbidity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -20799,7 +20819,7 @@ class _$Chlorophyll extends Chlorophyll {
   final double value;
 
   factory _$Chlorophyll([void Function(ChlorophyllBuilder b)? updates]) =>
-      (ChlorophyllBuilder()..update(updates)).build();
+      (ChlorophyllBuilder()..update(updates)).build() as _$Chlorophyll;
 
   _$Chlorophyll._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20931,7 +20951,7 @@ class ChlorophyllBuilder extends Object
   }
 
   @override
-  _$Chlorophyll build() {
+  Chlorophyll build() {
     final result = _$v ??
         _$Chlorophyll._(
             timestamp: timestamp ?? DateTime.now(),
@@ -20963,7 +20983,7 @@ class _$Fluorescein extends Fluorescein {
   final double value;
 
   factory _$Fluorescein([void Function(FluoresceinBuilder b)? updates]) =>
-      (FluoresceinBuilder()..update(updates)).build();
+      (FluoresceinBuilder()..update(updates)).build() as _$Fluorescein;
 
   _$Fluorescein._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21095,7 +21115,7 @@ class FluoresceinBuilder extends Object
   }
 
   @override
-  _$Fluorescein build() {
+  Fluorescein build() {
     final result = _$v ??
         _$Fluorescein._(
             timestamp: timestamp ?? DateTime.now(),
@@ -21127,7 +21147,7 @@ class _$Phycocyanin extends Phycocyanin {
   final double value;
 
   factory _$Phycocyanin([void Function(PhycocyaninBuilder b)? updates]) =>
-      (PhycocyaninBuilder()..update(updates)).build();
+      (PhycocyaninBuilder()..update(updates)).build() as _$Phycocyanin;
 
   _$Phycocyanin._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21259,7 +21279,7 @@ class PhycocyaninBuilder extends Object
   }
 
   @override
-  _$Phycocyanin build() {
+  Phycocyanin build() {
     final result = _$v ??
         _$Phycocyanin._(
             timestamp: timestamp ?? DateTime.now(),
@@ -21291,7 +21311,7 @@ class _$Phycoerythrin extends Phycoerythrin {
   final double value;
 
   factory _$Phycoerythrin([void Function(PhycoerythrinBuilder b)? updates]) =>
-      (PhycoerythrinBuilder()..update(updates)).build();
+      (PhycoerythrinBuilder()..update(updates)).build() as _$Phycoerythrin;
 
   _$Phycoerythrin._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21423,7 +21443,7 @@ class PhycoerythrinBuilder extends Object
   }
 
   @override
-  _$Phycoerythrin build() {
+  Phycoerythrin build() {
     final result = _$v ??
         _$Phycoerythrin._(
             timestamp: timestamp ?? DateTime.now(),
@@ -21483,7 +21503,7 @@ class _$GpsFixRtk extends GpsFixRtk {
   final double iarRatio;
 
   factory _$GpsFixRtk([void Function(GpsFixRtkBuilder b)? updates]) =>
-      (GpsFixRtkBuilder()..update(updates)).build();
+      (GpsFixRtkBuilder()..update(updates)).build() as _$GpsFixRtk;
 
   _$GpsFixRtk._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21760,7 +21780,7 @@ class GpsFixRtkBuilder extends Object
   }
 
   @override
-  _$GpsFixRtk build() {
+  GpsFixRtk build() {
     final result = _$v ??
         _$GpsFixRtk._(
             timestamp: timestamp ?? DateTime.now(),
@@ -21809,7 +21829,7 @@ class _$ExternalNavData extends ExternalNavData {
 
   factory _$ExternalNavData(
           [void Function(ExternalNavDataBuilder b)? updates]) =>
-      (ExternalNavDataBuilder()..update(updates)).build();
+      (ExternalNavDataBuilder()..update(updates)).build() as _$ExternalNavData;
 
   _$ExternalNavData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21952,7 +21972,7 @@ class ExternalNavDataBuilder extends Object
   }
 
   @override
-  _$ExternalNavData build() {
+  ExternalNavData build() {
     final result = _$v ??
         _$ExternalNavData._(
             timestamp: timestamp ?? DateTime.now(),
@@ -21986,7 +22006,7 @@ class _$DissolvedOxygen extends DissolvedOxygen {
 
   factory _$DissolvedOxygen(
           [void Function(DissolvedOxygenBuilder b)? updates]) =>
-      (DissolvedOxygenBuilder()..update(updates)).build();
+      (DissolvedOxygenBuilder()..update(updates)).build() as _$DissolvedOxygen;
 
   _$DissolvedOxygen._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22119,7 +22139,7 @@ class DissolvedOxygenBuilder extends Object
   }
 
   @override
-  _$DissolvedOxygen build() {
+  DissolvedOxygen build() {
     final result = _$v ??
         _$DissolvedOxygen._(
             timestamp: timestamp ?? DateTime.now(),
@@ -22151,7 +22171,7 @@ class _$AirSaturation extends AirSaturation {
   final double value;
 
   factory _$AirSaturation([void Function(AirSaturationBuilder b)? updates]) =>
-      (AirSaturationBuilder()..update(updates)).build();
+      (AirSaturationBuilder()..update(updates)).build() as _$AirSaturation;
 
   _$AirSaturation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22283,7 +22303,7 @@ class AirSaturationBuilder extends Object
   }
 
   @override
-  _$AirSaturation build() {
+  AirSaturation build() {
     final result = _$v ??
         _$AirSaturation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -22315,7 +22335,7 @@ class _$Throttle extends Throttle {
   final double value;
 
   factory _$Throttle([void Function(ThrottleBuilder b)? updates]) =>
-      (ThrottleBuilder()..update(updates)).build();
+      (ThrottleBuilder()..update(updates)).build() as _$Throttle;
 
   _$Throttle._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22447,7 +22467,7 @@ class ThrottleBuilder extends Object
   }
 
   @override
-  _$Throttle build() {
+  Throttle build() {
     final result = _$v ??
         _$Throttle._(
             timestamp: timestamp ?? DateTime.now(),
@@ -22479,7 +22499,7 @@ class _$PH extends PH {
   final double value;
 
   factory _$PH([void Function(PHBuilder b)? updates]) =>
-      (PHBuilder()..update(updates)).build();
+      (PHBuilder()..update(updates)).build() as _$PH;
 
   _$PH._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22611,7 +22631,7 @@ class PHBuilder extends Object
   }
 
   @override
-  _$PH build() {
+  PH build() {
     final result = _$v ??
         _$PH._(
             timestamp: timestamp ?? DateTime.now(),
@@ -22643,7 +22663,7 @@ class _$Redox extends Redox {
   final double value;
 
   factory _$Redox([void Function(RedoxBuilder b)? updates]) =>
-      (RedoxBuilder()..update(updates)).build();
+      (RedoxBuilder()..update(updates)).build() as _$Redox;
 
   _$Redox._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22775,7 +22795,7 @@ class RedoxBuilder extends Object
   }
 
   @override
-  _$Redox build() {
+  Redox build() {
     final result = _$v ??
         _$Redox._(
             timestamp: timestamp ?? DateTime.now(),
@@ -22811,7 +22831,7 @@ class _$CameraZoom extends CameraZoom {
   final CameraZoomEnumAction action;
 
   factory _$CameraZoom([void Function(CameraZoomBuilder b)? updates]) =>
-      (CameraZoomBuilder()..update(updates)).build();
+      (CameraZoomBuilder()..update(updates)).build() as _$CameraZoom;
 
   _$CameraZoom._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22963,7 +22983,7 @@ class CameraZoomBuilder extends Object
   }
 
   @override
-  _$CameraZoom build() {
+  CameraZoom build() {
     final result = _$v ??
         _$CameraZoom._(
             timestamp: timestamp ?? DateTime.now(),
@@ -23000,7 +23020,8 @@ class _$SetThrusterActuation extends SetThrusterActuation {
 
   factory _$SetThrusterActuation(
           [void Function(SetThrusterActuationBuilder b)? updates]) =>
-      (SetThrusterActuationBuilder()..update(updates)).build();
+      (SetThrusterActuationBuilder()..update(updates)).build()
+          as _$SetThrusterActuation;
 
   _$SetThrusterActuation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23147,7 +23168,7 @@ class SetThrusterActuationBuilder extends Object
   }
 
   @override
-  _$SetThrusterActuation build() {
+  SetThrusterActuation build() {
     final result = _$v ??
         _$SetThrusterActuation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -23183,7 +23204,8 @@ class _$SetServoPosition extends SetServoPosition {
 
   factory _$SetServoPosition(
           [void Function(SetServoPositionBuilder b)? updates]) =>
-      (SetServoPositionBuilder()..update(updates)).build();
+      (SetServoPositionBuilder()..update(updates)).build()
+          as _$SetServoPosition;
 
   _$SetServoPosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23327,7 +23349,7 @@ class SetServoPositionBuilder extends Object
   }
 
   @override
-  _$SetServoPosition build() {
+  SetServoPosition build() {
     final result = _$v ??
         _$SetServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
@@ -23363,7 +23385,8 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
 
   factory _$SetControlSurfaceDeflection(
           [void Function(SetControlSurfaceDeflectionBuilder b)? updates]) =>
-      (SetControlSurfaceDeflectionBuilder()..update(updates)).build();
+      (SetControlSurfaceDeflectionBuilder()..update(updates)).build()
+          as _$SetControlSurfaceDeflection;
 
   _$SetControlSurfaceDeflection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23512,7 +23535,7 @@ class SetControlSurfaceDeflectionBuilder extends Object
   }
 
   @override
-  _$SetControlSurfaceDeflection build() {
+  SetControlSurfaceDeflection build() {
     final result = _$v ??
         _$SetControlSurfaceDeflection._(
             timestamp: timestamp ?? DateTime.now(),
@@ -23548,7 +23571,8 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
 
   factory _$RemoteActionsRequest(
           [void Function(RemoteActionsRequestBuilder b)? updates]) =>
-      (RemoteActionsRequestBuilder()..update(updates)).build();
+      (RemoteActionsRequestBuilder()..update(updates)).build()
+          as _$RemoteActionsRequest;
 
   _$RemoteActionsRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23695,7 +23719,7 @@ class RemoteActionsRequestBuilder extends Object
   }
 
   @override
-  _$RemoteActionsRequest build() {
+  RemoteActionsRequest build() {
     final result = _$v ??
         _$RemoteActionsRequest._(
             timestamp: timestamp ?? DateTime.now(),
@@ -23728,7 +23752,7 @@ class _$RemoteActions extends RemoteActions {
   final String actions;
 
   factory _$RemoteActions([void Function(RemoteActionsBuilder b)? updates]) =>
-      (RemoteActionsBuilder()..update(updates)).build();
+      (RemoteActionsBuilder()..update(updates)).build() as _$RemoteActions;
 
   _$RemoteActions._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23860,7 +23884,7 @@ class RemoteActionsBuilder extends Object
   }
 
   @override
-  _$RemoteActions build() {
+  RemoteActions build() {
     final result = _$v ??
         _$RemoteActions._(
             timestamp: timestamp ?? DateTime.now(),
@@ -23894,7 +23918,7 @@ class _$ButtonEvent extends ButtonEvent {
   final int value;
 
   factory _$ButtonEvent([void Function(ButtonEventBuilder b)? updates]) =>
-      (ButtonEventBuilder()..update(updates)).build();
+      (ButtonEventBuilder()..update(updates)).build() as _$ButtonEvent;
 
   _$ButtonEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24036,7 +24060,7 @@ class ButtonEventBuilder extends Object
   }
 
   @override
-  _$ButtonEvent build() {
+  ButtonEvent build() {
     final result = _$v ??
         _$ButtonEvent._(
             timestamp: timestamp ?? DateTime.now(),
@@ -24071,7 +24095,7 @@ class _$LcdControl extends LcdControl {
   final String text;
 
   factory _$LcdControl([void Function(LcdControlBuilder b)? updates]) =>
-      (LcdControlBuilder()..update(updates)).build();
+      (LcdControlBuilder()..update(updates)).build() as _$LcdControl;
 
   _$LcdControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24213,7 +24237,7 @@ class LcdControlBuilder extends Object
   }
 
   @override
-  _$LcdControl build() {
+  LcdControl build() {
     final result = _$v ??
         _$LcdControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -24250,7 +24274,7 @@ class _$PowerOperation extends PowerOperation {
   final double schedTime;
 
   factory _$PowerOperation([void Function(PowerOperationBuilder b)? updates]) =>
-      (PowerOperationBuilder()..update(updates)).build();
+      (PowerOperationBuilder()..update(updates)).build() as _$PowerOperation;
 
   _$PowerOperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24403,7 +24427,7 @@ class PowerOperationBuilder extends Object
   }
 
   @override
-  _$PowerOperation build() {
+  PowerOperation build() {
     final result = _$v ??
         _$PowerOperation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -24442,7 +24466,8 @@ class _$PowerChannelControl extends PowerChannelControl {
 
   factory _$PowerChannelControl(
           [void Function(PowerChannelControlBuilder b)? updates]) =>
-      (PowerChannelControlBuilder()..update(updates)).build();
+      (PowerChannelControlBuilder()..update(updates)).build()
+          as _$PowerChannelControl;
 
   _$PowerChannelControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24599,7 +24624,7 @@ class PowerChannelControlBuilder extends Object
   }
 
   @override
-  _$PowerChannelControl build() {
+  PowerChannelControl build() {
     final result = _$v ??
         _$PowerChannelControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -24631,7 +24656,8 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
 
   factory _$QueryPowerChannelState(
           [void Function(QueryPowerChannelStateBuilder b)? updates]) =>
-      (QueryPowerChannelStateBuilder()..update(updates)).build();
+      (QueryPowerChannelStateBuilder()..update(updates)).build()
+          as _$QueryPowerChannelState;
 
   _$QueryPowerChannelState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24757,7 +24783,7 @@ class QueryPowerChannelStateBuilder extends Object
   }
 
   @override
-  _$QueryPowerChannelState build() {
+  QueryPowerChannelState build() {
     final result = _$v ??
         _$QueryPowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -24791,7 +24817,8 @@ class _$PowerChannelState extends PowerChannelState {
 
   factory _$PowerChannelState(
           [void Function(PowerChannelStateBuilder b)? updates]) =>
-      (PowerChannelStateBuilder()..update(updates)).build();
+      (PowerChannelStateBuilder()..update(updates)).build()
+          as _$PowerChannelState;
 
   _$PowerChannelState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24936,7 +24963,7 @@ class PowerChannelStateBuilder extends Object
   }
 
   @override
-  _$PowerChannelState build() {
+  PowerChannelState build() {
     final result = _$v ??
         _$PowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -24971,7 +24998,7 @@ class _$LedBrightness extends LedBrightness {
   final int value;
 
   factory _$LedBrightness([void Function(LedBrightnessBuilder b)? updates]) =>
-      (LedBrightnessBuilder()..update(updates)).build();
+      (LedBrightnessBuilder()..update(updates)).build() as _$LedBrightness;
 
   _$LedBrightness._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25113,7 +25140,7 @@ class LedBrightnessBuilder extends Object
   }
 
   @override
-  _$LedBrightness build() {
+  LedBrightness build() {
     final result = _$v ??
         _$LedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
@@ -25147,7 +25174,8 @@ class _$QueryLedBrightness extends QueryLedBrightness {
 
   factory _$QueryLedBrightness(
           [void Function(QueryLedBrightnessBuilder b)? updates]) =>
-      (QueryLedBrightnessBuilder()..update(updates)).build();
+      (QueryLedBrightnessBuilder()..update(updates)).build()
+          as _$QueryLedBrightness;
 
   _$QueryLedBrightness._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25282,7 +25310,7 @@ class QueryLedBrightnessBuilder extends Object
   }
 
   @override
-  _$QueryLedBrightness build() {
+  QueryLedBrightness build() {
     final result = _$v ??
         _$QueryLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
@@ -25317,7 +25345,8 @@ class _$SetLedBrightness extends SetLedBrightness {
 
   factory _$SetLedBrightness(
           [void Function(SetLedBrightnessBuilder b)? updates]) =>
-      (SetLedBrightnessBuilder()..update(updates)).build();
+      (SetLedBrightnessBuilder()..update(updates)).build()
+          as _$SetLedBrightness;
 
   _$SetLedBrightness._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25461,7 +25490,7 @@ class SetLedBrightnessBuilder extends Object
   }
 
   @override
-  _$SetLedBrightness build() {
+  SetLedBrightness build() {
     final result = _$v ??
         _$SetLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
@@ -25498,7 +25527,7 @@ class _$SetPWM extends SetPWM {
   final int dutyCycle;
 
   factory _$SetPWM([void Function(SetPWMBuilder b)? updates]) =>
-      (SetPWMBuilder()..update(updates)).build();
+      (SetPWMBuilder()..update(updates)).build() as _$SetPWM;
 
   _$SetPWM._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25650,7 +25679,7 @@ class SetPWMBuilder extends Object
   }
 
   @override
-  _$SetPWM build() {
+  SetPWM build() {
     final result = _$v ??
         _$SetPWM._(
             timestamp: timestamp ?? DateTime.now(),
@@ -25688,7 +25717,7 @@ class _$PWM extends PWM {
   final int dutyCycle;
 
   factory _$PWM([void Function(PWMBuilder b)? updates]) =>
-      (PWMBuilder()..update(updates)).build();
+      (PWMBuilder()..update(updates)).build() as _$PWM;
 
   _$PWM._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25840,7 +25869,7 @@ class PWMBuilder extends Object
   }
 
   @override
-  _$PWM build() {
+  PWM build() {
     final result = _$v ??
         _$PWM._(
             timestamp: timestamp ?? DateTime.now(),
@@ -25912,7 +25941,7 @@ class _$EstimatedState extends EstimatedState {
   final double alt;
 
   factory _$EstimatedState([void Function(EstimatedStateBuilder b)? updates]) =>
-      (EstimatedStateBuilder()..update(updates)).build();
+      (EstimatedStateBuilder()..update(updates)).build() as _$EstimatedState;
 
   _$EstimatedState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26224,7 +26253,7 @@ class EstimatedStateBuilder extends Object
   }
 
   @override
-  _$EstimatedState build() {
+  EstimatedState build() {
     final result = _$v ??
         _$EstimatedState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -26280,7 +26309,8 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
 
   factory _$EstimatedStreamVelocity(
           [void Function(EstimatedStreamVelocityBuilder b)? updates]) =>
-      (EstimatedStreamVelocityBuilder()..update(updates)).build();
+      (EstimatedStreamVelocityBuilder()..update(updates)).build()
+          as _$EstimatedStreamVelocity;
 
   _$EstimatedStreamVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26438,7 +26468,7 @@ class EstimatedStreamVelocityBuilder extends Object
   }
 
   @override
-  _$EstimatedStreamVelocity build() {
+  EstimatedStreamVelocity build() {
     final result = _$v ??
         _$EstimatedStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -26472,7 +26502,7 @@ class _$IndicatedSpeed extends IndicatedSpeed {
   final double value;
 
   factory _$IndicatedSpeed([void Function(IndicatedSpeedBuilder b)? updates]) =>
-      (IndicatedSpeedBuilder()..update(updates)).build();
+      (IndicatedSpeedBuilder()..update(updates)).build() as _$IndicatedSpeed;
 
   _$IndicatedSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26604,7 +26634,7 @@ class IndicatedSpeedBuilder extends Object
   }
 
   @override
-  _$IndicatedSpeed build() {
+  IndicatedSpeed build() {
     final result = _$v ??
         _$IndicatedSpeed._(
             timestamp: timestamp ?? DateTime.now(),
@@ -26636,7 +26666,7 @@ class _$TrueSpeed extends TrueSpeed {
   final double value;
 
   factory _$TrueSpeed([void Function(TrueSpeedBuilder b)? updates]) =>
-      (TrueSpeedBuilder()..update(updates)).build();
+      (TrueSpeedBuilder()..update(updates)).build() as _$TrueSpeed;
 
   _$TrueSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26768,7 +26798,7 @@ class TrueSpeedBuilder extends Object
   }
 
   @override
-  _$TrueSpeed build() {
+  TrueSpeed build() {
     final result = _$v ??
         _$TrueSpeed._(
             timestamp: timestamp ?? DateTime.now(),
@@ -26827,7 +26857,8 @@ class _$NavigationUncertainty extends NavigationUncertainty {
 
   factory _$NavigationUncertainty(
           [void Function(NavigationUncertaintyBuilder b)? updates]) =>
-      (NavigationUncertaintyBuilder()..update(updates)).build();
+      (NavigationUncertaintyBuilder()..update(updates)).build()
+          as _$NavigationUncertainty;
 
   _$NavigationUncertainty._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27098,7 +27129,7 @@ class NavigationUncertaintyBuilder extends Object
   }
 
   @override
-  _$NavigationUncertainty build() {
+  NavigationUncertainty build() {
     final result = _$v ??
         _$NavigationUncertainty._(
             timestamp: timestamp ?? DateTime.now(),
@@ -27159,7 +27190,7 @@ class _$NavigationData extends NavigationData {
   final double customZ;
 
   factory _$NavigationData([void Function(NavigationDataBuilder b)? updates]) =>
-      (NavigationDataBuilder()..update(updates)).build();
+      (NavigationDataBuilder()..update(updates)).build() as _$NavigationData;
 
   _$NavigationData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27379,7 +27410,7 @@ class NavigationDataBuilder extends Object
   }
 
   @override
-  _$NavigationData build() {
+  NavigationData build() {
     final result = _$v ??
         _$NavigationData._(
             timestamp: timestamp ?? DateTime.now(),
@@ -27422,7 +27453,7 @@ class _$GpsFixRejection extends GpsFixRejection {
 
   factory _$GpsFixRejection(
           [void Function(GpsFixRejectionBuilder b)? updates]) =>
-      (GpsFixRejectionBuilder()..update(updates)).build();
+      (GpsFixRejectionBuilder()..update(updates)).build() as _$GpsFixRejection;
 
   _$GpsFixRejection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27565,7 +27596,7 @@ class GpsFixRejectionBuilder extends Object
   }
 
   @override
-  _$GpsFixRejection build() {
+  GpsFixRejection build() {
     final result = _$v ??
         _$GpsFixRejection._(
             timestamp: timestamp ?? DateTime.now(),
@@ -27603,7 +27634,8 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
 
   factory _$LblRangeAcceptance(
           [void Function(LblRangeAcceptanceBuilder b)? updates]) =>
-      (LblRangeAcceptanceBuilder()..update(updates)).build();
+      (LblRangeAcceptanceBuilder()..update(updates)).build()
+          as _$LblRangeAcceptance;
 
   _$LblRangeAcceptance._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27761,7 +27793,7 @@ class LblRangeAcceptanceBuilder extends Object
   }
 
   @override
-  _$LblRangeAcceptance build() {
+  LblRangeAcceptance build() {
     final result = _$v ??
         _$LblRangeAcceptance._(
             timestamp: timestamp ?? DateTime.now(),
@@ -27801,7 +27833,7 @@ class _$DvlRejection extends DvlRejection {
   final double timestep;
 
   factory _$DvlRejection([void Function(DvlRejectionBuilder b)? updates]) =>
-      (DvlRejectionBuilder()..update(updates)).build();
+      (DvlRejectionBuilder()..update(updates)).build() as _$DvlRejection;
 
   _$DvlRejection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27965,7 +27997,7 @@ class DvlRejectionBuilder extends Object
   }
 
   @override
-  _$DvlRejection build() {
+  DvlRejection build() {
     final result = _$v ??
         _$DvlRejection._(
             timestamp: timestamp ?? DateTime.now(),
@@ -28010,7 +28042,7 @@ class _$LblEstimate extends LblEstimate {
   final double distance;
 
   factory _$LblEstimate([void Function(LblEstimateBuilder b)? updates]) =>
-      (LblEstimateBuilder()..update(updates)).build();
+      (LblEstimateBuilder()..update(updates)).build() as _$LblEstimate;
 
   _$LblEstimate._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28196,7 +28228,7 @@ class LblEstimateBuilder extends Object
   }
 
   @override
-  _$LblEstimate build() {
+  LblEstimate build() {
     final result = _$v ??
         _$LblEstimate._(
             timestamp: timestamp ?? DateTime.now(),
@@ -28233,7 +28265,7 @@ class _$AlignmentState extends AlignmentState {
   final AlignmentStateEnumState state;
 
   factory _$AlignmentState([void Function(AlignmentStateBuilder b)? updates]) =>
-      (AlignmentStateBuilder()..update(updates)).build();
+      (AlignmentStateBuilder()..update(updates)).build() as _$AlignmentState;
 
   _$AlignmentState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28365,7 +28397,7 @@ class AlignmentStateBuilder extends Object
   }
 
   @override
-  _$AlignmentState build() {
+  AlignmentState build() {
     final result = _$v ??
         _$AlignmentState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -28402,7 +28434,8 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
 
   factory _$GroupStreamVelocity(
           [void Function(GroupStreamVelocityBuilder b)? updates]) =>
-      (GroupStreamVelocityBuilder()..update(updates)).build();
+      (GroupStreamVelocityBuilder()..update(updates)).build()
+          as _$GroupStreamVelocity;
 
   _$GroupStreamVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28559,7 +28592,7 @@ class GroupStreamVelocityBuilder extends Object
   }
 
   @override
-  _$GroupStreamVelocity build() {
+  GroupStreamVelocity build() {
     final result = _$v ??
         _$GroupStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -28597,7 +28630,7 @@ class _$Airflow extends Airflow {
   final double ssa;
 
   factory _$Airflow([void Function(AirflowBuilder b)? updates]) =>
-      (AirflowBuilder()..update(updates)).build();
+      (AirflowBuilder()..update(updates)).build() as _$Airflow;
 
   _$Airflow._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28749,7 +28782,7 @@ class AirflowBuilder extends Object
   }
 
   @override
-  _$Airflow build() {
+  Airflow build() {
     final result = _$v ??
         _$Airflow._(
             timestamp: timestamp ?? DateTime.now(),
@@ -28783,7 +28816,7 @@ class _$DesiredHeading extends DesiredHeading {
   final double value;
 
   factory _$DesiredHeading([void Function(DesiredHeadingBuilder b)? updates]) =>
-      (DesiredHeadingBuilder()..update(updates)).build();
+      (DesiredHeadingBuilder()..update(updates)).build() as _$DesiredHeading;
 
   _$DesiredHeading._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28915,7 +28948,7 @@ class DesiredHeadingBuilder extends Object
   }
 
   @override
-  _$DesiredHeading build() {
+  DesiredHeading build() {
     final result = _$v ??
         _$DesiredHeading._(
             timestamp: timestamp ?? DateTime.now(),
@@ -28949,7 +28982,7 @@ class _$DesiredZ extends DesiredZ {
   final ZUnitsEnum zUnits;
 
   factory _$DesiredZ([void Function(DesiredZBuilder b)? updates]) =>
-      (DesiredZBuilder()..update(updates)).build();
+      (DesiredZBuilder()..update(updates)).build() as _$DesiredZ;
 
   _$DesiredZ._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29091,7 +29124,7 @@ class DesiredZBuilder extends Object
   }
 
   @override
-  _$DesiredZ build() {
+  DesiredZ build() {
     final result = _$v ??
         _$DesiredZ._(
             timestamp: timestamp ?? DateTime.now(),
@@ -29126,7 +29159,7 @@ class _$DesiredSpeed extends DesiredSpeed {
   final SpeedUnitsEnum speedUnits;
 
   factory _$DesiredSpeed([void Function(DesiredSpeedBuilder b)? updates]) =>
-      (DesiredSpeedBuilder()..update(updates)).build();
+      (DesiredSpeedBuilder()..update(updates)).build() as _$DesiredSpeed;
 
   _$DesiredSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29269,7 +29302,7 @@ class DesiredSpeedBuilder extends Object
   }
 
   @override
-  _$DesiredSpeed build() {
+  DesiredSpeed build() {
     final result = _$v ??
         _$DesiredSpeed._(
             timestamp: timestamp ?? DateTime.now(),
@@ -29302,7 +29335,7 @@ class _$DesiredRoll extends DesiredRoll {
   final double value;
 
   factory _$DesiredRoll([void Function(DesiredRollBuilder b)? updates]) =>
-      (DesiredRollBuilder()..update(updates)).build();
+      (DesiredRollBuilder()..update(updates)).build() as _$DesiredRoll;
 
   _$DesiredRoll._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29434,7 +29467,7 @@ class DesiredRollBuilder extends Object
   }
 
   @override
-  _$DesiredRoll build() {
+  DesiredRoll build() {
     final result = _$v ??
         _$DesiredRoll._(
             timestamp: timestamp ?? DateTime.now(),
@@ -29466,7 +29499,7 @@ class _$DesiredPitch extends DesiredPitch {
   final double value;
 
   factory _$DesiredPitch([void Function(DesiredPitchBuilder b)? updates]) =>
-      (DesiredPitchBuilder()..update(updates)).build();
+      (DesiredPitchBuilder()..update(updates)).build() as _$DesiredPitch;
 
   _$DesiredPitch._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29598,7 +29631,7 @@ class DesiredPitchBuilder extends Object
   }
 
   @override
-  _$DesiredPitch build() {
+  DesiredPitch build() {
     final result = _$v ??
         _$DesiredPitch._(
             timestamp: timestamp ?? DateTime.now(),
@@ -29631,7 +29664,8 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
 
   factory _$DesiredVerticalRate(
           [void Function(DesiredVerticalRateBuilder b)? updates]) =>
-      (DesiredVerticalRateBuilder()..update(updates)).build();
+      (DesiredVerticalRateBuilder()..update(updates)).build()
+          as _$DesiredVerticalRate;
 
   _$DesiredVerticalRate._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29768,7 +29802,7 @@ class DesiredVerticalRateBuilder extends Object
   }
 
   @override
-  _$DesiredVerticalRate build() {
+  DesiredVerticalRate build() {
     final result = _$v ??
         _$DesiredVerticalRate._(
             timestamp: timestamp ?? DateTime.now(),
@@ -29824,7 +29858,7 @@ class _$DesiredPath extends DesiredPath {
   final DesiredPathBitfieldFlags flags;
 
   factory _$DesiredPath([void Function(DesiredPathBuilder b)? updates]) =>
-      (DesiredPathBuilder()..update(updates)).build();
+      (DesiredPathBuilder()..update(updates)).build() as _$DesiredPath;
 
   _$DesiredPath._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30085,7 +30119,7 @@ class DesiredPathBuilder extends Object
   }
 
   @override
-  _$DesiredPath build() {
+  DesiredPath build() {
     final result = _$v ??
         _$DesiredPath._(
             timestamp: timestamp ?? DateTime.now(),
@@ -30141,7 +30175,7 @@ class _$DesiredControl extends DesiredControl {
   final DesiredControlBitfieldFlags flags;
 
   factory _$DesiredControl([void Function(DesiredControlBuilder b)? updates]) =>
-      (DesiredControlBuilder()..update(updates)).build();
+      (DesiredControlBuilder()..update(updates)).build() as _$DesiredControl;
 
   _$DesiredControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30337,7 +30371,7 @@ class DesiredControlBuilder extends Object
   }
 
   @override
-  _$DesiredControl build() {
+  DesiredControl build() {
     final result = _$v ??
         _$DesiredControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -30376,7 +30410,8 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
 
   factory _$DesiredHeadingRate(
           [void Function(DesiredHeadingRateBuilder b)? updates]) =>
-      (DesiredHeadingRateBuilder()..update(updates)).build();
+      (DesiredHeadingRateBuilder()..update(updates)).build()
+          as _$DesiredHeadingRate;
 
   _$DesiredHeadingRate._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30511,7 +30546,7 @@ class DesiredHeadingRateBuilder extends Object
   }
 
   @override
-  _$DesiredHeadingRate build() {
+  DesiredHeadingRate build() {
     final result = _$v ??
         _$DesiredHeadingRate._(
             timestamp: timestamp ?? DateTime.now(),
@@ -30556,7 +30591,7 @@ class _$DesiredVelocity extends DesiredVelocity {
 
   factory _$DesiredVelocity(
           [void Function(DesiredVelocityBuilder b)? updates]) =>
-      (DesiredVelocityBuilder()..update(updates)).build();
+      (DesiredVelocityBuilder()..update(updates)).build() as _$DesiredVelocity;
 
   _$DesiredVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30753,7 +30788,7 @@ class DesiredVelocityBuilder extends Object
   }
 
   @override
-  _$DesiredVelocity build() {
+  DesiredVelocity build() {
     final result = _$v ??
         _$DesiredVelocity._(
             timestamp: timestamp ?? DateTime.now(),
@@ -30828,7 +30863,8 @@ class _$PathControlState extends PathControlState {
 
   factory _$PathControlState(
           [void Function(PathControlStateBuilder b)? updates]) =>
-      (PathControlStateBuilder()..update(updates)).build();
+      (PathControlStateBuilder()..update(updates)).build()
+          as _$PathControlState;
 
   _$PathControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31140,7 +31176,7 @@ class PathControlStateBuilder extends Object
   }
 
   @override
-  _$PathControlState build() {
+  PathControlState build() {
     final result = _$v ??
         _$PathControlState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -31195,7 +31231,8 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
 
   factory _$AllocatedControlTorques(
           [void Function(AllocatedControlTorquesBuilder b)? updates]) =>
-      (AllocatedControlTorquesBuilder()..update(updates)).build();
+      (AllocatedControlTorquesBuilder()..update(updates)).build()
+          as _$AllocatedControlTorques;
 
   _$AllocatedControlTorques._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31353,7 +31390,7 @@ class AllocatedControlTorquesBuilder extends Object
   }
 
   @override
-  _$AllocatedControlTorques build() {
+  AllocatedControlTorques build() {
     final result = _$v ??
         _$AllocatedControlTorques._(
             timestamp: timestamp ?? DateTime.now(),
@@ -31393,7 +31430,7 @@ class _$ControlParcel extends ControlParcel {
   final double a;
 
   factory _$ControlParcel([void Function(ControlParcelBuilder b)? updates]) =>
-      (ControlParcelBuilder()..update(updates)).build();
+      (ControlParcelBuilder()..update(updates)).build() as _$ControlParcel;
 
   _$ControlParcel._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31557,7 +31594,7 @@ class ControlParcelBuilder extends Object
   }
 
   @override
-  _$ControlParcel build() {
+  ControlParcel build() {
     final result = _$v ??
         _$ControlParcel._(
             timestamp: timestamp ?? DateTime.now(),
@@ -31592,7 +31629,7 @@ class _$Brake extends Brake {
   final BrakeEnumOp op;
 
   factory _$Brake([void Function(BrakeBuilder b)? updates]) =>
-      (BrakeBuilder()..update(updates)).build();
+      (BrakeBuilder()..update(updates)).build() as _$Brake;
 
   _$Brake._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31724,7 +31761,7 @@ class BrakeBuilder extends Object
   }
 
   @override
-  _$Brake build() {
+  Brake build() {
     final result = _$v ??
         _$Brake._(
             timestamp: timestamp ?? DateTime.now(),
@@ -31775,7 +31812,8 @@ class _$DesiredLinearState extends DesiredLinearState {
 
   factory _$DesiredLinearState(
           [void Function(DesiredLinearStateBuilder b)? updates]) =>
-      (DesiredLinearStateBuilder()..update(updates)).build();
+      (DesiredLinearStateBuilder()..update(updates)).build()
+          as _$DesiredLinearState;
 
   _$DesiredLinearState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32005,7 +32043,7 @@ class DesiredLinearStateBuilder extends Object
   }
 
   @override
-  _$DesiredLinearState build() {
+  DesiredLinearState build() {
     final result = _$v ??
         _$DesiredLinearState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -32047,7 +32085,7 @@ class _$DesiredThrottle extends DesiredThrottle {
 
   factory _$DesiredThrottle(
           [void Function(DesiredThrottleBuilder b)? updates]) =>
-      (DesiredThrottleBuilder()..update(updates)).build();
+      (DesiredThrottleBuilder()..update(updates)).build() as _$DesiredThrottle;
 
   _$DesiredThrottle._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32180,7 +32218,7 @@ class DesiredThrottleBuilder extends Object
   }
 
   @override
-  _$DesiredThrottle build() {
+  DesiredThrottle build() {
     final result = _$v ??
         _$DesiredThrottle._(
             timestamp: timestamp ?? DateTime.now(),
@@ -32232,7 +32270,7 @@ class _$Goto extends Goto {
   final String custom;
 
   factory _$Goto([void Function(GotoBuilder b)? updates]) =>
-      (GotoBuilder()..update(updates)).build();
+      (GotoBuilder()..update(updates)).build() as _$Goto;
 
   _$Goto._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32470,7 +32508,7 @@ class GotoBuilder extends Object
   }
 
   @override
-  _$Goto build() {
+  Goto build() {
     final result = _$v ??
         _$Goto._(
             timestamp: timestamp ?? DateTime.now(),
@@ -32532,7 +32570,7 @@ class _$PopUp extends PopUp {
   final String custom;
 
   factory _$PopUp([void Function(PopUpBuilder b)? updates]) =>
-      (PopUpBuilder()..update(updates)).build();
+      (PopUpBuilder()..update(updates)).build() as _$PopUp;
 
   _$PopUp._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32770,7 +32808,7 @@ class PopUpBuilder extends Object
   }
 
   @override
-  _$PopUp build() {
+  PopUp build() {
     final result = _$v ??
         _$PopUp._(
             timestamp: timestamp ?? DateTime.now(),
@@ -32812,7 +32850,7 @@ class _$Teleoperation extends Teleoperation {
   final String custom;
 
   factory _$Teleoperation([void Function(TeleoperationBuilder b)? updates]) =>
-      (TeleoperationBuilder()..update(updates)).build();
+      (TeleoperationBuilder()..update(updates)).build() as _$Teleoperation;
 
   _$Teleoperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32944,7 +32982,7 @@ class TeleoperationBuilder extends Object
   }
 
   @override
-  _$Teleoperation build() {
+  Teleoperation build() {
     final result = _$v ??
         _$Teleoperation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -33002,7 +33040,7 @@ class _$Loiter extends Loiter {
   final String custom;
 
   factory _$Loiter([void Function(LoiterBuilder b)? updates]) =>
-      (LoiterBuilder()..update(updates)).build();
+      (LoiterBuilder()..update(updates)).build() as _$Loiter;
 
   _$Loiter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -33269,7 +33307,7 @@ class LoiterBuilder extends Object
   }
 
   @override
-  _$Loiter build() {
+  Loiter build() {
     final result = _$v ??
         _$Loiter._(
             timestamp: timestamp ?? DateTime.now(),
@@ -33316,7 +33354,7 @@ class _$IdleManeuver extends IdleManeuver {
   final String custom;
 
   factory _$IdleManeuver([void Function(IdleManeuverBuilder b)? updates]) =>
-      (IdleManeuverBuilder()..update(updates)).build();
+      (IdleManeuverBuilder()..update(updates)).build() as _$IdleManeuver;
 
   _$IdleManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -33458,7 +33496,7 @@ class IdleManeuverBuilder extends Object
   }
 
   @override
-  _$IdleManeuver build() {
+  IdleManeuver build() {
     final result = _$v ??
         _$IdleManeuver._(
             timestamp: timestamp ?? DateTime.now(),
@@ -33496,7 +33534,7 @@ class _$LowLevelControl extends LowLevelControl {
 
   factory _$LowLevelControl(
           [void Function(LowLevelControlBuilder b)? updates]) =>
-      (LowLevelControlBuilder()..update(updates)).build();
+      (LowLevelControlBuilder()..update(updates)).build() as _$LowLevelControl;
 
   _$LowLevelControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -33649,7 +33687,7 @@ class LowLevelControlBuilder extends Object
   }
 
   @override
-  _$LowLevelControl build() {
+  LowLevelControl build() {
     final result = _$v ??
         _$LowLevelControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -33713,7 +33751,7 @@ class _$Rows extends Rows {
   final String custom;
 
   factory _$Rows([void Function(RowsBuilder b)? updates]) =>
-      (RowsBuilder()..update(updates)).build();
+      (RowsBuilder()..update(updates)).build() as _$Rows;
 
   _$Rows._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -33997,7 +34035,7 @@ class RowsBuilder extends Object
   }
 
   @override
-  _$Rows build() {
+  Rows build() {
     final result = _$v ??
         _$Rows._(
             timestamp: timestamp ?? DateTime.now(),
@@ -34060,7 +34098,7 @@ class _$FollowPath extends FollowPath {
   final String custom;
 
   factory _$FollowPath([void Function(FollowPathBuilder b)? updates]) =>
-      (FollowPathBuilder()..update(updates)).build();
+      (FollowPathBuilder()..update(updates)).build() as _$FollowPath;
 
   _$FollowPath._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -34278,7 +34316,7 @@ class FollowPathBuilder extends Object
   }
 
   @override
-  _$FollowPath build() {
+  FollowPath build() {
     final result = _$v ??
         _$FollowPath._(
             timestamp: timestamp ?? DateTime.now(),
@@ -34322,7 +34360,7 @@ class _$PathPoint extends PathPoint {
   final double z;
 
   factory _$PathPoint([void Function(PathPointBuilder b)? updates]) =>
-      (PathPointBuilder()..update(updates)).build();
+      (PathPointBuilder()..update(updates)).build() as _$PathPoint;
 
   _$PathPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -34474,7 +34512,7 @@ class PathPointBuilder extends Object
   }
 
   @override
-  _$PathPoint build() {
+  PathPoint build() {
     final result = _$v ??
         _$PathPoint._(
             timestamp: timestamp ?? DateTime.now(),
@@ -34526,7 +34564,7 @@ class _$YoYo extends YoYo {
   final String custom;
 
   factory _$YoYo([void Function(YoYoBuilder b)? updates]) =>
-      (YoYoBuilder()..update(updates)).build();
+      (YoYoBuilder()..update(updates)).build() as _$YoYo;
 
   _$YoYo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -34754,7 +34792,7 @@ class YoYoBuilder extends Object
   }
 
   @override
-  _$YoYo build() {
+  YoYo build() {
     final result = _$v ??
         _$YoYo._(
             timestamp: timestamp ?? DateTime.now(),
@@ -34793,7 +34831,8 @@ class _$TeleoperationDone extends TeleoperationDone {
 
   factory _$TeleoperationDone(
           [void Function(TeleoperationDoneBuilder b)? updates]) =>
-      (TeleoperationDoneBuilder()..update(updates)).build();
+      (TeleoperationDoneBuilder()..update(updates)).build()
+          as _$TeleoperationDone;
 
   _$TeleoperationDone._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -34916,7 +34955,7 @@ class TeleoperationDoneBuilder extends Object
   }
 
   @override
-  _$TeleoperationDone build() {
+  TeleoperationDone build() {
     final result = _$v ??
         _$TeleoperationDone._(
             timestamp: timestamp ?? DateTime.now(),
@@ -34963,7 +35002,7 @@ class _$StationKeeping extends StationKeeping {
   final String custom;
 
   factory _$StationKeeping([void Function(StationKeepingBuilder b)? updates]) =>
-      (StationKeepingBuilder()..update(updates)).build();
+      (StationKeepingBuilder()..update(updates)).build() as _$StationKeeping;
 
   _$StationKeeping._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35181,7 +35220,7 @@ class StationKeepingBuilder extends Object
   }
 
   @override
-  _$StationKeeping build() {
+  StationKeeping build() {
     final result = _$v ??
         _$StationKeeping._(
             timestamp: timestamp ?? DateTime.now(),
@@ -35243,7 +35282,7 @@ class _$Elevator extends Elevator {
   final String custom;
 
   factory _$Elevator([void Function(ElevatorBuilder b)? updates]) =>
-      (ElevatorBuilder()..update(updates)).build();
+      (ElevatorBuilder()..update(updates)).build() as _$Elevator;
 
   _$Elevator._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35492,7 +35531,7 @@ class ElevatorBuilder extends Object
   }
 
   @override
-  _$Elevator build() {
+  Elevator build() {
     final result = _$v ??
         _$Elevator._(
             timestamp: timestamp ?? DateTime.now(),
@@ -35552,7 +35591,8 @@ class _$FollowTrajectory extends FollowTrajectory {
 
   factory _$FollowTrajectory(
           [void Function(FollowTrajectoryBuilder b)? updates]) =>
-      (FollowTrajectoryBuilder()..update(updates)).build();
+      (FollowTrajectoryBuilder()..update(updates)).build()
+          as _$FollowTrajectory;
 
   _$FollowTrajectory._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35772,7 +35812,7 @@ class FollowTrajectoryBuilder extends Object
   }
 
   @override
-  _$FollowTrajectory build() {
+  FollowTrajectory build() {
     final result = _$v ??
         _$FollowTrajectory._(
             timestamp: timestamp ?? DateTime.now(),
@@ -35819,7 +35859,7 @@ class _$TrajectoryPoint extends TrajectoryPoint {
 
   factory _$TrajectoryPoint(
           [void Function(TrajectoryPointBuilder b)? updates]) =>
-      (TrajectoryPointBuilder()..update(updates)).build();
+      (TrajectoryPointBuilder()..update(updates)).build() as _$TrajectoryPoint;
 
   _$TrajectoryPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35984,7 +36024,7 @@ class TrajectoryPointBuilder extends Object
   }
 
   @override
-  _$TrajectoryPoint build() {
+  TrajectoryPoint build() {
     final result = _$v ??
         _$TrajectoryPoint._(
             timestamp: timestamp ?? DateTime.now(),
@@ -36023,7 +36063,7 @@ class _$CustomManeuver extends CustomManeuver {
   final String custom;
 
   factory _$CustomManeuver([void Function(CustomManeuverBuilder b)? updates]) =>
-      (CustomManeuverBuilder()..update(updates)).build();
+      (CustomManeuverBuilder()..update(updates)).build() as _$CustomManeuver;
 
   _$CustomManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36175,7 +36215,7 @@ class CustomManeuverBuilder extends Object
   }
 
   @override
-  _$CustomManeuver build() {
+  CustomManeuver build() {
     final result = _$v ??
         _$CustomManeuver._(
             timestamp: timestamp ?? DateTime.now(),
@@ -36228,7 +36268,8 @@ class _$VehicleFormation extends VehicleFormation {
 
   factory _$VehicleFormation(
           [void Function(VehicleFormationBuilder b)? updates]) =>
-      (VehicleFormationBuilder()..update(updates)).build();
+      (VehicleFormationBuilder()..update(updates)).build()
+          as _$VehicleFormation;
 
   _$VehicleFormation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36460,7 +36501,7 @@ class VehicleFormationBuilder extends Object
   }
 
   @override
-  _$VehicleFormation build() {
+  VehicleFormation build() {
     final result = _$v ??
         _$VehicleFormation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -36508,7 +36549,8 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
 
   factory _$VehicleFormationParticipant(
           [void Function(VehicleFormationParticipantBuilder b)? updates]) =>
-      (VehicleFormationParticipantBuilder()..update(updates)).build();
+      (VehicleFormationParticipantBuilder()..update(updates)).build()
+          as _$VehicleFormationParticipant;
 
   _$VehicleFormationParticipant._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36679,7 +36721,7 @@ class VehicleFormationParticipantBuilder extends Object
   }
 
   @override
-  _$VehicleFormationParticipant build() {
+  VehicleFormationParticipant build() {
     final result = _$v ??
         _$VehicleFormationParticipant._(
             timestamp: timestamp ?? DateTime.now(),
@@ -36711,7 +36753,7 @@ class _$StopManeuver extends StopManeuver {
   final int dstEnt;
 
   factory _$StopManeuver([void Function(StopManeuverBuilder b)? updates]) =>
-      (StopManeuverBuilder()..update(updates)).build();
+      (StopManeuverBuilder()..update(updates)).build() as _$StopManeuver;
 
   _$StopManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36831,7 +36873,7 @@ class StopManeuverBuilder extends Object
   }
 
   @override
-  _$StopManeuver build() {
+  StopManeuver build() {
     final result = _$v ??
         _$StopManeuver._(
             timestamp: timestamp ?? DateTime.now(),
@@ -36863,7 +36905,8 @@ class _$RegisterManeuver extends RegisterManeuver {
 
   factory _$RegisterManeuver(
           [void Function(RegisterManeuverBuilder b)? updates]) =>
-      (RegisterManeuverBuilder()..update(updates)).build();
+      (RegisterManeuverBuilder()..update(updates)).build()
+          as _$RegisterManeuver;
 
   _$RegisterManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36997,7 +37040,7 @@ class RegisterManeuverBuilder extends Object
   }
 
   @override
-  _$RegisterManeuver build() {
+  RegisterManeuver build() {
     final result = _$v ??
         _$RegisterManeuver._(
             timestamp: timestamp ?? DateTime.now(),
@@ -37034,7 +37077,8 @@ class _$ManeuverControlState extends ManeuverControlState {
 
   factory _$ManeuverControlState(
           [void Function(ManeuverControlStateBuilder b)? updates]) =>
-      (ManeuverControlStateBuilder()..update(updates)).build();
+      (ManeuverControlStateBuilder()..update(updates)).build()
+          as _$ManeuverControlState;
 
   _$ManeuverControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -37191,7 +37235,7 @@ class ManeuverControlStateBuilder extends Object
   }
 
   @override
-  _$ManeuverControlState build() {
+  ManeuverControlState build() {
     final result = _$v ??
         _$ManeuverControlState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -37239,7 +37283,7 @@ class _$FollowSystem extends FollowSystem {
   final ZUnitsEnum zUnits;
 
   factory _$FollowSystem([void Function(FollowSystemBuilder b)? updates]) =>
-      (FollowSystemBuilder()..update(updates)).build();
+      (FollowSystemBuilder()..update(updates)).build() as _$FollowSystem;
 
   _$FollowSystem._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -37446,7 +37490,7 @@ class FollowSystemBuilder extends Object
   }
 
   @override
-  _$FollowSystem build() {
+  FollowSystem build() {
     final result = _$v ??
         _$FollowSystem._(
             timestamp: timestamp ?? DateTime.now(),
@@ -37499,7 +37543,7 @@ class _$CommsRelay extends CommsRelay {
   final double moveThreshold;
 
   factory _$CommsRelay([void Function(CommsRelayBuilder b)? updates]) =>
-      (CommsRelayBuilder()..update(updates)).build();
+      (CommsRelayBuilder()..update(updates)).build() as _$CommsRelay;
 
   _$CommsRelay._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -37708,7 +37752,7 @@ class CommsRelayBuilder extends Object
   }
 
   @override
-  _$CommsRelay build() {
+  CommsRelay build() {
     final result = _$v ??
         _$CommsRelay._(
             timestamp: timestamp ?? DateTime.now(),
@@ -37761,7 +37805,7 @@ class _$CoverArea extends CoverArea {
   final String custom;
 
   factory _$CoverArea([void Function(CoverAreaBuilder b)? updates]) =>
-      (CoverAreaBuilder()..update(updates)).build();
+      (CoverAreaBuilder()..update(updates)).build() as _$CoverArea;
 
   _$CoverArea._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -37968,7 +38012,7 @@ class CoverAreaBuilder extends Object
   }
 
   @override
-  _$CoverArea build() {
+  CoverArea build() {
     final result = _$v ??
         _$CoverArea._(
             timestamp: timestamp ?? DateTime.now(),
@@ -38009,7 +38053,7 @@ class _$PolygonVertex extends PolygonVertex {
   final double lon;
 
   factory _$PolygonVertex([void Function(PolygonVertexBuilder b)? updates]) =>
-      (PolygonVertexBuilder()..update(updates)).build();
+      (PolygonVertexBuilder()..update(updates)).build() as _$PolygonVertex;
 
   _$PolygonVertex._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -38151,7 +38195,7 @@ class PolygonVertexBuilder extends Object
   }
 
   @override
-  _$PolygonVertex build() {
+  PolygonVertex build() {
     final result = _$v ??
         _$PolygonVertex._(
             timestamp: timestamp ?? DateTime.now(),
@@ -38209,7 +38253,8 @@ class _$CompassCalibration extends CompassCalibration {
 
   factory _$CompassCalibration(
           [void Function(CompassCalibrationBuilder b)? updates]) =>
-      (CompassCalibrationBuilder()..update(updates)).build();
+      (CompassCalibrationBuilder()..update(updates)).build()
+          as _$CompassCalibration;
 
   _$CompassCalibration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -38472,7 +38517,7 @@ class CompassCalibrationBuilder extends Object
   }
 
   @override
-  _$CompassCalibration build() {
+  CompassCalibration build() {
     final result = _$v ??
         _$CompassCalibration._(
             timestamp: timestamp ?? DateTime.now(),
@@ -38523,7 +38568,8 @@ class _$FormationParameters extends FormationParameters {
 
   factory _$FormationParameters(
           [void Function(FormationParametersBuilder b)? updates]) =>
-      (FormationParametersBuilder()..update(updates)).build();
+      (FormationParametersBuilder()..update(updates)).build()
+          as _$FormationParameters;
 
   _$FormationParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -38699,7 +38745,7 @@ class FormationParametersBuilder extends Object
   }
 
   @override
-  _$FormationParameters build() {
+  FormationParameters build() {
     final result = _$v ??
         _$FormationParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -38761,7 +38807,8 @@ class _$FormationPlanExecution extends FormationPlanExecution {
 
   factory _$FormationPlanExecution(
           [void Function(FormationPlanExecutionBuilder b)? updates]) =>
-      (FormationPlanExecutionBuilder()..update(updates)).build();
+      (FormationPlanExecutionBuilder()..update(updates)).build()
+          as _$FormationPlanExecution;
 
   _$FormationPlanExecution._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39040,7 +39087,7 @@ class FormationPlanExecutionBuilder extends Object
   }
 
   @override
-  _$FormationPlanExecution build() {
+  FormationPlanExecution build() {
     final result = _$v ??
         _$FormationPlanExecution._(
             timestamp: timestamp ?? DateTime.now(),
@@ -39094,7 +39141,7 @@ class _$FollowReference extends FollowReference {
 
   factory _$FollowReference(
           [void Function(FollowReferenceBuilder b)? updates]) =>
-      (FollowReferenceBuilder()..update(updates)).build();
+      (FollowReferenceBuilder()..update(updates)).build() as _$FollowReference;
 
   _$FollowReference._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39274,7 +39321,7 @@ class FollowReferenceBuilder extends Object
   }
 
   @override
-  _$FollowReference build() {
+  FollowReference build() {
     final result = _$v ??
         _$FollowReference._(
             timestamp: timestamp ?? DateTime.now(),
@@ -39320,7 +39367,7 @@ class _$Reference extends Reference {
   final double radius;
 
   factory _$Reference([void Function(ReferenceBuilder b)? updates]) =>
-      (ReferenceBuilder()..update(updates)).build();
+      (ReferenceBuilder()..update(updates)).build() as _$Reference;
 
   _$Reference._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39506,7 +39553,7 @@ class ReferenceBuilder extends Object
   }
 
   @override
-  _$Reference build() {
+  Reference build() {
     final result = _$v ??
         _$Reference._(
             timestamp: timestamp ?? DateTime.now(),
@@ -39551,7 +39598,7 @@ class _$FollowRefState extends FollowRefState {
   final FollowRefStateBitfieldProximity proximity;
 
   factory _$FollowRefState([void Function(FollowRefStateBuilder b)? updates]) =>
-      (FollowRefStateBuilder()..update(updates)).build();
+      (FollowRefStateBuilder()..update(updates)).build() as _$FollowRefState;
 
   _$FollowRefState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39730,7 +39777,7 @@ class FollowRefStateBuilder extends Object
   }
 
   @override
-  _$FollowRefState build() {
+  FollowRefState build() {
     final result = _$v ??
         _$FollowRefState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -39803,7 +39850,8 @@ class _$FormationMonitor extends FormationMonitor {
 
   factory _$FormationMonitor(
           [void Function(FormationMonitorBuilder b)? updates]) =>
-      (FormationMonitorBuilder()..update(updates)).build();
+      (FormationMonitorBuilder()..update(updates)).build()
+          as _$FormationMonitor;
 
   _$FormationMonitor._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -40109,7 +40157,7 @@ class FormationMonitorBuilder extends Object
   }
 
   @override
-  _$FormationMonitor build() {
+  FormationMonitor build() {
     final result = _$v ??
         _$FormationMonitor._(
             timestamp: timestamp ?? DateTime.now(),
@@ -40201,7 +40249,7 @@ class _$RelativeState extends RelativeState {
   final double virtErrZ;
 
   factory _$RelativeState([void Function(RelativeStateBuilder b)? updates]) =>
-      (RelativeStateBuilder()..update(updates)).build();
+      (RelativeStateBuilder()..update(updates)).build() as _$RelativeState;
 
   _$RelativeState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -40529,7 +40577,7 @@ class RelativeStateBuilder extends Object
   }
 
   @override
-  _$RelativeState build() {
+  RelativeState build() {
     final result = _$v ??
         _$RelativeState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -40588,7 +40636,7 @@ class _$Dislodge extends Dislodge {
   final String custom;
 
   factory _$Dislodge([void Function(DislodgeBuilder b)? updates]) =>
-      (DislodgeBuilder()..update(updates)).build();
+      (DislodgeBuilder()..update(updates)).build() as _$Dislodge;
 
   _$Dislodge._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -40754,7 +40802,7 @@ class DislodgeBuilder extends Object
   }
 
   @override
-  _$Dislodge build() {
+  Dislodge build() {
     final result = _$v ??
         _$Dislodge._(
             timestamp: timestamp ?? DateTime.now(),
@@ -40829,7 +40877,7 @@ class _$Formation extends Formation {
   final String custom;
 
   factory _$Formation([void Function(FormationBuilder b)? updates]) =>
-      (FormationBuilder()..update(updates)).build();
+      (FormationBuilder()..update(updates)).build() as _$Formation;
 
   _$Formation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41168,7 +41216,7 @@ class FormationBuilder extends Object
   }
 
   @override
-  _$Formation build() {
+  Formation build() {
     final result = _$v ??
         _$Formation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -41234,7 +41282,7 @@ class _$Launch extends Launch {
   final String custom;
 
   factory _$Launch([void Function(LaunchBuilder b)? updates]) =>
-      (LaunchBuilder()..update(updates)).build();
+      (LaunchBuilder()..update(updates)).build() as _$Launch;
 
   _$Launch._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41441,7 +41489,7 @@ class LaunchBuilder extends Object
   }
 
   @override
-  _$Launch build() {
+  Launch build() {
     final result = _$v ??
         _$Launch._(
             timestamp: timestamp ?? DateTime.now(),
@@ -41494,7 +41542,7 @@ class _$Drop extends Drop {
   final String custom;
 
   factory _$Drop([void Function(DropBuilder b)? updates]) =>
-      (DropBuilder()..update(updates)).build();
+      (DropBuilder()..update(updates)).build() as _$Drop;
 
   _$Drop._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41701,7 +41749,7 @@ class DropBuilder extends Object
   }
 
   @override
-  _$Drop build() {
+  Drop build() {
     final result = _$v ??
         _$Drop._(
             timestamp: timestamp ?? DateTime.now(),
@@ -41754,7 +41802,7 @@ class _$ScheduledGoto extends ScheduledGoto {
   final ScheduledGotoEnumDelayed delayed;
 
   factory _$ScheduledGoto([void Function(ScheduledGotoBuilder b)? updates]) =>
-      (ScheduledGotoBuilder()..update(updates)).build();
+      (ScheduledGotoBuilder()..update(updates)).build() as _$ScheduledGoto;
 
   _$ScheduledGoto._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41964,7 +42012,7 @@ class ScheduledGotoBuilder extends Object
   }
 
   @override
-  _$ScheduledGoto build() {
+  ScheduledGoto build() {
     final result = _$v ??
         _$ScheduledGoto._(
             timestamp: timestamp ?? DateTime.now(),
@@ -42033,7 +42081,7 @@ class _$RowsCoverage extends RowsCoverage {
   final String custom;
 
   factory _$RowsCoverage([void Function(RowsCoverageBuilder b)? updates]) =>
-      (RowsCoverageBuilder()..update(updates)).build();
+      (RowsCoverageBuilder()..update(updates)).build() as _$RowsCoverage;
 
   _$RowsCoverage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -42319,7 +42367,7 @@ class RowsCoverageBuilder extends Object
   }
 
   @override
-  _$RowsCoverage build() {
+  RowsCoverage build() {
     final result = _$v ??
         _$RowsCoverage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -42386,7 +42434,7 @@ class _$Sample extends Sample {
   final String custom;
 
   factory _$Sample([void Function(SampleBuilder b)? updates]) =>
-      (SampleBuilder()..update(updates)).build();
+      (SampleBuilder()..update(updates)).build() as _$Sample;
 
   _$Sample._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -42627,7 +42675,7 @@ class SampleBuilder extends Object
   }
 
   @override
-  _$Sample build() {
+  Sample build() {
     final result = _$v ??
         _$Sample._(
             timestamp: timestamp ?? DateTime.now(),
@@ -42666,7 +42714,7 @@ class _$ImageTracking extends ImageTracking {
   final int dstEnt;
 
   factory _$ImageTracking([void Function(ImageTrackingBuilder b)? updates]) =>
-      (ImageTrackingBuilder()..update(updates)).build();
+      (ImageTrackingBuilder()..update(updates)).build() as _$ImageTracking;
 
   _$ImageTracking._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -42786,7 +42834,7 @@ class ImageTrackingBuilder extends Object
   }
 
   @override
-  _$ImageTracking build() {
+  ImageTracking build() {
     final result = _$v ??
         _$ImageTracking._(
             timestamp: timestamp ?? DateTime.now(),
@@ -42831,7 +42879,7 @@ class _$Takeoff extends Takeoff {
   final String custom;
 
   factory _$Takeoff([void Function(TakeoffBuilder b)? updates]) =>
-      (TakeoffBuilder()..update(updates)).build();
+      (TakeoffBuilder()..update(updates)).build() as _$Takeoff;
 
   _$Takeoff._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43040,7 +43088,7 @@ class TakeoffBuilder extends Object
   }
 
   @override
-  _$Takeoff build() {
+  Takeoff build() {
     final result = _$v ??
         _$Takeoff._(
             timestamp: timestamp ?? DateTime.now(),
@@ -43099,7 +43147,7 @@ class _$Land extends Land {
   final String custom;
 
   factory _$Land([void Function(LandBuilder b)? updates]) =>
-      (LandBuilder()..update(updates)).build();
+      (LandBuilder()..update(updates)).build() as _$Land;
 
   _$Land._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43340,7 +43388,7 @@ class LandBuilder extends Object
   }
 
   @override
-  _$Land build() {
+  Land build() {
     final result = _$v ??
         _$Land._(
             timestamp: timestamp ?? DateTime.now(),
@@ -43403,7 +43451,8 @@ class _$AutonomousSection extends AutonomousSection {
 
   factory _$AutonomousSection(
           [void Function(AutonomousSectionBuilder b)? updates]) =>
-      (AutonomousSectionBuilder()..update(updates)).build();
+      (AutonomousSectionBuilder()..update(updates)).build()
+          as _$AutonomousSection;
 
   _$AutonomousSection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43645,7 +43694,7 @@ class AutonomousSectionBuilder extends Object
   }
 
   @override
-  _$AutonomousSection build() {
+  AutonomousSection build() {
     final result = _$v ??
         _$AutonomousSection._(
             timestamp: timestamp ?? DateTime.now(),
@@ -43701,7 +43750,7 @@ class _$FollowPoint extends FollowPoint {
   final String custom;
 
   factory _$FollowPoint([void Function(FollowPointBuilder b)? updates]) =>
-      (FollowPointBuilder()..update(updates)).build();
+      (FollowPointBuilder()..update(updates)).build() as _$FollowPoint;
 
   _$FollowPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43908,7 +43957,7 @@ class FollowPointBuilder extends Object
   }
 
   @override
-  _$FollowPoint build() {
+  FollowPoint build() {
     final result = _$v ??
         _$FollowPoint._(
             timestamp: timestamp ?? DateTime.now(),
@@ -43957,7 +44006,7 @@ class _$Alignment extends Alignment {
   final String custom;
 
   factory _$Alignment([void Function(AlignmentBuilder b)? updates]) =>
-      (AlignmentBuilder()..update(updates)).build();
+      (AlignmentBuilder()..update(updates)).build() as _$Alignment;
 
   _$Alignment._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -44144,7 +44193,7 @@ class AlignmentBuilder extends Object
   }
 
   @override
-  _$Alignment build() {
+  Alignment build() {
     final result = _$v ??
         _$Alignment._(
             timestamp: timestamp ?? DateTime.now(),
@@ -44204,7 +44253,8 @@ class _$StationKeepingExtended extends StationKeepingExtended {
 
   factory _$StationKeepingExtended(
           [void Function(StationKeepingExtendedBuilder b)? updates]) =>
-      (StationKeepingExtendedBuilder()..update(updates)).build();
+      (StationKeepingExtendedBuilder()..update(updates)).build()
+          as _$StationKeepingExtended;
 
   _$StationKeepingExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -44458,7 +44508,7 @@ class StationKeepingExtendedBuilder extends Object
   }
 
   @override
-  _$StationKeepingExtended build() {
+  StationKeepingExtended build() {
     final result = _$v ??
         _$StationKeepingExtended._(
             timestamp: timestamp ?? DateTime.now(),
@@ -44498,7 +44548,7 @@ class _$ManeuverDone extends ManeuverDone {
   final int dstEnt;
 
   factory _$ManeuverDone([void Function(ManeuverDoneBuilder b)? updates]) =>
-      (ManeuverDoneBuilder()..update(updates)).build();
+      (ManeuverDoneBuilder()..update(updates)).build() as _$ManeuverDone;
 
   _$ManeuverDone._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -44618,7 +44668,7 @@ class ManeuverDoneBuilder extends Object
   }
 
   @override
-  _$ManeuverDone build() {
+  ManeuverDone build() {
     final result = _$v ??
         _$ManeuverDone._(
             timestamp: timestamp ?? DateTime.now(),
@@ -44669,7 +44719,7 @@ class _$Magnetometer extends Magnetometer {
   final String custom;
 
   factory _$Magnetometer([void Function(MagnetometerBuilder b)? updates]) =>
-      (MagnetometerBuilder()..update(updates)).build();
+      (MagnetometerBuilder()..update(updates)).build() as _$Magnetometer;
 
   _$Magnetometer._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -44910,7 +44960,7 @@ class MagnetometerBuilder extends Object
   }
 
   @override
-  _$Magnetometer build() {
+  Magnetometer build() {
     final result = _$v ??
         _$Magnetometer._(
             timestamp: timestamp ?? DateTime.now(),
@@ -44970,7 +45020,7 @@ class _$VehicleState extends VehicleState {
   final double lastErrorTime;
 
   factory _$VehicleState([void Function(VehicleStateBuilder b)? updates]) =>
-      (VehicleStateBuilder()..update(updates)).build();
+      (VehicleStateBuilder()..update(updates)).build() as _$VehicleState;
 
   _$VehicleState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45203,7 +45253,7 @@ class VehicleStateBuilder extends Object
   }
 
   @override
-  _$VehicleState build() {
+  VehicleState build() {
     final result = _$v ??
         _$VehicleState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -45254,7 +45304,7 @@ class _$VehicleCommand extends VehicleCommand {
   final String info;
 
   factory _$VehicleCommand([void Function(VehicleCommandBuilder b)? updates]) =>
-      (VehicleCommandBuilder()..update(updates)).build();
+      (VehicleCommandBuilder()..update(updates)).build() as _$VehicleCommand;
 
   _$VehicleCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45441,7 +45491,7 @@ class VehicleCommandBuilder extends Object
   }
 
   @override
-  _$VehicleCommand build() {
+  VehicleCommand build() {
     final result = _$v ??
         _$VehicleCommand._(
             timestamp: timestamp ?? DateTime.now(),
@@ -45481,7 +45531,8 @@ class _$MonitorEntityState extends MonitorEntityState {
 
   factory _$MonitorEntityState(
           [void Function(MonitorEntityStateBuilder b)? updates]) =>
-      (MonitorEntityStateBuilder()..update(updates)).build();
+      (MonitorEntityStateBuilder()..update(updates)).build()
+          as _$MonitorEntityState;
 
   _$MonitorEntityState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45628,7 +45679,7 @@ class MonitorEntityStateBuilder extends Object
   }
 
   @override
-  _$MonitorEntityState build() {
+  MonitorEntityState build() {
     final result = _$v ??
         _$MonitorEntityState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -45676,7 +45727,8 @@ class _$EntityMonitoringState extends EntityMonitoringState {
 
   factory _$EntityMonitoringState(
           [void Function(EntityMonitoringStateBuilder b)? updates]) =>
-      (EntityMonitoringStateBuilder()..update(updates)).build();
+      (EntityMonitoringStateBuilder()..update(updates)).build()
+          as _$EntityMonitoringState;
 
   _$EntityMonitoringState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45890,7 +45942,7 @@ class EntityMonitoringStateBuilder extends Object
   }
 
   @override
-  _$EntityMonitoringState build() {
+  EntityMonitoringState build() {
     final result = _$v ??
         _$EntityMonitoringState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -45952,7 +46004,8 @@ class _$OperationalLimits extends OperationalLimits {
 
   factory _$OperationalLimits(
           [void Function(OperationalLimitsBuilder b)? updates]) =>
-      (OperationalLimitsBuilder()..update(updates)).build();
+      (OperationalLimitsBuilder()..update(updates)).build()
+          as _$OperationalLimits;
 
   _$OperationalLimits._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46205,7 +46258,7 @@ class OperationalLimitsBuilder extends Object
   }
 
   @override
-  _$OperationalLimits build() {
+  OperationalLimits build() {
     final result = _$v ??
         _$OperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
@@ -46246,7 +46299,8 @@ class _$GetOperationalLimits extends GetOperationalLimits {
 
   factory _$GetOperationalLimits(
           [void Function(GetOperationalLimitsBuilder b)? updates]) =>
-      (GetOperationalLimitsBuilder()..update(updates)).build();
+      (GetOperationalLimitsBuilder()..update(updates)).build()
+          as _$GetOperationalLimits;
 
   _$GetOperationalLimits._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46371,7 +46425,7 @@ class GetOperationalLimitsBuilder extends Object
   }
 
   @override
-  _$GetOperationalLimits build() {
+  GetOperationalLimits build() {
     final result = _$v ??
         _$GetOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
@@ -46402,7 +46456,7 @@ class _$Calibration extends Calibration {
   final int duration;
 
   factory _$Calibration([void Function(CalibrationBuilder b)? updates]) =>
-      (CalibrationBuilder()..update(updates)).build();
+      (CalibrationBuilder()..update(updates)).build() as _$Calibration;
 
   _$Calibration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46534,7 +46588,7 @@ class CalibrationBuilder extends Object
   }
 
   @override
-  _$Calibration build() {
+  Calibration build() {
     final result = _$v ??
         _$Calibration._(
             timestamp: timestamp ?? DateTime.now(),
@@ -46570,7 +46624,7 @@ class _$ControlLoops extends ControlLoops {
   final int scopeRef;
 
   factory _$ControlLoops([void Function(ControlLoopsBuilder b)? updates]) =>
-      (ControlLoopsBuilder()..update(updates)).build();
+      (ControlLoopsBuilder()..update(updates)).build() as _$ControlLoops;
 
   _$ControlLoops._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46722,7 +46776,7 @@ class ControlLoopsBuilder extends Object
   }
 
   @override
-  _$ControlLoops build() {
+  ControlLoops build() {
     final result = _$v ??
         _$ControlLoops._(
             timestamp: timestamp ?? DateTime.now(),
@@ -46756,7 +46810,7 @@ class _$VehicleMedium extends VehicleMedium {
   final VehicleMediumEnumMedium medium;
 
   factory _$VehicleMedium([void Function(VehicleMediumBuilder b)? updates]) =>
-      (VehicleMediumBuilder()..update(updates)).build();
+      (VehicleMediumBuilder()..update(updates)).build() as _$VehicleMedium;
 
   _$VehicleMedium._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46888,7 +46942,7 @@ class VehicleMediumBuilder extends Object
   }
 
   @override
-  _$VehicleMedium build() {
+  VehicleMedium build() {
     final result = _$v ??
         _$VehicleMedium._(
             timestamp: timestamp ?? DateTime.now(),
@@ -46922,7 +46976,7 @@ class _$Collision extends Collision {
   final CollisionBitfieldType type;
 
   factory _$Collision([void Function(CollisionBuilder b)? updates]) =>
-      (CollisionBuilder()..update(updates)).build();
+      (CollisionBuilder()..update(updates)).build() as _$Collision;
 
   _$Collision._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47064,7 +47118,7 @@ class CollisionBuilder extends Object
   }
 
   @override
-  _$Collision build() {
+  Collision build() {
     final result = _$v ??
         _$Collision._(
             timestamp: timestamp ?? DateTime.now(),
@@ -47107,7 +47161,7 @@ class _$FormState extends FormState {
   final FormStateEnumConvergMon convergMon;
 
   factory _$FormState([void Function(FormStateBuilder b)? updates]) =>
-      (FormStateBuilder()..update(updates)).build();
+      (FormStateBuilder()..update(updates)).build() as _$FormState;
 
   _$FormState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47299,7 +47353,7 @@ class FormStateBuilder extends Object
   }
 
   @override
-  _$FormState build() {
+  FormState build() {
     final result = _$v ??
         _$FormState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -47338,7 +47392,7 @@ class _$AutopilotMode extends AutopilotMode {
   final String mode;
 
   factory _$AutopilotMode([void Function(AutopilotModeBuilder b)? updates]) =>
-      (AutopilotModeBuilder()..update(updates)).build();
+      (AutopilotModeBuilder()..update(updates)).build() as _$AutopilotMode;
 
   _$AutopilotMode._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47482,7 +47536,7 @@ class AutopilotModeBuilder extends Object
   }
 
   @override
-  _$AutopilotMode build() {
+  AutopilotMode build() {
     final result = _$v ??
         _$AutopilotMode._(
             timestamp: timestamp ?? DateTime.now(),
@@ -47529,7 +47583,7 @@ class _$FormationState extends FormationState {
   final FormationStateEnumConvergMon convergMon;
 
   factory _$FormationState([void Function(FormationStateBuilder b)? updates]) =>
-      (FormationStateBuilder()..update(updates)).build();
+      (FormationStateBuilder()..update(updates)).build() as _$FormationState;
 
   _$FormationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47741,7 +47795,7 @@ class FormationStateBuilder extends Object
   }
 
   @override
-  _$FormationState build() {
+  FormationState build() {
     final result = _$v ??
         _$FormationState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -47786,7 +47840,7 @@ class _$ReportControl extends ReportControl {
   final String sysDst;
 
   factory _$ReportControl([void Function(ReportControlBuilder b)? updates]) =>
-      (ReportControlBuilder()..update(updates)).build();
+      (ReportControlBuilder()..update(updates)).build() as _$ReportControl;
 
   _$ReportControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47953,7 +48007,7 @@ class ReportControlBuilder extends Object
   }
 
   @override
-  _$ReportControl build() {
+  ReportControl build() {
     final result = _$v ??
         _$ReportControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -48006,7 +48060,7 @@ class _$StateReport extends StateReport {
   final int planChecksum;
 
   factory _$StateReport([void Function(StateReportBuilder b)? updates]) =>
-      (StateReportBuilder()..update(updates)).build();
+      (StateReportBuilder()..update(updates)).build() as _$StateReport;
 
   _$StateReport._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48233,7 +48287,7 @@ class StateReportBuilder extends Object
   }
 
   @override
-  _$StateReport build() {
+  StateReport build() {
     final result = _$v ??
         _$StateReport._(
             timestamp: timestamp ?? DateTime.now(),
@@ -48291,7 +48345,8 @@ class _$TransmissionRequest extends TransmissionRequest {
 
   factory _$TransmissionRequest(
           [void Function(TransmissionRequestBuilder b)? updates]) =>
-      (TransmissionRequestBuilder()..update(updates)).build();
+      (TransmissionRequestBuilder()..update(updates)).build()
+          as _$TransmissionRequest;
 
   _$TransmissionRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48519,7 +48574,7 @@ class TransmissionRequestBuilder extends Object
   }
 
   @override
-  _$TransmissionRequest build() {
+  TransmissionRequest build() {
     final result = _$v ??
         _$TransmissionRequest._(
             timestamp: timestamp ?? DateTime.now(),
@@ -48566,7 +48621,8 @@ class _$TransmissionStatus extends TransmissionStatus {
 
   factory _$TransmissionStatus(
           [void Function(TransmissionStatusBuilder b)? updates]) =>
-      (TransmissionStatusBuilder()..update(updates)).build();
+      (TransmissionStatusBuilder()..update(updates)).build()
+          as _$TransmissionStatus;
 
   _$TransmissionStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48733,7 +48789,7 @@ class TransmissionStatusBuilder extends Object
   }
 
   @override
-  _$TransmissionStatus build() {
+  TransmissionStatus build() {
     final result = _$v ??
         _$TransmissionStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -48774,7 +48830,7 @@ class _$SmsRequest extends SmsRequest {
   final String smsText;
 
   factory _$SmsRequest([void Function(SmsRequestBuilder b)? updates]) =>
-      (SmsRequestBuilder()..update(updates)).build();
+      (SmsRequestBuilder()..update(updates)).build() as _$SmsRequest;
 
   _$SmsRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48938,7 +48994,7 @@ class SmsRequestBuilder extends Object
   }
 
   @override
-  _$SmsRequest build() {
+  SmsRequest build() {
     final result = _$v ??
         _$SmsRequest._(
             timestamp: timestamp ?? DateTime.now(),
@@ -48977,7 +49033,7 @@ class _$SmsStatus extends SmsStatus {
   final String info;
 
   factory _$SmsStatus([void Function(SmsStatusBuilder b)? updates]) =>
-      (SmsStatusBuilder()..update(updates)).build();
+      (SmsStatusBuilder()..update(updates)).build() as _$SmsStatus;
 
   _$SmsStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49129,7 +49185,7 @@ class SmsStatusBuilder extends Object
   }
 
   @override
-  _$SmsStatus build() {
+  SmsStatus build() {
     final result = _$v ??
         _$SmsStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -49163,7 +49219,7 @@ class _$VtolState extends VtolState {
   final VtolStateEnumState state;
 
   factory _$VtolState([void Function(VtolStateBuilder b)? updates]) =>
-      (VtolStateBuilder()..update(updates)).build();
+      (VtolStateBuilder()..update(updates)).build() as _$VtolState;
 
   _$VtolState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49295,7 +49351,7 @@ class VtolStateBuilder extends Object
   }
 
   @override
-  _$VtolState build() {
+  VtolState build() {
     final result = _$v ??
         _$VtolState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -49327,7 +49383,7 @@ class _$ArmingState extends ArmingState {
   final ArmingStateEnumState state;
 
   factory _$ArmingState([void Function(ArmingStateBuilder b)? updates]) =>
-      (ArmingStateBuilder()..update(updates)).build();
+      (ArmingStateBuilder()..update(updates)).build() as _$ArmingState;
 
   _$ArmingState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49459,7 +49515,7 @@ class ArmingStateBuilder extends Object
   }
 
   @override
-  _$ArmingState build() {
+  ArmingState build() {
     final result = _$v ??
         _$ArmingState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -49497,7 +49553,7 @@ class _$TCPRequest extends TCPRequest {
   final ImcMessage? msgData;
 
   factory _$TCPRequest([void Function(TCPRequestBuilder b)? updates]) =>
-      (TCPRequestBuilder()..update(updates)).build();
+      (TCPRequestBuilder()..update(updates)).build() as _$TCPRequest;
 
   _$TCPRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49661,7 +49717,7 @@ class TCPRequestBuilder extends Object
   }
 
   @override
-  _$TCPRequest build() {
+  TCPRequest build() {
     final result = _$v ??
         _$TCPRequest._(
             timestamp: timestamp ?? DateTime.now(),
@@ -49700,7 +49756,7 @@ class _$TCPStatus extends TCPStatus {
   final String info;
 
   factory _$TCPStatus([void Function(TCPStatusBuilder b)? updates]) =>
-      (TCPStatusBuilder()..update(updates)).build();
+      (TCPStatusBuilder()..update(updates)).build() as _$TCPStatus;
 
   _$TCPStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49852,7 +49908,7 @@ class TCPStatusBuilder extends Object
   }
 
   @override
-  _$TCPStatus build() {
+  TCPStatus build() {
     final result = _$v ??
         _$TCPStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -49883,7 +49939,7 @@ class _$Abort extends Abort {
   final int dstEnt;
 
   factory _$Abort([void Function(AbortBuilder b)? updates]) =>
-      (AbortBuilder()..update(updates)).build();
+      (AbortBuilder()..update(updates)).build() as _$Abort;
 
   _$Abort._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50003,7 +50059,7 @@ class AbortBuilder extends Object
   }
 
   @override
-  _$Abort build() {
+  Abort build() {
     final result = _$v ??
         _$Abort._(
             timestamp: timestamp ?? DateTime.now(),
@@ -50051,7 +50107,8 @@ class _$PlanSpecification extends PlanSpecification {
 
   factory _$PlanSpecification(
           [void Function(PlanSpecificationBuilder b)? updates]) =>
-      (PlanSpecificationBuilder()..update(updates)).build();
+      (PlanSpecificationBuilder()..update(updates)).build()
+          as _$PlanSpecification;
 
   _$PlanSpecification._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50274,7 +50331,7 @@ class PlanSpecificationBuilder extends Object
   }
 
   @override
-  _$PlanSpecification build() {
+  PlanSpecification build() {
     final result = _$v ??
         _$PlanSpecification._(
             timestamp: timestamp ?? DateTime.now(),
@@ -50320,7 +50377,7 @@ class _$PlanManeuver extends PlanManeuver {
   final List<ImcMessage> endActions;
 
   factory _$PlanManeuver([void Function(PlanManeuverBuilder b)? updates]) =>
-      (PlanManeuverBuilder()..update(updates)).build();
+      (PlanManeuverBuilder()..update(updates)).build() as _$PlanManeuver;
 
   _$PlanManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50486,7 +50543,7 @@ class PlanManeuverBuilder extends Object
   }
 
   @override
-  _$PlanManeuver build() {
+  PlanManeuver build() {
     final result = _$v ??
         _$PlanManeuver._(
             timestamp: timestamp ?? DateTime.now(),
@@ -50527,7 +50584,7 @@ class _$PlanTransition extends PlanTransition {
   final List<ImcMessage> actions;
 
   factory _$PlanTransition([void Function(PlanTransitionBuilder b)? updates]) =>
-      (PlanTransitionBuilder()..update(updates)).build();
+      (PlanTransitionBuilder()..update(updates)).build() as _$PlanTransition;
 
   _$PlanTransition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50691,7 +50748,7 @@ class PlanTransitionBuilder extends Object
   }
 
   @override
-  _$PlanTransition build() {
+  PlanTransition build() {
     final result = _$v ??
         _$PlanTransition._(
             timestamp: timestamp ?? DateTime.now(),
@@ -50729,7 +50786,8 @@ class _$EmergencyControl extends EmergencyControl {
 
   factory _$EmergencyControl(
           [void Function(EmergencyControlBuilder b)? updates]) =>
-      (EmergencyControlBuilder()..update(updates)).build();
+      (EmergencyControlBuilder()..update(updates)).build()
+          as _$EmergencyControl;
 
   _$EmergencyControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50874,7 +50932,7 @@ class EmergencyControlBuilder extends Object
   }
 
   @override
-  _$EmergencyControl build() {
+  EmergencyControl build() {
     final result = _$v ??
         _$EmergencyControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -50912,7 +50970,8 @@ class _$EmergencyControlState extends EmergencyControlState {
 
   factory _$EmergencyControlState(
           [void Function(EmergencyControlStateBuilder b)? updates]) =>
-      (EmergencyControlStateBuilder()..update(updates)).build();
+      (EmergencyControlStateBuilder()..update(updates)).build()
+          as _$EmergencyControlState;
 
   _$EmergencyControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51070,7 +51129,7 @@ class EmergencyControlStateBuilder extends Object
   }
 
   @override
-  _$EmergencyControlState build() {
+  EmergencyControlState build() {
     final result = _$v ??
         _$EmergencyControlState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -51114,7 +51173,7 @@ class _$PlanDB extends PlanDB {
   final String info;
 
   factory _$PlanDB([void Function(PlanDBBuilder b)? updates]) =>
-      (PlanDBBuilder()..update(updates)).build();
+      (PlanDBBuilder()..update(updates)).build() as _$PlanDB;
 
   _$PlanDB._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51300,7 +51359,7 @@ class PlanDBBuilder extends Object
   }
 
   @override
-  _$PlanDB build() {
+  PlanDB build() {
     final result = _$v ??
         _$PlanDB._(
             timestamp: timestamp ?? DateTime.now(),
@@ -51349,7 +51408,7 @@ class _$PlanDBState extends PlanDBState {
   final List<PlanDBInformation> plansInfo;
 
   factory _$PlanDBState([void Function(PlanDBStateBuilder b)? updates]) =>
-      (PlanDBStateBuilder()..update(updates)).build();
+      (PlanDBStateBuilder()..update(updates)).build() as _$PlanDBState;
 
   _$PlanDBState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51547,7 +51606,7 @@ class PlanDBStateBuilder extends Object
   }
 
   @override
-  _$PlanDBState build() {
+  PlanDBState build() {
     final result = _$v ??
         _$PlanDBState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -51596,7 +51655,8 @@ class _$PlanDBInformation extends PlanDBInformation {
 
   factory _$PlanDBInformation(
           [void Function(PlanDBInformationBuilder b)? updates]) =>
-      (PlanDBInformationBuilder()..update(updates)).build();
+      (PlanDBInformationBuilder()..update(updates)).build()
+          as _$PlanDBInformation;
 
   _$PlanDBInformation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51786,7 +51846,7 @@ class PlanDBInformationBuilder extends Object
   }
 
   @override
-  _$PlanDBInformation build() {
+  PlanDBInformation build() {
     final result = _$v ??
         _$PlanDBInformation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -51835,7 +51895,7 @@ class _$PlanControl extends PlanControl {
   final String info;
 
   factory _$PlanControl([void Function(PlanControlBuilder b)? updates]) =>
-      (PlanControlBuilder()..update(updates)).build();
+      (PlanControlBuilder()..update(updates)).build() as _$PlanControl;
 
   _$PlanControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52031,7 +52091,7 @@ class PlanControlBuilder extends Object
   }
 
   @override
-  _$PlanControl build() {
+  PlanControl build() {
     final result = _$v ??
         _$PlanControl._(
             timestamp: timestamp ?? DateTime.now(),
@@ -52084,7 +52144,8 @@ class _$PlanControlState extends PlanControlState {
 
   factory _$PlanControlState(
           [void Function(PlanControlStateBuilder b)? updates]) =>
-      (PlanControlStateBuilder()..update(updates)).build();
+      (PlanControlStateBuilder()..update(updates)).build()
+          as _$PlanControlState;
 
   _$PlanControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52296,7 +52357,7 @@ class PlanControlStateBuilder extends Object
   }
 
   @override
-  _$PlanControlState build() {
+  PlanControlState build() {
     final result = _$v ??
         _$PlanControlState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -52341,7 +52402,7 @@ class _$PlanVariable extends PlanVariable {
   final PlanVariableEnumAccess access;
 
   factory _$PlanVariable([void Function(PlanVariableBuilder b)? updates]) =>
-      (PlanVariableBuilder()..update(updates)).build();
+      (PlanVariableBuilder()..update(updates)).build() as _$PlanVariable;
 
   _$PlanVariable._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52505,7 +52566,7 @@ class PlanVariableBuilder extends Object
   }
 
   @override
-  _$PlanVariable build() {
+  PlanVariable build() {
     final result = _$v ??
         _$PlanVariable._(
             timestamp: timestamp ?? DateTime.now(),
@@ -52546,7 +52607,7 @@ class _$PlanGeneration extends PlanGeneration {
   final String params;
 
   factory _$PlanGeneration([void Function(PlanGenerationBuilder b)? updates]) =>
-      (PlanGenerationBuilder()..update(updates)).build();
+      (PlanGenerationBuilder()..update(updates)).build() as _$PlanGeneration;
 
   _$PlanGeneration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52710,7 +52771,7 @@ class PlanGenerationBuilder extends Object
   }
 
   @override
-  _$PlanGeneration build() {
+  PlanGeneration build() {
     final result = _$v ??
         _$PlanGeneration._(
             timestamp: timestamp ?? DateTime.now(),
@@ -52783,7 +52844,7 @@ class _$LeaderState extends LeaderState {
   final double svz;
 
   factory _$LeaderState([void Function(LeaderStateBuilder b)? updates]) =>
-      (LeaderStateBuilder()..update(updates)).build();
+      (LeaderStateBuilder()..update(updates)).build() as _$LeaderState;
 
   _$LeaderState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53095,7 +53156,7 @@ class LeaderStateBuilder extends Object
   }
 
   @override
-  _$LeaderState build() {
+  LeaderState build() {
     final result = _$v ??
         _$LeaderState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -53158,7 +53219,7 @@ class _$PlanStatistics extends PlanStatistics {
   final String fuel;
 
   factory _$PlanStatistics([void Function(PlanStatisticsBuilder b)? updates]) =>
-      (PlanStatisticsBuilder()..update(updates)).build();
+      (PlanStatisticsBuilder()..update(updates)).build() as _$PlanStatistics;
 
   _$PlanStatistics._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53357,7 +53418,7 @@ class PlanStatisticsBuilder extends Object
   }
 
   @override
-  _$PlanStatistics build() {
+  PlanStatistics build() {
     final result = _$v ??
         _$PlanStatistics._(
             timestamp: timestamp ?? DateTime.now(),
@@ -53411,7 +53472,7 @@ class _$ReportedState extends ReportedState {
   final ReportedStateEnumSType sType;
 
   factory _$ReportedState([void Function(ReportedStateBuilder b)? updates]) =>
-      (ReportedStateBuilder()..update(updates)).build();
+      (ReportedStateBuilder()..update(updates)).build() as _$ReportedState;
 
   _$ReportedState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53628,7 +53689,7 @@ class ReportedStateBuilder extends Object
   }
 
   @override
-  _$ReportedState build() {
+  ReportedState build() {
     final result = _$v ??
         _$ReportedState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -53681,7 +53742,8 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
 
   factory _$RemoteSensorInfo(
           [void Function(RemoteSensorInfoBuilder b)? updates]) =>
-      (RemoteSensorInfoBuilder()..update(updates)).build();
+      (RemoteSensorInfoBuilder()..update(updates)).build()
+          as _$RemoteSensorInfo;
 
   _$RemoteSensorInfo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53880,7 +53942,7 @@ class RemoteSensorInfoBuilder extends Object
   }
 
   @override
-  _$RemoteSensorInfo build() {
+  RemoteSensorInfo build() {
     final result = _$v ??
         _$RemoteSensorInfo._(
             timestamp: timestamp ?? DateTime.now(),
@@ -53920,7 +53982,7 @@ class _$Map extends Map {
   final List<MapFeature> features;
 
   factory _$Map([void Function(MapBuilder b)? updates]) =>
-      (MapBuilder()..update(updates)).build();
+      (MapBuilder()..update(updates)).build() as _$Map;
 
   _$Map._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54062,7 +54124,7 @@ class MapBuilder extends Object
   }
 
   @override
-  _$Map build() {
+  Map build() {
     final result = _$v ??
         _$Map._(
             timestamp: timestamp ?? DateTime.now(),
@@ -54105,7 +54167,7 @@ class _$MapFeature extends MapFeature {
   final List<MapPoint> feature;
 
   factory _$MapFeature([void Function(MapFeatureBuilder b)? updates]) =>
-      (MapFeatureBuilder()..update(updates)).build();
+      (MapFeatureBuilder()..update(updates)).build() as _$MapFeature;
 
   _$MapFeature._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54293,7 +54355,7 @@ class MapFeatureBuilder extends Object
   }
 
   @override
-  _$MapFeature build() {
+  MapFeature build() {
     final result = _$v ??
         _$MapFeature._(
             timestamp: timestamp ?? DateTime.now(),
@@ -54334,7 +54396,7 @@ class _$MapPoint extends MapPoint {
   final double alt;
 
   factory _$MapPoint([void Function(MapPointBuilder b)? updates]) =>
-      (MapPointBuilder()..update(updates)).build();
+      (MapPointBuilder()..update(updates)).build() as _$MapPoint;
 
   _$MapPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54486,7 +54548,7 @@ class MapPointBuilder extends Object
   }
 
   @override
-  _$MapPoint build() {
+  MapPoint build() {
     final result = _$v ??
         _$MapPoint._(
             timestamp: timestamp ?? DateTime.now(),
@@ -54524,7 +54586,7 @@ class _$CcuEvent extends CcuEvent {
   final ImcMessage? arg;
 
   factory _$CcuEvent([void Function(CcuEventBuilder b)? updates]) =>
-      (CcuEventBuilder()..update(updates)).build();
+      (CcuEventBuilder()..update(updates)).build() as _$CcuEvent;
 
   _$CcuEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54676,7 +54738,7 @@ class CcuEventBuilder extends Object
   }
 
   @override
-  _$CcuEvent build() {
+  CcuEvent build() {
     final result = _$v ??
         _$CcuEvent._(
             timestamp: timestamp ?? DateTime.now(),
@@ -54712,7 +54774,7 @@ class _$VehicleLinks extends VehicleLinks {
   final List<Announce> links;
 
   factory _$VehicleLinks([void Function(VehicleLinksBuilder b)? updates]) =>
-      (VehicleLinksBuilder()..update(updates)).build();
+      (VehicleLinksBuilder()..update(updates)).build() as _$VehicleLinks;
 
   _$VehicleLinks._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54854,7 +54916,7 @@ class VehicleLinksBuilder extends Object
   }
 
   @override
-  _$VehicleLinks build() {
+  VehicleLinks build() {
     final result = _$v ??
         _$VehicleLinks._(
             timestamp: timestamp ?? DateTime.now(),
@@ -54892,7 +54954,7 @@ class _$TrexObservation extends TrexObservation {
 
   factory _$TrexObservation(
           [void Function(TrexObservationBuilder b)? updates]) =>
-      (TrexObservationBuilder()..update(updates)).build();
+      (TrexObservationBuilder()..update(updates)).build() as _$TrexObservation;
 
   _$TrexObservation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55045,7 +55107,7 @@ class TrexObservationBuilder extends Object
   }
 
   @override
-  _$TrexObservation build() {
+  TrexObservation build() {
     final result = _$v ??
         _$TrexObservation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -55083,7 +55145,7 @@ class _$TrexCommand extends TrexCommand {
   final String goalXml;
 
   factory _$TrexCommand([void Function(TrexCommandBuilder b)? updates]) =>
-      (TrexCommandBuilder()..update(updates)).build();
+      (TrexCommandBuilder()..update(updates)).build() as _$TrexCommand;
 
   _$TrexCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55236,7 +55298,7 @@ class TrexCommandBuilder extends Object
   }
 
   @override
-  _$TrexCommand build() {
+  TrexCommand build() {
     final result = _$v ??
         _$TrexCommand._(
             timestamp: timestamp ?? DateTime.now(),
@@ -55274,7 +55336,7 @@ class _$TrexOperation extends TrexOperation {
   final TrexToken? token;
 
   factory _$TrexOperation([void Function(TrexOperationBuilder b)? updates]) =>
-      (TrexOperationBuilder()..update(updates)).build();
+      (TrexOperationBuilder()..update(updates)).build() as _$TrexOperation;
 
   _$TrexOperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55426,7 +55488,7 @@ class TrexOperationBuilder extends Object
   }
 
   @override
-  _$TrexOperation build() {
+  TrexOperation build() {
     final result = _$v ??
         _$TrexOperation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -55466,7 +55528,7 @@ class _$TrexAttribute extends TrexAttribute {
   final String max;
 
   factory _$TrexAttribute([void Function(TrexAttributeBuilder b)? updates]) =>
-      (TrexAttributeBuilder()..update(updates)).build();
+      (TrexAttributeBuilder()..update(updates)).build() as _$TrexAttribute;
 
   _$TrexAttribute._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55632,7 +55694,7 @@ class TrexAttributeBuilder extends Object
   }
 
   @override
-  _$TrexAttribute build() {
+  TrexAttribute build() {
     final result = _$v ??
         _$TrexAttribute._(
             timestamp: timestamp ?? DateTime.now(),
@@ -55671,7 +55733,7 @@ class _$TrexToken extends TrexToken {
   final List<TrexAttribute> attributes;
 
   factory _$TrexToken([void Function(TrexTokenBuilder b)? updates]) =>
-      (TrexTokenBuilder()..update(updates)).build();
+      (TrexTokenBuilder()..update(updates)).build() as _$TrexToken;
 
   _$TrexToken._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55824,7 +55886,7 @@ class TrexTokenBuilder extends Object
   }
 
   @override
-  _$TrexToken build() {
+  TrexToken build() {
     final result = _$v ??
         _$TrexToken._(
             timestamp: timestamp ?? DateTime.now(),
@@ -55860,7 +55922,7 @@ class _$TrexPlan extends TrexPlan {
   final List<TrexToken> tokens;
 
   factory _$TrexPlan([void Function(TrexPlanBuilder b)? updates]) =>
-      (TrexPlanBuilder()..update(updates)).build();
+      (TrexPlanBuilder()..update(updates)).build() as _$TrexPlan;
 
   _$TrexPlan._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56002,7 +56064,7 @@ class TrexPlanBuilder extends Object
   }
 
   @override
-  _$TrexPlan build() {
+  TrexPlan build() {
     final result = _$v ??
         _$TrexPlan._(
             timestamp: timestamp ?? DateTime.now(),
@@ -56037,7 +56099,7 @@ class _$Event extends Event {
   final String data;
 
   factory _$Event([void Function(EventBuilder b)? updates]) =>
-      (EventBuilder()..update(updates)).build();
+      (EventBuilder()..update(updates)).build() as _$Event;
 
   _$Event._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56179,7 +56241,7 @@ class EventBuilder extends Object
   }
 
   @override
-  _$Event build() {
+  Event build() {
     final result = _$v ??
         _$Event._(
             timestamp: timestamp ?? DateTime.now(),
@@ -56215,7 +56277,7 @@ class _$CompressedImage extends CompressedImage {
 
   factory _$CompressedImage(
           [void Function(CompressedImageBuilder b)? updates]) =>
-      (CompressedImageBuilder()..update(updates)).build();
+      (CompressedImageBuilder()..update(updates)).build() as _$CompressedImage;
 
   _$CompressedImage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56358,7 +56420,7 @@ class CompressedImageBuilder extends Object
   }
 
   @override
-  _$CompressedImage build() {
+  CompressedImage build() {
     final result = _$v ??
         _$CompressedImage._(
             timestamp: timestamp ?? DateTime.now(),
@@ -56398,7 +56460,7 @@ class _$ImageTxSettings extends ImageTxSettings {
 
   factory _$ImageTxSettings(
           [void Function(ImageTxSettingsBuilder b)? updates]) =>
-      (ImageTxSettingsBuilder()..update(updates)).build();
+      (ImageTxSettingsBuilder()..update(updates)).build() as _$ImageTxSettings;
 
   _$ImageTxSettings._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56563,7 +56625,7 @@ class ImageTxSettingsBuilder extends Object
   }
 
   @override
-  _$ImageTxSettings build() {
+  ImageTxSettings build() {
     final result = _$v ??
         _$ImageTxSettings._(
             timestamp: timestamp ?? DateTime.now(),
@@ -56606,7 +56668,7 @@ class _$RemoteState extends RemoteState {
   final double psi;
 
   factory _$RemoteState([void Function(RemoteStateBuilder b)? updates]) =>
-      (RemoteStateBuilder()..update(updates)).build();
+      (RemoteStateBuilder()..update(updates)).build() as _$RemoteState;
 
   _$RemoteState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56782,7 +56844,7 @@ class RemoteStateBuilder extends Object
   }
 
   @override
-  _$RemoteState build() {
+  RemoteState build() {
     final result = _$v ??
         _$RemoteState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -56830,7 +56892,7 @@ class _$Target extends Target {
   final double sog;
 
   factory _$Target([void Function(TargetBuilder b)? updates]) =>
-      (TargetBuilder()..update(updates)).build();
+      (TargetBuilder()..update(updates)).build() as _$Target;
 
   _$Target._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57026,7 +57088,7 @@ class TargetBuilder extends Object
   }
 
   @override
-  _$Target build() {
+  Target build() {
     final result = _$v ??
         _$Target._(
             timestamp: timestamp ?? DateTime.now(),
@@ -57067,7 +57129,7 @@ class _$EntityParameter extends EntityParameter {
 
   factory _$EntityParameter(
           [void Function(EntityParameterBuilder b)? updates]) =>
-      (EntityParameterBuilder()..update(updates)).build();
+      (EntityParameterBuilder()..update(updates)).build() as _$EntityParameter;
 
   _$EntityParameter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57210,7 +57272,7 @@ class EntityParameterBuilder extends Object
   }
 
   @override
-  _$EntityParameter build() {
+  EntityParameter build() {
     final result = _$v ??
         _$EntityParameter._(
             timestamp: timestamp ?? DateTime.now(),
@@ -57246,7 +57308,8 @@ class _$EntityParameters extends EntityParameters {
 
   factory _$EntityParameters(
           [void Function(EntityParametersBuilder b)? updates]) =>
-      (EntityParametersBuilder()..update(updates)).build();
+      (EntityParametersBuilder()..update(updates)).build()
+          as _$EntityParameters;
 
   _$EntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57390,7 +57453,7 @@ class EntityParametersBuilder extends Object
   }
 
   @override
-  _$EntityParameters build() {
+  EntityParameters build() {
     final result = _$v ??
         _$EntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -57428,7 +57491,8 @@ class _$QueryEntityParameters extends QueryEntityParameters {
 
   factory _$QueryEntityParameters(
           [void Function(QueryEntityParametersBuilder b)? updates]) =>
-      (QueryEntityParametersBuilder()..update(updates)).build();
+      (QueryEntityParametersBuilder()..update(updates)).build()
+          as _$QueryEntityParameters;
 
   _$QueryEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57586,7 +57650,7 @@ class QueryEntityParametersBuilder extends Object
   }
 
   @override
-  _$QueryEntityParameters build() {
+  QueryEntityParameters build() {
     final result = _$v ??
         _$QueryEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -57623,7 +57687,8 @@ class _$SetEntityParameters extends SetEntityParameters {
 
   factory _$SetEntityParameters(
           [void Function(SetEntityParametersBuilder b)? updates]) =>
-      (SetEntityParametersBuilder()..update(updates)).build();
+      (SetEntityParametersBuilder()..update(updates)).build()
+          as _$SetEntityParameters;
 
   _$SetEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57770,7 +57835,7 @@ class SetEntityParametersBuilder extends Object
   }
 
   @override
-  _$SetEntityParameters build() {
+  SetEntityParameters build() {
     final result = _$v ??
         _$SetEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -57804,7 +57869,8 @@ class _$SaveEntityParameters extends SaveEntityParameters {
 
   factory _$SaveEntityParameters(
           [void Function(SaveEntityParametersBuilder b)? updates]) =>
-      (SaveEntityParametersBuilder()..update(updates)).build();
+      (SaveEntityParametersBuilder()..update(updates)).build()
+          as _$SaveEntityParameters;
 
   _$SaveEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57941,7 +58007,7 @@ class SaveEntityParametersBuilder extends Object
   }
 
   @override
-  _$SaveEntityParameters build() {
+  SaveEntityParameters build() {
     final result = _$v ??
         _$SaveEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -57973,7 +58039,7 @@ class _$CreateSession extends CreateSession {
   final int timeout;
 
   factory _$CreateSession([void Function(CreateSessionBuilder b)? updates]) =>
-      (CreateSessionBuilder()..update(updates)).build();
+      (CreateSessionBuilder()..update(updates)).build() as _$CreateSession;
 
   _$CreateSession._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58105,7 +58171,7 @@ class CreateSessionBuilder extends Object
   }
 
   @override
-  _$CreateSession build() {
+  CreateSession build() {
     final result = _$v ??
         _$CreateSession._(
             timestamp: timestamp ?? DateTime.now(),
@@ -58137,7 +58203,7 @@ class _$CloseSession extends CloseSession {
   final int sessid;
 
   factory _$CloseSession([void Function(CloseSessionBuilder b)? updates]) =>
-      (CloseSessionBuilder()..update(updates)).build();
+      (CloseSessionBuilder()..update(updates)).build() as _$CloseSession;
 
   _$CloseSession._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58269,7 +58335,7 @@ class CloseSessionBuilder extends Object
   }
 
   @override
-  _$CloseSession build() {
+  CloseSession build() {
     final result = _$v ??
         _$CloseSession._(
             timestamp: timestamp ?? DateTime.now(),
@@ -58304,7 +58370,8 @@ class _$SessionSubscription extends SessionSubscription {
 
   factory _$SessionSubscription(
           [void Function(SessionSubscriptionBuilder b)? updates]) =>
-      (SessionSubscriptionBuilder()..update(updates)).build();
+      (SessionSubscriptionBuilder()..update(updates)).build()
+          as _$SessionSubscription;
 
   _$SessionSubscription._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58451,7 +58518,7 @@ class SessionSubscriptionBuilder extends Object
   }
 
   @override
-  _$SessionSubscription build() {
+  SessionSubscription build() {
     final result = _$v ??
         _$SessionSubscription._(
             timestamp: timestamp ?? DateTime.now(),
@@ -58485,7 +58552,8 @@ class _$SessionKeepAlive extends SessionKeepAlive {
 
   factory _$SessionKeepAlive(
           [void Function(SessionKeepAliveBuilder b)? updates]) =>
-      (SessionKeepAliveBuilder()..update(updates)).build();
+      (SessionKeepAliveBuilder()..update(updates)).build()
+          as _$SessionKeepAlive;
 
   _$SessionKeepAlive._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58619,7 +58687,7 @@ class SessionKeepAliveBuilder extends Object
   }
 
   @override
-  _$SessionKeepAlive build() {
+  SessionKeepAlive build() {
     final result = _$v ??
         _$SessionKeepAlive._(
             timestamp: timestamp ?? DateTime.now(),
@@ -58653,7 +58721,7 @@ class _$SessionStatus extends SessionStatus {
   final SessionStatusEnumStatus status;
 
   factory _$SessionStatus([void Function(SessionStatusBuilder b)? updates]) =>
-      (SessionStatusBuilder()..update(updates)).build();
+      (SessionStatusBuilder()..update(updates)).build() as _$SessionStatus;
 
   _$SessionStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58795,7 +58863,7 @@ class SessionStatusBuilder extends Object
   }
 
   @override
-  _$SessionStatus build() {
+  SessionStatus build() {
     final result = _$v ??
         _$SessionStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -58829,7 +58897,8 @@ class _$PushEntityParameters extends PushEntityParameters {
 
   factory _$PushEntityParameters(
           [void Function(PushEntityParametersBuilder b)? updates]) =>
-      (PushEntityParametersBuilder()..update(updates)).build();
+      (PushEntityParametersBuilder()..update(updates)).build()
+          as _$PushEntityParameters;
 
   _$PushEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58966,7 +59035,7 @@ class PushEntityParametersBuilder extends Object
   }
 
   @override
-  _$PushEntityParameters build() {
+  PushEntityParameters build() {
     final result = _$v ??
         _$PushEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -58999,7 +59068,8 @@ class _$PopEntityParameters extends PopEntityParameters {
 
   factory _$PopEntityParameters(
           [void Function(PopEntityParametersBuilder b)? updates]) =>
-      (PopEntityParametersBuilder()..update(updates)).build();
+      (PopEntityParametersBuilder()..update(updates)).build()
+          as _$PopEntityParameters;
 
   _$PopEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59136,7 +59206,7 @@ class PopEntityParametersBuilder extends Object
   }
 
   @override
-  _$PopEntityParameters build() {
+  PopEntityParameters build() {
     final result = _$v ??
         _$PopEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
@@ -59170,7 +59240,7 @@ class _$IoEvent extends IoEvent {
   final String error;
 
   factory _$IoEvent([void Function(IoEventBuilder b)? updates]) =>
-      (IoEventBuilder()..update(updates)).build();
+      (IoEventBuilder()..update(updates)).build() as _$IoEvent;
 
   _$IoEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59312,7 +59382,7 @@ class IoEventBuilder extends Object
   }
 
   @override
-  _$IoEvent build() {
+  IoEvent build() {
     final result = _$v ??
         _$IoEvent._(
             timestamp: timestamp ?? DateTime.now(),
@@ -59351,7 +59421,7 @@ class _$UamTxFrame extends UamTxFrame {
   final List<int> data;
 
   factory _$UamTxFrame([void Function(UamTxFrameBuilder b)? updates]) =>
-      (UamTxFrameBuilder()..update(updates)).build();
+      (UamTxFrameBuilder()..update(updates)).build() as _$UamTxFrame;
 
   _$UamTxFrame._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59515,7 +59585,7 @@ class UamTxFrameBuilder extends Object
   }
 
   @override
-  _$UamTxFrame build() {
+  UamTxFrame build() {
     final result = _$v ??
         _$UamTxFrame._(
             timestamp: timestamp ?? DateTime.now(),
@@ -59556,7 +59626,7 @@ class _$UamRxFrame extends UamRxFrame {
   final List<int> data;
 
   factory _$UamRxFrame([void Function(UamRxFrameBuilder b)? updates]) =>
-      (UamRxFrameBuilder()..update(updates)).build();
+      (UamRxFrameBuilder()..update(updates)).build() as _$UamRxFrame;
 
   _$UamRxFrame._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59720,7 +59790,7 @@ class UamRxFrameBuilder extends Object
   }
 
   @override
-  _$UamRxFrame build() {
+  UamRxFrame build() {
     final result = _$v ??
         _$UamRxFrame._(
             timestamp: timestamp ?? DateTime.now(),
@@ -59759,7 +59829,7 @@ class _$UamTxStatus extends UamTxStatus {
   final String error;
 
   factory _$UamTxStatus([void Function(UamTxStatusBuilder b)? updates]) =>
-      (UamTxStatusBuilder()..update(updates)).build();
+      (UamTxStatusBuilder()..update(updates)).build() as _$UamTxStatus;
 
   _$UamTxStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59911,7 +59981,7 @@ class UamTxStatusBuilder extends Object
   }
 
   @override
-  _$UamTxStatus build() {
+  UamTxStatus build() {
     final result = _$v ??
         _$UamTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -59949,7 +60019,7 @@ class _$UamRxRange extends UamRxRange {
   final double value;
 
   factory _$UamRxRange([void Function(UamRxRangeBuilder b)? updates]) =>
-      (UamRxRangeBuilder()..update(updates)).build();
+      (UamRxRangeBuilder()..update(updates)).build() as _$UamRxRange;
 
   _$UamRxRange._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60101,7 +60171,7 @@ class UamRxRangeBuilder extends Object
   }
 
   @override
-  _$UamRxRange build() {
+  UamRxRange build() {
     final result = _$v ??
         _$UamRxRange._(
             timestamp: timestamp ?? DateTime.now(),
@@ -60139,7 +60209,7 @@ class _$UamTxRange extends UamTxRange {
   final double timeout;
 
   factory _$UamTxRange([void Function(UamTxRangeBuilder b)? updates]) =>
-      (UamTxRangeBuilder()..update(updates)).build();
+      (UamTxRangeBuilder()..update(updates)).build() as _$UamTxRange;
 
   _$UamTxRange._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60291,7 +60361,7 @@ class UamTxRangeBuilder extends Object
   }
 
   @override
-  _$UamTxRange build() {
+  UamTxRange build() {
     final result = _$v ??
         _$UamTxRange._(
             timestamp: timestamp ?? DateTime.now(),
@@ -60335,7 +60405,7 @@ class _$FormCtrlParam extends FormCtrlParam {
   final double deconflGain;
 
   factory _$FormCtrlParam([void Function(FormCtrlParamBuilder b)? updates]) =>
-      (FormCtrlParamBuilder()..update(updates)).build();
+      (FormCtrlParamBuilder()..update(updates)).build() as _$FormCtrlParam;
 
   _$FormCtrlParam._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60522,7 +60592,7 @@ class FormCtrlParamBuilder extends Object
   }
 
   @override
-  _$FormCtrlParam build() {
+  FormCtrlParam build() {
     final result = _$v ??
         _$FormCtrlParam._(
             timestamp: timestamp ?? DateTime.now(),
@@ -60563,7 +60633,7 @@ class _$FormationEval extends FormationEval {
   final double distMinMean;
 
   factory _$FormationEval([void Function(FormationEvalBuilder b)? updates]) =>
-      (FormationEvalBuilder()..update(updates)).build();
+      (FormationEvalBuilder()..update(updates)).build() as _$FormationEval;
 
   _$FormationEval._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60717,7 +60787,7 @@ class FormationEvalBuilder extends Object
   }
 
   @override
-  _$FormationEval build() {
+  FormationEval build() {
     final result = _$v ??
         _$FormationEval._(
             timestamp: timestamp ?? DateTime.now(),
@@ -60772,7 +60842,8 @@ class _$FormationControlParams extends FormationControlParams {
 
   factory _$FormationControlParams(
           [void Function(FormationControlParamsBuilder b)? updates]) =>
-      (FormationControlParamsBuilder()..update(updates)).build();
+      (FormationControlParamsBuilder()..update(updates)).build()
+          as _$FormationControlParams;
 
   _$FormationControlParams._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61024,7 +61095,7 @@ class FormationControlParamsBuilder extends Object
   }
 
   @override
-  _$FormationControlParams build() {
+  FormationControlParams build() {
     final result = _$v ??
         _$FormationControlParams._(
             timestamp: timestamp ?? DateTime.now(),
@@ -61081,7 +61152,8 @@ class _$FormationEvaluation extends FormationEvaluation {
 
   factory _$FormationEvaluation(
           [void Function(FormationEvaluationBuilder b)? updates]) =>
-      (FormationEvaluationBuilder()..update(updates)).build();
+      (FormationEvaluationBuilder()..update(updates)).build()
+          as _$FormationEvaluation;
 
   _$FormationEvaluation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61296,7 +61368,7 @@ class FormationEvaluationBuilder extends Object
   }
 
   @override
-  _$FormationEvaluation build() {
+  FormationEvaluation build() {
     final result = _$v ??
         _$FormationEvaluation._(
             timestamp: timestamp ?? DateTime.now(),
@@ -61341,7 +61413,7 @@ class _$SoiWaypoint extends SoiWaypoint {
   final int duration;
 
   factory _$SoiWaypoint([void Function(SoiWaypointBuilder b)? updates]) =>
-      (SoiWaypointBuilder()..update(updates)).build();
+      (SoiWaypointBuilder()..update(updates)).build() as _$SoiWaypoint;
 
   _$SoiWaypoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61505,7 +61577,7 @@ class SoiWaypointBuilder extends Object
   }
 
   @override
-  _$SoiWaypoint build() {
+  SoiWaypoint build() {
     final result = _$v ??
         _$SoiWaypoint._(
             timestamp: timestamp ?? DateTime.now(),
@@ -61542,7 +61614,7 @@ class _$SoiPlan extends SoiPlan {
   final List<SoiWaypoint> waypoints;
 
   factory _$SoiPlan([void Function(SoiPlanBuilder b)? updates]) =>
-      (SoiPlanBuilder()..update(updates)).build();
+      (SoiPlanBuilder()..update(updates)).build() as _$SoiPlan;
 
   _$SoiPlan._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61684,7 +61756,7 @@ class SoiPlanBuilder extends Object
   }
 
   @override
-  _$SoiPlan build() {
+  SoiPlan build() {
     final result = _$v ??
         _$SoiPlan._(
             timestamp: timestamp ?? DateTime.now(),
@@ -61725,7 +61797,7 @@ class _$SoiCommand extends SoiCommand {
   final String info;
 
   factory _$SoiCommand([void Function(SoiCommandBuilder b)? updates]) =>
-      (SoiCommandBuilder()..update(updates)).build();
+      (SoiCommandBuilder()..update(updates)).build() as _$SoiCommand;
 
   _$SoiCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61902,7 +61974,7 @@ class SoiCommandBuilder extends Object
   }
 
   @override
-  _$SoiCommand build() {
+  SoiCommand build() {
     final result = _$v ??
         _$SoiCommand._(
             timestamp: timestamp ?? DateTime.now(),
@@ -61944,7 +62016,7 @@ class _$SoiState extends SoiState {
   final int settingsChk;
 
   factory _$SoiState([void Function(SoiStateBuilder b)? updates]) =>
-      (SoiStateBuilder()..update(updates)).build();
+      (SoiStateBuilder()..update(updates)).build() as _$SoiState;
 
   _$SoiState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62108,7 +62180,7 @@ class SoiStateBuilder extends Object
   }
 
   @override
-  _$SoiState build() {
+  SoiState build() {
     final result = _$v ??
         _$SoiState._(
             timestamp: timestamp ?? DateTime.now(),
@@ -62149,7 +62221,7 @@ class _$MessagePart extends MessagePart {
   final List<int> data;
 
   factory _$MessagePart([void Function(MessagePartBuilder b)? updates]) =>
-      (MessagePartBuilder()..update(updates)).build();
+      (MessagePartBuilder()..update(updates)).build() as _$MessagePart;
 
   _$MessagePart._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62313,7 +62385,7 @@ class MessagePartBuilder extends Object
   }
 
   @override
-  _$MessagePart build() {
+  MessagePart build() {
     final result = _$v ??
         _$MessagePart._(
             timestamp: timestamp ?? DateTime.now(),
@@ -62350,7 +62422,7 @@ class _$NeptusBlob extends NeptusBlob {
   final List<int> content;
 
   factory _$NeptusBlob([void Function(NeptusBlobBuilder b)? updates]) =>
-      (NeptusBlobBuilder()..update(updates)).build();
+      (NeptusBlobBuilder()..update(updates)).build() as _$NeptusBlob;
 
   _$NeptusBlob._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62492,7 +62564,7 @@ class NeptusBlobBuilder extends Object
   }
 
   @override
-  _$NeptusBlob build() {
+  NeptusBlob build() {
     final result = _$v ??
         _$NeptusBlob._(
             timestamp: timestamp ?? DateTime.now(),
@@ -62522,7 +62594,7 @@ class _$Aborted extends Aborted {
   final int dstEnt;
 
   factory _$Aborted([void Function(AbortedBuilder b)? updates]) =>
-      (AbortedBuilder()..update(updates)).build();
+      (AbortedBuilder()..update(updates)).build() as _$Aborted;
 
   _$Aborted._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62642,7 +62714,7 @@ class AbortedBuilder extends Object
   }
 
   @override
-  _$Aborted build() {
+  Aborted build() {
     final result = _$v ??
         _$Aborted._(
             timestamp: timestamp ?? DateTime.now(),
@@ -62677,7 +62749,7 @@ class _$UsblAngles extends UsblAngles {
   final double elevation;
 
   factory _$UsblAngles([void Function(UsblAnglesBuilder b)? updates]) =>
-      (UsblAnglesBuilder()..update(updates)).build();
+      (UsblAnglesBuilder()..update(updates)).build() as _$UsblAngles;
 
   _$UsblAngles._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62831,7 +62903,7 @@ class UsblAnglesBuilder extends Object
   }
 
   @override
-  _$UsblAngles build() {
+  UsblAngles build() {
     final result = _$v ??
         _$UsblAngles._(
             timestamp: timestamp ?? DateTime.now(),
@@ -62871,7 +62943,7 @@ class _$UsblPosition extends UsblPosition {
   final double z;
 
   factory _$UsblPosition([void Function(UsblPositionBuilder b)? updates]) =>
-      (UsblPositionBuilder()..update(updates)).build();
+      (UsblPositionBuilder()..update(updates)).build() as _$UsblPosition;
 
   _$UsblPosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63035,7 +63107,7 @@ class UsblPositionBuilder extends Object
   }
 
   @override
-  _$UsblPosition build() {
+  UsblPosition build() {
     final result = _$v ??
         _$UsblPosition._(
             timestamp: timestamp ?? DateTime.now(),
@@ -63078,7 +63150,7 @@ class _$UsblFix extends UsblFix {
   final double z;
 
   factory _$UsblFix([void Function(UsblFixBuilder b)? updates]) =>
-      (UsblFixBuilder()..update(updates)).build();
+      (UsblFixBuilder()..update(updates)).build() as _$UsblFix;
 
   _$UsblFix._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63254,7 +63326,7 @@ class UsblFixBuilder extends Object
   }
 
   @override
-  _$UsblFix build() {
+  UsblFix build() {
     final result = _$v ??
         _$UsblFix._(
             timestamp: timestamp ?? DateTime.now(),
@@ -63292,7 +63364,7 @@ class _$ParametersXml extends ParametersXml {
   final List<int> config;
 
   factory _$ParametersXml([void Function(ParametersXmlBuilder b)? updates]) =>
-      (ParametersXmlBuilder()..update(updates)).build();
+      (ParametersXmlBuilder()..update(updates)).build() as _$ParametersXml;
 
   _$ParametersXml._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63434,7 +63506,7 @@ class ParametersXmlBuilder extends Object
   }
 
   @override
-  _$ParametersXml build() {
+  ParametersXml build() {
     final result = _$v ??
         _$ParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
@@ -63465,7 +63537,8 @@ class _$GetParametersXml extends GetParametersXml {
 
   factory _$GetParametersXml(
           [void Function(GetParametersXmlBuilder b)? updates]) =>
-      (GetParametersXmlBuilder()..update(updates)).build();
+      (GetParametersXmlBuilder()..update(updates)).build()
+          as _$GetParametersXml;
 
   _$GetParametersXml._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63587,7 +63660,7 @@ class GetParametersXmlBuilder extends Object
   }
 
   @override
-  _$GetParametersXml build() {
+  GetParametersXml build() {
     final result = _$v ??
         _$GetParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
@@ -63622,7 +63695,7 @@ class _$SetImageCoords extends SetImageCoords {
   final int y;
 
   factory _$SetImageCoords([void Function(SetImageCoordsBuilder b)? updates]) =>
-      (SetImageCoordsBuilder()..update(updates)).build();
+      (SetImageCoordsBuilder()..update(updates)).build() as _$SetImageCoords;
 
   _$SetImageCoords._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63774,7 +63847,7 @@ class SetImageCoordsBuilder extends Object
   }
 
   @override
-  _$SetImageCoords build() {
+  SetImageCoords build() {
     final result = _$v ??
         _$SetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
@@ -63812,7 +63885,7 @@ class _$GetImageCoords extends GetImageCoords {
   final int y;
 
   factory _$GetImageCoords([void Function(GetImageCoordsBuilder b)? updates]) =>
-      (GetImageCoordsBuilder()..update(updates)).build();
+      (GetImageCoordsBuilder()..update(updates)).build() as _$GetImageCoords;
 
   _$GetImageCoords._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63964,7 +64037,7 @@ class GetImageCoordsBuilder extends Object
   }
 
   @override
-  _$GetImageCoords build() {
+  GetImageCoords build() {
     final result = _$v ??
         _$GetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
@@ -64009,7 +64082,8 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
 
   factory _$GetWorldCoordinates(
           [void Function(GetWorldCoordinatesBuilder b)? updates]) =>
-      (GetWorldCoordinatesBuilder()..update(updates)).build();
+      (GetWorldCoordinatesBuilder()..update(updates)).build()
+          as _$GetWorldCoordinates;
 
   _$GetWorldCoordinates._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64201,7 +64275,7 @@ class GetWorldCoordinatesBuilder extends Object
   }
 
   @override
-  _$GetWorldCoordinates build() {
+  GetWorldCoordinates build() {
     final result = _$v ??
         _$GetWorldCoordinates._(
             timestamp: timestamp ?? DateTime.now(),
@@ -64255,7 +64329,8 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
 
   factory _$UsblAnglesExtended(
           [void Function(UsblAnglesExtendedBuilder b)? updates]) =>
-      (UsblAnglesExtendedBuilder()..update(updates)).build();
+      (UsblAnglesExtendedBuilder()..update(updates)).build()
+          as _$UsblAnglesExtended;
 
   _$UsblAnglesExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64481,7 +64556,7 @@ class UsblAnglesExtendedBuilder extends Object
   }
 
   @override
-  _$UsblAnglesExtended build() {
+  UsblAnglesExtended build() {
     final result = _$v ??
         _$UsblAnglesExtended._(
             timestamp: timestamp ?? DateTime.now(),
@@ -64542,7 +64617,8 @@ class _$UsblPositionExtended extends UsblPositionExtended {
 
   factory _$UsblPositionExtended(
           [void Function(UsblPositionExtendedBuilder b)? updates]) =>
-      (UsblPositionExtendedBuilder()..update(updates)).build();
+      (UsblPositionExtendedBuilder()..update(updates)).build()
+          as _$UsblPositionExtended;
 
   _$UsblPositionExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64784,7 +64860,7 @@ class UsblPositionExtendedBuilder extends Object
   }
 
   @override
-  _$UsblPositionExtended build() {
+  UsblPositionExtended build() {
     final result = _$v ??
         _$UsblPositionExtended._(
             timestamp: timestamp ?? DateTime.now(),
@@ -64837,7 +64913,7 @@ class _$UsblFixExtended extends UsblFixExtended {
 
   factory _$UsblFixExtended(
           [void Function(UsblFixExtendedBuilder b)? updates]) =>
-      (UsblFixExtendedBuilder()..update(updates)).build();
+      (UsblFixExtendedBuilder()..update(updates)).build() as _$UsblFixExtended;
 
   _$UsblFixExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65024,7 +65100,7 @@ class UsblFixExtendedBuilder extends Object
   }
 
   @override
-  _$UsblFixExtended build() {
+  UsblFixExtended build() {
     final result = _$v ??
         _$UsblFixExtended._(
             timestamp: timestamp ?? DateTime.now(),
@@ -65069,7 +65145,7 @@ class _$UsblModem extends UsblModem {
   final ZUnitsEnum zUnits;
 
   factory _$UsblModem([void Function(UsblModemBuilder b)? updates]) =>
-      (UsblModemBuilder()..update(updates)).build();
+      (UsblModemBuilder()..update(updates)).build() as _$UsblModem;
 
   _$UsblModem._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65245,7 +65321,7 @@ class UsblModemBuilder extends Object
   }
 
   @override
-  _$UsblModem build() {
+  UsblModem build() {
     final result = _$v ??
         _$UsblModem._(
             timestamp: timestamp ?? DateTime.now(),
@@ -65283,7 +65359,7 @@ class _$UsblConfig extends UsblConfig {
   final List<UsblModem> modems;
 
   factory _$UsblConfig([void Function(UsblConfigBuilder b)? updates]) =>
-      (UsblConfigBuilder()..update(updates)).build();
+      (UsblConfigBuilder()..update(updates)).build() as _$UsblConfig;
 
   _$UsblConfig._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65425,7 +65501,7 @@ class UsblConfigBuilder extends Object
   }
 
   @override
-  _$UsblConfig build() {
+  UsblConfig build() {
     final result = _$v ??
         _$UsblConfig._(
             timestamp: timestamp ?? DateTime.now(),
@@ -65461,7 +65537,8 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
 
   factory _$DissolvedOrganicMatter(
           [void Function(DissolvedOrganicMatterBuilder b)? updates]) =>
-      (DissolvedOrganicMatterBuilder()..update(updates)).build();
+      (DissolvedOrganicMatterBuilder()..update(updates)).build()
+          as _$DissolvedOrganicMatter;
 
   _$DissolvedOrganicMatter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65609,7 +65686,7 @@ class DissolvedOrganicMatterBuilder extends Object
   }
 
   @override
-  _$DissolvedOrganicMatter build() {
+  DissolvedOrganicMatter build() {
     final result = _$v ??
         _$DissolvedOrganicMatter._(
             timestamp: timestamp ?? DateTime.now(),
@@ -65643,7 +65720,8 @@ class _$OpticalBackscatter extends OpticalBackscatter {
 
   factory _$OpticalBackscatter(
           [void Function(OpticalBackscatterBuilder b)? updates]) =>
-      (OpticalBackscatterBuilder()..update(updates)).build();
+      (OpticalBackscatterBuilder()..update(updates)).build()
+          as _$OpticalBackscatter;
 
   _$OpticalBackscatter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65778,7 +65856,7 @@ class OpticalBackscatterBuilder extends Object
   }
 
   @override
-  _$OpticalBackscatter build() {
+  OpticalBackscatter build() {
     final result = _$v ??
         _$OpticalBackscatter._(
             timestamp: timestamp ?? DateTime.now(),
@@ -65840,7 +65918,7 @@ class _$Tachograph extends Tachograph {
   final double depthMax;
 
   factory _$Tachograph([void Function(TachographBuilder b)? updates]) =>
-      (TachographBuilder()..update(updates)).build();
+      (TachographBuilder()..update(updates)).build() as _$Tachograph;
 
   _$Tachograph._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66144,7 +66222,7 @@ class TachographBuilder extends Object
   }
 
   @override
-  _$Tachograph build() {
+  Tachograph build() {
     final result = _$v ??
         _$Tachograph._(
             timestamp: timestamp ?? DateTime.now(),
@@ -66193,7 +66271,7 @@ class _$ApmStatus extends ApmStatus {
   final String text;
 
   factory _$ApmStatus([void Function(ApmStatusBuilder b)? updates]) =>
-      (ApmStatusBuilder()..update(updates)).build();
+      (ApmStatusBuilder()..update(updates)).build() as _$ApmStatus;
 
   _$ApmStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66336,7 +66414,7 @@ class ApmStatusBuilder extends Object
   }
 
   @override
-  _$ApmStatus build() {
+  ApmStatus build() {
     final result = _$v ??
         _$ApmStatus._(
             timestamp: timestamp ?? DateTime.now(),
@@ -66373,7 +66451,7 @@ class _$SadcReadings extends SadcReadings {
   final SadcReadingsEnumGain gain;
 
   factory _$SadcReadings([void Function(SadcReadingsBuilder b)? updates]) =>
-      (SadcReadingsBuilder()..update(updates)).build();
+      (SadcReadingsBuilder()..update(updates)).build() as _$SadcReadings;
 
   _$SadcReadings._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66525,7 +66603,7 @@ class SadcReadingsBuilder extends Object
   }
 
   @override
-  _$SadcReadings build() {
+  SadcReadings build() {
     final result = _$v ??
         _$SadcReadings._(
             timestamp: timestamp ?? DateTime.now(),
@@ -66589,7 +66667,7 @@ class _$DmsDetection extends DmsDetection {
   final double ch16;
 
   factory _$DmsDetection([void Function(DmsDetectionBuilder b)? updates]) =>
-      (DmsDetectionBuilder()..update(updates)).build();
+      (DmsDetectionBuilder()..update(updates)).build() as _$DmsDetection;
 
   _$DmsDetection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66869,7 +66947,7 @@ class DmsDetectionBuilder extends Object
   }
 
   @override
-  _$DmsDetection build() {
+  DmsDetection build() {
     final result = _$v ??
         _$DmsDetection._(
             timestamp: timestamp ?? DateTime.now(),
@@ -66926,7 +67004,7 @@ class _$HomePosition extends HomePosition {
   final double alt;
 
   factory _$HomePosition([void Function(HomePositionBuilder b)? updates]) =>
-      (HomePositionBuilder()..update(updates)).build();
+      (HomePositionBuilder()..update(updates)).build() as _$HomePosition;
 
   _$HomePosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -67112,7 +67190,7 @@ class HomePositionBuilder extends Object
   }
 
   @override
-  _$HomePosition build() {
+  HomePosition build() {
     final result = _$v ??
         _$HomePosition._(
             timestamp: timestamp ?? DateTime.now(),
@@ -67150,7 +67228,8 @@ class _$TotalMagIntensity extends TotalMagIntensity {
 
   factory _$TotalMagIntensity(
           [void Function(TotalMagIntensityBuilder b)? updates]) =>
-      (TotalMagIntensityBuilder()..update(updates)).build();
+      (TotalMagIntensityBuilder()..update(updates)).build()
+          as _$TotalMagIntensity;
 
   _$TotalMagIntensity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -67285,7 +67364,7 @@ class TotalMagIntensityBuilder extends Object
   }
 
   @override
-  _$TotalMagIntensity build() {
+  TotalMagIntensity build() {
     final result = _$v ??
         _$TotalMagIntensity._(
             timestamp: timestamp ?? DateTime.now(),
