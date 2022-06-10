@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.1] - 10 Jun 2022
+
+* Adding sha256 hash of the imc used.
+* Adding advance usage way to programatically change the sync number (**Use with care**).
+* Updated dependencies.
+* Cleanup formating warnings from lints package.
+* Updated IMC to v5.4.30 @Git#6038ec6.
+
 ## [3.0.0] - 19 Dec 2021
 
 * Making it now a Dart package and not a Flutter.
