@@ -6,6 +6,14 @@ import 'package:built_value/built_value.dart';
 
 part 'imc_def_enums.dart';
 
+extension ReverseSyncNumber on int {
+  int reverseAsSyncNumber() {
+    int i1 = (this & 0x00FF) << 8;
+    int i2 = (this & 0xFF00) >> 8;
+    return i1 | i2;
+  }
+}
+
 /// This contains internal IMC field info
 class ImcField {
   final String name;

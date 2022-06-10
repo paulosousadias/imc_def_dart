@@ -337,8 +337,12 @@ int? deserializeHeader(
 
 Endian? getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
-  if (syncBE == syncNumber) return Endian.big;
-  if (syncBE == syncNumberReversed) return Endian.little;
+  if (syncBE == (fakeSyncNumber ?? syncNumber)) {
+    return Endian.big;
+  }
+  if (syncBE == (fakeSyncNumberReversed ?? syncNumberReversed)) {
+    return Endian.little;
+  }
   return null;
 }
 

@@ -23,6 +23,14 @@ String _byteDataToHexString(List<int> serData) {
 }
 
 void main() {
+  test('sync number reverse test', () {
+    int s1 = 0x1234;
+    int s2 = s1.reverseAsSyncNumber();
+    print(
+        'Sync number ${s1.toRadixString(16)} and reversed ${s2.toRadixString(16)}');
+    expect(0x3412, s2);
+  });
+
   test('builders test', () {
     // final calculator = Calculator();
     // expect(calculator.addOne(2), 3);

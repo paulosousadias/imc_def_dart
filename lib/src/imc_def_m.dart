@@ -14,11 +14,15 @@ const String md5Sum = '0f425402b735f36a64d579da7bb4baf3';
 const String sha256Sum =
     'd77e846c602032c142316cee06e74c0020e95932c49488572d268ef2988a4020';
 
+/// WARNING!!! This is for advance usage only. If set not null, CHANGES the used sync number
+int? fakeSyncNumber;
+int? get fakeSyncNumberReversed => fakeSyncNumber?.reverseAsSyncNumber();
+
 /// The base IMCMessage
 ///
 abstract class ImcMessage extends Message {
   @override
-  int get sync => syncNumber;
+  int get sync => fakeSyncNumber ?? syncNumber;
 }
 
 /// Maneuver message group class

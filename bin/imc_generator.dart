@@ -1549,11 +1549,19 @@ void main(List<String> args) async {
 
   sinks[_idxMsg].write('\n');
 
+  sinks[_idxMsg].write(
+      '/// WARNING!!! This is for advance usage only. If set not null, CHANGES the used sync number\n');
+  sinks[_idxMsg].write('int? fakeSyncNumber;\n');
+  sinks[_idxMsg].write(
+      'int? get fakeSyncNumberReversed => fakeSyncNumber?.reverseAsSyncNumber();\n');
+
+  sinks[_idxMsg].write('\n');
+
   sinks[_idxMsg].write('''/// The base IMCMessage
 ///
 abstract class ImcMessage extends Message {
   @override
-  int get sync => syncNumber;
+  int get sync => fakeSyncNumber ?? syncNumber;
 }
 ''');
 
