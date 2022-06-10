@@ -1494,9 +1494,11 @@ void main(List<String> args) async {
   print('Generating ${fxSerGen.path}');
 
   var imcAsBytes = utf8.encode(imcXml); // data being hashed
-  var imcDigest = md5.convert(imcAsBytes);
+  var imcDigestMd5 = md5.convert(imcAsBytes);
+  var imcDigestSha256 = sha256.convert(imcAsBytes);
   print('Git Hash of IMC file is $xmlGitHash');
-  print('Hash of IMC file is $imcDigest');
+  print('Hash MD5 of IMC file is $imcDigestMd5');
+  print('Hash SHA256 of IMC file is $imcDigestSha256');
 
   var sinkGen = fxGen.openWrite();
   var sinkMessages = fxMessages.openWrite();
@@ -1542,7 +1544,8 @@ void main(List<String> args) async {
       'const int syncNumberReversed = 0x${rSNmbr.toRadixString(16).toUpperCase()};\n');
 
   sinks[_idxMsg].write("const String gitHashString = '$xmlGitHash';\n");
-  sinks[_idxMsg].write("const String md5Sum = '$imcDigest';\n");
+  sinks[_idxMsg].write("const String md5Sum = '$imcDigestMd5';\n");
+  sinks[_idxMsg].write("const String sha256Sum = '$imcDigestSha256';\n");
 
   sinks[_idxMsg].write('\n');
 

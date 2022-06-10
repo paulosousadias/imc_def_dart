@@ -11,6 +11,8 @@ const int syncNumber = 0xFE54;
 const int syncNumberReversed = 0x54FE;
 const String gitHashString = 'lsts@8be592a';
 const String md5Sum = '0f425402b735f36a64d579da7bb4baf3';
+const String sha256Sum =
+    'd77e846c602032c142316cee06e74c0020e95932c49488572d268ef2988a4020';
 
 /// The base IMCMessage
 ///
