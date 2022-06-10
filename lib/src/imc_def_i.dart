@@ -49924,6 +49924,293 @@ class TCPStatusBuilder extends Object
   }
 }
 
+/// Asset Report  immutable class
+///
+class _$AssetReport extends AssetReport {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final String name;
+  @override
+  final double reportTime;
+  @override
+  final AssetReportEnumMedium medium;
+  @override
+  final double lat;
+  @override
+  final double lon;
+  @override
+  final double depth;
+  @override
+  final double alt;
+  @override
+  final double sog;
+  @override
+  final double cog;
+  @override
+  final List<ImcMessage> msgs;
+
+  factory _$AssetReport([void Function(AssetReportBuilder b)? updates]) =>
+      (AssetReportBuilder()..update(updates)).build() as _$AssetReport;
+
+  _$AssetReport._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.name,
+      required this.reportTime,
+      required this.medium,
+      required this.lat,
+      required this.lon,
+      required this.depth,
+      required this.alt,
+      required this.sog,
+      required this.cog,
+      required this.msgs})
+      : super._();
+
+  @override
+  AssetReport rebuild(void Function(AssetReportBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AssetReportBuilder toBuilder() => AssetReportBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AssetReport &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        name == other.name &&
+        (reportTime == other.reportTime ||
+            reportTime - other.reportTime <= 1E-7) &&
+        medium == other.medium &&
+        (lat == other.lat || lat - other.lat <= 1E-7) &&
+        (lon == other.lon || lon - other.lon <= 1E-7) &&
+        (depth == other.depth || depth - other.depth <= 1E-7) &&
+        (alt == other.alt || alt - other.alt <= 1E-7) &&
+        (sog == other.sog || sog - other.sog <= 1E-7) &&
+        (cog == other.cog || cog - other.cog <= 1E-7) &&
+        DeepCollectionEquality().equals(msgs, other.msgs);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                0,
+                                                                timestamp
+                                                                        ?.hashCode ??
+                                                                    null.hashCode),
+                                                            src.hashCode),
+                                                        srcEnt.hashCode),
+                                                    dst.hashCode),
+                                                dstEnt.hashCode),
+                                            name.hashCode),
+                                        reportTime.hashCode),
+                                    medium.hashCode),
+                                lat.hashCode),
+                            lon.hashCode),
+                        depth.hashCode),
+                    alt.hashCode),
+                sog.hashCode),
+            cog.hashCode),
+        msgs.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('AssetReport')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('name', name)
+          ..add('reportTime', '$reportTime (s)')
+          ..add('medium', '$medium (Enumerated) [${medium.toPrettyString()}]')
+          ..add('lat', '$lat (rad) [${lat * 180.0 / math.pi} (deg)]')
+          ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]')
+          ..add('depth', '$depth (m)')
+          ..add('alt', '$alt (m)')
+          ..add('sog', '$sog (m/s)')
+          ..add('cog', '$cog (rad) [${cog * 180.0 / math.pi} (deg)]')
+          ..add('msgs', '$msgs'))
+        .toString();
+  }
+}
+
+/// Asset Report  builder class
+///
+class AssetReportBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<AssetReport, AssetReportBuilder> {
+  _$AssetReport? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  String _name = '';
+  String get name => _$this._name;
+  set name(String name) => _$this._name = name;
+
+  double _reportTime = 0;
+  double get reportTime => _$this._reportTime;
+  set reportTime(double reportTime) => _$this._reportTime = reportTime;
+
+  AssetReportEnumMedium _medium = AssetReportEnumMedium(0);
+  AssetReportEnumMedium get medium => _$this._medium;
+  set medium(AssetReportEnumMedium medium) => _$this._medium = medium;
+
+  double _lat = 0;
+  double get lat => _$this._lat;
+  set lat(double lat) => _$this._lat = lat;
+
+  double _lon = 0;
+  double get lon => _$this._lon;
+  set lon(double lon) => _$this._lon = lon;
+
+  double _depth = 0;
+  double get depth => _$this._depth;
+  set depth(double depth) => _$this._depth = depth;
+
+  double _alt = 0;
+  double get alt => _$this._alt;
+  set alt(double alt) => _$this._alt = alt;
+
+  double _sog = 0;
+  double get sog => _$this._sog;
+  set sog(double sog) => _$this._sog = sog;
+
+  double _cog = 0;
+  double get cog => _$this._cog;
+  set cog(double cog) => _$this._cog = cog;
+
+  List<ImcMessage> _msgs = <ImcMessage>[];
+  List<ImcMessage> get msgs => _$this._msgs;
+  set msgs(List<ImcMessage> msgs) => _$this._msgs = msgs;
+
+  AssetReportBuilder();
+
+  AssetReportBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  AssetReportBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      AssetReportBuilder()..copyFromHeader(headerFrom);
+
+  AssetReportBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _name = _$v!.name;
+      _reportTime = _$v!.reportTime;
+      _medium = _$v!.medium;
+      _lat = _$v!.lat;
+      _lon = _$v!.lon;
+      _depth = _$v!.depth;
+      _alt = _$v!.alt;
+      _sog = _$v!.sog;
+      _cog = _$v!.cog;
+      _msgs = _$v!.msgs;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(AssetReport other) {
+    _$v = other as _$AssetReport;
+  }
+
+  @override
+  void update(void Function(AssetReportBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AssetReport build() {
+    final result = _$v ??
+        _$AssetReport._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            name: name,
+            reportTime: reportTime,
+            medium: medium,
+            lat: lat,
+            lon: lon,
+            depth: depth,
+            alt: alt,
+            sog: sog,
+            cog: cog,
+            msgs: msgs);
+    replace(result);
+    return result;
+  }
+}
+
 /// Abort immutable class
 ///
 class _$Abort extends Abort {
@@ -67209,6 +67496,1453 @@ class HomePositionBuilder extends Object
   }
 }
 
+/// Current Profile immutable class
+///
+class _$CurrentProfile extends CurrentProfile {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final int nbeams;
+  @override
+  final int ncells;
+  @override
+  final CurrentProfileBitfieldCoordSys coordSys;
+  @override
+  final List<CurrentProfileCell> profile;
+
+  factory _$CurrentProfile([void Function(CurrentProfileBuilder b)? updates]) =>
+      (CurrentProfileBuilder()..update(updates)).build() as _$CurrentProfile;
+
+  _$CurrentProfile._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.nbeams,
+      required this.ncells,
+      required this.coordSys,
+      required this.profile})
+      : super._();
+
+  @override
+  CurrentProfile rebuild(void Function(CurrentProfileBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  CurrentProfileBuilder toBuilder() => CurrentProfileBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is CurrentProfile &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        nbeams == other.nbeams &&
+        ncells == other.ncells &&
+        coordSys == other.coordSys &&
+        DeepCollectionEquality().equals(profile, other.profile);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(0,
+                                        timestamp?.hashCode ?? null.hashCode),
+                                    src.hashCode),
+                                srcEnt.hashCode),
+                            dst.hashCode),
+                        dstEnt.hashCode),
+                    nbeams.hashCode),
+                ncells.hashCode),
+            coordSys.hashCode),
+        profile.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('CurrentProfile')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('nbeams', '$nbeams')
+          ..add('ncells', '$ncells')
+          ..add(
+              'coordSys', '$coordSys (Bitfield) [${coordSys.toPrettyString()}]')
+          ..add('profile', '$profile'))
+        .toString();
+  }
+}
+
+/// Current Profile builder class
+///
+class CurrentProfileBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<CurrentProfile, CurrentProfileBuilder> {
+  _$CurrentProfile? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  int _nbeams = 0;
+  int get nbeams => _$this._nbeams;
+  set nbeams(int nbeams) => _$this._nbeams = nbeams;
+
+  int _ncells = 0;
+  int get ncells => _$this._ncells;
+  set ncells(int ncells) => _$this._ncells = ncells;
+
+  CurrentProfileBitfieldCoordSys _coordSys = CurrentProfileBitfieldCoordSys(0);
+  CurrentProfileBitfieldCoordSys get coordSys => _$this._coordSys;
+  set coordSys(CurrentProfileBitfieldCoordSys coordSys) =>
+      _$this._coordSys = coordSys;
+
+  List<CurrentProfileCell> _profile = <CurrentProfileCell>[];
+  List<CurrentProfileCell> get profile => _$this._profile;
+  set profile(List<CurrentProfileCell> profile) => _$this._profile = profile;
+
+  CurrentProfileBuilder();
+
+  CurrentProfileBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  CurrentProfileBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      CurrentProfileBuilder()..copyFromHeader(headerFrom);
+
+  CurrentProfileBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _nbeams = _$v!.nbeams;
+      _ncells = _$v!.ncells;
+      _coordSys = _$v!.coordSys;
+      _profile = _$v!.profile;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(CurrentProfile other) {
+    _$v = other as _$CurrentProfile;
+  }
+
+  @override
+  void update(void Function(CurrentProfileBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  CurrentProfile build() {
+    final result = _$v ??
+        _$CurrentProfile._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            nbeams: nbeams,
+            ncells: ncells,
+            coordSys: coordSys,
+            profile: profile);
+    replace(result);
+    return result;
+  }
+}
+
+/// Current Profile Cell immutable class
+///
+class _$CurrentProfileCell extends CurrentProfileCell {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final double cellPosition;
+  @override
+  final List<ADCPBeam> beams;
+
+  factory _$CurrentProfileCell(
+          [void Function(CurrentProfileCellBuilder b)? updates]) =>
+      (CurrentProfileCellBuilder()..update(updates)).build()
+          as _$CurrentProfileCell;
+
+  _$CurrentProfileCell._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.cellPosition,
+      required this.beams})
+      : super._();
+
+  @override
+  CurrentProfileCell rebuild(
+          void Function(CurrentProfileCellBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  CurrentProfileCellBuilder toBuilder() =>
+      CurrentProfileCellBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is CurrentProfileCell &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        (cellPosition == other.cellPosition ||
+            cellPosition - other.cellPosition <= 1E-7) &&
+        DeepCollectionEquality().equals(beams, other.beams);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src.hashCode),
+                        srcEnt.hashCode),
+                    dst.hashCode),
+                dstEnt.hashCode),
+            cellPosition.hashCode),
+        beams.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('CurrentProfileCell')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('cellPosition', '$cellPosition (m)')
+          ..add('beams', '$beams'))
+        .toString();
+  }
+}
+
+/// Current Profile Cell builder class
+///
+class CurrentProfileCellBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<CurrentProfileCell, CurrentProfileCellBuilder> {
+  _$CurrentProfileCell? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  double _cellPosition = 0;
+  double get cellPosition => _$this._cellPosition;
+  set cellPosition(double cellPosition) => _$this._cellPosition = cellPosition;
+
+  List<ADCPBeam> _beams = <ADCPBeam>[];
+  List<ADCPBeam> get beams => _$this._beams;
+  set beams(List<ADCPBeam> beams) => _$this._beams = beams;
+
+  CurrentProfileCellBuilder();
+
+  CurrentProfileCellBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  CurrentProfileCellBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      CurrentProfileCellBuilder()..copyFromHeader(headerFrom);
+
+  CurrentProfileCellBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _cellPosition = _$v!.cellPosition;
+      _beams = _$v!.beams;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(CurrentProfileCell other) {
+    _$v = other as _$CurrentProfileCell;
+  }
+
+  @override
+  void update(void Function(CurrentProfileCellBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  CurrentProfileCell build() {
+    final result = _$v ??
+        _$CurrentProfileCell._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            cellPosition: cellPosition,
+            beams: beams);
+    replace(result);
+    return result;
+  }
+}
+
+/// ADCP Beam Measurements immutable class
+///
+class _$ADCPBeam extends ADCPBeam {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final double vel;
+  @override
+  final double amp;
+  @override
+  final int cor;
+
+  factory _$ADCPBeam([void Function(ADCPBeamBuilder b)? updates]) =>
+      (ADCPBeamBuilder()..update(updates)).build() as _$ADCPBeam;
+
+  _$ADCPBeam._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.vel,
+      required this.amp,
+      required this.cor})
+      : super._();
+
+  @override
+  ADCPBeam rebuild(void Function(ADCPBeamBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ADCPBeamBuilder toBuilder() => ADCPBeamBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ADCPBeam &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        (vel == other.vel || vel - other.vel <= 1E-7) &&
+        (amp == other.amp || amp - other.amp <= 1E-7) &&
+        cor == other.cor;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                                src.hashCode),
+                            srcEnt.hashCode),
+                        dst.hashCode),
+                    dstEnt.hashCode),
+                vel.hashCode),
+            amp.hashCode),
+        cor.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('ADCPBeam')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('vel', '$vel (m/s)')
+          ..add('amp', '$amp (dB)')
+          ..add('cor', '$cor (%)'))
+        .toString();
+  }
+}
+
+/// ADCP Beam Measurements builder class
+///
+class ADCPBeamBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<ADCPBeam, ADCPBeamBuilder> {
+  _$ADCPBeam? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  double _vel = 0;
+  double get vel => _$this._vel;
+  set vel(double vel) => _$this._vel = vel;
+
+  double _amp = 0;
+  double get amp => _$this._amp;
+  set amp(double amp) => _$this._amp = amp;
+
+  int _cor = 0;
+  int get cor => _$this._cor;
+  set cor(int cor) => _$this._cor = cor;
+
+  ADCPBeamBuilder();
+
+  ADCPBeamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  ADCPBeamBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      ADCPBeamBuilder()..copyFromHeader(headerFrom);
+
+  ADCPBeamBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _vel = _$v!.vel;
+      _amp = _$v!.amp;
+      _cor = _$v!.cor;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(ADCPBeam other) {
+    _$v = other as _$ADCPBeam;
+  }
+
+  @override
+  void update(void Function(ADCPBeamBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ADCPBeam build() {
+    final result = _$v ??
+        _$ADCPBeam._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            vel: vel,
+            amp: amp,
+            cor: cor);
+    replace(result);
+    return result;
+  }
+}
+
+/// GPIO State immutable class
+///
+class _$GpioState extends GpioState {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final String name;
+  @override
+  final int value;
+
+  factory _$GpioState([void Function(GpioStateBuilder b)? updates]) =>
+      (GpioStateBuilder()..update(updates)).build() as _$GpioState;
+
+  _$GpioState._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.name,
+      required this.value})
+      : super._();
+
+  @override
+  GpioState rebuild(void Function(GpioStateBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GpioStateBuilder toBuilder() => GpioStateBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GpioState &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        name == other.name &&
+        value == other.value;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src.hashCode),
+                        srcEnt.hashCode),
+                    dst.hashCode),
+                dstEnt.hashCode),
+            name.hashCode),
+        value.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GpioState')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('name', name)
+          ..add('value', '$value'))
+        .toString();
+  }
+}
+
+/// GPIO State builder class
+///
+class GpioStateBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GpioState, GpioStateBuilder> {
+  _$GpioState? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  String _name = '';
+  String get name => _$this._name;
+  set name(String name) => _$this._name = name;
+
+  int _value = 0;
+  int get value => _$this._value;
+  set value(int value) => _$this._value = value;
+
+  GpioStateBuilder();
+
+  GpioStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  GpioStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      GpioStateBuilder()..copyFromHeader(headerFrom);
+
+  GpioStateBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _name = _$v!.name;
+      _value = _$v!.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GpioState other) {
+    _$v = other as _$GpioState;
+  }
+
+  @override
+  void update(void Function(GpioStateBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GpioState build() {
+    final result = _$v ??
+        _$GpioState._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            name: name,
+            value: value);
+    replace(result);
+    return result;
+  }
+}
+
+/// Get GPIO State immutable class
+///
+class _$GpioStateGet extends GpioStateGet {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final String name;
+
+  factory _$GpioStateGet([void Function(GpioStateGetBuilder b)? updates]) =>
+      (GpioStateGetBuilder()..update(updates)).build() as _$GpioStateGet;
+
+  _$GpioStateGet._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.name})
+      : super._();
+
+  @override
+  GpioStateGet rebuild(void Function(GpioStateGetBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GpioStateGetBuilder toBuilder() => GpioStateGetBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GpioStateGet &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src.hashCode),
+                    srcEnt.hashCode),
+                dst.hashCode),
+            dstEnt.hashCode),
+        name.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GpioStateGet')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('name', name))
+        .toString();
+  }
+}
+
+/// Get GPIO State builder class
+///
+class GpioStateGetBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GpioStateGet, GpioStateGetBuilder> {
+  _$GpioStateGet? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  String _name = '';
+  String get name => _$this._name;
+  set name(String name) => _$this._name = name;
+
+  GpioStateGetBuilder();
+
+  GpioStateGetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  GpioStateGetBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      GpioStateGetBuilder()..copyFromHeader(headerFrom);
+
+  GpioStateGetBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _name = _$v!.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GpioStateGet other) {
+    _$v = other as _$GpioStateGet;
+  }
+
+  @override
+  void update(void Function(GpioStateGetBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GpioStateGet build() {
+    final result = _$v ??
+        _$GpioStateGet._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            name: name);
+    replace(result);
+    return result;
+  }
+}
+
+/// Set GPIO State immutable class
+///
+class _$GpioStateSet extends GpioStateSet {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final String name;
+  @override
+  final int value;
+
+  factory _$GpioStateSet([void Function(GpioStateSetBuilder b)? updates]) =>
+      (GpioStateSetBuilder()..update(updates)).build() as _$GpioStateSet;
+
+  _$GpioStateSet._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.name,
+      required this.value})
+      : super._();
+
+  @override
+  GpioStateSet rebuild(void Function(GpioStateSetBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GpioStateSetBuilder toBuilder() => GpioStateSetBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GpioStateSet &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        name == other.name &&
+        value == other.value;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src.hashCode),
+                        srcEnt.hashCode),
+                    dst.hashCode),
+                dstEnt.hashCode),
+            name.hashCode),
+        value.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('GpioStateSet')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('name', name)
+          ..add('value', '$value'))
+        .toString();
+  }
+}
+
+/// Set GPIO State builder class
+///
+class GpioStateSetBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements BuilderWithInstanciator<GpioStateSet, GpioStateSetBuilder> {
+  _$GpioStateSet? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  String _name = '';
+  String get name => _$this._name;
+  set name(String name) => _$this._name = name;
+
+  int _value = 0;
+  int get value => _$this._value;
+  set value(int value) => _$this._value = value;
+
+  GpioStateSetBuilder();
+
+  GpioStateSetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  GpioStateSetBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      GpioStateSetBuilder()..copyFromHeader(headerFrom);
+
+  GpioStateSetBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _name = _$v!.name;
+      _value = _$v!.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GpioStateSet other) {
+    _$v = other as _$GpioStateSet;
+  }
+
+  @override
+  void update(void Function(GpioStateSetBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GpioStateSet build() {
+    final result = _$v ??
+        _$GpioStateSet._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            name: name,
+            value: value);
+    replace(result);
+    return result;
+  }
+}
+
+/// Colored Dissolved Organic Matter immutable class
+///
+class _$ColoredDissolvedOrganicMatter extends ColoredDissolvedOrganicMatter {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final double value;
+
+  factory _$ColoredDissolvedOrganicMatter(
+          [void Function(ColoredDissolvedOrganicMatterBuilder b)? updates]) =>
+      (ColoredDissolvedOrganicMatterBuilder()..update(updates)).build()
+          as _$ColoredDissolvedOrganicMatter;
+
+  _$ColoredDissolvedOrganicMatter._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.value})
+      : super._();
+
+  @override
+  ColoredDissolvedOrganicMatter rebuild(
+          void Function(ColoredDissolvedOrganicMatterBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ColoredDissolvedOrganicMatterBuilder toBuilder() =>
+      ColoredDissolvedOrganicMatterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ColoredDissolvedOrganicMatter &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        (value == other.value || value - other.value <= 1E-7);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src.hashCode),
+                    srcEnt.hashCode),
+                dst.hashCode),
+            dstEnt.hashCode),
+        value.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('ColoredDissolvedOrganicMatter')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('value', '$value (PPB)'))
+        .toString();
+  }
+}
+
+/// Colored Dissolved Organic Matter builder class
+///
+class ColoredDissolvedOrganicMatterBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<ColoredDissolvedOrganicMatter,
+            ColoredDissolvedOrganicMatterBuilder> {
+  _$ColoredDissolvedOrganicMatter? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  double _value = 0;
+  double get value => _$this._value;
+  set value(double value) => _$this._value = value;
+
+  ColoredDissolvedOrganicMatterBuilder();
+
+  ColoredDissolvedOrganicMatterBuilder.fromHeader(
+      ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  ColoredDissolvedOrganicMatterBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
+      ColoredDissolvedOrganicMatterBuilder()..copyFromHeader(headerFrom);
+
+  ColoredDissolvedOrganicMatterBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _value = _$v!.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(ColoredDissolvedOrganicMatter other) {
+    _$v = other as _$ColoredDissolvedOrganicMatter;
+  }
+
+  @override
+  void update(void Function(ColoredDissolvedOrganicMatterBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ColoredDissolvedOrganicMatter build() {
+    final result = _$v ??
+        _$ColoredDissolvedOrganicMatter._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            value: value);
+    replace(result);
+    return result;
+  }
+}
+
+/// Fluorescent Dissolved Organic Matter immutable class
+///
+class _$FluorescentDissolvedOrganicMatter
+    extends FluorescentDissolvedOrganicMatter {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final double value;
+
+  factory _$FluorescentDissolvedOrganicMatter(
+          [void Function(FluorescentDissolvedOrganicMatterBuilder b)?
+              updates]) =>
+      (FluorescentDissolvedOrganicMatterBuilder()..update(updates)).build()
+          as _$FluorescentDissolvedOrganicMatter;
+
+  _$FluorescentDissolvedOrganicMatter._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.value})
+      : super._();
+
+  @override
+  FluorescentDissolvedOrganicMatter rebuild(
+          void Function(FluorescentDissolvedOrganicMatterBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  FluorescentDissolvedOrganicMatterBuilder toBuilder() =>
+      FluorescentDissolvedOrganicMatterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is FluorescentDissolvedOrganicMatter &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        (value == other.value || value - other.value <= 1E-7);
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                        src.hashCode),
+                    srcEnt.hashCode),
+                dst.hashCode),
+            dstEnt.hashCode),
+        value.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('FluorescentDissolvedOrganicMatter')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('value', '$value (PPB)'))
+        .toString();
+  }
+}
+
+/// Fluorescent Dissolved Organic Matter builder class
+///
+class FluorescentDissolvedOrganicMatterBuilder extends Object
+    with
+        ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<FluorescentDissolvedOrganicMatter,
+            FluorescentDissolvedOrganicMatterBuilder> {
+  _$FluorescentDissolvedOrganicMatter? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  double _value = 0;
+  double get value => _$this._value;
+  set value(double value) => _$this._value = value;
+
+  FluorescentDissolvedOrganicMatterBuilder();
+
+  FluorescentDissolvedOrganicMatterBuilder.fromHeader(
+      ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  FluorescentDissolvedOrganicMatterBuilder newInstance(
+          [ImcBuilderHeaderPart? headerFrom]) =>
+      FluorescentDissolvedOrganicMatterBuilder()..copyFromHeader(headerFrom);
+
+  FluorescentDissolvedOrganicMatterBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _value = _$v!.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(FluorescentDissolvedOrganicMatter other) {
+    _$v = other as _$FluorescentDissolvedOrganicMatter;
+  }
+
+  @override
+  void update(
+      void Function(FluorescentDissolvedOrganicMatterBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  FluorescentDissolvedOrganicMatter build() {
+    final result = _$v ??
+        _$FluorescentDissolvedOrganicMatter._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            value: value);
+    replace(result);
+    return result;
+  }
+}
+
 /// Total Magnetic Field Intensity immutable class
 ///
 class _$TotalMagIntensity extends TotalMagIntensity {
@@ -67373,6 +69107,188 @@ class TotalMagIntensityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
+    replace(result);
+    return result;
+  }
+}
+
+/// Communication Restriction immutable class
+///
+class _$CommRestriction extends CommRestriction {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final CommRestrictionBitfieldRestriction restriction;
+  @override
+  final String reason;
+
+  factory _$CommRestriction(
+          [void Function(CommRestrictionBuilder b)? updates]) =>
+      (CommRestrictionBuilder()..update(updates)).build() as _$CommRestriction;
+
+  _$CommRestriction._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.restriction,
+      required this.reason})
+      : super._();
+
+  @override
+  CommRestriction rebuild(void Function(CommRestrictionBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  CommRestrictionBuilder toBuilder() => CommRestrictionBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is CommRestriction &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        restriction == other.restriction &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src.hashCode),
+                        srcEnt.hashCode),
+                    dst.hashCode),
+                dstEnt.hashCode),
+            restriction.hashCode),
+        reason.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('CommRestriction')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('restriction',
+              '$restriction (Bitfield) [${restriction.toPrettyString()}]')
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+/// Communication Restriction builder class
+///
+class CommRestrictionBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<CommRestriction, CommRestrictionBuilder> {
+  _$CommRestriction? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  CommRestrictionBitfieldRestriction _restriction =
+      CommRestrictionBitfieldRestriction(0);
+  CommRestrictionBitfieldRestriction get restriction => _$this._restriction;
+  set restriction(CommRestrictionBitfieldRestriction restriction) =>
+      _$this._restriction = restriction;
+
+  String _reason = '';
+  String get reason => _$this._reason;
+  set reason(String reason) => _$this._reason = reason;
+
+  CommRestrictionBuilder();
+
+  CommRestrictionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  @override
+  CommRestrictionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      CommRestrictionBuilder()..copyFromHeader(headerFrom);
+
+  CommRestrictionBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _restriction = _$v!.restriction;
+      _reason = _$v!.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(CommRestriction other) {
+    _$v = other as _$CommRestriction;
+  }
+
+  @override
+  void update(void Function(CommRestrictionBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  CommRestriction build() {
+    final result = _$v ??
+        _$CommRestriction._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            restriction: restriction,
+            reason: reason);
     replace(result);
     return result;
   }

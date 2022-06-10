@@ -253,6 +253,7 @@ const messagesToIds = {
   'ArmingState': 520,
   'TCPRequest': 521,
   'TCPStatus': 522,
+  'AssetReport': 525,
   'Abort': 550,
   'PlanSpecification': 551,
   'PlanManeuver': 552,
@@ -335,7 +336,16 @@ const messagesToIds = {
   'SadcReadings': 907,
   'DmsDetection': 908,
   'HomePosition': 909,
+  'CurrentProfile': 1014,
+  'CurrentProfileCell': 1015,
+  'ADCPBeam': 1016,
+  'GpioState': 2000,
+  'GpioStateGet': 2001,
+  'GpioStateSet': 2002,
+  'ColoredDissolvedOrganicMatter': 2003,
+  'FluorescentDissolvedOrganicMatter': 2004,
   'TotalMagIntensity': 2006,
+  'CommRestriction': 2010,
 };
 
 /// Lookup table from IDs to message names
@@ -575,6 +585,7 @@ const idsToMessages = {
   520: 'ArmingState',
   521: 'TCPRequest',
   522: 'TCPStatus',
+  525: 'AssetReport',
   550: 'Abort',
   551: 'PlanSpecification',
   552: 'PlanManeuver',
@@ -657,7 +668,16 @@ const idsToMessages = {
   907: 'SadcReadings',
   908: 'DmsDetection',
   909: 'HomePosition',
+  1014: 'CurrentProfile',
+  1015: 'CurrentProfileCell',
+  1016: 'ADCPBeam',
+  2000: 'GpioState',
+  2001: 'GpioStateGet',
+  2002: 'GpioStateSet',
+  2003: 'ColoredDissolvedOrganicMatter',
+  2004: 'FluorescentDissolvedOrganicMatter',
   2006: 'TotalMagIntensity',
+  2010: 'CommRestriction',
 };
 
 /// Lookup 2D table from groups to message names
@@ -954,6 +974,7 @@ final messagesBuilders = <String, BuilderWithInstanciatorBuilder>{
   'ArmingState': () => ArmingStateBuilder(),
   'TCPRequest': () => TCPRequestBuilder(),
   'TCPStatus': () => TCPStatusBuilder(),
+  'AssetReport': () => AssetReportBuilder(),
   'Abort': () => AbortBuilder(),
   'PlanSpecification': () => PlanSpecificationBuilder(),
   'PlanManeuver': () => PlanManeuverBuilder(),
@@ -1036,5 +1057,15 @@ final messagesBuilders = <String, BuilderWithInstanciatorBuilder>{
   'SadcReadings': () => SadcReadingsBuilder(),
   'DmsDetection': () => DmsDetectionBuilder(),
   'HomePosition': () => HomePositionBuilder(),
+  'CurrentProfile': () => CurrentProfileBuilder(),
+  'CurrentProfileCell': () => CurrentProfileCellBuilder(),
+  'ADCPBeam': () => ADCPBeamBuilder(),
+  'GpioState': () => GpioStateBuilder(),
+  'GpioStateGet': () => GpioStateGetBuilder(),
+  'GpioStateSet': () => GpioStateSetBuilder(),
+  'ColoredDissolvedOrganicMatter': () => ColoredDissolvedOrganicMatterBuilder(),
+  'FluorescentDissolvedOrganicMatter': () =>
+      FluorescentDissolvedOrganicMatterBuilder(),
   'TotalMagIntensity': () => TotalMagIntensityBuilder(),
+  'CommRestriction': () => CommRestrictionBuilder(),
 };

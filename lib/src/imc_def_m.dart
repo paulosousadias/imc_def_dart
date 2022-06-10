@@ -9,10 +9,10 @@ part of 'imc_def_gen.dart';
 const String version = '5.4.30';
 const int syncNumber = 0xFE54;
 const int syncNumberReversed = 0x54FE;
-const String gitHashString = 'lsts@8be592a';
-const String md5Sum = '0f425402b735f36a64d579da7bb4baf3';
+const String gitHashString = 'lsts@6038ec6';
+const String md5Sum = '7c85ff5d263ff393410ff4a137fc3940';
 const String sha256Sum =
-    'd77e846c602032c142316cee06e74c0020e95932c49488572d268ef2988a4020';
+    '71d5786010dc6d34d808c2b21e40538cd73af9479e6d3906473e03014819f37e';
 
 /// WARNING!!! This is for advance usage only. If set not null, CHANGES the used sync number
 int? fakeSyncNumber;
@@ -8535,6 +8535,54 @@ abstract class TCPStatus extends ImcMessage
   String get info;
 }
 
+/// Asset Report  class
+///
+/// This message is represents an Asset position / status.
+abstract class AssetReport extends ImcMessage
+    implements Built<AssetReport, AssetReportBuilder> {
+  static const staticId = 525;
+  AssetReport._();
+  factory AssetReport([void Function(AssetReportBuilder b)? updates]) =
+      _$AssetReport;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'AssetReport';
+
+  /// The human readable name of the asset.
+  @ImcField('Asset Name', 'name', ImcType.typePlaintext)
+  String get name;
+
+  /// Time in seconds since epoch, for the generation instant.
+  @ImcField('Report Timestamp', 'report_time', ImcType.typeFp64, units: 's')
+  double get reportTime;
+
+  @ImcField('Medium', 'medium', ImcType.typeUInt8)
+  AssetReportEnumMedium get medium;
+
+  @ImcField('Latitude', 'lat', ImcType.typeFp64, units: 'rad')
+  double get lat;
+
+  @ImcField('Longitude', 'lon', ImcType.typeFp64, units: 'rad')
+  double get lon;
+
+  @ImcField('Depth', 'depth', ImcType.typeFp32, units: 'm')
+  double get depth;
+
+  @ImcField('Altitude', 'alt', ImcType.typeFp32, units: 'm')
+  double get alt;
+
+  @ImcField('Speed Over Ground', 'sog', ImcType.typeFp32, units: 'm/s')
+  double get sog;
+
+  @ImcField('Course Over Ground', 'cog', ImcType.typeFp32, units: 'rad')
+  double get cog;
+
+  @ImcField('Additional Info', 'msgs', ImcType.typeMessageList)
+  List<ImcMessage> get msgs;
+}
+
 /// Abort class
 ///
 /// Stops any executing actions and put the system in a standby mode.
@@ -11290,6 +11338,208 @@ abstract class HomePosition extends ImcMessage
   double get alt;
 }
 
+/// Current Profile class
+///
+/// Contains a profile of water velocities measured relative to the vehicle
+/// velocity, represented in the specified coordinate system.
+abstract class CurrentProfile extends ImcMessage
+    implements Built<CurrentProfile, CurrentProfileBuilder> {
+  static const staticId = 1014;
+  CurrentProfile._();
+  factory CurrentProfile([void Function(CurrentProfileBuilder b)? updates]) =
+      _$CurrentProfile;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'CurrentProfile';
+
+  /// Number of ADCP beams.
+  @ImcField('Number of Beams', 'nbeams', ImcType.typeUInt8)
+  int get nbeams;
+
+  /// Number of ADCP cells.
+  @ImcField('Number of Cells', 'ncells', ImcType.typeUInt8)
+  int get ncells;
+
+  /// Coordinate system of the velocity measurement.
+  @ImcField('Coordinate System', 'coord_sys', ImcType.typeUInt8)
+  CurrentProfileBitfieldCoordSys get coordSys;
+
+  /// List of current profile measurement cells.
+  @ImcField('Profile', 'profile', ImcType.typeMessageList)
+  List<CurrentProfileCell> get profile;
+}
+
+/// Current Profile Cell class
+///
+/// One Current measurement at a specific CellPosition.
+abstract class CurrentProfileCell extends ImcMessage
+    implements Built<CurrentProfileCell, CurrentProfileCellBuilder> {
+  static const staticId = 1015;
+  CurrentProfileCell._();
+  factory CurrentProfileCell(
+          [void Function(CurrentProfileCellBuilder b)? updates]) =
+      _$CurrentProfileCell;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'CurrentProfileCell';
+
+  /// Distance of each measurment cell along the Z-axis in the coordintate frame.
+  @ImcField('Cell Position', 'cell_position', ImcType.typeFp32, units: 'm')
+  double get cellPosition;
+
+  /// List of beams measurements at the current cell level.
+  @ImcField('Beams Measurements', 'beams', ImcType.typeMessageList)
+  List<ADCPBeam> get beams;
+}
+
+/// ADCP Beam Measurements class
+///
+/// Measurement from one specific beam at the given CellPosition.
+/// Water Velocity is provided in the chosen Coordinate system.
+/// Amplitude and Correlation are always in the BEAM coordinate system.
+abstract class ADCPBeam extends ImcMessage
+    implements Built<ADCPBeam, ADCPBeamBuilder> {
+  static const staticId = 1016;
+  ADCPBeam._();
+  factory ADCPBeam([void Function(ADCPBeamBuilder b)? updates]) = _$ADCPBeam;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'ADCPBeam';
+
+  /// Water velocity measured in the chosen coordinate system.
+  @ImcField('Water Velocity', 'vel', ImcType.typeFp32, units: 'm/s')
+  double get vel;
+
+  /// Amplitude of returning ping for the beam.
+  @ImcField('Amplitude', 'amp', ImcType.typeFp32, units: 'dB')
+  double get amp;
+
+  /// Autocorrelation of returning ping for the beam.
+  @ImcField('Correlation', 'cor', ImcType.typeUInt8, units: '%')
+  int get cor;
+}
+
+/// GPIO State class
+///
+/// Current state of a GPIO.
+abstract class GpioState extends ImcMessage
+    implements Built<GpioState, GpioStateBuilder> {
+  static const staticId = 2000;
+  GpioState._();
+  factory GpioState([void Function(GpioStateBuilder b)? updates]) = _$GpioState;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'GpioState';
+
+  /// GPIO Name.
+  @ImcField('Name', 'name', ImcType.typePlaintext)
+  String get name;
+
+  /// Logical level of the GPIO.
+  @ImcField('Value', 'value', ImcType.typeUInt8)
+  int get value;
+}
+
+/// Get GPIO State class
+///
+/// Request the state of a given GPIO. The receiving entity shall reply
+/// with a GpioState message.
+abstract class GpioStateGet extends ImcMessage
+    implements Built<GpioStateGet, GpioStateGetBuilder> {
+  static const staticId = 2001;
+  GpioStateGet._();
+  factory GpioStateGet([void Function(GpioStateGetBuilder b)? updates]) =
+      _$GpioStateGet;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'GpioStateGet';
+
+  /// GPIO Name.
+  @ImcField('Name', 'name', ImcType.typePlaintext)
+  String get name;
+}
+
+/// Set GPIO State class
+///
+/// Set the state of a given GPIO. The receiving entity shall reply
+/// with a GpioState message.
+abstract class GpioStateSet extends ImcMessage
+    implements Built<GpioStateSet, GpioStateSetBuilder> {
+  static const staticId = 2002;
+  GpioStateSet._();
+  factory GpioStateSet([void Function(GpioStateSetBuilder b)? updates]) =
+      _$GpioStateSet;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'GpioStateSet';
+
+  /// GPIO Name.
+  @ImcField('Name', 'name', ImcType.typePlaintext)
+  String get name;
+
+  /// Logical level of the GPIO.
+  @ImcField('Value', 'value', ImcType.typeUInt8)
+  int get value;
+}
+
+/// Colored Dissolved Organic Matter class
+///
+/// Colored Dissolved Organic Matter measurement.
+abstract class ColoredDissolvedOrganicMatter extends ImcMessage
+    implements
+        Built<ColoredDissolvedOrganicMatter,
+            ColoredDissolvedOrganicMatterBuilder> {
+  static const staticId = 2003;
+  ColoredDissolvedOrganicMatter._();
+  factory ColoredDissolvedOrganicMatter(
+          [void Function(ColoredDissolvedOrganicMatterBuilder b)? updates]) =
+      _$ColoredDissolvedOrganicMatter;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'ColoredDissolvedOrganicMatter';
+
+  /// Colored Dissolved Organic Matter reading.
+  @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
+  double get value;
+}
+
+/// Fluorescent Dissolved Organic Matter class
+///
+/// Fluorescent Dissolved Organic Matter measurement.
+abstract class FluorescentDissolvedOrganicMatter extends ImcMessage
+    implements
+        Built<FluorescentDissolvedOrganicMatter,
+            FluorescentDissolvedOrganicMatterBuilder> {
+  static const staticId = 2004;
+  FluorescentDissolvedOrganicMatter._();
+  factory FluorescentDissolvedOrganicMatter(
+      [void Function(FluorescentDissolvedOrganicMatterBuilder b)?
+          updates]) = _$FluorescentDissolvedOrganicMatter;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'FluorescentDissolvedOrganicMatter';
+
+  /// Fluorescent Dissolved Organic Matter reading.
+  @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
+  double get value;
+}
+
 /// Total Magnetic Field Intensity class
 ///
 abstract class TotalMagIntensity extends ImcMessage
@@ -11308,4 +11558,28 @@ abstract class TotalMagIntensity extends ImcMessage
   /// Total Magnetic Field Intensity (TMI)
   @ImcField('Value', 'value', ImcType.typeFp64)
   double get value;
+}
+
+/// Communication Restriction class
+///
+/// This message is used to restrict the vehicle from using some communication means.
+abstract class CommRestriction extends ImcMessage
+    implements Built<CommRestriction, CommRestrictionBuilder> {
+  static const staticId = 2010;
+  CommRestriction._();
+  factory CommRestriction([void Function(CommRestrictionBuilder b)? updates]) =
+      _$CommRestriction;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'CommRestriction';
+
+  /// The restricted communication means.
+  @ImcField('Restricted Communication Means', 'restriction', ImcType.typeUInt8)
+  CommRestrictionBitfieldRestriction get restriction;
+
+  /// Textual description for why this restriction is needed.
+  @ImcField('Reason', 'reason', ImcType.typePlaintext)
+  String get reason;
 }

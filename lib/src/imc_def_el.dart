@@ -4843,6 +4843,37 @@ class TCPStatusEnumStatus extends EnumType {
   }
 }
 
+class AssetReportEnumMedium extends EnumType {
+  static const rmWifi = AssetReportEnumMedium(1);
+  static const rmSatellite = AssetReportEnumMedium(2);
+  static const rmAcoustic = AssetReportEnumMedium(3);
+  static const rmSms = AssetReportEnumMedium(4);
+
+  static List<AssetReportEnumMedium> get values => <AssetReportEnumMedium>[
+        rmWifi,
+        rmSatellite,
+        rmAcoustic,
+        rmSms,
+      ];
+
+  static core.Map<AssetReportEnumMedium, String> get names =>
+      <AssetReportEnumMedium, String>{
+        rmWifi: '''WiFi''',
+        rmSatellite: '''Satellite''',
+        rmAcoustic: '''Acoustic''',
+        rmSms: '''SMS''',
+      };
+
+  const AssetReportEnumMedium(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
 class EmergencyControlEnumCommand extends EnumType {
   static const ectlEnable = EmergencyControlEnumCommand(0);
   static const ectlDisable = EmergencyControlEnumCommand(1);
@@ -6352,4 +6383,113 @@ class HomePositionEnumOp extends EnumType {
     if (ret != null) return ret;
     return super.toPrettyString();
   }
+}
+
+/// Coordinate system of the velocity measurement.
+class CurrentProfileBitfieldCoordSys extends BitfieldType {
+  static const utfXyz = CurrentProfileBitfieldCoordSys(0x01);
+  static const utfNed = CurrentProfileBitfieldCoordSys(0x02);
+  static const utfBeams = CurrentProfileBitfieldCoordSys(0x04);
+
+  static List<CurrentProfileBitfieldCoordSys> get values =>
+      <CurrentProfileBitfieldCoordSys>[
+        utfXyz,
+        utfNed,
+        utfBeams,
+      ];
+
+  static core.Map<CurrentProfileBitfieldCoordSys, String> get names =>
+      <CurrentProfileBitfieldCoordSys, String>{
+        utfXyz: '''xyz''',
+        utfNed: '''ned''',
+        utfBeams: '''beams''',
+      };
+
+  const CurrentProfileBitfieldCoordSys(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    String? ret;
+    if (value == 0) return '';
+
+    var valNot = value;
+    for (var item in values) {
+      if (hasBits(<CurrentProfileBitfieldCoordSys>[item])) {
+        ret ??= '';
+        ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
+        valNot &= ~item.value;
+      }
+    }
+    if (valNot != 0) {
+      ret ??= '';
+      ret += '${ret.isNotEmpty ? '|' : ''}?';
+    }
+    return ret ?? super.toPrettyString();
+  }
+
+  static CurrentProfileBitfieldCoordSys empty() =>
+      CurrentProfileBitfieldCoordSys(0);
+
+  static CurrentProfileBitfieldCoordSys fromBits(
+          List<CurrentProfileBitfieldCoordSys> bits) =>
+      (bits.length < 2)
+          ? CurrentProfileBitfieldCoordSys(bits.isEmpty ? 0 : bits[0].value)
+          : bits.reduce(
+              (b1, b2) => CurrentProfileBitfieldCoordSys(b1.value | b2.value));
+}
+
+/// The restricted communication means.
+class CommRestrictionBitfieldRestriction extends BitfieldType {
+  static const meanSatellite = CommRestrictionBitfieldRestriction(0x01);
+  static const meanAcoustic = CommRestrictionBitfieldRestriction(0x02);
+  static const meanWifi = CommRestrictionBitfieldRestriction(0x04);
+  static const meanGsm = CommRestrictionBitfieldRestriction(0x08);
+
+  static List<CommRestrictionBitfieldRestriction> get values =>
+      <CommRestrictionBitfieldRestriction>[
+        meanSatellite,
+        meanAcoustic,
+        meanWifi,
+        meanGsm,
+      ];
+
+  static core.Map<CommRestrictionBitfieldRestriction, String> get names =>
+      <CommRestrictionBitfieldRestriction, String>{
+        meanSatellite: '''Satellite''',
+        meanAcoustic: '''Acoustic''',
+        meanWifi: '''WiFi''',
+        meanGsm: '''GSM''',
+      };
+
+  const CommRestrictionBitfieldRestriction(int value) : super(value);
+
+  @override
+  String toPrettyString() {
+    String? ret;
+    if (value == 0) return '';
+
+    var valNot = value;
+    for (var item in values) {
+      if (hasBits(<CommRestrictionBitfieldRestriction>[item])) {
+        ret ??= '';
+        ret += '${ret.isNotEmpty ? '|' : ''}${names[item]}';
+        valNot &= ~item.value;
+      }
+    }
+    if (valNot != 0) {
+      ret ??= '';
+      ret += '${ret.isNotEmpty ? '|' : ''}?';
+    }
+    return ret ?? super.toPrettyString();
+  }
+
+  static CommRestrictionBitfieldRestriction empty() =>
+      CommRestrictionBitfieldRestriction(0);
+
+  static CommRestrictionBitfieldRestriction fromBits(
+          List<CommRestrictionBitfieldRestriction> bits) =>
+      (bits.length < 2)
+          ? CommRestrictionBitfieldRestriction(bits.isEmpty ? 0 : bits[0].value)
+          : bits.reduce((b1, b2) =>
+              CommRestrictionBitfieldRestriction(b1.value | b2.value));
 }
