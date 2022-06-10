@@ -581,7 +581,7 @@ void _writeMessageBuilder(
 
   @override
   _\$$abbrev build() {
-    final _\$result = _\$v ??
+    final result = _\$v ??
         _\$$abbrev._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -605,8 +605,8 @@ void _writeMessageBuilder(
   });
 
   var msgStringImmutableBuilder3 = ''');
-    replace(_\$result);
-    return _\$result;
+    replace(result);
+    return result;
   }
 ''';
   sink.write(msgStringImmutableBuilder3);

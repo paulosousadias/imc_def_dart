@@ -181,7 +181,7 @@ class EntityStateBuilder extends Object
 
   @override
   _$EntityState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -191,8 +191,8 @@ class EntityStateBuilder extends Object
             state: state,
             flags: flags,
             description: description);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -335,15 +335,15 @@ class QueryEntityStateBuilder extends Object
 
   @override
   _$QueryEntityState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$QueryEntityState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -550,7 +550,7 @@ class EntityInfoBuilder extends Object
 
   @override
   _$EntityInfo build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -562,8 +562,8 @@ class EntityInfoBuilder extends Object
             component: component,
             actTime: actTime,
             deactTime: deactTime);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -720,7 +720,7 @@ class QueryEntityInfoBuilder extends Object
 
   @override
   _$QueryEntityInfo build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$QueryEntityInfo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -728,8 +728,8 @@ class QueryEntityInfoBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             id: id);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -896,7 +896,7 @@ class EntityListBuilder extends Object
 
   @override
   _$EntityList build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityList._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -905,8 +905,8 @@ class EntityListBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             list: list);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -1061,7 +1061,7 @@ class CpuUsageBuilder extends Object
 
   @override
   _$CpuUsage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CpuUsage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -1069,8 +1069,8 @@ class CpuUsageBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -1241,7 +1241,7 @@ class TransportBindingsBuilder extends Object
 
   @override
   _$TransportBindings build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TransportBindings._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -1250,8 +1250,8 @@ class TransportBindingsBuilder extends Object
             dstEnt: dstEnt,
             consumer: consumer,
             messageId: messageId);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -1406,7 +1406,7 @@ class RestartSystemBuilder extends Object
 
   @override
   _$RestartSystem build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RestartSystem._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -1414,8 +1414,8 @@ class RestartSystemBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             type: type);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -1577,7 +1577,7 @@ class DevCalibrationControlBuilder extends Object
 
   @override
   _$DevCalibrationControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DevCalibrationControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -1585,8 +1585,8 @@ class DevCalibrationControlBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             op: op);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -1785,7 +1785,7 @@ class DevCalibrationStateBuilder extends Object
 
   @override
   _$DevCalibrationState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DevCalibrationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -1796,8 +1796,8 @@ class DevCalibrationStateBuilder extends Object
             stepNumber: stepNumber,
             step: step,
             flags: flags);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -1971,7 +1971,7 @@ class EntityActivationStateBuilder extends Object
 
   @override
   _$EntityActivationState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -1980,8 +1980,8 @@ class EntityActivationStateBuilder extends Object
             dstEnt: dstEnt,
             state: state,
             error: error);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -2129,15 +2129,15 @@ class QueryEntityActivationStateBuilder extends Object
 
   @override
   _$QueryEntityActivationState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$QueryEntityActivationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -2505,7 +2505,7 @@ class VehicleOperationalLimitsBuilder extends Object
 
   @override
   _$VehicleOperationalLimits build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -2530,8 +2530,8 @@ class VehicleOperationalLimitsBuilder extends Object
             rpmMin: rpmMin,
             rpmMax: rpmMax,
             rpmRateMax: rpmRateMax);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -2686,7 +2686,7 @@ class MsgListBuilder extends Object
 
   @override
   _$MsgList build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$MsgList._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -2694,8 +2694,8 @@ class MsgListBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             msgs: msgs);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -3048,7 +3048,7 @@ class SimulatedStateBuilder extends Object
 
   @override
   _$SimulatedState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SimulatedState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -3073,8 +3073,8 @@ class SimulatedStateBuilder extends Object
             svx: svx,
             svy: svy,
             svz: svz);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -3241,7 +3241,7 @@ class LeakSimulationBuilder extends Object
 
   @override
   _$LeakSimulation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LeakSimulation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -3250,8 +3250,8 @@ class LeakSimulationBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             entities: entities);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -3430,7 +3430,7 @@ class UASimulationBuilder extends Object
 
   @override
   _$UASimulation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UASimulation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -3440,8 +3440,8 @@ class UASimulationBuilder extends Object
             type: type,
             speed: speed,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -3625,7 +3625,7 @@ class DynamicsSimParamBuilder extends Object
 
   @override
   _$DynamicsSimParam build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DynamicsSimParam._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -3635,8 +3635,8 @@ class DynamicsSimParamBuilder extends Object
             op: op,
             tas2accPgain: tas2accPgain,
             bank2pPgain: bank2pPgain);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -3803,7 +3803,7 @@ class StorageUsageBuilder extends Object
 
   @override
   _$StorageUsage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$StorageUsage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -3812,8 +3812,8 @@ class StorageUsageBuilder extends Object
             dstEnt: dstEnt,
             available: available,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -3992,7 +3992,7 @@ class CacheControlBuilder extends Object
 
   @override
   _$CacheControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CacheControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -4002,8 +4002,8 @@ class CacheControlBuilder extends Object
             op: op,
             snapshot: snapshot,
             message: message);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -4170,7 +4170,7 @@ class LoggingControlBuilder extends Object
 
   @override
   _$LoggingControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LoggingControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -4179,8 +4179,8 @@ class LoggingControlBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             name: name);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -4373,7 +4373,7 @@ class LogBookEntryBuilder extends Object
 
   @override
   _$LogBookEntry build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LogBookEntry._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -4384,8 +4384,8 @@ class LogBookEntryBuilder extends Object
             htime: htime,
             context: context,
             text: text);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -4565,7 +4565,7 @@ class LogBookControlBuilder extends Object
 
   @override
   _$LogBookControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LogBookControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -4575,8 +4575,8 @@ class LogBookControlBuilder extends Object
             command: command,
             htime: htime,
             msg: msg);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -4743,7 +4743,7 @@ class ReplayControlBuilder extends Object
 
   @override
   _$ReplayControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ReplayControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -4752,8 +4752,8 @@ class ReplayControlBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             file: file);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -4932,7 +4932,7 @@ class ClockControlBuilder extends Object
 
   @override
   _$ClockControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ClockControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -4942,8 +4942,8 @@ class ClockControlBuilder extends Object
             op: op,
             clock: clock,
             tz: tz);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -5124,7 +5124,7 @@ class HistoricCTDBuilder extends Object
 
   @override
   _$HistoricCTD build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricCTD._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -5134,8 +5134,8 @@ class HistoricCTDBuilder extends Object
             conductivity: conductivity,
             temperature: temperature,
             depth: depth);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -5346,7 +5346,7 @@ class HistoricTelemetryBuilder extends Object
 
   @override
   _$HistoricTelemetry build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricTelemetry._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -5358,8 +5358,8 @@ class HistoricTelemetryBuilder extends Object
             pitch: pitch,
             yaw: yaw,
             speed: speed);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -5596,7 +5596,7 @@ class HistoricSonarDataBuilder extends Object
 
   @override
   _$HistoricSonarData build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricSonarData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -5610,8 +5610,8 @@ class HistoricSonarDataBuilder extends Object
             pxl: pxl,
             encoding: encoding,
             sonarData: sonarData);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -5778,7 +5778,7 @@ class HistoricEventBuilder extends Object
 
   @override
   _$HistoricEvent build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -5787,8 +5787,8 @@ class HistoricEventBuilder extends Object
             dstEnt: dstEnt,
             text: text,
             type: type);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -5999,7 +5999,7 @@ class VerticalProfileBuilder extends Object
 
   @override
   _$VerticalProfile build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VerticalProfile._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -6011,8 +6011,8 @@ class VerticalProfileBuilder extends Object
             samples: samples,
             lat: lat,
             lon: lon);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -6179,7 +6179,7 @@ class ProfileSampleBuilder extends Object
 
   @override
   _$ProfileSample build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ProfileSample._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -6188,8 +6188,8 @@ class ProfileSampleBuilder extends Object
             dstEnt: dstEnt,
             depth: depth,
             avg: avg);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -6329,15 +6329,15 @@ class HeartbeatBuilder extends Object
 
   @override
   _$Heartbeat build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Heartbeat._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -6569,7 +6569,7 @@ class AnnounceBuilder extends Object
 
   @override
   _$Announce build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Announce._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -6583,8 +6583,8 @@ class AnnounceBuilder extends Object
             lon: lon,
             height: height,
             services: services);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -6756,7 +6756,7 @@ class AnnounceServiceBuilder extends Object
 
   @override
   _$AnnounceService build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AnnounceService._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -6765,8 +6765,8 @@ class AnnounceServiceBuilder extends Object
             dstEnt: dstEnt,
             service: service,
             serviceType: serviceType);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -6921,7 +6921,7 @@ class RSSIBuilder extends Object
 
   @override
   _$RSSI build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RSSI._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -6929,8 +6929,8 @@ class RSSIBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -7085,7 +7085,7 @@ class VSWRBuilder extends Object
 
   @override
   _$VSWR build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VSWR._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -7093,8 +7093,8 @@ class VSWRBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -7249,7 +7249,7 @@ class LinkLevelBuilder extends Object
 
   @override
   _$LinkLevel build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LinkLevel._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -7257,8 +7257,8 @@ class LinkLevelBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -7437,7 +7437,7 @@ class SmsBuilder extends Object
 
   @override
   _$Sms build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Sms._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -7447,8 +7447,8 @@ class SmsBuilder extends Object
             number: number,
             timeout: timeout,
             contents: contents);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -7641,7 +7641,7 @@ class SmsTxBuilder extends Object
 
   @override
   _$SmsTx build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SmsTx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -7652,8 +7652,8 @@ class SmsTxBuilder extends Object
             destination: destination,
             timeout: timeout,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -7820,7 +7820,7 @@ class SmsRxBuilder extends Object
 
   @override
   _$SmsRx build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SmsRx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -7829,8 +7829,8 @@ class SmsRxBuilder extends Object
             dstEnt: dstEnt,
             source: source,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -8009,7 +8009,7 @@ class SmsStateBuilder extends Object
 
   @override
   _$SmsState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SmsState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -8019,8 +8019,8 @@ class SmsStateBuilder extends Object
             seq: seq,
             state: state,
             error: error);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -8187,7 +8187,7 @@ class TextMessageBuilder extends Object
 
   @override
   _$TextMessage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TextMessage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -8196,8 +8196,8 @@ class TextMessageBuilder extends Object
             dstEnt: dstEnt,
             origin: origin,
             text: text);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -8404,7 +8404,7 @@ class IridiumMsgRxBuilder extends Object
 
   @override
   _$IridiumMsgRx build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$IridiumMsgRx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -8416,8 +8416,8 @@ class IridiumMsgRxBuilder extends Object
             lat: lat,
             lon: lon,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -8610,7 +8610,7 @@ class IridiumMsgTxBuilder extends Object
 
   @override
   _$IridiumMsgTx build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$IridiumMsgTx._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -8621,8 +8621,8 @@ class IridiumMsgTxBuilder extends Object
             ttl: ttl,
             destination: destination,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -8803,7 +8803,7 @@ class IridiumTxStatusBuilder extends Object
 
   @override
   _$IridiumTxStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$IridiumTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -8813,8 +8813,8 @@ class IridiumTxStatusBuilder extends Object
             reqId: reqId,
             status: status,
             text: text);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -8987,7 +8987,7 @@ class GroupMembershipStateBuilder extends Object
 
   @override
   _$GroupMembershipState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GroupMembershipState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -8996,8 +8996,8 @@ class GroupMembershipStateBuilder extends Object
             dstEnt: dstEnt,
             groupName: groupName,
             links: links);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -9176,7 +9176,7 @@ class SystemGroupBuilder extends Object
 
   @override
   _$SystemGroup build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SystemGroup._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -9186,8 +9186,8 @@ class SystemGroupBuilder extends Object
             groupName: groupName,
             action: action,
             groupList: groupList);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -9354,7 +9354,7 @@ class LinkLatencyBuilder extends Object
 
   @override
   _$LinkLatency build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LinkLatency._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -9363,8 +9363,8 @@ class LinkLatencyBuilder extends Object
             dstEnt: dstEnt,
             value: value,
             sysSrc: sysSrc);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -9531,7 +9531,7 @@ class ExtendedRSSIBuilder extends Object
 
   @override
   _$ExtendedRSSI build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ExtendedRSSI._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -9540,8 +9540,8 @@ class ExtendedRSSIBuilder extends Object
             dstEnt: dstEnt,
             value: value,
             units: units);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -9734,7 +9734,7 @@ class HistoricDataBuilder extends Object
 
   @override
   _$HistoricData build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -9745,8 +9745,8 @@ class HistoricDataBuilder extends Object
             baseLon: baseLon,
             baseTime: baseTime,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -9943,7 +9943,7 @@ class CompressedHistoryBuilder extends Object
 
   @override
   _$CompressedHistory build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CompressedHistory._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -9954,8 +9954,8 @@ class CompressedHistoryBuilder extends Object
             baseLon: baseLon,
             baseTime: baseTime,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -10186,7 +10186,7 @@ class HistoricSampleBuilder extends Object
 
   @override
   _$HistoricSample build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricSample._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -10200,8 +10200,8 @@ class HistoricSampleBuilder extends Object
             z: z,
             t: t,
             sample: sample);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -10398,7 +10398,7 @@ class HistoricDataQueryBuilder extends Object
 
   @override
   _$HistoricDataQuery build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HistoricDataQuery._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -10409,8 +10409,8 @@ class HistoricDataQueryBuilder extends Object
             type: type,
             maxSize: maxSize,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -10604,7 +10604,7 @@ class RemoteCommandBuilder extends Object
 
   @override
   _$RemoteCommand build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RemoteCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -10615,8 +10615,8 @@ class RemoteCommandBuilder extends Object
             destination: destination,
             timeout: timeout,
             cmd: cmd);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -10816,7 +10816,7 @@ class CommSystemsQueryBuilder extends Object
 
   @override
   _$CommSystemsQuery build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CommSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -10827,8 +10827,8 @@ class CommSystemsQueryBuilder extends Object
             commInterface: commInterface,
             model: model,
             list: list);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -11087,7 +11087,7 @@ class TelemetryMsgBuilder extends Object
 
   @override
   _$TelemetryMsg build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TelemetryMsg._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -11103,8 +11103,8 @@ class TelemetryMsgBuilder extends Object
             acknowledge: acknowledge,
             status: status,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -11271,7 +11271,7 @@ class LblRangeBuilder extends Object
 
   @override
   _$LblRange build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LblRange._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -11280,8 +11280,8 @@ class LblRangeBuilder extends Object
             dstEnt: dstEnt,
             id: id,
             range: range);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -11513,7 +11513,7 @@ class LblBeaconBuilder extends Object
 
   @override
   _$LblBeacon build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LblBeacon._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -11527,8 +11527,8 @@ class LblBeaconBuilder extends Object
             queryChannel: queryChannel,
             replyChannel: replyChannel,
             transponderDelay: transponderDelay);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -11695,7 +11695,7 @@ class LblConfigBuilder extends Object
 
   @override
   _$LblConfig build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LblConfig._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -11704,8 +11704,8 @@ class LblConfigBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             beacons: beacons);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -11862,7 +11862,7 @@ class AcousticMessageBuilder extends Object
 
   @override
   _$AcousticMessage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -11870,8 +11870,8 @@ class AcousticMessageBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             message: message);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -12155,7 +12155,7 @@ class SimAcousticMessageBuilder extends Object
 
   @override
   _$SimAcousticMessage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SimAcousticMessage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -12173,8 +12173,8 @@ class SimAcousticMessageBuilder extends Object
             sysDst: sysDst,
             flags: flags,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -12371,7 +12371,7 @@ class AcousticOperationBuilder extends Object
 
   @override
   _$AcousticOperation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticOperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -12382,8 +12382,8 @@ class AcousticOperationBuilder extends Object
             system: system,
             range: range,
             msg: msg);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -12529,15 +12529,15 @@ class AcousticSystemsQueryBuilder extends Object
 
   @override
   _$AcousticSystemsQuery build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticSystemsQuery._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -12694,7 +12694,7 @@ class AcousticSystemsBuilder extends Object
 
   @override
   _$AcousticSystems build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticSystems._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -12702,8 +12702,8 @@ class AcousticSystemsBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             list: list);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -12882,7 +12882,7 @@ class AcousticLinkBuilder extends Object
 
   @override
   _$AcousticLink build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticLink._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -12892,8 +12892,8 @@ class AcousticLinkBuilder extends Object
             peer: peer,
             rssi: rssi,
             integrity: integrity);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -13114,7 +13114,7 @@ class AcousticRequestBuilder extends Object
 
   @override
   _$AcousticRequest build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -13127,8 +13127,8 @@ class AcousticRequestBuilder extends Object
             range: range,
             type: type,
             msg: msg);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -13335,7 +13335,7 @@ class AcousticStatusBuilder extends Object
 
   @override
   _$AcousticStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AcousticStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -13347,8 +13347,8 @@ class AcousticStatusBuilder extends Object
             status: status,
             info: info,
             range: range);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -13503,7 +13503,7 @@ class RpmBuilder extends Object
 
   @override
   _$Rpm build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Rpm._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -13511,8 +13511,8 @@ class RpmBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -13667,7 +13667,7 @@ class VoltageBuilder extends Object
 
   @override
   _$Voltage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Voltage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -13675,8 +13675,8 @@ class VoltageBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -13831,7 +13831,7 @@ class CurrentBuilder extends Object
 
   @override
   _$Current build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Current._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -13839,8 +13839,8 @@ class CurrentBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -14174,7 +14174,7 @@ class GpsFixBuilder extends Object
 
   @override
   _$GpsFix build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GpsFix._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -14197,8 +14197,8 @@ class GpsFixBuilder extends Object
             vdop: vdop,
             hacc: hacc,
             vacc: vacc);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -14407,7 +14407,7 @@ class EulerAnglesBuilder extends Object
 
   @override
   _$EulerAngles build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EulerAngles._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -14419,8 +14419,8 @@ class EulerAnglesBuilder extends Object
             theta: theta,
             psi: psi,
             psiMagnetic: psiMagnetic);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -14630,7 +14630,7 @@ class EulerAnglesDeltaBuilder extends Object
 
   @override
   _$EulerAnglesDelta build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EulerAnglesDelta._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -14642,8 +14642,8 @@ class EulerAnglesDeltaBuilder extends Object
             y: y,
             z: z,
             timestep: timestep);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -14838,7 +14838,7 @@ class AngularVelocityBuilder extends Object
 
   @override
   _$AngularVelocity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AngularVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -14849,8 +14849,8 @@ class AngularVelocityBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -15043,7 +15043,7 @@ class AccelerationBuilder extends Object
 
   @override
   _$Acceleration build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Acceleration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -15054,8 +15054,8 @@ class AccelerationBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -15248,7 +15248,7 @@ class MagneticFieldBuilder extends Object
 
   @override
   _$MagneticField build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$MagneticField._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -15259,8 +15259,8 @@ class MagneticFieldBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -15455,7 +15455,7 @@ class GroundVelocityBuilder extends Object
 
   @override
   _$GroundVelocity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GroundVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -15466,8 +15466,8 @@ class GroundVelocityBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -15662,7 +15662,7 @@ class WaterVelocityBuilder extends Object
 
   @override
   _$WaterVelocity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$WaterVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -15673,8 +15673,8 @@ class WaterVelocityBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -15867,7 +15867,7 @@ class VelocityDeltaBuilder extends Object
 
   @override
   _$VelocityDelta build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VelocityDelta._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -15878,8 +15878,8 @@ class VelocityDeltaBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -16074,7 +16074,7 @@ class DistanceBuilder extends Object
 
   @override
   _$Distance build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Distance._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -16085,8 +16085,8 @@ class DistanceBuilder extends Object
             location: location,
             beamConfig: beamConfig,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -16241,7 +16241,7 @@ class TemperatureBuilder extends Object
 
   @override
   _$Temperature build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Temperature._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -16249,8 +16249,8 @@ class TemperatureBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -16405,7 +16405,7 @@ class PressureBuilder extends Object
 
   @override
   _$Pressure build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Pressure._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -16413,8 +16413,8 @@ class PressureBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -16569,7 +16569,7 @@ class DepthBuilder extends Object
 
   @override
   _$Depth build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Depth._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -16577,8 +16577,8 @@ class DepthBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -16733,7 +16733,7 @@ class DepthOffsetBuilder extends Object
 
   @override
   _$DepthOffset build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DepthOffset._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -16741,8 +16741,8 @@ class DepthOffsetBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -16897,7 +16897,7 @@ class SoundSpeedBuilder extends Object
 
   @override
   _$SoundSpeed build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SoundSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -16905,8 +16905,8 @@ class SoundSpeedBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -17061,7 +17061,7 @@ class WaterDensityBuilder extends Object
 
   @override
   _$WaterDensity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$WaterDensity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -17069,8 +17069,8 @@ class WaterDensityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -17225,7 +17225,7 @@ class ConductivityBuilder extends Object
 
   @override
   _$Conductivity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Conductivity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -17233,8 +17233,8 @@ class ConductivityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -17389,7 +17389,7 @@ class SalinityBuilder extends Object
 
   @override
   _$Salinity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Salinity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -17397,8 +17397,8 @@ class SalinityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -17579,7 +17579,7 @@ class WindSpeedBuilder extends Object
 
   @override
   _$WindSpeed build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$WindSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -17589,8 +17589,8 @@ class WindSpeedBuilder extends Object
             direction: direction,
             speed: speed,
             turbulence: turbulence);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -17748,7 +17748,7 @@ class RelativeHumidityBuilder extends Object
 
   @override
   _$RelativeHumidity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RelativeHumidity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -17756,8 +17756,8 @@ class RelativeHumidityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -17912,7 +17912,7 @@ class DevDataTextBuilder extends Object
 
   @override
   _$DevDataText build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DevDataText._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -17920,8 +17920,8 @@ class DevDataTextBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -18076,7 +18076,7 @@ class DevDataBinaryBuilder extends Object
 
   @override
   _$DevDataBinary build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DevDataBinary._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -18084,8 +18084,8 @@ class DevDataBinaryBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -18240,7 +18240,7 @@ class ForceBuilder extends Object
 
   @override
   _$Force build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Force._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -18248,8 +18248,8 @@ class ForceBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -18494,7 +18494,7 @@ class SonarDataBuilder extends Object
 
   @override
   _$SonarData build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SonarData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -18509,8 +18509,8 @@ class SonarDataBuilder extends Object
             scaleFactor: scaleFactor,
             beamConfig: beamConfig,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -18650,15 +18650,15 @@ class PulseBuilder extends Object
 
   @override
   _$Pulse build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Pulse._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -18820,7 +18820,7 @@ class PulseDetectionControlBuilder extends Object
 
   @override
   _$PulseDetectionControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PulseDetectionControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -18828,8 +18828,8 @@ class PulseDetectionControlBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             op: op);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -19009,7 +19009,7 @@ class FuelLevelBuilder extends Object
 
   @override
   _$FuelLevel build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FuelLevel._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -19019,8 +19019,8 @@ class FuelLevelBuilder extends Object
             value: value,
             confidence: confidence,
             opmodes: opmodes);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -19344,7 +19344,7 @@ class GpsNavDataBuilder extends Object
 
   @override
   _$GpsNavData build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GpsNavData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -19366,8 +19366,8 @@ class GpsNavDataBuilder extends Object
             heading: heading,
             sacc: sacc,
             cacc: cacc);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -19534,7 +19534,7 @@ class ServoPositionBuilder extends Object
 
   @override
   _$ServoPosition build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -19543,8 +19543,8 @@ class ServoPositionBuilder extends Object
             dstEnt: dstEnt,
             id: id,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -19763,7 +19763,7 @@ class DeviceStateBuilder extends Object
 
   @override
   _$DeviceState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DeviceState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -19776,8 +19776,8 @@ class DeviceStateBuilder extends Object
             phi: phi,
             theta: theta,
             psi: psi);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -19947,7 +19947,7 @@ class BeamConfigBuilder extends Object
 
   @override
   _$BeamConfig build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$BeamConfig._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -19956,8 +19956,8 @@ class BeamConfigBuilder extends Object
             dstEnt: dstEnt,
             beamWidth: beamWidth,
             beamHeight: beamHeight);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -20112,7 +20112,7 @@ class DataSanityBuilder extends Object
 
   @override
   _$DataSanity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DataSanity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -20120,8 +20120,8 @@ class DataSanityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             sane: sane);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -20276,7 +20276,7 @@ class RhodamineDyeBuilder extends Object
 
   @override
   _$RhodamineDye build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RhodamineDye._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -20284,8 +20284,8 @@ class RhodamineDyeBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -20440,7 +20440,7 @@ class CrudeOilBuilder extends Object
 
   @override
   _$CrudeOil build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CrudeOil._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -20448,8 +20448,8 @@ class CrudeOilBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -20604,7 +20604,7 @@ class FineOilBuilder extends Object
 
   @override
   _$FineOil build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FineOil._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -20612,8 +20612,8 @@ class FineOilBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -20768,7 +20768,7 @@ class TurbidityBuilder extends Object
 
   @override
   _$Turbidity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Turbidity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -20776,8 +20776,8 @@ class TurbidityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -20932,7 +20932,7 @@ class ChlorophyllBuilder extends Object
 
   @override
   _$Chlorophyll build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Chlorophyll._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -20940,8 +20940,8 @@ class ChlorophyllBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -21096,7 +21096,7 @@ class FluoresceinBuilder extends Object
 
   @override
   _$Fluorescein build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Fluorescein._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -21104,8 +21104,8 @@ class FluoresceinBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -21260,7 +21260,7 @@ class PhycocyaninBuilder extends Object
 
   @override
   _$Phycocyanin build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Phycocyanin._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -21268,8 +21268,8 @@ class PhycocyaninBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -21424,7 +21424,7 @@ class PhycoerythrinBuilder extends Object
 
   @override
   _$Phycoerythrin build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Phycoerythrin._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -21432,8 +21432,8 @@ class PhycoerythrinBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -21761,7 +21761,7 @@ class GpsFixRtkBuilder extends Object
 
   @override
   _$GpsFixRtk build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GpsFixRtk._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -21783,8 +21783,8 @@ class GpsFixRtkBuilder extends Object
             satellites: satellites,
             iarHyp: iarHyp,
             iarRatio: iarRatio);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -21953,7 +21953,7 @@ class ExternalNavDataBuilder extends Object
 
   @override
   _$ExternalNavData build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ExternalNavData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -21962,8 +21962,8 @@ class ExternalNavDataBuilder extends Object
             dstEnt: dstEnt,
             state: state,
             type: type);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -22120,7 +22120,7 @@ class DissolvedOxygenBuilder extends Object
 
   @override
   _$DissolvedOxygen build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DissolvedOxygen._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -22128,8 +22128,8 @@ class DissolvedOxygenBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -22284,7 +22284,7 @@ class AirSaturationBuilder extends Object
 
   @override
   _$AirSaturation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AirSaturation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -22292,8 +22292,8 @@ class AirSaturationBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -22448,7 +22448,7 @@ class ThrottleBuilder extends Object
 
   @override
   _$Throttle build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Throttle._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -22456,8 +22456,8 @@ class ThrottleBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -22612,7 +22612,7 @@ class PHBuilder extends Object
 
   @override
   _$PH build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PH._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -22620,8 +22620,8 @@ class PHBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -22776,7 +22776,7 @@ class RedoxBuilder extends Object
 
   @override
   _$Redox build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Redox._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -22784,8 +22784,8 @@ class RedoxBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -22964,7 +22964,7 @@ class CameraZoomBuilder extends Object
 
   @override
   _$CameraZoom build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CameraZoom._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -22974,8 +22974,8 @@ class CameraZoomBuilder extends Object
             id: id,
             zoom: zoom,
             action: action);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -23148,7 +23148,7 @@ class SetThrusterActuationBuilder extends Object
 
   @override
   _$SetThrusterActuation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetThrusterActuation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -23157,8 +23157,8 @@ class SetThrusterActuationBuilder extends Object
             dstEnt: dstEnt,
             id: id,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -23328,7 +23328,7 @@ class SetServoPositionBuilder extends Object
 
   @override
   _$SetServoPosition build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetServoPosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -23337,8 +23337,8 @@ class SetServoPositionBuilder extends Object
             dstEnt: dstEnt,
             id: id,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -23513,7 +23513,7 @@ class SetControlSurfaceDeflectionBuilder extends Object
 
   @override
   _$SetControlSurfaceDeflection build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetControlSurfaceDeflection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -23522,8 +23522,8 @@ class SetControlSurfaceDeflectionBuilder extends Object
             dstEnt: dstEnt,
             id: id,
             angle: angle);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -23696,7 +23696,7 @@ class RemoteActionsRequestBuilder extends Object
 
   @override
   _$RemoteActionsRequest build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RemoteActionsRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -23705,8 +23705,8 @@ class RemoteActionsRequestBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             actions: actions);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -23861,7 +23861,7 @@ class RemoteActionsBuilder extends Object
 
   @override
   _$RemoteActions build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RemoteActions._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -23869,8 +23869,8 @@ class RemoteActionsBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             actions: actions);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -24037,7 +24037,7 @@ class ButtonEventBuilder extends Object
 
   @override
   _$ButtonEvent build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ButtonEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -24046,8 +24046,8 @@ class ButtonEventBuilder extends Object
             dstEnt: dstEnt,
             button: button,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -24214,7 +24214,7 @@ class LcdControlBuilder extends Object
 
   @override
   _$LcdControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LcdControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -24223,8 +24223,8 @@ class LcdControlBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             text: text);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -24404,7 +24404,7 @@ class PowerOperationBuilder extends Object
 
   @override
   _$PowerOperation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PowerOperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -24414,8 +24414,8 @@ class PowerOperationBuilder extends Object
             op: op,
             timeRemain: timeRemain,
             schedTime: schedTime);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -24600,7 +24600,7 @@ class PowerChannelControlBuilder extends Object
 
   @override
   _$PowerChannelControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PowerChannelControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -24610,8 +24610,8 @@ class PowerChannelControlBuilder extends Object
             name: name,
             op: op,
             schedTime: schedTime);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -24758,15 +24758,15 @@ class QueryPowerChannelStateBuilder extends Object
 
   @override
   _$QueryPowerChannelState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$QueryPowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -24937,7 +24937,7 @@ class PowerChannelStateBuilder extends Object
 
   @override
   _$PowerChannelState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PowerChannelState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -24946,8 +24946,8 @@ class PowerChannelStateBuilder extends Object
             dstEnt: dstEnt,
             name: name,
             state: state);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -25114,7 +25114,7 @@ class LedBrightnessBuilder extends Object
 
   @override
   _$LedBrightness build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -25123,8 +25123,8 @@ class LedBrightnessBuilder extends Object
             dstEnt: dstEnt,
             name: name,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -25283,7 +25283,7 @@ class QueryLedBrightnessBuilder extends Object
 
   @override
   _$QueryLedBrightness build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$QueryLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -25291,8 +25291,8 @@ class QueryLedBrightnessBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             name: name);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -25462,7 +25462,7 @@ class SetLedBrightnessBuilder extends Object
 
   @override
   _$SetLedBrightness build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetLedBrightness._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -25471,8 +25471,8 @@ class SetLedBrightnessBuilder extends Object
             dstEnt: dstEnt,
             name: name,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -25651,7 +25651,7 @@ class SetPWMBuilder extends Object
 
   @override
   _$SetPWM build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetPWM._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -25661,8 +25661,8 @@ class SetPWMBuilder extends Object
             id: id,
             period: period,
             dutyCycle: dutyCycle);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -25841,7 +25841,7 @@ class PWMBuilder extends Object
 
   @override
   _$PWM build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PWM._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -25851,8 +25851,8 @@ class PWMBuilder extends Object
             id: id,
             period: period,
             dutyCycle: dutyCycle);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -26225,7 +26225,7 @@ class EstimatedStateBuilder extends Object
 
   @override
   _$EstimatedState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EstimatedState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -26252,8 +26252,8 @@ class EstimatedStateBuilder extends Object
             r: r,
             depth: depth,
             alt: alt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -26439,7 +26439,7 @@ class EstimatedStreamVelocityBuilder extends Object
 
   @override
   _$EstimatedStreamVelocity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EstimatedStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -26449,8 +26449,8 @@ class EstimatedStreamVelocityBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -26605,7 +26605,7 @@ class IndicatedSpeedBuilder extends Object
 
   @override
   _$IndicatedSpeed build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$IndicatedSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -26613,8 +26613,8 @@ class IndicatedSpeedBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -26769,7 +26769,7 @@ class TrueSpeedBuilder extends Object
 
   @override
   _$TrueSpeed build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrueSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -26777,8 +26777,8 @@ class TrueSpeedBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -27099,7 +27099,7 @@ class NavigationUncertaintyBuilder extends Object
 
   @override
   _$NavigationUncertainty build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$NavigationUncertainty._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -27120,8 +27120,8 @@ class NavigationUncertaintyBuilder extends Object
             w: w,
             biasPsi: biasPsi,
             biasR: biasR);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -27380,7 +27380,7 @@ class NavigationDataBuilder extends Object
 
   @override
   _$NavigationData build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$NavigationData._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -27396,8 +27396,8 @@ class NavigationDataBuilder extends Object
             customX: customX,
             customY: customY,
             customZ: customZ);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -27566,7 +27566,7 @@ class GpsFixRejectionBuilder extends Object
 
   @override
   _$GpsFixRejection build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GpsFixRejection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -27575,8 +27575,8 @@ class GpsFixRejectionBuilder extends Object
             dstEnt: dstEnt,
             utcTime: utcTime,
             reason: reason);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -27762,7 +27762,7 @@ class LblRangeAcceptanceBuilder extends Object
 
   @override
   _$LblRangeAcceptance build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LblRangeAcceptance._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -27772,8 +27772,8 @@ class LblRangeAcceptanceBuilder extends Object
             id: id,
             range: range,
             acceptance: acceptance);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -27966,7 +27966,7 @@ class DvlRejectionBuilder extends Object
 
   @override
   _$DvlRejection build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DvlRejection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -27977,8 +27977,8 @@ class DvlRejectionBuilder extends Object
             reason: reason,
             value: value,
             timestep: timestep);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -28197,7 +28197,7 @@ class LblEstimateBuilder extends Object
 
   @override
   _$LblEstimate build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LblEstimate._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -28210,8 +28210,8 @@ class LblEstimateBuilder extends Object
             varX: varX,
             varY: varY,
             distance: distance);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -28366,7 +28366,7 @@ class AlignmentStateBuilder extends Object
 
   @override
   _$AlignmentState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AlignmentState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -28374,8 +28374,8 @@ class AlignmentStateBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             state: state);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -28560,7 +28560,7 @@ class GroupStreamVelocityBuilder extends Object
 
   @override
   _$GroupStreamVelocity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GroupStreamVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -28570,8 +28570,8 @@ class GroupStreamVelocityBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -28750,7 +28750,7 @@ class AirflowBuilder extends Object
 
   @override
   _$Airflow build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Airflow._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -28760,8 +28760,8 @@ class AirflowBuilder extends Object
             va: va,
             aoa: aoa,
             ssa: ssa);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -28916,7 +28916,7 @@ class DesiredHeadingBuilder extends Object
 
   @override
   _$DesiredHeading build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredHeading._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -28924,8 +28924,8 @@ class DesiredHeadingBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -29092,7 +29092,7 @@ class DesiredZBuilder extends Object
 
   @override
   _$DesiredZ build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredZ._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -29101,8 +29101,8 @@ class DesiredZBuilder extends Object
             dstEnt: dstEnt,
             value: value,
             zUnits: zUnits);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -29270,7 +29270,7 @@ class DesiredSpeedBuilder extends Object
 
   @override
   _$DesiredSpeed build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredSpeed._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -29279,8 +29279,8 @@ class DesiredSpeedBuilder extends Object
             dstEnt: dstEnt,
             value: value,
             speedUnits: speedUnits);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -29435,7 +29435,7 @@ class DesiredRollBuilder extends Object
 
   @override
   _$DesiredRoll build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredRoll._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -29443,8 +29443,8 @@ class DesiredRollBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -29599,7 +29599,7 @@ class DesiredPitchBuilder extends Object
 
   @override
   _$DesiredPitch build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredPitch._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -29607,8 +29607,8 @@ class DesiredPitchBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -29769,7 +29769,7 @@ class DesiredVerticalRateBuilder extends Object
 
   @override
   _$DesiredVerticalRate build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredVerticalRate._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -29777,8 +29777,8 @@ class DesiredVerticalRateBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -30086,7 +30086,7 @@ class DesiredPathBuilder extends Object
 
   @override
   _$DesiredPath build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredPath._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -30106,8 +30106,8 @@ class DesiredPathBuilder extends Object
             speedUnits: speedUnits,
             lradius: lradius,
             flags: flags);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -30338,7 +30338,7 @@ class DesiredControlBuilder extends Object
 
   @override
   _$DesiredControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -30352,8 +30352,8 @@ class DesiredControlBuilder extends Object
             m: m,
             n: n,
             flags: flags);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -30512,7 +30512,7 @@ class DesiredHeadingRateBuilder extends Object
 
   @override
   _$DesiredHeadingRate build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredHeadingRate._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -30520,8 +30520,8 @@ class DesiredHeadingRateBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -30754,7 +30754,7 @@ class DesiredVelocityBuilder extends Object
 
   @override
   _$DesiredVelocity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredVelocity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -30768,8 +30768,8 @@ class DesiredVelocityBuilder extends Object
             q: q,
             r: r,
             flags: flags);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -31141,7 +31141,7 @@ class PathControlStateBuilder extends Object
 
   @override
   _$PathControlState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PathControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -31167,8 +31167,8 @@ class PathControlStateBuilder extends Object
             vz: vz,
             courseError: courseError,
             eta: eta);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -31354,7 +31354,7 @@ class AllocatedControlTorquesBuilder extends Object
 
   @override
   _$AllocatedControlTorques build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AllocatedControlTorques._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -31364,8 +31364,8 @@ class AllocatedControlTorquesBuilder extends Object
             k: k,
             m: m,
             n: n);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -31558,7 +31558,7 @@ class ControlParcelBuilder extends Object
 
   @override
   _$ControlParcel build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ControlParcel._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -31569,8 +31569,8 @@ class ControlParcelBuilder extends Object
             i: i,
             d: d,
             a: a);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -31725,7 +31725,7 @@ class BrakeBuilder extends Object
 
   @override
   _$Brake build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Brake._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -31733,8 +31733,8 @@ class BrakeBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             op: op);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -32006,7 +32006,7 @@ class DesiredLinearStateBuilder extends Object
 
   @override
   _$DesiredLinearState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredLinearState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -32023,8 +32023,8 @@ class DesiredLinearStateBuilder extends Object
             ay: ay,
             az: az,
             flags: flags);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -32181,7 +32181,7 @@ class DesiredThrottleBuilder extends Object
 
   @override
   _$DesiredThrottle build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DesiredThrottle._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -32189,8 +32189,8 @@ class DesiredThrottleBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -32471,7 +32471,7 @@ class GotoBuilder extends Object
 
   @override
   _$Goto build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Goto._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -32489,8 +32489,8 @@ class GotoBuilder extends Object
             pitch: pitch,
             yaw: yaw,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -32771,7 +32771,7 @@ class PopUpBuilder extends Object
 
   @override
   _$PopUp build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PopUp._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -32789,8 +32789,8 @@ class PopUpBuilder extends Object
             radius: radius,
             flags: flags,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -32945,7 +32945,7 @@ class TeleoperationBuilder extends Object
 
   @override
   _$Teleoperation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Teleoperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -32953,8 +32953,8 @@ class TeleoperationBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -33270,7 +33270,7 @@ class LoiterBuilder extends Object
 
   @override
   _$Loiter build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Loiter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -33291,8 +33291,8 @@ class LoiterBuilder extends Object
             bearing: bearing,
             direction: direction,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -33459,7 +33459,7 @@ class IdleManeuverBuilder extends Object
 
   @override
   _$IdleManeuver build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$IdleManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -33468,8 +33468,8 @@ class IdleManeuverBuilder extends Object
             dstEnt: dstEnt,
             duration: duration,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -33650,7 +33650,7 @@ class LowLevelControlBuilder extends Object
 
   @override
   _$LowLevelControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LowLevelControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -33660,8 +33660,8 @@ class LowLevelControlBuilder extends Object
             control: control,
             duration: duration,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -33998,7 +33998,7 @@ class RowsBuilder extends Object
 
   @override
   _$Rows build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Rows._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -34021,8 +34021,8 @@ class RowsBuilder extends Object
             alternation: alternation,
             flags: flags,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -34279,7 +34279,7 @@ class FollowPathBuilder extends Object
 
   @override
   _$FollowPath build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FollowPath._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -34295,8 +34295,8 @@ class FollowPathBuilder extends Object
             speedUnits: speedUnits,
             points: points,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -34475,7 +34475,7 @@ class PathPointBuilder extends Object
 
   @override
   _$PathPoint build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PathPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -34485,8 +34485,8 @@ class PathPointBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -34755,7 +34755,7 @@ class YoYoBuilder extends Object
 
   @override
   _$YoYo build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$YoYo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -34772,8 +34772,8 @@ class YoYoBuilder extends Object
             speed: speed,
             speedUnits: speedUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -34917,15 +34917,15 @@ class TeleoperationDoneBuilder extends Object
 
   @override
   _$TeleoperationDone build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TeleoperationDone._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -35182,7 +35182,7 @@ class StationKeepingBuilder extends Object
 
   @override
   _$StationKeeping build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$StationKeeping._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -35198,8 +35198,8 @@ class StationKeepingBuilder extends Object
             speed: speed,
             speedUnits: speedUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -35493,7 +35493,7 @@ class ElevatorBuilder extends Object
 
   @override
   _$Elevator build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Elevator._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -35512,8 +35512,8 @@ class ElevatorBuilder extends Object
             speed: speed,
             speedUnits: speedUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -35773,7 +35773,7 @@ class FollowTrajectoryBuilder extends Object
 
   @override
   _$FollowTrajectory build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FollowTrajectory._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -35789,8 +35789,8 @@ class FollowTrajectoryBuilder extends Object
             speedUnits: speedUnits,
             points: points,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -35985,7 +35985,7 @@ class TrajectoryPointBuilder extends Object
 
   @override
   _$TrajectoryPoint build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrajectoryPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -35996,8 +35996,8 @@ class TrajectoryPointBuilder extends Object
             y: y,
             z: z,
             t: t);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -36176,7 +36176,7 @@ class CustomManeuverBuilder extends Object
 
   @override
   _$CustomManeuver build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CustomManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -36186,8 +36186,8 @@ class CustomManeuverBuilder extends Object
             timeout: timeout,
             name: name,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -36461,7 +36461,7 @@ class VehicleFormationBuilder extends Object
 
   @override
   _$VehicleFormation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleFormation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -36478,8 +36478,8 @@ class VehicleFormationBuilder extends Object
             participants: participants,
             startTime: startTime,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -36680,7 +36680,7 @@ class VehicleFormationParticipantBuilder extends Object
 
   @override
   _$VehicleFormationParticipant build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleFormationParticipant._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -36691,8 +36691,8 @@ class VehicleFormationParticipantBuilder extends Object
             offX: offX,
             offY: offY,
             offZ: offZ);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -36832,15 +36832,15 @@ class StopManeuverBuilder extends Object
 
   @override
   _$StopManeuver build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$StopManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -36998,7 +36998,7 @@ class RegisterManeuverBuilder extends Object
 
   @override
   _$RegisterManeuver build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RegisterManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -37006,8 +37006,8 @@ class RegisterManeuverBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             mid: mid);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -37192,7 +37192,7 @@ class ManeuverControlStateBuilder extends Object
 
   @override
   _$ManeuverControlState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ManeuverControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -37202,8 +37202,8 @@ class ManeuverControlStateBuilder extends Object
             state: state,
             eta: eta,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -37447,7 +37447,7 @@ class FollowSystemBuilder extends Object
 
   @override
   _$FollowSystem build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FollowSystem._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -37462,8 +37462,8 @@ class FollowSystemBuilder extends Object
             y: y,
             z: z,
             zUnits: zUnits);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -37709,7 +37709,7 @@ class CommsRelayBuilder extends Object
 
   @override
   _$CommsRelay build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CommsRelay._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -37724,8 +37724,8 @@ class CommsRelayBuilder extends Object
             sysA: sysA,
             sysB: sysB,
             moveThreshold: moveThreshold);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -37969,7 +37969,7 @@ class CoverAreaBuilder extends Object
 
   @override
   _$CoverArea build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CoverArea._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -37984,8 +37984,8 @@ class CoverAreaBuilder extends Object
             speedUnits: speedUnits,
             polygon: polygon,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -38152,7 +38152,7 @@ class PolygonVertexBuilder extends Object
 
   @override
   _$PolygonVertex build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PolygonVertex._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -38161,8 +38161,8 @@ class PolygonVertexBuilder extends Object
             dstEnt: dstEnt,
             lat: lat,
             lon: lon);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -38473,7 +38473,7 @@ class CompassCalibrationBuilder extends Object
 
   @override
   _$CompassCalibration build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CompassCalibration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -38493,8 +38493,8 @@ class CompassCalibrationBuilder extends Object
             radius: radius,
             direction: direction,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -38700,7 +38700,7 @@ class FormationParametersBuilder extends Object
 
   @override
   _$FormationParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -38711,8 +38711,8 @@ class FormationParametersBuilder extends Object
             referenceFrame: referenceFrame,
             participants: participants,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -39041,7 +39041,7 @@ class FormationPlanExecutionBuilder extends Object
 
   @override
   _$FormationPlanExecution build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationPlanExecution._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -39062,8 +39062,8 @@ class FormationPlanExecutionBuilder extends Object
             commsTimeout: commsTimeout,
             turbLim: turbLim,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -39275,7 +39275,7 @@ class FollowReferenceBuilder extends Object
 
   @override
   _$FollowReference build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FollowReference._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -39287,8 +39287,8 @@ class FollowReferenceBuilder extends Object
             timeout: timeout,
             loiterRadius: loiterRadius,
             altitudeInterval: altitudeInterval);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -39507,7 +39507,7 @@ class ReferenceBuilder extends Object
 
   @override
   _$Reference build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Reference._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -39520,8 +39520,8 @@ class ReferenceBuilder extends Object
             lat: lat,
             lon: lon,
             radius: radius);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -39731,7 +39731,7 @@ class FollowRefStateBuilder extends Object
 
   @override
   _$FollowRefState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FollowRefState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -39743,8 +39743,8 @@ class FollowRefStateBuilder extends Object
             reference: reference,
             state: state,
             proximity: proximity);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -40110,7 +40110,7 @@ class FormationMonitorBuilder extends Object
 
   @override
   _$FormationMonitor build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationMonitor._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -40136,8 +40136,8 @@ class FormationMonitorBuilder extends Object
             ssY: ssY,
             ssZ: ssZ,
             relState: relState);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -40530,7 +40530,7 @@ class RelativeStateBuilder extends Object
 
   @override
   _$RelativeState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RelativeState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -40559,8 +40559,8 @@ class RelativeStateBuilder extends Object
             virtErrX: virtErrX,
             virtErrY: virtErrY,
             virtErrZ: virtErrZ);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -40755,7 +40755,7 @@ class DislodgeBuilder extends Object
 
   @override
   _$Dislodge build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Dislodge._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -40766,8 +40766,8 @@ class DislodgeBuilder extends Object
             rpm: rpm,
             direction: direction,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -41169,7 +41169,7 @@ class FormationBuilder extends Object
 
   @override
   _$Formation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Formation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -41197,8 +41197,8 @@ class FormationBuilder extends Object
             commsTimeout: commsTimeout,
             turbLim: turbLim,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -41442,7 +41442,7 @@ class LaunchBuilder extends Object
 
   @override
   _$Launch build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Launch._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -41457,8 +41457,8 @@ class LaunchBuilder extends Object
             speed: speed,
             speedUnits: speedUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -41702,7 +41702,7 @@ class DropBuilder extends Object
 
   @override
   _$Drop build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Drop._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -41717,8 +41717,8 @@ class DropBuilder extends Object
             speed: speed,
             speedUnits: speedUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -41965,7 +41965,7 @@ class ScheduledGotoBuilder extends Object
 
   @override
   _$ScheduledGoto build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ScheduledGoto._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -41980,8 +41980,8 @@ class ScheduledGotoBuilder extends Object
             travelZ: travelZ,
             travelZUnits: travelZUnits,
             delayed: delayed);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -42320,7 +42320,7 @@ class RowsCoverageBuilder extends Object
 
   @override
   _$RowsCoverage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RowsCoverage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -42343,8 +42343,8 @@ class RowsCoverageBuilder extends Object
             overlap: overlap,
             flags: flags,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -42628,7 +42628,7 @@ class SampleBuilder extends Object
 
   @override
   _$Sample build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Sample._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -42646,8 +42646,8 @@ class SampleBuilder extends Object
             syringe1: syringe1,
             syringe2: syringe2,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -42787,15 +42787,15 @@ class ImageTrackingBuilder extends Object
 
   @override
   _$ImageTracking build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ImageTracking._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -43041,7 +43041,7 @@ class TakeoffBuilder extends Object
 
   @override
   _$Takeoff build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Takeoff._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -43056,8 +43056,8 @@ class TakeoffBuilder extends Object
             speedUnits: speedUnits,
             takeoffPitch: takeoffPitch,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -43341,7 +43341,7 @@ class LandBuilder extends Object
 
   @override
   _$Land build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Land._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -43359,8 +43359,8 @@ class LandBuilder extends Object
             glideSlope: glideSlope,
             glideSlopeAlt: glideSlopeAlt,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -43646,7 +43646,7 @@ class AutonomousSectionBuilder extends Object
 
   @override
   _$AutonomousSection build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AutonomousSection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -43664,8 +43664,8 @@ class AutonomousSectionBuilder extends Object
             areaLimits: areaLimits,
             controller: controller,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -43909,7 +43909,7 @@ class FollowPointBuilder extends Object
 
   @override
   _$FollowPoint build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FollowPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -43924,8 +43924,8 @@ class FollowPointBuilder extends Object
             z: z,
             zUnits: zUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -44145,7 +44145,7 @@ class AlignmentBuilder extends Object
 
   @override
   _$Alignment build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Alignment._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -44158,8 +44158,8 @@ class AlignmentBuilder extends Object
             speed: speed,
             speedUnits: speedUnits,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -44459,7 +44459,7 @@ class StationKeepingExtendedBuilder extends Object
 
   @override
   _$StationKeepingExtended build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$StationKeepingExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -44478,8 +44478,8 @@ class StationKeepingExtendedBuilder extends Object
             popupDuration: popupDuration,
             flags: flags,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -44619,15 +44619,15 @@ class ManeuverDoneBuilder extends Object
 
   @override
   _$ManeuverDone build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ManeuverDone._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -44911,7 +44911,7 @@ class MagnetometerBuilder extends Object
 
   @override
   _$Magnetometer build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Magnetometer._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -44929,8 +44929,8 @@ class MagnetometerBuilder extends Object
             width: width,
             direction: direction,
             custom: custom);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -45204,7 +45204,7 @@ class VehicleStateBuilder extends Object
 
   @override
   _$VehicleState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -45221,8 +45221,8 @@ class VehicleStateBuilder extends Object
             flags: flags,
             lastError: lastError,
             lastErrorTime: lastErrorTime);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -45442,7 +45442,7 @@ class VehicleCommandBuilder extends Object
 
   @override
   _$VehicleCommand build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -45455,8 +45455,8 @@ class VehicleCommandBuilder extends Object
             maneuver: maneuver,
             calibTime: calibTime,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -45629,7 +45629,7 @@ class MonitorEntityStateBuilder extends Object
 
   @override
   _$MonitorEntityState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$MonitorEntityState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -45638,8 +45638,8 @@ class MonitorEntityStateBuilder extends Object
             dstEnt: dstEnt,
             command: command,
             entities: entities);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -45891,7 +45891,7 @@ class EntityMonitoringStateBuilder extends Object
 
   @override
   _$EntityMonitoringState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityMonitoringState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -45906,8 +45906,8 @@ class EntityMonitoringStateBuilder extends Object
             cnames: cnames,
             lastError: lastError,
             lastErrorTime: lastErrorTime);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -46206,7 +46206,7 @@ class OperationalLimitsBuilder extends Object
 
   @override
   _$OperationalLimits build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$OperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -46225,8 +46225,8 @@ class OperationalLimitsBuilder extends Object
             orientation: orientation,
             width: width,
             length: length);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -46372,15 +46372,15 @@ class GetOperationalLimitsBuilder extends Object
 
   @override
   _$GetOperationalLimits build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GetOperationalLimits._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -46535,7 +46535,7 @@ class CalibrationBuilder extends Object
 
   @override
   _$Calibration build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Calibration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -46543,8 +46543,8 @@ class CalibrationBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             duration: duration);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -46723,7 +46723,7 @@ class ControlLoopsBuilder extends Object
 
   @override
   _$ControlLoops build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ControlLoops._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -46733,8 +46733,8 @@ class ControlLoopsBuilder extends Object
             enable: enable,
             mask: mask,
             scopeRef: scopeRef);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -46889,7 +46889,7 @@ class VehicleMediumBuilder extends Object
 
   @override
   _$VehicleMedium build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleMedium._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -46897,8 +46897,8 @@ class VehicleMediumBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             medium: medium);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -47065,7 +47065,7 @@ class CollisionBuilder extends Object
 
   @override
   _$Collision build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Collision._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -47074,8 +47074,8 @@ class CollisionBuilder extends Object
             dstEnt: dstEnt,
             value: value,
             type: type);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -47300,7 +47300,7 @@ class FormStateBuilder extends Object
 
   @override
   _$FormState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -47313,8 +47313,8 @@ class FormStateBuilder extends Object
             posSimMon: posSimMon,
             commMon: commMon,
             convergMon: convergMon);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -47483,7 +47483,7 @@ class AutopilotModeBuilder extends Object
 
   @override
   _$AutopilotMode build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$AutopilotMode._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -47492,8 +47492,8 @@ class AutopilotModeBuilder extends Object
             dstEnt: dstEnt,
             autonomy: autonomy,
             mode: mode);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -47742,7 +47742,7 @@ class FormationStateBuilder extends Object
 
   @override
   _$FormationState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -47757,8 +47757,8 @@ class FormationStateBuilder extends Object
             posSimMon: posSimMon,
             commMon: commMon,
             convergMon: convergMon);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -47954,7 +47954,7 @@ class ReportControlBuilder extends Object
 
   @override
   _$ReportControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ReportControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -47965,8 +47965,8 @@ class ReportControlBuilder extends Object
             commInterface: commInterface,
             period: period,
             sysDst: sysDst);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -48234,7 +48234,7 @@ class StateReportBuilder extends Object
 
   @override
   _$StateReport build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$StateReport._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -48251,8 +48251,8 @@ class StateReportBuilder extends Object
             fuel: fuel,
             execState: execState,
             planChecksum: planChecksum);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -48520,7 +48520,7 @@ class TransmissionRequestBuilder extends Object
 
   @override
   _$TransmissionRequest build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TransmissionRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -48536,8 +48536,8 @@ class TransmissionRequestBuilder extends Object
             msgData: msgData,
             txtData: txtData,
             rawData: rawData);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -48734,7 +48734,7 @@ class TransmissionStatusBuilder extends Object
 
   @override
   _$TransmissionStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TransmissionStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -48745,8 +48745,8 @@ class TransmissionStatusBuilder extends Object
             status: status,
             range: range,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -48939,7 +48939,7 @@ class SmsRequestBuilder extends Object
 
   @override
   _$SmsRequest build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SmsRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -48950,8 +48950,8 @@ class SmsRequestBuilder extends Object
             destination: destination,
             timeout: timeout,
             smsText: smsText);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -49130,7 +49130,7 @@ class SmsStatusBuilder extends Object
 
   @override
   _$SmsStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SmsStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -49140,8 +49140,8 @@ class SmsStatusBuilder extends Object
             reqId: reqId,
             status: status,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -49296,7 +49296,7 @@ class VtolStateBuilder extends Object
 
   @override
   _$VtolState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VtolState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -49304,8 +49304,8 @@ class VtolStateBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             state: state);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -49460,7 +49460,7 @@ class ArmingStateBuilder extends Object
 
   @override
   _$ArmingState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ArmingState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -49468,8 +49468,8 @@ class ArmingStateBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             state: state);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -49662,7 +49662,7 @@ class TCPRequestBuilder extends Object
 
   @override
   _$TCPRequest build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TCPRequest._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -49673,8 +49673,8 @@ class TCPRequestBuilder extends Object
             destination: destination,
             timeout: timeout,
             msgData: msgData);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -49853,7 +49853,7 @@ class TCPStatusBuilder extends Object
 
   @override
   _$TCPStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TCPStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -49863,8 +49863,8 @@ class TCPStatusBuilder extends Object
             reqId: reqId,
             status: status,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -50004,15 +50004,15 @@ class AbortBuilder extends Object
 
   @override
   _$Abort build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Abort._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -50275,7 +50275,7 @@ class PlanSpecificationBuilder extends Object
 
   @override
   _$PlanSpecification build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanSpecification._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -50291,8 +50291,8 @@ class PlanSpecificationBuilder extends Object
             transitions: transitions,
             startActions: startActions,
             endActions: endActions);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -50487,7 +50487,7 @@ class PlanManeuverBuilder extends Object
 
   @override
   _$PlanManeuver build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanManeuver._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -50498,8 +50498,8 @@ class PlanManeuverBuilder extends Object
             data: data,
             startActions: startActions,
             endActions: endActions);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -50692,7 +50692,7 @@ class PlanTransitionBuilder extends Object
 
   @override
   _$PlanTransition build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanTransition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -50703,8 +50703,8 @@ class PlanTransitionBuilder extends Object
             destMan: destMan,
             conditions: conditions,
             actions: actions);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -50875,7 +50875,7 @@ class EmergencyControlBuilder extends Object
 
   @override
   _$EmergencyControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EmergencyControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -50884,8 +50884,8 @@ class EmergencyControlBuilder extends Object
             dstEnt: dstEnt,
             command: command,
             plan: plan);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -51071,7 +51071,7 @@ class EmergencyControlStateBuilder extends Object
 
   @override
   _$EmergencyControlState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EmergencyControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -51081,8 +51081,8 @@ class EmergencyControlStateBuilder extends Object
             state: state,
             planId: planId,
             commLevel: commLevel);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -51301,7 +51301,7 @@ class PlanDBBuilder extends Object
 
   @override
   _$PlanDB build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanDB._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -51314,8 +51314,8 @@ class PlanDBBuilder extends Object
             planId: planId,
             arg: arg,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -51548,7 +51548,7 @@ class PlanDBStateBuilder extends Object
 
   @override
   _$PlanDBState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanDBState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -51562,8 +51562,8 @@ class PlanDBStateBuilder extends Object
             changeSname: changeSname,
             md5: md5,
             plansInfo: plansInfo);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -51787,7 +51787,7 @@ class PlanDBInformationBuilder extends Object
 
   @override
   _$PlanDBInformation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanDBInformation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -51800,8 +51800,8 @@ class PlanDBInformationBuilder extends Object
             changeSid: changeSid,
             changeSname: changeSname,
             md5: md5);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -52032,7 +52032,7 @@ class PlanControlBuilder extends Object
 
   @override
   _$PlanControl build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanControl._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -52046,8 +52046,8 @@ class PlanControlBuilder extends Object
             flags: flags,
             arg: arg,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -52297,7 +52297,7 @@ class PlanControlStateBuilder extends Object
 
   @override
   _$PlanControlState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanControlState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -52312,8 +52312,8 @@ class PlanControlStateBuilder extends Object
             manType: manType,
             manEta: manEta,
             lastOutcome: lastOutcome);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -52506,7 +52506,7 @@ class PlanVariableBuilder extends Object
 
   @override
   _$PlanVariable build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanVariable._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -52517,8 +52517,8 @@ class PlanVariableBuilder extends Object
             value: value,
             type: type,
             access: access);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -52711,7 +52711,7 @@ class PlanGenerationBuilder extends Object
 
   @override
   _$PlanGeneration build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanGeneration._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -52722,8 +52722,8 @@ class PlanGenerationBuilder extends Object
             op: op,
             planId: planId,
             params: params);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -53096,7 +53096,7 @@ class LeaderStateBuilder extends Object
 
   @override
   _$LeaderState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$LeaderState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -53123,8 +53123,8 @@ class LeaderStateBuilder extends Object
             svx: svx,
             svy: svy,
             svz: svz);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -53358,7 +53358,7 @@ class PlanStatisticsBuilder extends Object
 
   @override
   _$PlanStatistics build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PlanStatistics._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -53372,8 +53372,8 @@ class PlanStatisticsBuilder extends Object
             distances: distances,
             actions: actions,
             fuel: fuel);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -53629,7 +53629,7 @@ class ReportedStateBuilder extends Object
 
   @override
   _$ReportedState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ReportedState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -53645,8 +53645,8 @@ class ReportedStateBuilder extends Object
             rcpTime: rcpTime,
             sid: sid,
             sType: sType);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -53881,7 +53881,7 @@ class RemoteSensorInfoBuilder extends Object
 
   @override
   _$RemoteSensorInfo build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RemoteSensorInfo._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -53895,8 +53895,8 @@ class RemoteSensorInfoBuilder extends Object
             alt: alt,
             heading: heading,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -54063,7 +54063,7 @@ class MapBuilder extends Object
 
   @override
   _$Map build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Map._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -54072,8 +54072,8 @@ class MapBuilder extends Object
             dstEnt: dstEnt,
             id: id,
             features: features);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -54294,7 +54294,7 @@ class MapFeatureBuilder extends Object
 
   @override
   _$MapFeature build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$MapFeature._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -54307,8 +54307,8 @@ class MapFeatureBuilder extends Object
             rgbGreen: rgbGreen,
             rgbBlue: rgbBlue,
             feature: feature);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -54487,7 +54487,7 @@ class MapPointBuilder extends Object
 
   @override
   _$MapPoint build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$MapPoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -54497,8 +54497,8 @@ class MapPointBuilder extends Object
             lat: lat,
             lon: lon,
             alt: alt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -54677,7 +54677,7 @@ class CcuEventBuilder extends Object
 
   @override
   _$CcuEvent build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CcuEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -54687,8 +54687,8 @@ class CcuEventBuilder extends Object
             type: type,
             id: id,
             arg: arg);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -54855,7 +54855,7 @@ class VehicleLinksBuilder extends Object
 
   @override
   _$VehicleLinks build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$VehicleLinks._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -54864,8 +54864,8 @@ class VehicleLinksBuilder extends Object
             dstEnt: dstEnt,
             localname: localname,
             links: links);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -55046,7 +55046,7 @@ class TrexObservationBuilder extends Object
 
   @override
   _$TrexObservation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrexObservation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -55056,8 +55056,8 @@ class TrexObservationBuilder extends Object
             timeline: timeline,
             predicate: predicate,
             attributes: attributes);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -55237,7 +55237,7 @@ class TrexCommandBuilder extends Object
 
   @override
   _$TrexCommand build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrexCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -55247,8 +55247,8 @@ class TrexCommandBuilder extends Object
             command: command,
             goalId: goalId,
             goalXml: goalXml);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -55427,7 +55427,7 @@ class TrexOperationBuilder extends Object
 
   @override
   _$TrexOperation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrexOperation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -55437,8 +55437,8 @@ class TrexOperationBuilder extends Object
             op: op,
             goalId: goalId,
             token: token);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -55633,7 +55633,7 @@ class TrexAttributeBuilder extends Object
 
   @override
   _$TrexAttribute build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrexAttribute._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -55644,8 +55644,8 @@ class TrexAttributeBuilder extends Object
             attrType: attrType,
             min: min,
             max: max);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -55825,7 +55825,7 @@ class TrexTokenBuilder extends Object
 
   @override
   _$TrexToken build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrexToken._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -55835,8 +55835,8 @@ class TrexTokenBuilder extends Object
             timeline: timeline,
             predicate: predicate,
             attributes: attributes);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -56003,7 +56003,7 @@ class TrexPlanBuilder extends Object
 
   @override
   _$TrexPlan build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TrexPlan._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -56012,8 +56012,8 @@ class TrexPlanBuilder extends Object
             dstEnt: dstEnt,
             reactor: reactor,
             tokens: tokens);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -56180,7 +56180,7 @@ class EventBuilder extends Object
 
   @override
   _$Event build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Event._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -56189,8 +56189,8 @@ class EventBuilder extends Object
             dstEnt: dstEnt,
             topic: topic,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -56359,7 +56359,7 @@ class CompressedImageBuilder extends Object
 
   @override
   _$CompressedImage build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CompressedImage._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -56368,8 +56368,8 @@ class CompressedImageBuilder extends Object
             dstEnt: dstEnt,
             frameid: frameid,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -56564,7 +56564,7 @@ class ImageTxSettingsBuilder extends Object
 
   @override
   _$ImageTxSettings build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ImageTxSettings._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -56575,8 +56575,8 @@ class ImageTxSettingsBuilder extends Object
             quality: quality,
             reps: reps,
             tsize: tsize);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -56783,7 +56783,7 @@ class RemoteStateBuilder extends Object
 
   @override
   _$RemoteState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$RemoteState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -56795,8 +56795,8 @@ class RemoteStateBuilder extends Object
             depth: depth,
             speed: speed,
             psi: psi);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -57027,7 +57027,7 @@ class TargetBuilder extends Object
 
   @override
   _$Target build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Target._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -57041,8 +57041,8 @@ class TargetBuilder extends Object
             zUnits: zUnits,
             cog: cog,
             sog: sog);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -57211,7 +57211,7 @@ class EntityParameterBuilder extends Object
 
   @override
   _$EntityParameter build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityParameter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -57220,8 +57220,8 @@ class EntityParameterBuilder extends Object
             dstEnt: dstEnt,
             name: name,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -57391,7 +57391,7 @@ class EntityParametersBuilder extends Object
 
   @override
   _$EntityParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$EntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -57400,8 +57400,8 @@ class EntityParametersBuilder extends Object
             dstEnt: dstEnt,
             name: name,
             params: params);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -57587,7 +57587,7 @@ class QueryEntityParametersBuilder extends Object
 
   @override
   _$QueryEntityParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$QueryEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -57597,8 +57597,8 @@ class QueryEntityParametersBuilder extends Object
             name: name,
             visibility: visibility,
             scope: scope);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -57771,7 +57771,7 @@ class SetEntityParametersBuilder extends Object
 
   @override
   _$SetEntityParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -57780,8 +57780,8 @@ class SetEntityParametersBuilder extends Object
             dstEnt: dstEnt,
             name: name,
             params: params);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -57942,7 +57942,7 @@ class SaveEntityParametersBuilder extends Object
 
   @override
   _$SaveEntityParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SaveEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -57950,8 +57950,8 @@ class SaveEntityParametersBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             name: name);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -58106,7 +58106,7 @@ class CreateSessionBuilder extends Object
 
   @override
   _$CreateSession build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CreateSession._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -58114,8 +58114,8 @@ class CreateSessionBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             timeout: timeout);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -58270,7 +58270,7 @@ class CloseSessionBuilder extends Object
 
   @override
   _$CloseSession build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$CloseSession._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -58278,8 +58278,8 @@ class CloseSessionBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             sessid: sessid);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -58452,7 +58452,7 @@ class SessionSubscriptionBuilder extends Object
 
   @override
   _$SessionSubscription build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SessionSubscription._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -58461,8 +58461,8 @@ class SessionSubscriptionBuilder extends Object
             dstEnt: dstEnt,
             sessid: sessid,
             messages: messages);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -58620,7 +58620,7 @@ class SessionKeepAliveBuilder extends Object
 
   @override
   _$SessionKeepAlive build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SessionKeepAlive._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -58628,8 +58628,8 @@ class SessionKeepAliveBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             sessid: sessid);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -58796,7 +58796,7 @@ class SessionStatusBuilder extends Object
 
   @override
   _$SessionStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SessionStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -58805,8 +58805,8 @@ class SessionStatusBuilder extends Object
             dstEnt: dstEnt,
             sessid: sessid,
             status: status);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -58967,7 +58967,7 @@ class PushEntityParametersBuilder extends Object
 
   @override
   _$PushEntityParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PushEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -58975,8 +58975,8 @@ class PushEntityParametersBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             name: name);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -59137,7 +59137,7 @@ class PopEntityParametersBuilder extends Object
 
   @override
   _$PopEntityParameters build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$PopEntityParameters._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -59145,8 +59145,8 @@ class PopEntityParametersBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             name: name);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -59313,7 +59313,7 @@ class IoEventBuilder extends Object
 
   @override
   _$IoEvent build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$IoEvent._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -59322,8 +59322,8 @@ class IoEventBuilder extends Object
             dstEnt: dstEnt,
             type: type,
             error: error);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -59516,7 +59516,7 @@ class UamTxFrameBuilder extends Object
 
   @override
   _$UamTxFrame build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UamTxFrame._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -59527,8 +59527,8 @@ class UamTxFrameBuilder extends Object
             sysDst: sysDst,
             flags: flags,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -59721,7 +59721,7 @@ class UamRxFrameBuilder extends Object
 
   @override
   _$UamRxFrame build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UamRxFrame._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -59732,8 +59732,8 @@ class UamRxFrameBuilder extends Object
             sysDst: sysDst,
             flags: flags,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -59912,7 +59912,7 @@ class UamTxStatusBuilder extends Object
 
   @override
   _$UamTxStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UamTxStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -59922,8 +59922,8 @@ class UamTxStatusBuilder extends Object
             seq: seq,
             value: value,
             error: error);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -60102,7 +60102,7 @@ class UamRxRangeBuilder extends Object
 
   @override
   _$UamRxRange build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UamRxRange._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -60112,8 +60112,8 @@ class UamRxRangeBuilder extends Object
             seq: seq,
             sys: sys,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -60292,7 +60292,7 @@ class UamTxRangeBuilder extends Object
 
   @override
   _$UamTxRange build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UamTxRange._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -60302,8 +60302,8 @@ class UamTxRangeBuilder extends Object
             seq: seq,
             sysDst: sysDst,
             timeout: timeout);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -60523,7 +60523,7 @@ class FormCtrlParamBuilder extends Object
 
   @override
   _$FormCtrlParam build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormCtrlParam._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -60536,8 +60536,8 @@ class FormCtrlParamBuilder extends Object
             bondThick: bondThick,
             leadGain: leadGain,
             deconflGain: deconflGain);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -60718,7 +60718,7 @@ class FormationEvalBuilder extends Object
 
   @override
   _$FormationEval build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationEval._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -60728,8 +60728,8 @@ class FormationEvalBuilder extends Object
             errMean: errMean,
             distMinAbs: distMinAbs,
             distMinMean: distMinMean);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -61025,7 +61025,7 @@ class FormationControlParamsBuilder extends Object
 
   @override
   _$FormationControlParams build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationControlParams._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -61043,8 +61043,8 @@ class FormationControlParamsBuilder extends Object
             deconflictOffset: deconflictOffset,
             accelSafeMargin: accelSafeMargin,
             accelLimX: accelLimX);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -61297,7 +61297,7 @@ class FormationEvaluationBuilder extends Object
 
   @override
   _$FormationEvaluation build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$FormationEvaluation._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -61312,8 +61312,8 @@ class FormationEvaluationBuilder extends Object
             rollRateMean: rollRateMean,
             time: time,
             controlParams: controlParams);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -61506,7 +61506,7 @@ class SoiWaypointBuilder extends Object
 
   @override
   _$SoiWaypoint build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SoiWaypoint._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -61517,8 +61517,8 @@ class SoiWaypointBuilder extends Object
             lon: lon,
             eta: eta,
             duration: duration);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -61685,7 +61685,7 @@ class SoiPlanBuilder extends Object
 
   @override
   _$SoiPlan build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SoiPlan._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -61694,8 +61694,8 @@ class SoiPlanBuilder extends Object
             dstEnt: dstEnt,
             planId: planId,
             waypoints: waypoints);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -61903,7 +61903,7 @@ class SoiCommandBuilder extends Object
 
   @override
   _$SoiCommand build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SoiCommand._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -61915,8 +61915,8 @@ class SoiCommandBuilder extends Object
             settings: settings,
             plan: plan,
             info: info);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -62109,7 +62109,7 @@ class SoiStateBuilder extends Object
 
   @override
   _$SoiState build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SoiState._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -62120,8 +62120,8 @@ class SoiStateBuilder extends Object
             planId: planId,
             wptId: wptId,
             settingsChk: settingsChk);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -62314,7 +62314,7 @@ class MessagePartBuilder extends Object
 
   @override
   _$MessagePart build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$MessagePart._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -62325,8 +62325,8 @@ class MessagePartBuilder extends Object
             fragNumber: fragNumber,
             numFrags: numFrags,
             data: data);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -62493,7 +62493,7 @@ class NeptusBlobBuilder extends Object
 
   @override
   _$NeptusBlob build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$NeptusBlob._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -62502,8 +62502,8 @@ class NeptusBlobBuilder extends Object
             dstEnt: dstEnt,
             contentType: contentType,
             content: content);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -62643,15 +62643,15 @@ class AbortedBuilder extends Object
 
   @override
   _$Aborted build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Aborted._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -62832,7 +62832,7 @@ class UsblAnglesBuilder extends Object
 
   @override
   _$UsblAngles build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblAngles._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -62842,8 +62842,8 @@ class UsblAnglesBuilder extends Object
             target: target,
             bearing: bearing,
             elevation: elevation);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -63036,7 +63036,7 @@ class UsblPositionBuilder extends Object
 
   @override
   _$UsblPosition build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblPosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -63047,8 +63047,8 @@ class UsblPositionBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -63255,7 +63255,7 @@ class UsblFixBuilder extends Object
 
   @override
   _$UsblFix build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblFix._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -63267,8 +63267,8 @@ class UsblFixBuilder extends Object
             lon: lon,
             zUnits: zUnits,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -63435,7 +63435,7 @@ class ParametersXmlBuilder extends Object
 
   @override
   _$ParametersXml build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -63444,8 +63444,8 @@ class ParametersXmlBuilder extends Object
             dstEnt: dstEnt,
             locale: locale,
             config: config);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -63588,15 +63588,15 @@ class GetParametersXmlBuilder extends Object
 
   @override
   _$GetParametersXml build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GetParametersXml._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
             srcEnt: srcEnt,
             dst: dst,
             dstEnt: dstEnt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -63775,7 +63775,7 @@ class SetImageCoordsBuilder extends Object
 
   @override
   _$SetImageCoords build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -63785,8 +63785,8 @@ class SetImageCoordsBuilder extends Object
             camId: camId,
             x: x,
             y: y);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -63965,7 +63965,7 @@ class GetImageCoordsBuilder extends Object
 
   @override
   _$GetImageCoords build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GetImageCoords._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -63975,8 +63975,8 @@ class GetImageCoordsBuilder extends Object
             camId: camId,
             x: x,
             y: y);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -64202,7 +64202,7 @@ class GetWorldCoordinatesBuilder extends Object
 
   @override
   _$GetWorldCoordinates build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$GetWorldCoordinates._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -64215,8 +64215,8 @@ class GetWorldCoordinatesBuilder extends Object
             x: x,
             y: y,
             z: z);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -64482,7 +64482,7 @@ class UsblAnglesExtendedBuilder extends Object
 
   @override
   _$UsblAnglesExtended build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblAnglesExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -64498,8 +64498,8 @@ class UsblAnglesExtendedBuilder extends Object
             theta: theta,
             psi: psi,
             accuracy: accuracy);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -64785,7 +64785,7 @@ class UsblPositionExtendedBuilder extends Object
 
   @override
   _$UsblPositionExtended build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblPositionExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -64803,8 +64803,8 @@ class UsblPositionExtendedBuilder extends Object
             theta: theta,
             psi: psi,
             accuracy: accuracy);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -65025,7 +65025,7 @@ class UsblFixExtendedBuilder extends Object
 
   @override
   _$UsblFixExtended build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblFixExtended._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -65038,8 +65038,8 @@ class UsblFixExtendedBuilder extends Object
             zUnits: zUnits,
             z: z,
             accuracy: accuracy);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -65246,7 +65246,7 @@ class UsblModemBuilder extends Object
 
   @override
   _$UsblModem build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblModem._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -65258,8 +65258,8 @@ class UsblModemBuilder extends Object
             lon: lon,
             z: z,
             zUnits: zUnits);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -65426,7 +65426,7 @@ class UsblConfigBuilder extends Object
 
   @override
   _$UsblConfig build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$UsblConfig._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -65435,8 +65435,8 @@ class UsblConfigBuilder extends Object
             dstEnt: dstEnt,
             op: op,
             modems: modems);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -65610,7 +65610,7 @@ class DissolvedOrganicMatterBuilder extends Object
 
   @override
   _$DissolvedOrganicMatter build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DissolvedOrganicMatter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -65619,8 +65619,8 @@ class DissolvedOrganicMatterBuilder extends Object
             dstEnt: dstEnt,
             value: value,
             type: type);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -65779,7 +65779,7 @@ class OpticalBackscatterBuilder extends Object
 
   @override
   _$OpticalBackscatter build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$OpticalBackscatter._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -65787,8 +65787,8 @@ class OpticalBackscatterBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -66145,7 +66145,7 @@ class TachographBuilder extends Object
 
   @override
   _$Tachograph build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$Tachograph._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -66168,8 +66168,8 @@ class TachographBuilder extends Object
             rpmMin: rpmMin,
             rpmMax: rpmMax,
             depthMax: depthMax);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -66337,7 +66337,7 @@ class ApmStatusBuilder extends Object
 
   @override
   _$ApmStatus build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$ApmStatus._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -66346,8 +66346,8 @@ class ApmStatusBuilder extends Object
             dstEnt: dstEnt,
             severity: severity,
             text: text);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -66526,7 +66526,7 @@ class SadcReadingsBuilder extends Object
 
   @override
   _$SadcReadings build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$SadcReadings._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -66536,8 +66536,8 @@ class SadcReadingsBuilder extends Object
             channel: channel,
             value: value,
             gain: gain);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -66870,7 +66870,7 @@ class DmsDetectionBuilder extends Object
 
   @override
   _$DmsDetection build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$DmsDetection._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -66893,8 +66893,8 @@ class DmsDetectionBuilder extends Object
             ch14: ch14,
             ch15: ch15,
             ch16: ch16);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -67113,7 +67113,7 @@ class HomePositionBuilder extends Object
 
   @override
   _$HomePosition build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$HomePosition._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -67126,8 +67126,8 @@ class HomePositionBuilder extends Object
             height: height,
             depth: depth,
             alt: alt);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
 
@@ -67286,7 +67286,7 @@ class TotalMagIntensityBuilder extends Object
 
   @override
   _$TotalMagIntensity build() {
-    final _$result = _$v ??
+    final result = _$v ??
         _$TotalMagIntensity._(
             timestamp: timestamp ?? DateTime.now(),
             src: src,
@@ -67294,7 +67294,7 @@ class TotalMagIntensityBuilder extends Object
             dst: dst,
             dstEnt: dstEnt,
             value: value);
-    replace(_$result);
-    return _$result;
+    replace(result);
+    return result;
   }
 }
