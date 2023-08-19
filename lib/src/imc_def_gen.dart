@@ -4,6 +4,7 @@
 // IMC Code Generator
 // **************************************************************************
 
+import 'dart:convert';
 import 'dart:core';
 import 'dart:core' as core; // To be used on conflicts like for imc.Map
 import 'dart:math' as math;

@@ -2,6 +2,7 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:test/test.dart';
@@ -585,5 +586,22 @@ void main() {
     print(msg);
     print(msgR);
     expect(data.toString(), dataR.toString());
+  });
+
+  test('toJson test', () {
+    var globalSW = Stopwatch();
+    globalSW.start();
+    for (var b in imc.messagesBuilders.values) {
+      imc.ImcMessage? msg;
+      try {
+        msg = b().build() as imc.ImcMessage;
+        print(jsonEncode(msg.toJson()));
+      } catch (e) {
+        print(e);
+      }
+      expect(msg != null, true);
+    }
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
   });
 }

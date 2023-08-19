@@ -93,6 +93,25 @@ class _$EntityState extends EntityState {
           ..add('description', description))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+        'flags': flags.value,
+        'description': description,
+      };
 }
 
 /// Entity State builder class
@@ -262,6 +281,22 @@ class _$QueryEntityState extends QueryEntityState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'QueryEntityState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Query Entity State builder class
@@ -453,6 +488,27 @@ class _$EntityInfo extends EntityInfo {
           ..add('deactTime', '$deactTime (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityInfo',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'label': label,
+        'component': component,
+        'act_time': actTime,
+        'deact_time': deactTime,
+      };
 }
 
 /// Entity Information builder class
@@ -642,6 +698,23 @@ class _$QueryEntityInfo extends QueryEntityInfo {
           ..add('id', '$id'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'QueryEntityInfo',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+      };
 }
 
 /// Query Entity Information builder class
@@ -814,6 +887,24 @@ class _$EntityList extends EntityList {
           ..add('list', '$list (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityList',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'list': list,
+      };
 }
 
 /// Entity List builder class
@@ -984,6 +1075,23 @@ class _$CpuUsage extends CpuUsage {
           ..add('value', '$value (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CpuUsage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// CPU Usage builder class
@@ -1159,6 +1267,24 @@ class _$TransportBindings extends TransportBindings {
           ..add('messageId', '$messageId'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TransportBindings',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'consumer': consumer,
+        'message_id': messageId,
+      };
 }
 
 /// Transport Bindings builder class
@@ -1330,6 +1456,23 @@ class _$RestartSystem extends RestartSystem {
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RestartSystem',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+      };
 }
 
 /// Restart System builder class
@@ -1498,6 +1641,23 @@ class _$DevCalibrationControl extends DevCalibrationControl {
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DevCalibrationControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+      };
 }
 
 /// Device Calibration Control builder class
@@ -1693,6 +1853,26 @@ class _$DevCalibrationState extends DevCalibrationState {
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DevCalibrationState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'total_steps': totalSteps,
+        'step_number': stepNumber,
+        'step': step,
+        'flags': flags.value,
+      };
 }
 
 /// Device Calibration State builder class
@@ -1889,6 +2069,24 @@ class _$EntityActivationState extends EntityActivationState {
           ..add('error', error))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityActivationState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+        'error': error,
+      };
 }
 
 /// Entity Activation State builder class
@@ -2057,6 +2255,22 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'QueryEntityActivationState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Query Entity Activation State builder class
@@ -2343,6 +2557,40 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           ..add('rpmRateMax', '$rpmRateMax (rpm/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleOperationalLimits',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'speed_min': speedMin,
+        'speed_max': speedMax,
+        'long_accel': longAccel,
+        'alt_max_msl': altMaxMsl,
+        'dive_fraction_max': diveFractionMax,
+        'climb_fraction_max': climbFractionMax,
+        'bank_max': bankMax,
+        'p_max': pMax,
+        'pitch_min': pitchMin,
+        'pitch_max': pitchMax,
+        'q_max': qMax,
+        'g_min': gMin,
+        'g_max': gMax,
+        'g_lat_max': gLatMax,
+        'rpm_min': rpmMin,
+        'rpm_max': rpmMax,
+        'rpm_rate_max': rpmRateMax,
+      };
 }
 
 /// Vehicle Operational Limits builder class
@@ -2615,6 +2863,25 @@ class _$MsgList extends MsgList {
           ..add('msgs', '$msgs'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'MsgList',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'msgs': [
+          ...msgs.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Message List builder class
@@ -2892,6 +3159,40 @@ class _$SimulatedState extends SimulatedState {
           ..add('svz', '$svz (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SimulatedState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'height': height,
+        'x': x,
+        'y': y,
+        'z': z,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'u': u,
+        'v': v,
+        'w': w,
+        'p': p,
+        'q': q,
+        'r': r,
+        'svx': svx,
+        'svy': svy,
+        'svz': svz,
+      };
 }
 
 /// Simulated State builder class
@@ -3165,6 +3466,24 @@ class _$LeakSimulation extends LeakSimulation {
           ..add('entities', entities))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LeakSimulation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'entities': entities,
+      };
 }
 
 /// Leak Simulation builder class
@@ -3349,6 +3668,25 @@ class _$UASimulation extends UASimulation {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UASimulation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'speed': speed,
+        'data': base64.encode(data),
+      };
 }
 
 /// Underwater Acoustics Simulation builder class
@@ -3544,6 +3882,25 @@ class _$DynamicsSimParam extends DynamicsSimParam {
           ..add('bank2pPgain', '$bank2pPgain'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DynamicsSimParam',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'tas2acc_pgain': tas2accPgain,
+        'bank2p_pgain': bank2pPgain,
+      };
 }
 
 /// Dynamics Simulation Parameters builder class
@@ -3728,6 +4085,24 @@ class _$StorageUsage extends StorageUsage {
           ..add('value', '$value (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'StorageUsage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'available': available,
+        'value': value,
+      };
 }
 
 /// Storage Usage builder class
@@ -3912,6 +4287,25 @@ class _$CacheControl extends CacheControl {
           ..add('message', '$message'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CacheControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'snapshot': snapshot,
+        'message': message?.toJson(false),
+      };
 }
 
 /// Cache Control builder class
@@ -4095,6 +4489,24 @@ class _$LoggingControl extends LoggingControl {
           ..add('name', name))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LoggingControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'name': name,
+      };
 }
 
 /// Logging Control builder class
@@ -4288,6 +4700,26 @@ class _$LogBookEntry extends LogBookEntry {
           ..add('text', text))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LogBookEntry',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'htime': htime,
+        'context': context,
+        'text': text,
+      };
 }
 
 /// Log Book Entry builder class
@@ -4485,6 +4917,27 @@ class _$LogBookControl extends LogBookControl {
           ..add('msg', '$msg'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LogBookControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'command': command.value,
+        'htime': htime,
+        'msg': [
+          ...msg.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Log Book Control builder class
@@ -4668,6 +5121,24 @@ class _$ReplayControl extends ReplayControl {
           ..add('file', file))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ReplayControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'file': file,
+      };
 }
 
 /// Replay Control builder class
@@ -4852,6 +5323,25 @@ class _$ClockControl extends ClockControl {
           ..add('tz', '$tz'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ClockControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'clock': clock,
+        'tz': tz,
+      };
 }
 
 /// Clock Control builder class
@@ -5044,6 +5534,25 @@ class _$HistoricCTD extends HistoricCTD {
           ..add('depth', '$depth (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricCTD',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'conductivity': conductivity,
+        'temperature': temperature,
+        'depth': depth,
+      };
 }
 
 /// Historic CTD builder class
@@ -5256,6 +5765,27 @@ class _$HistoricTelemetry extends HistoricTelemetry {
           ..add('speed', '$speed (dm)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricTelemetry',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'altitude': altitude,
+        'roll': roll,
+        'pitch': pitch,
+        'yaw': yaw,
+        'speed': speed,
+      };
 }
 
 /// Historic Telemetry builder class
@@ -5496,6 +6026,29 @@ class _$HistoricSonarData extends HistoricSonarData {
           ..add('sonarData', '$sonarData'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricSonarData',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'altitude': altitude,
+        'width': width,
+        'length': length,
+        'bearing': bearing,
+        'pxl': pxl,
+        'encoding': encoding.value,
+        'sonar_data': base64.encode(sonarData),
+      };
 }
 
 /// Historic Sonar Data builder class
@@ -5705,6 +6258,24 @@ class _$HistoricEvent extends HistoricEvent {
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricEvent',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'text': text,
+        'type': type.value,
+      };
 }
 
 /// Historic Event builder class
@@ -5909,6 +6480,29 @@ class _$VerticalProfile extends VerticalProfile {
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VerticalProfile',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'parameter': parameter.value,
+        'numSamples': numSamples,
+        'samples': [
+          ...samples.map((m) => m.toJson(false)).toList(),
+        ],
+        'lat': lat,
+        'lon': lon,
+      };
 }
 
 /// Vertical Profile builder class
@@ -6106,6 +6700,24 @@ class _$ProfileSample extends ProfileSample {
           ..add('avg', '$avg'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ProfileSample',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'depth': depth,
+        'avg': avg,
+      };
 }
 
 /// Profile Sample builder class
@@ -6266,6 +6878,22 @@ class _$Heartbeat extends Heartbeat {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Heartbeat',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Heartbeat builder class
@@ -6471,6 +7099,29 @@ class _$Announce extends Announce {
           ..add('services', services))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Announce',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sys_name': sysName,
+        'sys_type': sysType.value,
+        'owner': owner,
+        'lat': lat,
+        'lon': lon,
+        'height': height,
+        'services': services,
+      };
 }
 
 /// Announce builder class
@@ -6680,6 +7331,24 @@ class _$AnnounceService extends AnnounceService {
               '$serviceType (Bitfield) [${serviceType.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AnnounceService',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'service': service,
+        'service_type': serviceType.value,
+      };
 }
 
 /// Announce Service builder class
@@ -6853,6 +7522,23 @@ class _$RSSI extends RSSI {
           ..add('value', '$value (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RSSI',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Receive Signal Strength Information builder class
@@ -7017,6 +7703,23 @@ class _$VSWR extends VSWR {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VSWR',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Voltage Standing Wave Ratio builder class
@@ -7181,6 +7884,23 @@ class _$LinkLevel extends LinkLevel {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LinkLevel',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Link Level builder class
@@ -7359,6 +8079,25 @@ class _$Sms extends Sms {
           ..add('contents', contents))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Sms',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'number': number,
+        'timeout': timeout,
+        'contents': contents,
+      };
 }
 
 /// SMS builder class
@@ -7558,6 +8297,26 @@ class _$SmsTx extends SmsTx {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SmsTx',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'seq': seq,
+        'destination': destination,
+        'timeout': timeout,
+        'data': base64.encode(data),
+      };
 }
 
 /// SMS Transmit builder class
@@ -7747,6 +8506,24 @@ class _$SmsRx extends SmsRx {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SmsRx',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'source': source,
+        'data': base64.encode(data),
+      };
 }
 
 /// SMS Receive builder class
@@ -7931,6 +8708,25 @@ class _$SmsState extends SmsState {
           ..add('error', error))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SmsState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'seq': seq,
+        'state': state.value,
+        'error': error,
+      };
 }
 
 /// SMS State builder class
@@ -8114,6 +8910,24 @@ class _$TextMessage extends TextMessage {
           ..add('text', text))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TextMessage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'origin': origin,
+        'text': text,
+      };
 }
 
 /// Text Message builder class
@@ -8316,6 +9130,27 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'IridiumMsgRx',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'origin': origin,
+        'htime': htime,
+        'lat': lat,
+        'lon': lon,
+        'data': base64.encode(data),
+      };
 }
 
 /// Received Iridium Message builder class
@@ -8527,6 +9362,26 @@ class _$IridiumMsgTx extends IridiumMsgTx {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'IridiumMsgTx',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'ttl': ttl,
+        'destination': destination,
+        'data': base64.encode(data),
+      };
 }
 
 /// Transmit Iridium Message builder class
@@ -8724,6 +9579,25 @@ class _$IridiumTxStatus extends IridiumTxStatus {
           ..add('text', text))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'IridiumTxStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'status': status.value,
+        'text': text,
+      };
 }
 
 /// Iridium Transmission Status builder class
@@ -8912,6 +9786,24 @@ class _$GroupMembershipState extends GroupMembershipState {
           ..add('links', '$links'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GroupMembershipState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'group_name': groupName,
+        'links': links,
+      };
 }
 
 /// Group Membership State builder class
@@ -9099,6 +9991,25 @@ class _$SystemGroup extends SystemGroup {
           ..add('groupList', groupList))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SystemGroup',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'GroupName': groupName,
+        'Action': action.value,
+        'GroupList': groupList,
+      };
 }
 
 /// System Group builder class
@@ -9282,6 +10193,24 @@ class _$LinkLatency extends LinkLatency {
           ..add('sysSrc', '$sysSrc'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LinkLatency',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'sys_src': sysSrc,
+      };
 }
 
 /// Link Latency builder class
@@ -9459,6 +10388,24 @@ class _$ExtendedRSSI extends ExtendedRSSI {
           ..add('units', '$units (Enumerated) [${units.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ExtendedRSSI',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'units': units.value,
+      };
 }
 
 /// Extended Receive Signal Strength Information builder class
@@ -9652,6 +10599,28 @@ class _$HistoricData extends HistoricData {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricData',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'base_lat': baseLat,
+        'base_lon': baseLon,
+        'base_time': baseTime,
+        'data': [
+          ...data.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Historic Data Series builder class
@@ -9861,6 +10830,26 @@ class _$CompressedHistory extends CompressedHistory {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CompressedHistory',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'base_lat': baseLat,
+        'base_lon': baseLon,
+        'base_time': baseTime,
+        'data': base64.encode(data),
+      };
 }
 
 /// Compressed Historic Data Series builder class
@@ -10090,6 +11079,29 @@ class _$HistoricSample extends HistoricSample {
           ..add('sample', '$sample'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricSample',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sys_id': sysId,
+        'priority': priority,
+        'x': x,
+        'y': y,
+        'z': z,
+        't': t,
+        'sample': sample?.toJson(false),
+      };
 }
 
 /// Historic Data Sample builder class
@@ -10317,6 +11329,26 @@ class _$HistoricDataQuery extends HistoricDataQuery {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HistoricDataQuery',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'type': type.value,
+        'max_size': maxSize,
+        'data': data?.toJson(false),
+      };
 }
 
 /// Historic Data Query builder class
@@ -10523,6 +11555,26 @@ class _$RemoteCommand extends RemoteCommand {
           ..add('cmd', '$cmd'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RemoteCommand',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'original_source': originalSource,
+        'destination': destination,
+        'timeout': timeout,
+        'cmd': cmd?.toJson(false),
+      };
 }
 
 /// Remote Command builder class
@@ -10733,6 +11785,26 @@ class _$CommSystemsQuery extends CommSystemsQuery {
           ..add('list', '$list (List)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CommSystemsQuery',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'comm_interface': commInterface.value,
+        'model': model.value,
+        'list': list,
+      };
 }
 
 /// Communication Systems Query builder class
@@ -10981,6 +12053,31 @@ class _$TelemetryMsg extends TelemetryMsg {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TelemetryMsg',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'req_id': reqId,
+        'ttl': ttl,
+        'code': code.value,
+        'destination': destination,
+        'Source': source,
+        'acknowledge': acknowledge.value,
+        'status': status.value,
+        'data': base64.encode(data),
+      };
 }
 
 /// Telemetry Message builder class
@@ -11202,6 +12299,24 @@ class _$LblRange extends LblRange {
           ..add('range', '$range (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LblRange',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'range': range,
+      };
 }
 
 /// LBL Range builder class
@@ -11418,6 +12533,29 @@ class _$LblBeacon extends LblBeacon {
           ..add('transponderDelay', '$transponderDelay (ms)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LblBeacon',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'beacon': beacon,
+        'lat': lat,
+        'lon': lon,
+        'depth': depth,
+        'query_channel': queryChannel,
+        'reply_channel': replyChannel,
+        'transponder_delay': transponderDelay,
+      };
 }
 
 /// LBL Beacon Configuration builder class
@@ -11626,6 +12764,26 @@ class _$LblConfig extends LblConfig {
           ..add('beacons', '$beacons'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LblConfig',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'beacons': [
+          ...beacons.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// LBL Configuration builder class
@@ -11797,6 +12955,23 @@ class _$AcousticMessage extends AcousticMessage {
           ..add('message', '$message'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticMessage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'message': message?.toJson(false),
+      };
 }
 
 /// Acoustic Message builder class
@@ -12041,6 +13216,33 @@ class _$SimAcousticMessage extends SimAcousticMessage {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SimAcousticMessage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'depth': depth,
+        'sentence': sentence,
+        'txtime': txtime,
+        'modem_type': modemType,
+        'sys_src': sysSrc,
+        'seq': seq,
+        'sys_dst': sysDst,
+        'flags': flags.value,
+        'data': base64.encode(data),
+      };
 }
 
 /// Simulated Acoustic Message builder class
@@ -12293,6 +13495,26 @@ class _$AcousticOperation extends AcousticOperation {
           ..add('msg', '$msg'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticOperation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'system': system,
+        'range': range,
+        'msg': msg?.toJson(false),
+      };
 }
 
 /// Acoustic Operation builder class
@@ -12470,6 +13692,22 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticSystemsQuery',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Acoustic Systems Query builder class
@@ -12632,6 +13870,23 @@ class _$AcousticSystems extends AcousticSystems {
           ..add('list', '$list (List)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticSystems',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'list': list,
+      };
 }
 
 /// Acoustic Systems builder class
@@ -12811,6 +14066,25 @@ class _$AcousticLink extends AcousticLink {
           ..add('integrity', '$integrity'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticLink',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'peer': peer,
+        'rssi': rssi,
+        'integrity': integrity,
+      };
 }
 
 /// Acoustic Link Quality builder class
@@ -13027,6 +14301,28 @@ class _$AcousticRequest extends AcousticRequest {
           ..add('msg', '$msg'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticRequest',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'destination': destination,
+        'timeout': timeout,
+        'range': range,
+        'type': type.value,
+        'msg': msg?.toJson(false),
+      };
 }
 
 /// Acoustic Transmission Request builder class
@@ -13254,6 +14550,27 @@ class _$AcousticStatus extends AcousticStatus {
           ..add('range', '$range (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'type': type.value,
+        'status': status.value,
+        'info': info,
+        'range': range,
+      };
 }
 
 /// Acoustic Transmission Status builder class
@@ -13442,6 +14759,23 @@ class _$Rpm extends Rpm {
           ..add('value', '$value (rpm)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Rpm',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Revolutions Per Minute builder class
@@ -13606,6 +14940,23 @@ class _$Voltage extends Voltage {
           ..add('value', '$value (V)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Voltage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Voltage builder class
@@ -13770,6 +15121,23 @@ class _$Current extends Current {
           ..add('value', '$value (A)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Current',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Current builder class
@@ -14038,6 +15406,38 @@ class _$GpsFix extends GpsFix {
           ..add('vacc', '$vacc (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpsFix',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'validity': validity.value,
+        'type': type.value,
+        'utc_year': utcYear,
+        'utc_month': utcMonth,
+        'utc_day': utcDay,
+        'utc_time': utcTime,
+        'lat': lat,
+        'lon': lon,
+        'height': height,
+        'satellites': satellites,
+        'cog': cog,
+        'sog': sog,
+        'hdop': hdop,
+        'vdop': vdop,
+        'hacc': hacc,
+        'vacc': vacc,
+      };
 }
 
 /// GPS Fix builder class
@@ -14326,6 +15726,27 @@ class _$EulerAngles extends EulerAngles {
               '$psiMagnetic (rad) [${psiMagnetic * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EulerAngles',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'time': time,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'psi_magnetic': psiMagnetic,
+      };
 }
 
 /// Euler Angles builder class
@@ -14549,6 +15970,27 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           ..add('timestep', '$timestep (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EulerAnglesDelta',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'time': time,
+        'x': x,
+        'y': y,
+        'z': z,
+        'timestep': timestep,
+      };
 }
 
 /// Euler Angles Delta builder class
@@ -14762,6 +16204,26 @@ class _$AngularVelocity extends AngularVelocity {
           ..add('z', '$z (rad/s) [${z * 180.0 / math.pi} (deg/s)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AngularVelocity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'time': time,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Angular Velocity builder class
@@ -14968,6 +16430,26 @@ class _$Acceleration extends Acceleration {
           ..add('z', '$z (m/s/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Acceleration',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'time': time,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Acceleration builder class
@@ -15173,6 +16655,26 @@ class _$MagneticField extends MagneticField {
           ..add('z', '$z (G)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'MagneticField',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'time': time,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Magnetic Field builder class
@@ -15379,6 +16881,26 @@ class _$GroundVelocity extends GroundVelocity {
           ..add('z', '$z (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GroundVelocity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'validity': validity.value,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Ground Velocity builder class
@@ -15586,6 +17108,26 @@ class _$WaterVelocity extends WaterVelocity {
           ..add('z', '$z (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'WaterVelocity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'validity': validity.value,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Water Velocity builder class
@@ -15792,6 +17334,26 @@ class _$VelocityDelta extends VelocityDelta {
           ..add('z', '$z (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VelocityDelta',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'time': time,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Velocity Delta builder class
@@ -15998,6 +17560,30 @@ class _$Distance extends Distance {
           ..add('value', '$value (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Distance',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'validity': validity.value,
+        'location': [
+          ...location.map((m) => m.toJson(false)).toList(),
+        ],
+        'beam_config': [
+          ...beamConfig.map((m) => m.toJson(false)).toList(),
+        ],
+        'value': value,
+      };
 }
 
 /// Distance builder class
@@ -16181,6 +17767,23 @@ class _$Temperature extends Temperature {
           ..add('value', '$value (°C)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Temperature',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Temperature builder class
@@ -16345,6 +17948,23 @@ class _$Pressure extends Pressure {
           ..add('value', '$value (hPa)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Pressure',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Pressure builder class
@@ -16509,6 +18129,23 @@ class _$Depth extends Depth {
           ..add('value', '$value (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Depth',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Depth builder class
@@ -16673,6 +18310,23 @@ class _$DepthOffset extends DepthOffset {
           ..add('value', '$value (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DepthOffset',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Depth Offset builder class
@@ -16837,6 +18491,23 @@ class _$SoundSpeed extends SoundSpeed {
           ..add('value', '$value (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SoundSpeed',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Sound Speed builder class
@@ -17001,6 +18672,23 @@ class _$WaterDensity extends WaterDensity {
           ..add('value', '$value (kg/m/m/m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'WaterDensity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Water Density builder class
@@ -17165,6 +18853,23 @@ class _$Conductivity extends Conductivity {
           ..add('value', '$value (S/m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Conductivity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Conductivity builder class
@@ -17329,6 +19034,23 @@ class _$Salinity extends Salinity {
           ..add('value', '$value (PSU)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Salinity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Salinity builder class
@@ -17509,6 +19231,25 @@ class _$WindSpeed extends WindSpeed {
           ..add('turbulence', '$turbulence (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'WindSpeed',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'direction': direction,
+        'speed': speed,
+        'turbulence': turbulence,
+      };
 }
 
 /// Wind Speed builder class
@@ -17688,6 +19429,23 @@ class _$RelativeHumidity extends RelativeHumidity {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RelativeHumidity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Relative Humidity builder class
@@ -17853,6 +19611,23 @@ class _$DevDataText extends DevDataText {
           ..add('value', value))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DevDataText',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Device Data (Text) builder class
@@ -18017,6 +19792,23 @@ class _$DevDataBinary extends DevDataBinary {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DevDataBinary',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': base64.encode(value),
+      };
 }
 
 /// Device Data (Binary) builder class
@@ -18181,6 +19973,23 @@ class _$Force extends Force {
           ..add('value', '$value (N)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Force',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Force builder class
@@ -18399,6 +20208,32 @@ class _$SonarData extends SonarData {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SonarData',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'frequency': frequency,
+        'min_range': minRange,
+        'max_range': maxRange,
+        'bits_per_point': bitsPerPoint,
+        'scale_factor': scaleFactor,
+        'beam_config': [
+          ...beamConfig.map((m) => m.toJson(false)).toList(),
+        ],
+        'data': base64.encode(data),
+      };
 }
 
 /// Sonar Data builder class
@@ -18596,6 +20431,22 @@ class _$Pulse extends Pulse {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Pulse',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Pulse builder class
@@ -18758,6 +20609,23 @@ class _$PulseDetectionControl extends PulseDetectionControl {
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PulseDetectionControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+      };
 }
 
 /// Pulse Detection Control builder class
@@ -18941,6 +20809,25 @@ class _$FuelLevel extends FuelLevel {
           ..add('opmodes', '$opmodes (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FuelLevel',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'confidence': confidence,
+        'opmodes': opmodes,
+      };
 }
 
 /// Fuel Level builder class
@@ -19216,6 +21103,37 @@ class _$GpsNavData extends GpsNavData {
           ..add('cacc', '$cacc (rad) [${cacc * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpsNavData',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'itow': itow,
+        'lat': lat,
+        'lon': lon,
+        'height_ell': heightEll,
+        'height_sea': heightSea,
+        'hacc': hacc,
+        'vacc': vacc,
+        'vel_n': velN,
+        'vel_e': velE,
+        'vel_d': velD,
+        'speed': speed,
+        'gspeed': gspeed,
+        'heading': heading,
+        'sacc': sacc,
+        'cacc': cacc,
+      };
 }
 
 /// GPS Navigation Data builder class
@@ -19471,6 +21389,24 @@ class _$ServoPosition extends ServoPosition {
           ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ServoPosition',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'value': value,
+      };
 }
 
 /// Servo Position builder class
@@ -19680,6 +21616,28 @@ class _$DeviceState extends DeviceState {
           ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DeviceState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+      };
 }
 
 /// Device State builder class
@@ -19884,6 +21842,24 @@ class _$BeamConfig extends BeamConfig {
               '$beamHeight (rad) [${beamHeight * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'BeamConfig',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'beam_width': beamWidth,
+        'beam_height': beamHeight,
+      };
 }
 
 /// Beam Configuration builder class
@@ -20054,6 +22030,23 @@ class _$DataSanity extends DataSanity {
           ..add('sane', '$sane (Enumerated) [${sane.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DataSanity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sane': sane.value,
+      };
 }
 
 /// Data Sanity builder class
@@ -20218,6 +22211,23 @@ class _$RhodamineDye extends RhodamineDye {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RhodamineDye',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Rhodamine Dye builder class
@@ -20382,6 +22392,23 @@ class _$CrudeOil extends CrudeOil {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CrudeOil',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Crude Oil builder class
@@ -20546,6 +22573,23 @@ class _$FineOil extends FineOil {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FineOil',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Fine Oil builder class
@@ -20710,6 +22754,23 @@ class _$Turbidity extends Turbidity {
           ..add('value', '$value (NTU)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Turbidity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Turbidity builder class
@@ -20874,6 +22935,23 @@ class _$Chlorophyll extends Chlorophyll {
           ..add('value', '$value (µg/L)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Chlorophyll',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Chlorophyll builder class
@@ -21038,6 +23116,23 @@ class _$Fluorescein extends Fluorescein {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Fluorescein',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Fluorescein builder class
@@ -21202,6 +23297,23 @@ class _$Phycocyanin extends Phycocyanin {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Phycocyanin',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Phycocyanin builder class
@@ -21366,6 +23478,23 @@ class _$Phycoerythrin extends Phycoerythrin {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Phycoerythrin',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Phycoerythrin builder class
@@ -21632,6 +23761,37 @@ class _$GpsFixRtk extends GpsFixRtk {
           ..add('iarRatio', '$iarRatio'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpsFixRtk',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'validity': validity.value,
+        'type': type.value,
+        'tow': tow,
+        'base_lat': baseLat,
+        'base_lon': baseLon,
+        'base_height': baseHeight,
+        'n': n,
+        'e': e,
+        'd': d,
+        'v_n': vN,
+        'v_e': vE,
+        'v_d': vD,
+        'satellites': satellites,
+        'iar_hyp': iarHyp,
+        'iar_ratio': iarRatio,
+      };
 }
 
 /// GPS Fix RTK builder class
@@ -21889,6 +24049,24 @@ class _$ExternalNavData extends ExternalNavData {
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ExternalNavData',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state?.toJson(false),
+        'type': type.value,
+      };
 }
 
 /// External Navigation Data builder class
@@ -22061,6 +24239,23 @@ class _$DissolvedOxygen extends DissolvedOxygen {
           ..add('value', '$value (µM)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DissolvedOxygen',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Dissolved Oxygen builder class
@@ -22226,6 +24421,23 @@ class _$AirSaturation extends AirSaturation {
           ..add('value', '$value (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AirSaturation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Air Saturation builder class
@@ -22390,6 +24602,23 @@ class _$Throttle extends Throttle {
           ..add('value', '$value (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Throttle',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Throttle builder class
@@ -22554,6 +24783,23 @@ class _$PH extends PH {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PH',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// pH builder class
@@ -22718,6 +24964,23 @@ class _$Redox extends Redox {
           ..add('value', '$value (V)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Redox',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Redox Potential builder class
@@ -22896,6 +25159,25 @@ class _$CameraZoom extends CameraZoom {
           ..add('action', '$action (Enumerated) [${action.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CameraZoom',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'zoom': zoom,
+        'action': action.value,
+      };
 }
 
 /// Camera Zoom builder class
@@ -23083,6 +25365,24 @@ class _$SetThrusterActuation extends SetThrusterActuation {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetThrusterActuation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'value': value,
+      };
 }
 
 /// Set Thruster Actuation builder class
@@ -23266,6 +25566,24 @@ class _$SetServoPosition extends SetServoPosition {
           ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetServoPosition',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'value': value,
+      };
 }
 
 /// Set Servo Position builder class
@@ -23448,6 +25766,24 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           ..add('angle', '$angle (rad) [${angle * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetControlSurfaceDeflection',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'angle': angle,
+      };
 }
 
 /// Set Control Surface Deflection builder class
@@ -23634,6 +25970,24 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
           ..add('actions', '$actions (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RemoteActionsRequest',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'actions': actions,
+      };
 }
 
 /// Remote Actions Request builder class
@@ -23807,6 +26161,23 @@ class _$RemoteActions extends RemoteActions {
           ..add('actions', '$actions (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RemoteActions',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'actions': actions,
+      };
 }
 
 /// Remote Actions builder class
@@ -23978,6 +26349,24 @@ class _$ButtonEvent extends ButtonEvent {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ButtonEvent',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'button': button,
+        'value': value,
+      };
 }
 
 /// Button Event builder class
@@ -24155,6 +26544,24 @@ class _$LcdControl extends LcdControl {
           ..add('text', text))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LcdControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'text': text,
+      };
 }
 
 /// LCD Control builder class
@@ -24340,6 +26747,25 @@ class _$PowerOperation extends PowerOperation {
           ..add('schedTime', '$schedTime (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PowerOperation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'time_remain': timeRemain,
+        'sched_time': schedTime,
+      };
 }
 
 /// Power Operation builder class
@@ -24534,6 +26960,25 @@ class _$PowerChannelControl extends PowerChannelControl {
           ..add('schedTime', '$schedTime (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PowerChannelControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'op': op.value,
+        'sched_time': schedTime,
+      };
 }
 
 /// Power Channel Control builder class
@@ -24707,6 +27152,22 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'QueryPowerChannelState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Query Power Channel State builder class
@@ -24880,6 +27341,24 @@ class _$PowerChannelState extends PowerChannelState {
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PowerChannelState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'state': state.value,
+      };
 }
 
 /// Power Channel State builder class
@@ -25058,6 +27537,24 @@ class _$LedBrightness extends LedBrightness {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LedBrightness',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'value': value,
+      };
 }
 
 /// LED Brightness builder class
@@ -25232,6 +27729,23 @@ class _$QueryLedBrightness extends QueryLedBrightness {
           ..add('name', name))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'QueryLedBrightness',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+      };
 }
 
 /// Query LED Brightness builder class
@@ -25407,6 +27921,24 @@ class _$SetLedBrightness extends SetLedBrightness {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetLedBrightness',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'value': value,
+      };
 }
 
 /// Set LED Brightness builder class
@@ -25592,6 +28124,25 @@ class _$SetPWM extends SetPWM {
           ..add('dutyCycle', '$dutyCycle (µs)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetPWM',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'period': period,
+        'duty_cycle': dutyCycle,
+      };
 }
 
 /// Set PWM builder class
@@ -25782,6 +28333,25 @@ class _$PWM extends PWM {
           ..add('dutyCycle', '$dutyCycle (µs)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PWM',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'period': period,
+        'duty_cycle': dutyCycle,
+      };
 }
 
 /// PWM builder class
@@ -26081,6 +28651,42 @@ class _$EstimatedState extends EstimatedState {
           ..add('alt', '$alt (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EstimatedState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'height': height,
+        'x': x,
+        'y': y,
+        'z': z,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'u': u,
+        'v': v,
+        'w': w,
+        'vx': vx,
+        'vy': vy,
+        'vz': vz,
+        'p': p,
+        'q': q,
+        'r': r,
+        'depth': depth,
+        'alt': alt,
+      };
 }
 
 /// Estimated State builder class
@@ -26377,6 +28983,25 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
           ..add('z', '$z (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EstimatedStreamVelocity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Estimated Stream Velocity builder class
@@ -26557,6 +29182,23 @@ class _$IndicatedSpeed extends IndicatedSpeed {
           ..add('value', '$value (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'IndicatedSpeed',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Indicated Speed builder class
@@ -26721,6 +29363,23 @@ class _$TrueSpeed extends TrueSpeed {
           ..add('value', '$value (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrueSpeed',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// True Speed builder class
@@ -26983,6 +29642,36 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           ..add('biasR', '$biasR (rad/s) [${biasR * 180.0 / math.pi} (deg/s)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'NavigationUncertainty',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'p': p,
+        'q': q,
+        'r': r,
+        'u': u,
+        'v': v,
+        'w': w,
+        'bias_psi': biasPsi,
+        'bias_r': biasR,
+      };
 }
 
 /// Navigation Uncertainty builder class
@@ -27293,6 +29982,31 @@ class _$NavigationData extends NavigationData {
           ..add('customZ', '$customZ'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'NavigationData',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'bias_psi': biasPsi,
+        'bias_r': biasR,
+        'cog': cog,
+        'cyaw': cyaw,
+        'lbl_rej_level': lblRejLevel,
+        'gps_rej_level': gpsRejLevel,
+        'custom_x': customX,
+        'custom_y': customY,
+        'custom_z': customZ,
+      };
 }
 
 /// Navigation Data builder class
@@ -27513,6 +30227,24 @@ class _$GpsFixRejection extends GpsFixRejection {
           ..add('reason', '$reason (Enumerated) [${reason.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpsFixRejection',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'utc_time': utcTime,
+        'reason': reason.value,
+      };
 }
 
 /// GPS Fix Rejection builder class
@@ -27703,6 +30435,25 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
               '$acceptance (Enumerated) [${acceptance.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LblRangeAcceptance',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'range': range,
+        'acceptance': acceptance.value,
+      };
 }
 
 /// LBL Range Acceptance builder class
@@ -27905,6 +30656,26 @@ class _$DvlRejection extends DvlRejection {
           ..add('timestep', '$timestep (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DvlRejection',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'reason': reason.value,
+        'value': value,
+        'timestep': timestep,
+      };
 }
 
 /// DVL Rejection builder class
@@ -28126,6 +30897,28 @@ class _$LblEstimate extends LblEstimate {
           ..add('distance', '$distance (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LblEstimate',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'beacon': beacon?.toJson(false),
+        'x': x,
+        'y': y,
+        'var_x': varX,
+        'var_y': varY,
+        'distance': distance,
+      };
 }
 
 /// LBL Beacon Position Estimate builder class
@@ -28320,6 +31113,23 @@ class _$AlignmentState extends AlignmentState {
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AlignmentState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+      };
 }
 
 /// Alignment State builder class
@@ -28502,6 +31312,25 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
           ..add('z', '$z (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GroupStreamVelocity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// GroupStreamVelocity builder class
@@ -28695,6 +31524,25 @@ class _$Airflow extends Airflow {
           ..add('ssa', '$ssa (rad) [${ssa * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Airflow',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'va': va,
+        'aoa': aoa,
+        'ssa': ssa,
+      };
 }
 
 /// Airflow builder class
@@ -28871,6 +31719,23 @@ class _$DesiredHeading extends DesiredHeading {
           ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredHeading',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Desired Heading builder class
@@ -29042,6 +31907,24 @@ class _$DesiredZ extends DesiredZ {
           ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredZ',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'z_units': zUnits.value,
+      };
 }
 
 /// Desired Z builder class
@@ -29220,6 +32103,24 @@ class _$DesiredSpeed extends DesiredSpeed {
               '$speedUnits (Enumerated) [${speedUnits.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredSpeed',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'speed_units': speedUnits.value,
+      };
 }
 
 /// Desired Speed builder class
@@ -29390,6 +32291,23 @@ class _$DesiredRoll extends DesiredRoll {
           ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredRoll',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Desired Roll builder class
@@ -29554,6 +32472,23 @@ class _$DesiredPitch extends DesiredPitch {
           ..add('value', '$value (rad) [${value * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredPitch',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Desired Pitch builder class
@@ -29722,6 +32657,23 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
           ..add('value', '$value (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredVerticalRate',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Desired Vertical Rate builder class
@@ -29982,6 +32934,35 @@ class _$DesiredPath extends DesiredPath {
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredPath',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'path_ref': pathRef,
+        'start_lat': startLat,
+        'start_lon': startLon,
+        'start_z': startZ,
+        'start_z_units': startZUnits.value,
+        'end_lat': endLat,
+        'end_lon': endLon,
+        'end_z': endZ,
+        'end_z_units': endZUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'lradius': lradius,
+        'flags': flags.value,
+      };
 }
 
 /// Desired Path builder class
@@ -30264,6 +33245,29 @@ class _$DesiredControl extends DesiredControl {
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+        'k': k,
+        'm': m,
+        'n': n,
+        'flags': flags.value,
+      };
 }
 
 /// Desired Control builder class
@@ -30468,6 +33472,23 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
           ..add('value', '$value (rad/s) [${value * 180.0 / math.pi} (deg/s)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredHeadingRate',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Desired Heading Rate builder class
@@ -30680,6 +33701,29 @@ class _$DesiredVelocity extends DesiredVelocity {
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredVelocity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'u': u,
+        'v': v,
+        'w': w,
+        'p': p,
+        'q': q,
+        'r': r,
+        'flags': flags.value,
+      };
 }
 
 /// Desired Velocity builder class
@@ -31008,6 +34052,41 @@ class _$PathControlState extends PathControlState {
           ..add('eta', '$eta (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PathControlState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'path_ref': pathRef,
+        'start_lat': startLat,
+        'start_lon': startLon,
+        'start_z': startZ,
+        'start_z_units': startZUnits.value,
+        'end_lat': endLat,
+        'end_lon': endLon,
+        'end_z': endZ,
+        'end_z_units': endZUnits.value,
+        'lradius': lradius,
+        'flags': flags.value,
+        'x': x,
+        'y': y,
+        'z': z,
+        'vx': vx,
+        'vy': vy,
+        'vz': vz,
+        'course_error': courseError,
+        'eta': eta,
+      };
 }
 
 /// Path Control State builder class
@@ -31299,6 +34378,25 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
           ..add('n', '$n (Nm)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AllocatedControlTorques',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'k': k,
+        'm': m,
+        'n': n,
+      };
 }
 
 /// Allocated Control Torques builder class
@@ -31502,6 +34600,26 @@ class _$ControlParcel extends ControlParcel {
           ..add('a', '$a'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ControlParcel',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'p': p,
+        'i': i,
+        'd': d,
+        'a': a,
+      };
 }
 
 /// Control Parcel builder class
@@ -31684,6 +34802,23 @@ class _$Brake extends Brake {
           ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Brake',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+      };
 }
 
 /// Brake builder class
@@ -31920,6 +35055,32 @@ class _$DesiredLinearState extends DesiredLinearState {
           ..add('flags', '$flags (Bitfield) [${flags.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredLinearState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+        'vx': vx,
+        'vy': vy,
+        'vz': vz,
+        'ax': ax,
+        'ay': ay,
+        'az': az,
+        'flags': flags.value,
+      };
 }
 
 /// Desired Linear State builder class
@@ -32140,6 +35301,23 @@ class _$DesiredThrottle extends DesiredThrottle {
           ..add('value', '$value (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DesiredThrottle',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Desired Throttle builder class
@@ -32381,6 +35559,33 @@ class _$Goto extends Goto {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Goto',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'roll': roll,
+        'pitch': pitch,
+        'yaw': yaw,
+        'custom': custom,
+      };
 }
 
 /// Goto Maneuver builder class
@@ -32681,6 +35886,33 @@ class _$PopUp extends PopUp {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PopUp',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'duration': duration,
+        'radius': radius,
+        'flags': flags.value,
+        'custom': custom,
+      };
 }
 
 /// PopUp Maneuver builder class
@@ -32905,6 +36137,23 @@ class _$Teleoperation extends Teleoperation {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Teleoperation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'custom': custom,
+      };
 }
 
 /// Teleoperation Maneuver builder class
@@ -33165,6 +36414,36 @@ class _$Loiter extends Loiter {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Loiter',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'duration': duration,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'type': type.value,
+        'radius': radius,
+        'length': length,
+        'bearing': bearing,
+        'direction': direction.value,
+        'custom': custom,
+      };
 }
 
 /// Loiter Maneuver builder class
@@ -33414,6 +36693,24 @@ class _$IdleManeuver extends IdleManeuver {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'IdleManeuver',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'duration': duration,
+        'custom': custom,
+      };
 }
 
 /// Idle Maneuver builder class
@@ -33599,6 +36896,25 @@ class _$LowLevelControl extends LowLevelControl {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LowLevelControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'control': control?.toJson(false),
+        'duration': duration,
+        'custom': custom,
+      };
 }
 
 /// Low Level Control Maneuver builder class
@@ -33883,6 +37199,38 @@ class _$Rows extends Rows {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Rows',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'bearing': bearing,
+        'cross_angle': crossAngle,
+        'width': width,
+        'length': length,
+        'hstep': hstep,
+        'coff': coff,
+        'alternation': alternation,
+        'flags': flags.value,
+        'custom': custom,
+      };
 }
 
 /// Rows Maneuver builder class
@@ -34199,6 +37547,33 @@ class _$FollowPath extends FollowPath {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FollowPath',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'points': [
+          ...points.map((m) => m.toJson(false)).toList(),
+        ],
+        'custom': custom,
+      };
 }
 
 /// Follow Path Maneuver builder class
@@ -34425,6 +37800,25 @@ class _$PathPoint extends PathPoint {
           ..add('z', '$z (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PathPoint',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Path Point builder class
@@ -34670,6 +38064,32 @@ class _$YoYo extends YoYo {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'YoYo',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'amplitude': amplitude,
+        'pitch': pitch,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Yo-Yo Maneuver builder class
@@ -34882,6 +38302,22 @@ class _$TeleoperationDone extends TeleoperationDone {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TeleoperationDone',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Teleoperation Done builder class
@@ -35103,6 +38539,31 @@ class _$StationKeeping extends StationKeeping {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'StationKeeping',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'radius': radius,
+        'duration': duration,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Station Keeping builder class
@@ -35399,6 +38860,34 @@ class _$Elevator extends Elevator {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Elevator',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'flags': flags.value,
+        'lat': lat,
+        'lon': lon,
+        'start_z': startZ,
+        'start_z_units': startZUnits.value,
+        'end_z': endZ,
+        'end_z_units': endZUnits.value,
+        'radius': radius,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Elevator Maneuver builder class
@@ -35694,6 +39183,33 @@ class _$FollowTrajectory extends FollowTrajectory {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FollowTrajectory',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'points': [
+          ...points.map((m) => m.toJson(false)).toList(),
+        ],
+        'custom': custom,
+      };
 }
 
 /// Follow Trajectory builder class
@@ -35931,6 +39447,26 @@ class _$TrajectoryPoint extends TrajectoryPoint {
           ..add('t', '$t (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrajectoryPoint',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'x': x,
+        'y': y,
+        'z': z,
+        't': t,
+      };
 }
 
 /// Trajectory Point builder class
@@ -36128,6 +39664,25 @@ class _$CustomManeuver extends CustomManeuver {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CustomManeuver',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'name': name,
+        'custom': custom,
+      };
 }
 
 /// Custom Maneuver builder class
@@ -36376,6 +39931,36 @@ class _$VehicleFormation extends VehicleFormation {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleFormation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'points': [
+          ...points.map((m) => m.toJson(false)).toList(),
+        ],
+        'participants': [
+          ...participants.map((m) => m.toJson(false)).toList(),
+        ],
+        'start_time': startTime,
+        'custom': custom,
+      };
 }
 
 /// Vehicle Formation builder class
@@ -36624,6 +40209,26 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
           ..add('offZ', '$offZ (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleFormationParticipant',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'vid': vid,
+        'off_x': offX,
+        'off_y': offY,
+        'off_z': offZ,
+      };
 }
 
 /// Vehicle Formation Participant builder class
@@ -36801,6 +40406,22 @@ class _$StopManeuver extends StopManeuver {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'StopManeuver',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Stop Maneuver builder class
@@ -36962,6 +40583,23 @@ class _$RegisterManeuver extends RegisterManeuver {
           ..add('mid', '$mid'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RegisterManeuver',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'mid': mid,
+      };
 }
 
 /// Register Maneuver builder class
@@ -37145,6 +40783,25 @@ class _$ManeuverControlState extends ManeuverControlState {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ManeuverControlState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+        'eta': eta,
+        'info': info,
+      };
 }
 
 /// Maneuver Control State builder class
@@ -37378,6 +41035,30 @@ class _$FollowSystem extends FollowSystem {
           ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FollowSystem',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'system': system,
+        'duration': duration,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'x': x,
+        'y': y,
+        'z': z,
+        'z_units': zUnits.value,
+      };
 }
 
 /// Follow System builder class
@@ -37639,6 +41320,30 @@ class _$CommsRelay extends CommsRelay {
           ..add('moveThreshold', '$moveThreshold (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CommsRelay',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'duration': duration,
+        'sys_a': sysA,
+        'sys_b': sysB,
+        'move_threshold': moveThreshold,
+      };
 }
 
 /// Communications Relay builder class
@@ -37900,6 +41605,32 @@ class _$CoverArea extends CoverArea {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CoverArea',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'polygon': [
+          ...polygon.map((m) => m.toJson(false)).toList(),
+        ],
+        'custom': custom,
+      };
 }
 
 /// Cover Area builder class
@@ -38113,6 +41844,24 @@ class _$PolygonVertex extends PolygonVertex {
           ..add('lon', '$lon (rad) [${lon * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PolygonVertex',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+      };
 }
 
 /// Polygon Vertex builder class
@@ -38377,6 +42126,35 @@ class _$CompassCalibration extends CompassCalibration {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CompassCalibration',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'pitch': pitch,
+        'amplitude': amplitude,
+        'duration': duration,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'radius': radius,
+        'direction': direction.value,
+        'custom': custom,
+      };
 }
 
 /// Compass Calibration Maneuver builder class
@@ -38644,6 +42422,28 @@ class _$FormationParameters extends FormationParameters {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'formation_name': formationName,
+        'reference_frame': referenceFrame.value,
+        'participants': [
+          ...participants.map((m) => m.toJson(false)).toList(),
+        ],
+        'custom': custom,
+      };
 }
 
 /// Formation Parameters builder class
@@ -38937,6 +42737,36 @@ class _$FormationPlanExecution extends FormationPlanExecution {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationPlanExecution',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'group_name': groupName,
+        'formation_name': formationName,
+        'plan_id': planId,
+        'description': description,
+        'leader_speed': leaderSpeed,
+        'leader_bank_lim': leaderBankLim,
+        'pos_sim_err_lim': posSimErrLim,
+        'pos_sim_err_wrn': posSimErrWrn,
+        'pos_sim_err_timeout': posSimErrTimeout,
+        'converg_max': convergMax,
+        'converg_timeout': convergTimeout,
+        'comms_timeout': commsTimeout,
+        'turb_lim': turbLim,
+        'custom': custom,
+      };
 }
 
 /// Formation Plan Execution builder class
@@ -39222,6 +43052,27 @@ class _$FollowReference extends FollowReference {
           ..add('altitudeInterval', '$altitudeInterval'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FollowReference',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'control_src': controlSrc,
+        'control_ent': controlEnt,
+        'timeout': timeout,
+        'loiter_radius': loiterRadius,
+        'altitude_interval': altitudeInterval,
+      };
 }
 
 /// Follow Reference Maneuver builder class
@@ -39451,6 +43302,28 @@ class _$Reference extends Reference {
           ..add('radius', '$radius'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Reference',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'flags': flags.value,
+        'speed': speed?.toJson(false),
+        'z': z?.toJson(false),
+        'lat': lat,
+        'lon': lon,
+        'radius': radius,
+      };
 }
 
 /// Reference To Follow builder class
@@ -39678,6 +43551,27 @@ class _$FollowRefState extends FollowRefState {
               '$proximity (Bitfield) [${proximity.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FollowRefState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'control_src': controlSrc,
+        'control_ent': controlEnt,
+        'reference': reference?.toJson(false),
+        'state': state.value,
+        'proximity': proximity.value,
+      };
 }
 
 /// Follow Reference State builder class
@@ -39989,6 +43883,43 @@ class _$FormationMonitor extends FormationMonitor {
           ..add('relState', '$relState'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationMonitor',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'ax_cmd': axCmd,
+        'ay_cmd': ayCmd,
+        'az_cmd': azCmd,
+        'ax_des': axDes,
+        'ay_des': ayDes,
+        'az_des': azDes,
+        'virt_err_x': virtErrX,
+        'virt_err_y': virtErrY,
+        'virt_err_z': virtErrZ,
+        'surf_fdbk_x': surfFdbkX,
+        'surf_fdbk_y': surfFdbkY,
+        'surf_fdbk_z': surfFdbkZ,
+        'surf_unkn_x': surfUnknX,
+        'surf_unkn_y': surfUnknY,
+        'surf_unkn_z': surfUnknZ,
+        'ss_x': ssX,
+        'ss_y': ssY,
+        'ss_z': ssZ,
+        'rel_state': [
+          ...relState.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Formation Monitoring Data builder class
@@ -40395,6 +44326,44 @@ class _$RelativeState extends RelativeState {
           ..add('virtErrZ', '$virtErrZ'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RelativeState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        's_id': sId,
+        'dist': dist,
+        'err': err,
+        'ctrl_imp': ctrlImp,
+        'rel_dir_x': relDirX,
+        'rel_dir_y': relDirY,
+        'rel_dir_z': relDirZ,
+        'err_x': errX,
+        'err_y': errY,
+        'err_z': errZ,
+        'rf_err_x': rfErrX,
+        'rf_err_y': rfErrY,
+        'rf_err_z': rfErrZ,
+        'rf_err_vx': rfErrVx,
+        'rf_err_vy': rfErrVy,
+        'rf_err_vz': rfErrVz,
+        'ss_x': ssX,
+        'ss_y': ssY,
+        'ss_z': ssZ,
+        'virt_err_x': virtErrX,
+        'virt_err_y': virtErrY,
+        'virt_err_z': virtErrZ,
+      };
 }
 
 /// Relative State builder class
@@ -40709,6 +44678,26 @@ class _$Dislodge extends Dislodge {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Dislodge',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'rpm': rpm,
+        'direction': direction.value,
+        'custom': custom,
+      };
 }
 
 /// Dislodge Maneuver builder class
@@ -41030,6 +45019,45 @@ class _$Formation extends Formation {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Formation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'formation_name': formationName,
+        'type': type.value,
+        'op': op.value,
+        'group_name': groupName,
+        'plan_id': planId,
+        'description': description,
+        'reference_frame': referenceFrame.value,
+        'participants': [
+          ...participants.map((m) => m.toJson(false)).toList(),
+        ],
+        'leader_bank_lim': leaderBankLim,
+        'leader_speed_min': leaderSpeedMin,
+        'leader_speed_max': leaderSpeedMax,
+        'leader_alt_min': leaderAltMin,
+        'leader_alt_max': leaderAltMax,
+        'pos_sim_err_lim': posSimErrLim,
+        'pos_sim_err_wrn': posSimErrWrn,
+        'pos_sim_err_timeout': posSimErrTimeout,
+        'converg_max': convergMax,
+        'converg_timeout': convergTimeout,
+        'comms_timeout': commsTimeout,
+        'turb_lim': turbLim,
+        'custom': custom,
+      };
 }
 
 /// Formation builder class
@@ -41377,6 +45405,30 @@ class _$Launch extends Launch {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Launch',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Launch Maneuver builder class
@@ -41637,6 +45689,30 @@ class _$Drop extends Drop {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Drop',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Drop Maneuver builder class
@@ -41899,6 +45975,30 @@ class _$ScheduledGoto extends ScheduledGoto {
               'delayed', '$delayed (Enumerated) [${delayed.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ScheduledGoto',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'arrival_time': arrivalTime,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'travel_z': travelZ,
+        'travel_z_units': travelZUnits.value,
+        'delayed': delayed.value,
+      };
 }
 
 /// Scheduled Goto builder class
@@ -42215,6 +46315,38 @@ class _$RowsCoverage extends RowsCoverage {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RowsCoverage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'bearing': bearing,
+        'cross_angle': crossAngle,
+        'width': width,
+        'length': length,
+        'coff': coff,
+        'angAperture': angAperture,
+        'range': range,
+        'overlap': overlap,
+        'flags': flags.value,
+        'custom': custom,
+      };
 }
 
 /// Rows Coverage builder class
@@ -42548,6 +46680,33 @@ class _$Sample extends Sample {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Sample',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'syringe0': syringe0.value,
+        'syringe1': syringe1.value,
+        'syringe2': syringe2.value,
+        'custom': custom,
+      };
 }
 
 /// Sample Maneuver builder class
@@ -42762,6 +46921,22 @@ class _$ImageTracking extends ImageTracking {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ImageTracking',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Image Tracking builder class
@@ -42976,6 +47151,30 @@ class _$Takeoff extends Takeoff {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Takeoff',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'takeoff_pitch': takeoffPitch,
+        'custom': custom,
+      };
 }
 
 /// Takeoff Maneuver builder class
@@ -43260,6 +47459,33 @@ class _$Land extends Land {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Land',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'abort_z': abortZ,
+        'bearing': bearing,
+        'glide_slope': glideSlope,
+        'glide_slope_alt': glideSlopeAlt,
+        'custom': custom,
+      };
 }
 
 /// Land Maneuver builder class
@@ -43565,6 +47791,35 @@ class _$AutonomousSection extends AutonomousSection {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AutonomousSection',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'limits': limits.value,
+        'max_depth': maxDepth,
+        'min_alt': minAlt,
+        'time_limit': timeLimit,
+        'area_limits': [
+          ...areaLimits.map((m) => m.toJson(false)).toList(),
+        ],
+        'controller': controller,
+        'custom': custom,
+      };
 }
 
 /// Autonomous Section builder class
@@ -43845,6 +48100,30 @@ class _$FollowPoint extends FollowPoint {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FollowPoint',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'max_speed': maxSpeed,
+        'speed_units': speedUnits.value,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Follow Point Maneuver builder class
@@ -44091,6 +48370,28 @@ class _$Alignment extends Alignment {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Alignment',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'custom': custom,
+      };
 }
 
 /// Alignment Maneuver builder class
@@ -44371,6 +48672,34 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'StationKeepingExtended',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'radius': radius,
+        'duration': duration,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'popup_period': popupPeriod,
+        'popup_duration': popupDuration,
+        'flags': flags.value,
+        'custom': custom,
+      };
 }
 
 /// Station Keeping Extended builder class
@@ -44596,6 +48925,22 @@ class _$ManeuverDone extends ManeuverDone {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ManeuverDone',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Maneuver Done builder class
@@ -44832,6 +49177,33 @@ class _$Magnetometer extends Magnetometer {
           ..add('custom', '$custom (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Magnetometer',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'speed': speed,
+        'speed_units': speedUnits.value,
+        'bearing': bearing,
+        'width': width,
+        'direction': direction.value,
+        'custom': custom,
+      };
 }
 
 /// Magnetometer Maneuver builder class
@@ -45128,6 +49500,32 @@ class _$VehicleState extends VehicleState {
           ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op_mode': opMode.value,
+        'error_count': errorCount,
+        'error_ents': errorEnts,
+        'maneuver_type': maneuverType,
+        'maneuver_stime': maneuverStime,
+        'maneuver_eta': maneuverEta,
+        'control_loops': controlLoops.value,
+        'flags': flags.value,
+        'last_error': lastError,
+        'last_error_time': lastErrorTime,
+      };
 }
 
 /// Vehicle State builder class
@@ -45389,6 +49787,28 @@ class _$VehicleCommand extends VehicleCommand {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleCommand',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'request_id': requestId,
+        'command': command.value,
+        'maneuver': maneuver?.toJson(false),
+        'calib_time': calibTime,
+        'info': info,
+      };
 }
 
 /// Vehicle Command builder class
@@ -45595,6 +50015,24 @@ class _$MonitorEntityState extends MonitorEntityState {
           ..add('entities', entities))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'MonitorEntityState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'command': command.value,
+        'entities': entities,
+      };
 }
 
 /// Monitor Entity State builder class
@@ -45825,6 +50263,30 @@ class _$EntityMonitoringState extends EntityMonitoringState {
           ..add('lastErrorTime', '$lastErrorTime (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityMonitoringState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'mcount': mcount,
+        'mnames': mnames,
+        'ecount': ecount,
+        'enames': enames,
+        'ccount': ccount,
+        'cnames': cnames,
+        'last_error': lastError,
+        'last_error_time': lastErrorTime,
+      };
 }
 
 /// Entity Monitoring State builder class
@@ -46125,6 +50587,34 @@ class _$OperationalLimits extends OperationalLimits {
           ..add('length', '$length (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'OperationalLimits',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'mask': mask.value,
+        'max_depth': maxDepth,
+        'min_altitude': minAltitude,
+        'max_altitude': maxAltitude,
+        'min_speed': minSpeed,
+        'max_speed': maxSpeed,
+        'max_vrate': maxVrate,
+        'lat': lat,
+        'lon': lon,
+        'orientation': orientation,
+        'width': width,
+        'length': length,
+      };
 }
 
 /// Operational Limits builder class
@@ -46350,6 +50840,22 @@ class _$GetOperationalLimits extends GetOperationalLimits {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GetOperationalLimits',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Get Operational Limits builder class
@@ -46511,6 +51017,23 @@ class _$Calibration extends Calibration {
           ..add('duration', '$duration (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Calibration',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'duration': duration,
+      };
 }
 
 /// Calibration builder class
@@ -46689,6 +51212,25 @@ class _$ControlLoops extends ControlLoops {
           ..add('scopeRef', '$scopeRef'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ControlLoops',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'enable': enable.value,
+        'mask': mask.value,
+        'scope_ref': scopeRef,
+      };
 }
 
 /// Control Loops builder class
@@ -46865,6 +51407,23 @@ class _$VehicleMedium extends VehicleMedium {
           ..add('medium', '$medium (Enumerated) [${medium.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleMedium',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'medium': medium.value,
+      };
 }
 
 /// Vehicle Medium builder class
@@ -47036,6 +51595,24 @@ class _$Collision extends Collision {
           ..add('type', '$type (Bitfield) [${type.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Collision',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'type': type.value,
+      };
 }
 
 /// Collision builder class
@@ -47249,6 +51826,28 @@ class _$FormState extends FormState {
               '$convergMon (Enumerated) [${convergMon.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'PosSimErr': posSimErr,
+        'Converg': converg,
+        'Turbulence': turbulence,
+        'PosSimMon': posSimMon.value,
+        'CommMon': commMon.value,
+        'ConvergMon': convergMon.value,
+      };
 }
 
 /// Formation Tracking State builder class
@@ -47453,6 +52052,24 @@ class _$AutopilotMode extends AutopilotMode {
           ..add('mode', mode))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AutopilotMode',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'autonomy': autonomy.value,
+        'mode': mode,
+      };
 }
 
 /// Autopilot Mode builder class
@@ -47681,6 +52298,30 @@ class _$FormationState extends FormationState {
               '$convergMon (Enumerated) [${convergMon.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'op': op.value,
+        'PosSimErr': posSimErr,
+        'Converg': converg,
+        'Turbulence': turbulence,
+        'PosSimMon': posSimMon.value,
+        'CommMon': commMon.value,
+        'ConvergMon': convergMon.value,
+      };
 }
 
 /// Formation Tracking State builder class
@@ -47913,6 +52554,26 @@ class _$ReportControl extends ReportControl {
           ..add('sysDst', sysDst))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ReportControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'comm_interface': commInterface.value,
+        'period': period,
+        'sys_dst': sysDst,
+      };
 }
 
 /// Report Control builder class
@@ -48165,6 +52826,32 @@ class _$StateReport extends StateReport {
           ..add('planChecksum', '$planChecksum'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'StateReport',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'stime': stime,
+        'latitude': latitude,
+        'longitude': longitude,
+        'altitude': altitude,
+        'depth': depth,
+        'heading': heading,
+        'speed': speed,
+        'fuel': fuel,
+        'exec_state': execState,
+        'plan_checksum': planChecksum,
+      };
 }
 
 /// State Report builder class
@@ -48450,6 +53137,31 @@ class _$TransmissionRequest extends TransmissionRequest {
           ..add('rawData', '$rawData'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TransmissionRequest',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'comm_mean': commMean.value,
+        'destination': destination,
+        'deadline': deadline,
+        'range': range,
+        'data_mode': dataMode.value,
+        'msg_data': msgData?.toJson(false),
+        'txt_data': txtData,
+        'raw_data': base64.encode(rawData),
+      };
 }
 
 /// Transmission Request builder class
@@ -48696,6 +53408,26 @@ class _$TransmissionStatus extends TransmissionStatus {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TransmissionStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'status': status.value,
+        'range': range,
+        'info': info,
+      };
 }
 
 /// Transmission Status builder class
@@ -48902,6 +53634,26 @@ class _$SmsRequest extends SmsRequest {
           ..add('smsText', smsText))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SmsRequest',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'destination': destination,
+        'timeout': timeout,
+        'sms_text': smsText,
+      };
 }
 
 /// SMS Transmission Request builder class
@@ -49098,6 +53850,25 @@ class _$SmsStatus extends SmsStatus {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SmsStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'status': status.value,
+        'info': info,
+      };
 }
 
 /// SMS Transmission Status builder class
@@ -49274,6 +54045,23 @@ class _$VtolState extends VtolState {
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VtolState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+      };
 }
 
 /// VTOL State builder class
@@ -49438,6 +54226,23 @@ class _$ArmingState extends ArmingState {
           ..add('state', '$state (Enumerated) [${state.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ArmingState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+      };
 }
 
 /// Arming State builder class
@@ -49625,6 +54430,26 @@ class _$TCPRequest extends TCPRequest {
           ..add('msgData', '$msgData'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TCPRequest',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'destination': destination,
+        'timeout': timeout,
+        'msg_data': msgData?.toJson(false),
+      };
 }
 
 /// TCP Transmission Request builder class
@@ -49821,6 +54646,25 @@ class _$TCPStatus extends TCPStatus {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TCPStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'req_id': reqId,
+        'status': status.value,
+        'info': info,
+      };
 }
 
 /// TCP Transmission Status builder class
@@ -50066,6 +54910,34 @@ class _$AssetReport extends AssetReport {
           ..add('msgs', '$msgs'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AssetReport',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'report_time': reportTime,
+        'medium': medium.value,
+        'lat': lat,
+        'lon': lon,
+        'depth': depth,
+        'alt': alt,
+        'sog': sog,
+        'cog': cog,
+        'msgs': [
+          ...msgs.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Asset Report  builder class
@@ -50274,6 +55146,22 @@ class _$Abort extends Abort {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Abort',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Abort builder class
@@ -50497,6 +55385,41 @@ class _$PlanSpecification extends PlanSpecification {
           ..add('endActions', '$endActions'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanSpecification',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'plan_id': planId,
+        'description': description,
+        'vnamespace': vnamespace,
+        'variables': [
+          ...variables.map((m) => m.toJson(false)).toList(),
+        ],
+        'start_man_id': startManId,
+        'maneuvers': [
+          ...maneuvers.map((m) => m.toJson(false)).toList(),
+        ],
+        'transitions': [
+          ...transitions.map((m) => m.toJson(false)).toList(),
+        ],
+        'start_actions': [
+          ...startActions.map((m) => m.toJson(false)).toList(),
+        ],
+        'end_actions': [
+          ...endActions.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Plan Specification builder class
@@ -50736,6 +55659,30 @@ class _$PlanManeuver extends PlanManeuver {
           ..add('endActions', '$endActions'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanManeuver',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'maneuver_id': maneuverId,
+        'data': data?.toJson(false),
+        'start_actions': [
+          ...startActions.map((m) => m.toJson(false)).toList(),
+        ],
+        'end_actions': [
+          ...endActions.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Plan Maneuver builder class
@@ -50943,6 +55890,28 @@ class _$PlanTransition extends PlanTransition {
           ..add('actions', '$actions'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanTransition',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'source_man': sourceMan,
+        'dest_man': destMan,
+        'conditions': conditions,
+        'actions': [
+          ...actions.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Plan Transition builder class
@@ -51136,6 +56105,24 @@ class _$EmergencyControl extends EmergencyControl {
           ..add('plan', '$plan'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EmergencyControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'command': command.value,
+        'plan': plan?.toJson(false),
+      };
 }
 
 /// Emergency Control builder class
@@ -51325,6 +56312,25 @@ class _$EmergencyControlState extends EmergencyControlState {
           ..add('commLevel', '$commLevel (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EmergencyControlState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+        'plan_id': planId,
+        'comm_level': commLevel,
+      };
 }
 
 /// Emergency Control State builder class
@@ -51544,6 +56550,28 @@ class _$PlanDB extends PlanDB {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanDB',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'op': op.value,
+        'request_id': requestId,
+        'plan_id': planId,
+        'arg': arg?.toJson(false),
+        'info': info,
+      };
 }
 
 /// Plan DB builder class
@@ -51785,6 +56813,31 @@ class _$PlanDBState extends PlanDBState {
           ..add('plansInfo', '$plansInfo'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanDBState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'plan_count': planCount,
+        'plan_size': planSize,
+        'change_time': changeTime,
+        'change_sid': changeSid,
+        'change_sname': changeSname,
+        'md5': base64.encode(md5),
+        'plans_info': [
+          ...plansInfo.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Plan DB State builder class
@@ -52030,6 +57083,28 @@ class _$PlanDBInformation extends PlanDBInformation {
           ..add('md5', '$md5'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanDBInformation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'plan_id': planId,
+        'plan_size': planSize,
+        'change_time': changeTime,
+        'change_sid': changeSid,
+        'change_sname': changeSname,
+        'md5': base64.encode(md5),
+      };
 }
 
 /// Plan DB Information builder class
@@ -52271,6 +57346,29 @@ class _$PlanControl extends PlanControl {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanControl',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'op': op.value,
+        'request_id': requestId,
+        'plan_id': planId,
+        'flags': flags.value,
+        'arg': arg?.toJson(false),
+        'info': info,
+      };
 }
 
 /// Plan Control builder class
@@ -52529,6 +57627,30 @@ class _$PlanControlState extends PlanControlState {
               '$lastOutcome (Enumerated) [${lastOutcome.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanControlState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+        'plan_id': planId,
+        'plan_eta': planEta,
+        'plan_progress': planProgress,
+        'man_id': manId,
+        'man_type': manType,
+        'man_eta': manEta,
+        'last_outcome': lastOutcome.value,
+      };
 }
 
 /// Plan Control State builder class
@@ -52761,6 +57883,26 @@ class _$PlanVariable extends PlanVariable {
           ..add('access', '$access (Enumerated) [${access.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanVariable',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'value': value,
+        'type': type.value,
+        'access': access.value,
+      };
 }
 
 /// Plan Variable builder class
@@ -52966,6 +58108,26 @@ class _$PlanGeneration extends PlanGeneration {
           ..add('params', '$params (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanGeneration',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'cmd': cmd.value,
+        'op': op.value,
+        'plan_id': planId,
+        'params': params,
+      };
 }
 
 /// Plan Generation builder class
@@ -53271,6 +58433,42 @@ class _$LeaderState extends LeaderState {
           ..add('svz', '$svz (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'LeaderState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'group_name': groupName,
+        'op': op.value,
+        'lat': lat,
+        'lon': lon,
+        'height': height,
+        'x': x,
+        'y': y,
+        'z': z,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'vx': vx,
+        'vy': vy,
+        'vz': vz,
+        'p': p,
+        'q': q,
+        'r': r,
+        'svx': svx,
+        'svy': svy,
+        'svz': svz,
+      };
 }
 
 /// Leader State builder class
@@ -53596,6 +58794,29 @@ class _$PlanStatistics extends PlanStatistics {
           ..add('fuel', '$fuel (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PlanStatistics',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'plan_id': planId,
+        'type': type.value,
+        'properties': properties.value,
+        'durations': durations,
+        'distances': distances,
+        'actions': actions,
+        'fuel': fuel,
+      };
 }
 
 /// Plan Statistics builder class
@@ -53859,6 +59080,31 @@ class _$ReportedState extends ReportedState {
           ..add('sType', '$sType (Enumerated) [${sType.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ReportedState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'depth': depth,
+        'roll': roll,
+        'pitch': pitch,
+        'yaw': yaw,
+        'rcp_time': rcpTime,
+        'sid': sid,
+        's_type': sType.value,
+      };
 }
 
 /// Reported State builder class
@@ -54121,6 +59367,29 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           ..add('data', '$data (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RemoteSensorInfo',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'sensor_class': sensorClass,
+        'lat': lat,
+        'lon': lon,
+        'alt': alt,
+        'heading': heading,
+        'data': data,
+      };
 }
 
 /// Remote Sensor Info builder class
@@ -54329,6 +59598,26 @@ class _$Map extends Map {
           ..add('features', '$features'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Map',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'features': [
+          ...features.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Map builder class
@@ -54539,6 +59828,30 @@ class _$MapFeature extends MapFeature {
           ..add('feature', '$feature'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'MapFeature',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'id': id,
+        'feature_type': featureType.value,
+        'rgb_red': rgbRed,
+        'rgb_green': rgbGreen,
+        'rgb_blue': rgbBlue,
+        'feature': [
+          ...feature.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Map Feature builder class
@@ -54748,6 +60061,25 @@ class _$MapPoint extends MapPoint {
           ..add('alt', '$alt (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'MapPoint',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'alt': alt,
+      };
 }
 
 /// MapPoint builder class
@@ -54938,6 +60270,25 @@ class _$CcuEvent extends CcuEvent {
           ..add('arg', '$arg'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CcuEvent',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'id': id,
+        'arg': arg?.toJson(false),
+      };
 }
 
 /// CCU Event builder class
@@ -55121,6 +60472,26 @@ class _$VehicleLinks extends VehicleLinks {
           ..add('links', '$links'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'VehicleLinks',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'localname': localname,
+        'links': [
+          ...links.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Vehicle Links builder class
@@ -55306,6 +60677,25 @@ class _$TrexObservation extends TrexObservation {
           ..add('attributes', '$attributes (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrexObservation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeline': timeline,
+        'predicate': predicate,
+        'attributes': attributes,
+      };
 }
 
 /// TREX Observation builder class
@@ -55498,6 +60888,25 @@ class _$TrexCommand extends TrexCommand {
           ..add('goalXml', goalXml))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrexCommand',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'command': command.value,
+        'goal_id': goalId,
+        'goal_xml': goalXml,
+      };
 }
 
 /// TREX Command builder class
@@ -55688,6 +61097,25 @@ class _$TrexOperation extends TrexOperation {
           ..add('token', '$token'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrexOperation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'goal_id': goalId,
+        'token': token?.toJson(false),
+      };
 }
 
 /// TREX Operation builder class
@@ -55888,6 +61316,26 @@ class _$TrexAttribute extends TrexAttribute {
           ..add('max', max))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrexAttribute',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'attr_type': attrType.value,
+        'min': min,
+        'max': max,
+      };
 }
 
 /// TREX Attribute builder class
@@ -56085,6 +61533,27 @@ class _$TrexToken extends TrexToken {
           ..add('attributes', '$attributes'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrexToken',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeline': timeline,
+        'predicate': predicate,
+        'attributes': [
+          ...attributes.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// TREX Token builder class
@@ -56269,6 +61738,26 @@ class _$TrexPlan extends TrexPlan {
           ..add('tokens', '$tokens'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TrexPlan',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'reactor': reactor,
+        'tokens': [
+          ...tokens.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// TREX Plan builder class
@@ -56446,6 +61935,24 @@ class _$Event extends Event {
           ..add('data', '$data (TupleList)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Event',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'topic': topic,
+        'data': data,
+      };
 }
 
 /// Event builder class
@@ -56624,6 +62131,24 @@ class _$CompressedImage extends CompressedImage {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CompressedImage',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'frameid': frameid,
+        'data': base64.encode(data),
+      };
 }
 
 /// Compressed Image builder class
@@ -56819,6 +62344,26 @@ class _$ImageTxSettings extends ImageTxSettings {
           ..add('tsize', '$tsize'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ImageTxSettings',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'fps': fps,
+        'quality': quality,
+        'reps': reps,
+        'tsize': tsize,
+      };
 }
 
 /// Image Transmission Settings builder class
@@ -57034,6 +62579,27 @@ class _$RemoteState extends RemoteState {
           ..add('psi', '$psi (rad) [${psi * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'RemoteState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'depth': depth,
+        'speed': speed,
+        'psi': psi,
+      };
 }
 
 /// Remote State builder class
@@ -57268,6 +62834,29 @@ class _$Target extends Target {
           ..add('sog', '$sog (m/s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Target',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'label': label,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+        'cog': cog,
+        'sog': sog,
+      };
 }
 
 /// Target builder class
@@ -57476,6 +63065,24 @@ class _$EntityParameter extends EntityParameter {
           ..add('value', value))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityParameter',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'value': value,
+      };
 }
 
 /// EntityParameter builder class
@@ -57657,6 +63264,26 @@ class _$EntityParameters extends EntityParameters {
           ..add('params', '$params'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'EntityParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'params': [
+          ...params.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// EntityParameters builder class
@@ -57846,6 +63473,25 @@ class _$QueryEntityParameters extends QueryEntityParameters {
           ..add('scope', scope))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'QueryEntityParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'visibility': visibility,
+        'scope': scope,
+      };
 }
 
 /// QueryEntityParameters builder class
@@ -58037,6 +63683,26 @@ class _$SetEntityParameters extends SetEntityParameters {
           ..add('params', '$params'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetEntityParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'params': [
+          ...params.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// SetEntityParameters builder class
@@ -58214,6 +63880,23 @@ class _$SaveEntityParameters extends SaveEntityParameters {
           ..add('name', name))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SaveEntityParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+      };
 }
 
 /// SaveEntityParameters builder class
@@ -58381,6 +64064,23 @@ class _$CreateSession extends CreateSession {
           ..add('timeout', '$timeout'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CreateSession',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timeout': timeout,
+      };
 }
 
 /// Create Session builder class
@@ -58545,6 +64245,23 @@ class _$CloseSession extends CloseSession {
           ..add('sessid', '$sessid'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CloseSession',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sessid': sessid,
+      };
 }
 
 /// Close Session builder class
@@ -58720,6 +64437,24 @@ class _$SessionSubscription extends SessionSubscription {
           ..add('messages', messages))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SessionSubscription',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sessid': sessid,
+        'messages': messages,
+      };
 }
 
 /// Session Subscription builder class
@@ -58896,6 +64631,23 @@ class _$SessionKeepAlive extends SessionKeepAlive {
           ..add('sessid', '$sessid'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SessionKeepAlive',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sessid': sessid,
+      };
 }
 
 /// Session Keep-Alive builder class
@@ -59068,6 +64820,24 @@ class _$SessionStatus extends SessionStatus {
           ..add('status', '$status (Enumerated) [${status.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SessionStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sessid': sessid,
+        'status': status.value,
+      };
 }
 
 /// Session Status builder class
@@ -59242,6 +65012,23 @@ class _$PushEntityParameters extends PushEntityParameters {
           ..add('name', name))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PushEntityParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+      };
 }
 
 /// Push Entity Parameters builder class
@@ -59413,6 +65200,23 @@ class _$PopEntityParameters extends PopEntityParameters {
           ..add('name', name))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'PopEntityParameters',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+      };
 }
 
 /// Pop Entity Parameters builder class
@@ -59587,6 +65391,24 @@ class _$IoEvent extends IoEvent {
           ..add('error', error))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'IoEvent',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'error': error,
+      };
 }
 
 /// I/O Event builder class
@@ -59780,6 +65602,26 @@ class _$UamTxFrame extends UamTxFrame {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UamTxFrame',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'seq': seq,
+        'sys_dst': sysDst,
+        'flags': flags.value,
+        'data': base64.encode(data),
+      };
 }
 
 /// UamTxFrame builder class
@@ -59985,6 +65827,26 @@ class _$UamRxFrame extends UamRxFrame {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UamRxFrame',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'sys_src': sysSrc,
+        'sys_dst': sysDst,
+        'flags': flags.value,
+        'data': base64.encode(data),
+      };
 }
 
 /// UamRxFrame builder class
@@ -60181,6 +66043,25 @@ class _$UamTxStatus extends UamTxStatus {
           ..add('error', error))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UamTxStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'seq': seq,
+        'value': value.value,
+        'error': error,
+      };
 }
 
 /// UamTxStatus builder class
@@ -60371,6 +66252,25 @@ class _$UamRxRange extends UamRxRange {
           ..add('value', '$value (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UamRxRange',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'seq': seq,
+        'sys': sys,
+        'value': value,
+      };
 }
 
 /// UamRxRange builder class
@@ -60561,6 +66461,25 @@ class _$UamTxRange extends UamTxRange {
           ..add('timeout', '$timeout (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UamTxRange',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'seq': seq,
+        'sys_dst': sysDst,
+        'timeout': timeout,
+      };
 }
 
 /// UamTxRange builder class
@@ -60777,6 +66696,28 @@ class _$FormCtrlParam extends FormCtrlParam {
           ..add('deconflGain', '$deconflGain'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormCtrlParam',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'Action': action.value,
+        'LonGain': lonGain,
+        'LatGain': latGain,
+        'BondThick': bondThick,
+        'LeadGain': leadGain,
+        'DeconflGain': deconflGain,
+      };
 }
 
 /// Formation Control Parameters builder class
@@ -60987,6 +66928,25 @@ class _$FormationEval extends FormationEval {
           ..add('distMinMean', '$distMinMean'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationEval',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'err_mean': errMean,
+        'dist_min_abs': distMinAbs,
+        'dist_min_mean': distMinMean,
+      };
 }
 
 /// Formation Evaluation Data builder class
@@ -61246,6 +67206,33 @@ class _$FormationControlParams extends FormationControlParams {
           ..add('accelLimX', '$accelLimX'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationControlParams',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'Action': action.value,
+        'lon_gain': lonGain,
+        'lat_gain': latGain,
+        'bond_thick': bondThick,
+        'lead_gain': leadGain,
+        'deconfl_gain': deconflGain,
+        'accel_switch_gain': accelSwitchGain,
+        'safe_dist': safeDist,
+        'deconflict_offset': deconflictOffset,
+        'accel_safe_margin': accelSafeMargin,
+        'accel_lim_x': accelLimX,
+      };
 }
 
 /// Formation Control Parameters builder class
@@ -61539,6 +67526,30 @@ class _$FormationEvaluation extends FormationEvaluation {
           ..add('controlParams', '$controlParams'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FormationEvaluation',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'op': op.value,
+        'err_mean': errMean,
+        'dist_min_abs': distMinAbs,
+        'dist_min_mean': distMinMean,
+        'roll_rate_mean': rollRateMean,
+        'time': time,
+        'ControlParams': controlParams?.toJson(false),
+      };
 }
 
 /// Formation Evaluation Data builder class
@@ -61772,6 +67783,26 @@ class _$SoiWaypoint extends SoiWaypoint {
           ..add('duration', '$duration (s)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SoiWaypoint',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'lat': lat,
+        'lon': lon,
+        'eta': eta,
+        'duration': duration,
+      };
 }
 
 /// SOI Waypoint builder class
@@ -61961,6 +67992,26 @@ class _$SoiPlan extends SoiPlan {
           ..add('waypoints', '$waypoints'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SoiPlan',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'plan_id': planId,
+        'waypoints': [
+          ...waypoints.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// SOI Plan builder class
@@ -62164,6 +68215,27 @@ class _$SoiCommand extends SoiCommand {
           ..add('info', info))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SoiCommand',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'type': type.value,
+        'command': command.value,
+        'settings': settings,
+        'plan': plan?.toJson(false),
+        'info': info,
+      };
 }
 
 /// SOI Command builder class
@@ -62375,6 +68447,26 @@ class _$SoiState extends SoiState {
           ..add('settingsChk', '$settingsChk'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SoiState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'state': state.value,
+        'plan_id': planId,
+        'wpt_id': wptId,
+        'settings_chk': settingsChk,
+      };
 }
 
 /// SOI State builder class
@@ -62580,6 +68672,26 @@ class _$MessagePart extends MessagePart {
           ..add('data', '$data'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'MessagePart',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'uid': uid,
+        'frag_number': fragNumber,
+        'num_frags': numFrags,
+        'data': base64.encode(data),
+      };
 }
 
 /// Message Fragment builder class
@@ -62769,6 +68881,24 @@ class _$NeptusBlob extends NeptusBlob {
           ..add('content', '$content'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'NeptusBlob',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'content_type': contentType,
+        'content': base64.encode(content),
+      };
 }
 
 /// Neptus Blob builder class
@@ -62929,6 +69059,22 @@ class _$Aborted extends Aborted {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Aborted',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Aborted builder class
@@ -63103,6 +69249,25 @@ class _$UsblAngles extends UsblAngles {
               '$elevation (rad) [${elevation * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblAngles',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'bearing': bearing,
+        'elevation': elevation,
+      };
 }
 
 /// USBL Angles builder class
@@ -63302,6 +69467,26 @@ class _$UsblPosition extends UsblPosition {
           ..add('z', '$z (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblPosition',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// USBL Position builder class
@@ -63516,6 +69701,27 @@ class _$UsblFix extends UsblFix {
           ..add('z', '$z (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblFix',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'lat': lat,
+        'lon': lon,
+        'z_units': zUnits.value,
+        'z': z,
+      };
 }
 
 /// USBL Fix builder class
@@ -63711,6 +69917,24 @@ class _$ParametersXml extends ParametersXml {
           ..add('config', '$config'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ParametersXml',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'locale': locale,
+        'config': base64.encode(config),
+      };
 }
 
 /// Parameters XML builder class
@@ -63874,6 +70098,22 @@ class _$GetParametersXml extends GetParametersXml {
           ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GetParametersXml',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+      };
 }
 
 /// Get Parameters XML builder class
@@ -64047,6 +70287,25 @@ class _$SetImageCoords extends SetImageCoords {
           ..add('y', '$y (px)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SetImageCoords',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'camId': camId,
+        'x': x,
+        'y': y,
+      };
 }
 
 /// Set Image Coordinates builder class
@@ -64237,6 +70496,25 @@ class _$GetImageCoords extends GetImageCoords {
           ..add('y', '$y (px)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GetImageCoords',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'camId': camId,
+        'x': x,
+        'y': y,
+      };
 }
 
 /// Get Image Coordinates builder class
@@ -64457,6 +70735,28 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           ..add('z', '$z (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GetWorldCoordinates',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'tracking': tracking.value,
+        'lat': lat,
+        'lon': lon,
+        'x': x,
+        'y': y,
+        'z': z,
+      };
 }
 
 /// Get World Coordinates builder class
@@ -64725,6 +71025,31 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
               '$accuracy (rad) [${accuracy * 180.0 / math.pi} (deg)]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblAnglesExtended',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'lbearing': lbearing,
+        'lelevation': lelevation,
+        'bearing': bearing,
+        'elevation': elevation,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'accuracy': accuracy,
+      };
 }
 
 /// USBL Angles Extended builder class
@@ -65017,6 +71342,33 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblPositionExtended',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'x': x,
+        'y': y,
+        'z': z,
+        'n': n,
+        'e': e,
+        'd': d,
+        'phi': phi,
+        'theta': theta,
+        'psi': psi,
+        'accuracy': accuracy,
+      };
 }
 
 /// USBL Position Extended builder class
@@ -65284,6 +71636,28 @@ class _$UsblFixExtended extends UsblFixExtended {
           ..add('accuracy', '$accuracy (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblFixExtended',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'target': target,
+        'lat': lat,
+        'lon': lon,
+        'z_units': zUnits.value,
+        'z': z,
+        'accuracy': accuracy,
+      };
 }
 
 /// USBL Fix Extended builder class
@@ -65511,6 +71885,27 @@ class _$UsblModem extends UsblModem {
           ..add('zUnits', '$zUnits (Enumerated) [${zUnits.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblModem',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'lat': lat,
+        'lon': lon,
+        'z': z,
+        'z_units': zUnits.value,
+      };
 }
 
 /// USBL Modem Configuration builder class
@@ -65706,6 +72101,26 @@ class _$UsblConfig extends UsblConfig {
           ..add('modems', '$modems'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'UsblConfig',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'modems': [
+          ...modems.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// USBL Configuration builder class
@@ -65887,6 +72302,24 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
           ..add('type', '$type (Enumerated) [${type.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DissolvedOrganicMatter',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+        'type': type.value,
+      };
 }
 
 /// Dissolved Organic Matter builder class
@@ -66065,6 +72498,23 @@ class _$OpticalBackscatter extends OpticalBackscatter {
           ..add('value', '$value (1/m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'OpticalBackscatter',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Optical Backscattering Coefficient builder class
@@ -66346,6 +72796,38 @@ class _$Tachograph extends Tachograph {
           ..add('depthMax', '$depthMax (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'Tachograph',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'timestamp_last_service': timestampLastService,
+        'time_next_service': timeNextService,
+        'time_motor_next_service': timeMotorNextService,
+        'time_idle_ground': timeIdleGround,
+        'time_idle_air': timeIdleAir,
+        'time_idle_water': timeIdleWater,
+        'time_idle_underwater': timeIdleUnderwater,
+        'time_idle_unknown': timeIdleUnknown,
+        'time_motor_ground': timeMotorGround,
+        'time_motor_air': timeMotorAir,
+        'time_motor_water': timeMotorWater,
+        'time_motor_underwater': timeMotorUnderwater,
+        'time_motor_unknown': timeMotorUnknown,
+        'rpm_min': rpmMin,
+        'rpm_max': rpmMax,
+        'depth_max': depthMax,
+      };
 }
 
 /// Tachograph builder class
@@ -66619,6 +73101,24 @@ class _$ApmStatus extends ApmStatus {
           ..add('text', text))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ApmStatus',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'severity': severity.value,
+        'text': text,
+      };
 }
 
 /// APM Status builder class
@@ -66803,6 +73303,25 @@ class _$SadcReadings extends SadcReadings {
           ..add('gain', '$gain (Enumerated) [${gain.toPrettyString()}]'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'SadcReadings',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'channel': channel,
+        'value': value,
+        'gain': gain.value,
+      };
 }
 
 /// SADC Readings builder class
@@ -67082,6 +73601,38 @@ class _$DmsDetection extends DmsDetection {
           ..add('ch16', '$ch16'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'DmsDetection',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'ch01': ch01,
+        'ch02': ch02,
+        'ch03': ch03,
+        'ch04': ch04,
+        'ch05': ch05,
+        'ch06': ch06,
+        'ch07': ch07,
+        'ch08': ch08,
+        'ch09': ch09,
+        'ch10': ch10,
+        'ch11': ch11,
+        'ch12': ch12,
+        'ch13': ch13,
+        'ch14': ch14,
+        'ch15': ch15,
+        'ch16': ch16,
+      };
 }
 
 /// DMS Detection builder class
@@ -67375,6 +73926,28 @@ class _$HomePosition extends HomePosition {
           ..add('alt', '$alt (m)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'HomePosition',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'op': op.value,
+        'lat': lat,
+        'lon': lon,
+        'height': height,
+        'depth': depth,
+        'alt': alt,
+      };
 }
 
 /// Home Position builder class
@@ -67593,6 +74166,28 @@ class _$CurrentProfile extends CurrentProfile {
           ..add('profile', '$profile'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CurrentProfile',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'nbeams': nbeams,
+        'ncells': ncells,
+        'coord_sys': coordSys.value,
+        'profile': [
+          ...profile.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Current Profile builder class
@@ -67788,6 +74383,26 @@ class _$CurrentProfileCell extends CurrentProfileCell {
           ..add('beams', '$beams'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CurrentProfileCell',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'cell_position': cellPosition,
+        'beams': [
+          ...beams.map((m) => m.toJson(false)).toList(),
+        ],
+      };
 }
 
 /// Current Profile Cell builder class
@@ -67973,6 +74588,25 @@ class _$ADCPBeam extends ADCPBeam {
           ..add('cor', '$cor (%)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ADCPBeam',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'vel': vel,
+        'amp': amp,
+        'cor': cor,
+      };
 }
 
 /// ADCP Beam Measurements builder class
@@ -68156,6 +74790,24 @@ class _$GpioState extends GpioState {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpioState',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'value': value,
+      };
 }
 
 /// GPIO State builder class
@@ -68326,6 +74978,23 @@ class _$GpioStateGet extends GpioStateGet {
           ..add('name', name))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpioStateGet',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+      };
 }
 
 /// Get GPIO State builder class
@@ -68497,6 +75166,24 @@ class _$GpioStateSet extends GpioStateSet {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'GpioStateSet',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'name': name,
+        'value': value,
+      };
 }
 
 /// Set GPIO State builder class
@@ -68671,6 +75358,23 @@ class _$ColoredDissolvedOrganicMatter extends ColoredDissolvedOrganicMatter {
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'ColoredDissolvedOrganicMatter',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Colored Dissolved Organic Matter builder class
@@ -68846,6 +75550,23 @@ class _$FluorescentDissolvedOrganicMatter
           ..add('value', '$value (PPB)'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'FluorescentDissolvedOrganicMatter',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Fluorescent Dissolved Organic Matter builder class
@@ -69020,6 +75741,23 @@ class _$TotalMagIntensity extends TotalMagIntensity {
           ..add('value', '$value'))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'TotalMagIntensity',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'value': value,
+      };
 }
 
 /// Total Magnetic Field Intensity builder class
@@ -69194,6 +75932,24 @@ class _$CommRestriction extends CommRestriction {
           ..add('reason', reason))
         .toString();
   }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'CommRestriction',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dstEnt': dstEnt,
+        'restriction': restriction.value,
+        'reason': reason,
+      };
 }
 
 /// Communication Restriction builder class

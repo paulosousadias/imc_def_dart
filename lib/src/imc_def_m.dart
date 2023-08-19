@@ -23,6 +23,9 @@ int? get fakeSyncNumberReversed => fakeSyncNumber?.reverseAsSyncNumber();
 abstract class ImcMessage extends Message {
   @override
   int get sync => fakeSyncNumber ?? syncNumber;
+
+  /// To JSON object
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Maneuver message group class
@@ -64,6 +67,10 @@ abstract class EntityState extends ImcMessage
   /// Complementary human-readable description of entity state.
   @ImcField('Complementary description', 'description', ImcType.typePlaintext)
   String get description;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Query Entity State class
@@ -81,6 +88,10 @@ abstract class QueryEntityState extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'QueryEntityState';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Entity Information class
@@ -118,6 +129,10 @@ abstract class EntityInfo extends ImcMessage
   /// Amount of time needed to properly deactivate the entity.
   @ImcField('Deactivation Time', 'deact_time', ImcType.typeUInt16, units: 's')
   int get deactTime;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Query Entity Information class
@@ -140,6 +155,10 @@ abstract class QueryEntityInfo extends ImcMessage
   /// Entity identifier.
   @ImcField('Entity Identifier', 'id', ImcType.typeUInt8)
   int get id;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Entity List class
@@ -165,6 +184,10 @@ abstract class EntityList extends ImcMessage
   /// Example: "Battery=11;CTD=3"
   @ImcField('list', 'list', ImcType.typePlaintext, units: 'TupleList')
   String get list;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// CPU Usage class
@@ -184,6 +207,10 @@ abstract class CpuUsage extends ImcMessage
   /// The CPU usage, in percentage, of the sending software.
   @ImcField('Usage percentage', 'value', ImcType.typeUInt8, units: '%')
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Transport Bindings class
@@ -209,6 +236,10 @@ abstract class TransportBindings extends ImcMessage
   /// The id of the message to be listened to.
   @ImcField('Message Identifier', 'message_id', ImcType.typeUInt16)
   int get messageId;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Restart System class
@@ -228,6 +259,10 @@ abstract class RestartSystem extends ImcMessage
 
   @ImcField('Restart Type', 'type', ImcType.typeUInt8)
   RestartSystemEnumType get type;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Device Calibration Control class
@@ -251,6 +286,10 @@ abstract class DevCalibrationControl extends ImcMessage
   /// Operation to perform.
   @ImcField('Operation', 'op', ImcType.typeUInt8)
   DevCalibrationControlEnumOp get op;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Device Calibration State class
@@ -284,6 +323,10 @@ abstract class DevCalibrationState extends ImcMessage
   /// Additional flags.
   @ImcField('Flags', 'flags', ImcType.typeUInt8)
   DevCalibrationStateBitfieldFlags get flags;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Entity Activation State class
@@ -309,6 +352,10 @@ abstract class EntityActivationState extends ImcMessage
   /// Human-readable error message.
   @ImcField('Error', 'error', ImcType.typePlaintext)
   String get error;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Query Entity Activation State class
@@ -328,6 +375,10 @@ abstract class QueryEntityActivationState extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'QueryEntityActivationState';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle Operational Limits class
@@ -429,6 +480,10 @@ abstract class VehicleOperationalLimits extends ImcMessage
   @ImcField('Maximum RPM rate', 'rpm_rate_max', ImcType.typeFp32,
       units: 'rpm/s')
   double get rpmRateMax;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Message List class
@@ -446,6 +501,10 @@ abstract class MsgList extends ImcMessage
 
   @ImcField('Messages', 'msgs', ImcType.typeMessageList)
   List<ImcMessage> get msgs;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Simulated State class
@@ -539,6 +598,10 @@ abstract class SimulatedState extends ImcMessage
   /// Stream Velocity zz axis velocity component.
   @ImcField('Stream Velocity Z (Down)', 'svz', ImcType.typeFp32, units: 'm/s')
   double get svz;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Leak Simulation class
@@ -564,6 +627,10 @@ abstract class LeakSimulation extends ImcMessage
   /// configured).
   @ImcField('Leak Entities', 'entities', ImcType.typePlaintext)
   String get entities;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Underwater Acoustics Simulation class
@@ -592,6 +659,10 @@ abstract class UASimulation extends ImcMessage
   /// Data for transmission requests.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Dynamics Simulation Parameters class
@@ -622,6 +693,10 @@ abstract class DynamicsSimParam extends ImcMessage
   /// Proportional gain from the bank angle error to the bank angular rate.
   @ImcField('Bank to Bank Rate Gain', 'bank2p_pgain', ImcType.typeFp32)
   double get bank2pPgain;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Storage Usage class
@@ -646,6 +721,10 @@ abstract class StorageUsage extends ImcMessage
   /// The percentage of storage used by the reporting device.
   @ImcField('Usage', 'value', ImcType.typeUInt8, units: '%')
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Cache Control class
@@ -674,6 +753,10 @@ abstract class CacheControl extends ImcMessage
   /// Message to store.
   @ImcField('Message', 'message', ImcType.typeMessage)
   ImcMessage? get message;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Logging Control class
@@ -699,6 +782,10 @@ abstract class LoggingControl extends ImcMessage
   /// explained in the operation's description.
   @ImcField('Log Label / Path', 'name', ImcType.typePlaintext)
   String get name;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Log Book Entry class
@@ -731,6 +818,10 @@ abstract class LogBookEntry extends ImcMessage
   /// Message text.
   @ImcField('Text', 'text', ImcType.typePlaintext)
   String get text;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Log Book Control class
@@ -759,6 +850,10 @@ abstract class LogBookControl extends ImcMessage
   /// Argument, currently used only for 'REPLY'.
   @ImcField('Messages', 'msg', ImcType.typeMessageList)
   List<LogBookEntry> get msg;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Replay Control class
@@ -783,6 +878,10 @@ abstract class ReplayControl extends ImcMessage
   /// Pathname of file to replay.
   @ImcField('File To Replay', 'file', ImcType.typePlaintext)
   String get file;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Clock Control class
@@ -811,6 +910,10 @@ abstract class ClockControl extends ImcMessage
   /// Timezone.
   @ImcField('Timezone', 'tz', ImcType.typeInt8)
   int get tz;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic CTD class
@@ -836,6 +939,10 @@ abstract class HistoricCTD extends ImcMessage
 
   @ImcField('Depth', 'depth', ImcType.typeFp32, units: 'm')
   double get depth;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic Telemetry class
@@ -871,6 +978,10 @@ abstract class HistoricTelemetry extends ImcMessage
 
   @ImcField('Speed', 'speed', ImcType.typeInt16, units: 'dm')
   int get speed;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic Sonar Data class
@@ -912,6 +1023,10 @@ abstract class HistoricSonarData extends ImcMessage
   /// Sonar data encoded as in 'encoding'.
   @ImcField('SonarData', 'sonar_data', ImcType.typeRawdata)
   List<int> get sonarData;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic Event class
@@ -935,6 +1050,10 @@ abstract class HistoricEvent extends ImcMessage
   /// Type of event.
   @ImcField('Event Type', 'type', ImcType.typeUInt8)
   HistoricEventEnumType get type;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vertical Profile class
@@ -969,6 +1088,10 @@ abstract class VerticalProfile extends ImcMessage
   /// Longitude where the profile was calculated.
   @ImcField('Longitude', 'lon', ImcType.typeFp64, units: 'rad')
   double get lon;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Profile Sample class
@@ -991,6 +1114,10 @@ abstract class ProfileSample extends ImcMessage
 
   @ImcField('Average', 'avg', ImcType.typeFp32)
   double get avg;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Heartbeat class
@@ -1008,6 +1135,10 @@ abstract class Heartbeat extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'Heartbeat';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Announce class
@@ -1055,6 +1186,10 @@ abstract class Announce extends ImcMessage
   /// - *http://192.168.106.34/dune/*.
   @ImcField('Services', 'services', ImcType.typePlaintext)
   String get services;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Announce Service class
@@ -1080,6 +1215,10 @@ abstract class AnnounceService extends ImcMessage
   /// external networks.
   @ImcField('ServiceType', 'service_type', ImcType.typeUInt8)
   AnnounceServiceBitfieldServiceType get serviceType;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Receive Signal Strength Information class
@@ -1099,6 +1238,10 @@ abstract class RSSI extends ImcMessage implements Built<RSSI, RSSIBuilder> {
   /// RSSI measurement.
   @ImcField('Value', 'value', ImcType.typeFp32, units: '%')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Voltage Standing Wave Ratio class
@@ -1117,6 +1260,10 @@ abstract class VSWR extends ImcMessage implements Built<VSWR, VSWRBuilder> {
   /// VSWR measurement.
   @ImcField('Value', 'value', ImcType.typeFp32)
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Link Level class
@@ -1138,6 +1285,10 @@ abstract class LinkLevel extends ImcMessage
   /// Link level value.
   @ImcField('Value', 'value', ImcType.typeFp32)
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SMS class
@@ -1164,6 +1315,10 @@ abstract class Sms extends ImcMessage implements Built<Sms, SmsBuilder> {
   /// Message contents.
   @ImcField('Contents', 'contents', ImcType.typePlaintext)
   String get contents;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SMS Transmit class
@@ -1194,6 +1349,10 @@ abstract class SmsTx extends ImcMessage implements Built<SmsTx, SmsTxBuilder> {
   /// Message data.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SMS Receive class
@@ -1216,6 +1375,10 @@ abstract class SmsRx extends ImcMessage implements Built<SmsRx, SmsRxBuilder> {
   /// Message data.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SMS State class
@@ -1241,6 +1404,10 @@ abstract class SmsState extends ImcMessage
 
   @ImcField('Error Message', 'error', ImcType.typePlaintext)
   String get error;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Text Message class
@@ -1265,6 +1432,10 @@ abstract class TextMessage extends ImcMessage
   /// Message contents.
   @ImcField('Text', 'text', ImcType.typePlaintext)
   String get text;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Received Iridium Message class
@@ -1298,6 +1469,10 @@ abstract class IridiumMsgRx extends ImcMessage
   /// Message data.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Transmit Iridium Message class
@@ -1329,6 +1504,10 @@ abstract class IridiumMsgTx extends ImcMessage
   /// Message data.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Iridium Transmission Status class
@@ -1354,6 +1533,10 @@ abstract class IridiumTxStatus extends ImcMessage
 
   @ImcField('Status Text', 'text', ImcType.typePlaintext)
   String get text;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Group Membership State class
@@ -1380,6 +1563,10 @@ abstract class GroupMembershipState extends ImcMessage
   /// One bit to assert each system communication link state.
   @ImcField('Communication Links Assertion', 'links', ImcType.typeUint32)
   int get links;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// System Group class
@@ -1408,6 +1595,10 @@ abstract class SystemGroup extends ImcMessage
   /// List of names of system in the group, separated by commas.
   @ImcField('Systems Name List', 'GroupList', ImcType.typePlaintext)
   String get groupList;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Link Latency class
@@ -1433,6 +1624,10 @@ abstract class LinkLatency extends ImcMessage
   /// ID of system that was the source of the communication package.
   @ImcField('Communications Source System ID', 'sys_src', ImcType.typeUInt16)
   int get sysSrc;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Extended Receive Signal Strength Information class
@@ -1459,6 +1654,10 @@ abstract class ExtendedRSSI extends ImcMessage
   /// Indicates the units used for the RSSI value.
   @ImcField('RSSI Units', 'units', ImcType.typeUInt8)
   RSSIUnitsEnum get units;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic Data Series class
@@ -1491,6 +1690,10 @@ abstract class HistoricData extends ImcMessage
 
   @ImcField('Data', 'data', ImcType.typeMessageList)
   List<RemoteData> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Compressed Historic Data Series class
@@ -1525,6 +1728,10 @@ abstract class CompressedHistory extends ImcMessage
   /// A message-list of HistoricSample messages compressed with GZip algorithm.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic Data Sample class
@@ -1571,6 +1778,10 @@ abstract class HistoricSample extends RemoteData
 
   @ImcField('Data Sample', 'sample', ImcType.typeMessage)
   ImcMessage? get sample;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Historic Data Query class
@@ -1599,6 +1810,10 @@ abstract class HistoricDataQuery extends ImcMessage
 
   @ImcField('Data', 'data', ImcType.typeMessage)
   HistoricData? get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Remote Command class
@@ -1633,6 +1848,10 @@ abstract class RemoteCommand extends RemoteData
   /// Command to be unpacked by the recipient.
   @ImcField('Command', 'cmd', ImcType.typeMessage)
   ImcMessage? get cmd;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Communication Systems Query class
@@ -1663,6 +1882,10 @@ abstract class CommSystemsQuery extends ImcMessage
   /// Comma separated list of known Radio system names.
   @ImcField('System List', 'list', ImcType.typePlaintext, units: 'List')
   String get list;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Telemetry Message class
@@ -1714,6 +1937,10 @@ abstract class TelemetryMsg extends ImcMessage
 
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LBL Range class
@@ -1741,6 +1968,10 @@ abstract class LblRange extends ImcMessage
   /// Distance to the acoustic transponder.
   @ImcField('Range', 'range', ImcType.typeFp32, units: 'm')
   double get range;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LBL Beacon Configuration class
@@ -1785,6 +2016,10 @@ abstract class LblBeacon extends ImcMessage
   @ImcField('Transponder delay', 'transponder_delay', ImcType.typeUInt8,
       units: 'ms')
   int get transponderDelay;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LBL Configuration class
@@ -1808,6 +2043,10 @@ abstract class LblConfig extends ImcMessage
   /// A list of LBL beacon configuration messages.
   @ImcField('Beacons', 'beacons', ImcType.typeMessageList)
   List<LblBeacon> get beacons;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Message class
@@ -1828,6 +2067,10 @@ abstract class AcousticMessage extends ImcMessage
   /// Message to send.
   @ImcField('Message to send', 'message', ImcType.typeMessage)
   ImcMessage? get message;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Simulated Acoustic Message class
@@ -1885,6 +2128,10 @@ abstract class SimAcousticMessage extends ImcMessage
 
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Operation class
@@ -1920,6 +2167,10 @@ abstract class AcousticOperation extends ImcMessage
   /// Argument for message send ('MSG') requests.
   @ImcField('Message To Send', 'msg', ImcType.typeMessage)
   ImcMessage? get msg;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Systems Query class
@@ -1939,6 +2190,10 @@ abstract class AcousticSystemsQuery extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'AcousticSystemsQuery';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Systems class
@@ -1961,6 +2216,10 @@ abstract class AcousticSystems extends ImcMessage
   /// Comma separated list of known acoustic system names.
   @ImcField('System List', 'list', ImcType.typePlaintext, units: 'List')
   String get list;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Link Quality class
@@ -1999,6 +2258,10 @@ abstract class AcousticLink extends ImcMessage
   /// Level* value is less than 100.
   @ImcField('Signal Integrity Level', 'integrity', ImcType.typeUInt16)
   int get integrity;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Transmission Request class
@@ -2038,6 +2301,10 @@ abstract class AcousticRequest extends ImcMessage
   /// Argument for message send ('MSG') or ('RAW') but in this case expects DevDataBinary message requests.
   @ImcField('Message To Send', 'msg', ImcType.typeMessage)
   ImcMessage? get msg;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acoustic Transmission Status class
@@ -2072,6 +2339,10 @@ abstract class AcousticStatus extends ImcMessage
   /// explained in the operation's description.
   @ImcField('Range', 'range', ImcType.typeFp32, units: 'm')
   double get range;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Revolutions Per Minute class
@@ -2090,6 +2361,10 @@ abstract class Rpm extends ImcMessage implements Built<Rpm, RpmBuilder> {
   /// Number of revolutions per minute.
   @ImcField('Value', 'value', ImcType.typeInt16, units: 'rpm')
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Voltage class
@@ -2110,6 +2385,10 @@ abstract class Voltage extends ImcMessage
   /// the sensor.
   @ImcField('Measured Voltage Value', 'value', ImcType.typeFp32, units: 'V')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Current class
@@ -2130,6 +2409,10 @@ abstract class Current extends ImcMessage
   /// the sensor.
   @ImcField('Measured Current Value', 'value', ImcType.typeFp32, units: 'A')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// GPS Fix class
@@ -2212,6 +2495,10 @@ abstract class GpsFix extends ImcMessage
   /// Vertical Accuracy Estimate.
   @ImcField('Vertical Accuracy Estimate', 'vacc', ImcType.typeFp32, units: 'm')
   double get vacc;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Euler Angles class
@@ -2256,6 +2543,10 @@ abstract class EulerAngles extends ImcMessage
   @ImcField('Yaw Angle (Magnetic)', 'psi_magnetic', ImcType.typeFp64,
       units: 'rad')
   double get psiMagnetic;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Euler Angles Delta class
@@ -2292,6 +2583,10 @@ abstract class EulerAnglesDelta extends ImcMessage
   /// Period of time of the orientation vector increments.
   @ImcField('Timestep', 'timestep', ImcType.typeFp32, units: 's')
   double get timestep;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Angular Velocity class
@@ -2325,6 +2620,10 @@ abstract class AngularVelocity extends ImcMessage
   /// Z component.
   @ImcField('Z', 'z', ImcType.typeFp64, units: 'rad/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Acceleration class
@@ -2358,6 +2657,10 @@ abstract class Acceleration extends ImcMessage
   /// Z component.
   @ImcField('Z', 'z', ImcType.typeFp64, units: 'm/s/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Magnetic Field class
@@ -2391,6 +2694,10 @@ abstract class MagneticField extends ImcMessage
   /// Z component.
   @ImcField('Z', 'z', ImcType.typeFp64, units: 'G')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Ground Velocity class
@@ -2425,6 +2732,10 @@ abstract class GroundVelocity extends ImcMessage
   /// Z component.
   @ImcField('Z', 'z', ImcType.typeFp64, units: 'm/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Water Velocity class
@@ -2459,6 +2770,10 @@ abstract class WaterVelocity extends ImcMessage
   /// Z component.
   @ImcField('Z', 'z', ImcType.typeFp64, units: 'm/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Velocity Delta class
@@ -2491,6 +2806,10 @@ abstract class VelocityDelta extends ImcMessage
   /// Z component.
   @ImcField('Z', 'z', ImcType.typeFp64, units: 'm/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Distance class
@@ -2522,6 +2841,10 @@ abstract class Distance extends ImcMessage
   /// Measured distance.
   @ImcField('Measured Distance', 'value', ImcType.typeFp32, units: 'm')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Temperature class
@@ -2542,6 +2865,10 @@ abstract class Temperature extends ImcMessage
   /// The value of the temperature as measured by the sensor.
   @ImcField('Measured Temperature', 'value', ImcType.typeFp32, units: '°C')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Pressure class
@@ -2561,6 +2888,10 @@ abstract class Pressure extends ImcMessage
   /// The value of the pressure as measured by the sensor.
   @ImcField('Measured Pressure', 'value', ImcType.typeFp64, units: 'hPa')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Depth class
@@ -2579,6 +2910,10 @@ abstract class Depth extends ImcMessage implements Built<Depth, DepthBuilder> {
   /// Depth value measured by a sensor.
   @ImcField('Measured Depth', 'value', ImcType.typeFp32, units: 'm')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Depth Offset class
@@ -2599,6 +2934,10 @@ abstract class DepthOffset extends ImcMessage
   /// Depth offset.
   @ImcField('Measured Offset', 'value', ImcType.typeFp32, units: 'm')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Sound Speed class
@@ -2619,6 +2958,10 @@ abstract class SoundSpeed extends ImcMessage
   /// Estimated sound speed. Negative values denote invalid estimates.
   @ImcField('Computed Sound Speed', 'value', ImcType.typeFp32, units: 'm/s')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Water Density class
@@ -2640,6 +2983,10 @@ abstract class WaterDensity extends ImcMessage
   @ImcField('Computed Water Density', 'value', ImcType.typeFp32,
       units: 'kg/m/m/m')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Conductivity class
@@ -2660,6 +3007,10 @@ abstract class Conductivity extends ImcMessage
   /// The value of the conductivity as measured by the sensor.
   @ImcField('Measured Conductivity', 'value', ImcType.typeFp32, units: 'S/m')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Salinity class
@@ -2679,6 +3030,10 @@ abstract class Salinity extends ImcMessage
   /// The value of the salinity as measured by the sensor.
   @ImcField('Measured Salinity', 'value', ImcType.typeFp32, units: 'PSU')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Wind Speed class
@@ -2706,6 +3061,10 @@ abstract class WindSpeed extends ImcMessage
   /// Wind turbulence intensity.
   @ImcField('Turbulence', 'turbulence', ImcType.typeFp32, units: 'm/s')
   double get turbulence;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Relative Humidity class
@@ -2726,6 +3085,10 @@ abstract class RelativeHumidity extends ImcMessage
   /// Value of relative humidity.
   @ImcField('Relative Humidity Value', 'value', ImcType.typeFp32)
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Device Data (Text) class
@@ -2746,6 +3109,10 @@ abstract class DevDataText extends ImcMessage
   /// Plain text data as extracted directly from the device.
   @ImcField('Value', 'value', ImcType.typePlaintext)
   String get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Device Data (Binary) class
@@ -2766,6 +3133,10 @@ abstract class DevDataBinary extends ImcMessage
   /// Raw binary data as extracted directly from the device.
   @ImcField('Value', 'value', ImcType.typeRawdata)
   List<int> get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Force class
@@ -2784,6 +3155,10 @@ abstract class Force extends ImcMessage implements Built<Force, ForceBuilder> {
   /// Force magnitude.
   @ImcField('Measured Force', 'value', ImcType.typeFp32, units: 'N')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Sonar Data class
@@ -2909,6 +3284,10 @@ abstract class SonarData extends ImcMessage
   /// Data acquired by the measurement.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Pulse class
@@ -2923,6 +3302,10 @@ abstract class Pulse extends ImcMessage implements Built<Pulse, PulseBuilder> {
   int get msgId => staticId;
   @override
   String get abbrev => 'Pulse';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Pulse Detection Control class
@@ -2944,6 +3327,10 @@ abstract class PulseDetectionControl extends ImcMessage
   /// Activate or deactivate hardware pulse detection.
   @ImcField('Operation', 'op', ImcType.typeUInt8)
   PulseDetectionControlEnumOp get op;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Fuel Level class
@@ -2974,6 +3361,10 @@ abstract class FuelLevel extends ImcMessage
   @ImcField('Operation Modes', 'opmodes', ImcType.typePlaintext,
       units: 'TupleList')
   String get opmodes;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// GPS Navigation Data class
@@ -3055,6 +3446,10 @@ abstract class GpsNavData extends ImcMessage
   @ImcField('Course / Heading Accuracy Estimate', 'cacc', ImcType.typeFp32,
       units: 'rad')
   double get cacc;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Servo Position class
@@ -3079,6 +3474,10 @@ abstract class ServoPosition extends ImcMessage
   /// Value of the servo position.
   @ImcField('Position', 'value', ImcType.typeFp32, units: 'rad')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Device State class
@@ -3119,6 +3518,10 @@ abstract class DeviceState extends ImcMessage
   /// Device's rotation over the Z axis.
   @ImcField('Device Rotation - Z', 'psi', ImcType.typeFp32, units: 'rad')
   double get psi;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Beam Configuration class
@@ -3145,6 +3548,10 @@ abstract class BeamConfig extends ImcMessage
   /// this information is not available or is not applicable.
   @ImcField('Beam Height', 'beam_height', ImcType.typeFp32, units: 'rad')
   double get beamHeight;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Data Sanity class
@@ -3165,6 +3572,10 @@ abstract class DataSanity extends ImcMessage
   /// Whether the data is sane or not sane.
   @ImcField('Sanity', 'sane', ImcType.typeUInt8)
   DataSanityEnumSane get sane;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Rhodamine Dye class
@@ -3185,6 +3596,10 @@ abstract class RhodamineDye extends ImcMessage
   /// Amount of rhodamine dye detected.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Crude Oil class
@@ -3204,6 +3619,10 @@ abstract class CrudeOil extends ImcMessage
   /// Amount of crude oil detected.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Fine Oil class
@@ -3223,6 +3642,10 @@ abstract class FineOil extends ImcMessage
   /// Amount of fine oil detected.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Turbidity class
@@ -3242,6 +3665,10 @@ abstract class Turbidity extends ImcMessage
   /// Turbidity reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'NTU')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Chlorophyll class
@@ -3262,6 +3689,10 @@ abstract class Chlorophyll extends ImcMessage
   /// Chlorophyll reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'µg/L')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Fluorescein class
@@ -3282,6 +3713,10 @@ abstract class Fluorescein extends ImcMessage
   /// Fluorescein reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Phycocyanin class
@@ -3302,6 +3737,10 @@ abstract class Phycocyanin extends ImcMessage
   /// Phycocyanin reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Phycoerythrin class
@@ -3322,6 +3761,10 @@ abstract class Phycoerythrin extends ImcMessage
   /// Phycoerythrin reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// GPS Fix RTK class
@@ -3399,6 +3842,10 @@ abstract class GpsFixRtk extends ImcMessage
   /// Quality ratio of Integer Ambiguity Resolution (bigger is better).
   @ImcField('IAR Ratio', 'iar_ratio', ImcType.typeFp32)
   double get iarRatio;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// External Navigation Data class
@@ -3437,6 +3884,10 @@ abstract class ExternalNavData extends ImcMessage
   /// The type of external navigation data
   @ImcField('Nav Data Type', 'type', ImcType.typeUInt8)
   ExternalNavDataEnumType get type;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Dissolved Oxygen class
@@ -3457,6 +3908,10 @@ abstract class DissolvedOxygen extends ImcMessage
   /// Dissolved Oxygen reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'µM')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Air Saturation class
@@ -3477,6 +3932,10 @@ abstract class AirSaturation extends ImcMessage
   /// Air Saturation reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: '%')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Throttle class
@@ -3496,6 +3955,10 @@ abstract class Throttle extends ImcMessage
   /// The value of the desired throttle.
   @ImcField('Value', 'value', ImcType.typeFp64, units: '%')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// pH class
@@ -3514,6 +3977,10 @@ abstract class PH extends ImcMessage implements Built<PH, PHBuilder> {
   /// The value of the pH as measured by the sensor.
   @ImcField('Value', 'value', ImcType.typeFp32)
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Redox Potential class
@@ -3532,6 +3999,10 @@ abstract class Redox extends ImcMessage implements Built<Redox, RedoxBuilder> {
   /// The value of the Redox as measured by the sensor.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'V')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Camera Zoom class
@@ -3560,6 +4031,10 @@ abstract class CameraZoom extends ImcMessage
   /// The zoom action to perform.
   @ImcField('Action', 'action', ImcType.typeUInt8)
   CameraZoomEnumAction get action;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set Thruster Actuation class
@@ -3585,6 +4060,10 @@ abstract class SetThrusterActuation extends ImcMessage
   /// Actuation magnitude.
   @ImcField('Actuation Value', 'value', ImcType.typeFp32)
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set Servo Position class
@@ -3609,6 +4088,10 @@ abstract class SetServoPosition extends ImcMessage
   /// Actuation magnitude.
   @ImcField('Position', 'value', ImcType.typeFp32, units: 'rad')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set Control Surface Deflection class
@@ -3635,6 +4118,10 @@ abstract class SetControlSurfaceDeflection extends ImcMessage
   /// Actuation magnitude.
   @ImcField('Angle', 'angle', ImcType.typeFp32, units: 'rad')
   double get angle;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Remote Actions Request class
@@ -3665,6 +4152,10 @@ abstract class RemoteActionsRequest extends ImcMessage
   /// Example: "Propulsion=Axis,PanTilt=Hat,Lights=Button"
   @ImcField('Actions', 'actions', ImcType.typePlaintext, units: 'TupleList')
   String get actions;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Remote Actions class
@@ -3687,6 +4178,10 @@ abstract class RemoteActions extends ImcMessage
   /// List of values for each remote action (e.g: "Propeller=0.6,PanTilt=0.75,Lights=1").
   @ImcField('Actions', 'actions', ImcType.typePlaintext, units: 'TupleList')
   String get actions;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Button Event class
@@ -3711,6 +4206,10 @@ abstract class ButtonEvent extends ImcMessage
   /// Value of the button.
   @ImcField('Value', 'value', ImcType.typeUInt8)
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LCD Control class
@@ -3735,6 +4234,10 @@ abstract class LcdControl extends ImcMessage
   /// Text to be written (if defined write operation).
   @ImcField('Text', 'text', ImcType.typePlaintext)
   String get text;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Power Operation class
@@ -3763,6 +4266,10 @@ abstract class PowerOperation extends ImcMessage
   /// Scheduled time of operation.
   @ImcField('Scheduled Time', 'sched_time', ImcType.typeFp64, units: 's')
   double get schedTime;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Power Channel Control class
@@ -3792,6 +4299,10 @@ abstract class PowerChannelControl extends ImcMessage
   /// Scheduled time of operation.
   @ImcField('Scheduled Time', 'sched_time', ImcType.typeFp64, units: 's')
   double get schedTime;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Query Power Channel State class
@@ -3809,6 +4320,10 @@ abstract class QueryPowerChannelState extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'QueryPowerChannelState';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Power Channel State class
@@ -3834,6 +4349,10 @@ abstract class PowerChannelState extends ImcMessage
   /// State of the Power Channel.
   @ImcField('State', 'state', ImcType.typeUInt8)
   PowerChannelStateEnumState get state;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LED Brightness class
@@ -3858,6 +4377,10 @@ abstract class LedBrightness extends ImcMessage
   /// Brightness value.
   @ImcField('Value', 'value', ImcType.typeUInt8)
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Query LED Brightness class
@@ -3880,6 +4403,10 @@ abstract class QueryLedBrightness extends ImcMessage
   /// LED name.
   @ImcField('Name', 'name', ImcType.typePlaintext)
   String get name;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set LED Brightness class
@@ -3906,6 +4433,10 @@ abstract class SetLedBrightness extends ImcMessage
   /// Desired brightness value.
   @ImcField('Value', 'value', ImcType.typeUInt8)
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set PWM class
@@ -3935,6 +4466,10 @@ abstract class SetPWM extends ImcMessage
   /// be less or equal to the period.
   @ImcField('Duty Cycle', 'duty_cycle', ImcType.typeUint32, units: 'µs')
   int get dutyCycle;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// PWM class
@@ -3963,6 +4498,10 @@ abstract class PWM extends ImcMessage implements Built<PWM, PWMBuilder> {
   /// less or equal to the period.
   @ImcField('Duty Cycle', 'duty_cycle', ImcType.typeUint32, units: 'µs')
   int get dutyCycle;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Estimated State class
@@ -4082,6 +4621,10 @@ abstract class EstimatedState extends ImcMessage
   /// Altitude, in meters. Negative values denote invalid estimates.
   @ImcField('Altitude', 'alt', ImcType.typeFp32, units: 'm')
   double get alt;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Estimated Stream Velocity class
@@ -4112,6 +4655,10 @@ abstract class EstimatedStreamVelocity extends ImcMessage
   /// Z component (Down).
   @ImcField('Z component (Down)', 'z', ImcType.typeFp64, units: 'm/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Indicated Speed class
@@ -4131,6 +4678,10 @@ abstract class IndicatedSpeed extends ImcMessage
 
   @ImcField('Measured speed', 'value', ImcType.typeFp64, units: 'm/s')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// True Speed class
@@ -4149,6 +4700,10 @@ abstract class TrueSpeed extends ImcMessage
 
   @ImcField('Estimated value', 'value', ImcType.typeFp64, units: 'm/s')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Navigation Uncertainty class
@@ -4232,6 +4787,10 @@ abstract class NavigationUncertainty extends ImcMessage
   @ImcField('Variance - Gyro. Yaw Rate Bias', 'bias_r', ImcType.typeFp32,
       units: 'rad/s')
   double get biasR;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Navigation Data class
@@ -4287,6 +4846,10 @@ abstract class NavigationData extends ImcMessage
   /// Custom variable.
   @ImcField('Variance - Custom Variable Z', 'custom_z', ImcType.typeFp32)
   double get customZ;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// GPS Fix Rejection class
@@ -4311,6 +4874,10 @@ abstract class GpsFixRejection extends ImcMessage
   /// Reason for rejection.
   @ImcField('Reason', 'reason', ImcType.typeUInt8)
   GpsFixRejectionEnumReason get reason;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LBL Range Acceptance class
@@ -4346,6 +4913,10 @@ abstract class LblRangeAcceptance extends ImcMessage
   /// Reason for acceptance/rejection.
   @ImcField('Acceptance', 'acceptance', ImcType.typeUInt8)
   LblRangeAcceptanceEnumAcceptance get acceptance;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// DVL Rejection class
@@ -4396,6 +4967,10 @@ abstract class DvlRejection extends ImcMessage
   /// and the current one.
   @ImcField('Timestep', 'timestep', ImcType.typeFp32, units: 's')
   double get timestep;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// LBL Beacon Position Estimate class
@@ -4438,6 +5013,10 @@ abstract class LblEstimate extends ImcMessage
   /// Distance between current LBL Beacon position and filter estimation.
   @ImcField('Distance', 'distance', ImcType.typeFp32, units: 'm')
   double get distance;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Alignment State class
@@ -4458,6 +5037,10 @@ abstract class AlignmentState extends ImcMessage
   /// Alignment State.
   @ImcField('State', 'state', ImcType.typeUInt8)
   AlignmentStateEnumState get state;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// GroupStreamVelocity class
@@ -4488,6 +5071,10 @@ abstract class GroupStreamVelocity extends ImcMessage
   /// Z component (Down).
   @ImcField('Z component (Down)', 'z', ImcType.typeFp64, units: 'm/s')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Airflow class
@@ -4515,6 +5102,10 @@ abstract class Airflow extends ImcMessage
   /// Sideslip angle.
   @ImcField('Sideslip angle', 'ssa', ImcType.typeFp32, units: 'rad')
   double get ssa;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Heading class
@@ -4536,6 +5127,10 @@ abstract class DesiredHeading extends ControlCommand
   /// north, in radians.
   @ImcField('Value', 'value', ImcType.typeFp64, units: 'rad')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Z class
@@ -4559,6 +5154,10 @@ abstract class DesiredZ extends ControlCommand
   /// Units of the z reference.
   @ImcField('Z Units', 'z_units', ImcType.typeUInt8)
   ZUnitsEnum get zUnits;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Speed class
@@ -4584,6 +5183,10 @@ abstract class DesiredSpeed extends ControlCommand
   /// Indicates the units used for the speed value.
   @ImcField('Speed Units', 'speed_units', ImcType.typeUInt8)
   SpeedUnitsEnum get speedUnits;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Roll class
@@ -4604,6 +5207,10 @@ abstract class DesiredRoll extends ControlCommand
   /// The value of the desired roll angle.
   @ImcField('Value', 'value', ImcType.typeFp64, units: 'rad')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Pitch class
@@ -4624,6 +5231,10 @@ abstract class DesiredPitch extends ControlCommand
   /// The value of the desired pitch angle.
   @ImcField('Value', 'value', ImcType.typeFp64, units: 'rad')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Vertical Rate class
@@ -4646,6 +5257,10 @@ abstract class DesiredVerticalRate extends ImcMessage
   /// second.
   @ImcField('Value', 'value', ImcType.typeFp64, units: 'm/s')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Path class
@@ -4754,6 +5369,10 @@ abstract class DesiredPath extends ControlCommand
   /// Desired Path flags.
   @ImcField('Flags', 'flags', ImcType.typeUInt8)
   DesiredPathBitfieldFlags get flags;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Control class
@@ -4799,6 +5418,10 @@ abstract class DesiredControl extends ImcMessage
   /// Desired Control flags.
   @ImcField('Flags', 'flags', ImcType.typeUInt8)
   DesiredControlBitfieldFlags get flags;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Heading Rate class
@@ -4821,6 +5444,10 @@ abstract class DesiredHeadingRate extends ImcMessage
   /// second.
   @ImcField('Value', 'value', ImcType.typeFp64, units: 'rad/s')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Velocity class
@@ -4865,6 +5492,10 @@ abstract class DesiredVelocity extends ImcMessage
   /// Desired Velocity flags.
   @ImcField('Flags', 'flags', ImcType.typeUInt8)
   DesiredVelocityBitfieldFlags get flags;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Path Control State class
@@ -4971,6 +5602,10 @@ abstract class PathControlState extends ImcMessage
   @ImcField('Estimated Time to Arrival (ETA)', 'eta', ImcType.typeUInt16,
       units: 's')
   int get eta;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Allocated Control Torques class
@@ -5000,6 +5635,10 @@ abstract class AllocatedControlTorques extends ImcMessage
   /// Torque N about the vehicle's z axis.
   @ImcField('Torque about the x axis', 'n', ImcType.typeFp64, units: 'Nm')
   double get n;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Control Parcel class
@@ -5032,6 +5671,10 @@ abstract class ControlParcel extends ImcMessage
   /// Anti-windup parcel value.
   @ImcField('Anti-Windup Parcel', 'a', ImcType.typeFp32)
   double get a;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Brake class
@@ -5050,6 +5693,10 @@ abstract class Brake extends ImcMessage implements Built<Brake, BrakeBuilder> {
   /// Brake operation.
   @ImcField('Operation', 'op', ImcType.typeUInt8)
   BrakeEnumOp get op;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Linear State class
@@ -5110,6 +5757,10 @@ abstract class DesiredLinearState extends ImcMessage
   /// Setpoint Flags
   @ImcField('Flags', 'flags', ImcType.typeUInt16)
   DesiredLinearStateBitfieldFlags get flags;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Desired Throttle class
@@ -5130,6 +5781,10 @@ abstract class DesiredThrottle extends ControlCommand
   /// The value of the desired throttle.
   @ImcField('Value', 'value', ImcType.typeFp64, units: '%')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Goto Maneuver class
@@ -5206,6 +5861,10 @@ abstract class Goto extends Maneuver implements Built<Goto, GotoBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// PopUp Maneuver class
@@ -5271,6 +5930,10 @@ abstract class PopUp extends Maneuver implements Built<PopUp, PopUpBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Teleoperation Maneuver class
@@ -5293,6 +5956,10 @@ abstract class Teleoperation extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Loiter Maneuver class
@@ -5368,6 +6035,10 @@ abstract class Loiter extends Maneuver implements Built<Loiter, LoiterBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Idle Maneuver class
@@ -5394,6 +6065,10 @@ abstract class IdleManeuver extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Low Level Control Maneuver class
@@ -5426,6 +6101,10 @@ abstract class LowLevelControl extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Rows Maneuver class
@@ -5507,6 +6186,10 @@ abstract class Rows extends Maneuver implements Built<Rows, RowsBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Follow Path Maneuver class
@@ -5561,6 +6244,10 @@ abstract class FollowPath extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Path Point class
@@ -5591,6 +6278,10 @@ abstract class PathPoint extends ImcMessage
   /// point in relation to the path start point.
   @ImcField('Down Offset (m)', 'z', ImcType.typeFp32, units: 'm')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Yo-Yo Maneuver class
@@ -5649,6 +6340,10 @@ abstract class YoYo extends Maneuver implements Built<YoYo, YoYoBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Teleoperation Done class
@@ -5666,6 +6361,10 @@ abstract class TeleoperationDone extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'TeleoperationDone';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Station Keeping class
@@ -5723,6 +6422,10 @@ abstract class StationKeeping extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Elevator Maneuver class
@@ -5797,6 +6500,10 @@ abstract class Elevator extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Follow Trajectory class
@@ -5851,6 +6558,10 @@ abstract class FollowTrajectory extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Trajectory Point class
@@ -5886,6 +6597,10 @@ abstract class TrajectoryPoint extends ImcMessage
   /// The time offset relative to the previous trajectory point.
   @ImcField('Time Offset (s)', 't', ImcType.typeFp32, units: 's')
   double get t;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Custom Maneuver class
@@ -5921,6 +6636,10 @@ abstract class CustomManeuver extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle Formation class
@@ -5979,6 +6698,10 @@ abstract class VehicleFormation extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle Formation Participant class
@@ -6016,6 +6739,10 @@ abstract class VehicleFormationParticipant extends ImcMessage
   @ImcField('Formation offset -- Depth/Altitude', 'off_z', ImcType.typeFp32,
       units: 'm')
   double get offZ;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Stop Maneuver class
@@ -6032,6 +6759,10 @@ abstract class StopManeuver extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'StopManeuver';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Register Maneuver class
@@ -6053,6 +6784,10 @@ abstract class RegisterManeuver extends ImcMessage
   /// IMC serialization ID of maneuver type.
   @ImcField('Maneuver ID', 'mid', ImcType.typeUInt16)
   int get mid;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Maneuver Control State class
@@ -6083,6 +6818,10 @@ abstract class ManeuverControlState extends ImcMessage
   /// Complementary information, e.g., regarding errors.
   @ImcField('Info', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Follow System class
@@ -6132,6 +6871,10 @@ abstract class FollowSystem extends ImcMessage
   /// Units of the z reference.
   @ImcField('Z Units', 'z_units', ImcType.typeUInt8)
   ZUnitsEnum get zUnits;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Communications Relay class
@@ -6182,6 +6925,10 @@ abstract class CommsRelay extends Maneuver
   /// threshold.
   @ImcField('Move threshold', 'move_threshold', ImcType.typeFp32, units: 'm')
   double get moveThreshold;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Cover Area class
@@ -6232,6 +6979,10 @@ abstract class CoverArea extends Maneuver
   @ImcField('CustomParameters', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Polygon Vertex class
@@ -6257,6 +7008,10 @@ abstract class PolygonVertex extends ImcMessage
   /// WGS-84 Longitude for start point.
   @ImcField('Longitude WGS-84', 'lon', ImcType.typeFp64, units: 'rad')
   double get lon;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Compass Calibration Maneuver class
@@ -6331,6 +7086,10 @@ abstract class CompassCalibration extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Parameters class
@@ -6378,6 +7137,10 @@ abstract class FormationParameters extends ImcMessage
   @ImcField('Custom settings for formation', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Plan Execution class
@@ -6473,6 +7236,10 @@ abstract class FormationPlanExecution extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Follow Reference Maneuver class
@@ -6516,6 +7283,10 @@ abstract class FollowReference extends Maneuver
   /// in which case it actively changes its position in order to achieve the desired depth / altitude.
   @ImcField('Altitude Interval', 'altitude_interval', ImcType.typeFp32)
   double get altitudeInterval;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Reference To Follow class
@@ -6548,6 +7319,10 @@ abstract class Reference extends ImcMessage
 
   @ImcField('Radius', 'radius', ImcType.typeFp32)
   double get radius;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Follow Reference State class
@@ -6583,6 +7358,10 @@ abstract class FollowRefState extends ImcMessage
 
   @ImcField('Proximity', 'proximity', ImcType.typeUInt8)
   FollowRefStateBitfieldProximity get proximity;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Monitoring Data class
@@ -6705,6 +7484,10 @@ abstract class FormationMonitor extends ImcMessage
   /// List of RelativeState messages, encoding the inter-vehicle formation state.
   @ImcField('Relative State', 'rel_state', ImcType.typeMessageList)
   List<RelativeState> get relState;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Relative State class
@@ -6818,6 +7601,10 @@ abstract class RelativeState extends ImcMessage
   /// Relative virtual error: downward direction.
   @ImcField('Z Virtual Error (Down)', 'virt_err_z', ImcType.typeFp32)
   double get virtErrZ;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Dislodge Maneuver class
@@ -6856,6 +7643,10 @@ abstract class Dislodge extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation class
@@ -6995,6 +7786,10 @@ abstract class Formation extends ImcMessage
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Launch Maneuver class
@@ -7049,6 +7844,10 @@ abstract class Launch extends Maneuver implements Built<Launch, LaunchBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Drop Maneuver class
@@ -7102,6 +7901,10 @@ abstract class Drop extends Maneuver implements Built<Drop, DropBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Scheduled Goto class
@@ -7156,6 +7959,10 @@ abstract class ScheduledGoto extends Maneuver
   /// What to do if the vehicle fails to arrive before or at the requested time.
   @ImcField('Delayed Behavior', 'delayed', ImcType.typeUInt8)
   ScheduledGotoEnumDelayed get delayed;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Rows Coverage class
@@ -7238,6 +8045,10 @@ abstract class RowsCoverage extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Sample Maneuver class
@@ -7303,6 +8114,10 @@ abstract class Sample extends Maneuver implements Built<Sample, SampleBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Image Tracking class
@@ -7320,6 +8135,10 @@ abstract class ImageTracking extends Maneuver
   int get msgId => staticId;
   @override
   String get abbrev => 'ImageTracking';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Takeoff Maneuver class
@@ -7372,6 +8191,10 @@ abstract class Takeoff extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Land Maneuver class
@@ -7433,6 +8256,10 @@ abstract class Land extends Maneuver implements Built<Land, LandBuilder> {
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Autonomous Section class
@@ -7496,6 +8323,10 @@ abstract class AutonomousSection extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Follow Point Maneuver class
@@ -7545,6 +8376,10 @@ abstract class FollowPoint extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Alignment Maneuver class
@@ -7587,6 +8422,10 @@ abstract class Alignment extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Station Keeping Extended class
@@ -7661,6 +8500,10 @@ abstract class StationKeepingExtended extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Maneuver Done class
@@ -7677,6 +8520,10 @@ abstract class ManeuverDone extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'ManeuverDone';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Magnetometer Maneuver class
@@ -7740,6 +8587,10 @@ abstract class Magnetometer extends Maneuver
   @ImcField('Custom settings for maneuver', 'custom', ImcType.typePlaintext,
       units: 'TupleList')
   String get custom;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle State class
@@ -7808,6 +8659,10 @@ abstract class VehicleState extends ImcMessage
   @ImcField('Last Error -- Time', 'last_error_time', ImcType.typeFp64,
       units: 's')
   double get lastErrorTime;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle Command class
@@ -7847,6 +8702,10 @@ abstract class VehicleCommand extends ImcMessage
   /// Complementary human-readable information for replies.
   @ImcField('Info', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Monitor Entity State class
@@ -7872,6 +8731,10 @@ abstract class MonitorEntityState extends ImcMessage
   /// Comma separated list of entity names.
   @ImcField('Entity Names', 'entities', ImcType.typePlaintext)
   String get entities;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Entity Monitoring State class
@@ -7924,6 +8787,10 @@ abstract class EntityMonitoringState extends ImcMessage
   @ImcField('Last Error -- Time', 'last_error_time', ImcType.typeFp64,
       units: 's')
   double get lastErrorTime;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Operational Limits class
@@ -7979,6 +8846,10 @@ abstract class OperationalLimits extends ImcMessage
 
   @ImcField('Area -- Length', 'length', ImcType.typeFp32, units: 'm')
   double get length;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Get Operational Limits class
@@ -7996,6 +8867,10 @@ abstract class GetOperationalLimits extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'GetOperationalLimits';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Calibration class
@@ -8016,6 +8891,10 @@ abstract class Calibration extends ImcMessage
   /// Duration of calibration.
   @ImcField('Duration', 'duration', ImcType.typeUInt16, units: 's')
   int get duration;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Control Loops class
@@ -8047,6 +8926,10 @@ abstract class ControlLoops extends ImcMessage
   /// This same scope reference must be sent down to lower control layers.
   @ImcField('Scope Time Reference', 'scope_ref', ImcType.typeUint32)
   int get scopeRef;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle Medium class
@@ -8067,6 +8950,10 @@ abstract class VehicleMedium extends ImcMessage
   /// Current medium.
   @ImcField('Medium', 'medium', ImcType.typeUInt8)
   VehicleMediumEnumMedium get medium;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Collision class
@@ -8090,6 +8977,10 @@ abstract class Collision extends ImcMessage
   /// Collision flags.
   @ImcField('Type', 'type', ImcType.typeUInt8)
   CollisionBitfieldType get type;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Tracking State class
@@ -8130,6 +9021,10 @@ abstract class FormState extends ImcMessage
   /// Convergence monitoring flag.
   @ImcField('Convergence', 'ConvergMon', ImcType.typeUInt8)
   FormStateEnumConvergMon get convergMon;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Autopilot Mode class
@@ -8154,6 +9049,10 @@ abstract class AutopilotMode extends ImcMessage
   /// Current mode name.
   @ImcField('Mode', 'mode', ImcType.typePlaintext)
   String get mode;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Tracking State class
@@ -8203,6 +9102,10 @@ abstract class FormationState extends ImcMessage
   /// Convergence monitoring flag.
   @ImcField('Convergence', 'ConvergMon', ImcType.typeUInt8)
   FormationStateEnumConvergMon get convergMon;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Report Control class
@@ -8236,6 +9139,10 @@ abstract class ReportControl extends ImcMessage
   /// interpreted differently depending on communication interface.
   @ImcField('Destination System', 'sys_dst', ImcType.typePlaintext)
   String get sysDst;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// State Report class
@@ -8299,6 +9206,10 @@ abstract class StateReport extends ImcMessage
   /// Checksum of the plan being executed.
   @ImcField('Plan Checksum', 'plan_checksum', ImcType.typeUInt16)
   int get planChecksum;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Transmission Request class
@@ -8354,6 +9265,10 @@ abstract class TransmissionRequest extends ImcMessage
   /// Data to be transmitted if selected *data_mode* is *RAW*.
   @ImcField('Raw Data', 'raw_data', ImcType.typeRawdata)
   List<int> get rawData;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Transmission Status class
@@ -8385,6 +9300,10 @@ abstract class TransmissionStatus extends ImcMessage
 
   @ImcField('Information', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SMS Transmission Request class
@@ -8415,6 +9334,10 @@ abstract class SmsRequest extends ImcMessage
 
   @ImcField('SMS Text', 'sms_text', ImcType.typePlaintext)
   String get smsText;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SMS Transmission Status class
@@ -8440,6 +9363,10 @@ abstract class SmsStatus extends ImcMessage
   /// Error description.
   @ImcField('Information', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// VTOL State class
@@ -8458,6 +9385,10 @@ abstract class VtolState extends ImcMessage
 
   @ImcField('State', 'state', ImcType.typeUInt8)
   VtolStateEnumState get state;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Arming State class
@@ -8477,6 +9408,10 @@ abstract class ArmingState extends ImcMessage
 
   @ImcField('State', 'state', ImcType.typeUInt8)
   ArmingStateEnumState get state;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TCP Transmission Request class
@@ -8508,6 +9443,10 @@ abstract class TCPRequest extends ImcMessage
   /// IMC message to be transmitted .
   @ImcField('Message Data', 'msg_data', ImcType.typeMessage)
   ImcMessage? get msgData;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TCP Transmission Status class
@@ -8533,6 +9472,10 @@ abstract class TCPStatus extends ImcMessage
   /// Error description.
   @ImcField('Information', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Asset Report  class
@@ -8581,6 +9524,10 @@ abstract class AssetReport extends ImcMessage
 
   @ImcField('Additional Info', 'msgs', ImcType.typeMessageList)
   List<ImcMessage> get msgs;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Abort class
@@ -8595,6 +9542,10 @@ abstract class Abort extends ImcMessage implements Built<Abort, AbortBuilder> {
   int get msgId => staticId;
   @override
   String get abbrev => 'Abort';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Specification class
@@ -8658,6 +9609,10 @@ abstract class PlanSpecification extends ImcMessage
   /// on plan termination.
   @ImcField('End Actions', 'end_actions', ImcType.typeMessageList)
   List<ImcMessage> get endActions;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Maneuver class
@@ -8692,6 +9647,10 @@ abstract class PlanManeuver extends ImcMessage
   /// on plan termination.
   @ImcField('End Actions', 'end_actions', ImcType.typeMessageList)
   List<ImcMessage> get endActions;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Transition class
@@ -8735,6 +9694,10 @@ abstract class PlanTransition extends ImcMessage
   /// Messages processed when the transition is triggered.
   @ImcField('Transition actions', 'actions', ImcType.typeMessageList)
   List<ImcMessage> get actions;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Emergency Control class
@@ -8756,6 +9719,10 @@ abstract class EmergencyControl extends ImcMessage
 
   @ImcField('Plan Specification', 'plan', ImcType.typeMessage)
   PlanSpecification? get plan;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Emergency Control State class
@@ -8781,6 +9748,10 @@ abstract class EmergencyControlState extends ImcMessage
 
   @ImcField('Communications Level', 'comm_level', ImcType.typeUInt8, units: '%')
   int get commLevel;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan DB class
@@ -8834,6 +9805,10 @@ abstract class PlanDB extends ImcMessage
   /// in-progress information.
   @ImcField('Complementary Information', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan DB State class
@@ -8881,6 +9856,10 @@ abstract class PlanDBState extends ImcMessage
   /// Individual information for plans.
   @ImcField('Plan info', 'plans_info', ImcType.typeMessageList)
   List<PlanDBInformation> get plansInfo;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan DB Information class
@@ -8924,6 +9903,10 @@ abstract class PlanDBInformation extends ImcMessage
   /// RFC 1321.
   @ImcField('MD5', 'md5', ImcType.typeRawdata)
   List<int> get md5;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Control class
@@ -8974,6 +9957,10 @@ abstract class PlanControl extends ImcMessage
   /// in association to replies.
   @ImcField('Complementary Info', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Control State class
@@ -9026,6 +10013,10 @@ abstract class PlanControlState extends ImcMessage
   /// Outcome of the last executed plan.
   @ImcField('Last Plan Outcome', 'last_outcome', ImcType.typeUInt8)
   PlanControlStateEnumLastOutcome get lastOutcome;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Variable class
@@ -9054,6 +10045,10 @@ abstract class PlanVariable extends ImcMessage
 
   @ImcField('Access Type', 'access', ImcType.typeUInt8)
   PlanVariableEnumAccess get access;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Generation class
@@ -9086,6 +10081,10 @@ abstract class PlanGeneration extends ImcMessage
   /// generation module.
   @ImcField('Parameters', 'params', ImcType.typePlaintext, units: 'TupleList')
   String get params;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Leader State class
@@ -9205,6 +10204,10 @@ abstract class LeaderState extends ImcMessage
   /// Stream Velocity zz axis velocity component.
   @ImcField('Stream Velocity Z (Down)', 'svz', ImcType.typeFp32, units: 'm/s')
   double get svz;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Plan Statistics class
@@ -9247,6 +10250,10 @@ abstract class PlanStatistics extends ImcMessage
   /// Amount of fuel spent, in battery percentage, by different parcels (if applicable): Total=35,Hotel=5,Payload=10,Motion=20,IMU=0
   @ImcField('Fuel', 'fuel', ImcType.typePlaintext, units: 'TupleList')
   String get fuel;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Reported State class
@@ -9301,6 +10308,10 @@ abstract class ReportedState extends ImcMessage
   /// How the position was received/calculated
   @ImcField('Source Type', 's_type', ImcType.typeUInt8)
   ReportedStateEnumSType get sType;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Remote Sensor Info class
@@ -9340,6 +10351,10 @@ abstract class RemoteSensorInfo extends ImcMessage
 
   @ImcField('Custom Data', 'data', ImcType.typePlaintext, units: 'TupleList')
   String get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Map class
@@ -9362,6 +10377,10 @@ abstract class Map extends ImcMessage implements Built<Map, MapBuilder> {
   /// A list of map features.
   @ImcField('Features', 'features', ImcType.typeMessageList)
   List<MapFeature> get features;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Map Feature class
@@ -9402,6 +10421,10 @@ abstract class MapFeature extends ImcMessage
   /// The enclosing feature definition.
   @ImcField('Feature', 'feature', ImcType.typeMessageList)
   List<MapPoint> get feature;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// MapPoint class
@@ -9426,6 +10449,10 @@ abstract class MapPoint extends ImcMessage
 
   @ImcField('Altitude', 'alt', ImcType.typeFp32, units: 'm')
   double get alt;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// CCU Event class
@@ -9450,6 +10477,10 @@ abstract class CcuEvent extends ImcMessage
 
   @ImcField('Additional Data', 'arg', ImcType.typeMessage)
   ImcMessage? get arg;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Vehicle Links class
@@ -9474,6 +10505,10 @@ abstract class VehicleLinks extends ImcMessage
   /// A list of Announce messages with last announces heard
   @ImcField('Active Links', 'links', ImcType.typeMessageList)
   List<Announce> get links;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TREX Observation class
@@ -9500,6 +10535,10 @@ abstract class TrexObservation extends ImcMessage
   @ImcField('Attributes', 'attributes', ImcType.typePlaintext,
       units: 'TupleList')
   String get attributes;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TREX Command class
@@ -9527,6 +10566,10 @@ abstract class TrexCommand extends ImcMessage
   /// The goal encoded as XML, if applicable (OP == POST_GOAL)
   @ImcField('Goal XML', 'goal_xml', ImcType.typePlaintext)
   String get goalXml;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TREX Operation class
@@ -9554,6 +10597,10 @@ abstract class TrexOperation extends ImcMessage
   /// Goal / observation to post, if applicable (OP == POST_GOAL || OP == POST_TOKEN)
   @ImcField('Token', 'token', ImcType.typeMessage)
   TrexToken? get token;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TREX Attribute class
@@ -9584,6 +10631,10 @@ abstract class TrexAttribute extends ImcMessage
   /// Upper bound of this interval. Empty text means no bound.
   @ImcField('Maximum', 'max', ImcType.typePlaintext)
   String get max;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TREX Token class
@@ -9607,6 +10658,10 @@ abstract class TrexToken extends ImcMessage
 
   @ImcField('Attributes', 'attributes', ImcType.typeMessageList)
   List<TrexAttribute> get attributes;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// TREX Plan class
@@ -9627,6 +10682,10 @@ abstract class TrexPlan extends ImcMessage
 
   @ImcField('Tokens', 'tokens', ImcType.typeMessageList)
   List<TrexToken> get tokens;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Event class
@@ -9649,6 +10708,10 @@ abstract class Event extends ImcMessage implements Built<Event, EventBuilder> {
   /// A map with additional event information.
   @ImcField('Data', 'data', ImcType.typePlaintext, units: 'TupleList')
   String get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Compressed Image class
@@ -9671,6 +10734,10 @@ abstract class CompressedImage extends ImcMessage
 
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Image Transmission Settings class
@@ -9699,6 +10766,10 @@ abstract class ImageTxSettings extends ImcMessage
 
   @ImcField('Target Size', 'tsize', ImcType.typeUInt8)
   int get tsize;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Remote State class
@@ -9735,6 +10806,10 @@ abstract class RemoteState extends ImcMessage
   /// Heading.
   @ImcField('Heading', 'psi', ImcType.typeFp32, units: 'rad')
   double get psi;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Target class
@@ -9779,6 +10854,10 @@ abstract class Target extends ImcMessage
   /// Speed Over Ground.
   @ImcField('Speed Over Ground', 'sog', ImcType.typeFp32, units: 'm/s')
   double get sog;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// EntityParameter class
@@ -9803,6 +10882,10 @@ abstract class EntityParameter extends ImcMessage
   /// Current value of the parameter.
   @ImcField('Value', 'value', ImcType.typePlaintext)
   String get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// EntityParameters class
@@ -9827,6 +10910,10 @@ abstract class EntityParameters extends ImcMessage
   /// List of parameters.
   @ImcField('Parameters', 'params', ImcType.typeMessageList)
   List<EntityParameter> get params;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// QueryEntityParameters class
@@ -9852,6 +10939,10 @@ abstract class QueryEntityParameters extends ImcMessage
 
   @ImcField('Scope', 'scope', ImcType.typePlaintext)
   String get scope;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SetEntityParameters class
@@ -9874,6 +10965,10 @@ abstract class SetEntityParameters extends ImcMessage
 
   @ImcField('Parameters', 'params', ImcType.typeMessageList)
   List<EntityParameter> get params;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SaveEntityParameters class
@@ -9893,6 +10988,10 @@ abstract class SaveEntityParameters extends ImcMessage
 
   @ImcField('Entity Name', 'name', ImcType.typePlaintext)
   String get name;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Create Session class
@@ -9920,6 +11019,10 @@ abstract class CreateSession extends ImcMessage
   /// of seconds have ellapsed.
   @ImcField('Session Timeout', 'timeout', ImcType.typeUint32)
   int get timeout;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Close Session class
@@ -9939,6 +11042,10 @@ abstract class CloseSession extends ImcMessage
 
   @ImcField('Session Identifier', 'sessid', ImcType.typeUint32)
   int get sessid;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Session Subscription class
@@ -9963,6 +11070,10 @@ abstract class SessionSubscription extends ImcMessage
   /// "EstimatedState,EulerAngles,Temperature"
   @ImcField('Messages to subscribe', 'messages', ImcType.typePlaintext)
   String get messages;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Session Keep-Alive class
@@ -9982,6 +11093,10 @@ abstract class SessionKeepAlive extends ImcMessage
 
   @ImcField('Session Identifier', 'sessid', ImcType.typeUint32)
   int get sessid;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Session Status class
@@ -10004,6 +11119,10 @@ abstract class SessionStatus extends ImcMessage
 
   @ImcField('Status', 'status', ImcType.typeUInt8)
   SessionStatusEnumStatus get status;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Push Entity Parameters class
@@ -10023,6 +11142,10 @@ abstract class PushEntityParameters extends ImcMessage
 
   @ImcField('Entity Name', 'name', ImcType.typePlaintext)
   String get name;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Pop Entity Parameters class
@@ -10042,6 +11165,10 @@ abstract class PopEntityParameters extends ImcMessage
 
   @ImcField('Entity Name', 'name', ImcType.typePlaintext)
   String get name;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// I/O Event class
@@ -10065,6 +11192,10 @@ abstract class IoEvent extends ImcMessage
   /// Human-readable error message.
   @ImcField('Error Message', 'error', ImcType.typePlaintext)
   String get error;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// UamTxFrame class
@@ -10103,6 +11234,10 @@ abstract class UamTxFrame extends ImcMessage
   /// the MTU of the acoustic modem.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// UamRxFrame class
@@ -10138,6 +11273,10 @@ abstract class UamRxFrame extends ImcMessage
   /// The actual received data frame.
   @ImcField('Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// UamTxStatus class
@@ -10168,6 +11307,10 @@ abstract class UamTxStatus extends ImcMessage
   /// explaining the error.
   @ImcField('Error Message', 'error', ImcType.typePlaintext)
   String get error;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// UamRxRange class
@@ -10196,6 +11339,10 @@ abstract class UamRxRange extends ImcMessage
   /// The actual range. Negative values denote invalid measurements.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'm')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// UamTxRange class
@@ -10226,6 +11373,10 @@ abstract class UamTxRange extends ImcMessage
   /// Maximum amount of time to wait for a reply.
   @ImcField('Timeout', 'timeout', ImcType.typeFp32, units: 's')
   double get timeout;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Control Parameters class
@@ -10268,6 +11419,10 @@ abstract class FormCtrlParam extends ImcMessage
   /// Individual vehicle importance gain (relative to the leader), when the relative position or the velocity state indicate higher probability of collision.
   @ImcField('Deconfliction Gain', 'DeconflGain', ImcType.typeFp32)
   double get deconflGain;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Evaluation Data class
@@ -10296,6 +11451,10 @@ abstract class FormationEval extends ImcMessage
   /// Mean minimum distance to any other vehicle in the formation.
   @ImcField('Mean minimum distance', 'dist_min_mean', ImcType.typeFp32)
   double get distMinMean;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Control Parameters class
@@ -10361,6 +11520,10 @@ abstract class FormationControlParams extends ImcMessage
   @ImcField(
       'Maximum Longitudinal Acceleration', 'accel_lim_x', ImcType.typeFp32)
   double get accelLimX;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Formation Evaluation Data class
@@ -10411,6 +11574,10 @@ abstract class FormationEvaluation extends ImcMessage
   @ImcField(
       'Formation Control Parameters', 'ControlParams', ImcType.typeMessage)
   FormationControlParams? get controlParams;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SOI Waypoint class
@@ -10438,6 +11605,10 @@ abstract class SoiWaypoint extends ImcMessage
 
   @ImcField('Duration', 'duration', ImcType.typeUInt16, units: 's')
   int get duration;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SOI Plan class
@@ -10458,6 +11629,10 @@ abstract class SoiPlan extends ImcMessage
 
   @ImcField('Waypoints', 'waypoints', ImcType.typeMessageList)
   List<SoiWaypoint> get waypoints;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SOI Command class
@@ -10488,6 +11663,10 @@ abstract class SoiCommand extends ImcMessage
 
   @ImcField('Extra Information', 'info', ImcType.typePlaintext)
   String get info;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SOI State class
@@ -10514,6 +11693,10 @@ abstract class SoiState extends ImcMessage
 
   @ImcField('Settings Checksum', 'settings_chk', ImcType.typeUInt16)
   int get settingsChk;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Message Fragment class
@@ -10541,6 +11724,10 @@ abstract class MessagePart extends ImcMessage
 
   @ImcField('Fragment Data', 'data', ImcType.typeRawdata)
   List<int> get data;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Neptus Blob class
@@ -10562,6 +11749,10 @@ abstract class NeptusBlob extends ImcMessage
 
   @ImcField('Content', 'content', ImcType.typeRawdata)
   List<int> get content;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Aborted class
@@ -10577,6 +11768,10 @@ abstract class Aborted extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'Aborted';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Angles class
@@ -10606,6 +11801,10 @@ abstract class UsblAngles extends ImcMessage
   /// Target's elevation.
   @ImcField('Elevation', 'elevation', ImcType.typeFp32, units: 'rad')
   double get elevation;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Position class
@@ -10639,6 +11838,10 @@ abstract class UsblPosition extends ImcMessage
   /// Z coordinate of the target in the local device's reference frame.
   @ImcField('Z', 'z', ImcType.typeFp32, units: 'm')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Fix class
@@ -10676,6 +11879,10 @@ abstract class UsblFix extends ImcMessage
   /// whether z represents depth, altitude or other.
   @ImcField('Z Reference', 'z', ImcType.typeFp32, units: 'm')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Parameters XML class
@@ -10700,6 +11907,10 @@ abstract class ParametersXml extends ImcMessage
   /// The parameters XML file compressed using the GNU zip (gzip) format.
   @ImcField('Configuration Data', 'config', ImcType.typeRawdata)
   List<int> get config;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Get Parameters XML class
@@ -10717,6 +11928,10 @@ abstract class GetParametersXml extends ImcMessage
   int get msgId => staticId;
   @override
   String get abbrev => 'GetParametersXml';
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set Image Coordinates class
@@ -10745,6 +11960,10 @@ abstract class SetImageCoords extends ImcMessage
   /// Y coordinate of the target in the image frame.
   @ImcField('Y', 'y', ImcType.typeUInt16, units: 'px')
   int get y;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Get Image Coordinates class
@@ -10773,6 +11992,10 @@ abstract class GetImageCoords extends ImcMessage
   /// Y coordinate of the target in the image frame.
   @ImcField('Y', 'y', ImcType.typeUInt16, units: 'px')
   int get y;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Get World Coordinates class
@@ -10814,6 +12037,10 @@ abstract class GetWorldCoordinates extends ImcMessage
   /// Z offsets of the target in the real world frame.
   @ImcField('Z', 'z', ImcType.typeFp32, units: 'm')
   double get z;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Angles Extended class
@@ -10868,6 +12095,10 @@ abstract class UsblAnglesExtended extends ImcMessage
   /// Accuracy of the fix.
   @ImcField('Accuracy', 'accuracy', ImcType.typeFp32, units: 'rad')
   double get accuracy;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Position Extended class
@@ -10930,6 +12161,10 @@ abstract class UsblPositionExtended extends ImcMessage
   /// Accuracy of the position fix.
   @ImcField('Accuracy', 'accuracy', ImcType.typeFp32, units: 'm')
   double get accuracy;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Fix Extended class
@@ -10972,6 +12207,10 @@ abstract class UsblFixExtended extends ImcMessage
   /// Accuracy of the position fix.
   @ImcField('Accuracy', 'accuracy', ImcType.typeFp32, units: 'm')
   double get accuracy;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Modem Configuration class
@@ -11008,6 +12247,10 @@ abstract class UsblModem extends ImcMessage
   /// Units of the z reference.
   @ImcField('Z Units', 'z_units', ImcType.typeUInt8)
   ZUnitsEnum get zUnits;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// USBL Configuration class
@@ -11032,6 +12275,10 @@ abstract class UsblConfig extends ImcMessage
   /// A list of USBL modem configuration messages.
   @ImcField('Modems', 'modems', ImcType.typeMessageList)
   List<UsblModem> get modems;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Dissolved Organic Matter class
@@ -11057,6 +12304,10 @@ abstract class DissolvedOrganicMatter extends ImcMessage
   /// Type of measurement.
   @ImcField('Type of measurement', 'type', ImcType.typeUInt8)
   DissolvedOrganicMatterEnumType get type;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Optical Backscattering Coefficient class
@@ -11079,6 +12330,10 @@ abstract class OpticalBackscatter extends ImcMessage
   /// Optical Backscattering Coefficient.
   @ImcField('Value', 'value', ImcType.typeFp32, units: '1/m')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Tachograph class
@@ -11179,6 +12434,10 @@ abstract class Tachograph extends ImcMessage
   @ImcField('Recorded Depth - Maximum', 'depth_max', ImcType.typeFp32,
       units: 'm')
   double get depthMax;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// APM Status class
@@ -11202,6 +12461,10 @@ abstract class ApmStatus extends ImcMessage
   /// Status text message.
   @ImcField('Text', 'text', ImcType.typePlaintext)
   String get text;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// SADC Readings class
@@ -11230,6 +12493,10 @@ abstract class SadcReadings extends ImcMessage
   /// Gain value of readings.
   @ImcField('Gain', 'gain', ImcType.typeUInt8)
   SadcReadingsEnumGain get gain;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// DMS Detection class
@@ -11295,6 +12562,10 @@ abstract class DmsDetection extends ImcMessage
 
   @ImcField('Channel 16', 'ch16', ImcType.typeFp32)
   double get ch16;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Home Position class
@@ -11336,6 +12607,10 @@ abstract class HomePosition extends ImcMessage
   /// Altitude, in meters. Negative values denote invalid estimates.
   @ImcField('Altitude', 'alt', ImcType.typeFp32, units: 'm')
   double get alt;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Current Profile class
@@ -11369,6 +12644,10 @@ abstract class CurrentProfile extends ImcMessage
   /// List of current profile measurement cells.
   @ImcField('Profile', 'profile', ImcType.typeMessageList)
   List<CurrentProfileCell> get profile;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Current Profile Cell class
@@ -11394,6 +12673,10 @@ abstract class CurrentProfileCell extends ImcMessage
   /// List of beams measurements at the current cell level.
   @ImcField('Beams Measurements', 'beams', ImcType.typeMessageList)
   List<ADCPBeam> get beams;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// ADCP Beam Measurements class
@@ -11423,6 +12706,10 @@ abstract class ADCPBeam extends ImcMessage
   /// Autocorrelation of returning ping for the beam.
   @ImcField('Correlation', 'cor', ImcType.typeUInt8, units: '%')
   int get cor;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// GPIO State class
@@ -11446,6 +12733,10 @@ abstract class GpioState extends ImcMessage
   /// Logical level of the GPIO.
   @ImcField('Value', 'value', ImcType.typeUInt8)
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Get GPIO State class
@@ -11467,6 +12758,10 @@ abstract class GpioStateGet extends ImcMessage
   /// GPIO Name.
   @ImcField('Name', 'name', ImcType.typePlaintext)
   String get name;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Set GPIO State class
@@ -11492,6 +12787,10 @@ abstract class GpioStateSet extends ImcMessage
   /// Logical level of the GPIO.
   @ImcField('Value', 'value', ImcType.typeUInt8)
   int get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Colored Dissolved Organic Matter class
@@ -11515,6 +12814,10 @@ abstract class ColoredDissolvedOrganicMatter extends ImcMessage
   /// Colored Dissolved Organic Matter reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Fluorescent Dissolved Organic Matter class
@@ -11538,6 +12841,10 @@ abstract class FluorescentDissolvedOrganicMatter extends ImcMessage
   /// Fluorescent Dissolved Organic Matter reading.
   @ImcField('Value', 'value', ImcType.typeFp32, units: 'PPB')
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Total Magnetic Field Intensity class
@@ -11558,6 +12865,10 @@ abstract class TotalMagIntensity extends ImcMessage
   /// Total Magnetic Field Intensity (TMI)
   @ImcField('Value', 'value', ImcType.typeFp64)
   double get value;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
 /// Communication Restriction class
@@ -11582,4 +12893,8 @@ abstract class CommRestriction extends ImcMessage
   /// Textual description for why this restriction is needed.
   @ImcField('Reason', 'reason', ImcType.typePlaintext)
   String get reason;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }

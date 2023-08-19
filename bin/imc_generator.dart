@@ -20,6 +20,7 @@ const _header = '''// GENERATED CODE - DO NOT MODIFY BY HAND
 ''';
 
 const _headerGen = '''$_header
+import 'dart:convert';
 import 'dart:core';
 import 'dart:core' as core; // To be used on conflicts like for imc.Map
 import 'dart:math' as math;
@@ -154,7 +155,7 @@ String _accountForReservedName(String s) {
 void _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
   element
       .findElements('description')
-      .forEach((d) => d.text.trim().split('\n').forEach((tx) {
+      .forEach((d) => (d.text ?? '').trim().split('\n').forEach((tx) {
             for (var i = 0; i < level; i++) {
               sink.write('  ');
             }
@@ -248,6 +249,15 @@ void _writeMessageClass(String name, String abbrev, String msgId,
   var msgStringClassClose = '''}\n\n''';
   sinks[_idxMsg].write(msgStringClass);
   m.findElements('field').forEach((f) => _writeMessageField(f, m, sinks));
+
+  // Write toJson object
+  var toJsonStr = '''
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
+''';
+  sinks[_idxMsg].write(toJsonStr);
+
   sinks[_idxMsg].write(msgStringClassClose);
 }
 
@@ -471,6 +481,79 @@ void _writeMessageImmutable(
   }
 ''';
   sink.write(msgStringImmutableClass6);
+
+  // Write toJson object
+  var toJsonStr = '''
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) => _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+      'abbrev': '$abbrev',
+      if (includeHeader) 'timestamp': (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+      if (includeHeader) 'src': src,
+      if (includeHeader) 'srcEnt': srcEnt,
+      if (includeHeader) 'dst': dst,
+      if (includeHeader) 'dstEnt': dstEnt,
+''';
+
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+
+    switch (type) {
+      case 'message-list': // List<M extends IMCMessage>
+        toJsonStr += '''      '$abbrev': [
+        ...${_convertToFieldName(abbrev)}.map((m) => m.toJson(false)).toList(),
+          ],\n''';
+        break;
+      case 'rawdata': // List<int>
+        toJsonStr +=
+            '''      '$abbrev': base64.encode(${_convertToFieldName(abbrev)}),\n''';
+        break;
+      case 'fp32_t':
+      case 'fp64_t':
+        toJsonStr += '''      '$abbrev': ${_convertToFieldName(abbrev)},\n''';
+        break;
+      case 'uint8_t':
+      case 'uint16_t':
+      case 'uint32_t':
+      case 'uint64_t':
+      case 'int8_t':
+      case 'int16_t':
+      case 'int32_t':
+      case 'int64_t':
+        if (unit != null &&
+            unit.isNotEmpty &&
+            (unit == 'Enumerated' || unit == 'Bitfield')) {
+          toJsonStr +=
+              '''      '$abbrev': ${_convertToFieldName(abbrev)}.value,\n''';
+        } else {
+          toJsonStr += '''      '$abbrev': ${_convertToFieldName(abbrev)},\n''';
+        }
+        break;
+      case 'plaintext':
+        toJsonStr += '''      '$abbrev': ${_convertToFieldName(abbrev)},\n''';
+        break;
+      case 'message':
+        toJsonStr +=
+            '''      '$abbrev': ${_convertToFieldName(abbrev)}?.toJson(false),\n''';
+        break;
+      default:
+        break;
+    }
+  });
+
+  toJsonStr += '''
+      };
+''';
+  sink.write(toJsonStr);
 
   var msgStringImmutableClassClose = '''}\n\n''';
   sink.write(msgStringImmutableClassClose);
@@ -1568,6 +1651,9 @@ void main(List<String> args) async {
 abstract class ImcMessage extends Message {
   @override
   int get sync => fakeSyncNumber ?? syncNumber;
+
+  /// To JSON object
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 ''');
 
