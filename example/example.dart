@@ -44,9 +44,11 @@ void main() async {
       }
     });
 
+    // ignore: unused_local_variable
     var hbMsgB = imc.HeartbeatBuilder()
       ..src = 0x16
       ..dst = 0x17;
+    // ignore: unused_local_variable
     var dstEnt = 0;
     Timer.periodic(Duration(milliseconds: 300), (Timer t) {
       var msg = (hbMsgB
