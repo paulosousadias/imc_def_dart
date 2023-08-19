@@ -7,7 +7,11 @@ import 'package:imc_def/imc_def.dart';
 
 const headerSize = 20;
 const footerSize = 2;
-const endianSer = Endian.big;
+
+/// To allow set the default serialization endianness
+/// CAREFUL: Set this before serializing any message,
+/// changing this midway may cause mix-endian messages.
+var endianSer = Endian.big;
 
 const crcTable = <int>[
   0x0000, 0xC0C1, 0xC181, 0x0140, 0xC301, 0x03C0, 0x0280, 0xC241, 0xC601, //poly
