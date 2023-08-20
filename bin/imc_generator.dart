@@ -154,7 +154,7 @@ String _accountForReservedName(String s) {
 void _writeDescription(IOSink sink, xml.XmlElement element, {int level = 0}) {
   element
       .findElements('description')
-      .forEach((d) => (d.text ?? '').trim().split('\n').forEach((tx) {
+      .forEach((d) => d.innerText.trim().split('\n').forEach((tx) {
             for (var i = 0; i < level; i++) {
               sink.write('  ');
             }
