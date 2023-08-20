@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.0] - 20 Ago 2023
+
+* Update dependencies.
+* **Potential breaking change** removed dependency of built_value.
+* Added option of toJson to message and fromJson on builder.
+* Small tweak on BuilderWithInstanciator return (should).
+* Adding possibility to change the endianness to the serialization (CAREFUL).
+
 ## [3.0.1] - 10 Jun 2022
 
 * Adding sha256 hash of the imc used.
