@@ -11,7 +11,7 @@ environment:
 
 dependencies:
   
-  built_value: ^8.6.1
+  # built_value: ^8.6.1
 
   xml: ^6.4.0 # for generator
   crypto: ^3.0.3 # for generator

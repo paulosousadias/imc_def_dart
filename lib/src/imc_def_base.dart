@@ -2,8 +2,6 @@
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:built_value/built_value.dart';
-
 part 'imc_def_enums.dart';
 
 extension ReverseSyncNumber on int {
@@ -80,65 +78,131 @@ abstract class BuilderWithInstanciator<V extends Built<V, B>,
   void copyFromHeader(ImcBuilderHeaderPart other);
 }
 
-// /// Implement this for a Built Value.
-// ///
-// /// Then use built_value_generator.dart code generation functionality to
-// /// provide the rest of the implementation.
-// ///
-// /// See https://github.com/google/built_value.dart/tree/master/example
-// abstract class Built<V extends Built<V, B>, B extends Builder<V, B>> {
-//   /// Rebuilds the instance.
-//   ///
-//   /// The result is the same as this instance but with [updates] applied.
-//   /// [updates] is a function that takes a builder [B].
-//   ///
-//   /// The implementation of this method will be generated for you by the
-//   /// built_value generator.
-//   V rebuild(updates(B builder));
+// Borrowed from https://github.com/google/built_value.dart/blob/master/built_value/lib/built_value.dart
+// to avoid include the all built_value
 
-//   /// Converts the instance to a builder [B].
-//   ///
-//   /// The implementation of this method will be generated for you by the
-//   /// built_value generator.
-//   B toBuilder();
-// }
+/// Implement this for a Built Value.
+///
+/// Then use built_value_generator.dart code generation functionality to
+/// provide the rest of the implementation.
+///
+/// See https://github.com/google/built_value.dart/tree/master/example
+abstract class Built<V extends Built<V, B>, B extends Builder<V, B>> {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [B].
+  ///
+  /// The implementation of this method will be generated for you by the
+  /// built_value generator.
+  V rebuild(Function(B) updates);
 
-// /// Every Built Value must have a [Builder] class.
-// ///
-// /// Use it to set defaults, if needed, and to do validation.
-// ///
-// /// See <https://github.com/google/built_value.dart/tree/master/example>
-// abstract class Builder<V extends Built<V, B>, B extends Builder<V, B>> {
-//   /// Replaces the value in the builder with a new one.
-//   ///
-//   /// The implementation of this method will be generated for you by the
-//   /// built_value generator.
-//   void replace(V value);
+  /// Converts the instance to a builder [B].
+  ///
+  /// The implementation of this method will be generated for you by the
+  /// built_value generator.
+  B toBuilder();
+}
 
-//   /// Applies updates.
-//   ///
-//   /// [updates] is a function that takes a builder [B].
-//   void update(updates(B builder));
+/// Every [Built] class has a corresponding [Builder] class.
+///
+/// Usually you don't need to create one by hand; it will be generated
+/// for you.
+///
+/// See <https://github.com/google/built_value.dart/tree/master/example>
+abstract class Builder<V extends Built<V, B>, B extends Builder<V, B>> {
+  /// Replaces the value in the builder with a new one.
+  ///
+  /// The implementation of this method will be generated for you by the
+  /// built_value generator.
+  void replace(V value);
 
-//   /// Builds.
-//   ///
-//   /// The implementation of this method will be generated for you by the
-//   /// built_value generator.
-//   V build();
-// }
+  /// Applies updates.
+  ///
+  /// [updates] is a function that takes a builder [B].
+  void update(Function(B)? updates);
 
-// /// For use by generated code in calculating hash codes. Do not use directly.
-// int $jc(int hash, int value) {
-//   // Jenkins hash "combine".
-//   hash = 0x1fffffff & (hash + value);
-//   hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-//   return hash ^ (hash >> 6);
-// }
+  /// Builds.
+  ///
+  /// The implementation of this method will be generated for you by the
+  /// built_value generator.
+  V build();
+}
 
-// /// For use by generated code in calculating hash codes. Do not use directly.
-// int $jf(int hash) {
-//   // Jenkins hash "finish".
-//   hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-//   hash = hash ^ (hash >> 11);
-//   return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-// }
+/// For use by generated code in calculating hash codes. Do not use directly.
+int $jc(int hash, int value) {
+  // Jenkins hash "combine".
+  hash = 0x1fffffff & (hash + value);
+  hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
+  return hash ^ (hash >> 6);
+}
+
+/// For use by generated code in calculating hash codes. Do not use directly.
+int $jf(int hash) {
+  // Jenkins hash "finish".
+  hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
+  hash = hash ^ (hash >> 11);
+  return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
+}
+
+/// Function that returns a [BuiltValueToStringHelper].
+typedef BuiltValueToStringHelperProvider = BuiltValueToStringHelper Function(
+    String className);
+
+/// Function used by generated code to get a [BuiltValueToStringHelper].
+/// Set this to change built_value class toString() output. Built-in examples
+/// are [IndentingBuiltValueToStringHelper], which is the default, and
+/// [FlatBuiltValueToStringHelper].
+BuiltValueToStringHelperProvider newBuiltValueToStringHelper =
+    (String className) => IndentingBuiltValueToStringHelper(className);
+
+/// Interface for built_value toString() output helpers.
+///
+/// Note: this is an experimental feature. API may change without a major
+/// version increase.
+abstract class BuiltValueToStringHelper {
+  /// Add a field and its value.
+  void add(String field, Object? value);
+
+  /// Returns to completed toString(). The helper may not be used after this
+  /// method is called.
+  @override
+  String toString();
+}
+
+/// A [BuiltValueToStringHelper] that produces multi-line indented output.
+class IndentingBuiltValueToStringHelper implements BuiltValueToStringHelper {
+  StringBuffer? _result = StringBuffer();
+
+  IndentingBuiltValueToStringHelper(String className) {
+    _result!
+      ..write(className)
+      ..write(' {\n');
+    _indentingBuiltValueToStringHelperIndent += 2;
+  }
+
+  @override
+  void add(String field, Object? value) {
+    if (value != null) {
+      _result!
+        ..write(' ' * _indentingBuiltValueToStringHelperIndent)
+        ..write(field)
+        ..write('=')
+        ..write(value)
+        ..write(',\n');
+    }
+  }
+
+  @override
+  String toString() {
+    _indentingBuiltValueToStringHelperIndent -= 2;
+    _result!
+      ..write(' ' * _indentingBuiltValueToStringHelperIndent)
+      ..write('}');
+    var stringResult = _result.toString();
+    _result = null;
+    return stringResult;
+  }
+}
+
+int _indentingBuiltValueToStringHelperIndent = 0;
