@@ -13,11 +13,11 @@ dependencies:
   
   # built_value: ^8.6.1
 
-  xml: ^6.4.0 # for generator
+  xml: ^6.1.0 # for generator
   crypto: ^3.0.3 # for generator
   yaml: ^3.1.2 # for generator
 
-  collection: ^1.18.0
+  collection: ^1.17.2
 
 dev_dependencies:
   test: ^1.24.6
