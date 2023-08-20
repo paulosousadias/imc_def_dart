@@ -293,9 +293,9 @@ class _$QueryEntityState extends QueryEntityState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
