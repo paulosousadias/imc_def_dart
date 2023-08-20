@@ -424,4 +424,109 @@ void main() {
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
   });
+
+  test('toFromJson test', () {
+    var globalSW = Stopwatch();
+    globalSW.start();
+
+    for (var b in imc.messagesBuilders.values) {
+      imc.ImcMessage? msg, msg2;
+      try {
+        msg = b().build() as imc.ImcMessage;
+        var toJson = jsonEncode(msg.toJson());
+
+        msg2 = b().fromJson(jsonDecode(toJson)).build() as imc.ImcMessage;
+        var fromJson = jsonEncode(msg2.toJson());
+
+        print(toJson);
+        print(fromJson);
+        expect(toJson, fromJson);
+      } catch (e) {
+        print('ERROR :: ${msg?.abbrev} >> $e');
+      }
+      expect(msg != null, true);
+      expect(msg2 != null, true);
+    }
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
+  });
+
+  test('toFromJson EntityList test', () {
+    var globalSW = Stopwatch();
+    globalSW.start();
+
+    imc.EntityList? msg, msg2;
+    imc.EntityListBuilder msgBldr = imc.EntityListBuilder();
+    imc.EntityListBuilder msgBldr2 = msgBldr.newInstance();
+
+    msgBldr.op = imc.EntityListEnumOp.opQuery;
+    msgBldr.list = 'one=1;two=2';
+
+    msg = msgBldr.build();
+    var toJson = jsonEncode(msg.toJson());
+
+    msg2 = msgBldr2.fromJson(jsonDecode(toJson)).build();
+    var fromJson = jsonEncode(msg2.toJson());
+
+    print(toJson);
+    print(fromJson);
+    // expect(msg, msg2); // issues in the timestamp
+    expect(toJson, fromJson);
+
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
+  });
+
+  test('toFromJson MessageList test', () {
+    var globalSW = Stopwatch();
+    globalSW.start();
+
+    imc.MsgList? msg, msg2;
+    imc.MsgListBuilder msgBldr = imc.MsgListBuilder();
+    imc.MsgListBuilder msgBldr2 = msgBldr.newInstance();
+
+    msgBldr.msgs = [];
+    msgBldr.msgs.add((imc.CpuUsageBuilder()..value = 10).build());
+    msgBldr.msgs.add(imc.PulseBuilder().build());
+    msgBldr.msgs.add((imc.CcuEventBuilder()
+          ..type = imc.CcuEventEnumType.evtTeleoperationEnded
+          ..id = 'uuid-fwte'
+          ..arg = (imc.RemoteActionsBuilder()..actions = "Exit=1").build())
+        .build());
+    msgBldr.msgs.add((imc.IoEventBuilder()
+          ..type = imc.IoEventEnumType.iovTypeInputError)
+        .build());
+    msgBldr.msgs.add((imc.SonarDataBuilder()
+          ..type = imc.SonarDataEnumType.stEchosounder
+          ..frequency = 700000
+          ..data = <int>[0x32, 0x31, 0x00]
+          ..beamConfig = [
+            (imc.BeamConfigBuilder()
+                  ..beamHeight = 10
+                  ..beamWidth = 20)
+                .build()
+          ])
+        .build());
+    msgBldr.msgs.add((imc.DesiredPathBuilder()
+          ..pathRef = 223
+          ..flags = imc.DesiredPathBitfieldFlags.fromBits([
+            imc.DesiredPathBitfieldFlags.flStart,
+            imc.DesiredPathBitfieldFlags.flNoZ
+          ]))
+        .build());
+
+    msg = msgBldr.build();
+    var toJson = jsonEncode(msg.toJson());
+
+    msg2 = msgBldr2.fromJson(jsonDecode(toJson)).build();
+    var fromJson = jsonEncode(msg2.toJson());
+
+    print(toJson);
+    print(fromJson);
+    // expect(msg, msg2); // issues in the timestamp
+    expect(toJson, fromJson);
+
+    globalSW.stop();
+    print('---------- Took ${globalSW.elapsed}');
+  });
 }

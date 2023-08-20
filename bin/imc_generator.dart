@@ -299,6 +299,112 @@ void _writeMessageImmutable(
   factory _\$$abbrev([void Function(${abbrev}Builder b)? updates]) =>
       (${abbrev}Builder()..update(updates)).build() as _\$$abbrev;
 
+  factory _\$$abbrev.fromJson(core.Map<String, dynamic> json) {
+    var val = ${abbrev}Builder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+''';
+
+  m.findElements('field').forEach((f) {
+    var abbrev = f.getAttribute('abbrev');
+    var type = f.getAttribute('type');
+    var unit = f.getAttribute('unit');
+
+    if (abbrev == null || abbrev.isEmpty || type == null || type.isEmpty) {
+      throw Exception(
+          'Field ${f.name} of $name message is missing a proper abbrev and/or type');
+    }
+
+    var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
+    var dartType = typesData[1];
+    var defaultVal = typesData[2];
+    var dartInnerType = typesData[3];
+
+    switch (type) {
+      case 'message-list': // List<M extends IMCMessage>
+        msgStringImmutableClass2 += '''
+    var ${_convertToFieldName(abbrev)} = <$dartInnerType>[];
+    if (json.containsKey('$abbrev') && json['$abbrev'] != null) {
+      var listJson = json['$abbrev'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as $dartInnerType?;
+          if (m != null) ${_convertToFieldName(abbrev)}.add(m);
+        }
+      }
+    }
+    val.${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
+        break;
+      case 'rawdata': // List<int>
+        msgStringImmutableClass2 +=
+            '''    val.${_convertToFieldName(abbrev)} = json.containsKey('$abbrev') ? base64.decode(json['$abbrev'] as String) : $defaultVal;\n''';
+        break;
+      case 'fp32_t':
+      case 'fp64_t':
+        msgStringImmutableClass2 +=
+            '''    val.${_convertToFieldName(abbrev)} = json.containsKey('$abbrev') ? json['$abbrev'] as double : $defaultVal;\n''';
+        break;
+      case 'uint8_t':
+      case 'uint16_t':
+      case 'uint32_t':
+      case 'uint64_t':
+      case 'int8_t':
+      case 'int16_t':
+      case 'int32_t':
+      case 'int64_t':
+        if (unit != null &&
+            unit.isNotEmpty &&
+            (unit == 'Enumerated' || unit == 'Bitfield')) {
+          msgStringImmutableClass2 +=
+              '''    val.${_convertToFieldName(abbrev)} = json.containsKey('$abbrev') && json['$abbrev'] != null
+        ? $dartType(json['$abbrev'] as int)
+        : $defaultVal;\n''';
+        } else {
+          msgStringImmutableClass2 +=
+              '''    val.${_convertToFieldName(abbrev)} = json.containsKey('$abbrev') ? json['$abbrev'] as int : $defaultVal;\n''';
+        }
+        break;
+      case 'plaintext':
+        msgStringImmutableClass2 +=
+            '''    val.${_convertToFieldName(abbrev)} = json.containsKey('$abbrev') && json['$abbrev'] != null ? json['$abbrev'] as String : $defaultVal;\n''';
+        break;
+      case 'message':
+        msgStringImmutableClass2 += '''
+
+    $dartType? ${_convertToFieldName(abbrev)};
+    if (json.containsKey('$abbrev') && json['$abbrev'] != null) {
+      var msgJson = json['$abbrev'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        ${_convertToFieldName(abbrev)} = builder?.build() as $dartType?;
+      }
+    }
+    val.${_convertToFieldName(abbrev)} = ${_convertToFieldName(abbrev)};\n''';
+        break;
+      default:
+        break;
+    }
+  });
+
+  msgStringImmutableClass2 += '''
+
+    return val.build() as _\$$abbrev;
+  }
+
   _\$$abbrev._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -483,6 +589,7 @@ void _writeMessageImmutable(
 
   // Write toJson object
   var toJsonStr = '''
+
   /// To JSON object
   @override
   core.Map<String, dynamic> toJson([bool includeHeader = true]) => _toJson(includeHeader);
@@ -625,6 +732,15 @@ void _writeMessageBuilder(
   ${abbrev}Builder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ${abbrev}Builder.fromJson(core.Map<String, dynamic> json) {
+    var v = _\$$abbrev.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ${abbrev}Builder fromJson(core.Map<String, dynamic> json) =>
+      ${abbrev}Builder.fromJson(json);
 
   @override
   ${abbrev}Builder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -965,6 +1081,7 @@ void _writeMessageSerializer(
     var unit = f.getAttribute('unit');
     var typesData = getTypesForImcAndDart(abbrev, type, unit, f, m);
     var dartType = typesData[1];
+    var dartInnerType = typesData[3];
 
     var enumLike = '';
     var enumLikeE = '';
@@ -1078,7 +1195,8 @@ void _writeMessageSerializer(
         fStr += '        var mPSize = pMsgSerializer.deserializePayload(\n';
         fStr += '            pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '        byteOffset += mPSize;\n';
-        fStr += '        builder.$fieldName = pMsgBuilder.build();\n';
+        fStr +=
+            '        builder.$fieldName = pMsgBuilder.build() as imc.$dartType?;\n';
         fStr += '      }\n';
         fStr += '    }\n';
         break;
@@ -1107,7 +1225,8 @@ void _writeMessageSerializer(
         fStr +=
             '              pMsgBuilder, byteData, endianness, byteOffset);\n';
         fStr += '          byteOffset += mPSize;\n';
-        fStr += '          builder.$fieldName.add(pMsgBuilder.build());\n';
+        fStr +=
+            '          builder.$fieldName.add(pMsgBuilder.build() as imc.$dartInnerType);\n';
         fStr += '        }\n';
         fStr += '      }\n';
         fStr += '    }\n';
@@ -1172,69 +1291,83 @@ List<String?> getTypesForImcAndDart(String abbrev, String type, String? unit,
   String? typeImc;
   String? dartType;
   String? defaultVal;
+  String? dartInnerType;
   switch (type) {
     case 'uint8_t':
       typeImc = 'ImcType.typeUInt8';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'uint16_t':
       typeImc = 'ImcType.typeUInt16';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'uint32_t':
       typeImc = 'ImcType.typeUint32';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'int8_t':
       typeImc = 'ImcType.typeInt8';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'int16_t':
       typeImc = 'ImcType.typeInt16';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'int32_t':
       typeImc = 'ImcType.typeInt32';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'int64_t':
       typeImc = 'ImcType.typeInt64';
       dartType = 'int';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'fp32_t':
       typeImc = 'ImcType.typeFp32';
       dartType = 'double';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'fp64_t':
       typeImc = 'ImcType.typeFp64';
       dartType = 'double';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? '0';
       break;
     case 'rawdata':
       typeImc = 'ImcType.typeRawdata';
       dartType = 'List<int>';
+      dartInnerType = dartType;
       defaultVal = '<int>[]';
       break;
     case 'plaintext':
       typeImc = 'ImcType.typePlaintext';
       dartType = 'String';
+      dartInnerType = dartType;
       defaultVal = field.getAttribute('value') ?? "''";
       break;
     case 'message':
       typeImc = 'ImcType.typeMessage';
       dartType = field.getAttribute('message-type') ?? 'ImcMessage';
+      dartInnerType = dartType;
       break;
     case 'message-list':
       typeImc = 'ImcType.typeMessageList';
       dartType = 'List<${field.getAttribute('message-type') ?? 'ImcMessage'}>';
+      dartInnerType = field.getAttribute('message-type') ?? 'ImcMessage';
       defaultVal = '<${field.getAttribute('message-type') ?? 'ImcMessage'}>[]';
       break;
     default:
@@ -1245,13 +1378,14 @@ List<String?> getTypesForImcAndDart(String abbrev, String type, String? unit,
     case 'Enumerated':
     case 'Bitfield':
       dartType = _getTypeForEnumLike(abbrev, field, message, unit);
+      dartInnerType = dartType;
       defaultVal = '$dartType(${defaultVal ?? '0'})';
       break;
     default:
       break;
   }
 
-  return [typeImc, dartType, defaultVal];
+  return [typeImc, dartType, defaultVal, dartInnerType];
 }
 
 /// Gets the name of the type for the enum like class.

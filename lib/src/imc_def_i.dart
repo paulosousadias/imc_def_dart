@@ -30,6 +30,32 @@ class _$EntityState extends EntityState {
   factory _$EntityState([void Function(EntityStateBuilder b)? updates]) =>
       (EntityStateBuilder()..update(updates)).build() as _$EntityState;
 
+  factory _$EntityState.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? EntityStateEnumState(json['state'] as int)
+        : EntityStateEnumState(0);
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? EntityStateBitfieldFlags(json['flags'] as int)
+        : EntityStateBitfieldFlags(0);
+    val.description =
+        json.containsKey('description') && json['description'] != null
+            ? json['description'] as String
+            : '';
+
+    return val.build() as _$EntityState;
+  }
+
   _$EntityState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -105,9 +131,9 @@ class _$EntityState extends EntityState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
         'flags': flags.value,
         'description': description,
@@ -168,6 +194,15 @@ class EntityStateBuilder extends Object
   EntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityStateBuilder.fromJson(json);
 
   @override
   EntityStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -233,6 +268,21 @@ class _$QueryEntityState extends QueryEntityState {
           [void Function(QueryEntityStateBuilder b)? updates]) =>
       (QueryEntityStateBuilder()..update(updates)).build()
           as _$QueryEntityState;
+
+  factory _$QueryEntityState.fromJson(core.Map<String, dynamic> json) {
+    var val = QueryEntityStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$QueryEntityState;
+  }
 
   _$QueryEntityState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -343,6 +393,15 @@ class QueryEntityStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  QueryEntityStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$QueryEntityState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  QueryEntityStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      QueryEntityStateBuilder.fromJson(json);
+
   @override
   QueryEntityStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       QueryEntityStateBuilder()..copyFromHeader(headerFrom);
@@ -410,6 +469,32 @@ class _$EntityInfo extends EntityInfo {
 
   factory _$EntityInfo([void Function(EntityInfoBuilder b)? updates]) =>
       (EntityInfoBuilder()..update(updates)).build() as _$EntityInfo;
+
+  factory _$EntityInfo.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityInfoBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.label = json.containsKey('label') && json['label'] != null
+        ? json['label'] as String
+        : '';
+    val.component = json.containsKey('component') && json['component'] != null
+        ? json['component'] as String
+        : '';
+    val.actTime = json.containsKey('act_time') ? json['act_time'] as int : 0;
+    val.deactTime =
+        json.containsKey('deact_time') ? json['deact_time'] as int : 0;
+
+    return val.build() as _$EntityInfo;
+  }
 
   _$EntityInfo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -500,9 +585,9 @@ class _$EntityInfo extends EntityInfo {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'label': label,
         'component': component,
@@ -573,6 +658,15 @@ class EntityInfoBuilder extends Object
   EntityInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityInfoBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityInfo.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityInfoBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityInfoBuilder.fromJson(json);
 
   @override
   EntityInfoBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -645,6 +739,23 @@ class _$QueryEntityInfo extends QueryEntityInfo {
           [void Function(QueryEntityInfoBuilder b)? updates]) =>
       (QueryEntityInfoBuilder()..update(updates)).build() as _$QueryEntityInfo;
 
+  factory _$QueryEntityInfo.fromJson(core.Map<String, dynamic> json) {
+    var val = QueryEntityInfoBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+
+    return val.build() as _$QueryEntityInfo;
+  }
+
   _$QueryEntityInfo._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -710,9 +821,9 @@ class _$QueryEntityInfo extends QueryEntityInfo {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
       };
 }
@@ -764,6 +875,15 @@ class QueryEntityInfoBuilder extends Object
   QueryEntityInfoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  QueryEntityInfoBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$QueryEntityInfo.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  QueryEntityInfoBuilder fromJson(core.Map<String, dynamic> json) =>
+      QueryEntityInfoBuilder.fromJson(json);
 
   @override
   QueryEntityInfoBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -828,6 +948,28 @@ class _$EntityList extends EntityList {
 
   factory _$EntityList([void Function(EntityListBuilder b)? updates]) =>
       (EntityListBuilder()..update(updates)).build() as _$EntityList;
+
+  factory _$EntityList.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityListBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? EntityListEnumOp(json['op'] as int)
+        : EntityListEnumOp(0);
+    val.list = json.containsKey('list') && json['list'] != null
+        ? json['list'] as String
+        : '';
+
+    return val.build() as _$EntityList;
+  }
 
   _$EntityList._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -899,9 +1041,9 @@ class _$EntityList extends EntityList {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'list': list,
       };
@@ -957,6 +1099,15 @@ class EntityListBuilder extends Object
   EntityListBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityListBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityList.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityListBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityListBuilder.fromJson(json);
 
   @override
   EntityListBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -1021,6 +1172,23 @@ class _$CpuUsage extends CpuUsage {
 
   factory _$CpuUsage([void Function(CpuUsageBuilder b)? updates]) =>
       (CpuUsageBuilder()..update(updates)).build() as _$CpuUsage;
+
+  factory _$CpuUsage.fromJson(core.Map<String, dynamic> json) {
+    var val = CpuUsageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$CpuUsage;
+  }
 
   _$CpuUsage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1087,9 +1255,9 @@ class _$CpuUsage extends CpuUsage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -1140,6 +1308,15 @@ class CpuUsageBuilder extends Object
   CpuUsageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CpuUsageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CpuUsage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CpuUsageBuilder fromJson(core.Map<String, dynamic> json) =>
+      CpuUsageBuilder.fromJson(json);
 
   @override
   CpuUsageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -1206,6 +1383,27 @@ class _$TransportBindings extends TransportBindings {
           [void Function(TransportBindingsBuilder b)? updates]) =>
       (TransportBindingsBuilder()..update(updates)).build()
           as _$TransportBindings;
+
+  factory _$TransportBindings.fromJson(core.Map<String, dynamic> json) {
+    var val = TransportBindingsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.consumer = json.containsKey('consumer') && json['consumer'] != null
+        ? json['consumer'] as String
+        : '';
+    val.messageId =
+        json.containsKey('message_id') ? json['message_id'] as int : 0;
+
+    return val.build() as _$TransportBindings;
+  }
 
   _$TransportBindings._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1279,9 +1477,9 @@ class _$TransportBindings extends TransportBindings {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'consumer': consumer,
         'message_id': messageId,
       };
@@ -1338,6 +1536,15 @@ class TransportBindingsBuilder extends Object
   TransportBindingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TransportBindingsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TransportBindings.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TransportBindingsBuilder fromJson(core.Map<String, dynamic> json) =>
+      TransportBindingsBuilder.fromJson(json);
 
   @override
   TransportBindingsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -1402,6 +1609,25 @@ class _$RestartSystem extends RestartSystem {
 
   factory _$RestartSystem([void Function(RestartSystemBuilder b)? updates]) =>
       (RestartSystemBuilder()..update(updates)).build() as _$RestartSystem;
+
+  factory _$RestartSystem.fromJson(core.Map<String, dynamic> json) {
+    var val = RestartSystemBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? RestartSystemEnumType(json['type'] as int)
+        : RestartSystemEnumType(0);
+
+    return val.build() as _$RestartSystem;
+  }
 
   _$RestartSystem._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1468,9 +1694,9 @@ class _$RestartSystem extends RestartSystem {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
       };
 }
@@ -1521,6 +1747,15 @@ class RestartSystemBuilder extends Object
   RestartSystemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RestartSystemBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RestartSystem.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RestartSystemBuilder fromJson(core.Map<String, dynamic> json) =>
+      RestartSystemBuilder.fromJson(json);
 
   @override
   RestartSystemBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -1585,6 +1820,25 @@ class _$DevCalibrationControl extends DevCalibrationControl {
           [void Function(DevCalibrationControlBuilder b)? updates]) =>
       (DevCalibrationControlBuilder()..update(updates)).build()
           as _$DevCalibrationControl;
+
+  factory _$DevCalibrationControl.fromJson(core.Map<String, dynamic> json) {
+    var val = DevCalibrationControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? DevCalibrationControlEnumOp(json['op'] as int)
+        : DevCalibrationControlEnumOp(0);
+
+    return val.build() as _$DevCalibrationControl;
+  }
 
   _$DevCalibrationControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1653,9 +1907,9 @@ class _$DevCalibrationControl extends DevCalibrationControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
       };
 }
@@ -1709,6 +1963,15 @@ class DevCalibrationControlBuilder extends Object
   DevCalibrationControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DevCalibrationControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DevCalibrationControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DevCalibrationControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      DevCalibrationControlBuilder.fromJson(json);
 
   @override
   DevCalibrationControlBuilder newInstance(
@@ -1780,6 +2043,32 @@ class _$DevCalibrationState extends DevCalibrationState {
           [void Function(DevCalibrationStateBuilder b)? updates]) =>
       (DevCalibrationStateBuilder()..update(updates)).build()
           as _$DevCalibrationState;
+
+  factory _$DevCalibrationState.fromJson(core.Map<String, dynamic> json) {
+    var val = DevCalibrationStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.totalSteps =
+        json.containsKey('total_steps') ? json['total_steps'] as int : 0;
+    val.stepNumber =
+        json.containsKey('step_number') ? json['step_number'] as int : 0;
+    val.step = json.containsKey('step') && json['step'] != null
+        ? json['step'] as String
+        : '';
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? DevCalibrationStateBitfieldFlags(json['flags'] as int)
+        : DevCalibrationStateBitfieldFlags(0);
+
+    return val.build() as _$DevCalibrationState;
+  }
 
   _$DevCalibrationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -1865,9 +2154,9 @@ class _$DevCalibrationState extends DevCalibrationState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'total_steps': totalSteps,
         'step_number': stepNumber,
         'step': step,
@@ -1936,6 +2225,15 @@ class DevCalibrationStateBuilder extends Object
   DevCalibrationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DevCalibrationStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DevCalibrationState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DevCalibrationStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      DevCalibrationStateBuilder.fromJson(json);
 
   @override
   DevCalibrationStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -2009,6 +2307,28 @@ class _$EntityActivationState extends EntityActivationState {
       (EntityActivationStateBuilder()..update(updates)).build()
           as _$EntityActivationState;
 
+  factory _$EntityActivationState.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityActivationStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? EntityActivationStateEnumState(json['state'] as int)
+        : EntityActivationStateEnumState(0);
+    val.error = json.containsKey('error') && json['error'] != null
+        ? json['error'] as String
+        : '';
+
+    return val.build() as _$EntityActivationState;
+  }
+
   _$EntityActivationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -2081,9 +2401,9 @@ class _$EntityActivationState extends EntityActivationState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
         'error': error,
       };
@@ -2142,6 +2462,15 @@ class EntityActivationStateBuilder extends Object
   EntityActivationStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityActivationStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityActivationState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityActivationStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityActivationStateBuilder.fromJson(json);
 
   @override
   EntityActivationStateBuilder newInstance(
@@ -2207,6 +2536,22 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
       (QueryEntityActivationStateBuilder()..update(updates)).build()
           as _$QueryEntityActivationState;
 
+  factory _$QueryEntityActivationState.fromJson(
+      core.Map<String, dynamic> json) {
+    var val = QueryEntityActivationStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$QueryEntityActivationState;
+  }
+
   _$QueryEntityActivationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -2267,9 +2612,9 @@ class _$QueryEntityActivationState extends QueryEntityActivationState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -2319,6 +2664,15 @@ class QueryEntityActivationStateBuilder extends Object
       ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  QueryEntityActivationStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$QueryEntityActivationState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  QueryEntityActivationStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      QueryEntityActivationStateBuilder.fromJson(json);
 
   @override
   QueryEntityActivationStateBuilder newInstance(
@@ -2416,6 +2770,54 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           [void Function(VehicleOperationalLimitsBuilder b)? updates]) =>
       (VehicleOperationalLimitsBuilder()..update(updates)).build()
           as _$VehicleOperationalLimits;
+
+  factory _$VehicleOperationalLimits.fromJson(core.Map<String, dynamic> json) {
+    var val = VehicleOperationalLimitsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? VehicleOperationalLimitsEnumOp(json['op'] as int)
+        : VehicleOperationalLimitsEnumOp(0);
+    val.speedMin =
+        json.containsKey('speed_min') ? json['speed_min'] as double : 0;
+    val.speedMax =
+        json.containsKey('speed_max') ? json['speed_max'] as double : 0;
+    val.longAccel =
+        json.containsKey('long_accel') ? json['long_accel'] as double : 0;
+    val.altMaxMsl =
+        json.containsKey('alt_max_msl') ? json['alt_max_msl'] as double : 0;
+    val.diveFractionMax = json.containsKey('dive_fraction_max')
+        ? json['dive_fraction_max'] as double
+        : 0;
+    val.climbFractionMax = json.containsKey('climb_fraction_max')
+        ? json['climb_fraction_max'] as double
+        : 0;
+    val.bankMax = json.containsKey('bank_max') ? json['bank_max'] as double : 0;
+    val.pMax = json.containsKey('p_max') ? json['p_max'] as double : 0;
+    val.pitchMin =
+        json.containsKey('pitch_min') ? json['pitch_min'] as double : 0;
+    val.pitchMax =
+        json.containsKey('pitch_max') ? json['pitch_max'] as double : 0;
+    val.qMax = json.containsKey('q_max') ? json['q_max'] as double : 0;
+    val.gMin = json.containsKey('g_min') ? json['g_min'] as double : 0;
+    val.gMax = json.containsKey('g_max') ? json['g_max'] as double : 0;
+    val.gLatMax =
+        json.containsKey('g_lat_max') ? json['g_lat_max'] as double : 0;
+    val.rpmMin = json.containsKey('rpm_min') ? json['rpm_min'] as double : 0;
+    val.rpmMax = json.containsKey('rpm_max') ? json['rpm_max'] as double : 0;
+    val.rpmRateMax =
+        json.containsKey('rpm_rate_max') ? json['rpm_rate_max'] as double : 0;
+
+    return val.build() as _$VehicleOperationalLimits;
+  }
 
   _$VehicleOperationalLimits._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -2569,9 +2971,9 @@ class _$VehicleOperationalLimits extends VehicleOperationalLimits {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'speed_min': speedMin,
         'speed_max': speedMax,
@@ -2713,6 +3115,15 @@ class VehicleOperationalLimitsBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  VehicleOperationalLimitsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleOperationalLimits.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleOperationalLimitsBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleOperationalLimitsBuilder.fromJson(json);
+
   @override
   VehicleOperationalLimitsBuilder newInstance(
           [ImcBuilderHeaderPart? headerFrom]) =>
@@ -2810,6 +3221,37 @@ class _$MsgList extends MsgList {
   factory _$MsgList([void Function(MsgListBuilder b)? updates]) =>
       (MsgListBuilder()..update(updates)).build() as _$MsgList;
 
+  factory _$MsgList.fromJson(core.Map<String, dynamic> json) {
+    var val = MsgListBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    var msgs = <ImcMessage>[];
+    if (json.containsKey('msgs') && json['msgs'] != null) {
+      var listJson = json['msgs'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) msgs.add(m);
+        }
+      }
+    }
+    val.msgs = msgs;
+
+    return val.build() as _$MsgList;
+  }
+
   _$MsgList._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -2875,9 +3317,9 @@ class _$MsgList extends MsgList {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'msgs': [
           ...msgs.map((m) => m.toJson(false)).toList(),
         ],
@@ -2930,6 +3372,15 @@ class MsgListBuilder extends Object
   MsgListBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  MsgListBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$MsgList.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MsgListBuilder fromJson(core.Map<String, dynamic> json) =>
+      MsgListBuilder.fromJson(json);
 
   @override
   MsgListBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -3026,6 +3477,40 @@ class _$SimulatedState extends SimulatedState {
 
   factory _$SimulatedState([void Function(SimulatedStateBuilder b)? updates]) =>
       (SimulatedStateBuilder()..update(updates)).build() as _$SimulatedState;
+
+  factory _$SimulatedState.fromJson(core.Map<String, dynamic> json) {
+    var val = SimulatedStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.height = json.containsKey('height') ? json['height'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.u = json.containsKey('u') ? json['u'] as double : 0;
+    val.v = json.containsKey('v') ? json['v'] as double : 0;
+    val.w = json.containsKey('w') ? json['w'] as double : 0;
+    val.p = json.containsKey('p') ? json['p'] as double : 0;
+    val.q = json.containsKey('q') ? json['q'] as double : 0;
+    val.r = json.containsKey('r') ? json['r'] as double : 0;
+    val.svx = json.containsKey('svx') ? json['svx'] as double : 0;
+    val.svy = json.containsKey('svy') ? json['svy'] as double : 0;
+    val.svz = json.containsKey('svz') ? json['svz'] as double : 0;
+
+    return val.build() as _$SimulatedState;
+  }
 
   _$SimulatedState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3171,9 +3656,9 @@ class _$SimulatedState extends SimulatedState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'height': height,
@@ -3310,6 +3795,15 @@ class SimulatedStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  SimulatedStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SimulatedState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SimulatedStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      SimulatedStateBuilder.fromJson(json);
+
   @override
   SimulatedStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       SimulatedStateBuilder()..copyFromHeader(headerFrom);
@@ -3408,6 +3902,28 @@ class _$LeakSimulation extends LeakSimulation {
   factory _$LeakSimulation([void Function(LeakSimulationBuilder b)? updates]) =>
       (LeakSimulationBuilder()..update(updates)).build() as _$LeakSimulation;
 
+  factory _$LeakSimulation.fromJson(core.Map<String, dynamic> json) {
+    var val = LeakSimulationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? LeakSimulationEnumOp(json['op'] as int)
+        : LeakSimulationEnumOp(0);
+    val.entities = json.containsKey('entities') && json['entities'] != null
+        ? json['entities'] as String
+        : '';
+
+    return val.build() as _$LeakSimulation;
+  }
+
   _$LeakSimulation._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -3478,9 +3994,9 @@ class _$LeakSimulation extends LeakSimulation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'entities': entities,
       };
@@ -3536,6 +4052,15 @@ class LeakSimulationBuilder extends Object
   LeakSimulationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LeakSimulationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LeakSimulation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LeakSimulationBuilder fromJson(core.Map<String, dynamic> json) =>
+      LeakSimulationBuilder.fromJson(json);
 
   @override
   LeakSimulationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -3604,6 +4129,29 @@ class _$UASimulation extends UASimulation {
 
   factory _$UASimulation([void Function(UASimulationBuilder b)? updates]) =>
       (UASimulationBuilder()..update(updates)).build() as _$UASimulation;
+
+  factory _$UASimulation.fromJson(core.Map<String, dynamic> json) {
+    var val = UASimulationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? UASimulationEnumType(json['type'] as int)
+        : UASimulationEnumType(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as int : 0;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$UASimulation;
+  }
 
   _$UASimulation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3680,9 +4228,9 @@ class _$UASimulation extends UASimulation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'speed': speed,
         'data': base64.encode(data),
@@ -3743,6 +4291,15 @@ class UASimulationBuilder extends Object
   UASimulationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UASimulationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UASimulation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UASimulationBuilder fromJson(core.Map<String, dynamic> json) =>
+      UASimulationBuilder.fromJson(json);
 
   @override
   UASimulationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -3815,6 +4372,29 @@ class _$DynamicsSimParam extends DynamicsSimParam {
           [void Function(DynamicsSimParamBuilder b)? updates]) =>
       (DynamicsSimParamBuilder()..update(updates)).build()
           as _$DynamicsSimParam;
+
+  factory _$DynamicsSimParam.fromJson(core.Map<String, dynamic> json) {
+    var val = DynamicsSimParamBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? DynamicsSimParamEnumOp(json['op'] as int)
+        : DynamicsSimParamEnumOp(0);
+    val.tas2accPgain =
+        json.containsKey('tas2acc_pgain') ? json['tas2acc_pgain'] as double : 0;
+    val.bank2pPgain =
+        json.containsKey('bank2p_pgain') ? json['bank2p_pgain'] as double : 0;
+
+    return val.build() as _$DynamicsSimParam;
+  }
 
   _$DynamicsSimParam._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -3894,9 +4474,9 @@ class _$DynamicsSimParam extends DynamicsSimParam {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'tas2acc_pgain': tas2accPgain,
         'bank2p_pgain': bank2pPgain,
@@ -3958,6 +4538,15 @@ class DynamicsSimParamBuilder extends Object
   DynamicsSimParamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DynamicsSimParamBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DynamicsSimParam.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DynamicsSimParamBuilder fromJson(core.Map<String, dynamic> json) =>
+      DynamicsSimParamBuilder.fromJson(json);
 
   @override
   DynamicsSimParamBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -4026,6 +4615,25 @@ class _$StorageUsage extends StorageUsage {
 
   factory _$StorageUsage([void Function(StorageUsageBuilder b)? updates]) =>
       (StorageUsageBuilder()..update(updates)).build() as _$StorageUsage;
+
+  factory _$StorageUsage.fromJson(core.Map<String, dynamic> json) {
+    var val = StorageUsageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.available =
+        json.containsKey('available') ? json['available'] as int : 0;
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$StorageUsage;
+  }
 
   _$StorageUsage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4097,9 +4705,9 @@ class _$StorageUsage extends StorageUsage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'available': available,
         'value': value,
       };
@@ -4155,6 +4763,15 @@ class StorageUsageBuilder extends Object
   StorageUsageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  StorageUsageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$StorageUsage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  StorageUsageBuilder fromJson(core.Map<String, dynamic> json) =>
+      StorageUsageBuilder.fromJson(json);
 
   @override
   StorageUsageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -4223,6 +4840,40 @@ class _$CacheControl extends CacheControl {
 
   factory _$CacheControl([void Function(CacheControlBuilder b)? updates]) =>
       (CacheControlBuilder()..update(updates)).build() as _$CacheControl;
+
+  factory _$CacheControl.fromJson(core.Map<String, dynamic> json) {
+    var val = CacheControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? CacheControlEnumOp(json['op'] as int)
+        : CacheControlEnumOp(0);
+    val.snapshot = json.containsKey('snapshot') && json['snapshot'] != null
+        ? json['snapshot'] as String
+        : '';
+
+    ImcMessage? message;
+    if (json.containsKey('message') && json['message'] != null) {
+      var msgJson = json['message'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        message = builder?.build() as ImcMessage?;
+      }
+    }
+    val.message = message;
+
+    return val.build() as _$CacheControl;
+  }
 
   _$CacheControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4299,9 +4950,9 @@ class _$CacheControl extends CacheControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'snapshot': snapshot,
         'message': message?.toJson(false),
@@ -4362,6 +5013,15 @@ class CacheControlBuilder extends Object
   CacheControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CacheControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CacheControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CacheControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      CacheControlBuilder.fromJson(json);
 
   @override
   CacheControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -4430,6 +5090,28 @@ class _$LoggingControl extends LoggingControl {
 
   factory _$LoggingControl([void Function(LoggingControlBuilder b)? updates]) =>
       (LoggingControlBuilder()..update(updates)).build() as _$LoggingControl;
+
+  factory _$LoggingControl.fromJson(core.Map<String, dynamic> json) {
+    var val = LoggingControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? LoggingControlEnumOp(json['op'] as int)
+        : LoggingControlEnumOp(0);
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+
+    return val.build() as _$LoggingControl;
+  }
 
   _$LoggingControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4501,9 +5183,9 @@ class _$LoggingControl extends LoggingControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'name': name,
       };
@@ -4559,6 +5241,15 @@ class LoggingControlBuilder extends Object
   LoggingControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LoggingControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LoggingControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LoggingControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      LoggingControlBuilder.fromJson(json);
 
   @override
   LoggingControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -4629,6 +5320,32 @@ class _$LogBookEntry extends LogBookEntry {
 
   factory _$LogBookEntry([void Function(LogBookEntryBuilder b)? updates]) =>
       (LogBookEntryBuilder()..update(updates)).build() as _$LogBookEntry;
+
+  factory _$LogBookEntry.fromJson(core.Map<String, dynamic> json) {
+    var val = LogBookEntryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? LogBookEntryEnumType(json['type'] as int)
+        : LogBookEntryEnumType(0);
+    val.htime = json.containsKey('htime') ? json['htime'] as double : 0;
+    val.context = json.containsKey('context') && json['context'] != null
+        ? json['context'] as String
+        : '';
+    val.text = json.containsKey('text') && json['text'] != null
+        ? json['text'] as String
+        : '';
+
+    return val.build() as _$LogBookEntry;
+  }
 
   _$LogBookEntry._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4712,9 +5429,9 @@ class _$LogBookEntry extends LogBookEntry {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'htime': htime,
         'context': context,
@@ -4780,6 +5497,15 @@ class LogBookEntryBuilder extends Object
   LogBookEntryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LogBookEntryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LogBookEntry.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LogBookEntryBuilder fromJson(core.Map<String, dynamic> json) =>
+      LogBookEntryBuilder.fromJson(json);
 
   @override
   LogBookEntryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -4852,6 +5578,41 @@ class _$LogBookControl extends LogBookControl {
 
   factory _$LogBookControl([void Function(LogBookControlBuilder b)? updates]) =>
       (LogBookControlBuilder()..update(updates)).build() as _$LogBookControl;
+
+  factory _$LogBookControl.fromJson(core.Map<String, dynamic> json) {
+    var val = LogBookControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.command = json.containsKey('command') && json['command'] != null
+        ? LogBookControlEnumCommand(json['command'] as int)
+        : LogBookControlEnumCommand(0);
+    val.htime = json.containsKey('htime') ? json['htime'] as double : 0;
+    var msg = <LogBookEntry>[];
+    if (json.containsKey('msg') && json['msg'] != null) {
+      var listJson = json['msg'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as LogBookEntry?;
+          if (m != null) msg.add(m);
+        }
+      }
+    }
+    val.msg = msg;
+
+    return val.build() as _$LogBookControl;
+  }
 
   _$LogBookControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -4929,9 +5690,9 @@ class _$LogBookControl extends LogBookControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'command': command.value,
         'htime': htime,
         'msg': [
@@ -4994,6 +5755,15 @@ class LogBookControlBuilder extends Object
   LogBookControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LogBookControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LogBookControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LogBookControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      LogBookControlBuilder.fromJson(json);
 
   @override
   LogBookControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -5062,6 +5832,28 @@ class _$ReplayControl extends ReplayControl {
 
   factory _$ReplayControl([void Function(ReplayControlBuilder b)? updates]) =>
       (ReplayControlBuilder()..update(updates)).build() as _$ReplayControl;
+
+  factory _$ReplayControl.fromJson(core.Map<String, dynamic> json) {
+    var val = ReplayControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? ReplayControlEnumOp(json['op'] as int)
+        : ReplayControlEnumOp(0);
+    val.file = json.containsKey('file') && json['file'] != null
+        ? json['file'] as String
+        : '';
+
+    return val.build() as _$ReplayControl;
+  }
 
   _$ReplayControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5133,9 +5925,9 @@ class _$ReplayControl extends ReplayControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'file': file,
       };
@@ -5191,6 +5983,15 @@ class ReplayControlBuilder extends Object
   ReplayControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ReplayControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ReplayControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ReplayControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      ReplayControlBuilder.fromJson(json);
 
   @override
   ReplayControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -5259,6 +6060,27 @@ class _$ClockControl extends ClockControl {
 
   factory _$ClockControl([void Function(ClockControlBuilder b)? updates]) =>
       (ClockControlBuilder()..update(updates)).build() as _$ClockControl;
+
+  factory _$ClockControl.fromJson(core.Map<String, dynamic> json) {
+    var val = ClockControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? ClockControlEnumOp(json['op'] as int)
+        : ClockControlEnumOp(0);
+    val.clock = json.containsKey('clock') ? json['clock'] as double : 0;
+    val.tz = json.containsKey('tz') ? json['tz'] as int : 0;
+
+    return val.build() as _$ClockControl;
+  }
 
   _$ClockControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5335,9 +6157,9 @@ class _$ClockControl extends ClockControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'clock': clock,
         'tz': tz,
@@ -5398,6 +6220,15 @@ class ClockControlBuilder extends Object
   ClockControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ClockControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ClockControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ClockControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      ClockControlBuilder.fromJson(json);
 
   @override
   ClockControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -5468,6 +6299,27 @@ class _$HistoricCTD extends HistoricCTD {
 
   factory _$HistoricCTD([void Function(HistoricCTDBuilder b)? updates]) =>
       (HistoricCTDBuilder()..update(updates)).build() as _$HistoricCTD;
+
+  factory _$HistoricCTD.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricCTDBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.conductivity =
+        json.containsKey('conductivity') ? json['conductivity'] as double : 0;
+    val.temperature =
+        json.containsKey('temperature') ? json['temperature'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+
+    return val.build() as _$HistoricCTD;
+  }
 
   _$HistoricCTD._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5546,9 +6398,9 @@ class _$HistoricCTD extends HistoricCTD {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'conductivity': conductivity,
         'temperature': temperature,
         'depth': depth,
@@ -5609,6 +6461,15 @@ class HistoricCTDBuilder extends Object
   HistoricCTDBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HistoricCTDBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricCTD.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricCTDBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricCTDBuilder.fromJson(json);
 
   @override
   HistoricCTDBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -5685,6 +6546,28 @@ class _$HistoricTelemetry extends HistoricTelemetry {
           [void Function(HistoricTelemetryBuilder b)? updates]) =>
       (HistoricTelemetryBuilder()..update(updates)).build()
           as _$HistoricTelemetry;
+
+  factory _$HistoricTelemetry.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricTelemetryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.altitude =
+        json.containsKey('altitude') ? json['altitude'] as double : 0;
+    val.roll = json.containsKey('roll') ? json['roll'] as int : 0;
+    val.pitch = json.containsKey('pitch') ? json['pitch'] as int : 0;
+    val.yaw = json.containsKey('yaw') ? json['yaw'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as int : 0;
+
+    return val.build() as _$HistoricTelemetry;
+  }
 
   _$HistoricTelemetry._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -5777,9 +6660,9 @@ class _$HistoricTelemetry extends HistoricTelemetry {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'altitude': altitude,
         'roll': roll,
         'pitch': pitch,
@@ -5851,6 +6734,15 @@ class HistoricTelemetryBuilder extends Object
   HistoricTelemetryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HistoricTelemetryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricTelemetry.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricTelemetryBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricTelemetryBuilder.fromJson(json);
 
   @override
   HistoricTelemetryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -5935,6 +6827,34 @@ class _$HistoricSonarData extends HistoricSonarData {
           [void Function(HistoricSonarDataBuilder b)? updates]) =>
       (HistoricSonarDataBuilder()..update(updates)).build()
           as _$HistoricSonarData;
+
+  factory _$HistoricSonarData.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricSonarDataBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.altitude =
+        json.containsKey('altitude') ? json['altitude'] as double : 0;
+    val.width = json.containsKey('width') ? json['width'] as double : 0;
+    val.length = json.containsKey('length') ? json['length'] as double : 0;
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.pxl = json.containsKey('pxl') ? json['pxl'] as int : 0;
+    val.encoding = json.containsKey('encoding') && json['encoding'] != null
+        ? HistoricSonarDataEnumEncoding(json['encoding'] as int)
+        : HistoricSonarDataEnumEncoding(0);
+    val.sonarData = json.containsKey('sonar_data')
+        ? base64.decode(json['sonar_data'] as String)
+        : <int>[];
+
+    return val.build() as _$HistoricSonarData;
+  }
 
   _$HistoricSonarData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6038,9 +6958,9 @@ class _$HistoricSonarData extends HistoricSonarData {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'altitude': altitude,
         'width': width,
         'length': length,
@@ -6124,6 +7044,15 @@ class HistoricSonarDataBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  HistoricSonarDataBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricSonarData.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricSonarDataBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricSonarDataBuilder.fromJson(json);
+
   @override
   HistoricSonarDataBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       HistoricSonarDataBuilder()..copyFromHeader(headerFrom);
@@ -6200,6 +7129,28 @@ class _$HistoricEvent extends HistoricEvent {
   factory _$HistoricEvent([void Function(HistoricEventBuilder b)? updates]) =>
       (HistoricEventBuilder()..update(updates)).build() as _$HistoricEvent;
 
+  factory _$HistoricEvent.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricEventBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.text = json.containsKey('text') && json['text'] != null
+        ? json['text'] as String
+        : '';
+    val.type = json.containsKey('type') && json['type'] != null
+        ? HistoricEventEnumType(json['type'] as int)
+        : HistoricEventEnumType(0);
+
+    return val.build() as _$HistoricEvent;
+  }
+
   _$HistoricEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -6270,9 +7221,9 @@ class _$HistoricEvent extends HistoricEvent {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'text': text,
         'type': type.value,
       };
@@ -6328,6 +7279,15 @@ class HistoricEventBuilder extends Object
   HistoricEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HistoricEventBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricEvent.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricEventBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricEventBuilder.fromJson(json);
 
   @override
   HistoricEventBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -6401,6 +7361,44 @@ class _$VerticalProfile extends VerticalProfile {
   factory _$VerticalProfile(
           [void Function(VerticalProfileBuilder b)? updates]) =>
       (VerticalProfileBuilder()..update(updates)).build() as _$VerticalProfile;
+
+  factory _$VerticalProfile.fromJson(core.Map<String, dynamic> json) {
+    var val = VerticalProfileBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.parameter = json.containsKey('parameter') && json['parameter'] != null
+        ? VerticalProfileEnumParameter(json['parameter'] as int)
+        : VerticalProfileEnumParameter(0);
+    val.numSamples =
+        json.containsKey('numSamples') ? json['numSamples'] as int : 0;
+    var samples = <ProfileSample>[];
+    if (json.containsKey('samples') && json['samples'] != null) {
+      var listJson = json['samples'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ProfileSample?;
+          if (m != null) samples.add(m);
+        }
+      }
+    }
+    val.samples = samples;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+
+    return val.build() as _$VerticalProfile;
+  }
 
   _$VerticalProfile._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -6492,9 +7490,9 @@ class _$VerticalProfile extends VerticalProfile {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'parameter': parameter.value,
         'numSamples': numSamples,
         'samples': [
@@ -6570,6 +7568,15 @@ class VerticalProfileBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  VerticalProfileBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VerticalProfile.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VerticalProfileBuilder fromJson(core.Map<String, dynamic> json) =>
+      VerticalProfileBuilder.fromJson(json);
+
   @override
   VerticalProfileBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       VerticalProfileBuilder()..copyFromHeader(headerFrom);
@@ -6642,6 +7649,24 @@ class _$ProfileSample extends ProfileSample {
   factory _$ProfileSample([void Function(ProfileSampleBuilder b)? updates]) =>
       (ProfileSampleBuilder()..update(updates)).build() as _$ProfileSample;
 
+  factory _$ProfileSample.fromJson(core.Map<String, dynamic> json) {
+    var val = ProfileSampleBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.depth = json.containsKey('depth') ? json['depth'] as int : 0;
+    val.avg = json.containsKey('avg') ? json['avg'] as double : 0;
+
+    return val.build() as _$ProfileSample;
+  }
+
   _$ProfileSample._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -6712,9 +7737,9 @@ class _$ProfileSample extends ProfileSample {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'depth': depth,
         'avg': avg,
       };
@@ -6770,6 +7795,15 @@ class ProfileSampleBuilder extends Object
   ProfileSampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ProfileSampleBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ProfileSample.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ProfileSampleBuilder fromJson(core.Map<String, dynamic> json) =>
+      ProfileSampleBuilder.fromJson(json);
 
   @override
   ProfileSampleBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -6832,6 +7866,21 @@ class _$Heartbeat extends Heartbeat {
   factory _$Heartbeat([void Function(HeartbeatBuilder b)? updates]) =>
       (HeartbeatBuilder()..update(updates)).build() as _$Heartbeat;
 
+  factory _$Heartbeat.fromJson(core.Map<String, dynamic> json) {
+    var val = HeartbeatBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$Heartbeat;
+  }
+
   _$Heartbeat._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -6890,9 +7939,9 @@ class _$Heartbeat extends Heartbeat {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -6938,6 +7987,15 @@ class HeartbeatBuilder extends Object
   HeartbeatBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HeartbeatBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Heartbeat.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HeartbeatBuilder fromJson(core.Map<String, dynamic> json) =>
+      HeartbeatBuilder.fromJson(json);
 
   @override
   HeartbeatBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -7010,6 +8068,35 @@ class _$Announce extends Announce {
 
   factory _$Announce([void Function(AnnounceBuilder b)? updates]) =>
       (AnnounceBuilder()..update(updates)).build() as _$Announce;
+
+  factory _$Announce.fromJson(core.Map<String, dynamic> json) {
+    var val = AnnounceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sysName = json.containsKey('sys_name') && json['sys_name'] != null
+        ? json['sys_name'] as String
+        : '';
+    val.sysType = json.containsKey('sys_type') && json['sys_type'] != null
+        ? SystemTypeEnum(json['sys_type'] as int)
+        : SystemTypeEnum(0);
+    val.owner = json.containsKey('owner') ? json['owner'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.height = json.containsKey('height') ? json['height'] as double : 0;
+    val.services = json.containsKey('services') && json['services'] != null
+        ? json['services'] as String
+        : '';
+
+    return val.build() as _$Announce;
+  }
 
   _$Announce._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7111,9 +8198,9 @@ class _$Announce extends Announce {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sys_name': sysName,
         'sys_type': sysType.value,
         'owner': owner,
@@ -7195,6 +8282,15 @@ class AnnounceBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  AnnounceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Announce.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AnnounceBuilder fromJson(core.Map<String, dynamic> json) =>
+      AnnounceBuilder.fromJson(json);
+
   @override
   AnnounceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       AnnounceBuilder()..copyFromHeader(headerFrom);
@@ -7272,6 +8368,29 @@ class _$AnnounceService extends AnnounceService {
           [void Function(AnnounceServiceBuilder b)? updates]) =>
       (AnnounceServiceBuilder()..update(updates)).build() as _$AnnounceService;
 
+  factory _$AnnounceService.fromJson(core.Map<String, dynamic> json) {
+    var val = AnnounceServiceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.service = json.containsKey('service') && json['service'] != null
+        ? json['service'] as String
+        : '';
+    val.serviceType =
+        json.containsKey('service_type') && json['service_type'] != null
+            ? AnnounceServiceBitfieldServiceType(json['service_type'] as int)
+            : AnnounceServiceBitfieldServiceType(0);
+
+    return val.build() as _$AnnounceService;
+  }
+
   _$AnnounceService._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -7343,9 +8462,9 @@ class _$AnnounceService extends AnnounceService {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'service': service,
         'service_type': serviceType.value,
       };
@@ -7404,6 +8523,15 @@ class AnnounceServiceBuilder extends Object
   AnnounceServiceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AnnounceServiceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AnnounceService.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AnnounceServiceBuilder fromJson(core.Map<String, dynamic> json) =>
+      AnnounceServiceBuilder.fromJson(json);
 
   @override
   AnnounceServiceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -7468,6 +8596,23 @@ class _$RSSI extends RSSI {
 
   factory _$RSSI([void Function(RSSIBuilder b)? updates]) =>
       (RSSIBuilder()..update(updates)).build() as _$RSSI;
+
+  factory _$RSSI.fromJson(core.Map<String, dynamic> json) {
+    var val = RSSIBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$RSSI;
+  }
 
   _$RSSI._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7534,9 +8679,9 @@ class _$RSSI extends RSSI {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -7587,6 +8732,15 @@ class RSSIBuilder extends Object
   RSSIBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RSSIBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RSSI.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RSSIBuilder fromJson(core.Map<String, dynamic> json) =>
+      RSSIBuilder.fromJson(json);
 
   @override
   RSSIBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -7649,6 +8803,23 @@ class _$VSWR extends VSWR {
 
   factory _$VSWR([void Function(VSWRBuilder b)? updates]) =>
       (VSWRBuilder()..update(updates)).build() as _$VSWR;
+
+  factory _$VSWR.fromJson(core.Map<String, dynamic> json) {
+    var val = VSWRBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$VSWR;
+  }
 
   _$VSWR._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7715,9 +8886,9 @@ class _$VSWR extends VSWR {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -7768,6 +8939,15 @@ class VSWRBuilder extends Object
   VSWRBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VSWRBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VSWR.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VSWRBuilder fromJson(core.Map<String, dynamic> json) =>
+      VSWRBuilder.fromJson(json);
 
   @override
   VSWRBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -7830,6 +9010,23 @@ class _$LinkLevel extends LinkLevel {
 
   factory _$LinkLevel([void Function(LinkLevelBuilder b)? updates]) =>
       (LinkLevelBuilder()..update(updates)).build() as _$LinkLevel;
+
+  factory _$LinkLevel.fromJson(core.Map<String, dynamic> json) {
+    var val = LinkLevelBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$LinkLevel;
+  }
 
   _$LinkLevel._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -7896,9 +9093,9 @@ class _$LinkLevel extends LinkLevel {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -7949,6 +9146,15 @@ class LinkLevelBuilder extends Object
   LinkLevelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LinkLevelBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LinkLevel.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LinkLevelBuilder fromJson(core.Map<String, dynamic> json) =>
+      LinkLevelBuilder.fromJson(json);
 
   @override
   LinkLevelBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -8015,6 +9221,29 @@ class _$Sms extends Sms {
 
   factory _$Sms([void Function(SmsBuilder b)? updates]) =>
       (SmsBuilder()..update(updates)).build() as _$Sms;
+
+  factory _$Sms.fromJson(core.Map<String, dynamic> json) {
+    var val = SmsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.number = json.containsKey('number') && json['number'] != null
+        ? json['number'] as String
+        : '';
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.contents = json.containsKey('contents') && json['contents'] != null
+        ? json['contents'] as String
+        : '';
+
+    return val.build() as _$Sms;
+  }
 
   _$Sms._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8091,9 +9320,9 @@ class _$Sms extends Sms {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'number': number,
         'timeout': timeout,
         'contents': contents,
@@ -8154,6 +9383,15 @@ class SmsBuilder extends Object
   SmsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SmsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Sms.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SmsBuilder fromJson(core.Map<String, dynamic> json) =>
+      SmsBuilder.fromJson(json);
 
   @override
   SmsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -8226,6 +9464,31 @@ class _$SmsTx extends SmsTx {
 
   factory _$SmsTx([void Function(SmsTxBuilder b)? updates]) =>
       (SmsTxBuilder()..update(updates)).build() as _$SmsTx;
+
+  factory _$SmsTx.fromJson(core.Map<String, dynamic> json) {
+    var val = SmsTxBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$SmsTx;
+  }
 
   _$SmsTx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8309,9 +9572,9 @@ class _$SmsTx extends SmsTx {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'seq': seq,
         'destination': destination,
         'timeout': timeout,
@@ -8377,6 +9640,15 @@ class SmsTxBuilder extends Object
   SmsTxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SmsTxBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SmsTx.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SmsTxBuilder fromJson(core.Map<String, dynamic> json) =>
+      SmsTxBuilder.fromJson(json);
 
   @override
   SmsTxBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -8448,6 +9720,28 @@ class _$SmsRx extends SmsRx {
   factory _$SmsRx([void Function(SmsRxBuilder b)? updates]) =>
       (SmsRxBuilder()..update(updates)).build() as _$SmsRx;
 
+  factory _$SmsRx.fromJson(core.Map<String, dynamic> json) {
+    var val = SmsRxBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.source = json.containsKey('source') && json['source'] != null
+        ? json['source'] as String
+        : '';
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$SmsRx;
+  }
+
   _$SmsRx._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -8518,9 +9812,9 @@ class _$SmsRx extends SmsRx {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'source': source,
         'data': base64.encode(data),
       };
@@ -8576,6 +9870,15 @@ class SmsRxBuilder extends Object
   SmsRxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SmsRxBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SmsRx.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SmsRxBuilder fromJson(core.Map<String, dynamic> json) =>
+      SmsRxBuilder.fromJson(json);
 
   @override
   SmsRxBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -8644,6 +9947,29 @@ class _$SmsState extends SmsState {
 
   factory _$SmsState([void Function(SmsStateBuilder b)? updates]) =>
       (SmsStateBuilder()..update(updates)).build() as _$SmsState;
+
+  factory _$SmsState.fromJson(core.Map<String, dynamic> json) {
+    var val = SmsStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.state = json.containsKey('state') && json['state'] != null
+        ? SmsStateEnumState(json['state'] as int)
+        : SmsStateEnumState(0);
+    val.error = json.containsKey('error') && json['error'] != null
+        ? json['error'] as String
+        : '';
+
+    return val.build() as _$SmsState;
+  }
 
   _$SmsState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8720,9 +10046,9 @@ class _$SmsState extends SmsState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'seq': seq,
         'state': state.value,
         'error': error,
@@ -8783,6 +10109,15 @@ class SmsStateBuilder extends Object
   SmsStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SmsStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SmsState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SmsStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      SmsStateBuilder.fromJson(json);
 
   @override
   SmsStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -8851,6 +10186,28 @@ class _$TextMessage extends TextMessage {
 
   factory _$TextMessage([void Function(TextMessageBuilder b)? updates]) =>
       (TextMessageBuilder()..update(updates)).build() as _$TextMessage;
+
+  factory _$TextMessage.fromJson(core.Map<String, dynamic> json) {
+    var val = TextMessageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.origin = json.containsKey('origin') && json['origin'] != null
+        ? json['origin'] as String
+        : '';
+    val.text = json.containsKey('text') && json['text'] != null
+        ? json['text'] as String
+        : '';
+
+    return val.build() as _$TextMessage;
+  }
 
   _$TextMessage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -8922,9 +10279,9 @@ class _$TextMessage extends TextMessage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'origin': origin,
         'text': text,
       };
@@ -8980,6 +10337,15 @@ class TextMessageBuilder extends Object
   TextMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TextMessageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TextMessage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TextMessageBuilder fromJson(core.Map<String, dynamic> json) =>
+      TextMessageBuilder.fromJson(json);
 
   @override
   TextMessageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -9052,6 +10418,31 @@ class _$IridiumMsgRx extends IridiumMsgRx {
 
   factory _$IridiumMsgRx([void Function(IridiumMsgRxBuilder b)? updates]) =>
       (IridiumMsgRxBuilder()..update(updates)).build() as _$IridiumMsgRx;
+
+  factory _$IridiumMsgRx.fromJson(core.Map<String, dynamic> json) {
+    var val = IridiumMsgRxBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.origin = json.containsKey('origin') && json['origin'] != null
+        ? json['origin'] as String
+        : '';
+    val.htime = json.containsKey('htime') ? json['htime'] as double : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$IridiumMsgRx;
+  }
 
   _$IridiumMsgRx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9142,9 +10533,9 @@ class _$IridiumMsgRx extends IridiumMsgRx {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'origin': origin,
         'htime': htime,
         'lat': lat,
@@ -9215,6 +10606,15 @@ class IridiumMsgRxBuilder extends Object
   IridiumMsgRxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  IridiumMsgRxBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$IridiumMsgRx.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  IridiumMsgRxBuilder fromJson(core.Map<String, dynamic> json) =>
+      IridiumMsgRxBuilder.fromJson(json);
 
   @override
   IridiumMsgRxBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -9291,6 +10691,31 @@ class _$IridiumMsgTx extends IridiumMsgTx {
 
   factory _$IridiumMsgTx([void Function(IridiumMsgTxBuilder b)? updates]) =>
       (IridiumMsgTxBuilder()..update(updates)).build() as _$IridiumMsgTx;
+
+  factory _$IridiumMsgTx.fromJson(core.Map<String, dynamic> json) {
+    var val = IridiumMsgTxBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.ttl = json.containsKey('ttl') ? json['ttl'] as int : 0;
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$IridiumMsgTx;
+  }
 
   _$IridiumMsgTx._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9374,9 +10799,9 @@ class _$IridiumMsgTx extends IridiumMsgTx {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'ttl': ttl,
         'destination': destination,
@@ -9442,6 +10867,15 @@ class IridiumMsgTxBuilder extends Object
   IridiumMsgTxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  IridiumMsgTxBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$IridiumMsgTx.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  IridiumMsgTxBuilder fromJson(core.Map<String, dynamic> json) =>
+      IridiumMsgTxBuilder.fromJson(json);
 
   @override
   IridiumMsgTxBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -9515,6 +10949,29 @@ class _$IridiumTxStatus extends IridiumTxStatus {
   factory _$IridiumTxStatus(
           [void Function(IridiumTxStatusBuilder b)? updates]) =>
       (IridiumTxStatusBuilder()..update(updates)).build() as _$IridiumTxStatus;
+
+  factory _$IridiumTxStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = IridiumTxStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.status = json.containsKey('status') && json['status'] != null
+        ? IridiumTxStatusEnumStatus(json['status'] as int)
+        : IridiumTxStatusEnumStatus(0);
+    val.text = json.containsKey('text') && json['text'] != null
+        ? json['text'] as String
+        : '';
+
+    return val.build() as _$IridiumTxStatus;
+  }
 
   _$IridiumTxStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9591,9 +11048,9 @@ class _$IridiumTxStatus extends IridiumTxStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'status': status.value,
         'text': text,
@@ -9655,6 +11112,15 @@ class IridiumTxStatusBuilder extends Object
   IridiumTxStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  IridiumTxStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$IridiumTxStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  IridiumTxStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      IridiumTxStatusBuilder.fromJson(json);
 
   @override
   IridiumTxStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -9725,6 +11191,26 @@ class _$GroupMembershipState extends GroupMembershipState {
           [void Function(GroupMembershipStateBuilder b)? updates]) =>
       (GroupMembershipStateBuilder()..update(updates)).build()
           as _$GroupMembershipState;
+
+  factory _$GroupMembershipState.fromJson(core.Map<String, dynamic> json) {
+    var val = GroupMembershipStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.groupName = json.containsKey('group_name') && json['group_name'] != null
+        ? json['group_name'] as String
+        : '';
+    val.links = json.containsKey('links') ? json['links'] as int : 0;
+
+    return val.build() as _$GroupMembershipState;
+  }
 
   _$GroupMembershipState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -9798,9 +11284,9 @@ class _$GroupMembershipState extends GroupMembershipState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'group_name': groupName,
         'links': links,
       };
@@ -9859,6 +11345,15 @@ class GroupMembershipStateBuilder extends Object
   GroupMembershipStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GroupMembershipStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GroupMembershipState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GroupMembershipStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      GroupMembershipStateBuilder.fromJson(json);
 
   @override
   GroupMembershipStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -9927,6 +11422,31 @@ class _$SystemGroup extends SystemGroup {
 
   factory _$SystemGroup([void Function(SystemGroupBuilder b)? updates]) =>
       (SystemGroupBuilder()..update(updates)).build() as _$SystemGroup;
+
+  factory _$SystemGroup.fromJson(core.Map<String, dynamic> json) {
+    var val = SystemGroupBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.groupName = json.containsKey('GroupName') && json['GroupName'] != null
+        ? json['GroupName'] as String
+        : '';
+    val.action = json.containsKey('Action') && json['Action'] != null
+        ? SystemGroupEnumAction(json['Action'] as int)
+        : SystemGroupEnumAction(0);
+    val.groupList = json.containsKey('GroupList') && json['GroupList'] != null
+        ? json['GroupList'] as String
+        : '';
+
+    return val.build() as _$SystemGroup;
+  }
 
   _$SystemGroup._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10003,9 +11523,9 @@ class _$SystemGroup extends SystemGroup {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'GroupName': groupName,
         'Action': action.value,
         'GroupList': groupList,
@@ -10066,6 +11586,15 @@ class SystemGroupBuilder extends Object
   SystemGroupBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SystemGroupBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SystemGroup.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SystemGroupBuilder fromJson(core.Map<String, dynamic> json) =>
+      SystemGroupBuilder.fromJson(json);
 
   @override
   SystemGroupBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -10134,6 +11663,24 @@ class _$LinkLatency extends LinkLatency {
 
   factory _$LinkLatency([void Function(LinkLatencyBuilder b)? updates]) =>
       (LinkLatencyBuilder()..update(updates)).build() as _$LinkLatency;
+
+  factory _$LinkLatency.fromJson(core.Map<String, dynamic> json) {
+    var val = LinkLatencyBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.sysSrc = json.containsKey('sys_src') ? json['sys_src'] as int : 0;
+
+    return val.build() as _$LinkLatency;
+  }
 
   _$LinkLatency._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10205,9 +11752,9 @@ class _$LinkLatency extends LinkLatency {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'sys_src': sysSrc,
       };
@@ -10263,6 +11810,15 @@ class LinkLatencyBuilder extends Object
   LinkLatencyBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LinkLatencyBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LinkLatency.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LinkLatencyBuilder fromJson(core.Map<String, dynamic> json) =>
+      LinkLatencyBuilder.fromJson(json);
 
   @override
   LinkLatencyBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -10329,6 +11885,26 @@ class _$ExtendedRSSI extends ExtendedRSSI {
 
   factory _$ExtendedRSSI([void Function(ExtendedRSSIBuilder b)? updates]) =>
       (ExtendedRSSIBuilder()..update(updates)).build() as _$ExtendedRSSI;
+
+  factory _$ExtendedRSSI.fromJson(core.Map<String, dynamic> json) {
+    var val = ExtendedRSSIBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.units = json.containsKey('units') && json['units'] != null
+        ? RSSIUnitsEnum(json['units'] as int)
+        : RSSIUnitsEnum(0);
+
+    return val.build() as _$ExtendedRSSI;
+  }
 
   _$ExtendedRSSI._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10400,9 +11976,9 @@ class _$ExtendedRSSI extends ExtendedRSSI {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'units': units.value,
       };
@@ -10458,6 +12034,15 @@ class ExtendedRSSIBuilder extends Object
   ExtendedRSSIBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ExtendedRSSIBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ExtendedRSSI.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ExtendedRSSIBuilder fromJson(core.Map<String, dynamic> json) =>
+      ExtendedRSSIBuilder.fromJson(json);
 
   @override
   ExtendedRSSIBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -10528,6 +12113,41 @@ class _$HistoricData extends HistoricData {
 
   factory _$HistoricData([void Function(HistoricDataBuilder b)? updates]) =>
       (HistoricDataBuilder()..update(updates)).build() as _$HistoricData;
+
+  factory _$HistoricData.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricDataBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.baseLat = json.containsKey('base_lat') ? json['base_lat'] as double : 0;
+    val.baseLon = json.containsKey('base_lon') ? json['base_lon'] as double : 0;
+    val.baseTime =
+        json.containsKey('base_time') ? json['base_time'] as double : 0;
+    var data = <RemoteData>[];
+    if (json.containsKey('data') && json['data'] != null) {
+      var listJson = json['data'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as RemoteData?;
+          if (m != null) data.add(m);
+        }
+      }
+    }
+    val.data = data;
+
+    return val.build() as _$HistoricData;
+  }
 
   _$HistoricData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10611,9 +12231,9 @@ class _$HistoricData extends HistoricData {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'base_lat': baseLat,
         'base_lon': baseLon,
         'base_time': baseTime,
@@ -10681,6 +12301,15 @@ class HistoricDataBuilder extends Object
   HistoricDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HistoricDataBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricData.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricDataBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricDataBuilder.fromJson(json);
 
   @override
   HistoricDataBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -10757,6 +12386,29 @@ class _$CompressedHistory extends CompressedHistory {
           [void Function(CompressedHistoryBuilder b)? updates]) =>
       (CompressedHistoryBuilder()..update(updates)).build()
           as _$CompressedHistory;
+
+  factory _$CompressedHistory.fromJson(core.Map<String, dynamic> json) {
+    var val = CompressedHistoryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.baseLat = json.containsKey('base_lat') ? json['base_lat'] as double : 0;
+    val.baseLon = json.containsKey('base_lon') ? json['base_lon'] as double : 0;
+    val.baseTime =
+        json.containsKey('base_time') ? json['base_time'] as double : 0;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$CompressedHistory;
+  }
 
   _$CompressedHistory._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -10842,9 +12494,9 @@ class _$CompressedHistory extends CompressedHistory {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'base_lat': baseLat,
         'base_lon': baseLon,
         'base_time': baseTime,
@@ -10911,6 +12563,15 @@ class CompressedHistoryBuilder extends Object
   CompressedHistoryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CompressedHistoryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CompressedHistory.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CompressedHistoryBuilder fromJson(core.Map<String, dynamic> json) =>
+      CompressedHistoryBuilder.fromJson(json);
 
   @override
   CompressedHistoryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -10991,6 +12652,40 @@ class _$HistoricSample extends HistoricSample {
 
   factory _$HistoricSample([void Function(HistoricSampleBuilder b)? updates]) =>
       (HistoricSampleBuilder()..update(updates)).build() as _$HistoricSample;
+
+  factory _$HistoricSample.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricSampleBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sysId = json.containsKey('sys_id') ? json['sys_id'] as int : 0;
+    val.priority = json.containsKey('priority') ? json['priority'] as int : 0;
+    val.x = json.containsKey('x') ? json['x'] as int : 0;
+    val.y = json.containsKey('y') ? json['y'] as int : 0;
+    val.z = json.containsKey('z') ? json['z'] as int : 0;
+    val.t = json.containsKey('t') ? json['t'] as int : 0;
+
+    ImcMessage? sample;
+    if (json.containsKey('sample') && json['sample'] != null) {
+      var msgJson = json['sample'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        sample = builder?.build() as ImcMessage?;
+      }
+    }
+    val.sample = sample;
+
+    return val.build() as _$HistoricSample;
+  }
 
   _$HistoricSample._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11091,9 +12786,9 @@ class _$HistoricSample extends HistoricSample {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sys_id': sysId,
         'priority': priority,
         'x': x,
@@ -11174,6 +12869,15 @@ class HistoricSampleBuilder extends Object
   HistoricSampleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HistoricSampleBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricSample.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricSampleBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricSampleBuilder.fromJson(json);
 
   @override
   HistoricSampleBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -11256,6 +12960,39 @@ class _$HistoricDataQuery extends HistoricDataQuery {
           [void Function(HistoricDataQueryBuilder b)? updates]) =>
       (HistoricDataQueryBuilder()..update(updates)).build()
           as _$HistoricDataQuery;
+
+  factory _$HistoricDataQuery.fromJson(core.Map<String, dynamic> json) {
+    var val = HistoricDataQueryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.type = json.containsKey('type') && json['type'] != null
+        ? HistoricDataQueryEnumType(json['type'] as int)
+        : HistoricDataQueryEnumType(0);
+    val.maxSize = json.containsKey('max_size') ? json['max_size'] as int : 0;
+
+    HistoricData? data;
+    if (json.containsKey('data') && json['data'] != null) {
+      var msgJson = json['data'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        data = builder?.build() as HistoricData?;
+      }
+    }
+    val.data = data;
+
+    return val.build() as _$HistoricDataQuery;
+  }
 
   _$HistoricDataQuery._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11341,9 +13078,9 @@ class _$HistoricDataQuery extends HistoricDataQuery {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'type': type.value,
         'max_size': maxSize,
@@ -11410,6 +13147,15 @@ class HistoricDataQueryBuilder extends Object
   HistoricDataQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HistoricDataQueryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HistoricDataQuery.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HistoricDataQueryBuilder fromJson(core.Map<String, dynamic> json) =>
+      HistoricDataQueryBuilder.fromJson(json);
 
   @override
   HistoricDataQueryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -11484,6 +13230,40 @@ class _$RemoteCommand extends RemoteCommand {
 
   factory _$RemoteCommand([void Function(RemoteCommandBuilder b)? updates]) =>
       (RemoteCommandBuilder()..update(updates)).build() as _$RemoteCommand;
+
+  factory _$RemoteCommand.fromJson(core.Map<String, dynamic> json) {
+    var val = RemoteCommandBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.originalSource = json.containsKey('original_source')
+        ? json['original_source'] as int
+        : 0;
+    val.destination =
+        json.containsKey('destination') ? json['destination'] as int : 0;
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as double : 0;
+
+    ImcMessage? cmd;
+    if (json.containsKey('cmd') && json['cmd'] != null) {
+      var msgJson = json['cmd'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        cmd = builder?.build() as ImcMessage?;
+      }
+    }
+    val.cmd = cmd;
+
+    return val.build() as _$RemoteCommand;
+  }
 
   _$RemoteCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11567,9 +13347,9 @@ class _$RemoteCommand extends RemoteCommand {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'original_source': originalSource,
         'destination': destination,
         'timeout': timeout,
@@ -11636,6 +13416,15 @@ class RemoteCommandBuilder extends Object
   RemoteCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RemoteCommandBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RemoteCommand.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RemoteCommandBuilder fromJson(core.Map<String, dynamic> json) =>
+      RemoteCommandBuilder.fromJson(json);
 
   @override
   RemoteCommandBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -11712,6 +13501,35 @@ class _$CommSystemsQuery extends CommSystemsQuery {
           [void Function(CommSystemsQueryBuilder b)? updates]) =>
       (CommSystemsQueryBuilder()..update(updates)).build()
           as _$CommSystemsQuery;
+
+  factory _$CommSystemsQuery.fromJson(core.Map<String, dynamic> json) {
+    var val = CommSystemsQueryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? CommSystemsQueryBitfieldType(json['type'] as int)
+        : CommSystemsQueryBitfieldType(0);
+    val.commInterface = json.containsKey('comm_interface') &&
+            json['comm_interface'] != null
+        ? CommSystemsQueryBitfieldCommInterface(json['comm_interface'] as int)
+        : CommSystemsQueryBitfieldCommInterface(0);
+    val.model = json.containsKey('model') && json['model'] != null
+        ? CommSystemsQueryEnumModel(json['model'] as int)
+        : CommSystemsQueryEnumModel(0);
+    val.list = json.containsKey('list') && json['list'] != null
+        ? json['list'] as String
+        : '';
+
+    return val.build() as _$CommSystemsQuery;
+  }
 
   _$CommSystemsQuery._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -11797,9 +13615,9 @@ class _$CommSystemsQuery extends CommSystemsQuery {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'comm_interface': commInterface.value,
         'model': model.value,
@@ -11869,6 +13687,15 @@ class CommSystemsQueryBuilder extends Object
   CommSystemsQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CommSystemsQueryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CommSystemsQuery.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CommSystemsQueryBuilder fromJson(core.Map<String, dynamic> json) =>
+      CommSystemsQueryBuilder.fromJson(json);
 
   @override
   CommSystemsQueryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -11953,6 +13780,47 @@ class _$TelemetryMsg extends TelemetryMsg {
 
   factory _$TelemetryMsg([void Function(TelemetryMsgBuilder b)? updates]) =>
       (TelemetryMsgBuilder()..update(updates)).build() as _$TelemetryMsg;
+
+  factory _$TelemetryMsg.fromJson(core.Map<String, dynamic> json) {
+    var val = TelemetryMsgBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? TelemetryMsgEnumType(json['type'] as int)
+        : TelemetryMsgEnumType(0);
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.ttl = json.containsKey('ttl') ? json['ttl'] as int : 0;
+    val.code = json.containsKey('code') && json['code'] != null
+        ? TelemetryMsgEnumCode(json['code'] as int)
+        : TelemetryMsgEnumCode(0);
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.source = json.containsKey('Source') && json['Source'] != null
+        ? json['Source'] as String
+        : '';
+    val.acknowledge =
+        json.containsKey('acknowledge') && json['acknowledge'] != null
+            ? TelemetryMsgBitfieldAcknowledge(json['acknowledge'] as int)
+            : TelemetryMsgBitfieldAcknowledge(0);
+    val.status = json.containsKey('status') && json['status'] != null
+        ? TelemetryMsgEnumStatus(json['status'] as int)
+        : TelemetryMsgEnumStatus(0);
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$TelemetryMsg;
+  }
 
   _$TelemetryMsg._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12065,9 +13933,9 @@ class _$TelemetryMsg extends TelemetryMsg {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'req_id': reqId,
         'ttl': ttl,
@@ -12161,6 +14029,15 @@ class TelemetryMsgBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  TelemetryMsgBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TelemetryMsg.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TelemetryMsgBuilder fromJson(core.Map<String, dynamic> json) =>
+      TelemetryMsgBuilder.fromJson(json);
+
   @override
   TelemetryMsgBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       TelemetryMsgBuilder()..copyFromHeader(headerFrom);
@@ -12241,6 +14118,24 @@ class _$LblRange extends LblRange {
   factory _$LblRange([void Function(LblRangeBuilder b)? updates]) =>
       (LblRangeBuilder()..update(updates)).build() as _$LblRange;
 
+  factory _$LblRange.fromJson(core.Map<String, dynamic> json) {
+    var val = LblRangeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+
+    return val.build() as _$LblRange;
+  }
+
   _$LblRange._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -12311,9 +14206,9 @@ class _$LblRange extends LblRange {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'range': range,
       };
@@ -12369,6 +14264,15 @@ class LblRangeBuilder extends Object
   LblRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LblRangeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LblRange.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LblRangeBuilder fromJson(core.Map<String, dynamic> json) =>
+      LblRangeBuilder.fromJson(json);
 
   @override
   LblRangeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -12445,6 +14349,35 @@ class _$LblBeacon extends LblBeacon {
 
   factory _$LblBeacon([void Function(LblBeaconBuilder b)? updates]) =>
       (LblBeaconBuilder()..update(updates)).build() as _$LblBeacon;
+
+  factory _$LblBeacon.fromJson(core.Map<String, dynamic> json) {
+    var val = LblBeaconBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.beacon = json.containsKey('beacon') && json['beacon'] != null
+        ? json['beacon'] as String
+        : '';
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+    val.queryChannel =
+        json.containsKey('query_channel') ? json['query_channel'] as int : 0;
+    val.replyChannel =
+        json.containsKey('reply_channel') ? json['reply_channel'] as int : 0;
+    val.transponderDelay = json.containsKey('transponder_delay')
+        ? json['transponder_delay'] as int
+        : 0;
+
+    return val.build() as _$LblBeacon;
+  }
 
   _$LblBeacon._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -12545,9 +14478,9 @@ class _$LblBeacon extends LblBeacon {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'beacon': beacon,
         'lat': lat,
         'lon': lon,
@@ -12630,6 +14563,15 @@ class LblBeaconBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  LblBeaconBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LblBeacon.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LblBeaconBuilder fromJson(core.Map<String, dynamic> json) =>
+      LblBeaconBuilder.fromJson(json);
+
   @override
   LblBeaconBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       LblBeaconBuilder()..copyFromHeader(headerFrom);
@@ -12706,6 +14648,40 @@ class _$LblConfig extends LblConfig {
   factory _$LblConfig([void Function(LblConfigBuilder b)? updates]) =>
       (LblConfigBuilder()..update(updates)).build() as _$LblConfig;
 
+  factory _$LblConfig.fromJson(core.Map<String, dynamic> json) {
+    var val = LblConfigBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? LblConfigEnumOp(json['op'] as int)
+        : LblConfigEnumOp(0);
+    var beacons = <LblBeacon>[];
+    if (json.containsKey('beacons') && json['beacons'] != null) {
+      var listJson = json['beacons'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as LblBeacon?;
+          if (m != null) beacons.add(m);
+        }
+      }
+    }
+    val.beacons = beacons;
+
+    return val.build() as _$LblConfig;
+  }
+
   _$LblConfig._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -12776,9 +14752,9 @@ class _$LblConfig extends LblConfig {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'beacons': [
           ...beacons.map((m) => m.toJson(false)).toList(),
@@ -12836,6 +14812,15 @@ class LblConfigBuilder extends Object
   LblConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LblConfigBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LblConfig.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LblConfigBuilder fromJson(core.Map<String, dynamic> json) =>
+      LblConfigBuilder.fromJson(json);
 
   @override
   LblConfigBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -12902,6 +14887,33 @@ class _$AcousticMessage extends AcousticMessage {
           [void Function(AcousticMessageBuilder b)? updates]) =>
       (AcousticMessageBuilder()..update(updates)).build() as _$AcousticMessage;
 
+  factory _$AcousticMessage.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticMessageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    ImcMessage? message;
+    if (json.containsKey('message') && json['message'] != null) {
+      var msgJson = json['message'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        message = builder?.build() as ImcMessage?;
+      }
+    }
+    val.message = message;
+
+    return val.build() as _$AcousticMessage;
+  }
+
   _$AcousticMessage._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -12967,9 +14979,9 @@ class _$AcousticMessage extends AcousticMessage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'message': message?.toJson(false),
       };
 }
@@ -13021,6 +15033,15 @@ class AcousticMessageBuilder extends Object
   AcousticMessageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AcousticMessageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticMessage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticMessageBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticMessageBuilder.fromJson(json);
 
   @override
   AcousticMessageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -13105,6 +15126,45 @@ class _$SimAcousticMessage extends SimAcousticMessage {
           [void Function(SimAcousticMessageBuilder b)? updates]) =>
       (SimAcousticMessageBuilder()..update(updates)).build()
           as _$SimAcousticMessage;
+
+  factory _$SimAcousticMessage.fromJson(core.Map<String, dynamic> json) {
+    var val = SimAcousticMessageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+    val.sentence = json.containsKey('sentence') && json['sentence'] != null
+        ? json['sentence'] as String
+        : '';
+    val.txtime = json.containsKey('txtime') ? json['txtime'] as double : 0;
+    val.modemType = json.containsKey('modem_type') && json['modem_type'] != null
+        ? json['modem_type'] as String
+        : '';
+    val.sysSrc = json.containsKey('sys_src') && json['sys_src'] != null
+        ? json['sys_src'] as String
+        : '';
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.sysDst = json.containsKey('sys_dst') && json['sys_dst'] != null
+        ? json['sys_dst'] as String
+        : '';
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? SimAcousticMessageBitfieldFlags(json['flags'] as int)
+        : SimAcousticMessageBitfieldFlags(0);
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$SimAcousticMessage;
+  }
 
   _$SimAcousticMessage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13228,9 +15288,9 @@ class _$SimAcousticMessage extends SimAcousticMessage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'depth': depth,
@@ -13333,6 +15393,15 @@ class SimAcousticMessageBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  SimAcousticMessageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SimAcousticMessage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SimAcousticMessageBuilder fromJson(core.Map<String, dynamic> json) =>
+      SimAcousticMessageBuilder.fromJson(json);
+
   @override
   SimAcousticMessageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       SimAcousticMessageBuilder()..copyFromHeader(headerFrom);
@@ -13423,6 +15492,41 @@ class _$AcousticOperation extends AcousticOperation {
       (AcousticOperationBuilder()..update(updates)).build()
           as _$AcousticOperation;
 
+  factory _$AcousticOperation.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticOperationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? AcousticOperationEnumOp(json['op'] as int)
+        : AcousticOperationEnumOp(0);
+    val.system = json.containsKey('system') && json['system'] != null
+        ? json['system'] as String
+        : '';
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+
+    ImcMessage? msg;
+    if (json.containsKey('msg') && json['msg'] != null) {
+      var msgJson = json['msg'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        msg = builder?.build() as ImcMessage?;
+      }
+    }
+    val.msg = msg;
+
+    return val.build() as _$AcousticOperation;
+  }
+
   _$AcousticOperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -13507,9 +15611,9 @@ class _$AcousticOperation extends AcousticOperation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'system': system,
         'range': range,
@@ -13576,6 +15680,15 @@ class AcousticOperationBuilder extends Object
   AcousticOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AcousticOperationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticOperation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticOperationBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticOperationBuilder.fromJson(json);
 
   @override
   AcousticOperationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -13644,6 +15757,21 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
       (AcousticSystemsQueryBuilder()..update(updates)).build()
           as _$AcousticSystemsQuery;
 
+  factory _$AcousticSystemsQuery.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticSystemsQueryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$AcousticSystemsQuery;
+  }
+
   _$AcousticSystemsQuery._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -13704,9 +15832,9 @@ class _$AcousticSystemsQuery extends AcousticSystemsQuery {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -13755,6 +15883,15 @@ class AcousticSystemsQueryBuilder extends Object
   AcousticSystemsQueryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AcousticSystemsQueryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticSystemsQuery.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticSystemsQueryBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticSystemsQueryBuilder.fromJson(json);
 
   @override
   AcousticSystemsQueryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -13816,6 +15953,25 @@ class _$AcousticSystems extends AcousticSystems {
   factory _$AcousticSystems(
           [void Function(AcousticSystemsBuilder b)? updates]) =>
       (AcousticSystemsBuilder()..update(updates)).build() as _$AcousticSystems;
+
+  factory _$AcousticSystems.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticSystemsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.list = json.containsKey('list') && json['list'] != null
+        ? json['list'] as String
+        : '';
+
+    return val.build() as _$AcousticSystems;
+  }
 
   _$AcousticSystems._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -13882,9 +16038,9 @@ class _$AcousticSystems extends AcousticSystems {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'list': list,
       };
 }
@@ -13936,6 +16092,15 @@ class AcousticSystemsBuilder extends Object
   AcousticSystemsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AcousticSystemsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticSystems.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticSystemsBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticSystemsBuilder.fromJson(json);
 
   @override
   AcousticSystemsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -14002,6 +16167,28 @@ class _$AcousticLink extends AcousticLink {
 
   factory _$AcousticLink([void Function(AcousticLinkBuilder b)? updates]) =>
       (AcousticLinkBuilder()..update(updates)).build() as _$AcousticLink;
+
+  factory _$AcousticLink.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticLinkBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.peer = json.containsKey('peer') && json['peer'] != null
+        ? json['peer'] as String
+        : '';
+    val.rssi = json.containsKey('rssi') ? json['rssi'] as double : 0;
+    val.integrity =
+        json.containsKey('integrity') ? json['integrity'] as int : 0;
+
+    return val.build() as _$AcousticLink;
+  }
 
   _$AcousticLink._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14078,9 +16265,9 @@ class _$AcousticLink extends AcousticLink {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'peer': peer,
         'rssi': rssi,
         'integrity': integrity,
@@ -14141,6 +16328,15 @@ class AcousticLinkBuilder extends Object
   AcousticLinkBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AcousticLinkBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticLink.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticLinkBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticLinkBuilder.fromJson(json);
 
   @override
   AcousticLinkBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -14218,6 +16414,44 @@ class _$AcousticRequest extends AcousticRequest {
   factory _$AcousticRequest(
           [void Function(AcousticRequestBuilder b)? updates]) =>
       (AcousticRequestBuilder()..update(updates)).build() as _$AcousticRequest;
+
+  factory _$AcousticRequest.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticRequestBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as double : 0;
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+    val.type = json.containsKey('type') && json['type'] != null
+        ? AcousticRequestEnumType(json['type'] as int)
+        : AcousticRequestEnumType(0);
+
+    ImcMessage? msg;
+    if (json.containsKey('msg') && json['msg'] != null) {
+      var msgJson = json['msg'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        msg = builder?.build() as ImcMessage?;
+      }
+    }
+    val.msg = msg;
+
+    return val.build() as _$AcousticRequest;
+  }
 
   _$AcousticRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14313,9 +16547,9 @@ class _$AcousticRequest extends AcousticRequest {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'destination': destination,
         'timeout': timeout,
@@ -14392,6 +16626,15 @@ class AcousticRequestBuilder extends Object
   AcousticRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AcousticRequestBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticRequest.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticRequestBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticRequestBuilder.fromJson(json);
 
   @override
   AcousticRequestBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -14472,6 +16715,33 @@ class _$AcousticStatus extends AcousticStatus {
 
   factory _$AcousticStatus([void Function(AcousticStatusBuilder b)? updates]) =>
       (AcousticStatusBuilder()..update(updates)).build() as _$AcousticStatus;
+
+  factory _$AcousticStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.type = json.containsKey('type') && json['type'] != null
+        ? AcousticStatusEnumType(json['type'] as int)
+        : AcousticStatusEnumType(0);
+    val.status = json.containsKey('status') && json['status'] != null
+        ? AcousticStatusEnumStatus(json['status'] as int)
+        : AcousticStatusEnumStatus(0);
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+
+    return val.build() as _$AcousticStatus;
+  }
 
   _$AcousticStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14562,9 +16832,9 @@ class _$AcousticStatus extends AcousticStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'type': type.value,
         'status': status.value,
@@ -14636,6 +16906,15 @@ class AcousticStatusBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  AcousticStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticStatusBuilder.fromJson(json);
+
   @override
   AcousticStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       AcousticStatusBuilder()..copyFromHeader(headerFrom);
@@ -14706,6 +16985,23 @@ class _$Rpm extends Rpm {
   factory _$Rpm([void Function(RpmBuilder b)? updates]) =>
       (RpmBuilder()..update(updates)).build() as _$Rpm;
 
+  factory _$Rpm.fromJson(core.Map<String, dynamic> json) {
+    var val = RpmBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$Rpm;
+  }
+
   _$Rpm._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -14771,9 +17067,9 @@ class _$Rpm extends Rpm {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -14824,6 +17120,15 @@ class RpmBuilder extends Object
   RpmBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RpmBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Rpm.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RpmBuilder fromJson(core.Map<String, dynamic> json) =>
+      RpmBuilder.fromJson(json);
 
   @override
   RpmBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -14886,6 +17191,23 @@ class _$Voltage extends Voltage {
 
   factory _$Voltage([void Function(VoltageBuilder b)? updates]) =>
       (VoltageBuilder()..update(updates)).build() as _$Voltage;
+
+  factory _$Voltage.fromJson(core.Map<String, dynamic> json) {
+    var val = VoltageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Voltage;
+  }
 
   _$Voltage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -14952,9 +17274,9 @@ class _$Voltage extends Voltage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -15005,6 +17327,15 @@ class VoltageBuilder extends Object
   VoltageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VoltageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Voltage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VoltageBuilder fromJson(core.Map<String, dynamic> json) =>
+      VoltageBuilder.fromJson(json);
 
   @override
   VoltageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -15067,6 +17398,23 @@ class _$Current extends Current {
 
   factory _$Current([void Function(CurrentBuilder b)? updates]) =>
       (CurrentBuilder()..update(updates)).build() as _$Current;
+
+  factory _$Current.fromJson(core.Map<String, dynamic> json) {
+    var val = CurrentBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Current;
+  }
 
   _$Current._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15133,9 +17481,9 @@ class _$Current extends Current {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -15186,6 +17534,15 @@ class CurrentBuilder extends Object
   CurrentBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CurrentBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Current.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CurrentBuilder fromJson(core.Map<String, dynamic> json) =>
+      CurrentBuilder.fromJson(json);
 
   @override
   CurrentBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -15278,6 +17635,43 @@ class _$GpsFix extends GpsFix {
 
   factory _$GpsFix([void Function(GpsFixBuilder b)? updates]) =>
       (GpsFixBuilder()..update(updates)).build() as _$GpsFix;
+
+  factory _$GpsFix.fromJson(core.Map<String, dynamic> json) {
+    var val = GpsFixBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.validity = json.containsKey('validity') && json['validity'] != null
+        ? GpsFixBitfieldValidity(json['validity'] as int)
+        : GpsFixBitfieldValidity(0);
+    val.type = json.containsKey('type') && json['type'] != null
+        ? GpsFixEnumType(json['type'] as int)
+        : GpsFixEnumType(0);
+    val.utcYear = json.containsKey('utc_year') ? json['utc_year'] as int : 0;
+    val.utcMonth = json.containsKey('utc_month') ? json['utc_month'] as int : 0;
+    val.utcDay = json.containsKey('utc_day') ? json['utc_day'] as int : 0;
+    val.utcTime = json.containsKey('utc_time') ? json['utc_time'] as double : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.height = json.containsKey('height') ? json['height'] as double : 0;
+    val.satellites =
+        json.containsKey('satellites') ? json['satellites'] as int : 0;
+    val.cog = json.containsKey('cog') ? json['cog'] as double : 0;
+    val.sog = json.containsKey('sog') ? json['sog'] as double : 0;
+    val.hdop = json.containsKey('hdop') ? json['hdop'] as double : 0;
+    val.vdop = json.containsKey('vdop') ? json['vdop'] as double : 0;
+    val.hacc = json.containsKey('hacc') ? json['hacc'] as double : 0;
+    val.vacc = json.containsKey('vacc') ? json['vacc'] as double : 0;
+
+    return val.build() as _$GpsFix;
+  }
 
   _$GpsFix._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15418,9 +17812,9 @@ class _$GpsFix extends GpsFix {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'validity': validity.value,
         'type': type.value,
         'utc_year': utcYear,
@@ -15547,6 +17941,15 @@ class GpsFixBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  GpsFixBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpsFix.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpsFixBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpsFixBuilder.fromJson(json);
+
   @override
   GpsFixBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       GpsFixBuilder()..copyFromHeader(headerFrom);
@@ -15647,6 +18050,28 @@ class _$EulerAngles extends EulerAngles {
   factory _$EulerAngles([void Function(EulerAnglesBuilder b)? updates]) =>
       (EulerAnglesBuilder()..update(updates)).build() as _$EulerAngles;
 
+  factory _$EulerAngles.fromJson(core.Map<String, dynamic> json) {
+    var val = EulerAnglesBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.psiMagnetic =
+        json.containsKey('psi_magnetic') ? json['psi_magnetic'] as double : 0;
+
+    return val.build() as _$EulerAngles;
+  }
+
   _$EulerAngles._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -15738,9 +18163,9 @@ class _$EulerAngles extends EulerAngles {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'time': time,
         'phi': phi,
         'theta': theta,
@@ -15811,6 +18236,15 @@ class EulerAnglesBuilder extends Object
   EulerAnglesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EulerAnglesBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EulerAngles.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EulerAnglesBuilder fromJson(core.Map<String, dynamic> json) =>
+      EulerAnglesBuilder.fromJson(json);
 
   @override
   EulerAnglesBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -15891,6 +18325,28 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           [void Function(EulerAnglesDeltaBuilder b)? updates]) =>
       (EulerAnglesDeltaBuilder()..update(updates)).build()
           as _$EulerAnglesDelta;
+
+  factory _$EulerAnglesDelta.fromJson(core.Map<String, dynamic> json) {
+    var val = EulerAnglesDeltaBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.timestep =
+        json.containsKey('timestep') ? json['timestep'] as double : 0;
+
+    return val.build() as _$EulerAnglesDelta;
+  }
 
   _$EulerAnglesDelta._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -15982,9 +18438,9 @@ class _$EulerAnglesDelta extends EulerAnglesDelta {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'time': time,
         'x': x,
         'y': y,
@@ -16056,6 +18512,15 @@ class EulerAnglesDeltaBuilder extends Object
   EulerAnglesDeltaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EulerAnglesDeltaBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EulerAnglesDelta.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EulerAnglesDeltaBuilder fromJson(core.Map<String, dynamic> json) =>
+      EulerAnglesDeltaBuilder.fromJson(json);
 
   @override
   EulerAnglesDeltaBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -16133,6 +18598,26 @@ class _$AngularVelocity extends AngularVelocity {
   factory _$AngularVelocity(
           [void Function(AngularVelocityBuilder b)? updates]) =>
       (AngularVelocityBuilder()..update(updates)).build() as _$AngularVelocity;
+
+  factory _$AngularVelocity.fromJson(core.Map<String, dynamic> json) {
+    var val = AngularVelocityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$AngularVelocity;
+  }
 
   _$AngularVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16216,9 +18701,9 @@ class _$AngularVelocity extends AngularVelocity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'time': time,
         'x': x,
         'y': y,
@@ -16285,6 +18770,15 @@ class AngularVelocityBuilder extends Object
   AngularVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AngularVelocityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AngularVelocity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AngularVelocityBuilder fromJson(core.Map<String, dynamic> json) =>
+      AngularVelocityBuilder.fromJson(json);
 
   @override
   AngularVelocityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -16359,6 +18853,26 @@ class _$Acceleration extends Acceleration {
 
   factory _$Acceleration([void Function(AccelerationBuilder b)? updates]) =>
       (AccelerationBuilder()..update(updates)).build() as _$Acceleration;
+
+  factory _$Acceleration.fromJson(core.Map<String, dynamic> json) {
+    var val = AccelerationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$Acceleration;
+  }
 
   _$Acceleration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16442,9 +18956,9 @@ class _$Acceleration extends Acceleration {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'time': time,
         'x': x,
         'y': y,
@@ -16510,6 +19024,15 @@ class AccelerationBuilder extends Object
   AccelerationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AccelerationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Acceleration.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AccelerationBuilder fromJson(core.Map<String, dynamic> json) =>
+      AccelerationBuilder.fromJson(json);
 
   @override
   AccelerationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -16584,6 +19107,26 @@ class _$MagneticField extends MagneticField {
 
   factory _$MagneticField([void Function(MagneticFieldBuilder b)? updates]) =>
       (MagneticFieldBuilder()..update(updates)).build() as _$MagneticField;
+
+  factory _$MagneticField.fromJson(core.Map<String, dynamic> json) {
+    var val = MagneticFieldBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$MagneticField;
+  }
 
   _$MagneticField._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16667,9 +19210,9 @@ class _$MagneticField extends MagneticField {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'time': time,
         'x': x,
         'y': y,
@@ -16735,6 +19278,15 @@ class MagneticFieldBuilder extends Object
   MagneticFieldBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  MagneticFieldBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$MagneticField.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MagneticFieldBuilder fromJson(core.Map<String, dynamic> json) =>
+      MagneticFieldBuilder.fromJson(json);
 
   @override
   MagneticFieldBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -16809,6 +19361,28 @@ class _$GroundVelocity extends GroundVelocity {
 
   factory _$GroundVelocity([void Function(GroundVelocityBuilder b)? updates]) =>
       (GroundVelocityBuilder()..update(updates)).build() as _$GroundVelocity;
+
+  factory _$GroundVelocity.fromJson(core.Map<String, dynamic> json) {
+    var val = GroundVelocityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.validity = json.containsKey('validity') && json['validity'] != null
+        ? GroundVelocityBitfieldValidity(json['validity'] as int)
+        : GroundVelocityBitfieldValidity(0);
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$GroundVelocity;
+  }
 
   _$GroundVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -16893,9 +19467,9 @@ class _$GroundVelocity extends GroundVelocity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'validity': validity.value,
         'x': x,
         'y': y,
@@ -16962,6 +19536,15 @@ class GroundVelocityBuilder extends Object
   GroundVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GroundVelocityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GroundVelocity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GroundVelocityBuilder fromJson(core.Map<String, dynamic> json) =>
+      GroundVelocityBuilder.fromJson(json);
 
   @override
   GroundVelocityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -17036,6 +19619,28 @@ class _$WaterVelocity extends WaterVelocity {
 
   factory _$WaterVelocity([void Function(WaterVelocityBuilder b)? updates]) =>
       (WaterVelocityBuilder()..update(updates)).build() as _$WaterVelocity;
+
+  factory _$WaterVelocity.fromJson(core.Map<String, dynamic> json) {
+    var val = WaterVelocityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.validity = json.containsKey('validity') && json['validity'] != null
+        ? WaterVelocityBitfieldValidity(json['validity'] as int)
+        : WaterVelocityBitfieldValidity(0);
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$WaterVelocity;
+  }
 
   _$WaterVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17120,9 +19725,9 @@ class _$WaterVelocity extends WaterVelocity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'validity': validity.value,
         'x': x,
         'y': y,
@@ -17189,6 +19794,15 @@ class WaterVelocityBuilder extends Object
   WaterVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  WaterVelocityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$WaterVelocity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  WaterVelocityBuilder fromJson(core.Map<String, dynamic> json) =>
+      WaterVelocityBuilder.fromJson(json);
 
   @override
   WaterVelocityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -17263,6 +19877,26 @@ class _$VelocityDelta extends VelocityDelta {
 
   factory _$VelocityDelta([void Function(VelocityDeltaBuilder b)? updates]) =>
       (VelocityDeltaBuilder()..update(updates)).build() as _$VelocityDelta;
+
+  factory _$VelocityDelta.fromJson(core.Map<String, dynamic> json) {
+    var val = VelocityDeltaBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$VelocityDelta;
+  }
 
   _$VelocityDelta._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17346,9 +19980,9 @@ class _$VelocityDelta extends VelocityDelta {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'time': time,
         'x': x,
         'y': y,
@@ -17414,6 +20048,15 @@ class VelocityDeltaBuilder extends Object
   VelocityDeltaBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VelocityDeltaBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VelocityDelta.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VelocityDeltaBuilder fromJson(core.Map<String, dynamic> json) =>
+      VelocityDeltaBuilder.fromJson(json);
 
   @override
   VelocityDeltaBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -17488,6 +20131,56 @@ class _$Distance extends Distance {
 
   factory _$Distance([void Function(DistanceBuilder b)? updates]) =>
       (DistanceBuilder()..update(updates)).build() as _$Distance;
+
+  factory _$Distance.fromJson(core.Map<String, dynamic> json) {
+    var val = DistanceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.validity = json.containsKey('validity') && json['validity'] != null
+        ? DistanceEnumValidity(json['validity'] as int)
+        : DistanceEnumValidity(0);
+    var location = <DeviceState>[];
+    if (json.containsKey('location') && json['location'] != null) {
+      var listJson = json['location'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as DeviceState?;
+          if (m != null) location.add(m);
+        }
+      }
+    }
+    val.location = location;
+    var beamConfig = <BeamConfig>[];
+    if (json.containsKey('beam_config') && json['beam_config'] != null) {
+      var listJson = json['beam_config'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as BeamConfig?;
+          if (m != null) beamConfig.add(m);
+        }
+      }
+    }
+    val.beamConfig = beamConfig;
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Distance;
+  }
 
   _$Distance._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17572,9 +20265,9 @@ class _$Distance extends Distance {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'validity': validity.value,
         'location': [
           ...location.map((m) => m.toJson(false)).toList(),
@@ -17646,6 +20339,15 @@ class DistanceBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  DistanceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Distance.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DistanceBuilder fromJson(core.Map<String, dynamic> json) =>
+      DistanceBuilder.fromJson(json);
+
   @override
   DistanceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       DistanceBuilder()..copyFromHeader(headerFrom);
@@ -17714,6 +20416,23 @@ class _$Temperature extends Temperature {
   factory _$Temperature([void Function(TemperatureBuilder b)? updates]) =>
       (TemperatureBuilder()..update(updates)).build() as _$Temperature;
 
+  factory _$Temperature.fromJson(core.Map<String, dynamic> json) {
+    var val = TemperatureBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Temperature;
+  }
+
   _$Temperature._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -17779,9 +20498,9 @@ class _$Temperature extends Temperature {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -17832,6 +20551,15 @@ class TemperatureBuilder extends Object
   TemperatureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TemperatureBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Temperature.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TemperatureBuilder fromJson(core.Map<String, dynamic> json) =>
+      TemperatureBuilder.fromJson(json);
 
   @override
   TemperatureBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -17894,6 +20622,23 @@ class _$Pressure extends Pressure {
 
   factory _$Pressure([void Function(PressureBuilder b)? updates]) =>
       (PressureBuilder()..update(updates)).build() as _$Pressure;
+
+  factory _$Pressure.fromJson(core.Map<String, dynamic> json) {
+    var val = PressureBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Pressure;
+  }
 
   _$Pressure._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -17960,9 +20705,9 @@ class _$Pressure extends Pressure {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -18013,6 +20758,15 @@ class PressureBuilder extends Object
   PressureBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PressureBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Pressure.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PressureBuilder fromJson(core.Map<String, dynamic> json) =>
+      PressureBuilder.fromJson(json);
 
   @override
   PressureBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -18075,6 +20829,23 @@ class _$Depth extends Depth {
 
   factory _$Depth([void Function(DepthBuilder b)? updates]) =>
       (DepthBuilder()..update(updates)).build() as _$Depth;
+
+  factory _$Depth.fromJson(core.Map<String, dynamic> json) {
+    var val = DepthBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Depth;
+  }
 
   _$Depth._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18141,9 +20912,9 @@ class _$Depth extends Depth {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -18194,6 +20965,15 @@ class DepthBuilder extends Object
   DepthBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DepthBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Depth.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DepthBuilder fromJson(core.Map<String, dynamic> json) =>
+      DepthBuilder.fromJson(json);
 
   @override
   DepthBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -18256,6 +21036,23 @@ class _$DepthOffset extends DepthOffset {
 
   factory _$DepthOffset([void Function(DepthOffsetBuilder b)? updates]) =>
       (DepthOffsetBuilder()..update(updates)).build() as _$DepthOffset;
+
+  factory _$DepthOffset.fromJson(core.Map<String, dynamic> json) {
+    var val = DepthOffsetBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DepthOffset;
+  }
 
   _$DepthOffset._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18322,9 +21119,9 @@ class _$DepthOffset extends DepthOffset {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -18375,6 +21172,15 @@ class DepthOffsetBuilder extends Object
   DepthOffsetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DepthOffsetBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DepthOffset.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DepthOffsetBuilder fromJson(core.Map<String, dynamic> json) =>
+      DepthOffsetBuilder.fromJson(json);
 
   @override
   DepthOffsetBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -18437,6 +21243,23 @@ class _$SoundSpeed extends SoundSpeed {
 
   factory _$SoundSpeed([void Function(SoundSpeedBuilder b)? updates]) =>
       (SoundSpeedBuilder()..update(updates)).build() as _$SoundSpeed;
+
+  factory _$SoundSpeed.fromJson(core.Map<String, dynamic> json) {
+    var val = SoundSpeedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$SoundSpeed;
+  }
 
   _$SoundSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18503,9 +21326,9 @@ class _$SoundSpeed extends SoundSpeed {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -18556,6 +21379,15 @@ class SoundSpeedBuilder extends Object
   SoundSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SoundSpeedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SoundSpeed.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SoundSpeedBuilder fromJson(core.Map<String, dynamic> json) =>
+      SoundSpeedBuilder.fromJson(json);
 
   @override
   SoundSpeedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -18618,6 +21450,23 @@ class _$WaterDensity extends WaterDensity {
 
   factory _$WaterDensity([void Function(WaterDensityBuilder b)? updates]) =>
       (WaterDensityBuilder()..update(updates)).build() as _$WaterDensity;
+
+  factory _$WaterDensity.fromJson(core.Map<String, dynamic> json) {
+    var val = WaterDensityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$WaterDensity;
+  }
 
   _$WaterDensity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18684,9 +21533,9 @@ class _$WaterDensity extends WaterDensity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -18737,6 +21586,15 @@ class WaterDensityBuilder extends Object
   WaterDensityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  WaterDensityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$WaterDensity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  WaterDensityBuilder fromJson(core.Map<String, dynamic> json) =>
+      WaterDensityBuilder.fromJson(json);
 
   @override
   WaterDensityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -18799,6 +21657,23 @@ class _$Conductivity extends Conductivity {
 
   factory _$Conductivity([void Function(ConductivityBuilder b)? updates]) =>
       (ConductivityBuilder()..update(updates)).build() as _$Conductivity;
+
+  factory _$Conductivity.fromJson(core.Map<String, dynamic> json) {
+    var val = ConductivityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Conductivity;
+  }
 
   _$Conductivity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -18865,9 +21740,9 @@ class _$Conductivity extends Conductivity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -18918,6 +21793,15 @@ class ConductivityBuilder extends Object
   ConductivityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ConductivityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Conductivity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ConductivityBuilder fromJson(core.Map<String, dynamic> json) =>
+      ConductivityBuilder.fromJson(json);
 
   @override
   ConductivityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -18980,6 +21864,23 @@ class _$Salinity extends Salinity {
 
   factory _$Salinity([void Function(SalinityBuilder b)? updates]) =>
       (SalinityBuilder()..update(updates)).build() as _$Salinity;
+
+  factory _$Salinity.fromJson(core.Map<String, dynamic> json) {
+    var val = SalinityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Salinity;
+  }
 
   _$Salinity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19046,9 +21947,9 @@ class _$Salinity extends Salinity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -19099,6 +22000,15 @@ class SalinityBuilder extends Object
   SalinityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SalinityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Salinity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SalinityBuilder fromJson(core.Map<String, dynamic> json) =>
+      SalinityBuilder.fromJson(json);
 
   @override
   SalinityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -19165,6 +22075,27 @@ class _$WindSpeed extends WindSpeed {
 
   factory _$WindSpeed([void Function(WindSpeedBuilder b)? updates]) =>
       (WindSpeedBuilder()..update(updates)).build() as _$WindSpeed;
+
+  factory _$WindSpeed.fromJson(core.Map<String, dynamic> json) {
+    var val = WindSpeedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.direction =
+        json.containsKey('direction') ? json['direction'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.turbulence =
+        json.containsKey('turbulence') ? json['turbulence'] as double : 0;
+
+    return val.build() as _$WindSpeed;
+  }
 
   _$WindSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19243,9 +22174,9 @@ class _$WindSpeed extends WindSpeed {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'direction': direction,
         'speed': speed,
         'turbulence': turbulence,
@@ -19306,6 +22237,15 @@ class WindSpeedBuilder extends Object
   WindSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  WindSpeedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$WindSpeed.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  WindSpeedBuilder fromJson(core.Map<String, dynamic> json) =>
+      WindSpeedBuilder.fromJson(json);
 
   @override
   WindSpeedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -19375,6 +22315,23 @@ class _$RelativeHumidity extends RelativeHumidity {
       (RelativeHumidityBuilder()..update(updates)).build()
           as _$RelativeHumidity;
 
+  factory _$RelativeHumidity.fromJson(core.Map<String, dynamic> json) {
+    var val = RelativeHumidityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$RelativeHumidity;
+  }
+
   _$RelativeHumidity._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -19441,9 +22398,9 @@ class _$RelativeHumidity extends RelativeHumidity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -19495,6 +22452,15 @@ class RelativeHumidityBuilder extends Object
   RelativeHumidityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RelativeHumidityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RelativeHumidity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RelativeHumidityBuilder fromJson(core.Map<String, dynamic> json) =>
+      RelativeHumidityBuilder.fromJson(json);
 
   @override
   RelativeHumidityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -19557,6 +22523,25 @@ class _$DevDataText extends DevDataText {
 
   factory _$DevDataText([void Function(DevDataTextBuilder b)? updates]) =>
       (DevDataTextBuilder()..update(updates)).build() as _$DevDataText;
+
+  factory _$DevDataText.fromJson(core.Map<String, dynamic> json) {
+    var val = DevDataTextBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') && json['value'] != null
+        ? json['value'] as String
+        : '';
+
+    return val.build() as _$DevDataText;
+  }
 
   _$DevDataText._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19623,9 +22608,9 @@ class _$DevDataText extends DevDataText {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -19676,6 +22661,15 @@ class DevDataTextBuilder extends Object
   DevDataTextBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DevDataTextBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DevDataText.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DevDataTextBuilder fromJson(core.Map<String, dynamic> json) =>
+      DevDataTextBuilder.fromJson(json);
 
   @override
   DevDataTextBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -19738,6 +22732,25 @@ class _$DevDataBinary extends DevDataBinary {
 
   factory _$DevDataBinary([void Function(DevDataBinaryBuilder b)? updates]) =>
       (DevDataBinaryBuilder()..update(updates)).build() as _$DevDataBinary;
+
+  factory _$DevDataBinary.fromJson(core.Map<String, dynamic> json) {
+    var val = DevDataBinaryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value')
+        ? base64.decode(json['value'] as String)
+        : <int>[];
+
+    return val.build() as _$DevDataBinary;
+  }
 
   _$DevDataBinary._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19804,9 +22817,9 @@ class _$DevDataBinary extends DevDataBinary {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': base64.encode(value),
       };
 }
@@ -19857,6 +22870,15 @@ class DevDataBinaryBuilder extends Object
   DevDataBinaryBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DevDataBinaryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DevDataBinary.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DevDataBinaryBuilder fromJson(core.Map<String, dynamic> json) =>
+      DevDataBinaryBuilder.fromJson(json);
 
   @override
   DevDataBinaryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -19919,6 +22941,23 @@ class _$Force extends Force {
 
   factory _$Force([void Function(ForceBuilder b)? updates]) =>
       (ForceBuilder()..update(updates)).build() as _$Force;
+
+  factory _$Force.fromJson(core.Map<String, dynamic> json) {
+    var val = ForceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Force;
+  }
 
   _$Force._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -19985,9 +23024,9 @@ class _$Force extends Force {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -20038,6 +23077,15 @@ class ForceBuilder extends Object
   ForceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ForceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Force.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ForceBuilder fromJson(core.Map<String, dynamic> json) =>
+      ForceBuilder.fromJson(json);
 
   @override
   ForceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -20114,6 +23162,51 @@ class _$SonarData extends SonarData {
 
   factory _$SonarData([void Function(SonarDataBuilder b)? updates]) =>
       (SonarDataBuilder()..update(updates)).build() as _$SonarData;
+
+  factory _$SonarData.fromJson(core.Map<String, dynamic> json) {
+    var val = SonarDataBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? SonarDataEnumType(json['type'] as int)
+        : SonarDataEnumType(0);
+    val.frequency =
+        json.containsKey('frequency') ? json['frequency'] as int : 0;
+    val.minRange = json.containsKey('min_range') ? json['min_range'] as int : 0;
+    val.maxRange = json.containsKey('max_range') ? json['max_range'] as int : 0;
+    val.bitsPerPoint =
+        json.containsKey('bits_per_point') ? json['bits_per_point'] as int : 0;
+    val.scaleFactor =
+        json.containsKey('scale_factor') ? json['scale_factor'] as double : 0;
+    var beamConfig = <BeamConfig>[];
+    if (json.containsKey('beam_config') && json['beam_config'] != null) {
+      var listJson = json['beam_config'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as BeamConfig?;
+          if (m != null) beamConfig.add(m);
+        }
+      }
+    }
+    val.beamConfig = beamConfig;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$SonarData;
+  }
 
   _$SonarData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20220,9 +23313,9 @@ class _$SonarData extends SonarData {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'frequency': frequency,
         'min_range': minRange,
@@ -20312,6 +23405,15 @@ class SonarDataBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  SonarDataBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SonarData.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SonarDataBuilder fromJson(core.Map<String, dynamic> json) =>
+      SonarDataBuilder.fromJson(json);
+
   @override
   SonarDataBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       SonarDataBuilder()..copyFromHeader(headerFrom);
@@ -20385,6 +23487,21 @@ class _$Pulse extends Pulse {
   factory _$Pulse([void Function(PulseBuilder b)? updates]) =>
       (PulseBuilder()..update(updates)).build() as _$Pulse;
 
+  factory _$Pulse.fromJson(core.Map<String, dynamic> json) {
+    var val = PulseBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$Pulse;
+  }
+
   _$Pulse._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -20443,9 +23560,9 @@ class _$Pulse extends Pulse {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -20491,6 +23608,15 @@ class PulseBuilder extends Object
   PulseBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PulseBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Pulse.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PulseBuilder fromJson(core.Map<String, dynamic> json) =>
+      PulseBuilder.fromJson(json);
 
   @override
   PulseBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -20553,6 +23679,25 @@ class _$PulseDetectionControl extends PulseDetectionControl {
           [void Function(PulseDetectionControlBuilder b)? updates]) =>
       (PulseDetectionControlBuilder()..update(updates)).build()
           as _$PulseDetectionControl;
+
+  factory _$PulseDetectionControl.fromJson(core.Map<String, dynamic> json) {
+    var val = PulseDetectionControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? PulseDetectionControlEnumOp(json['op'] as int)
+        : PulseDetectionControlEnumOp(0);
+
+    return val.build() as _$PulseDetectionControl;
+  }
 
   _$PulseDetectionControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20621,9 +23766,9 @@ class _$PulseDetectionControl extends PulseDetectionControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
       };
 }
@@ -20677,6 +23822,15 @@ class PulseDetectionControlBuilder extends Object
   PulseDetectionControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PulseDetectionControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PulseDetectionControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PulseDetectionControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      PulseDetectionControlBuilder.fromJson(json);
 
   @override
   PulseDetectionControlBuilder newInstance(
@@ -20744,6 +23898,28 @@ class _$FuelLevel extends FuelLevel {
 
   factory _$FuelLevel([void Function(FuelLevelBuilder b)? updates]) =>
       (FuelLevelBuilder()..update(updates)).build() as _$FuelLevel;
+
+  factory _$FuelLevel.fromJson(core.Map<String, dynamic> json) {
+    var val = FuelLevelBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.confidence =
+        json.containsKey('confidence') ? json['confidence'] as double : 0;
+    val.opmodes = json.containsKey('opmodes') && json['opmodes'] != null
+        ? json['opmodes'] as String
+        : '';
+
+    return val.build() as _$FuelLevel;
+  }
 
   _$FuelLevel._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -20821,9 +23997,9 @@ class _$FuelLevel extends FuelLevel {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'confidence': confidence,
         'opmodes': opmodes,
@@ -20884,6 +24060,15 @@ class FuelLevelBuilder extends Object
   FuelLevelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FuelLevelBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FuelLevel.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FuelLevelBuilder fromJson(core.Map<String, dynamic> json) =>
+      FuelLevelBuilder.fromJson(json);
 
   @override
   FuelLevelBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -20978,6 +24163,39 @@ class _$GpsNavData extends GpsNavData {
 
   factory _$GpsNavData([void Function(GpsNavDataBuilder b)? updates]) =>
       (GpsNavDataBuilder()..update(updates)).build() as _$GpsNavData;
+
+  factory _$GpsNavData.fromJson(core.Map<String, dynamic> json) {
+    var val = GpsNavDataBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.itow = json.containsKey('itow') ? json['itow'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.heightEll =
+        json.containsKey('height_ell') ? json['height_ell'] as double : 0;
+    val.heightSea =
+        json.containsKey('height_sea') ? json['height_sea'] as double : 0;
+    val.hacc = json.containsKey('hacc') ? json['hacc'] as double : 0;
+    val.vacc = json.containsKey('vacc') ? json['vacc'] as double : 0;
+    val.velN = json.containsKey('vel_n') ? json['vel_n'] as double : 0;
+    val.velE = json.containsKey('vel_e') ? json['vel_e'] as double : 0;
+    val.velD = json.containsKey('vel_d') ? json['vel_d'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.gspeed = json.containsKey('gspeed') ? json['gspeed'] as double : 0;
+    val.heading = json.containsKey('heading') ? json['heading'] as double : 0;
+    val.sacc = json.containsKey('sacc') ? json['sacc'] as double : 0;
+    val.cacc = json.containsKey('cacc') ? json['cacc'] as double : 0;
+
+    return val.build() as _$GpsNavData;
+  }
 
   _$GpsNavData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21115,9 +24333,9 @@ class _$GpsNavData extends GpsNavData {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'itow': itow,
         'lat': lat,
         'lon': lon,
@@ -21239,6 +24457,15 @@ class GpsNavDataBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  GpsNavDataBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpsNavData.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpsNavDataBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpsNavDataBuilder.fromJson(json);
+
   @override
   GpsNavDataBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       GpsNavDataBuilder()..copyFromHeader(headerFrom);
@@ -21331,6 +24558,24 @@ class _$ServoPosition extends ServoPosition {
   factory _$ServoPosition([void Function(ServoPositionBuilder b)? updates]) =>
       (ServoPositionBuilder()..update(updates)).build() as _$ServoPosition;
 
+  factory _$ServoPosition.fromJson(core.Map<String, dynamic> json) {
+    var val = ServoPositionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$ServoPosition;
+  }
+
   _$ServoPosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -21401,9 +24646,9 @@ class _$ServoPosition extends ServoPosition {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'value': value,
       };
@@ -21459,6 +24704,15 @@ class ServoPositionBuilder extends Object
   ServoPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ServoPositionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ServoPosition.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ServoPositionBuilder fromJson(core.Map<String, dynamic> json) =>
+      ServoPositionBuilder.fromJson(json);
 
   @override
   ServoPositionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -21533,6 +24787,28 @@ class _$DeviceState extends DeviceState {
 
   factory _$DeviceState([void Function(DeviceStateBuilder b)? updates]) =>
       (DeviceStateBuilder()..update(updates)).build() as _$DeviceState;
+
+  factory _$DeviceState.fromJson(core.Map<String, dynamic> json) {
+    var val = DeviceStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+
+    return val.build() as _$DeviceState;
+  }
 
   _$DeviceState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -21628,9 +24904,9 @@ class _$DeviceState extends DeviceState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -21707,6 +24983,15 @@ class DeviceStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  DeviceStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DeviceState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DeviceStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      DeviceStateBuilder.fromJson(json);
+
   @override
   DeviceStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       DeviceStateBuilder()..copyFromHeader(headerFrom);
@@ -21781,6 +25066,26 @@ class _$BeamConfig extends BeamConfig {
   factory _$BeamConfig([void Function(BeamConfigBuilder b)? updates]) =>
       (BeamConfigBuilder()..update(updates)).build() as _$BeamConfig;
 
+  factory _$BeamConfig.fromJson(core.Map<String, dynamic> json) {
+    var val = BeamConfigBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.beamWidth =
+        json.containsKey('beam_width') ? json['beam_width'] as double : 0;
+    val.beamHeight =
+        json.containsKey('beam_height') ? json['beam_height'] as double : 0;
+
+    return val.build() as _$BeamConfig;
+  }
+
   _$BeamConfig._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -21854,9 +25159,9 @@ class _$BeamConfig extends BeamConfig {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'beam_width': beamWidth,
         'beam_height': beamHeight,
       };
@@ -21912,6 +25217,15 @@ class BeamConfigBuilder extends Object
   BeamConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  BeamConfigBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$BeamConfig.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  BeamConfigBuilder fromJson(core.Map<String, dynamic> json) =>
+      BeamConfigBuilder.fromJson(json);
 
   @override
   BeamConfigBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -21976,6 +25290,25 @@ class _$DataSanity extends DataSanity {
 
   factory _$DataSanity([void Function(DataSanityBuilder b)? updates]) =>
       (DataSanityBuilder()..update(updates)).build() as _$DataSanity;
+
+  factory _$DataSanity.fromJson(core.Map<String, dynamic> json) {
+    var val = DataSanityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sane = json.containsKey('sane') && json['sane'] != null
+        ? DataSanityEnumSane(json['sane'] as int)
+        : DataSanityEnumSane(0);
+
+    return val.build() as _$DataSanity;
+  }
 
   _$DataSanity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22042,9 +25375,9 @@ class _$DataSanity extends DataSanity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sane': sane.value,
       };
 }
@@ -22095,6 +25428,15 @@ class DataSanityBuilder extends Object
   DataSanityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DataSanityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DataSanity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DataSanityBuilder fromJson(core.Map<String, dynamic> json) =>
+      DataSanityBuilder.fromJson(json);
 
   @override
   DataSanityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -22157,6 +25499,23 @@ class _$RhodamineDye extends RhodamineDye {
 
   factory _$RhodamineDye([void Function(RhodamineDyeBuilder b)? updates]) =>
       (RhodamineDyeBuilder()..update(updates)).build() as _$RhodamineDye;
+
+  factory _$RhodamineDye.fromJson(core.Map<String, dynamic> json) {
+    var val = RhodamineDyeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$RhodamineDye;
+  }
 
   _$RhodamineDye._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22223,9 +25582,9 @@ class _$RhodamineDye extends RhodamineDye {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -22276,6 +25635,15 @@ class RhodamineDyeBuilder extends Object
   RhodamineDyeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RhodamineDyeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RhodamineDye.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RhodamineDyeBuilder fromJson(core.Map<String, dynamic> json) =>
+      RhodamineDyeBuilder.fromJson(json);
 
   @override
   RhodamineDyeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -22338,6 +25706,23 @@ class _$CrudeOil extends CrudeOil {
 
   factory _$CrudeOil([void Function(CrudeOilBuilder b)? updates]) =>
       (CrudeOilBuilder()..update(updates)).build() as _$CrudeOil;
+
+  factory _$CrudeOil.fromJson(core.Map<String, dynamic> json) {
+    var val = CrudeOilBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$CrudeOil;
+  }
 
   _$CrudeOil._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22404,9 +25789,9 @@ class _$CrudeOil extends CrudeOil {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -22457,6 +25842,15 @@ class CrudeOilBuilder extends Object
   CrudeOilBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CrudeOilBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CrudeOil.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CrudeOilBuilder fromJson(core.Map<String, dynamic> json) =>
+      CrudeOilBuilder.fromJson(json);
 
   @override
   CrudeOilBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -22519,6 +25913,23 @@ class _$FineOil extends FineOil {
 
   factory _$FineOil([void Function(FineOilBuilder b)? updates]) =>
       (FineOilBuilder()..update(updates)).build() as _$FineOil;
+
+  factory _$FineOil.fromJson(core.Map<String, dynamic> json) {
+    var val = FineOilBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$FineOil;
+  }
 
   _$FineOil._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22585,9 +25996,9 @@ class _$FineOil extends FineOil {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -22638,6 +26049,15 @@ class FineOilBuilder extends Object
   FineOilBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FineOilBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FineOil.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FineOilBuilder fromJson(core.Map<String, dynamic> json) =>
+      FineOilBuilder.fromJson(json);
 
   @override
   FineOilBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -22700,6 +26120,23 @@ class _$Turbidity extends Turbidity {
 
   factory _$Turbidity([void Function(TurbidityBuilder b)? updates]) =>
       (TurbidityBuilder()..update(updates)).build() as _$Turbidity;
+
+  factory _$Turbidity.fromJson(core.Map<String, dynamic> json) {
+    var val = TurbidityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Turbidity;
+  }
 
   _$Turbidity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22766,9 +26203,9 @@ class _$Turbidity extends Turbidity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -22819,6 +26256,15 @@ class TurbidityBuilder extends Object
   TurbidityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TurbidityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Turbidity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TurbidityBuilder fromJson(core.Map<String, dynamic> json) =>
+      TurbidityBuilder.fromJson(json);
 
   @override
   TurbidityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -22881,6 +26327,23 @@ class _$Chlorophyll extends Chlorophyll {
 
   factory _$Chlorophyll([void Function(ChlorophyllBuilder b)? updates]) =>
       (ChlorophyllBuilder()..update(updates)).build() as _$Chlorophyll;
+
+  factory _$Chlorophyll.fromJson(core.Map<String, dynamic> json) {
+    var val = ChlorophyllBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Chlorophyll;
+  }
 
   _$Chlorophyll._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -22947,9 +26410,9 @@ class _$Chlorophyll extends Chlorophyll {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -23000,6 +26463,15 @@ class ChlorophyllBuilder extends Object
   ChlorophyllBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ChlorophyllBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Chlorophyll.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ChlorophyllBuilder fromJson(core.Map<String, dynamic> json) =>
+      ChlorophyllBuilder.fromJson(json);
 
   @override
   ChlorophyllBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -23062,6 +26534,23 @@ class _$Fluorescein extends Fluorescein {
 
   factory _$Fluorescein([void Function(FluoresceinBuilder b)? updates]) =>
       (FluoresceinBuilder()..update(updates)).build() as _$Fluorescein;
+
+  factory _$Fluorescein.fromJson(core.Map<String, dynamic> json) {
+    var val = FluoresceinBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Fluorescein;
+  }
 
   _$Fluorescein._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23128,9 +26617,9 @@ class _$Fluorescein extends Fluorescein {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -23181,6 +26670,15 @@ class FluoresceinBuilder extends Object
   FluoresceinBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FluoresceinBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Fluorescein.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FluoresceinBuilder fromJson(core.Map<String, dynamic> json) =>
+      FluoresceinBuilder.fromJson(json);
 
   @override
   FluoresceinBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -23243,6 +26741,23 @@ class _$Phycocyanin extends Phycocyanin {
 
   factory _$Phycocyanin([void Function(PhycocyaninBuilder b)? updates]) =>
       (PhycocyaninBuilder()..update(updates)).build() as _$Phycocyanin;
+
+  factory _$Phycocyanin.fromJson(core.Map<String, dynamic> json) {
+    var val = PhycocyaninBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Phycocyanin;
+  }
 
   _$Phycocyanin._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23309,9 +26824,9 @@ class _$Phycocyanin extends Phycocyanin {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -23362,6 +26877,15 @@ class PhycocyaninBuilder extends Object
   PhycocyaninBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PhycocyaninBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Phycocyanin.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PhycocyaninBuilder fromJson(core.Map<String, dynamic> json) =>
+      PhycocyaninBuilder.fromJson(json);
 
   @override
   PhycocyaninBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -23424,6 +26948,23 @@ class _$Phycoerythrin extends Phycoerythrin {
 
   factory _$Phycoerythrin([void Function(PhycoerythrinBuilder b)? updates]) =>
       (PhycoerythrinBuilder()..update(updates)).build() as _$Phycoerythrin;
+
+  factory _$Phycoerythrin.fromJson(core.Map<String, dynamic> json) {
+    var val = PhycoerythrinBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Phycoerythrin;
+  }
 
   _$Phycoerythrin._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23490,9 +27031,9 @@ class _$Phycoerythrin extends Phycoerythrin {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -23543,6 +27084,15 @@ class PhycoerythrinBuilder extends Object
   PhycoerythrinBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PhycoerythrinBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Phycoerythrin.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PhycoerythrinBuilder fromJson(core.Map<String, dynamic> json) =>
+      PhycoerythrinBuilder.fromJson(json);
 
   @override
   PhycoerythrinBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -23633,6 +27183,44 @@ class _$GpsFixRtk extends GpsFixRtk {
 
   factory _$GpsFixRtk([void Function(GpsFixRtkBuilder b)? updates]) =>
       (GpsFixRtkBuilder()..update(updates)).build() as _$GpsFixRtk;
+
+  factory _$GpsFixRtk.fromJson(core.Map<String, dynamic> json) {
+    var val = GpsFixRtkBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.validity = json.containsKey('validity') && json['validity'] != null
+        ? GpsFixRtkBitfieldValidity(json['validity'] as int)
+        : GpsFixRtkBitfieldValidity(0);
+    val.type = json.containsKey('type') && json['type'] != null
+        ? GpsFixRtkEnumType(json['type'] as int)
+        : GpsFixRtkEnumType(0);
+    val.tow = json.containsKey('tow') ? json['tow'] as int : 0;
+    val.baseLat = json.containsKey('base_lat') ? json['base_lat'] as double : 0;
+    val.baseLon = json.containsKey('base_lon') ? json['base_lon'] as double : 0;
+    val.baseHeight =
+        json.containsKey('base_height') ? json['base_height'] as double : 0;
+    val.n = json.containsKey('n') ? json['n'] as double : 0;
+    val.e = json.containsKey('e') ? json['e'] as double : 0;
+    val.d = json.containsKey('d') ? json['d'] as double : 0;
+    val.vN = json.containsKey('v_n') ? json['v_n'] as double : 0;
+    val.vE = json.containsKey('v_e') ? json['v_e'] as double : 0;
+    val.vD = json.containsKey('v_d') ? json['v_d'] as double : 0;
+    val.satellites =
+        json.containsKey('satellites') ? json['satellites'] as int : 0;
+    val.iarHyp = json.containsKey('iar_hyp') ? json['iar_hyp'] as int : 0;
+    val.iarRatio =
+        json.containsKey('iar_ratio') ? json['iar_ratio'] as double : 0;
+
+    return val.build() as _$GpsFixRtk;
+  }
 
   _$GpsFixRtk._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -23773,9 +27361,9 @@ class _$GpsFixRtk extends GpsFixRtk {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'validity': validity.value,
         'type': type.value,
         'tow': tow,
@@ -23898,6 +27486,15 @@ class GpsFixRtkBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  GpsFixRtkBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpsFixRtk.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpsFixRtkBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpsFixRtkBuilder.fromJson(json);
+
   @override
   GpsFixRtkBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       GpsFixRtkBuilder()..copyFromHeader(headerFrom);
@@ -23991,6 +27588,36 @@ class _$ExternalNavData extends ExternalNavData {
           [void Function(ExternalNavDataBuilder b)? updates]) =>
       (ExternalNavDataBuilder()..update(updates)).build() as _$ExternalNavData;
 
+  factory _$ExternalNavData.fromJson(core.Map<String, dynamic> json) {
+    var val = ExternalNavDataBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    EstimatedState? state;
+    if (json.containsKey('state') && json['state'] != null) {
+      var msgJson = json['state'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        state = builder?.build() as EstimatedState?;
+      }
+    }
+    val.state = state;
+    val.type = json.containsKey('type') && json['type'] != null
+        ? ExternalNavDataEnumType(json['type'] as int)
+        : ExternalNavDataEnumType(0);
+
+    return val.build() as _$ExternalNavData;
+  }
+
   _$ExternalNavData._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -24061,9 +27688,9 @@ class _$ExternalNavData extends ExternalNavData {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state?.toJson(false),
         'type': type.value,
       };
@@ -24120,6 +27747,15 @@ class ExternalNavDataBuilder extends Object
   ExternalNavDataBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ExternalNavDataBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ExternalNavData.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ExternalNavDataBuilder fromJson(core.Map<String, dynamic> json) =>
+      ExternalNavDataBuilder.fromJson(json);
 
   @override
   ExternalNavDataBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -24186,6 +27822,23 @@ class _$DissolvedOxygen extends DissolvedOxygen {
           [void Function(DissolvedOxygenBuilder b)? updates]) =>
       (DissolvedOxygenBuilder()..update(updates)).build() as _$DissolvedOxygen;
 
+  factory _$DissolvedOxygen.fromJson(core.Map<String, dynamic> json) {
+    var val = DissolvedOxygenBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DissolvedOxygen;
+  }
+
   _$DissolvedOxygen._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -24251,9 +27904,9 @@ class _$DissolvedOxygen extends DissolvedOxygen {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -24305,6 +27958,15 @@ class DissolvedOxygenBuilder extends Object
   DissolvedOxygenBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DissolvedOxygenBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DissolvedOxygen.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DissolvedOxygenBuilder fromJson(core.Map<String, dynamic> json) =>
+      DissolvedOxygenBuilder.fromJson(json);
 
   @override
   DissolvedOxygenBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -24367,6 +28029,23 @@ class _$AirSaturation extends AirSaturation {
 
   factory _$AirSaturation([void Function(AirSaturationBuilder b)? updates]) =>
       (AirSaturationBuilder()..update(updates)).build() as _$AirSaturation;
+
+  factory _$AirSaturation.fromJson(core.Map<String, dynamic> json) {
+    var val = AirSaturationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$AirSaturation;
+  }
 
   _$AirSaturation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24433,9 +28112,9 @@ class _$AirSaturation extends AirSaturation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -24486,6 +28165,15 @@ class AirSaturationBuilder extends Object
   AirSaturationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AirSaturationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AirSaturation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AirSaturationBuilder fromJson(core.Map<String, dynamic> json) =>
+      AirSaturationBuilder.fromJson(json);
 
   @override
   AirSaturationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -24548,6 +28236,23 @@ class _$Throttle extends Throttle {
 
   factory _$Throttle([void Function(ThrottleBuilder b)? updates]) =>
       (ThrottleBuilder()..update(updates)).build() as _$Throttle;
+
+  factory _$Throttle.fromJson(core.Map<String, dynamic> json) {
+    var val = ThrottleBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Throttle;
+  }
 
   _$Throttle._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24614,9 +28319,9 @@ class _$Throttle extends Throttle {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -24667,6 +28372,15 @@ class ThrottleBuilder extends Object
   ThrottleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ThrottleBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Throttle.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ThrottleBuilder fromJson(core.Map<String, dynamic> json) =>
+      ThrottleBuilder.fromJson(json);
 
   @override
   ThrottleBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -24729,6 +28443,23 @@ class _$PH extends PH {
 
   factory _$PH([void Function(PHBuilder b)? updates]) =>
       (PHBuilder()..update(updates)).build() as _$PH;
+
+  factory _$PH.fromJson(core.Map<String, dynamic> json) {
+    var val = PHBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$PH;
+  }
 
   _$PH._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24795,9 +28526,9 @@ class _$PH extends PH {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -24848,6 +28579,15 @@ class PHBuilder extends Object
   PHBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PHBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PH.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PHBuilder fromJson(core.Map<String, dynamic> json) =>
+      PHBuilder.fromJson(json);
 
   @override
   PHBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -24910,6 +28650,23 @@ class _$Redox extends Redox {
 
   factory _$Redox([void Function(RedoxBuilder b)? updates]) =>
       (RedoxBuilder()..update(updates)).build() as _$Redox;
+
+  factory _$Redox.fromJson(core.Map<String, dynamic> json) {
+    var val = RedoxBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$Redox;
+  }
 
   _$Redox._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -24976,9 +28733,9 @@ class _$Redox extends Redox {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -25029,6 +28786,15 @@ class RedoxBuilder extends Object
   RedoxBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RedoxBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Redox.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RedoxBuilder fromJson(core.Map<String, dynamic> json) =>
+      RedoxBuilder.fromJson(json);
 
   @override
   RedoxBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -25095,6 +28861,27 @@ class _$CameraZoom extends CameraZoom {
 
   factory _$CameraZoom([void Function(CameraZoomBuilder b)? updates]) =>
       (CameraZoomBuilder()..update(updates)).build() as _$CameraZoom;
+
+  factory _$CameraZoom.fromJson(core.Map<String, dynamic> json) {
+    var val = CameraZoomBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.zoom = json.containsKey('zoom') ? json['zoom'] as int : 0;
+    val.action = json.containsKey('action') && json['action'] != null
+        ? CameraZoomEnumAction(json['action'] as int)
+        : CameraZoomEnumAction(0);
+
+    return val.build() as _$CameraZoom;
+  }
 
   _$CameraZoom._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25171,9 +28958,9 @@ class _$CameraZoom extends CameraZoom {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'zoom': zoom,
         'action': action.value,
@@ -25234,6 +29021,15 @@ class CameraZoomBuilder extends Object
   CameraZoomBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CameraZoomBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CameraZoom.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CameraZoomBuilder fromJson(core.Map<String, dynamic> json) =>
+      CameraZoomBuilder.fromJson(json);
 
   @override
   CameraZoomBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -25304,6 +29100,24 @@ class _$SetThrusterActuation extends SetThrusterActuation {
           [void Function(SetThrusterActuationBuilder b)? updates]) =>
       (SetThrusterActuationBuilder()..update(updates)).build()
           as _$SetThrusterActuation;
+
+  factory _$SetThrusterActuation.fromJson(core.Map<String, dynamic> json) {
+    var val = SetThrusterActuationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$SetThrusterActuation;
+  }
 
   _$SetThrusterActuation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25377,9 +29191,9 @@ class _$SetThrusterActuation extends SetThrusterActuation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'value': value,
       };
@@ -25438,6 +29252,15 @@ class SetThrusterActuationBuilder extends Object
   SetThrusterActuationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetThrusterActuationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetThrusterActuation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetThrusterActuationBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetThrusterActuationBuilder.fromJson(json);
 
   @override
   SetThrusterActuationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -25506,6 +29329,24 @@ class _$SetServoPosition extends SetServoPosition {
           [void Function(SetServoPositionBuilder b)? updates]) =>
       (SetServoPositionBuilder()..update(updates)).build()
           as _$SetServoPosition;
+
+  factory _$SetServoPosition.fromJson(core.Map<String, dynamic> json) {
+    var val = SetServoPositionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$SetServoPosition;
+  }
 
   _$SetServoPosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25578,9 +29419,9 @@ class _$SetServoPosition extends SetServoPosition {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'value': value,
       };
@@ -25637,6 +29478,15 @@ class SetServoPositionBuilder extends Object
   SetServoPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetServoPositionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetServoPosition.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetServoPositionBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetServoPositionBuilder.fromJson(json);
 
   @override
   SetServoPositionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -25705,6 +29555,25 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           [void Function(SetControlSurfaceDeflectionBuilder b)? updates]) =>
       (SetControlSurfaceDeflectionBuilder()..update(updates)).build()
           as _$SetControlSurfaceDeflection;
+
+  factory _$SetControlSurfaceDeflection.fromJson(
+      core.Map<String, dynamic> json) {
+    var val = SetControlSurfaceDeflectionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.angle = json.containsKey('angle') ? json['angle'] as double : 0;
+
+    return val.build() as _$SetControlSurfaceDeflection;
+  }
 
   _$SetControlSurfaceDeflection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25778,9 +29647,9 @@ class _$SetControlSurfaceDeflection extends SetControlSurfaceDeflection {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'angle': angle,
       };
@@ -25840,6 +29709,15 @@ class SetControlSurfaceDeflectionBuilder extends Object
       ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetControlSurfaceDeflectionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetControlSurfaceDeflection.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetControlSurfaceDeflectionBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetControlSurfaceDeflectionBuilder.fromJson(json);
 
   @override
   SetControlSurfaceDeflectionBuilder newInstance(
@@ -25909,6 +29787,28 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
           [void Function(RemoteActionsRequestBuilder b)? updates]) =>
       (RemoteActionsRequestBuilder()..update(updates)).build()
           as _$RemoteActionsRequest;
+
+  factory _$RemoteActionsRequest.fromJson(core.Map<String, dynamic> json) {
+    var val = RemoteActionsRequestBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? RemoteActionsRequestEnumOp(json['op'] as int)
+        : RemoteActionsRequestEnumOp(0);
+    val.actions = json.containsKey('actions') && json['actions'] != null
+        ? json['actions'] as String
+        : '';
+
+    return val.build() as _$RemoteActionsRequest;
+  }
 
   _$RemoteActionsRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -25982,9 +29882,9 @@ class _$RemoteActionsRequest extends RemoteActionsRequest {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'actions': actions,
       };
@@ -26043,6 +29943,15 @@ class RemoteActionsRequestBuilder extends Object
   RemoteActionsRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RemoteActionsRequestBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RemoteActionsRequest.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RemoteActionsRequestBuilder fromJson(core.Map<String, dynamic> json) =>
+      RemoteActionsRequestBuilder.fromJson(json);
 
   @override
   RemoteActionsRequestBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -26107,6 +30016,25 @@ class _$RemoteActions extends RemoteActions {
 
   factory _$RemoteActions([void Function(RemoteActionsBuilder b)? updates]) =>
       (RemoteActionsBuilder()..update(updates)).build() as _$RemoteActions;
+
+  factory _$RemoteActions.fromJson(core.Map<String, dynamic> json) {
+    var val = RemoteActionsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.actions = json.containsKey('actions') && json['actions'] != null
+        ? json['actions'] as String
+        : '';
+
+    return val.build() as _$RemoteActions;
+  }
 
   _$RemoteActions._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26173,9 +30101,9 @@ class _$RemoteActions extends RemoteActions {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'actions': actions,
       };
 }
@@ -26226,6 +30154,15 @@ class RemoteActionsBuilder extends Object
   RemoteActionsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RemoteActionsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RemoteActions.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RemoteActionsBuilder fromJson(core.Map<String, dynamic> json) =>
+      RemoteActionsBuilder.fromJson(json);
 
   @override
   RemoteActionsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -26290,6 +30227,24 @@ class _$ButtonEvent extends ButtonEvent {
 
   factory _$ButtonEvent([void Function(ButtonEventBuilder b)? updates]) =>
       (ButtonEventBuilder()..update(updates)).build() as _$ButtonEvent;
+
+  factory _$ButtonEvent.fromJson(core.Map<String, dynamic> json) {
+    var val = ButtonEventBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.button = json.containsKey('button') ? json['button'] as int : 0;
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$ButtonEvent;
+  }
 
   _$ButtonEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26361,9 +30316,9 @@ class _$ButtonEvent extends ButtonEvent {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'button': button,
         'value': value,
       };
@@ -26419,6 +30374,15 @@ class ButtonEventBuilder extends Object
   ButtonEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ButtonEventBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ButtonEvent.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ButtonEventBuilder fromJson(core.Map<String, dynamic> json) =>
+      ButtonEventBuilder.fromJson(json);
 
   @override
   ButtonEventBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -26485,6 +30449,28 @@ class _$LcdControl extends LcdControl {
 
   factory _$LcdControl([void Function(LcdControlBuilder b)? updates]) =>
       (LcdControlBuilder()..update(updates)).build() as _$LcdControl;
+
+  factory _$LcdControl.fromJson(core.Map<String, dynamic> json) {
+    var val = LcdControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? LcdControlEnumOp(json['op'] as int)
+        : LcdControlEnumOp(0);
+    val.text = json.containsKey('text') && json['text'] != null
+        ? json['text'] as String
+        : '';
+
+    return val.build() as _$LcdControl;
+  }
 
   _$LcdControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26556,9 +30542,9 @@ class _$LcdControl extends LcdControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'text': text,
       };
@@ -26614,6 +30600,15 @@ class LcdControlBuilder extends Object
   LcdControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LcdControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LcdControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LcdControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      LcdControlBuilder.fromJson(json);
 
   @override
   LcdControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -26682,6 +30677,29 @@ class _$PowerOperation extends PowerOperation {
 
   factory _$PowerOperation([void Function(PowerOperationBuilder b)? updates]) =>
       (PowerOperationBuilder()..update(updates)).build() as _$PowerOperation;
+
+  factory _$PowerOperation.fromJson(core.Map<String, dynamic> json) {
+    var val = PowerOperationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? PowerOperationEnumOp(json['op'] as int)
+        : PowerOperationEnumOp(0);
+    val.timeRemain =
+        json.containsKey('time_remain') ? json['time_remain'] as double : 0;
+    val.schedTime =
+        json.containsKey('sched_time') ? json['sched_time'] as double : 0;
+
+    return val.build() as _$PowerOperation;
+  }
 
   _$PowerOperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26759,9 +30777,9 @@ class _$PowerOperation extends PowerOperation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'time_remain': timeRemain,
         'sched_time': schedTime,
@@ -26822,6 +30840,15 @@ class PowerOperationBuilder extends Object
   PowerOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PowerOperationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PowerOperation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PowerOperationBuilder fromJson(core.Map<String, dynamic> json) =>
+      PowerOperationBuilder.fromJson(json);
 
   @override
   PowerOperationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -26894,6 +30921,30 @@ class _$PowerChannelControl extends PowerChannelControl {
           [void Function(PowerChannelControlBuilder b)? updates]) =>
       (PowerChannelControlBuilder()..update(updates)).build()
           as _$PowerChannelControl;
+
+  factory _$PowerChannelControl.fromJson(core.Map<String, dynamic> json) {
+    var val = PowerChannelControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.op = json.containsKey('op') && json['op'] != null
+        ? PowerChannelControlEnumOp(json['op'] as int)
+        : PowerChannelControlEnumOp(0);
+    val.schedTime =
+        json.containsKey('sched_time') ? json['sched_time'] as double : 0;
+
+    return val.build() as _$PowerChannelControl;
+  }
 
   _$PowerChannelControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -26972,9 +31023,9 @@ class _$PowerChannelControl extends PowerChannelControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'op': op.value,
         'sched_time': schedTime,
@@ -27038,6 +31089,15 @@ class PowerChannelControlBuilder extends Object
   PowerChannelControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PowerChannelControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PowerChannelControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PowerChannelControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      PowerChannelControlBuilder.fromJson(json);
 
   @override
   PowerChannelControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -27104,6 +31164,21 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
       (QueryPowerChannelStateBuilder()..update(updates)).build()
           as _$QueryPowerChannelState;
 
+  factory _$QueryPowerChannelState.fromJson(core.Map<String, dynamic> json) {
+    var val = QueryPowerChannelStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$QueryPowerChannelState;
+  }
+
   _$QueryPowerChannelState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -27164,9 +31239,9 @@ class _$QueryPowerChannelState extends QueryPowerChannelState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -27215,6 +31290,15 @@ class QueryPowerChannelStateBuilder extends Object
   QueryPowerChannelStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  QueryPowerChannelStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$QueryPowerChannelState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  QueryPowerChannelStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      QueryPowerChannelStateBuilder.fromJson(json);
 
   @override
   QueryPowerChannelStateBuilder newInstance(
@@ -27280,6 +31364,28 @@ class _$PowerChannelState extends PowerChannelState {
           [void Function(PowerChannelStateBuilder b)? updates]) =>
       (PowerChannelStateBuilder()..update(updates)).build()
           as _$PowerChannelState;
+
+  factory _$PowerChannelState.fromJson(core.Map<String, dynamic> json) {
+    var val = PowerChannelStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.state = json.containsKey('state') && json['state'] != null
+        ? PowerChannelStateEnumState(json['state'] as int)
+        : PowerChannelStateEnumState(0);
+
+    return val.build() as _$PowerChannelState;
+  }
 
   _$PowerChannelState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27353,9 +31459,9 @@ class _$PowerChannelState extends PowerChannelState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'state': state.value,
       };
@@ -27412,6 +31518,15 @@ class PowerChannelStateBuilder extends Object
   PowerChannelStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PowerChannelStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PowerChannelState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PowerChannelStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      PowerChannelStateBuilder.fromJson(json);
 
   @override
   PowerChannelStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -27478,6 +31593,26 @@ class _$LedBrightness extends LedBrightness {
 
   factory _$LedBrightness([void Function(LedBrightnessBuilder b)? updates]) =>
       (LedBrightnessBuilder()..update(updates)).build() as _$LedBrightness;
+
+  factory _$LedBrightness.fromJson(core.Map<String, dynamic> json) {
+    var val = LedBrightnessBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$LedBrightness;
+  }
 
   _$LedBrightness._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27549,9 +31684,9 @@ class _$LedBrightness extends LedBrightness {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'value': value,
       };
@@ -27607,6 +31742,15 @@ class LedBrightnessBuilder extends Object
   LedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LedBrightnessBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LedBrightness.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LedBrightnessBuilder fromJson(core.Map<String, dynamic> json) =>
+      LedBrightnessBuilder.fromJson(json);
 
   @override
   LedBrightnessBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -27673,6 +31817,25 @@ class _$QueryLedBrightness extends QueryLedBrightness {
           [void Function(QueryLedBrightnessBuilder b)? updates]) =>
       (QueryLedBrightnessBuilder()..update(updates)).build()
           as _$QueryLedBrightness;
+
+  factory _$QueryLedBrightness.fromJson(core.Map<String, dynamic> json) {
+    var val = QueryLedBrightnessBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+
+    return val.build() as _$QueryLedBrightness;
+  }
 
   _$QueryLedBrightness._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27741,9 +31904,9 @@ class _$QueryLedBrightness extends QueryLedBrightness {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
       };
 }
@@ -27795,6 +31958,15 @@ class QueryLedBrightnessBuilder extends Object
   QueryLedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  QueryLedBrightnessBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$QueryLedBrightness.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  QueryLedBrightnessBuilder fromJson(core.Map<String, dynamic> json) =>
+      QueryLedBrightnessBuilder.fromJson(json);
 
   @override
   QueryLedBrightnessBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -27861,6 +32033,26 @@ class _$SetLedBrightness extends SetLedBrightness {
           [void Function(SetLedBrightnessBuilder b)? updates]) =>
       (SetLedBrightnessBuilder()..update(updates)).build()
           as _$SetLedBrightness;
+
+  factory _$SetLedBrightness.fromJson(core.Map<String, dynamic> json) {
+    var val = SetLedBrightnessBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$SetLedBrightness;
+  }
 
   _$SetLedBrightness._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -27933,9 +32125,9 @@ class _$SetLedBrightness extends SetLedBrightness {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'value': value,
       };
@@ -27992,6 +32184,15 @@ class SetLedBrightnessBuilder extends Object
   SetLedBrightnessBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetLedBrightnessBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetLedBrightness.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetLedBrightnessBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetLedBrightnessBuilder.fromJson(json);
 
   @override
   SetLedBrightnessBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -28060,6 +32261,26 @@ class _$SetPWM extends SetPWM {
 
   factory _$SetPWM([void Function(SetPWMBuilder b)? updates]) =>
       (SetPWMBuilder()..update(updates)).build() as _$SetPWM;
+
+  factory _$SetPWM.fromJson(core.Map<String, dynamic> json) {
+    var val = SetPWMBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.period = json.containsKey('period') ? json['period'] as int : 0;
+    val.dutyCycle =
+        json.containsKey('duty_cycle') ? json['duty_cycle'] as int : 0;
+
+    return val.build() as _$SetPWM;
+  }
 
   _$SetPWM._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28136,9 +32357,9 @@ class _$SetPWM extends SetPWM {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'period': period,
         'duty_cycle': dutyCycle,
@@ -28199,6 +32420,15 @@ class SetPWMBuilder extends Object
   SetPWMBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetPWMBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetPWM.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetPWMBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetPWMBuilder.fromJson(json);
 
   @override
   SetPWMBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -28269,6 +32499,26 @@ class _$PWM extends PWM {
 
   factory _$PWM([void Function(PWMBuilder b)? updates]) =>
       (PWMBuilder()..update(updates)).build() as _$PWM;
+
+  factory _$PWM.fromJson(core.Map<String, dynamic> json) {
+    var val = PWMBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.period = json.containsKey('period') ? json['period'] as int : 0;
+    val.dutyCycle =
+        json.containsKey('duty_cycle') ? json['duty_cycle'] as int : 0;
+
+    return val.build() as _$PWM;
+  }
 
   _$PWM._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28345,9 +32595,9 @@ class _$PWM extends PWM {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'period': period,
         'duty_cycle': dutyCycle,
@@ -28408,6 +32658,15 @@ class PWMBuilder extends Object
   PWMBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PWMBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PWM.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PWMBuilder fromJson(core.Map<String, dynamic> json) =>
+      PWMBuilder.fromJson(json);
 
   @override
   PWMBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -28512,6 +32771,42 @@ class _$EstimatedState extends EstimatedState {
 
   factory _$EstimatedState([void Function(EstimatedStateBuilder b)? updates]) =>
       (EstimatedStateBuilder()..update(updates)).build() as _$EstimatedState;
+
+  factory _$EstimatedState.fromJson(core.Map<String, dynamic> json) {
+    var val = EstimatedStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.height = json.containsKey('height') ? json['height'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.u = json.containsKey('u') ? json['u'] as double : 0;
+    val.v = json.containsKey('v') ? json['v'] as double : 0;
+    val.w = json.containsKey('w') ? json['w'] as double : 0;
+    val.vx = json.containsKey('vx') ? json['vx'] as double : 0;
+    val.vy = json.containsKey('vy') ? json['vy'] as double : 0;
+    val.vz = json.containsKey('vz') ? json['vz'] as double : 0;
+    val.p = json.containsKey('p') ? json['p'] as double : 0;
+    val.q = json.containsKey('q') ? json['q'] as double : 0;
+    val.r = json.containsKey('r') ? json['r'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+    val.alt = json.containsKey('alt') ? json['alt'] as double : 0;
+
+    return val.build() as _$EstimatedState;
+  }
 
   _$EstimatedState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -28663,9 +32958,9 @@ class _$EstimatedState extends EstimatedState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'height': height,
@@ -28812,6 +33107,15 @@ class EstimatedStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  EstimatedStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EstimatedState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EstimatedStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      EstimatedStateBuilder.fromJson(json);
+
   @override
   EstimatedStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       EstimatedStateBuilder()..copyFromHeader(headerFrom);
@@ -28918,6 +33222,25 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
       (EstimatedStreamVelocityBuilder()..update(updates)).build()
           as _$EstimatedStreamVelocity;
 
+  factory _$EstimatedStreamVelocity.fromJson(core.Map<String, dynamic> json) {
+    var val = EstimatedStreamVelocityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$EstimatedStreamVelocity;
+  }
+
   _$EstimatedStreamVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -28995,9 +33318,9 @@ class _$EstimatedStreamVelocity extends EstimatedStreamVelocity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -29061,6 +33384,15 @@ class EstimatedStreamVelocityBuilder extends Object
   EstimatedStreamVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EstimatedStreamVelocityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EstimatedStreamVelocity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EstimatedStreamVelocityBuilder fromJson(core.Map<String, dynamic> json) =>
+      EstimatedStreamVelocityBuilder.fromJson(json);
 
   @override
   EstimatedStreamVelocityBuilder newInstance(
@@ -29129,6 +33461,23 @@ class _$IndicatedSpeed extends IndicatedSpeed {
   factory _$IndicatedSpeed([void Function(IndicatedSpeedBuilder b)? updates]) =>
       (IndicatedSpeedBuilder()..update(updates)).build() as _$IndicatedSpeed;
 
+  factory _$IndicatedSpeed.fromJson(core.Map<String, dynamic> json) {
+    var val = IndicatedSpeedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$IndicatedSpeed;
+  }
+
   _$IndicatedSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -29194,9 +33543,9 @@ class _$IndicatedSpeed extends IndicatedSpeed {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -29247,6 +33596,15 @@ class IndicatedSpeedBuilder extends Object
   IndicatedSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  IndicatedSpeedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$IndicatedSpeed.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  IndicatedSpeedBuilder fromJson(core.Map<String, dynamic> json) =>
+      IndicatedSpeedBuilder.fromJson(json);
 
   @override
   IndicatedSpeedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -29309,6 +33667,23 @@ class _$TrueSpeed extends TrueSpeed {
 
   factory _$TrueSpeed([void Function(TrueSpeedBuilder b)? updates]) =>
       (TrueSpeedBuilder()..update(updates)).build() as _$TrueSpeed;
+
+  factory _$TrueSpeed.fromJson(core.Map<String, dynamic> json) {
+    var val = TrueSpeedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$TrueSpeed;
+  }
 
   _$TrueSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29375,9 +33750,9 @@ class _$TrueSpeed extends TrueSpeed {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -29428,6 +33803,15 @@ class TrueSpeedBuilder extends Object
   TrueSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrueSpeedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrueSpeed.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrueSpeedBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrueSpeedBuilder.fromJson(json);
 
   @override
   TrueSpeedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -29518,6 +33902,36 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           [void Function(NavigationUncertaintyBuilder b)? updates]) =>
       (NavigationUncertaintyBuilder()..update(updates)).build()
           as _$NavigationUncertainty;
+
+  factory _$NavigationUncertainty.fromJson(core.Map<String, dynamic> json) {
+    var val = NavigationUncertaintyBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.p = json.containsKey('p') ? json['p'] as double : 0;
+    val.q = json.containsKey('q') ? json['q'] as double : 0;
+    val.r = json.containsKey('r') ? json['r'] as double : 0;
+    val.u = json.containsKey('u') ? json['u'] as double : 0;
+    val.v = json.containsKey('v') ? json['v'] as double : 0;
+    val.w = json.containsKey('w') ? json['w'] as double : 0;
+    val.biasPsi = json.containsKey('bias_psi') ? json['bias_psi'] as double : 0;
+    val.biasR = json.containsKey('bias_r') ? json['bias_r'] as double : 0;
+
+    return val.build() as _$NavigationUncertainty;
+  }
 
   _$NavigationUncertainty._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29654,9 +34068,9 @@ class _$NavigationUncertainty extends NavigationUncertainty {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -29776,6 +34190,15 @@ class NavigationUncertaintyBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  NavigationUncertaintyBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$NavigationUncertainty.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  NavigationUncertaintyBuilder fromJson(core.Map<String, dynamic> json) =>
+      NavigationUncertaintyBuilder.fromJson(json);
+
   @override
   NavigationUncertaintyBuilder newInstance(
           [ImcBuilderHeaderPart? headerFrom]) =>
@@ -29880,6 +34303,33 @@ class _$NavigationData extends NavigationData {
 
   factory _$NavigationData([void Function(NavigationDataBuilder b)? updates]) =>
       (NavigationDataBuilder()..update(updates)).build() as _$NavigationData;
+
+  factory _$NavigationData.fromJson(core.Map<String, dynamic> json) {
+    var val = NavigationDataBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.biasPsi = json.containsKey('bias_psi') ? json['bias_psi'] as double : 0;
+    val.biasR = json.containsKey('bias_r') ? json['bias_r'] as double : 0;
+    val.cog = json.containsKey('cog') ? json['cog'] as double : 0;
+    val.cyaw = json.containsKey('cyaw') ? json['cyaw'] as double : 0;
+    val.lblRejLevel =
+        json.containsKey('lbl_rej_level') ? json['lbl_rej_level'] as double : 0;
+    val.gpsRejLevel =
+        json.containsKey('gps_rej_level') ? json['gps_rej_level'] as double : 0;
+    val.customX = json.containsKey('custom_x') ? json['custom_x'] as double : 0;
+    val.customY = json.containsKey('custom_y') ? json['custom_y'] as double : 0;
+    val.customZ = json.containsKey('custom_z') ? json['custom_z'] as double : 0;
+
+    return val.build() as _$NavigationData;
+  }
 
   _$NavigationData._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -29994,9 +34444,9 @@ class _$NavigationData extends NavigationData {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'bias_psi': biasPsi,
         'bias_r': biasR,
         'cog': cog,
@@ -30088,6 +34538,15 @@ class NavigationDataBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  NavigationDataBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$NavigationData.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  NavigationDataBuilder fromJson(core.Map<String, dynamic> json) =>
+      NavigationDataBuilder.fromJson(json);
+
   @override
   NavigationDataBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       NavigationDataBuilder()..copyFromHeader(headerFrom);
@@ -30169,6 +34628,26 @@ class _$GpsFixRejection extends GpsFixRejection {
           [void Function(GpsFixRejectionBuilder b)? updates]) =>
       (GpsFixRejectionBuilder()..update(updates)).build() as _$GpsFixRejection;
 
+  factory _$GpsFixRejection.fromJson(core.Map<String, dynamic> json) {
+    var val = GpsFixRejectionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.utcTime = json.containsKey('utc_time') ? json['utc_time'] as double : 0;
+    val.reason = json.containsKey('reason') && json['reason'] != null
+        ? GpsFixRejectionEnumReason(json['reason'] as int)
+        : GpsFixRejectionEnumReason(0);
+
+    return val.build() as _$GpsFixRejection;
+  }
+
   _$GpsFixRejection._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -30239,9 +34718,9 @@ class _$GpsFixRejection extends GpsFixRejection {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'utc_time': utcTime,
         'reason': reason.value,
       };
@@ -30298,6 +34777,15 @@ class GpsFixRejectionBuilder extends Object
   GpsFixRejectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GpsFixRejectionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpsFixRejection.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpsFixRejectionBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpsFixRejectionBuilder.fromJson(json);
 
   @override
   GpsFixRejectionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -30368,6 +34856,28 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
           [void Function(LblRangeAcceptanceBuilder b)? updates]) =>
       (LblRangeAcceptanceBuilder()..update(updates)).build()
           as _$LblRangeAcceptance;
+
+  factory _$LblRangeAcceptance.fromJson(core.Map<String, dynamic> json) {
+    var val = LblRangeAcceptanceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') ? json['id'] as int : 0;
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+    val.acceptance =
+        json.containsKey('acceptance') && json['acceptance'] != null
+            ? LblRangeAcceptanceEnumAcceptance(json['acceptance'] as int)
+            : LblRangeAcceptanceEnumAcceptance(0);
+
+    return val.build() as _$LblRangeAcceptance;
+  }
 
   _$LblRangeAcceptance._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30447,9 +34957,9 @@ class _$LblRangeAcceptance extends LblRangeAcceptance {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'range': range,
         'acceptance': acceptance.value,
@@ -30513,6 +35023,15 @@ class LblRangeAcceptanceBuilder extends Object
   LblRangeAcceptanceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LblRangeAcceptanceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LblRangeAcceptance.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LblRangeAcceptanceBuilder fromJson(core.Map<String, dynamic> json) =>
+      LblRangeAcceptanceBuilder.fromJson(json);
 
   @override
   LblRangeAcceptanceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -30585,6 +35104,31 @@ class _$DvlRejection extends DvlRejection {
 
   factory _$DvlRejection([void Function(DvlRejectionBuilder b)? updates]) =>
       (DvlRejectionBuilder()..update(updates)).build() as _$DvlRejection;
+
+  factory _$DvlRejection.fromJson(core.Map<String, dynamic> json) {
+    var val = DvlRejectionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? DvlRejectionBitfieldType(json['type'] as int)
+        : DvlRejectionBitfieldType(0);
+    val.reason = json.containsKey('reason') && json['reason'] != null
+        ? DvlRejectionEnumReason(json['reason'] as int)
+        : DvlRejectionEnumReason(0);
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.timestep =
+        json.containsKey('timestep') ? json['timestep'] as double : 0;
+
+    return val.build() as _$DvlRejection;
+  }
 
   _$DvlRejection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30668,9 +35212,9 @@ class _$DvlRejection extends DvlRejection {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'reason': reason.value,
         'value': value,
@@ -30736,6 +35280,15 @@ class DvlRejectionBuilder extends Object
   DvlRejectionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DvlRejectionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DvlRejection.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DvlRejectionBuilder fromJson(core.Map<String, dynamic> json) =>
+      DvlRejectionBuilder.fromJson(json);
 
   @override
   DvlRejectionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -30814,6 +35367,39 @@ class _$LblEstimate extends LblEstimate {
 
   factory _$LblEstimate([void Function(LblEstimateBuilder b)? updates]) =>
       (LblEstimateBuilder()..update(updates)).build() as _$LblEstimate;
+
+  factory _$LblEstimate.fromJson(core.Map<String, dynamic> json) {
+    var val = LblEstimateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    LblBeacon? beacon;
+    if (json.containsKey('beacon') && json['beacon'] != null) {
+      var msgJson = json['beacon'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        beacon = builder?.build() as LblBeacon?;
+      }
+    }
+    val.beacon = beacon;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.varX = json.containsKey('var_x') ? json['var_x'] as double : 0;
+    val.varY = json.containsKey('var_y') ? json['var_y'] as double : 0;
+    val.distance =
+        json.containsKey('distance') ? json['distance'] as double : 0;
+
+    return val.build() as _$LblEstimate;
+  }
 
   _$LblEstimate._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -30909,9 +35495,9 @@ class _$LblEstimate extends LblEstimate {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'beacon': beacon?.toJson(false),
         'x': x,
         'y': y,
@@ -30988,6 +35574,15 @@ class LblEstimateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  LblEstimateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LblEstimate.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LblEstimateBuilder fromJson(core.Map<String, dynamic> json) =>
+      LblEstimateBuilder.fromJson(json);
+
   @override
   LblEstimateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       LblEstimateBuilder()..copyFromHeader(headerFrom);
@@ -31060,6 +35655,25 @@ class _$AlignmentState extends AlignmentState {
   factory _$AlignmentState([void Function(AlignmentStateBuilder b)? updates]) =>
       (AlignmentStateBuilder()..update(updates)).build() as _$AlignmentState;
 
+  factory _$AlignmentState.fromJson(core.Map<String, dynamic> json) {
+    var val = AlignmentStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? AlignmentStateEnumState(json['state'] as int)
+        : AlignmentStateEnumState(0);
+
+    return val.build() as _$AlignmentState;
+  }
+
   _$AlignmentState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -31125,9 +35739,9 @@ class _$AlignmentState extends AlignmentState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
       };
 }
@@ -31178,6 +35792,15 @@ class AlignmentStateBuilder extends Object
   AlignmentStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AlignmentStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AlignmentState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AlignmentStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      AlignmentStateBuilder.fromJson(json);
 
   @override
   AlignmentStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -31246,6 +35869,25 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
           [void Function(GroupStreamVelocityBuilder b)? updates]) =>
       (GroupStreamVelocityBuilder()..update(updates)).build()
           as _$GroupStreamVelocity;
+
+  factory _$GroupStreamVelocity.fromJson(core.Map<String, dynamic> json) {
+    var val = GroupStreamVelocityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$GroupStreamVelocity;
+  }
 
   _$GroupStreamVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31324,9 +35966,9 @@ class _$GroupStreamVelocity extends GroupStreamVelocity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -31390,6 +36032,15 @@ class GroupStreamVelocityBuilder extends Object
   GroupStreamVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GroupStreamVelocityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GroupStreamVelocity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GroupStreamVelocityBuilder fromJson(core.Map<String, dynamic> json) =>
+      GroupStreamVelocityBuilder.fromJson(json);
 
   @override
   GroupStreamVelocityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -31460,6 +36111,25 @@ class _$Airflow extends Airflow {
 
   factory _$Airflow([void Function(AirflowBuilder b)? updates]) =>
       (AirflowBuilder()..update(updates)).build() as _$Airflow;
+
+  factory _$Airflow.fromJson(core.Map<String, dynamic> json) {
+    var val = AirflowBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.va = json.containsKey('va') ? json['va'] as double : 0;
+    val.aoa = json.containsKey('aoa') ? json['aoa'] as double : 0;
+    val.ssa = json.containsKey('ssa') ? json['ssa'] as double : 0;
+
+    return val.build() as _$Airflow;
+  }
 
   _$Airflow._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31536,9 +36206,9 @@ class _$Airflow extends Airflow {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'va': va,
         'aoa': aoa,
         'ssa': ssa,
@@ -31599,6 +36269,15 @@ class AirflowBuilder extends Object
   AirflowBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AirflowBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Airflow.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AirflowBuilder fromJson(core.Map<String, dynamic> json) =>
+      AirflowBuilder.fromJson(json);
 
   @override
   AirflowBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -31666,6 +36345,23 @@ class _$DesiredHeading extends DesiredHeading {
   factory _$DesiredHeading([void Function(DesiredHeadingBuilder b)? updates]) =>
       (DesiredHeadingBuilder()..update(updates)).build() as _$DesiredHeading;
 
+  factory _$DesiredHeading.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredHeadingBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DesiredHeading;
+  }
+
   _$DesiredHeading._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -31731,9 +36427,9 @@ class _$DesiredHeading extends DesiredHeading {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -31784,6 +36480,15 @@ class DesiredHeadingBuilder extends Object
   DesiredHeadingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredHeadingBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredHeading.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredHeadingBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredHeadingBuilder.fromJson(json);
 
   @override
   DesiredHeadingBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -31848,6 +36553,26 @@ class _$DesiredZ extends DesiredZ {
 
   factory _$DesiredZ([void Function(DesiredZBuilder b)? updates]) =>
       (DesiredZBuilder()..update(updates)).build() as _$DesiredZ;
+
+  factory _$DesiredZ.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredZBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+
+    return val.build() as _$DesiredZ;
+  }
 
   _$DesiredZ._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -31919,9 +36644,9 @@ class _$DesiredZ extends DesiredZ {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'z_units': zUnits.value,
       };
@@ -31977,6 +36702,15 @@ class DesiredZBuilder extends Object
   DesiredZBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredZBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredZ.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredZBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredZBuilder.fromJson(json);
 
   @override
   DesiredZBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -32043,6 +36777,27 @@ class _$DesiredSpeed extends DesiredSpeed {
 
   factory _$DesiredSpeed([void Function(DesiredSpeedBuilder b)? updates]) =>
       (DesiredSpeedBuilder()..update(updates)).build() as _$DesiredSpeed;
+
+  factory _$DesiredSpeed.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredSpeedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+
+    return val.build() as _$DesiredSpeed;
+  }
 
   _$DesiredSpeed._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32115,9 +36870,9 @@ class _$DesiredSpeed extends DesiredSpeed {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'speed_units': speedUnits.value,
       };
@@ -32173,6 +36928,15 @@ class DesiredSpeedBuilder extends Object
   DesiredSpeedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredSpeedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredSpeed.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredSpeedBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredSpeedBuilder.fromJson(json);
 
   @override
   DesiredSpeedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -32237,6 +37001,23 @@ class _$DesiredRoll extends DesiredRoll {
 
   factory _$DesiredRoll([void Function(DesiredRollBuilder b)? updates]) =>
       (DesiredRollBuilder()..update(updates)).build() as _$DesiredRoll;
+
+  factory _$DesiredRoll.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredRollBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DesiredRoll;
+  }
 
   _$DesiredRoll._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32303,9 +37084,9 @@ class _$DesiredRoll extends DesiredRoll {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -32356,6 +37137,15 @@ class DesiredRollBuilder extends Object
   DesiredRollBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredRollBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredRoll.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredRollBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredRollBuilder.fromJson(json);
 
   @override
   DesiredRollBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -32418,6 +37208,23 @@ class _$DesiredPitch extends DesiredPitch {
 
   factory _$DesiredPitch([void Function(DesiredPitchBuilder b)? updates]) =>
       (DesiredPitchBuilder()..update(updates)).build() as _$DesiredPitch;
+
+  factory _$DesiredPitch.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredPitchBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DesiredPitch;
+  }
 
   _$DesiredPitch._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32484,9 +37291,9 @@ class _$DesiredPitch extends DesiredPitch {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -32537,6 +37344,15 @@ class DesiredPitchBuilder extends Object
   DesiredPitchBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredPitchBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredPitch.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredPitchBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredPitchBuilder.fromJson(json);
 
   @override
   DesiredPitchBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -32601,6 +37417,23 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
           [void Function(DesiredVerticalRateBuilder b)? updates]) =>
       (DesiredVerticalRateBuilder()..update(updates)).build()
           as _$DesiredVerticalRate;
+
+  factory _$DesiredVerticalRate.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredVerticalRateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DesiredVerticalRate;
+  }
 
   _$DesiredVerticalRate._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32669,9 +37502,9 @@ class _$DesiredVerticalRate extends DesiredVerticalRate {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -32725,6 +37558,15 @@ class DesiredVerticalRateBuilder extends Object
   DesiredVerticalRateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredVerticalRateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredVerticalRate.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredVerticalRateBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredVerticalRateBuilder.fromJson(json);
 
   @override
   DesiredVerticalRateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -32811,6 +37653,48 @@ class _$DesiredPath extends DesiredPath {
 
   factory _$DesiredPath([void Function(DesiredPathBuilder b)? updates]) =>
       (DesiredPathBuilder()..update(updates)).build() as _$DesiredPath;
+
+  factory _$DesiredPath.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredPathBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.pathRef = json.containsKey('path_ref') ? json['path_ref'] as int : 0;
+    val.startLat =
+        json.containsKey('start_lat') ? json['start_lat'] as double : 0;
+    val.startLon =
+        json.containsKey('start_lon') ? json['start_lon'] as double : 0;
+    val.startZ = json.containsKey('start_z') ? json['start_z'] as double : 0;
+    val.startZUnits =
+        json.containsKey('start_z_units') && json['start_z_units'] != null
+            ? ZUnitsEnum(json['start_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.endLat = json.containsKey('end_lat') ? json['end_lat'] as double : 0;
+    val.endLon = json.containsKey('end_lon') ? json['end_lon'] as double : 0;
+    val.endZ = json.containsKey('end_z') ? json['end_z'] as double : 0;
+    val.endZUnits =
+        json.containsKey('end_z_units') && json['end_z_units'] != null
+            ? ZUnitsEnum(json['end_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.lradius = json.containsKey('lradius') ? json['lradius'] as double : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? DesiredPathBitfieldFlags(json['flags'] as int)
+        : DesiredPathBitfieldFlags(0);
+
+    return val.build() as _$DesiredPath;
+  }
 
   _$DesiredPath._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -32946,9 +37830,9 @@ class _$DesiredPath extends DesiredPath {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'path_ref': pathRef,
         'start_lat': startLat,
         'start_lon': startLon,
@@ -33060,6 +37944,15 @@ class DesiredPathBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  DesiredPathBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredPath.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredPathBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredPathBuilder.fromJson(json);
+
   @override
   DesiredPathBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       DesiredPathBuilder()..copyFromHeader(headerFrom);
@@ -33157,6 +38050,31 @@ class _$DesiredControl extends DesiredControl {
 
   factory _$DesiredControl([void Function(DesiredControlBuilder b)? updates]) =>
       (DesiredControlBuilder()..update(updates)).build() as _$DesiredControl;
+
+  factory _$DesiredControl.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.k = json.containsKey('k') ? json['k'] as double : 0;
+    val.m = json.containsKey('m') ? json['m'] as double : 0;
+    val.n = json.containsKey('n') ? json['n'] as double : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? DesiredControlBitfieldFlags(json['flags'] as int)
+        : DesiredControlBitfieldFlags(0);
+
+    return val.build() as _$DesiredControl;
+  }
 
   _$DesiredControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -33257,9 +38175,9 @@ class _$DesiredControl extends DesiredControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -33341,6 +38259,15 @@ class DesiredControlBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  DesiredControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredControlBuilder.fromJson(json);
+
   @override
   DesiredControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       DesiredControlBuilder()..copyFromHeader(headerFrom);
@@ -33417,6 +38344,23 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
       (DesiredHeadingRateBuilder()..update(updates)).build()
           as _$DesiredHeadingRate;
 
+  factory _$DesiredHeadingRate.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredHeadingRateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DesiredHeadingRate;
+  }
+
   _$DesiredHeadingRate._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -33484,9 +38428,9 @@ class _$DesiredHeadingRate extends DesiredHeadingRate {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -33538,6 +38482,15 @@ class DesiredHeadingRateBuilder extends Object
   DesiredHeadingRateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredHeadingRateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredHeadingRate.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredHeadingRateBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredHeadingRateBuilder.fromJson(json);
 
   @override
   DesiredHeadingRateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -33613,6 +38566,31 @@ class _$DesiredVelocity extends DesiredVelocity {
   factory _$DesiredVelocity(
           [void Function(DesiredVelocityBuilder b)? updates]) =>
       (DesiredVelocityBuilder()..update(updates)).build() as _$DesiredVelocity;
+
+  factory _$DesiredVelocity.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredVelocityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.u = json.containsKey('u') ? json['u'] as double : 0;
+    val.v = json.containsKey('v') ? json['v'] as double : 0;
+    val.w = json.containsKey('w') ? json['w'] as double : 0;
+    val.p = json.containsKey('p') ? json['p'] as double : 0;
+    val.q = json.containsKey('q') ? json['q'] as double : 0;
+    val.r = json.containsKey('r') ? json['r'] as double : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? DesiredVelocityBitfieldFlags(json['flags'] as int)
+        : DesiredVelocityBitfieldFlags(0);
+
+    return val.build() as _$DesiredVelocity;
+  }
 
   _$DesiredVelocity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -33713,9 +38691,9 @@ class _$DesiredVelocity extends DesiredVelocity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'u': u,
         'v': v,
         'w': w,
@@ -33797,6 +38775,15 @@ class DesiredVelocityBuilder extends Object
   DesiredVelocityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredVelocityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredVelocity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredVelocityBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredVelocityBuilder.fromJson(json);
 
   @override
   DesiredVelocityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -33909,6 +38896,52 @@ class _$PathControlState extends PathControlState {
           [void Function(PathControlStateBuilder b)? updates]) =>
       (PathControlStateBuilder()..update(updates)).build()
           as _$PathControlState;
+
+  factory _$PathControlState.fromJson(core.Map<String, dynamic> json) {
+    var val = PathControlStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.pathRef = json.containsKey('path_ref') ? json['path_ref'] as int : 0;
+    val.startLat =
+        json.containsKey('start_lat') ? json['start_lat'] as double : 0;
+    val.startLon =
+        json.containsKey('start_lon') ? json['start_lon'] as double : 0;
+    val.startZ = json.containsKey('start_z') ? json['start_z'] as double : 0;
+    val.startZUnits =
+        json.containsKey('start_z_units') && json['start_z_units'] != null
+            ? ZUnitsEnum(json['start_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.endLat = json.containsKey('end_lat') ? json['end_lat'] as double : 0;
+    val.endLon = json.containsKey('end_lon') ? json['end_lon'] as double : 0;
+    val.endZ = json.containsKey('end_z') ? json['end_z'] as double : 0;
+    val.endZUnits =
+        json.containsKey('end_z_units') && json['end_z_units'] != null
+            ? ZUnitsEnum(json['end_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.lradius = json.containsKey('lradius') ? json['lradius'] as double : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? PathControlStateBitfieldFlags(json['flags'] as int)
+        : PathControlStateBitfieldFlags(0);
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.vx = json.containsKey('vx') ? json['vx'] as double : 0;
+    val.vy = json.containsKey('vy') ? json['vy'] as double : 0;
+    val.vz = json.containsKey('vz') ? json['vz'] as double : 0;
+    val.courseError =
+        json.containsKey('course_error') ? json['course_error'] as double : 0;
+    val.eta = json.containsKey('eta') ? json['eta'] as int : 0;
+
+    return val.build() as _$PathControlState;
+  }
 
   _$PathControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -34064,9 +39097,9 @@ class _$PathControlState extends PathControlState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'path_ref': pathRef,
         'start_lat': startLat,
         'start_lon': startLon,
@@ -34209,6 +39242,15 @@ class PathControlStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  PathControlStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PathControlState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PathControlStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      PathControlStateBuilder.fromJson(json);
+
   @override
   PathControlStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       PathControlStateBuilder()..copyFromHeader(headerFrom);
@@ -34313,6 +39355,25 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
       (AllocatedControlTorquesBuilder()..update(updates)).build()
           as _$AllocatedControlTorques;
 
+  factory _$AllocatedControlTorques.fromJson(core.Map<String, dynamic> json) {
+    var val = AllocatedControlTorquesBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.k = json.containsKey('k') ? json['k'] as double : 0;
+    val.m = json.containsKey('m') ? json['m'] as double : 0;
+    val.n = json.containsKey('n') ? json['n'] as double : 0;
+
+    return val.build() as _$AllocatedControlTorques;
+  }
+
   _$AllocatedControlTorques._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -34390,9 +39451,9 @@ class _$AllocatedControlTorques extends AllocatedControlTorques {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'k': k,
         'm': m,
         'n': n,
@@ -34456,6 +39517,15 @@ class AllocatedControlTorquesBuilder extends Object
   AllocatedControlTorquesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AllocatedControlTorquesBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AllocatedControlTorques.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AllocatedControlTorquesBuilder fromJson(core.Map<String, dynamic> json) =>
+      AllocatedControlTorquesBuilder.fromJson(json);
 
   @override
   AllocatedControlTorquesBuilder newInstance(
@@ -34529,6 +39599,26 @@ class _$ControlParcel extends ControlParcel {
 
   factory _$ControlParcel([void Function(ControlParcelBuilder b)? updates]) =>
       (ControlParcelBuilder()..update(updates)).build() as _$ControlParcel;
+
+  factory _$ControlParcel.fromJson(core.Map<String, dynamic> json) {
+    var val = ControlParcelBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.p = json.containsKey('p') ? json['p'] as double : 0;
+    val.i = json.containsKey('i') ? json['i'] as double : 0;
+    val.d = json.containsKey('d') ? json['d'] as double : 0;
+    val.a = json.containsKey('a') ? json['a'] as double : 0;
+
+    return val.build() as _$ControlParcel;
+  }
 
   _$ControlParcel._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -34612,9 +39702,9 @@ class _$ControlParcel extends ControlParcel {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'p': p,
         'i': i,
         'd': d,
@@ -34680,6 +39770,15 @@ class ControlParcelBuilder extends Object
   ControlParcelBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ControlParcelBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ControlParcel.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ControlParcelBuilder fromJson(core.Map<String, dynamic> json) =>
+      ControlParcelBuilder.fromJson(json);
 
   @override
   ControlParcelBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -34749,6 +39848,25 @@ class _$Brake extends Brake {
   factory _$Brake([void Function(BrakeBuilder b)? updates]) =>
       (BrakeBuilder()..update(updates)).build() as _$Brake;
 
+  factory _$Brake.fromJson(core.Map<String, dynamic> json) {
+    var val = BrakeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? BrakeEnumOp(json['op'] as int)
+        : BrakeEnumOp(0);
+
+    return val.build() as _$Brake;
+  }
+
   _$Brake._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -34814,9 +39932,9 @@ class _$Brake extends Brake {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
       };
 }
@@ -34867,6 +39985,15 @@ class BrakeBuilder extends Object
   BrakeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  BrakeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Brake.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  BrakeBuilder fromJson(core.Map<String, dynamic> json) =>
+      BrakeBuilder.fromJson(json);
 
   @override
   BrakeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -34949,6 +40076,34 @@ class _$DesiredLinearState extends DesiredLinearState {
           [void Function(DesiredLinearStateBuilder b)? updates]) =>
       (DesiredLinearStateBuilder()..update(updates)).build()
           as _$DesiredLinearState;
+
+  factory _$DesiredLinearState.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredLinearStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.vx = json.containsKey('vx') ? json['vx'] as double : 0;
+    val.vy = json.containsKey('vy') ? json['vy'] as double : 0;
+    val.vz = json.containsKey('vz') ? json['vz'] as double : 0;
+    val.ax = json.containsKey('ax') ? json['ax'] as double : 0;
+    val.ay = json.containsKey('ay') ? json['ay'] as double : 0;
+    val.az = json.containsKey('az') ? json['az'] as double : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? DesiredLinearStateBitfieldFlags(json['flags'] as int)
+        : DesiredLinearStateBitfieldFlags(0);
+
+    return val.build() as _$DesiredLinearState;
+  }
 
   _$DesiredLinearState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35067,9 +40222,9 @@ class _$DesiredLinearState extends DesiredLinearState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -35167,6 +40322,15 @@ class DesiredLinearStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  DesiredLinearStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredLinearState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredLinearStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredLinearStateBuilder.fromJson(json);
+
   @override
   DesiredLinearStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       DesiredLinearStateBuilder()..copyFromHeader(headerFrom);
@@ -35248,6 +40412,23 @@ class _$DesiredThrottle extends DesiredThrottle {
           [void Function(DesiredThrottleBuilder b)? updates]) =>
       (DesiredThrottleBuilder()..update(updates)).build() as _$DesiredThrottle;
 
+  factory _$DesiredThrottle.fromJson(core.Map<String, dynamic> json) {
+    var val = DesiredThrottleBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$DesiredThrottle;
+  }
+
   _$DesiredThrottle._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -35313,9 +40494,9 @@ class _$DesiredThrottle extends DesiredThrottle {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -35367,6 +40548,15 @@ class DesiredThrottleBuilder extends Object
   DesiredThrottleBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DesiredThrottleBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DesiredThrottle.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DesiredThrottleBuilder fromJson(core.Map<String, dynamic> json) =>
+      DesiredThrottleBuilder.fromJson(json);
 
   @override
   DesiredThrottleBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -35449,6 +40639,40 @@ class _$Goto extends Goto {
 
   factory _$Goto([void Function(GotoBuilder b)? updates]) =>
       (GotoBuilder()..update(updates)).build() as _$Goto;
+
+  factory _$Goto.fromJson(core.Map<String, dynamic> json) {
+    var val = GotoBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.roll = json.containsKey('roll') ? json['roll'] as double : 0;
+    val.pitch = json.containsKey('pitch') ? json['pitch'] as double : 0;
+    val.yaw = json.containsKey('yaw') ? json['yaw'] as double : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Goto;
+  }
 
   _$Goto._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35571,9 +40795,9 @@ class _$Goto extends Goto {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -35674,6 +40898,15 @@ class GotoBuilder extends Object
   GotoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GotoBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Goto.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GotoBuilder fromJson(core.Map<String, dynamic> json) =>
+      GotoBuilder.fromJson(json);
 
   @override
   GotoBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -35776,6 +41009,42 @@ class _$PopUp extends PopUp {
 
   factory _$PopUp([void Function(PopUpBuilder b)? updates]) =>
       (PopUpBuilder()..update(updates)).build() as _$PopUp;
+
+  factory _$PopUp.fromJson(core.Map<String, dynamic> json) {
+    var val = PopUpBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? PopUpBitfieldFlags(json['flags'] as int)
+        : PopUpBitfieldFlags(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$PopUp;
+  }
 
   _$PopUp._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -35898,9 +41167,9 @@ class _$PopUp extends PopUp {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -36002,6 +41271,15 @@ class PopUpBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  PopUpBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PopUp.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PopUpBuilder fromJson(core.Map<String, dynamic> json) =>
+      PopUpBuilder.fromJson(json);
+
   @override
   PopUpBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       PopUpBuilder()..copyFromHeader(headerFrom);
@@ -36084,6 +41362,25 @@ class _$Teleoperation extends Teleoperation {
   factory _$Teleoperation([void Function(TeleoperationBuilder b)? updates]) =>
       (TeleoperationBuilder()..update(updates)).build() as _$Teleoperation;
 
+  factory _$Teleoperation.fromJson(core.Map<String, dynamic> json) {
+    var val = TeleoperationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Teleoperation;
+  }
+
   _$Teleoperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -36149,9 +41446,9 @@ class _$Teleoperation extends Teleoperation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'custom': custom,
       };
 }
@@ -36202,6 +41499,15 @@ class TeleoperationBuilder extends Object
   TeleoperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TeleoperationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Teleoperation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TeleoperationBuilder fromJson(core.Map<String, dynamic> json) =>
+      TeleoperationBuilder.fromJson(json);
 
   @override
   TeleoperationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -36290,6 +41596,47 @@ class _$Loiter extends Loiter {
 
   factory _$Loiter([void Function(LoiterBuilder b)? updates]) =>
       (LoiterBuilder()..update(updates)).build() as _$Loiter;
+
+  factory _$Loiter.fromJson(core.Map<String, dynamic> json) {
+    var val = LoiterBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.type = json.containsKey('type') && json['type'] != null
+        ? LoiterEnumType(json['type'] as int)
+        : LoiterEnumType(0);
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+    val.length = json.containsKey('length') ? json['length'] as double : 0;
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.direction = json.containsKey('direction') && json['direction'] != null
+        ? LoiterEnumDirection(json['direction'] as int)
+        : LoiterEnumDirection(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Loiter;
+  }
 
   _$Loiter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36426,9 +41773,9 @@ class _$Loiter extends Loiter {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -36545,6 +41892,15 @@ class LoiterBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  LoiterBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Loiter.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LoiterBuilder fromJson(core.Map<String, dynamic> json) =>
+      LoiterBuilder.fromJson(json);
+
   @override
   LoiterBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       LoiterBuilder()..copyFromHeader(headerFrom);
@@ -36635,6 +41991,26 @@ class _$IdleManeuver extends IdleManeuver {
   factory _$IdleManeuver([void Function(IdleManeuverBuilder b)? updates]) =>
       (IdleManeuverBuilder()..update(updates)).build() as _$IdleManeuver;
 
+  factory _$IdleManeuver.fromJson(core.Map<String, dynamic> json) {
+    var val = IdleManeuverBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$IdleManeuver;
+  }
+
   _$IdleManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -36705,9 +42081,9 @@ class _$IdleManeuver extends IdleManeuver {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'duration': duration,
         'custom': custom,
       };
@@ -36763,6 +42139,15 @@ class IdleManeuverBuilder extends Object
   IdleManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  IdleManeuverBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$IdleManeuver.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  IdleManeuverBuilder fromJson(core.Map<String, dynamic> json) =>
+      IdleManeuverBuilder.fromJson(json);
 
   @override
   IdleManeuverBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -36832,6 +42217,37 @@ class _$LowLevelControl extends LowLevelControl {
   factory _$LowLevelControl(
           [void Function(LowLevelControlBuilder b)? updates]) =>
       (LowLevelControlBuilder()..update(updates)).build() as _$LowLevelControl;
+
+  factory _$LowLevelControl.fromJson(core.Map<String, dynamic> json) {
+    var val = LowLevelControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    ControlCommand? control;
+    if (json.containsKey('control') && json['control'] != null) {
+      var msgJson = json['control'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        control = builder?.build() as ControlCommand?;
+      }
+    }
+    val.control = control;
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$LowLevelControl;
+  }
 
   _$LowLevelControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -36908,9 +42324,9 @@ class _$LowLevelControl extends LowLevelControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'control': control?.toJson(false),
         'duration': duration,
         'custom': custom,
@@ -36972,6 +42388,15 @@ class LowLevelControlBuilder extends Object
   LowLevelControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LowLevelControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LowLevelControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LowLevelControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      LowLevelControlBuilder.fromJson(json);
 
   @override
   LowLevelControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -37068,6 +42493,49 @@ class _$Rows extends Rows {
 
   factory _$Rows([void Function(RowsBuilder b)? updates]) =>
       (RowsBuilder()..update(updates)).build() as _$Rows;
+
+  factory _$Rows.fromJson(core.Map<String, dynamic> json) {
+    var val = RowsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.crossAngle =
+        json.containsKey('cross_angle') ? json['cross_angle'] as double : 0;
+    val.width = json.containsKey('width') ? json['width'] as double : 0;
+    val.length = json.containsKey('length') ? json['length'] as double : 0;
+    val.hstep = json.containsKey('hstep') ? json['hstep'] as double : 30;
+    val.coff = json.containsKey('coff') ? json['coff'] as int : 0;
+    val.alternation =
+        json.containsKey('alternation') ? json['alternation'] as int : 50;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? RowsBitfieldFlags(json['flags'] as int)
+        : RowsBitfieldFlags(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Rows;
+  }
 
   _$Rows._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -37211,9 +42679,9 @@ class _$Rows extends Rows {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -37340,6 +42808,15 @@ class RowsBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  RowsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Rows.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RowsBuilder fromJson(core.Map<String, dynamic> json) =>
+      RowsBuilder.fromJson(json);
+
   @override
   RowsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       RowsBuilder()..copyFromHeader(headerFrom);
@@ -37447,6 +42924,52 @@ class _$FollowPath extends FollowPath {
 
   factory _$FollowPath([void Function(FollowPathBuilder b)? updates]) =>
       (FollowPathBuilder()..update(updates)).build() as _$FollowPath;
+
+  factory _$FollowPath.fromJson(core.Map<String, dynamic> json) {
+    var val = FollowPathBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    var points = <PathPoint>[];
+    if (json.containsKey('points') && json['points'] != null) {
+      var listJson = json['points'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PathPoint?;
+          if (m != null) points.add(m);
+        }
+      }
+    }
+    val.points = points;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$FollowPath;
+  }
 
   _$FollowPath._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -37559,9 +43082,9 @@ class _$FollowPath extends FollowPath {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -37655,6 +43178,15 @@ class FollowPathBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FollowPathBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FollowPath.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FollowPathBuilder fromJson(core.Map<String, dynamic> json) =>
+      FollowPathBuilder.fromJson(json);
+
   @override
   FollowPathBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FollowPathBuilder()..copyFromHeader(headerFrom);
@@ -37737,6 +43269,25 @@ class _$PathPoint extends PathPoint {
   factory _$PathPoint([void Function(PathPointBuilder b)? updates]) =>
       (PathPointBuilder()..update(updates)).build() as _$PathPoint;
 
+  factory _$PathPoint.fromJson(core.Map<String, dynamic> json) {
+    var val = PathPointBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$PathPoint;
+  }
+
   _$PathPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -37812,9 +43363,9 @@ class _$PathPoint extends PathPoint {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -37875,6 +43426,15 @@ class PathPointBuilder extends Object
   PathPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PathPointBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PathPoint.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PathPointBuilder fromJson(core.Map<String, dynamic> json) =>
+      PathPointBuilder.fromJson(json);
 
   @override
   PathPointBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -37959,6 +43519,40 @@ class _$YoYo extends YoYo {
 
   factory _$YoYo([void Function(YoYoBuilder b)? updates]) =>
       (YoYoBuilder()..update(updates)).build() as _$YoYo;
+
+  factory _$YoYo.fromJson(core.Map<String, dynamic> json) {
+    var val = YoYoBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.amplitude =
+        json.containsKey('amplitude') ? json['amplitude'] as double : 0;
+    val.pitch = json.containsKey('pitch') ? json['pitch'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$YoYo;
+  }
 
   _$YoYo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -38076,9 +43670,9 @@ class _$YoYo extends YoYo {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -38175,6 +43769,15 @@ class YoYoBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  YoYoBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$YoYo.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  YoYoBuilder fromJson(core.Map<String, dynamic> json) =>
+      YoYoBuilder.fromJson(json);
+
   @override
   YoYoBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       YoYoBuilder()..copyFromHeader(headerFrom);
@@ -38254,6 +43857,21 @@ class _$TeleoperationDone extends TeleoperationDone {
       (TeleoperationDoneBuilder()..update(updates)).build()
           as _$TeleoperationDone;
 
+  factory _$TeleoperationDone.fromJson(core.Map<String, dynamic> json) {
+    var val = TeleoperationDoneBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$TeleoperationDone;
+  }
+
   _$TeleoperationDone._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -38314,9 +43932,9 @@ class _$TeleoperationDone extends TeleoperationDone {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -38363,6 +43981,15 @@ class TeleoperationDoneBuilder extends Object
   TeleoperationDoneBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TeleoperationDoneBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TeleoperationDone.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TeleoperationDoneBuilder fromJson(core.Map<String, dynamic> json) =>
+      TeleoperationDoneBuilder.fromJson(json);
 
   @override
   TeleoperationDoneBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -38439,6 +44066,38 @@ class _$StationKeeping extends StationKeeping {
 
   factory _$StationKeeping([void Function(StationKeepingBuilder b)? updates]) =>
       (StationKeepingBuilder()..update(updates)).build() as _$StationKeeping;
+
+  factory _$StationKeeping.fromJson(core.Map<String, dynamic> json) {
+    var val = StationKeepingBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$StationKeeping;
+  }
 
   _$StationKeeping._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -38551,9 +44210,9 @@ class _$StationKeeping extends StationKeeping {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -38644,6 +44303,15 @@ class StationKeepingBuilder extends Object
   StationKeepingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  StationKeepingBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$StationKeeping.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  StationKeepingBuilder fromJson(core.Map<String, dynamic> json) =>
+      StationKeepingBuilder.fromJson(json);
 
   @override
   StationKeepingBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -38744,6 +44412,47 @@ class _$Elevator extends Elevator {
 
   factory _$Elevator([void Function(ElevatorBuilder b)? updates]) =>
       (ElevatorBuilder()..update(updates)).build() as _$Elevator;
+
+  factory _$Elevator.fromJson(core.Map<String, dynamic> json) {
+    var val = ElevatorBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? ElevatorBitfieldFlags(json['flags'] as int)
+        : ElevatorBitfieldFlags(0);
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.startZ = json.containsKey('start_z') ? json['start_z'] as double : 0;
+    val.startZUnits =
+        json.containsKey('start_z_units') && json['start_z_units'] != null
+            ? ZUnitsEnum(json['start_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.endZ = json.containsKey('end_z') ? json['end_z'] as double : 0;
+    val.endZUnits =
+        json.containsKey('end_z_units') && json['end_z_units'] != null
+            ? ZUnitsEnum(json['end_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Elevator;
+  }
 
   _$Elevator._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -38872,9 +44581,9 @@ class _$Elevator extends Elevator {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'flags': flags.value,
         'lat': lat,
@@ -38981,6 +44690,15 @@ class ElevatorBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  ElevatorBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Elevator.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ElevatorBuilder fromJson(core.Map<String, dynamic> json) =>
+      ElevatorBuilder.fromJson(json);
+
   @override
   ElevatorBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       ElevatorBuilder()..copyFromHeader(headerFrom);
@@ -39082,6 +44800,52 @@ class _$FollowTrajectory extends FollowTrajectory {
           [void Function(FollowTrajectoryBuilder b)? updates]) =>
       (FollowTrajectoryBuilder()..update(updates)).build()
           as _$FollowTrajectory;
+
+  factory _$FollowTrajectory.fromJson(core.Map<String, dynamic> json) {
+    var val = FollowTrajectoryBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    var points = <TrajectoryPoint>[];
+    if (json.containsKey('points') && json['points'] != null) {
+      var listJson = json['points'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as TrajectoryPoint?;
+          if (m != null) points.add(m);
+        }
+      }
+    }
+    val.points = points;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$FollowTrajectory;
+  }
 
   _$FollowTrajectory._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39195,9 +44959,9 @@ class _$FollowTrajectory extends FollowTrajectory {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -39292,6 +45056,15 @@ class FollowTrajectoryBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FollowTrajectoryBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FollowTrajectory.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FollowTrajectoryBuilder fromJson(core.Map<String, dynamic> json) =>
+      FollowTrajectoryBuilder.fromJson(json);
+
   @override
   FollowTrajectoryBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FollowTrajectoryBuilder()..copyFromHeader(headerFrom);
@@ -39377,6 +45150,26 @@ class _$TrajectoryPoint extends TrajectoryPoint {
           [void Function(TrajectoryPointBuilder b)? updates]) =>
       (TrajectoryPointBuilder()..update(updates)).build() as _$TrajectoryPoint;
 
+  factory _$TrajectoryPoint.fromJson(core.Map<String, dynamic> json) {
+    var val = TrajectoryPointBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.t = json.containsKey('t') ? json['t'] as double : 0;
+
+    return val.build() as _$TrajectoryPoint;
+  }
+
   _$TrajectoryPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -39459,9 +45252,9 @@ class _$TrajectoryPoint extends TrajectoryPoint {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'x': x,
         'y': y,
         'z': z,
@@ -39528,6 +45321,15 @@ class TrajectoryPointBuilder extends Object
   TrajectoryPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrajectoryPointBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrajectoryPoint.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrajectoryPointBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrajectoryPointBuilder.fromJson(json);
 
   @override
   TrajectoryPointBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -39600,6 +45402,29 @@ class _$CustomManeuver extends CustomManeuver {
 
   factory _$CustomManeuver([void Function(CustomManeuverBuilder b)? updates]) =>
       (CustomManeuverBuilder()..update(updates)).build() as _$CustomManeuver;
+
+  factory _$CustomManeuver.fromJson(core.Map<String, dynamic> json) {
+    var val = CustomManeuverBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$CustomManeuver;
+  }
 
   _$CustomManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39676,9 +45501,9 @@ class _$CustomManeuver extends CustomManeuver {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'name': name,
         'custom': custom,
@@ -39739,6 +45564,15 @@ class CustomManeuverBuilder extends Object
   CustomManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CustomManeuverBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CustomManeuver.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CustomManeuverBuilder fromJson(core.Map<String, dynamic> json) =>
+      CustomManeuverBuilder.fromJson(json);
 
   @override
   CustomManeuverBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -39825,6 +45659,68 @@ class _$VehicleFormation extends VehicleFormation {
           [void Function(VehicleFormationBuilder b)? updates]) =>
       (VehicleFormationBuilder()..update(updates)).build()
           as _$VehicleFormation;
+
+  factory _$VehicleFormation.fromJson(core.Map<String, dynamic> json) {
+    var val = VehicleFormationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    var points = <TrajectoryPoint>[];
+    if (json.containsKey('points') && json['points'] != null) {
+      var listJson = json['points'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as TrajectoryPoint?;
+          if (m != null) points.add(m);
+        }
+      }
+    }
+    val.points = points;
+    var participants = <VehicleFormationParticipant>[];
+    if (json.containsKey('participants') && json['participants'] != null) {
+      var listJson = json['participants'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as VehicleFormationParticipant?;
+          if (m != null) participants.add(m);
+        }
+      }
+    }
+    val.participants = participants;
+    val.startTime =
+        json.containsKey('start_time') ? json['start_time'] as double : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$VehicleFormation;
+  }
 
   _$VehicleFormation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -39943,9 +45839,9 @@ class _$VehicleFormation extends VehicleFormation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -40049,6 +45945,15 @@ class VehicleFormationBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  VehicleFormationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleFormation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleFormationBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleFormationBuilder.fromJson(json);
+
   @override
   VehicleFormationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       VehicleFormationBuilder()..copyFromHeader(headerFrom);
@@ -40137,6 +46042,27 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
       (VehicleFormationParticipantBuilder()..update(updates)).build()
           as _$VehicleFormationParticipant;
 
+  factory _$VehicleFormationParticipant.fromJson(
+      core.Map<String, dynamic> json) {
+    var val = VehicleFormationParticipantBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.vid = json.containsKey('vid') ? json['vid'] as int : 0;
+    val.offX = json.containsKey('off_x') ? json['off_x'] as double : 0;
+    val.offY = json.containsKey('off_y') ? json['off_y'] as double : 0;
+    val.offZ = json.containsKey('off_z') ? json['off_z'] as double : 0;
+
+    return val.build() as _$VehicleFormationParticipant;
+  }
+
   _$VehicleFormationParticipant._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -40221,9 +46147,9 @@ class _$VehicleFormationParticipant extends VehicleFormationParticipant {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'vid': vid,
         'off_x': offX,
         'off_y': offY,
@@ -40294,6 +46220,15 @@ class VehicleFormationParticipantBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  VehicleFormationParticipantBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleFormationParticipant.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleFormationParticipantBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleFormationParticipantBuilder.fromJson(json);
+
   @override
   VehicleFormationParticipantBuilder newInstance(
           [ImcBuilderHeaderPart? headerFrom]) =>
@@ -40360,6 +46295,21 @@ class _$StopManeuver extends StopManeuver {
   factory _$StopManeuver([void Function(StopManeuverBuilder b)? updates]) =>
       (StopManeuverBuilder()..update(updates)).build() as _$StopManeuver;
 
+  factory _$StopManeuver.fromJson(core.Map<String, dynamic> json) {
+    var val = StopManeuverBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$StopManeuver;
+  }
+
   _$StopManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -40418,9 +46368,9 @@ class _$StopManeuver extends StopManeuver {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -40466,6 +46416,15 @@ class StopManeuverBuilder extends Object
   StopManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  StopManeuverBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$StopManeuver.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  StopManeuverBuilder fromJson(core.Map<String, dynamic> json) =>
+      StopManeuverBuilder.fromJson(json);
 
   @override
   StopManeuverBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -40528,6 +46487,23 @@ class _$RegisterManeuver extends RegisterManeuver {
           [void Function(RegisterManeuverBuilder b)? updates]) =>
       (RegisterManeuverBuilder()..update(updates)).build()
           as _$RegisterManeuver;
+
+  factory _$RegisterManeuver.fromJson(core.Map<String, dynamic> json) {
+    var val = RegisterManeuverBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.mid = json.containsKey('mid') ? json['mid'] as int : 0;
+
+    return val.build() as _$RegisterManeuver;
+  }
 
   _$RegisterManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -40595,9 +46571,9 @@ class _$RegisterManeuver extends RegisterManeuver {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'mid': mid,
       };
 }
@@ -40649,6 +46625,15 @@ class RegisterManeuverBuilder extends Object
   RegisterManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RegisterManeuverBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RegisterManeuver.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RegisterManeuverBuilder fromJson(core.Map<String, dynamic> json) =>
+      RegisterManeuverBuilder.fromJson(json);
 
   @override
   RegisterManeuverBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -40717,6 +46702,29 @@ class _$ManeuverControlState extends ManeuverControlState {
           [void Function(ManeuverControlStateBuilder b)? updates]) =>
       (ManeuverControlStateBuilder()..update(updates)).build()
           as _$ManeuverControlState;
+
+  factory _$ManeuverControlState.fromJson(core.Map<String, dynamic> json) {
+    var val = ManeuverControlStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? ManeuverControlStateEnumState(json['state'] as int)
+        : ManeuverControlStateEnumState(0);
+    val.eta = json.containsKey('eta') ? json['eta'] as int : 0;
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$ManeuverControlState;
+  }
 
   _$ManeuverControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -40795,9 +46803,9 @@ class _$ManeuverControlState extends ManeuverControlState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
         'eta': eta,
         'info': info,
@@ -40861,6 +46869,15 @@ class ManeuverControlStateBuilder extends Object
   ManeuverControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ManeuverControlStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ManeuverControlState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ManeuverControlStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      ManeuverControlStateBuilder.fromJson(json);
 
   @override
   ManeuverControlStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -40941,6 +46958,35 @@ class _$FollowSystem extends FollowSystem {
 
   factory _$FollowSystem([void Function(FollowSystemBuilder b)? updates]) =>
       (FollowSystemBuilder()..update(updates)).build() as _$FollowSystem;
+
+  factory _$FollowSystem.fromJson(core.Map<String, dynamic> json) {
+    var val = FollowSystemBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.system = json.containsKey('system') ? json['system'] as int : 0;
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+
+    return val.build() as _$FollowSystem;
+  }
 
   _$FollowSystem._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41047,9 +47093,9 @@ class _$FollowSystem extends FollowSystem {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'system': system,
         'duration': duration,
         'speed': speed,
@@ -41135,6 +47181,15 @@ class FollowSystemBuilder extends Object
   FollowSystemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FollowSystemBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FollowSystem.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FollowSystemBuilder fromJson(core.Map<String, dynamic> json) =>
+      FollowSystemBuilder.fromJson(json);
 
   @override
   FollowSystemBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -41225,6 +47280,35 @@ class _$CommsRelay extends CommsRelay {
 
   factory _$CommsRelay([void Function(CommsRelayBuilder b)? updates]) =>
       (CommsRelayBuilder()..update(updates)).build() as _$CommsRelay;
+
+  factory _$CommsRelay.fromJson(core.Map<String, dynamic> json) {
+    var val = CommsRelayBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.sysA = json.containsKey('sys_a') ? json['sys_a'] as int : 0;
+    val.sysB = json.containsKey('sys_b') ? json['sys_b'] as int : 0;
+    val.moveThreshold = json.containsKey('move_threshold')
+        ? json['move_threshold'] as double
+        : 0;
+
+    return val.build() as _$CommsRelay;
+  }
 
   _$CommsRelay._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41332,9 +47416,9 @@ class _$CommsRelay extends CommsRelay {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'speed': speed,
@@ -41421,6 +47505,15 @@ class CommsRelayBuilder extends Object
   CommsRelayBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CommsRelayBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CommsRelay.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CommsRelayBuilder fromJson(core.Map<String, dynamic> json) =>
+      CommsRelayBuilder.fromJson(json);
 
   @override
   CommsRelayBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -41511,6 +47604,51 @@ class _$CoverArea extends CoverArea {
 
   factory _$CoverArea([void Function(CoverAreaBuilder b)? updates]) =>
       (CoverAreaBuilder()..update(updates)).build() as _$CoverArea;
+
+  factory _$CoverArea.fromJson(core.Map<String, dynamic> json) {
+    var val = CoverAreaBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    var polygon = <PolygonVertex>[];
+    if (json.containsKey('polygon') && json['polygon'] != null) {
+      var listJson = json['polygon'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PolygonVertex?;
+          if (m != null) polygon.add(m);
+        }
+      }
+    }
+    val.polygon = polygon;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$CoverArea;
+  }
 
   _$CoverArea._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -41617,9 +47755,9 @@ class _$CoverArea extends CoverArea {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -41708,6 +47846,15 @@ class CoverAreaBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  CoverAreaBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CoverArea.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CoverAreaBuilder fromJson(core.Map<String, dynamic> json) =>
+      CoverAreaBuilder.fromJson(json);
+
   @override
   CoverAreaBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       CoverAreaBuilder()..copyFromHeader(headerFrom);
@@ -41786,6 +47933,24 @@ class _$PolygonVertex extends PolygonVertex {
   factory _$PolygonVertex([void Function(PolygonVertexBuilder b)? updates]) =>
       (PolygonVertexBuilder()..update(updates)).build() as _$PolygonVertex;
 
+  factory _$PolygonVertex.fromJson(core.Map<String, dynamic> json) {
+    var val = PolygonVertexBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+
+    return val.build() as _$PolygonVertex;
+  }
+
   _$PolygonVertex._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -41856,9 +48021,9 @@ class _$PolygonVertex extends PolygonVertex {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
       };
@@ -41914,6 +48079,15 @@ class PolygonVertexBuilder extends Object
   PolygonVertexBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PolygonVertexBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PolygonVertex.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PolygonVertexBuilder fromJson(core.Map<String, dynamic> json) =>
+      PolygonVertexBuilder.fromJson(json);
 
   @override
   PolygonVertexBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -42004,6 +48178,45 @@ class _$CompassCalibration extends CompassCalibration {
           [void Function(CompassCalibrationBuilder b)? updates]) =>
       (CompassCalibrationBuilder()..update(updates)).build()
           as _$CompassCalibration;
+
+  factory _$CompassCalibration.fromJson(core.Map<String, dynamic> json) {
+    var val = CompassCalibrationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.pitch = json.containsKey('pitch') ? json['pitch'] as double : 0;
+    val.amplitude =
+        json.containsKey('amplitude') ? json['amplitude'] as double : 0;
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+    val.direction = json.containsKey('direction') && json['direction'] != null
+        ? CompassCalibrationEnumDirection(json['direction'] as int)
+        : CompassCalibrationEnumDirection(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$CompassCalibration;
+  }
 
   _$CompassCalibration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -42138,9 +48351,9 @@ class _$CompassCalibration extends CompassCalibration {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -42255,6 +48468,15 @@ class CompassCalibrationBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  CompassCalibrationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CompassCalibration.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CompassCalibrationBuilder fromJson(core.Map<String, dynamic> json) =>
+      CompassCalibrationBuilder.fromJson(json);
+
   @override
   CompassCalibrationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       CompassCalibrationBuilder()..copyFromHeader(headerFrom);
@@ -42349,6 +48571,48 @@ class _$FormationParameters extends FormationParameters {
       (FormationParametersBuilder()..update(updates)).build()
           as _$FormationParameters;
 
+  factory _$FormationParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.formationName =
+        json.containsKey('formation_name') && json['formation_name'] != null
+            ? json['formation_name'] as String
+            : '';
+    val.referenceFrame = json.containsKey('reference_frame') &&
+            json['reference_frame'] != null
+        ? FormationParametersEnumReferenceFrame(json['reference_frame'] as int)
+        : FormationParametersEnumReferenceFrame(0);
+    var participants = <VehicleFormationParticipant>[];
+    if (json.containsKey('participants') && json['participants'] != null) {
+      var listJson = json['participants'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as VehicleFormationParticipant?;
+          if (m != null) participants.add(m);
+        }
+      }
+    }
+    val.participants = participants;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$FormationParameters;
+  }
+
   _$FormationParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -42434,9 +48698,9 @@ class _$FormationParameters extends FormationParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'formation_name': formationName,
         'reference_frame': referenceFrame.value,
         'participants': [
@@ -42513,6 +48777,15 @@ class FormationParametersBuilder extends Object
   FormationParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FormationParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationParametersBuilder.fromJson(json);
 
   @override
   FormationParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -42609,6 +48882,61 @@ class _$FormationPlanExecution extends FormationPlanExecution {
           [void Function(FormationPlanExecutionBuilder b)? updates]) =>
       (FormationPlanExecutionBuilder()..update(updates)).build()
           as _$FormationPlanExecution;
+
+  factory _$FormationPlanExecution.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationPlanExecutionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.groupName = json.containsKey('group_name') && json['group_name'] != null
+        ? json['group_name'] as String
+        : '';
+    val.formationName =
+        json.containsKey('formation_name') && json['formation_name'] != null
+            ? json['formation_name'] as String
+            : '';
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.description =
+        json.containsKey('description') && json['description'] != null
+            ? json['description'] as String
+            : '';
+    val.leaderSpeed =
+        json.containsKey('leader_speed') ? json['leader_speed'] as double : 0;
+    val.leaderBankLim = json.containsKey('leader_bank_lim')
+        ? json['leader_bank_lim'] as double
+        : 0;
+    val.posSimErrLim = json.containsKey('pos_sim_err_lim')
+        ? json['pos_sim_err_lim'] as double
+        : 0;
+    val.posSimErrWrn = json.containsKey('pos_sim_err_wrn')
+        ? json['pos_sim_err_wrn'] as double
+        : 0;
+    val.posSimErrTimeout = json.containsKey('pos_sim_err_timeout')
+        ? json['pos_sim_err_timeout'] as int
+        : 0;
+    val.convergMax =
+        json.containsKey('converg_max') ? json['converg_max'] as double : 0;
+    val.convergTimeout = json.containsKey('converg_timeout')
+        ? json['converg_timeout'] as int
+        : 0;
+    val.commsTimeout =
+        json.containsKey('comms_timeout') ? json['comms_timeout'] as int : 0;
+    val.turbLim = json.containsKey('turb_lim') ? json['turb_lim'] as double : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$FormationPlanExecution;
+  }
 
   _$FormationPlanExecution._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -42749,9 +49077,9 @@ class _$FormationPlanExecution extends FormationPlanExecution {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'group_name': groupName,
         'formation_name': formationName,
         'plan_id': planId,
@@ -42875,6 +49203,15 @@ class FormationPlanExecutionBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormationPlanExecutionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationPlanExecution.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationPlanExecutionBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationPlanExecutionBuilder.fromJson(json);
+
   @override
   FormationPlanExecutionBuilder newInstance(
           [ImcBuilderHeaderPart? headerFrom]) =>
@@ -42973,6 +49310,32 @@ class _$FollowReference extends FollowReference {
           [void Function(FollowReferenceBuilder b)? updates]) =>
       (FollowReferenceBuilder()..update(updates)).build() as _$FollowReference;
 
+  factory _$FollowReference.fromJson(core.Map<String, dynamic> json) {
+    var val = FollowReferenceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.controlSrc =
+        json.containsKey('control_src') ? json['control_src'] as int : 0;
+    val.controlEnt =
+        json.containsKey('control_ent') ? json['control_ent'] as int : 0;
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as double : 0;
+    val.loiterRadius =
+        json.containsKey('loiter_radius') ? json['loiter_radius'] as double : 0;
+    val.altitudeInterval = json.containsKey('altitude_interval')
+        ? json['altitude_interval'] as double
+        : 0;
+
+    return val.build() as _$FollowReference;
+  }
+
   _$FollowReference._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -43064,9 +49427,9 @@ class _$FollowReference extends FollowReference {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'control_src': controlSrc,
         'control_ent': controlEnt,
         'timeout': timeout,
@@ -43139,6 +49502,15 @@ class FollowReferenceBuilder extends Object
   FollowReferenceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FollowReferenceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FollowReference.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FollowReferenceBuilder fromJson(core.Map<String, dynamic> json) =>
+      FollowReferenceBuilder.fromJson(json);
 
   @override
   FollowReferenceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -43219,6 +49591,52 @@ class _$Reference extends Reference {
 
   factory _$Reference([void Function(ReferenceBuilder b)? updates]) =>
       (ReferenceBuilder()..update(updates)).build() as _$Reference;
+
+  factory _$Reference.fromJson(core.Map<String, dynamic> json) {
+    var val = ReferenceBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? ReferenceBitfieldFlags(json['flags'] as int)
+        : ReferenceBitfieldFlags(0);
+
+    DesiredSpeed? speed;
+    if (json.containsKey('speed') && json['speed'] != null) {
+      var msgJson = json['speed'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        speed = builder?.build() as DesiredSpeed?;
+      }
+    }
+    val.speed = speed;
+
+    DesiredZ? z;
+    if (json.containsKey('z') && json['z'] != null) {
+      var msgJson = json['z'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        z = builder?.build() as DesiredZ?;
+      }
+    }
+    val.z = z;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+
+    return val.build() as _$Reference;
+  }
 
   _$Reference._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43314,9 +49732,9 @@ class _$Reference extends Reference {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'flags': flags.value,
         'speed': speed?.toJson(false),
         'z': z?.toJson(false),
@@ -43392,6 +49810,15 @@ class ReferenceBuilder extends Object
   ReferenceBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ReferenceBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Reference.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ReferenceBuilder fromJson(core.Map<String, dynamic> json) =>
+      ReferenceBuilder.fromJson(json);
 
   @override
   ReferenceBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -43472,6 +49899,44 @@ class _$FollowRefState extends FollowRefState {
 
   factory _$FollowRefState([void Function(FollowRefStateBuilder b)? updates]) =>
       (FollowRefStateBuilder()..update(updates)).build() as _$FollowRefState;
+
+  factory _$FollowRefState.fromJson(core.Map<String, dynamic> json) {
+    var val = FollowRefStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.controlSrc =
+        json.containsKey('control_src') ? json['control_src'] as int : 0;
+    val.controlEnt =
+        json.containsKey('control_ent') ? json['control_ent'] as int : 0;
+
+    Reference? reference;
+    if (json.containsKey('reference') && json['reference'] != null) {
+      var msgJson = json['reference'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        reference = builder?.build() as Reference?;
+      }
+    }
+    val.reference = reference;
+    val.state = json.containsKey('state') && json['state'] != null
+        ? FollowRefStateEnumState(json['state'] as int)
+        : FollowRefStateEnumState(0);
+    val.proximity = json.containsKey('proximity') && json['proximity'] != null
+        ? FollowRefStateBitfieldProximity(json['proximity'] as int)
+        : FollowRefStateBitfieldProximity(0);
+
+    return val.build() as _$FollowRefState;
+  }
 
   _$FollowRefState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43563,9 +50028,9 @@ class _$FollowRefState extends FollowRefState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'control_src': controlSrc,
         'control_ent': controlEnt,
         'reference': reference?.toJson(false),
@@ -43638,6 +50103,15 @@ class FollowRefStateBuilder extends Object
   FollowRefStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FollowRefStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FollowRefState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FollowRefStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      FollowRefStateBuilder.fromJson(json);
 
   @override
   FollowRefStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -43746,6 +50220,64 @@ class _$FormationMonitor extends FormationMonitor {
           [void Function(FormationMonitorBuilder b)? updates]) =>
       (FormationMonitorBuilder()..update(updates)).build()
           as _$FormationMonitor;
+
+  factory _$FormationMonitor.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationMonitorBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.axCmd = json.containsKey('ax_cmd') ? json['ax_cmd'] as double : 0;
+    val.ayCmd = json.containsKey('ay_cmd') ? json['ay_cmd'] as double : 0;
+    val.azCmd = json.containsKey('az_cmd') ? json['az_cmd'] as double : 0;
+    val.axDes = json.containsKey('ax_des') ? json['ax_des'] as double : 0;
+    val.ayDes = json.containsKey('ay_des') ? json['ay_des'] as double : 0;
+    val.azDes = json.containsKey('az_des') ? json['az_des'] as double : 0;
+    val.virtErrX =
+        json.containsKey('virt_err_x') ? json['virt_err_x'] as double : 0;
+    val.virtErrY =
+        json.containsKey('virt_err_y') ? json['virt_err_y'] as double : 0;
+    val.virtErrZ =
+        json.containsKey('virt_err_z') ? json['virt_err_z'] as double : 0;
+    val.surfFdbkX =
+        json.containsKey('surf_fdbk_x') ? json['surf_fdbk_x'] as double : 0;
+    val.surfFdbkY =
+        json.containsKey('surf_fdbk_y') ? json['surf_fdbk_y'] as double : 0;
+    val.surfFdbkZ =
+        json.containsKey('surf_fdbk_z') ? json['surf_fdbk_z'] as double : 0;
+    val.surfUnknX =
+        json.containsKey('surf_unkn_x') ? json['surf_unkn_x'] as double : 0;
+    val.surfUnknY =
+        json.containsKey('surf_unkn_y') ? json['surf_unkn_y'] as double : 0;
+    val.surfUnknZ =
+        json.containsKey('surf_unkn_z') ? json['surf_unkn_z'] as double : 0;
+    val.ssX = json.containsKey('ss_x') ? json['ss_x'] as double : 0;
+    val.ssY = json.containsKey('ss_y') ? json['ss_y'] as double : 0;
+    val.ssZ = json.containsKey('ss_z') ? json['ss_z'] as double : 0;
+    var relState = <RelativeState>[];
+    if (json.containsKey('rel_state') && json['rel_state'] != null) {
+      var listJson = json['rel_state'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as RelativeState?;
+          if (m != null) relState.add(m);
+        }
+      }
+    }
+    val.relState = relState;
+
+    return val.build() as _$FormationMonitor;
+  }
 
   _$FormationMonitor._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -43895,9 +50427,9 @@ class _$FormationMonitor extends FormationMonitor {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'ax_cmd': axCmd,
         'ay_cmd': ayCmd,
         'az_cmd': azCmd,
@@ -44042,6 +50574,15 @@ class FormationMonitorBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormationMonitorBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationMonitor.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationMonitorBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationMonitorBuilder.fromJson(json);
+
   @override
   FormationMonitorBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FormationMonitorBuilder()..copyFromHeader(headerFrom);
@@ -44181,6 +50722,55 @@ class _$RelativeState extends RelativeState {
 
   factory _$RelativeState([void Function(RelativeStateBuilder b)? updates]) =>
       (RelativeStateBuilder()..update(updates)).build() as _$RelativeState;
+
+  factory _$RelativeState.fromJson(core.Map<String, dynamic> json) {
+    var val = RelativeStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sId = json.containsKey('s_id') && json['s_id'] != null
+        ? json['s_id'] as String
+        : '';
+    val.dist = json.containsKey('dist') ? json['dist'] as double : 0;
+    val.err = json.containsKey('err') ? json['err'] as double : 0;
+    val.ctrlImp = json.containsKey('ctrl_imp') ? json['ctrl_imp'] as double : 0;
+    val.relDirX =
+        json.containsKey('rel_dir_x') ? json['rel_dir_x'] as double : 0;
+    val.relDirY =
+        json.containsKey('rel_dir_y') ? json['rel_dir_y'] as double : 0;
+    val.relDirZ =
+        json.containsKey('rel_dir_z') ? json['rel_dir_z'] as double : 0;
+    val.errX = json.containsKey('err_x') ? json['err_x'] as double : 0;
+    val.errY = json.containsKey('err_y') ? json['err_y'] as double : 0;
+    val.errZ = json.containsKey('err_z') ? json['err_z'] as double : 0;
+    val.rfErrX = json.containsKey('rf_err_x') ? json['rf_err_x'] as double : 0;
+    val.rfErrY = json.containsKey('rf_err_y') ? json['rf_err_y'] as double : 0;
+    val.rfErrZ = json.containsKey('rf_err_z') ? json['rf_err_z'] as double : 0;
+    val.rfErrVx =
+        json.containsKey('rf_err_vx') ? json['rf_err_vx'] as double : 0;
+    val.rfErrVy =
+        json.containsKey('rf_err_vy') ? json['rf_err_vy'] as double : 0;
+    val.rfErrVz =
+        json.containsKey('rf_err_vz') ? json['rf_err_vz'] as double : 0;
+    val.ssX = json.containsKey('ss_x') ? json['ss_x'] as double : 0;
+    val.ssY = json.containsKey('ss_y') ? json['ss_y'] as double : 0;
+    val.ssZ = json.containsKey('ss_z') ? json['ss_z'] as double : 0;
+    val.virtErrX =
+        json.containsKey('virt_err_x') ? json['virt_err_x'] as double : 0;
+    val.virtErrY =
+        json.containsKey('virt_err_y') ? json['virt_err_y'] as double : 0;
+    val.virtErrZ =
+        json.containsKey('virt_err_z') ? json['virt_err_z'] as double : 0;
+
+    return val.build() as _$RelativeState;
+  }
 
   _$RelativeState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -44338,9 +50928,9 @@ class _$RelativeState extends RelativeState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         's_id': sId,
         'dist': dist,
         'err': err,
@@ -44497,6 +51087,15 @@ class RelativeStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  RelativeStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RelativeState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RelativeStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      RelativeStateBuilder.fromJson(json);
+
   @override
   RelativeStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       RelativeStateBuilder()..copyFromHeader(headerFrom);
@@ -44607,6 +51206,30 @@ class _$Dislodge extends Dislodge {
   factory _$Dislodge([void Function(DislodgeBuilder b)? updates]) =>
       (DislodgeBuilder()..update(updates)).build() as _$Dislodge;
 
+  factory _$Dislodge.fromJson(core.Map<String, dynamic> json) {
+    var val = DislodgeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.rpm = json.containsKey('rpm') ? json['rpm'] as double : 0;
+    val.direction = json.containsKey('direction') && json['direction'] != null
+        ? DislodgeEnumDirection(json['direction'] as int)
+        : DislodgeEnumDirection(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Dislodge;
+  }
+
   _$Dislodge._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -44690,9 +51313,9 @@ class _$Dislodge extends Dislodge {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'rpm': rpm,
         'direction': direction.value,
@@ -44759,6 +51382,15 @@ class DislodgeBuilder extends Object
   DislodgeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DislodgeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Dislodge.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DislodgeBuilder fromJson(core.Map<String, dynamic> json) =>
+      DislodgeBuilder.fromJson(json);
 
   @override
   DislodgeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -44867,6 +51499,96 @@ class _$Formation extends Formation {
 
   factory _$Formation([void Function(FormationBuilder b)? updates]) =>
       (FormationBuilder()..update(updates)).build() as _$Formation;
+
+  factory _$Formation.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.formationName =
+        json.containsKey('formation_name') && json['formation_name'] != null
+            ? json['formation_name'] as String
+            : '';
+    val.type = json.containsKey('type') && json['type'] != null
+        ? FormationEnumType(json['type'] as int)
+        : FormationEnumType(0);
+    val.op = json.containsKey('op') && json['op'] != null
+        ? FormationEnumOp(json['op'] as int)
+        : FormationEnumOp(0);
+    val.groupName = json.containsKey('group_name') && json['group_name'] != null
+        ? json['group_name'] as String
+        : '';
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.description =
+        json.containsKey('description') && json['description'] != null
+            ? json['description'] as String
+            : '';
+    val.referenceFrame =
+        json.containsKey('reference_frame') && json['reference_frame'] != null
+            ? FormationEnumReferenceFrame(json['reference_frame'] as int)
+            : FormationEnumReferenceFrame(0);
+    var participants = <VehicleFormationParticipant>[];
+    if (json.containsKey('participants') && json['participants'] != null) {
+      var listJson = json['participants'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as VehicleFormationParticipant?;
+          if (m != null) participants.add(m);
+        }
+      }
+    }
+    val.participants = participants;
+    val.leaderBankLim = json.containsKey('leader_bank_lim')
+        ? json['leader_bank_lim'] as double
+        : 0;
+    val.leaderSpeedMin = json.containsKey('leader_speed_min')
+        ? json['leader_speed_min'] as double
+        : 0;
+    val.leaderSpeedMax = json.containsKey('leader_speed_max')
+        ? json['leader_speed_max'] as double
+        : 0;
+    val.leaderAltMin = json.containsKey('leader_alt_min')
+        ? json['leader_alt_min'] as double
+        : 0;
+    val.leaderAltMax = json.containsKey('leader_alt_max')
+        ? json['leader_alt_max'] as double
+        : 0;
+    val.posSimErrLim = json.containsKey('pos_sim_err_lim')
+        ? json['pos_sim_err_lim'] as double
+        : 0;
+    val.posSimErrWrn = json.containsKey('pos_sim_err_wrn')
+        ? json['pos_sim_err_wrn'] as double
+        : 0;
+    val.posSimErrTimeout = json.containsKey('pos_sim_err_timeout')
+        ? json['pos_sim_err_timeout'] as int
+        : 0;
+    val.convergMax =
+        json.containsKey('converg_max') ? json['converg_max'] as double : 0;
+    val.convergTimeout = json.containsKey('converg_timeout')
+        ? json['converg_timeout'] as int
+        : 0;
+    val.commsTimeout =
+        json.containsKey('comms_timeout') ? json['comms_timeout'] as int : 0;
+    val.turbLim = json.containsKey('turb_lim') ? json['turb_lim'] as double : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Formation;
+  }
 
   _$Formation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45031,9 +51753,9 @@ class _$Formation extends Formation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'formation_name': formationName,
         'type': type.value,
         'op': op.value,
@@ -45196,6 +51918,15 @@ class FormationBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Formation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationBuilder.fromJson(json);
+
   @override
   FormationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FormationBuilder()..copyFromHeader(headerFrom);
@@ -45312,6 +52043,37 @@ class _$Launch extends Launch {
   factory _$Launch([void Function(LaunchBuilder b)? updates]) =>
       (LaunchBuilder()..update(updates)).build() as _$Launch;
 
+  factory _$Launch.fromJson(core.Map<String, dynamic> json) {
+    var val = LaunchBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Launch;
+  }
+
   _$Launch._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -45417,9 +52179,9 @@ class _$Launch extends Launch {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -45505,6 +52267,15 @@ class LaunchBuilder extends Object
   LaunchBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LaunchBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Launch.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LaunchBuilder fromJson(core.Map<String, dynamic> json) =>
+      LaunchBuilder.fromJson(json);
 
   @override
   LaunchBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -45595,6 +52366,37 @@ class _$Drop extends Drop {
 
   factory _$Drop([void Function(DropBuilder b)? updates]) =>
       (DropBuilder()..update(updates)).build() as _$Drop;
+
+  factory _$Drop.fromJson(core.Map<String, dynamic> json) {
+    var val = DropBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Drop;
+  }
 
   _$Drop._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45701,9 +52503,9 @@ class _$Drop extends Drop {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -45789,6 +52591,15 @@ class DropBuilder extends Object
   DropBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DropBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Drop.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DropBuilder fromJson(core.Map<String, dynamic> json) =>
+      DropBuilder.fromJson(json);
 
   @override
   DropBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -45879,6 +52690,38 @@ class _$ScheduledGoto extends ScheduledGoto {
 
   factory _$ScheduledGoto([void Function(ScheduledGotoBuilder b)? updates]) =>
       (ScheduledGotoBuilder()..update(updates)).build() as _$ScheduledGoto;
+
+  factory _$ScheduledGoto.fromJson(core.Map<String, dynamic> json) {
+    var val = ScheduledGotoBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.arrivalTime =
+        json.containsKey('arrival_time') ? json['arrival_time'] as double : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.travelZ = json.containsKey('travel_z') ? json['travel_z'] as double : 0;
+    val.travelZUnits =
+        json.containsKey('travel_z_units') && json['travel_z_units'] != null
+            ? ZUnitsEnum(json['travel_z_units'] as int)
+            : ZUnitsEnum(0);
+    val.delayed = json.containsKey('delayed') && json['delayed'] != null
+        ? ScheduledGotoEnumDelayed(json['delayed'] as int)
+        : ScheduledGotoEnumDelayed(0);
+
+    return val.build() as _$ScheduledGoto;
+  }
 
   _$ScheduledGoto._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -45987,9 +52830,9 @@ class _$ScheduledGoto extends ScheduledGoto {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'arrival_time': arrivalTime,
         'lat': lat,
         'lon': lon,
@@ -46076,6 +52919,15 @@ class ScheduledGotoBuilder extends Object
   ScheduledGotoBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ScheduledGotoBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ScheduledGoto.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ScheduledGotoBuilder fromJson(core.Map<String, dynamic> json) =>
+      ScheduledGotoBuilder.fromJson(json);
 
   @override
   ScheduledGotoBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -46182,6 +53034,50 @@ class _$RowsCoverage extends RowsCoverage {
 
   factory _$RowsCoverage([void Function(RowsCoverageBuilder b)? updates]) =>
       (RowsCoverageBuilder()..update(updates)).build() as _$RowsCoverage;
+
+  factory _$RowsCoverage.fromJson(core.Map<String, dynamic> json) {
+    var val = RowsCoverageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.crossAngle =
+        json.containsKey('cross_angle') ? json['cross_angle'] as double : 0;
+    val.width = json.containsKey('width') ? json['width'] as double : 0;
+    val.length = json.containsKey('length') ? json['length'] as double : 0;
+    val.coff = json.containsKey('coff') ? json['coff'] as int : 0;
+    val.angAperture = json.containsKey('angAperture')
+        ? json['angAperture'] as double
+        : 2.094395;
+    val.range = json.containsKey('range') ? json['range'] as int : 0;
+    val.overlap = json.containsKey('overlap') ? json['overlap'] as int : 10;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? RowsCoverageBitfieldFlags(json['flags'] as int)
+        : RowsCoverageBitfieldFlags(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$RowsCoverage;
+  }
 
   _$RowsCoverage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46327,9 +53223,9 @@ class _$RowsCoverage extends RowsCoverage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -46456,6 +53352,15 @@ class RowsCoverageBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  RowsCoverageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RowsCoverage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RowsCoverageBuilder fromJson(core.Map<String, dynamic> json) =>
+      RowsCoverageBuilder.fromJson(json);
+
   @override
   RowsCoverageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       RowsCoverageBuilder()..copyFromHeader(headerFrom);
@@ -46567,6 +53472,46 @@ class _$Sample extends Sample {
 
   factory _$Sample([void Function(SampleBuilder b)? updates]) =>
       (SampleBuilder()..update(updates)).build() as _$Sample;
+
+  factory _$Sample.fromJson(core.Map<String, dynamic> json) {
+    var val = SampleBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.syringe0 = json.containsKey('syringe0') && json['syringe0'] != null
+        ? BooleanEnum(json['syringe0'] as int)
+        : BooleanEnum(0);
+    val.syringe1 = json.containsKey('syringe1') && json['syringe1'] != null
+        ? BooleanEnum(json['syringe1'] as int)
+        : BooleanEnum(0);
+    val.syringe2 = json.containsKey('syringe2') && json['syringe2'] != null
+        ? BooleanEnum(json['syringe2'] as int)
+        : BooleanEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Sample;
+  }
 
   _$Sample._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -46692,9 +53637,9 @@ class _$Sample extends Sample {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -46796,6 +53741,15 @@ class SampleBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  SampleBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Sample.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SampleBuilder fromJson(core.Map<String, dynamic> json) =>
+      SampleBuilder.fromJson(json);
+
   @override
   SampleBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       SampleBuilder()..copyFromHeader(headerFrom);
@@ -46875,6 +53829,21 @@ class _$ImageTracking extends ImageTracking {
   factory _$ImageTracking([void Function(ImageTrackingBuilder b)? updates]) =>
       (ImageTrackingBuilder()..update(updates)).build() as _$ImageTracking;
 
+  factory _$ImageTracking.fromJson(core.Map<String, dynamic> json) {
+    var val = ImageTrackingBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$ImageTracking;
+  }
+
   _$ImageTracking._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -46933,9 +53902,9 @@ class _$ImageTracking extends ImageTracking {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -46981,6 +53950,15 @@ class ImageTrackingBuilder extends Object
   ImageTrackingBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ImageTrackingBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ImageTracking.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ImageTrackingBuilder fromJson(core.Map<String, dynamic> json) =>
+      ImageTrackingBuilder.fromJson(json);
 
   @override
   ImageTrackingBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -47055,6 +54033,38 @@ class _$Takeoff extends Takeoff {
 
   factory _$Takeoff([void Function(TakeoffBuilder b)? updates]) =>
       (TakeoffBuilder()..update(updates)).build() as _$Takeoff;
+
+  factory _$Takeoff.fromJson(core.Map<String, dynamic> json) {
+    var val = TakeoffBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.takeoffPitch =
+        json.containsKey('takeoff_pitch') ? json['takeoff_pitch'] as double : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Takeoff;
+  }
 
   _$Takeoff._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47163,9 +54173,9 @@ class _$Takeoff extends Takeoff {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -47251,6 +54261,15 @@ class TakeoffBuilder extends Object
   TakeoffBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TakeoffBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Takeoff.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TakeoffBuilder fromJson(core.Map<String, dynamic> json) =>
+      TakeoffBuilder.fromJson(json);
 
   @override
   TakeoffBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -47347,6 +54366,43 @@ class _$Land extends Land {
 
   factory _$Land([void Function(LandBuilder b)? updates]) =>
       (LandBuilder()..update(updates)).build() as _$Land;
+
+  factory _$Land.fromJson(core.Map<String, dynamic> json) {
+    var val = LandBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.abortZ = json.containsKey('abort_z') ? json['abort_z'] as double : 0;
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.glideSlope =
+        json.containsKey('glide_slope') ? json['glide_slope'] as int : 0;
+    val.glideSlopeAlt = json.containsKey('glide_slope_alt')
+        ? json['glide_slope_alt'] as double
+        : 0;
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Land;
+  }
 
   _$Land._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47471,9 +54527,9 @@ class _$Land extends Land {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -47575,6 +54631,15 @@ class LandBuilder extends Object
   LandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  LandBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Land.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LandBuilder fromJson(core.Map<String, dynamic> json) =>
+      LandBuilder.fromJson(json);
 
   @override
   LandBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -47679,6 +54744,59 @@ class _$AutonomousSection extends AutonomousSection {
           [void Function(AutonomousSectionBuilder b)? updates]) =>
       (AutonomousSectionBuilder()..update(updates)).build()
           as _$AutonomousSection;
+
+  factory _$AutonomousSection.fromJson(core.Map<String, dynamic> json) {
+    var val = AutonomousSectionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.limits = json.containsKey('limits') && json['limits'] != null
+        ? AutonomousSectionBitfieldLimits(json['limits'] as int)
+        : AutonomousSectionBitfieldLimits(0);
+    val.maxDepth =
+        json.containsKey('max_depth') ? json['max_depth'] as double : 0;
+    val.minAlt = json.containsKey('min_alt') ? json['min_alt'] as double : 0;
+    val.timeLimit =
+        json.containsKey('time_limit') ? json['time_limit'] as double : 0;
+    var areaLimits = <PolygonVertex>[];
+    if (json.containsKey('area_limits') && json['area_limits'] != null) {
+      var listJson = json['area_limits'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PolygonVertex?;
+          if (m != null) areaLimits.add(m);
+        }
+      }
+    }
+    val.areaLimits = areaLimits;
+    val.controller =
+        json.containsKey('controller') && json['controller'] != null
+            ? json['controller'] as String
+            : '';
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$AutonomousSection;
+  }
 
   _$AutonomousSection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -47803,9 +54921,9 @@ class _$AutonomousSection extends AutonomousSection {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'speed': speed,
@@ -47911,6 +55029,15 @@ class AutonomousSectionBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  AutonomousSectionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AutonomousSection.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AutonomousSectionBuilder fromJson(core.Map<String, dynamic> json) =>
+      AutonomousSectionBuilder.fromJson(json);
+
   @override
   AutonomousSectionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       AutonomousSectionBuilder()..copyFromHeader(headerFrom);
@@ -48006,6 +55133,40 @@ class _$FollowPoint extends FollowPoint {
 
   factory _$FollowPoint([void Function(FollowPointBuilder b)? updates]) =>
       (FollowPointBuilder()..update(updates)).build() as _$FollowPoint;
+
+  factory _$FollowPoint.fromJson(core.Map<String, dynamic> json) {
+    var val = FollowPointBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') && json['target'] != null
+        ? json['target'] as String
+        : '';
+    val.maxSpeed =
+        json.containsKey('max_speed') ? json['max_speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$FollowPoint;
+  }
 
   _$FollowPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48112,9 +55273,9 @@ class _$FollowPoint extends FollowPoint {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'max_speed': maxSpeed,
         'speed_units': speedUnits.value,
@@ -48201,6 +55362,15 @@ class FollowPointBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FollowPointBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FollowPoint.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FollowPointBuilder fromJson(core.Map<String, dynamic> json) =>
+      FollowPointBuilder.fromJson(json);
+
   @override
   FollowPointBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FollowPointBuilder()..copyFromHeader(headerFrom);
@@ -48286,6 +55456,33 @@ class _$Alignment extends Alignment {
 
   factory _$Alignment([void Function(AlignmentBuilder b)? updates]) =>
       (AlignmentBuilder()..update(updates)).build() as _$Alignment;
+
+  factory _$Alignment.fromJson(core.Map<String, dynamic> json) {
+    var val = AlignmentBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Alignment;
+  }
 
   _$Alignment._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48382,9 +55579,9 @@ class _$Alignment extends Alignment {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -48460,6 +55657,15 @@ class AlignmentBuilder extends Object
   AlignmentBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AlignmentBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Alignment.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AlignmentBuilder fromJson(core.Map<String, dynamic> json) =>
+      AlignmentBuilder.fromJson(json);
 
   @override
   AlignmentBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -48556,6 +55762,45 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           [void Function(StationKeepingExtendedBuilder b)? updates]) =>
       (StationKeepingExtendedBuilder()..update(updates)).build()
           as _$StationKeepingExtended;
+
+  factory _$StationKeepingExtended.fromJson(core.Map<String, dynamic> json) {
+    var val = StationKeepingExtendedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.radius = json.containsKey('radius') ? json['radius'] as double : 0;
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.popupPeriod =
+        json.containsKey('popup_period') ? json['popup_period'] as int : 0;
+    val.popupDuration =
+        json.containsKey('popup_duration') ? json['popup_duration'] as int : 0;
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? StationKeepingExtendedBitfieldFlags(json['flags'] as int)
+        : StationKeepingExtendedBitfieldFlags(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$StationKeepingExtended;
+  }
 
   _$StationKeepingExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -48684,9 +55929,9 @@ class _$StationKeepingExtended extends StationKeepingExtended {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'z': z,
@@ -48797,6 +56042,15 @@ class StationKeepingExtendedBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  StationKeepingExtendedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$StationKeepingExtended.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  StationKeepingExtendedBuilder fromJson(core.Map<String, dynamic> json) =>
+      StationKeepingExtendedBuilder.fromJson(json);
+
   @override
   StationKeepingExtendedBuilder newInstance(
           [ImcBuilderHeaderPart? headerFrom]) =>
@@ -48879,6 +56133,21 @@ class _$ManeuverDone extends ManeuverDone {
   factory _$ManeuverDone([void Function(ManeuverDoneBuilder b)? updates]) =>
       (ManeuverDoneBuilder()..update(updates)).build() as _$ManeuverDone;
 
+  factory _$ManeuverDone.fromJson(core.Map<String, dynamic> json) {
+    var val = ManeuverDoneBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$ManeuverDone;
+  }
+
   _$ManeuverDone._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -48937,9 +56206,9 @@ class _$ManeuverDone extends ManeuverDone {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -48985,6 +56254,15 @@ class ManeuverDoneBuilder extends Object
   ManeuverDoneBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ManeuverDoneBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ManeuverDone.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ManeuverDoneBuilder fromJson(core.Map<String, dynamic> json) =>
+      ManeuverDoneBuilder.fromJson(json);
 
   @override
   ManeuverDoneBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -49065,6 +56343,42 @@ class _$Magnetometer extends Magnetometer {
 
   factory _$Magnetometer([void Function(MagnetometerBuilder b)? updates]) =>
       (MagnetometerBuilder()..update(updates)).build() as _$Magnetometer;
+
+  factory _$Magnetometer.fromJson(core.Map<String, dynamic> json) {
+    var val = MagnetometerBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.speedUnits =
+        json.containsKey('speed_units') && json['speed_units'] != null
+            ? SpeedUnitsEnum(json['speed_units'] as int)
+            : SpeedUnitsEnum(0);
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.width = json.containsKey('width') ? json['width'] as double : 0;
+    val.direction = json.containsKey('direction') && json['direction'] != null
+        ? MagnetometerEnumDirection(json['direction'] as int)
+        : MagnetometerEnumDirection(0);
+    val.custom = json.containsKey('custom') && json['custom'] != null
+        ? json['custom'] as String
+        : '';
+
+    return val.build() as _$Magnetometer;
+  }
 
   _$Magnetometer._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49189,9 +56503,9 @@ class _$Magnetometer extends Magnetometer {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
         'lat': lat,
         'lon': lon,
@@ -49294,6 +56608,15 @@ class MagnetometerBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  MagnetometerBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Magnetometer.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MagnetometerBuilder fromJson(core.Map<String, dynamic> json) =>
+      MagnetometerBuilder.fromJson(json);
+
   @override
   MagnetometerBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       MagnetometerBuilder()..copyFromHeader(headerFrom);
@@ -49393,6 +56716,50 @@ class _$VehicleState extends VehicleState {
 
   factory _$VehicleState([void Function(VehicleStateBuilder b)? updates]) =>
       (VehicleStateBuilder()..update(updates)).build() as _$VehicleState;
+
+  factory _$VehicleState.fromJson(core.Map<String, dynamic> json) {
+    var val = VehicleStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.opMode = json.containsKey('op_mode') && json['op_mode'] != null
+        ? VehicleStateEnumOpMode(json['op_mode'] as int)
+        : VehicleStateEnumOpMode(0);
+    val.errorCount =
+        json.containsKey('error_count') ? json['error_count'] as int : 0;
+    val.errorEnts = json.containsKey('error_ents') && json['error_ents'] != null
+        ? json['error_ents'] as String
+        : '';
+    val.maneuverType =
+        json.containsKey('maneuver_type') ? json['maneuver_type'] as int : 0;
+    val.maneuverStime = json.containsKey('maneuver_stime')
+        ? json['maneuver_stime'] as double
+        : 0;
+    val.maneuverEta =
+        json.containsKey('maneuver_eta') ? json['maneuver_eta'] as int : 0;
+    val.controlLoops =
+        json.containsKey('control_loops') && json['control_loops'] != null
+            ? CLoopsMaskBitfield(json['control_loops'] as int)
+            : CLoopsMaskBitfield(0);
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? VehicleStateBitfieldFlags(json['flags'] as int)
+        : VehicleStateBitfieldFlags(0);
+    val.lastError = json.containsKey('last_error') && json['last_error'] != null
+        ? json['last_error'] as String
+        : '';
+    val.lastErrorTime = json.containsKey('last_error_time')
+        ? json['last_error_time'] as double
+        : 0;
+
+    return val.build() as _$VehicleState;
+  }
 
   _$VehicleState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49512,9 +56879,9 @@ class _$VehicleState extends VehicleState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op_mode': opMode.value,
         'error_count': errorCount,
         'error_ents': errorEnts,
@@ -49614,6 +56981,15 @@ class VehicleStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  VehicleStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleStateBuilder.fromJson(json);
+
   @override
   VehicleStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       VehicleStateBuilder()..copyFromHeader(headerFrom);
@@ -49703,6 +57079,47 @@ class _$VehicleCommand extends VehicleCommand {
 
   factory _$VehicleCommand([void Function(VehicleCommandBuilder b)? updates]) =>
       (VehicleCommandBuilder()..update(updates)).build() as _$VehicleCommand;
+
+  factory _$VehicleCommand.fromJson(core.Map<String, dynamic> json) {
+    var val = VehicleCommandBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? VehicleCommandEnumType(json['type'] as int)
+        : VehicleCommandEnumType(0);
+    val.requestId =
+        json.containsKey('request_id') ? json['request_id'] as int : 0;
+    val.command = json.containsKey('command') && json['command'] != null
+        ? VehicleCommandEnumCommand(json['command'] as int)
+        : VehicleCommandEnumCommand(0);
+
+    Maneuver? maneuver;
+    if (json.containsKey('maneuver') && json['maneuver'] != null) {
+      var msgJson = json['maneuver'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        maneuver = builder?.build() as Maneuver?;
+      }
+    }
+    val.maneuver = maneuver;
+    val.calibTime =
+        json.containsKey('calib_time') ? json['calib_time'] as int : 0;
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$VehicleCommand;
+  }
 
   _$VehicleCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -49799,9 +57216,9 @@ class _$VehicleCommand extends VehicleCommand {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'request_id': requestId,
         'command': command.value,
@@ -49877,6 +57294,15 @@ class VehicleCommandBuilder extends Object
   VehicleCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VehicleCommandBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleCommand.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleCommandBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleCommandBuilder.fromJson(json);
 
   @override
   VehicleCommandBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -49954,6 +57380,28 @@ class _$MonitorEntityState extends MonitorEntityState {
       (MonitorEntityStateBuilder()..update(updates)).build()
           as _$MonitorEntityState;
 
+  factory _$MonitorEntityState.fromJson(core.Map<String, dynamic> json) {
+    var val = MonitorEntityStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.command = json.containsKey('command') && json['command'] != null
+        ? MonitorEntityStateEnumCommand(json['command'] as int)
+        : MonitorEntityStateEnumCommand(0);
+    val.entities = json.containsKey('entities') && json['entities'] != null
+        ? json['entities'] as String
+        : '';
+
+    return val.build() as _$MonitorEntityState;
+  }
+
   _$MonitorEntityState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -50027,9 +57475,9 @@ class _$MonitorEntityState extends MonitorEntityState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'command': command.value,
         'entities': entities,
       };
@@ -50087,6 +57535,15 @@ class MonitorEntityStateBuilder extends Object
   MonitorEntityStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  MonitorEntityStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$MonitorEntityState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MonitorEntityStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      MonitorEntityStateBuilder.fromJson(json);
 
   @override
   MonitorEntityStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -50167,6 +57624,40 @@ class _$EntityMonitoringState extends EntityMonitoringState {
           [void Function(EntityMonitoringStateBuilder b)? updates]) =>
       (EntityMonitoringStateBuilder()..update(updates)).build()
           as _$EntityMonitoringState;
+
+  factory _$EntityMonitoringState.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityMonitoringStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.mcount = json.containsKey('mcount') ? json['mcount'] as int : 0;
+    val.mnames = json.containsKey('mnames') && json['mnames'] != null
+        ? json['mnames'] as String
+        : '';
+    val.ecount = json.containsKey('ecount') ? json['ecount'] as int : 0;
+    val.enames = json.containsKey('enames') && json['enames'] != null
+        ? json['enames'] as String
+        : '';
+    val.ccount = json.containsKey('ccount') ? json['ccount'] as int : 0;
+    val.cnames = json.containsKey('cnames') && json['cnames'] != null
+        ? json['cnames'] as String
+        : '';
+    val.lastError = json.containsKey('last_error') && json['last_error'] != null
+        ? json['last_error'] as String
+        : '';
+    val.lastErrorTime = json.containsKey('last_error_time')
+        ? json['last_error_time'] as double
+        : 0;
+
+    return val.build() as _$EntityMonitoringState;
+  }
 
   _$EntityMonitoringState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50275,9 +57766,9 @@ class _$EntityMonitoringState extends EntityMonitoringState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'mcount': mcount,
         'mnames': mnames,
         'ecount': ecount,
@@ -50367,6 +57858,15 @@ class EntityMonitoringStateBuilder extends Object
   EntityMonitoringStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityMonitoringStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityMonitoringState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityMonitoringStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityMonitoringStateBuilder.fromJson(json);
 
   @override
   EntityMonitoringStateBuilder newInstance(
@@ -50468,6 +57968,43 @@ class _$OperationalLimits extends OperationalLimits {
           [void Function(OperationalLimitsBuilder b)? updates]) =>
       (OperationalLimitsBuilder()..update(updates)).build()
           as _$OperationalLimits;
+
+  factory _$OperationalLimits.fromJson(core.Map<String, dynamic> json) {
+    var val = OperationalLimitsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.mask = json.containsKey('mask') && json['mask'] != null
+        ? OpLimitsMaskBitfield(json['mask'] as int)
+        : OpLimitsMaskBitfield(0);
+    val.maxDepth =
+        json.containsKey('max_depth') ? json['max_depth'] as double : 0;
+    val.minAltitude =
+        json.containsKey('min_altitude') ? json['min_altitude'] as double : 0;
+    val.maxAltitude =
+        json.containsKey('max_altitude') ? json['max_altitude'] as double : 0;
+    val.minSpeed =
+        json.containsKey('min_speed') ? json['min_speed'] as double : 0;
+    val.maxSpeed =
+        json.containsKey('max_speed') ? json['max_speed'] as double : 0;
+    val.maxVrate =
+        json.containsKey('max_vrate') ? json['max_vrate'] as double : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.orientation =
+        json.containsKey('orientation') ? json['orientation'] as double : 0;
+    val.width = json.containsKey('width') ? json['width'] as double : 0;
+    val.length = json.containsKey('length') ? json['length'] as double : 0;
+
+    return val.build() as _$OperationalLimits;
+  }
 
   _$OperationalLimits._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -50599,9 +58136,9 @@ class _$OperationalLimits extends OperationalLimits {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'mask': mask.value,
         'max_depth': maxDepth,
         'min_altitude': minAltitude,
@@ -50709,6 +58246,15 @@ class OperationalLimitsBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  OperationalLimitsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$OperationalLimits.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  OperationalLimitsBuilder fromJson(core.Map<String, dynamic> json) =>
+      OperationalLimitsBuilder.fromJson(json);
+
   @override
   OperationalLimitsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       OperationalLimitsBuilder()..copyFromHeader(headerFrom);
@@ -50792,6 +58338,21 @@ class _$GetOperationalLimits extends GetOperationalLimits {
       (GetOperationalLimitsBuilder()..update(updates)).build()
           as _$GetOperationalLimits;
 
+  factory _$GetOperationalLimits.fromJson(core.Map<String, dynamic> json) {
+    var val = GetOperationalLimitsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$GetOperationalLimits;
+  }
+
   _$GetOperationalLimits._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -50852,9 +58413,9 @@ class _$GetOperationalLimits extends GetOperationalLimits {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -50903,6 +58464,15 @@ class GetOperationalLimitsBuilder extends Object
   GetOperationalLimitsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GetOperationalLimitsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GetOperationalLimits.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GetOperationalLimitsBuilder fromJson(core.Map<String, dynamic> json) =>
+      GetOperationalLimitsBuilder.fromJson(json);
 
   @override
   GetOperationalLimitsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -50963,6 +58533,23 @@ class _$Calibration extends Calibration {
 
   factory _$Calibration([void Function(CalibrationBuilder b)? updates]) =>
       (CalibrationBuilder()..update(updates)).build() as _$Calibration;
+
+  factory _$Calibration.fromJson(core.Map<String, dynamic> json) {
+    var val = CalibrationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+
+    return val.build() as _$Calibration;
+  }
 
   _$Calibration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51029,9 +58616,9 @@ class _$Calibration extends Calibration {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'duration': duration,
       };
 }
@@ -51082,6 +58669,15 @@ class CalibrationBuilder extends Object
   CalibrationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CalibrationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Calibration.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CalibrationBuilder fromJson(core.Map<String, dynamic> json) =>
+      CalibrationBuilder.fromJson(json);
 
   @override
   CalibrationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -51148,6 +58744,29 @@ class _$ControlLoops extends ControlLoops {
 
   factory _$ControlLoops([void Function(ControlLoopsBuilder b)? updates]) =>
       (ControlLoopsBuilder()..update(updates)).build() as _$ControlLoops;
+
+  factory _$ControlLoops.fromJson(core.Map<String, dynamic> json) {
+    var val = ControlLoopsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.enable = json.containsKey('enable') && json['enable'] != null
+        ? ControlLoopsEnumEnable(json['enable'] as int)
+        : ControlLoopsEnumEnable(0);
+    val.mask = json.containsKey('mask') && json['mask'] != null
+        ? CLoopsMaskBitfield(json['mask'] as int)
+        : CLoopsMaskBitfield(0);
+    val.scopeRef = json.containsKey('scope_ref') ? json['scope_ref'] as int : 0;
+
+    return val.build() as _$ControlLoops;
+  }
 
   _$ControlLoops._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51224,9 +58843,9 @@ class _$ControlLoops extends ControlLoops {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'enable': enable.value,
         'mask': mask.value,
         'scope_ref': scopeRef,
@@ -51287,6 +58906,15 @@ class ControlLoopsBuilder extends Object
   ControlLoopsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ControlLoopsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ControlLoops.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ControlLoopsBuilder fromJson(core.Map<String, dynamic> json) =>
+      ControlLoopsBuilder.fromJson(json);
 
   @override
   ControlLoopsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -51354,6 +58982,25 @@ class _$VehicleMedium extends VehicleMedium {
   factory _$VehicleMedium([void Function(VehicleMediumBuilder b)? updates]) =>
       (VehicleMediumBuilder()..update(updates)).build() as _$VehicleMedium;
 
+  factory _$VehicleMedium.fromJson(core.Map<String, dynamic> json) {
+    var val = VehicleMediumBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.medium = json.containsKey('medium') && json['medium'] != null
+        ? VehicleMediumEnumMedium(json['medium'] as int)
+        : VehicleMediumEnumMedium(0);
+
+    return val.build() as _$VehicleMedium;
+  }
+
   _$VehicleMedium._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -51419,9 +59066,9 @@ class _$VehicleMedium extends VehicleMedium {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'medium': medium.value,
       };
 }
@@ -51472,6 +59119,15 @@ class VehicleMediumBuilder extends Object
   VehicleMediumBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VehicleMediumBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleMedium.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleMediumBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleMediumBuilder.fromJson(json);
 
   @override
   VehicleMediumBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -51536,6 +59192,26 @@ class _$Collision extends Collision {
 
   factory _$Collision([void Function(CollisionBuilder b)? updates]) =>
       (CollisionBuilder()..update(updates)).build() as _$Collision;
+
+  factory _$Collision.fromJson(core.Map<String, dynamic> json) {
+    var val = CollisionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.type = json.containsKey('type') && json['type'] != null
+        ? CollisionBitfieldType(json['type'] as int)
+        : CollisionBitfieldType(0);
+
+    return val.build() as _$Collision;
+  }
 
   _$Collision._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51607,9 +59283,9 @@ class _$Collision extends Collision {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'type': type.value,
       };
@@ -51665,6 +59341,15 @@ class CollisionBuilder extends Object
   CollisionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CollisionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Collision.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CollisionBuilder fromJson(core.Map<String, dynamic> json) =>
+      CollisionBuilder.fromJson(json);
 
   @override
   CollisionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -51739,6 +59424,37 @@ class _$FormState extends FormState {
 
   factory _$FormState([void Function(FormStateBuilder b)? updates]) =>
       (FormStateBuilder()..update(updates)).build() as _$FormState;
+
+  factory _$FormState.fromJson(core.Map<String, dynamic> json) {
+    var val = FormStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.posSimErr =
+        json.containsKey('PosSimErr') ? json['PosSimErr'] as double : 0;
+    val.converg = json.containsKey('Converg') ? json['Converg'] as double : 0;
+    val.turbulence =
+        json.containsKey('Turbulence') ? json['Turbulence'] as double : 0;
+    val.posSimMon = json.containsKey('PosSimMon') && json['PosSimMon'] != null
+        ? FormStateEnumPosSimMon(json['PosSimMon'] as int)
+        : FormStateEnumPosSimMon(0);
+    val.commMon = json.containsKey('CommMon') && json['CommMon'] != null
+        ? FormStateEnumCommMon(json['CommMon'] as int)
+        : FormStateEnumCommMon(0);
+    val.convergMon =
+        json.containsKey('ConvergMon') && json['ConvergMon'] != null
+            ? FormStateEnumConvergMon(json['ConvergMon'] as int)
+            : FormStateEnumConvergMon(0);
+
+    return val.build() as _$FormState;
+  }
 
   _$FormState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -51838,9 +59554,9 @@ class _$FormState extends FormState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'PosSimErr': posSimErr,
         'Converg': converg,
         'Turbulence': turbulence,
@@ -51919,6 +59635,15 @@ class FormStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormStateBuilder.fromJson(json);
+
   @override
   FormStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FormStateBuilder()..copyFromHeader(headerFrom);
@@ -51993,6 +59718,28 @@ class _$AutopilotMode extends AutopilotMode {
   factory _$AutopilotMode([void Function(AutopilotModeBuilder b)? updates]) =>
       (AutopilotModeBuilder()..update(updates)).build() as _$AutopilotMode;
 
+  factory _$AutopilotMode.fromJson(core.Map<String, dynamic> json) {
+    var val = AutopilotModeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.autonomy = json.containsKey('autonomy') && json['autonomy'] != null
+        ? AutopilotModeEnumAutonomy(json['autonomy'] as int)
+        : AutopilotModeEnumAutonomy(0);
+    val.mode = json.containsKey('mode') && json['mode'] != null
+        ? json['mode'] as String
+        : '';
+
+    return val.build() as _$AutopilotMode;
+  }
+
   _$AutopilotMode._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -52064,9 +59811,9 @@ class _$AutopilotMode extends AutopilotMode {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'autonomy': autonomy.value,
         'mode': mode,
       };
@@ -52123,6 +59870,15 @@ class AutopilotModeBuilder extends Object
   AutopilotModeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AutopilotModeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AutopilotMode.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AutopilotModeBuilder fromJson(core.Map<String, dynamic> json) =>
+      AutopilotModeBuilder.fromJson(json);
 
   @override
   AutopilotModeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -52201,6 +59957,43 @@ class _$FormationState extends FormationState {
 
   factory _$FormationState([void Function(FormationStateBuilder b)? updates]) =>
       (FormationStateBuilder()..update(updates)).build() as _$FormationState;
+
+  factory _$FormationState.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? FormationStateEnumType(json['type'] as int)
+        : FormationStateEnumType(0);
+    val.op = json.containsKey('op') && json['op'] != null
+        ? FormationStateEnumOp(json['op'] as int)
+        : FormationStateEnumOp(0);
+    val.posSimErr =
+        json.containsKey('PosSimErr') ? json['PosSimErr'] as double : 0;
+    val.converg = json.containsKey('Converg') ? json['Converg'] as double : 0;
+    val.turbulence =
+        json.containsKey('Turbulence') ? json['Turbulence'] as double : 0;
+    val.posSimMon = json.containsKey('PosSimMon') && json['PosSimMon'] != null
+        ? FormationStateEnumPosSimMon(json['PosSimMon'] as int)
+        : FormationStateEnumPosSimMon(0);
+    val.commMon = json.containsKey('CommMon') && json['CommMon'] != null
+        ? FormationStateEnumCommMon(json['CommMon'] as int)
+        : FormationStateEnumCommMon(0);
+    val.convergMon =
+        json.containsKey('ConvergMon') && json['ConvergMon'] != null
+            ? FormationStateEnumConvergMon(json['ConvergMon'] as int)
+            : FormationStateEnumConvergMon(0);
+
+    return val.build() as _$FormationState;
+  }
 
   _$FormationState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52310,9 +60103,9 @@ class _$FormationState extends FormationState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'op': op.value,
         'PosSimErr': posSimErr,
@@ -52401,6 +60194,15 @@ class FormationStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormationStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationStateBuilder.fromJson(json);
+
   @override
   FormationStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FormationStateBuilder()..copyFromHeader(headerFrom);
@@ -52482,6 +60284,33 @@ class _$ReportControl extends ReportControl {
 
   factory _$ReportControl([void Function(ReportControlBuilder b)? updates]) =>
       (ReportControlBuilder()..update(updates)).build() as _$ReportControl;
+
+  factory _$ReportControl.fromJson(core.Map<String, dynamic> json) {
+    var val = ReportControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? ReportControlEnumOp(json['op'] as int)
+        : ReportControlEnumOp(0);
+    val.commInterface =
+        json.containsKey('comm_interface') && json['comm_interface'] != null
+            ? ReportControlBitfieldCommInterface(json['comm_interface'] as int)
+            : ReportControlBitfieldCommInterface(0);
+    val.period = json.containsKey('period') ? json['period'] as int : 0;
+    val.sysDst = json.containsKey('sys_dst') && json['sys_dst'] != null
+        ? json['sys_dst'] as String
+        : '';
+
+    return val.build() as _$ReportControl;
+  }
 
   _$ReportControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52566,9 +60395,9 @@ class _$ReportControl extends ReportControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'comm_interface': commInterface.value,
         'period': period,
@@ -52636,6 +60465,15 @@ class ReportControlBuilder extends Object
   ReportControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ReportControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ReportControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ReportControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      ReportControlBuilder.fromJson(json);
 
   @override
   ReportControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -52722,6 +60560,36 @@ class _$StateReport extends StateReport {
 
   factory _$StateReport([void Function(StateReportBuilder b)? updates]) =>
       (StateReportBuilder()..update(updates)).build() as _$StateReport;
+
+  factory _$StateReport.fromJson(core.Map<String, dynamic> json) {
+    var val = StateReportBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.stime = json.containsKey('stime') ? json['stime'] as int : 0;
+    val.latitude =
+        json.containsKey('latitude') ? json['latitude'] as double : 0;
+    val.longitude =
+        json.containsKey('longitude') ? json['longitude'] as double : 0;
+    val.altitude = json.containsKey('altitude') ? json['altitude'] as int : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as int : 0;
+    val.heading = json.containsKey('heading') ? json['heading'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as int : 0;
+    val.fuel = json.containsKey('fuel') ? json['fuel'] as int : 0;
+    val.execState =
+        json.containsKey('exec_state') ? json['exec_state'] as int : 0;
+    val.planChecksum =
+        json.containsKey('plan_checksum') ? json['plan_checksum'] as int : 0;
+
+    return val.build() as _$StateReport;
+  }
 
   _$StateReport._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -52838,9 +60706,9 @@ class _$StateReport extends StateReport {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'stime': stime,
         'latitude': latitude,
         'longitude': longitude,
@@ -52936,6 +60804,15 @@ class StateReportBuilder extends Object
   StateReportBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  StateReportBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$StateReport.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  StateReportBuilder fromJson(core.Map<String, dynamic> json) =>
+      StateReportBuilder.fromJson(json);
 
   @override
   StateReportBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -53034,6 +60911,54 @@ class _$TransmissionRequest extends TransmissionRequest {
           [void Function(TransmissionRequestBuilder b)? updates]) =>
       (TransmissionRequestBuilder()..update(updates)).build()
           as _$TransmissionRequest;
+
+  factory _$TransmissionRequest.fromJson(core.Map<String, dynamic> json) {
+    var val = TransmissionRequestBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.commMean = json.containsKey('comm_mean') && json['comm_mean'] != null
+        ? TransmissionRequestEnumCommMean(json['comm_mean'] as int)
+        : TransmissionRequestEnumCommMean(0);
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.deadline =
+        json.containsKey('deadline') ? json['deadline'] as double : 0;
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+    val.dataMode = json.containsKey('data_mode') && json['data_mode'] != null
+        ? TransmissionRequestEnumDataMode(json['data_mode'] as int)
+        : TransmissionRequestEnumDataMode(0);
+
+    ImcMessage? msgData;
+    if (json.containsKey('msg_data') && json['msg_data'] != null) {
+      var msgJson = json['msg_data'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        msgData = builder?.build() as ImcMessage?;
+      }
+    }
+    val.msgData = msgData;
+    val.txtData = json.containsKey('txt_data') && json['txt_data'] != null
+        ? json['txt_data'] as String
+        : '';
+    val.rawData = json.containsKey('raw_data')
+        ? base64.decode(json['raw_data'] as String)
+        : <int>[];
+
+    return val.build() as _$TransmissionRequest;
+  }
 
   _$TransmissionRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53149,9 +61074,9 @@ class _$TransmissionRequest extends TransmissionRequest {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'comm_mean': commMean.value,
         'destination': destination,
@@ -53250,6 +61175,15 @@ class TransmissionRequestBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  TransmissionRequestBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TransmissionRequest.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TransmissionRequestBuilder fromJson(core.Map<String, dynamic> json) =>
+      TransmissionRequestBuilder.fromJson(json);
+
   @override
   TransmissionRequestBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       TransmissionRequestBuilder()..copyFromHeader(headerFrom);
@@ -53336,6 +61270,30 @@ class _$TransmissionStatus extends TransmissionStatus {
       (TransmissionStatusBuilder()..update(updates)).build()
           as _$TransmissionStatus;
 
+  factory _$TransmissionStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = TransmissionStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.status = json.containsKey('status') && json['status'] != null
+        ? TransmissionStatusEnumStatus(json['status'] as int)
+        : TransmissionStatusEnumStatus(0);
+    val.range = json.containsKey('range') ? json['range'] as double : 0;
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$TransmissionStatus;
+  }
+
   _$TransmissionStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -53420,9 +61378,9 @@ class _$TransmissionStatus extends TransmissionStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'status': status.value,
         'range': range,
@@ -53489,6 +61447,15 @@ class TransmissionStatusBuilder extends Object
   TransmissionStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TransmissionStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TransmissionStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TransmissionStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      TransmissionStatusBuilder.fromJson(json);
 
   @override
   TransmissionStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -53563,6 +61530,31 @@ class _$SmsRequest extends SmsRequest {
 
   factory _$SmsRequest([void Function(SmsRequestBuilder b)? updates]) =>
       (SmsRequestBuilder()..update(updates)).build() as _$SmsRequest;
+
+  factory _$SmsRequest.fromJson(core.Map<String, dynamic> json) {
+    var val = SmsRequestBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as double : 0;
+    val.smsText = json.containsKey('sms_text') && json['sms_text'] != null
+        ? json['sms_text'] as String
+        : '';
+
+    return val.build() as _$SmsRequest;
+  }
 
   _$SmsRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53646,9 +61638,9 @@ class _$SmsRequest extends SmsRequest {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'destination': destination,
         'timeout': timeout,
@@ -53714,6 +61706,15 @@ class SmsRequestBuilder extends Object
   SmsRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SmsRequestBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SmsRequest.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SmsRequestBuilder fromJson(core.Map<String, dynamic> json) =>
+      SmsRequestBuilder.fromJson(json);
 
   @override
   SmsRequestBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -53786,6 +61787,29 @@ class _$SmsStatus extends SmsStatus {
 
   factory _$SmsStatus([void Function(SmsStatusBuilder b)? updates]) =>
       (SmsStatusBuilder()..update(updates)).build() as _$SmsStatus;
+
+  factory _$SmsStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = SmsStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.status = json.containsKey('status') && json['status'] != null
+        ? SmsStatusEnumStatus(json['status'] as int)
+        : SmsStatusEnumStatus(0);
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$SmsStatus;
+  }
 
   _$SmsStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -53862,9 +61886,9 @@ class _$SmsStatus extends SmsStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'status': status.value,
         'info': info,
@@ -53925,6 +61949,15 @@ class SmsStatusBuilder extends Object
   SmsStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SmsStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SmsStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SmsStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      SmsStatusBuilder.fromJson(json);
 
   @override
   SmsStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -53992,6 +62025,25 @@ class _$VtolState extends VtolState {
   factory _$VtolState([void Function(VtolStateBuilder b)? updates]) =>
       (VtolStateBuilder()..update(updates)).build() as _$VtolState;
 
+  factory _$VtolState.fromJson(core.Map<String, dynamic> json) {
+    var val = VtolStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? VtolStateEnumState(json['state'] as int)
+        : VtolStateEnumState(0);
+
+    return val.build() as _$VtolState;
+  }
+
   _$VtolState._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -54057,9 +62109,9 @@ class _$VtolState extends VtolState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
       };
 }
@@ -54110,6 +62162,15 @@ class VtolStateBuilder extends Object
   VtolStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VtolStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VtolState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VtolStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      VtolStateBuilder.fromJson(json);
 
   @override
   VtolStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -54172,6 +62233,25 @@ class _$ArmingState extends ArmingState {
 
   factory _$ArmingState([void Function(ArmingStateBuilder b)? updates]) =>
       (ArmingStateBuilder()..update(updates)).build() as _$ArmingState;
+
+  factory _$ArmingState.fromJson(core.Map<String, dynamic> json) {
+    var val = ArmingStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? ArmingStateEnumState(json['state'] as int)
+        : ArmingStateEnumState(0);
+
+    return val.build() as _$ArmingState;
+  }
 
   _$ArmingState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54238,9 +62318,9 @@ class _$ArmingState extends ArmingState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
       };
 }
@@ -54291,6 +62371,15 @@ class ArmingStateBuilder extends Object
   ArmingStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ArmingStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ArmingState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ArmingStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      ArmingStateBuilder.fromJson(json);
 
   @override
   ArmingStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -54359,6 +62448,40 @@ class _$TCPRequest extends TCPRequest {
 
   factory _$TCPRequest([void Function(TCPRequestBuilder b)? updates]) =>
       (TCPRequestBuilder()..update(updates)).build() as _$TCPRequest;
+
+  factory _$TCPRequest.fromJson(core.Map<String, dynamic> json) {
+    var val = TCPRequestBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.destination =
+        json.containsKey('destination') && json['destination'] != null
+            ? json['destination'] as String
+            : '';
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as double : 0;
+
+    ImcMessage? msgData;
+    if (json.containsKey('msg_data') && json['msg_data'] != null) {
+      var msgJson = json['msg_data'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        msgData = builder?.build() as ImcMessage?;
+      }
+    }
+    val.msgData = msgData;
+
+    return val.build() as _$TCPRequest;
+  }
 
   _$TCPRequest._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54442,9 +62565,9 @@ class _$TCPRequest extends TCPRequest {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'destination': destination,
         'timeout': timeout,
@@ -54510,6 +62633,15 @@ class TCPRequestBuilder extends Object
   TCPRequestBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TCPRequestBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TCPRequest.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TCPRequestBuilder fromJson(core.Map<String, dynamic> json) =>
+      TCPRequestBuilder.fromJson(json);
 
   @override
   TCPRequestBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -54582,6 +62714,29 @@ class _$TCPStatus extends TCPStatus {
 
   factory _$TCPStatus([void Function(TCPStatusBuilder b)? updates]) =>
       (TCPStatusBuilder()..update(updates)).build() as _$TCPStatus;
+
+  factory _$TCPStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = TCPStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reqId = json.containsKey('req_id') ? json['req_id'] as int : 0;
+    val.status = json.containsKey('status') && json['status'] != null
+        ? TCPStatusEnumStatus(json['status'] as int)
+        : TCPStatusEnumStatus(0);
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$TCPStatus;
+  }
 
   _$TCPStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54658,9 +62813,9 @@ class _$TCPStatus extends TCPStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'req_id': reqId,
         'status': status.value,
         'info': info,
@@ -54721,6 +62876,15 @@ class TCPStatusBuilder extends Object
   TCPStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TCPStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TCPStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TCPStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      TCPStatusBuilder.fromJson(json);
 
   @override
   TCPStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -54805,6 +62969,51 @@ class _$AssetReport extends AssetReport {
 
   factory _$AssetReport([void Function(AssetReportBuilder b)? updates]) =>
       (AssetReportBuilder()..update(updates)).build() as _$AssetReport;
+
+  factory _$AssetReport.fromJson(core.Map<String, dynamic> json) {
+    var val = AssetReportBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.reportTime =
+        json.containsKey('report_time') ? json['report_time'] as double : 0;
+    val.medium = json.containsKey('medium') && json['medium'] != null
+        ? AssetReportEnumMedium(json['medium'] as int)
+        : AssetReportEnumMedium(0);
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+    val.alt = json.containsKey('alt') ? json['alt'] as double : 0;
+    val.sog = json.containsKey('sog') ? json['sog'] as double : 0;
+    val.cog = json.containsKey('cog') ? json['cog'] as double : 0;
+    var msgs = <ImcMessage>[];
+    if (json.containsKey('msgs') && json['msgs'] != null) {
+      var listJson = json['msgs'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) msgs.add(m);
+        }
+      }
+    }
+    val.msgs = msgs;
+
+    return val.build() as _$AssetReport;
+  }
 
   _$AssetReport._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -54922,9 +63131,9 @@ class _$AssetReport extends AssetReport {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'report_time': reportTime,
         'medium': medium.value,
@@ -55023,6 +63232,15 @@ class AssetReportBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  AssetReportBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AssetReport.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AssetReportBuilder fromJson(core.Map<String, dynamic> json) =>
+      AssetReportBuilder.fromJson(json);
+
   @override
   AssetReportBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       AssetReportBuilder()..copyFromHeader(headerFrom);
@@ -55100,6 +63318,21 @@ class _$Abort extends Abort {
   factory _$Abort([void Function(AbortBuilder b)? updates]) =>
       (AbortBuilder()..update(updates)).build() as _$Abort;
 
+  factory _$Abort.fromJson(core.Map<String, dynamic> json) {
+    var val = AbortBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$Abort;
+  }
+
   _$Abort._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -55158,9 +63391,9 @@ class _$Abort extends Abort {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -55206,6 +63439,15 @@ class AbortBuilder extends Object
   AbortBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AbortBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Abort.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AbortBuilder fromJson(core.Map<String, dynamic> json) =>
+      AbortBuilder.fromJson(json);
 
   @override
   AbortBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -55284,6 +63526,112 @@ class _$PlanSpecification extends PlanSpecification {
           [void Function(PlanSpecificationBuilder b)? updates]) =>
       (PlanSpecificationBuilder()..update(updates)).build()
           as _$PlanSpecification;
+
+  factory _$PlanSpecification.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanSpecificationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.description =
+        json.containsKey('description') && json['description'] != null
+            ? json['description'] as String
+            : '';
+    val.vnamespace =
+        json.containsKey('vnamespace') && json['vnamespace'] != null
+            ? json['vnamespace'] as String
+            : '';
+    var variables = <PlanVariable>[];
+    if (json.containsKey('variables') && json['variables'] != null) {
+      var listJson = json['variables'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PlanVariable?;
+          if (m != null) variables.add(m);
+        }
+      }
+    }
+    val.variables = variables;
+    val.startManId =
+        json.containsKey('start_man_id') && json['start_man_id'] != null
+            ? json['start_man_id'] as String
+            : '';
+    var maneuvers = <PlanManeuver>[];
+    if (json.containsKey('maneuvers') && json['maneuvers'] != null) {
+      var listJson = json['maneuvers'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PlanManeuver?;
+          if (m != null) maneuvers.add(m);
+        }
+      }
+    }
+    val.maneuvers = maneuvers;
+    var transitions = <PlanTransition>[];
+    if (json.containsKey('transitions') && json['transitions'] != null) {
+      var listJson = json['transitions'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PlanTransition?;
+          if (m != null) transitions.add(m);
+        }
+      }
+    }
+    val.transitions = transitions;
+    var startActions = <ImcMessage>[];
+    if (json.containsKey('start_actions') && json['start_actions'] != null) {
+      var listJson = json['start_actions'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) startActions.add(m);
+        }
+      }
+    }
+    val.startActions = startActions;
+    var endActions = <ImcMessage>[];
+    if (json.containsKey('end_actions') && json['end_actions'] != null) {
+      var listJson = json['end_actions'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) endActions.add(m);
+        }
+      }
+    }
+    val.endActions = endActions;
+
+    return val.build() as _$PlanSpecification;
+  }
 
   _$PlanSpecification._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55397,9 +63745,9 @@ class _$PlanSpecification extends PlanSpecification {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'plan_id': planId,
         'description': description,
         'vnamespace': vnamespace,
@@ -55505,6 +63853,15 @@ class PlanSpecificationBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  PlanSpecificationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanSpecification.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanSpecificationBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanSpecificationBuilder.fromJson(json);
+
   @override
   PlanSpecificationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       PlanSpecificationBuilder()..copyFromHeader(headerFrom);
@@ -55589,6 +63946,68 @@ class _$PlanManeuver extends PlanManeuver {
   factory _$PlanManeuver([void Function(PlanManeuverBuilder b)? updates]) =>
       (PlanManeuverBuilder()..update(updates)).build() as _$PlanManeuver;
 
+  factory _$PlanManeuver.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanManeuverBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.maneuverId =
+        json.containsKey('maneuver_id') && json['maneuver_id'] != null
+            ? json['maneuver_id'] as String
+            : '';
+
+    Maneuver? data;
+    if (json.containsKey('data') && json['data'] != null) {
+      var msgJson = json['data'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        data = builder?.build() as Maneuver?;
+      }
+    }
+    val.data = data;
+    var startActions = <ImcMessage>[];
+    if (json.containsKey('start_actions') && json['start_actions'] != null) {
+      var listJson = json['start_actions'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) startActions.add(m);
+        }
+      }
+    }
+    val.startActions = startActions;
+    var endActions = <ImcMessage>[];
+    if (json.containsKey('end_actions') && json['end_actions'] != null) {
+      var listJson = json['end_actions'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) endActions.add(m);
+        }
+      }
+    }
+    val.endActions = endActions;
+
+    return val.build() as _$PlanManeuver;
+  }
+
   _$PlanManeuver._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -55671,9 +64090,9 @@ class _$PlanManeuver extends PlanManeuver {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'maneuver_id': maneuverId,
         'data': data?.toJson(false),
         'start_actions': [
@@ -55745,6 +64164,15 @@ class PlanManeuverBuilder extends Object
   PlanManeuverBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanManeuverBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanManeuver.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanManeuverBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanManeuverBuilder.fromJson(json);
 
   @override
   PlanManeuverBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -55819,6 +64247,47 @@ class _$PlanTransition extends PlanTransition {
 
   factory _$PlanTransition([void Function(PlanTransitionBuilder b)? updates]) =>
       (PlanTransitionBuilder()..update(updates)).build() as _$PlanTransition;
+
+  factory _$PlanTransition.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanTransitionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sourceMan = json.containsKey('source_man') && json['source_man'] != null
+        ? json['source_man'] as String
+        : '';
+    val.destMan = json.containsKey('dest_man') && json['dest_man'] != null
+        ? json['dest_man'] as String
+        : '';
+    val.conditions =
+        json.containsKey('conditions') && json['conditions'] != null
+            ? json['conditions'] as String
+            : '';
+    var actions = <ImcMessage>[];
+    if (json.containsKey('actions') && json['actions'] != null) {
+      var listJson = json['actions'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ImcMessage?;
+          if (m != null) actions.add(m);
+        }
+      }
+    }
+    val.actions = actions;
+
+    return val.build() as _$PlanTransition;
+  }
 
   _$PlanTransition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -55902,9 +64371,9 @@ class _$PlanTransition extends PlanTransition {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'source_man': sourceMan,
         'dest_man': destMan,
         'conditions': conditions,
@@ -55972,6 +64441,15 @@ class PlanTransitionBuilder extends Object
   PlanTransitionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanTransitionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanTransition.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanTransitionBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanTransitionBuilder.fromJson(json);
 
   @override
   PlanTransitionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -56045,6 +64523,37 @@ class _$EmergencyControl extends EmergencyControl {
       (EmergencyControlBuilder()..update(updates)).build()
           as _$EmergencyControl;
 
+  factory _$EmergencyControl.fromJson(core.Map<String, dynamic> json) {
+    var val = EmergencyControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.command = json.containsKey('command') && json['command'] != null
+        ? EmergencyControlEnumCommand(json['command'] as int)
+        : EmergencyControlEnumCommand(0);
+
+    PlanSpecification? plan;
+    if (json.containsKey('plan') && json['plan'] != null) {
+      var msgJson = json['plan'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        plan = builder?.build() as PlanSpecification?;
+      }
+    }
+    val.plan = plan;
+
+    return val.build() as _$EmergencyControl;
+  }
+
   _$EmergencyControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -56117,9 +64626,9 @@ class _$EmergencyControl extends EmergencyControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'command': command.value,
         'plan': plan?.toJson(false),
       };
@@ -56176,6 +64685,15 @@ class EmergencyControlBuilder extends Object
   EmergencyControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EmergencyControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EmergencyControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EmergencyControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      EmergencyControlBuilder.fromJson(json);
 
   @override
   EmergencyControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -56246,6 +64764,30 @@ class _$EmergencyControlState extends EmergencyControlState {
           [void Function(EmergencyControlStateBuilder b)? updates]) =>
       (EmergencyControlStateBuilder()..update(updates)).build()
           as _$EmergencyControlState;
+
+  factory _$EmergencyControlState.fromJson(core.Map<String, dynamic> json) {
+    var val = EmergencyControlStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? EmergencyControlStateEnumState(json['state'] as int)
+        : EmergencyControlStateEnumState(0);
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.commLevel =
+        json.containsKey('comm_level') ? json['comm_level'] as int : 0;
+
+    return val.build() as _$EmergencyControlState;
+  }
 
   _$EmergencyControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56324,9 +64866,9 @@ class _$EmergencyControlState extends EmergencyControlState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
         'plan_id': planId,
         'comm_level': commLevel,
@@ -56390,6 +64932,15 @@ class EmergencyControlStateBuilder extends Object
   EmergencyControlStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EmergencyControlStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EmergencyControlState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EmergencyControlStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      EmergencyControlStateBuilder.fromJson(json);
 
   @override
   EmergencyControlStateBuilder newInstance(
@@ -56467,6 +65018,48 @@ class _$PlanDB extends PlanDB {
 
   factory _$PlanDB([void Function(PlanDBBuilder b)? updates]) =>
       (PlanDBBuilder()..update(updates)).build() as _$PlanDB;
+
+  factory _$PlanDB.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanDBBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? PlanDBEnumType(json['type'] as int)
+        : PlanDBEnumType(0);
+    val.op = json.containsKey('op') && json['op'] != null
+        ? PlanDBEnumOp(json['op'] as int)
+        : PlanDBEnumOp(0);
+    val.requestId =
+        json.containsKey('request_id') ? json['request_id'] as int : 0;
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+
+    ImcMessage? arg;
+    if (json.containsKey('arg') && json['arg'] != null) {
+      var msgJson = json['arg'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        arg = builder?.build() as ImcMessage?;
+      }
+    }
+    val.arg = arg;
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$PlanDB;
+  }
 
   _$PlanDB._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56562,9 +65155,9 @@ class _$PlanDB extends PlanDB {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'op': op.value,
         'request_id': requestId,
@@ -56640,6 +65233,15 @@ class PlanDBBuilder extends Object
   PlanDBBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanDBBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanDB.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanDBBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanDBBuilder.fromJson(json);
 
   @override
   PlanDBBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -56724,6 +65326,51 @@ class _$PlanDBState extends PlanDBState {
 
   factory _$PlanDBState([void Function(PlanDBStateBuilder b)? updates]) =>
       (PlanDBStateBuilder()..update(updates)).build() as _$PlanDBState;
+
+  factory _$PlanDBState.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanDBStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.planCount =
+        json.containsKey('plan_count') ? json['plan_count'] as int : 0;
+    val.planSize = json.containsKey('plan_size') ? json['plan_size'] as int : 0;
+    val.changeTime =
+        json.containsKey('change_time') ? json['change_time'] as double : 0;
+    val.changeSid =
+        json.containsKey('change_sid') ? json['change_sid'] as int : 0;
+    val.changeSname =
+        json.containsKey('change_sname') && json['change_sname'] != null
+            ? json['change_sname'] as String
+            : '';
+    val.md5 = json.containsKey('md5')
+        ? base64.decode(json['md5'] as String)
+        : <int>[];
+    var plansInfo = <PlanDBInformation>[];
+    if (json.containsKey('plans_info') && json['plans_info'] != null) {
+      var listJson = json['plans_info'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as PlanDBInformation?;
+          if (m != null) plansInfo.add(m);
+        }
+      }
+    }
+    val.plansInfo = plansInfo;
+
+    return val.build() as _$PlanDBState;
+  }
 
   _$PlanDBState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -56825,9 +65472,9 @@ class _$PlanDBState extends PlanDBState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'plan_count': planCount,
         'plan_size': planSize,
         'change_time': changeTime,
@@ -56911,6 +65558,15 @@ class PlanDBStateBuilder extends Object
   PlanDBStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanDBStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanDBState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanDBStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanDBStateBuilder.fromJson(json);
 
   @override
   PlanDBStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -56997,6 +65653,37 @@ class _$PlanDBInformation extends PlanDBInformation {
           [void Function(PlanDBInformationBuilder b)? updates]) =>
       (PlanDBInformationBuilder()..update(updates)).build()
           as _$PlanDBInformation;
+
+  factory _$PlanDBInformation.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanDBInformationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.planSize = json.containsKey('plan_size') ? json['plan_size'] as int : 0;
+    val.changeTime =
+        json.containsKey('change_time') ? json['change_time'] as double : 0;
+    val.changeSid =
+        json.containsKey('change_sid') ? json['change_sid'] as int : 0;
+    val.changeSname =
+        json.containsKey('change_sname') && json['change_sname'] != null
+            ? json['change_sname'] as String
+            : '';
+    val.md5 = json.containsKey('md5')
+        ? base64.decode(json['md5'] as String)
+        : <int>[];
+
+    return val.build() as _$PlanDBInformation;
+  }
 
   _$PlanDBInformation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57095,9 +65782,9 @@ class _$PlanDBInformation extends PlanDBInformation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'plan_id': planId,
         'plan_size': planSize,
         'change_time': changeTime,
@@ -57174,6 +65861,15 @@ class PlanDBInformationBuilder extends Object
   PlanDBInformationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanDBInformationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanDBInformation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanDBInformationBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanDBInformationBuilder.fromJson(json);
 
   @override
   PlanDBInformationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -57258,6 +65954,51 @@ class _$PlanControl extends PlanControl {
 
   factory _$PlanControl([void Function(PlanControlBuilder b)? updates]) =>
       (PlanControlBuilder()..update(updates)).build() as _$PlanControl;
+
+  factory _$PlanControl.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanControlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? PlanControlEnumType(json['type'] as int)
+        : PlanControlEnumType(0);
+    val.op = json.containsKey('op') && json['op'] != null
+        ? PlanControlEnumOp(json['op'] as int)
+        : PlanControlEnumOp(0);
+    val.requestId =
+        json.containsKey('request_id') ? json['request_id'] as int : 0;
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? PlanControlBitfieldFlags(json['flags'] as int)
+        : PlanControlBitfieldFlags(0);
+
+    ImcMessage? arg;
+    if (json.containsKey('arg') && json['arg'] != null) {
+      var msgJson = json['arg'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        arg = builder?.build() as ImcMessage?;
+      }
+    }
+    val.arg = arg;
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$PlanControl;
+  }
 
   _$PlanControl._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57358,9 +66099,9 @@ class _$PlanControl extends PlanControl {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'op': op.value,
         'request_id': requestId,
@@ -57441,6 +66182,15 @@ class PlanControlBuilder extends Object
   PlanControlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanControlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanControl.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanControlBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanControlBuilder.fromJson(json);
 
   @override
   PlanControlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -57531,6 +66281,40 @@ class _$PlanControlState extends PlanControlState {
           [void Function(PlanControlStateBuilder b)? updates]) =>
       (PlanControlStateBuilder()..update(updates)).build()
           as _$PlanControlState;
+
+  factory _$PlanControlState.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanControlStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? PlanControlStateEnumState(json['state'] as int)
+        : PlanControlStateEnumState(0);
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.planEta = json.containsKey('plan_eta') ? json['plan_eta'] as int : 0;
+    val.planProgress =
+        json.containsKey('plan_progress') ? json['plan_progress'] as double : 0;
+    val.manId = json.containsKey('man_id') && json['man_id'] != null
+        ? json['man_id'] as String
+        : '';
+    val.manType = json.containsKey('man_type') ? json['man_type'] as int : 0;
+    val.manEta = json.containsKey('man_eta') ? json['man_eta'] as int : 0;
+    val.lastOutcome =
+        json.containsKey('last_outcome') && json['last_outcome'] != null
+            ? PlanControlStateEnumLastOutcome(json['last_outcome'] as int)
+            : PlanControlStateEnumLastOutcome(0);
+
+    return val.build() as _$PlanControlState;
+  }
 
   _$PlanControlState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57639,9 +66423,9 @@ class _$PlanControlState extends PlanControlState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
         'plan_id': planId,
         'plan_eta': planEta,
@@ -57731,6 +66515,15 @@ class PlanControlStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  PlanControlStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanControlState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanControlStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanControlStateBuilder.fromJson(json);
+
   @override
   PlanControlStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       PlanControlStateBuilder()..copyFromHeader(headerFrom);
@@ -57812,6 +66605,34 @@ class _$PlanVariable extends PlanVariable {
 
   factory _$PlanVariable([void Function(PlanVariableBuilder b)? updates]) =>
       (PlanVariableBuilder()..update(updates)).build() as _$PlanVariable;
+
+  factory _$PlanVariable.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanVariableBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.value = json.containsKey('value') && json['value'] != null
+        ? json['value'] as String
+        : '';
+    val.type = json.containsKey('type') && json['type'] != null
+        ? PlanVariableEnumType(json['type'] as int)
+        : PlanVariableEnumType(0);
+    val.access = json.containsKey('access') && json['access'] != null
+        ? PlanVariableEnumAccess(json['access'] as int)
+        : PlanVariableEnumAccess(0);
+
+    return val.build() as _$PlanVariable;
+  }
 
   _$PlanVariable._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -57895,9 +66716,9 @@ class _$PlanVariable extends PlanVariable {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'value': value,
         'type': type.value,
@@ -57963,6 +66784,15 @@ class PlanVariableBuilder extends Object
   PlanVariableBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanVariableBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanVariable.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanVariableBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanVariableBuilder.fromJson(json);
 
   @override
   PlanVariableBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -58037,6 +66867,34 @@ class _$PlanGeneration extends PlanGeneration {
 
   factory _$PlanGeneration([void Function(PlanGenerationBuilder b)? updates]) =>
       (PlanGenerationBuilder()..update(updates)).build() as _$PlanGeneration;
+
+  factory _$PlanGeneration.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanGenerationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.cmd = json.containsKey('cmd') && json['cmd'] != null
+        ? PlanGenerationEnumCmd(json['cmd'] as int)
+        : PlanGenerationEnumCmd(0);
+    val.op = json.containsKey('op') && json['op'] != null
+        ? PlanGenerationEnumOp(json['op'] as int)
+        : PlanGenerationEnumOp(0);
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.params = json.containsKey('params') && json['params'] != null
+        ? json['params'] as String
+        : '';
+
+    return val.build() as _$PlanGeneration;
+  }
 
   _$PlanGeneration._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58120,9 +66978,9 @@ class _$PlanGeneration extends PlanGeneration {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'cmd': cmd.value,
         'op': op.value,
         'plan_id': planId,
@@ -58188,6 +67046,15 @@ class PlanGenerationBuilder extends Object
   PlanGenerationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanGenerationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanGeneration.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanGenerationBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanGenerationBuilder.fromJson(json);
 
   @override
   PlanGenerationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -58294,6 +67161,46 @@ class _$LeaderState extends LeaderState {
 
   factory _$LeaderState([void Function(LeaderStateBuilder b)? updates]) =>
       (LeaderStateBuilder()..update(updates)).build() as _$LeaderState;
+
+  factory _$LeaderState.fromJson(core.Map<String, dynamic> json) {
+    var val = LeaderStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.groupName = json.containsKey('group_name') && json['group_name'] != null
+        ? json['group_name'] as String
+        : '';
+    val.op = json.containsKey('op') && json['op'] != null
+        ? LeaderStateEnumOp(json['op'] as int)
+        : LeaderStateEnumOp(0);
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.height = json.containsKey('height') ? json['height'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.vx = json.containsKey('vx') ? json['vx'] as double : 0;
+    val.vy = json.containsKey('vy') ? json['vy'] as double : 0;
+    val.vz = json.containsKey('vz') ? json['vz'] as double : 0;
+    val.p = json.containsKey('p') ? json['p'] as double : 0;
+    val.q = json.containsKey('q') ? json['q'] as double : 0;
+    val.r = json.containsKey('r') ? json['r'] as double : 0;
+    val.svx = json.containsKey('svx') ? json['svx'] as double : 0;
+    val.svy = json.containsKey('svy') ? json['svy'] as double : 0;
+    val.svz = json.containsKey('svz') ? json['svz'] as double : 0;
+
+    return val.build() as _$LeaderState;
+  }
 
   _$LeaderState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -58445,9 +67352,9 @@ class _$LeaderState extends LeaderState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'group_name': groupName,
         'op': op.value,
         'lat': lat,
@@ -58594,6 +67501,15 @@ class LeaderStateBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  LeaderStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$LeaderState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  LeaderStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      LeaderStateBuilder.fromJson(json);
+
   @override
   LeaderStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       LeaderStateBuilder()..copyFromHeader(headerFrom);
@@ -58706,6 +67622,44 @@ class _$PlanStatistics extends PlanStatistics {
   factory _$PlanStatistics([void Function(PlanStatisticsBuilder b)? updates]) =>
       (PlanStatisticsBuilder()..update(updates)).build() as _$PlanStatistics;
 
+  factory _$PlanStatistics.fromJson(core.Map<String, dynamic> json) {
+    var val = PlanStatisticsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.planId = json.containsKey('plan_id') && json['plan_id'] != null
+        ? json['plan_id'] as String
+        : '';
+    val.type = json.containsKey('type') && json['type'] != null
+        ? PlanStatisticsEnumType(json['type'] as int)
+        : PlanStatisticsEnumType(0);
+    val.properties =
+        json.containsKey('properties') && json['properties'] != null
+            ? PlanStatisticsBitfieldProperties(json['properties'] as int)
+            : PlanStatisticsBitfieldProperties(0);
+    val.durations = json.containsKey('durations') && json['durations'] != null
+        ? json['durations'] as String
+        : '';
+    val.distances = json.containsKey('distances') && json['distances'] != null
+        ? json['distances'] as String
+        : '';
+    val.actions = json.containsKey('actions') && json['actions'] != null
+        ? json['actions'] as String
+        : '';
+    val.fuel = json.containsKey('fuel') && json['fuel'] != null
+        ? json['fuel'] as String
+        : '';
+
+    return val.build() as _$PlanStatistics;
+  }
+
   _$PlanStatistics._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -58806,9 +67760,9 @@ class _$PlanStatistics extends PlanStatistics {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'plan_id': planId,
         'type': type.value,
         'properties': properties.value,
@@ -58891,6 +67845,15 @@ class PlanStatisticsBuilder extends Object
   PlanStatisticsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PlanStatisticsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PlanStatistics.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PlanStatisticsBuilder fromJson(core.Map<String, dynamic> json) =>
+      PlanStatisticsBuilder.fromJson(json);
 
   @override
   PlanStatisticsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -58981,6 +67944,35 @@ class _$ReportedState extends ReportedState {
 
   factory _$ReportedState([void Function(ReportedStateBuilder b)? updates]) =>
       (ReportedStateBuilder()..update(updates)).build() as _$ReportedState;
+
+  factory _$ReportedState.fromJson(core.Map<String, dynamic> json) {
+    var val = ReportedStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+    val.roll = json.containsKey('roll') ? json['roll'] as double : 0;
+    val.pitch = json.containsKey('pitch') ? json['pitch'] as double : 0;
+    val.yaw = json.containsKey('yaw') ? json['yaw'] as double : 0;
+    val.rcpTime = json.containsKey('rcp_time') ? json['rcp_time'] as double : 0;
+    val.sid = json.containsKey('sid') && json['sid'] != null
+        ? json['sid'] as String
+        : '';
+    val.sType = json.containsKey('s_type') && json['s_type'] != null
+        ? ReportedStateEnumSType(json['s_type'] as int)
+        : ReportedStateEnumSType(0);
+
+    return val.build() as _$ReportedState;
+  }
 
   _$ReportedState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59092,9 +68084,9 @@ class _$ReportedState extends ReportedState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'depth': depth,
@@ -59185,6 +68177,15 @@ class ReportedStateBuilder extends Object
   ReportedStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ReportedStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ReportedState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ReportedStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      ReportedStateBuilder.fromJson(json);
 
   @override
   ReportedStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -59277,6 +68278,36 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           [void Function(RemoteSensorInfoBuilder b)? updates]) =>
       (RemoteSensorInfoBuilder()..update(updates)).build()
           as _$RemoteSensorInfo;
+
+  factory _$RemoteSensorInfo.fromJson(core.Map<String, dynamic> json) {
+    var val = RemoteSensorInfoBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') && json['id'] != null
+        ? json['id'] as String
+        : '';
+    val.sensorClass =
+        json.containsKey('sensor_class') && json['sensor_class'] != null
+            ? json['sensor_class'] as String
+            : '';
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.alt = json.containsKey('alt') ? json['alt'] as double : 0;
+    val.heading = json.containsKey('heading') ? json['heading'] as double : 0;
+    val.data = json.containsKey('data') && json['data'] != null
+        ? json['data'] as String
+        : '';
+
+    return val.build() as _$RemoteSensorInfo;
+  }
 
   _$RemoteSensorInfo._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59379,9 +68410,9 @@ class _$RemoteSensorInfo extends RemoteSensorInfo {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'sensor_class': sensorClass,
         'lat': lat,
@@ -59464,6 +68495,15 @@ class RemoteSensorInfoBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  RemoteSensorInfoBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RemoteSensorInfo.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RemoteSensorInfoBuilder fromJson(core.Map<String, dynamic> json) =>
+      RemoteSensorInfoBuilder.fromJson(json);
+
   @override
   RemoteSensorInfoBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       RemoteSensorInfoBuilder()..copyFromHeader(headerFrom);
@@ -59540,6 +68580,40 @@ class _$Map extends Map {
   factory _$Map([void Function(MapBuilder b)? updates]) =>
       (MapBuilder()..update(updates)).build() as _$Map;
 
+  factory _$Map.fromJson(core.Map<String, dynamic> json) {
+    var val = MapBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') && json['id'] != null
+        ? json['id'] as String
+        : '';
+    var features = <MapFeature>[];
+    if (json.containsKey('features') && json['features'] != null) {
+      var listJson = json['features'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as MapFeature?;
+          if (m != null) features.add(m);
+        }
+      }
+    }
+    val.features = features;
+
+    return val.build() as _$Map;
+  }
+
   _$Map._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -59610,9 +68684,9 @@ class _$Map extends Map {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'features': [
           ...features.map((m) => m.toJson(false)).toList(),
@@ -59670,6 +68744,15 @@ class MapBuilder extends Object
   MapBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  MapBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Map.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MapBuilder fromJson(core.Map<String, dynamic> json) =>
+      MapBuilder.fromJson(json);
 
   @override
   MapBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -59744,6 +68827,47 @@ class _$MapFeature extends MapFeature {
 
   factory _$MapFeature([void Function(MapFeatureBuilder b)? updates]) =>
       (MapFeatureBuilder()..update(updates)).build() as _$MapFeature;
+
+  factory _$MapFeature.fromJson(core.Map<String, dynamic> json) {
+    var val = MapFeatureBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.id = json.containsKey('id') && json['id'] != null
+        ? json['id'] as String
+        : '';
+    val.featureType =
+        json.containsKey('feature_type') && json['feature_type'] != null
+            ? MapFeatureEnumFeatureType(json['feature_type'] as int)
+            : MapFeatureEnumFeatureType(0);
+    val.rgbRed = json.containsKey('rgb_red') ? json['rgb_red'] as int : 0;
+    val.rgbGreen = json.containsKey('rgb_green') ? json['rgb_green'] as int : 0;
+    val.rgbBlue = json.containsKey('rgb_blue') ? json['rgb_blue'] as int : 0;
+    var feature = <MapPoint>[];
+    if (json.containsKey('feature') && json['feature'] != null) {
+      var listJson = json['feature'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as MapPoint?;
+          if (m != null) feature.add(m);
+        }
+      }
+    }
+    val.feature = feature;
+
+    return val.build() as _$MapFeature;
+  }
 
   _$MapFeature._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -59840,9 +68964,9 @@ class _$MapFeature extends MapFeature {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'feature_type': featureType.value,
         'rgb_red': rgbRed,
@@ -59922,6 +69046,15 @@ class MapFeatureBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  MapFeatureBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$MapFeature.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MapFeatureBuilder fromJson(core.Map<String, dynamic> json) =>
+      MapFeatureBuilder.fromJson(json);
+
   @override
   MapFeatureBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       MapFeatureBuilder()..copyFromHeader(headerFrom);
@@ -59998,6 +69131,25 @@ class _$MapPoint extends MapPoint {
   factory _$MapPoint([void Function(MapPointBuilder b)? updates]) =>
       (MapPointBuilder()..update(updates)).build() as _$MapPoint;
 
+  factory _$MapPoint.fromJson(core.Map<String, dynamic> json) {
+    var val = MapPointBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.alt = json.containsKey('alt') ? json['alt'] as double : 0;
+
+    return val.build() as _$MapPoint;
+  }
+
   _$MapPoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -60073,9 +69225,9 @@ class _$MapPoint extends MapPoint {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'alt': alt,
@@ -60136,6 +69288,15 @@ class MapPointBuilder extends Object
   MapPointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  MapPointBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$MapPoint.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MapPointBuilder fromJson(core.Map<String, dynamic> json) =>
+      MapPointBuilder.fromJson(json);
 
   @override
   MapPointBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -60206,6 +69367,40 @@ class _$CcuEvent extends CcuEvent {
 
   factory _$CcuEvent([void Function(CcuEventBuilder b)? updates]) =>
       (CcuEventBuilder()..update(updates)).build() as _$CcuEvent;
+
+  factory _$CcuEvent.fromJson(core.Map<String, dynamic> json) {
+    var val = CcuEventBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? CcuEventEnumType(json['type'] as int)
+        : CcuEventEnumType(0);
+    val.id = json.containsKey('id') && json['id'] != null
+        ? json['id'] as String
+        : '';
+
+    ImcMessage? arg;
+    if (json.containsKey('arg') && json['arg'] != null) {
+      var msgJson = json['arg'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        arg = builder?.build() as ImcMessage?;
+      }
+    }
+    val.arg = arg;
+
+    return val.build() as _$CcuEvent;
+  }
 
   _$CcuEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60282,9 +69477,9 @@ class _$CcuEvent extends CcuEvent {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'id': id,
         'arg': arg?.toJson(false),
@@ -60345,6 +69540,15 @@ class CcuEventBuilder extends Object
   CcuEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CcuEventBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CcuEvent.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CcuEventBuilder fromJson(core.Map<String, dynamic> json) =>
+      CcuEventBuilder.fromJson(json);
 
   @override
   CcuEventBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -60413,6 +69617,40 @@ class _$VehicleLinks extends VehicleLinks {
 
   factory _$VehicleLinks([void Function(VehicleLinksBuilder b)? updates]) =>
       (VehicleLinksBuilder()..update(updates)).build() as _$VehicleLinks;
+
+  factory _$VehicleLinks.fromJson(core.Map<String, dynamic> json) {
+    var val = VehicleLinksBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.localname = json.containsKey('localname') && json['localname'] != null
+        ? json['localname'] as String
+        : '';
+    var links = <Announce>[];
+    if (json.containsKey('links') && json['links'] != null) {
+      var listJson = json['links'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as Announce?;
+          if (m != null) links.add(m);
+        }
+      }
+    }
+    val.links = links;
+
+    return val.build() as _$VehicleLinks;
+  }
 
   _$VehicleLinks._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60484,9 +69722,9 @@ class _$VehicleLinks extends VehicleLinks {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'localname': localname,
         'links': [
           ...links.map((m) => m.toJson(false)).toList(),
@@ -60544,6 +69782,15 @@ class VehicleLinksBuilder extends Object
   VehicleLinksBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  VehicleLinksBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$VehicleLinks.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  VehicleLinksBuilder fromJson(core.Map<String, dynamic> json) =>
+      VehicleLinksBuilder.fromJson(json);
 
   @override
   VehicleLinksBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -60613,6 +69860,32 @@ class _$TrexObservation extends TrexObservation {
   factory _$TrexObservation(
           [void Function(TrexObservationBuilder b)? updates]) =>
       (TrexObservationBuilder()..update(updates)).build() as _$TrexObservation;
+
+  factory _$TrexObservation.fromJson(core.Map<String, dynamic> json) {
+    var val = TrexObservationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeline = json.containsKey('timeline') && json['timeline'] != null
+        ? json['timeline'] as String
+        : '';
+    val.predicate = json.containsKey('predicate') && json['predicate'] != null
+        ? json['predicate'] as String
+        : '';
+    val.attributes =
+        json.containsKey('attributes') && json['attributes'] != null
+            ? json['attributes'] as String
+            : '';
+
+    return val.build() as _$TrexObservation;
+  }
 
   _$TrexObservation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60689,9 +69962,9 @@ class _$TrexObservation extends TrexObservation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeline': timeline,
         'predicate': predicate,
         'attributes': attributes,
@@ -60753,6 +70026,15 @@ class TrexObservationBuilder extends Object
   TrexObservationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrexObservationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrexObservation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrexObservationBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrexObservationBuilder.fromJson(json);
 
   @override
   TrexObservationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -60823,6 +70105,31 @@ class _$TrexCommand extends TrexCommand {
 
   factory _$TrexCommand([void Function(TrexCommandBuilder b)? updates]) =>
       (TrexCommandBuilder()..update(updates)).build() as _$TrexCommand;
+
+  factory _$TrexCommand.fromJson(core.Map<String, dynamic> json) {
+    var val = TrexCommandBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.command = json.containsKey('command') && json['command'] != null
+        ? TrexCommandEnumCommand(json['command'] as int)
+        : TrexCommandEnumCommand(0);
+    val.goalId = json.containsKey('goal_id') && json['goal_id'] != null
+        ? json['goal_id'] as String
+        : '';
+    val.goalXml = json.containsKey('goal_xml') && json['goal_xml'] != null
+        ? json['goal_xml'] as String
+        : '';
+
+    return val.build() as _$TrexCommand;
+  }
 
   _$TrexCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -60900,9 +70207,9 @@ class _$TrexCommand extends TrexCommand {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'command': command.value,
         'goal_id': goalId,
         'goal_xml': goalXml,
@@ -60963,6 +70270,15 @@ class TrexCommandBuilder extends Object
   TrexCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrexCommandBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrexCommand.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrexCommandBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrexCommandBuilder.fromJson(json);
 
   @override
   TrexCommandBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -61033,6 +70349,40 @@ class _$TrexOperation extends TrexOperation {
 
   factory _$TrexOperation([void Function(TrexOperationBuilder b)? updates]) =>
       (TrexOperationBuilder()..update(updates)).build() as _$TrexOperation;
+
+  factory _$TrexOperation.fromJson(core.Map<String, dynamic> json) {
+    var val = TrexOperationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? TrexOperationEnumOp(json['op'] as int)
+        : TrexOperationEnumOp(0);
+    val.goalId = json.containsKey('goal_id') && json['goal_id'] != null
+        ? json['goal_id'] as String
+        : '';
+
+    TrexToken? token;
+    if (json.containsKey('token') && json['token'] != null) {
+      var msgJson = json['token'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        token = builder?.build() as TrexToken?;
+      }
+    }
+    val.token = token;
+
+    return val.build() as _$TrexOperation;
+  }
 
   _$TrexOperation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61109,9 +70459,9 @@ class _$TrexOperation extends TrexOperation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'goal_id': goalId,
         'token': token?.toJson(false),
@@ -61172,6 +70522,15 @@ class TrexOperationBuilder extends Object
   TrexOperationBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrexOperationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrexOperation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrexOperationBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrexOperationBuilder.fromJson(json);
 
   @override
   TrexOperationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -61244,6 +70603,34 @@ class _$TrexAttribute extends TrexAttribute {
 
   factory _$TrexAttribute([void Function(TrexAttributeBuilder b)? updates]) =>
       (TrexAttributeBuilder()..update(updates)).build() as _$TrexAttribute;
+
+  factory _$TrexAttribute.fromJson(core.Map<String, dynamic> json) {
+    var val = TrexAttributeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.attrType = json.containsKey('attr_type') && json['attr_type'] != null
+        ? TrexAttributeEnumAttrType(json['attr_type'] as int)
+        : TrexAttributeEnumAttrType(0);
+    val.min = json.containsKey('min') && json['min'] != null
+        ? json['min'] as String
+        : '';
+    val.max = json.containsKey('max') && json['max'] != null
+        ? json['max'] as String
+        : '';
+
+    return val.build() as _$TrexAttribute;
+  }
 
   _$TrexAttribute._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61328,9 +70715,9 @@ class _$TrexAttribute extends TrexAttribute {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'attr_type': attrType.value,
         'min': min,
@@ -61397,6 +70784,15 @@ class TrexAttributeBuilder extends Object
   TrexAttributeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrexAttributeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrexAttribute.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrexAttributeBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrexAttributeBuilder.fromJson(json);
 
   @override
   TrexAttributeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -61469,6 +70865,43 @@ class _$TrexToken extends TrexToken {
 
   factory _$TrexToken([void Function(TrexTokenBuilder b)? updates]) =>
       (TrexTokenBuilder()..update(updates)).build() as _$TrexToken;
+
+  factory _$TrexToken.fromJson(core.Map<String, dynamic> json) {
+    var val = TrexTokenBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeline = json.containsKey('timeline') && json['timeline'] != null
+        ? json['timeline'] as String
+        : '';
+    val.predicate = json.containsKey('predicate') && json['predicate'] != null
+        ? json['predicate'] as String
+        : '';
+    var attributes = <TrexAttribute>[];
+    if (json.containsKey('attributes') && json['attributes'] != null) {
+      var listJson = json['attributes'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as TrexAttribute?;
+          if (m != null) attributes.add(m);
+        }
+      }
+    }
+    val.attributes = attributes;
+
+    return val.build() as _$TrexToken;
+  }
 
   _$TrexToken._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61545,9 +70978,9 @@ class _$TrexToken extends TrexToken {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeline': timeline,
         'predicate': predicate,
         'attributes': [
@@ -61611,6 +71044,15 @@ class TrexTokenBuilder extends Object
   TrexTokenBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrexTokenBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrexToken.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrexTokenBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrexTokenBuilder.fromJson(json);
 
   @override
   TrexTokenBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -61679,6 +71121,40 @@ class _$TrexPlan extends TrexPlan {
 
   factory _$TrexPlan([void Function(TrexPlanBuilder b)? updates]) =>
       (TrexPlanBuilder()..update(updates)).build() as _$TrexPlan;
+
+  factory _$TrexPlan.fromJson(core.Map<String, dynamic> json) {
+    var val = TrexPlanBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.reactor = json.containsKey('reactor') && json['reactor'] != null
+        ? json['reactor'] as String
+        : '';
+    var tokens = <TrexToken>[];
+    if (json.containsKey('tokens') && json['tokens'] != null) {
+      var listJson = json['tokens'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as TrexToken?;
+          if (m != null) tokens.add(m);
+        }
+      }
+    }
+    val.tokens = tokens;
+
+    return val.build() as _$TrexPlan;
+  }
 
   _$TrexPlan._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61750,9 +71226,9 @@ class _$TrexPlan extends TrexPlan {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'reactor': reactor,
         'tokens': [
           ...tokens.map((m) => m.toJson(false)).toList(),
@@ -61810,6 +71286,15 @@ class TrexPlanBuilder extends Object
   TrexPlanBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TrexPlanBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TrexPlan.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TrexPlanBuilder fromJson(core.Map<String, dynamic> json) =>
+      TrexPlanBuilder.fromJson(json);
 
   @override
   TrexPlanBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -61876,6 +71361,28 @@ class _$Event extends Event {
 
   factory _$Event([void Function(EventBuilder b)? updates]) =>
       (EventBuilder()..update(updates)).build() as _$Event;
+
+  factory _$Event.fromJson(core.Map<String, dynamic> json) {
+    var val = EventBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.topic = json.containsKey('topic') && json['topic'] != null
+        ? json['topic'] as String
+        : '';
+    val.data = json.containsKey('data') && json['data'] != null
+        ? json['data'] as String
+        : '';
+
+    return val.build() as _$Event;
+  }
 
   _$Event._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -61947,9 +71454,9 @@ class _$Event extends Event {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'topic': topic,
         'data': data,
       };
@@ -62005,6 +71512,15 @@ class EventBuilder extends Object
   EventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EventBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Event.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EventBuilder fromJson(core.Map<String, dynamic> json) =>
+      EventBuilder.fromJson(json);
 
   @override
   EventBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -62072,6 +71588,26 @@ class _$CompressedImage extends CompressedImage {
   factory _$CompressedImage(
           [void Function(CompressedImageBuilder b)? updates]) =>
       (CompressedImageBuilder()..update(updates)).build() as _$CompressedImage;
+
+  factory _$CompressedImage.fromJson(core.Map<String, dynamic> json) {
+    var val = CompressedImageBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.frameid = json.containsKey('frameid') ? json['frameid'] as int : 0;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$CompressedImage;
+  }
 
   _$CompressedImage._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62143,9 +71679,9 @@ class _$CompressedImage extends CompressedImage {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'frameid': frameid,
         'data': base64.encode(data),
       };
@@ -62202,6 +71738,15 @@ class CompressedImageBuilder extends Object
   CompressedImageBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CompressedImageBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CompressedImage.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CompressedImageBuilder fromJson(core.Map<String, dynamic> json) =>
+      CompressedImageBuilder.fromJson(json);
 
   @override
   CompressedImageBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -62273,6 +71818,26 @@ class _$ImageTxSettings extends ImageTxSettings {
   factory _$ImageTxSettings(
           [void Function(ImageTxSettingsBuilder b)? updates]) =>
       (ImageTxSettingsBuilder()..update(updates)).build() as _$ImageTxSettings;
+
+  factory _$ImageTxSettings.fromJson(core.Map<String, dynamic> json) {
+    var val = ImageTxSettingsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.fps = json.containsKey('fps') ? json['fps'] as int : 0;
+    val.quality = json.containsKey('quality') ? json['quality'] as int : 0;
+    val.reps = json.containsKey('reps') ? json['reps'] as int : 0;
+    val.tsize = json.containsKey('tsize') ? json['tsize'] as int : 0;
+
+    return val.build() as _$ImageTxSettings;
+  }
 
   _$ImageTxSettings._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62356,9 +71921,9 @@ class _$ImageTxSettings extends ImageTxSettings {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'fps': fps,
         'quality': quality,
         'reps': reps,
@@ -62425,6 +71990,15 @@ class ImageTxSettingsBuilder extends Object
   ImageTxSettingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ImageTxSettingsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ImageTxSettings.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ImageTxSettingsBuilder fromJson(core.Map<String, dynamic> json) =>
+      ImageTxSettingsBuilder.fromJson(json);
 
   @override
   ImageTxSettingsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -62501,6 +72075,27 @@ class _$RemoteState extends RemoteState {
 
   factory _$RemoteState([void Function(RemoteStateBuilder b)? updates]) =>
       (RemoteStateBuilder()..update(updates)).build() as _$RemoteState;
+
+  factory _$RemoteState.fromJson(core.Map<String, dynamic> json) {
+    var val = RemoteStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as int : 0;
+    val.speed = json.containsKey('speed') ? json['speed'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+
+    return val.build() as _$RemoteState;
+  }
 
   _$RemoteState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62591,9 +72186,9 @@ class _$RemoteState extends RemoteState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'depth': depth,
@@ -62664,6 +72259,15 @@ class RemoteStateBuilder extends Object
   RemoteStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  RemoteStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$RemoteState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  RemoteStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      RemoteStateBuilder.fromJson(json);
 
   @override
   RemoteStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -62746,6 +72350,33 @@ class _$Target extends Target {
 
   factory _$Target([void Function(TargetBuilder b)? updates]) =>
       (TargetBuilder()..update(updates)).build() as _$Target;
+
+  factory _$Target.fromJson(core.Map<String, dynamic> json) {
+    var val = TargetBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.label = json.containsKey('label') && json['label'] != null
+        ? json['label'] as String
+        : '';
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.cog = json.containsKey('cog') ? json['cog'] as double : 0;
+    val.sog = json.containsKey('sog') ? json['sog'] as double : 0;
+
+    return val.build() as _$Target;
+  }
 
   _$Target._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -62846,9 +72477,9 @@ class _$Target extends Target {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'label': label,
         'lat': lat,
         'lon': lon,
@@ -62930,6 +72561,15 @@ class TargetBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  TargetBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Target.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TargetBuilder fromJson(core.Map<String, dynamic> json) =>
+      TargetBuilder.fromJson(json);
+
   @override
   TargetBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       TargetBuilder()..copyFromHeader(headerFrom);
@@ -63007,6 +72647,28 @@ class _$EntityParameter extends EntityParameter {
           [void Function(EntityParameterBuilder b)? updates]) =>
       (EntityParameterBuilder()..update(updates)).build() as _$EntityParameter;
 
+  factory _$EntityParameter.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityParameterBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.value = json.containsKey('value') && json['value'] != null
+        ? json['value'] as String
+        : '';
+
+    return val.build() as _$EntityParameter;
+  }
+
   _$EntityParameter._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -63077,9 +72739,9 @@ class _$EntityParameter extends EntityParameter {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'value': value,
       };
@@ -63136,6 +72798,15 @@ class EntityParameterBuilder extends Object
   EntityParameterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityParameterBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityParameter.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityParameterBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityParameterBuilder.fromJson(json);
 
   @override
   EntityParameterBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -63204,6 +72875,40 @@ class _$EntityParameters extends EntityParameters {
           [void Function(EntityParametersBuilder b)? updates]) =>
       (EntityParametersBuilder()..update(updates)).build()
           as _$EntityParameters;
+
+  factory _$EntityParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = EntityParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    var params = <EntityParameter>[];
+    if (json.containsKey('params') && json['params'] != null) {
+      var listJson = json['params'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as EntityParameter?;
+          if (m != null) params.add(m);
+        }
+      }
+    }
+    val.params = params;
+
+    return val.build() as _$EntityParameters;
+  }
 
   _$EntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63276,9 +72981,9 @@ class _$EntityParameters extends EntityParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'params': [
           ...params.map((m) => m.toJson(false)).toList(),
@@ -63337,6 +73042,15 @@ class EntityParametersBuilder extends Object
   EntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  EntityParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$EntityParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  EntityParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      EntityParametersBuilder.fromJson(json);
 
   @override
   EntityParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -63407,6 +73121,32 @@ class _$QueryEntityParameters extends QueryEntityParameters {
           [void Function(QueryEntityParametersBuilder b)? updates]) =>
       (QueryEntityParametersBuilder()..update(updates)).build()
           as _$QueryEntityParameters;
+
+  factory _$QueryEntityParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = QueryEntityParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.visibility =
+        json.containsKey('visibility') && json['visibility'] != null
+            ? json['visibility'] as String
+            : '';
+    val.scope = json.containsKey('scope') && json['scope'] != null
+        ? json['scope'] as String
+        : '';
+
+    return val.build() as _$QueryEntityParameters;
+  }
 
   _$QueryEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63485,9 +73225,9 @@ class _$QueryEntityParameters extends QueryEntityParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'visibility': visibility,
         'scope': scope,
@@ -63551,6 +73291,15 @@ class QueryEntityParametersBuilder extends Object
   QueryEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  QueryEntityParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$QueryEntityParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  QueryEntityParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      QueryEntityParametersBuilder.fromJson(json);
 
   @override
   QueryEntityParametersBuilder newInstance(
@@ -63622,6 +73371,40 @@ class _$SetEntityParameters extends SetEntityParameters {
           [void Function(SetEntityParametersBuilder b)? updates]) =>
       (SetEntityParametersBuilder()..update(updates)).build()
           as _$SetEntityParameters;
+
+  factory _$SetEntityParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = SetEntityParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    var params = <EntityParameter>[];
+    if (json.containsKey('params') && json['params'] != null) {
+      var listJson = json['params'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as EntityParameter?;
+          if (m != null) params.add(m);
+        }
+      }
+    }
+    val.params = params;
+
+    return val.build() as _$SetEntityParameters;
+  }
 
   _$SetEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63695,9 +73478,9 @@ class _$SetEntityParameters extends SetEntityParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'params': [
           ...params.map((m) => m.toJson(false)).toList(),
@@ -63758,6 +73541,15 @@ class SetEntityParametersBuilder extends Object
   SetEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetEntityParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetEntityParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetEntityParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetEntityParametersBuilder.fromJson(json);
 
   @override
   SetEntityParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -63824,6 +73616,25 @@ class _$SaveEntityParameters extends SaveEntityParameters {
           [void Function(SaveEntityParametersBuilder b)? updates]) =>
       (SaveEntityParametersBuilder()..update(updates)).build()
           as _$SaveEntityParameters;
+
+  factory _$SaveEntityParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = SaveEntityParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+
+    return val.build() as _$SaveEntityParameters;
+  }
 
   _$SaveEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -63892,9 +73703,9 @@ class _$SaveEntityParameters extends SaveEntityParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
       };
 }
@@ -63948,6 +73759,15 @@ class SaveEntityParametersBuilder extends Object
   SaveEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SaveEntityParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SaveEntityParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SaveEntityParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      SaveEntityParametersBuilder.fromJson(json);
 
   @override
   SaveEntityParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -64010,6 +73830,23 @@ class _$CreateSession extends CreateSession {
 
   factory _$CreateSession([void Function(CreateSessionBuilder b)? updates]) =>
       (CreateSessionBuilder()..update(updates)).build() as _$CreateSession;
+
+  factory _$CreateSession.fromJson(core.Map<String, dynamic> json) {
+    var val = CreateSessionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as int : 0;
+
+    return val.build() as _$CreateSession;
+  }
 
   _$CreateSession._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64076,9 +73913,9 @@ class _$CreateSession extends CreateSession {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timeout': timeout,
       };
 }
@@ -64129,6 +73966,15 @@ class CreateSessionBuilder extends Object
   CreateSessionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CreateSessionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CreateSession.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CreateSessionBuilder fromJson(core.Map<String, dynamic> json) =>
+      CreateSessionBuilder.fromJson(json);
 
   @override
   CreateSessionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -64191,6 +74037,23 @@ class _$CloseSession extends CloseSession {
 
   factory _$CloseSession([void Function(CloseSessionBuilder b)? updates]) =>
       (CloseSessionBuilder()..update(updates)).build() as _$CloseSession;
+
+  factory _$CloseSession.fromJson(core.Map<String, dynamic> json) {
+    var val = CloseSessionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sessid = json.containsKey('sessid') ? json['sessid'] as int : 0;
+
+    return val.build() as _$CloseSession;
+  }
 
   _$CloseSession._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64257,9 +74120,9 @@ class _$CloseSession extends CloseSession {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sessid': sessid,
       };
 }
@@ -64310,6 +74173,15 @@ class CloseSessionBuilder extends Object
   CloseSessionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CloseSessionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CloseSession.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CloseSessionBuilder fromJson(core.Map<String, dynamic> json) =>
+      CloseSessionBuilder.fromJson(json);
 
   @override
   CloseSessionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -64376,6 +74248,26 @@ class _$SessionSubscription extends SessionSubscription {
           [void Function(SessionSubscriptionBuilder b)? updates]) =>
       (SessionSubscriptionBuilder()..update(updates)).build()
           as _$SessionSubscription;
+
+  factory _$SessionSubscription.fromJson(core.Map<String, dynamic> json) {
+    var val = SessionSubscriptionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sessid = json.containsKey('sessid') ? json['sessid'] as int : 0;
+    val.messages = json.containsKey('messages') && json['messages'] != null
+        ? json['messages'] as String
+        : '';
+
+    return val.build() as _$SessionSubscription;
+  }
 
   _$SessionSubscription._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64449,9 +74341,9 @@ class _$SessionSubscription extends SessionSubscription {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sessid': sessid,
         'messages': messages,
       };
@@ -64510,6 +74402,15 @@ class SessionSubscriptionBuilder extends Object
   SessionSubscriptionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SessionSubscriptionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SessionSubscription.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SessionSubscriptionBuilder fromJson(core.Map<String, dynamic> json) =>
+      SessionSubscriptionBuilder.fromJson(json);
 
   @override
   SessionSubscriptionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -64577,6 +74478,23 @@ class _$SessionKeepAlive extends SessionKeepAlive {
       (SessionKeepAliveBuilder()..update(updates)).build()
           as _$SessionKeepAlive;
 
+  factory _$SessionKeepAlive.fromJson(core.Map<String, dynamic> json) {
+    var val = SessionKeepAliveBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sessid = json.containsKey('sessid') ? json['sessid'] as int : 0;
+
+    return val.build() as _$SessionKeepAlive;
+  }
+
   _$SessionKeepAlive._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -64643,9 +74561,9 @@ class _$SessionKeepAlive extends SessionKeepAlive {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sessid': sessid,
       };
 }
@@ -64697,6 +74615,15 @@ class SessionKeepAliveBuilder extends Object
   SessionKeepAliveBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SessionKeepAliveBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SessionKeepAlive.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SessionKeepAliveBuilder fromJson(core.Map<String, dynamic> json) =>
+      SessionKeepAliveBuilder.fromJson(json);
 
   @override
   SessionKeepAliveBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -64761,6 +74688,26 @@ class _$SessionStatus extends SessionStatus {
 
   factory _$SessionStatus([void Function(SessionStatusBuilder b)? updates]) =>
       (SessionStatusBuilder()..update(updates)).build() as _$SessionStatus;
+
+  factory _$SessionStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = SessionStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sessid = json.containsKey('sessid') ? json['sessid'] as int : 0;
+    val.status = json.containsKey('status') && json['status'] != null
+        ? SessionStatusEnumStatus(json['status'] as int)
+        : SessionStatusEnumStatus(0);
+
+    return val.build() as _$SessionStatus;
+  }
 
   _$SessionStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -64832,9 +74779,9 @@ class _$SessionStatus extends SessionStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sessid': sessid,
         'status': status.value,
       };
@@ -64890,6 +74837,15 @@ class SessionStatusBuilder extends Object
   SessionStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SessionStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SessionStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SessionStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      SessionStatusBuilder.fromJson(json);
 
   @override
   SessionStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -64956,6 +74912,25 @@ class _$PushEntityParameters extends PushEntityParameters {
           [void Function(PushEntityParametersBuilder b)? updates]) =>
       (PushEntityParametersBuilder()..update(updates)).build()
           as _$PushEntityParameters;
+
+  factory _$PushEntityParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = PushEntityParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+
+    return val.build() as _$PushEntityParameters;
+  }
 
   _$PushEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65024,9 +74999,9 @@ class _$PushEntityParameters extends PushEntityParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
       };
 }
@@ -65080,6 +75055,15 @@ class PushEntityParametersBuilder extends Object
   PushEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PushEntityParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PushEntityParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PushEntityParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      PushEntityParametersBuilder.fromJson(json);
 
   @override
   PushEntityParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -65144,6 +75128,25 @@ class _$PopEntityParameters extends PopEntityParameters {
           [void Function(PopEntityParametersBuilder b)? updates]) =>
       (PopEntityParametersBuilder()..update(updates)).build()
           as _$PopEntityParameters;
+
+  factory _$PopEntityParameters.fromJson(core.Map<String, dynamic> json) {
+    var val = PopEntityParametersBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+
+    return val.build() as _$PopEntityParameters;
+  }
 
   _$PopEntityParameters._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65212,9 +75215,9 @@ class _$PopEntityParameters extends PopEntityParameters {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
       };
 }
@@ -65268,6 +75271,15 @@ class PopEntityParametersBuilder extends Object
   PopEntityParametersBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  PopEntityParametersBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$PopEntityParameters.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  PopEntityParametersBuilder fromJson(core.Map<String, dynamic> json) =>
+      PopEntityParametersBuilder.fromJson(json);
 
   @override
   PopEntityParametersBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -65332,6 +75344,28 @@ class _$IoEvent extends IoEvent {
 
   factory _$IoEvent([void Function(IoEventBuilder b)? updates]) =>
       (IoEventBuilder()..update(updates)).build() as _$IoEvent;
+
+  factory _$IoEvent.fromJson(core.Map<String, dynamic> json) {
+    var val = IoEventBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? IoEventEnumType(json['type'] as int)
+        : IoEventEnumType(0);
+    val.error = json.containsKey('error') && json['error'] != null
+        ? json['error'] as String
+        : '';
+
+    return val.build() as _$IoEvent;
+  }
 
   _$IoEvent._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65403,9 +75437,9 @@ class _$IoEvent extends IoEvent {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'error': error,
       };
@@ -65461,6 +75495,15 @@ class IoEventBuilder extends Object
   IoEventBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  IoEventBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$IoEvent.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  IoEventBuilder fromJson(core.Map<String, dynamic> json) =>
+      IoEventBuilder.fromJson(json);
 
   @override
   IoEventBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -65531,6 +75574,32 @@ class _$UamTxFrame extends UamTxFrame {
 
   factory _$UamTxFrame([void Function(UamTxFrameBuilder b)? updates]) =>
       (UamTxFrameBuilder()..update(updates)).build() as _$UamTxFrame;
+
+  factory _$UamTxFrame.fromJson(core.Map<String, dynamic> json) {
+    var val = UamTxFrameBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.sysDst = json.containsKey('sys_dst') && json['sys_dst'] != null
+        ? json['sys_dst'] as String
+        : '';
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? UamTxFrameBitfieldFlags(json['flags'] as int)
+        : UamTxFrameBitfieldFlags(0);
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$UamTxFrame;
+  }
 
   _$UamTxFrame._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65614,9 +75683,9 @@ class _$UamTxFrame extends UamTxFrame {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'seq': seq,
         'sys_dst': sysDst,
         'flags': flags.value,
@@ -65682,6 +75751,15 @@ class UamTxFrameBuilder extends Object
   UamTxFrameBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UamTxFrameBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UamTxFrame.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UamTxFrameBuilder fromJson(core.Map<String, dynamic> json) =>
+      UamTxFrameBuilder.fromJson(json);
 
   @override
   UamTxFrameBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -65756,6 +75834,34 @@ class _$UamRxFrame extends UamRxFrame {
 
   factory _$UamRxFrame([void Function(UamRxFrameBuilder b)? updates]) =>
       (UamRxFrameBuilder()..update(updates)).build() as _$UamRxFrame;
+
+  factory _$UamRxFrame.fromJson(core.Map<String, dynamic> json) {
+    var val = UamRxFrameBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.sysSrc = json.containsKey('sys_src') && json['sys_src'] != null
+        ? json['sys_src'] as String
+        : '';
+    val.sysDst = json.containsKey('sys_dst') && json['sys_dst'] != null
+        ? json['sys_dst'] as String
+        : '';
+    val.flags = json.containsKey('flags') && json['flags'] != null
+        ? UamRxFrameBitfieldFlags(json['flags'] as int)
+        : UamRxFrameBitfieldFlags(0);
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$UamRxFrame;
+  }
 
   _$UamRxFrame._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -65839,9 +75945,9 @@ class _$UamRxFrame extends UamRxFrame {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'sys_src': sysSrc,
         'sys_dst': sysDst,
         'flags': flags.value,
@@ -65907,6 +76013,15 @@ class UamRxFrameBuilder extends Object
   UamRxFrameBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UamRxFrameBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UamRxFrame.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UamRxFrameBuilder fromJson(core.Map<String, dynamic> json) =>
+      UamRxFrameBuilder.fromJson(json);
 
   @override
   UamRxFrameBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -65979,6 +76094,29 @@ class _$UamTxStatus extends UamTxStatus {
 
   factory _$UamTxStatus([void Function(UamTxStatusBuilder b)? updates]) =>
       (UamTxStatusBuilder()..update(updates)).build() as _$UamTxStatus;
+
+  factory _$UamTxStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = UamTxStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.value = json.containsKey('value') && json['value'] != null
+        ? UamTxStatusEnumValue(json['value'] as int)
+        : UamTxStatusEnumValue(0);
+    val.error = json.containsKey('error') && json['error'] != null
+        ? json['error'] as String
+        : '';
+
+    return val.build() as _$UamTxStatus;
+  }
 
   _$UamTxStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66055,9 +76193,9 @@ class _$UamTxStatus extends UamTxStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'seq': seq,
         'value': value.value,
         'error': error,
@@ -66118,6 +76256,15 @@ class UamTxStatusBuilder extends Object
   UamTxStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UamTxStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UamTxStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UamTxStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      UamTxStatusBuilder.fromJson(json);
 
   @override
   UamTxStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -66188,6 +76335,27 @@ class _$UamRxRange extends UamRxRange {
 
   factory _$UamRxRange([void Function(UamRxRangeBuilder b)? updates]) =>
       (UamRxRangeBuilder()..update(updates)).build() as _$UamRxRange;
+
+  factory _$UamRxRange.fromJson(core.Map<String, dynamic> json) {
+    var val = UamRxRangeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.sys = json.containsKey('sys') && json['sys'] != null
+        ? json['sys'] as String
+        : '';
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$UamRxRange;
+  }
 
   _$UamRxRange._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66264,9 +76432,9 @@ class _$UamRxRange extends UamRxRange {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'seq': seq,
         'sys': sys,
         'value': value,
@@ -66327,6 +76495,15 @@ class UamRxRangeBuilder extends Object
   UamRxRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UamRxRangeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UamRxRange.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UamRxRangeBuilder fromJson(core.Map<String, dynamic> json) =>
+      UamRxRangeBuilder.fromJson(json);
 
   @override
   UamRxRangeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -66397,6 +76574,27 @@ class _$UamTxRange extends UamTxRange {
 
   factory _$UamTxRange([void Function(UamTxRangeBuilder b)? updates]) =>
       (UamTxRangeBuilder()..update(updates)).build() as _$UamTxRange;
+
+  factory _$UamTxRange.fromJson(core.Map<String, dynamic> json) {
+    var val = UamTxRangeBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.seq = json.containsKey('seq') ? json['seq'] as int : 0;
+    val.sysDst = json.containsKey('sys_dst') && json['sys_dst'] != null
+        ? json['sys_dst'] as String
+        : '';
+    val.timeout = json.containsKey('timeout') ? json['timeout'] as double : 0;
+
+    return val.build() as _$UamTxRange;
+  }
 
   _$UamTxRange._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66473,9 +76671,9 @@ class _$UamTxRange extends UamTxRange {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'seq': seq,
         'sys_dst': sysDst,
         'timeout': timeout,
@@ -66536,6 +76734,15 @@ class UamTxRangeBuilder extends Object
   UamTxRangeBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UamTxRangeBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UamTxRange.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UamTxRangeBuilder fromJson(core.Map<String, dynamic> json) =>
+      UamTxRangeBuilder.fromJson(json);
 
   @override
   UamTxRangeBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -66612,6 +76819,33 @@ class _$FormCtrlParam extends FormCtrlParam {
 
   factory _$FormCtrlParam([void Function(FormCtrlParamBuilder b)? updates]) =>
       (FormCtrlParamBuilder()..update(updates)).build() as _$FormCtrlParam;
+
+  factory _$FormCtrlParam.fromJson(core.Map<String, dynamic> json) {
+    var val = FormCtrlParamBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.action = json.containsKey('Action') && json['Action'] != null
+        ? FormCtrlParamEnumAction(json['Action'] as int)
+        : FormCtrlParamEnumAction(0);
+    val.lonGain = json.containsKey('LonGain') ? json['LonGain'] as double : 0;
+    val.latGain = json.containsKey('LatGain') ? json['LatGain'] as double : 0;
+    val.bondThick =
+        json.containsKey('BondThick') ? json['BondThick'] as int : 0;
+    val.leadGain =
+        json.containsKey('LeadGain') ? json['LeadGain'] as double : 0;
+    val.deconflGain =
+        json.containsKey('DeconflGain') ? json['DeconflGain'] as double : 0;
+
+    return val.build() as _$FormCtrlParam;
+  }
 
   _$FormCtrlParam._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66708,9 +76942,9 @@ class _$FormCtrlParam extends FormCtrlParam {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'Action': action.value,
         'LonGain': lonGain,
         'LatGain': latGain,
@@ -66787,6 +77021,15 @@ class FormCtrlParamBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormCtrlParamBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormCtrlParam.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormCtrlParamBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormCtrlParamBuilder.fromJson(json);
+
   @override
   FormCtrlParamBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FormCtrlParamBuilder()..copyFromHeader(headerFrom);
@@ -66862,6 +77105,27 @@ class _$FormationEval extends FormationEval {
 
   factory _$FormationEval([void Function(FormationEvalBuilder b)? updates]) =>
       (FormationEvalBuilder()..update(updates)).build() as _$FormationEval;
+
+  factory _$FormationEval.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationEvalBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.errMean = json.containsKey('err_mean') ? json['err_mean'] as double : 0;
+    val.distMinAbs =
+        json.containsKey('dist_min_abs') ? json['dist_min_abs'] as double : 0;
+    val.distMinMean =
+        json.containsKey('dist_min_mean') ? json['dist_min_mean'] as double : 0;
+
+    return val.build() as _$FormationEval;
+  }
 
   _$FormationEval._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -66940,9 +77204,9 @@ class _$FormationEval extends FormationEval {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'err_mean': errMean,
         'dist_min_abs': distMinAbs,
         'dist_min_mean': distMinMean,
@@ -67003,6 +77267,15 @@ class FormationEvalBuilder extends Object
   FormationEvalBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FormationEvalBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationEval.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationEvalBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationEvalBuilder.fromJson(json);
 
   @override
   FormationEvalBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -67091,6 +77364,46 @@ class _$FormationControlParams extends FormationControlParams {
           [void Function(FormationControlParamsBuilder b)? updates]) =>
       (FormationControlParamsBuilder()..update(updates)).build()
           as _$FormationControlParams;
+
+  factory _$FormationControlParams.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationControlParamsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.action = json.containsKey('Action') && json['Action'] != null
+        ? FormationControlParamsEnumAction(json['Action'] as int)
+        : FormationControlParamsEnumAction(0);
+    val.lonGain = json.containsKey('lon_gain') ? json['lon_gain'] as double : 0;
+    val.latGain = json.containsKey('lat_gain') ? json['lat_gain'] as double : 0;
+    val.bondThick =
+        json.containsKey('bond_thick') ? json['bond_thick'] as double : 0;
+    val.leadGain =
+        json.containsKey('lead_gain') ? json['lead_gain'] as double : 0;
+    val.deconflGain =
+        json.containsKey('deconfl_gain') ? json['deconfl_gain'] as double : 0;
+    val.accelSwitchGain = json.containsKey('accel_switch_gain')
+        ? json['accel_switch_gain'] as double
+        : 0;
+    val.safeDist =
+        json.containsKey('safe_dist') ? json['safe_dist'] as double : 0;
+    val.deconflictOffset = json.containsKey('deconflict_offset')
+        ? json['deconflict_offset'] as double
+        : 0;
+    val.accelSafeMargin = json.containsKey('accel_safe_margin')
+        ? json['accel_safe_margin'] as double
+        : 0;
+    val.accelLimX =
+        json.containsKey('accel_lim_x') ? json['accel_lim_x'] as double : 0;
+
+    return val.build() as _$FormationControlParams;
+  }
 
   _$FormationControlParams._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -67218,9 +77531,9 @@ class _$FormationControlParams extends FormationControlParams {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'Action': action.value,
         'lon_gain': lonGain,
         'lat_gain': latGain,
@@ -67330,6 +77643,15 @@ class FormationControlParamsBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormationControlParamsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationControlParams.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationControlParamsBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationControlParamsBuilder.fromJson(json);
+
   @override
   FormationControlParamsBuilder newInstance(
           [ImcBuilderHeaderPart? headerFrom]) =>
@@ -67428,6 +77750,49 @@ class _$FormationEvaluation extends FormationEvaluation {
           [void Function(FormationEvaluationBuilder b)? updates]) =>
       (FormationEvaluationBuilder()..update(updates)).build()
           as _$FormationEvaluation;
+
+  factory _$FormationEvaluation.fromJson(core.Map<String, dynamic> json) {
+    var val = FormationEvaluationBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? FormationEvaluationEnumType(json['type'] as int)
+        : FormationEvaluationEnumType(0);
+    val.op = json.containsKey('op') && json['op'] != null
+        ? FormationEvaluationEnumOp(json['op'] as int)
+        : FormationEvaluationEnumOp(0);
+    val.errMean = json.containsKey('err_mean') ? json['err_mean'] as double : 0;
+    val.distMinAbs =
+        json.containsKey('dist_min_abs') ? json['dist_min_abs'] as double : 0;
+    val.distMinMean =
+        json.containsKey('dist_min_mean') ? json['dist_min_mean'] as double : 0;
+    val.rollRateMean = json.containsKey('roll_rate_mean')
+        ? json['roll_rate_mean'] as double
+        : 0;
+    val.time = json.containsKey('time') ? json['time'] as double : 0;
+
+    FormationControlParams? controlParams;
+    if (json.containsKey('ControlParams') && json['ControlParams'] != null) {
+      var msgJson = json['ControlParams'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        controlParams = builder?.build() as FormationControlParams?;
+      }
+    }
+    val.controlParams = controlParams;
+
+    return val.build() as _$FormationEvaluation;
+  }
 
   _$FormationEvaluation._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -67538,9 +77903,9 @@ class _$FormationEvaluation extends FormationEvaluation {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'op': op.value,
         'err_mean': errMean,
@@ -67631,6 +77996,15 @@ class FormationEvaluationBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  FormationEvaluationBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$FormationEvaluation.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FormationEvaluationBuilder fromJson(core.Map<String, dynamic> json) =>
+      FormationEvaluationBuilder.fromJson(json);
+
   @override
   FormationEvaluationBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       FormationEvaluationBuilder()..copyFromHeader(headerFrom);
@@ -67712,6 +78086,26 @@ class _$SoiWaypoint extends SoiWaypoint {
 
   factory _$SoiWaypoint([void Function(SoiWaypointBuilder b)? updates]) =>
       (SoiWaypointBuilder()..update(updates)).build() as _$SoiWaypoint;
+
+  factory _$SoiWaypoint.fromJson(core.Map<String, dynamic> json) {
+    var val = SoiWaypointBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.eta = json.containsKey('eta') ? json['eta'] as int : 0;
+    val.duration = json.containsKey('duration') ? json['duration'] as int : 0;
+
+    return val.build() as _$SoiWaypoint;
+  }
 
   _$SoiWaypoint._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -67795,9 +78189,9 @@ class _$SoiWaypoint extends SoiWaypoint {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'lat': lat,
         'lon': lon,
         'eta': eta,
@@ -67863,6 +78257,15 @@ class SoiWaypointBuilder extends Object
   SoiWaypointBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SoiWaypointBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SoiWaypoint.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SoiWaypointBuilder fromJson(core.Map<String, dynamic> json) =>
+      SoiWaypointBuilder.fromJson(json);
 
   @override
   SoiWaypointBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -67934,6 +78337,38 @@ class _$SoiPlan extends SoiPlan {
   factory _$SoiPlan([void Function(SoiPlanBuilder b)? updates]) =>
       (SoiPlanBuilder()..update(updates)).build() as _$SoiPlan;
 
+  factory _$SoiPlan.fromJson(core.Map<String, dynamic> json) {
+    var val = SoiPlanBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.planId = json.containsKey('plan_id') ? json['plan_id'] as int : 0;
+    var waypoints = <SoiWaypoint>[];
+    if (json.containsKey('waypoints') && json['waypoints'] != null) {
+      var listJson = json['waypoints'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as SoiWaypoint?;
+          if (m != null) waypoints.add(m);
+        }
+      }
+    }
+    val.waypoints = waypoints;
+
+    return val.build() as _$SoiPlan;
+  }
+
   _$SoiPlan._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -68004,9 +78439,9 @@ class _$SoiPlan extends SoiPlan {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'plan_id': planId,
         'waypoints': [
           ...waypoints.map((m) => m.toJson(false)).toList(),
@@ -68064,6 +78499,15 @@ class SoiPlanBuilder extends Object
   SoiPlanBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SoiPlanBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SoiPlan.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SoiPlanBuilder fromJson(core.Map<String, dynamic> json) =>
+      SoiPlanBuilder.fromJson(json);
 
   @override
   SoiPlanBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -68136,6 +78580,46 @@ class _$SoiCommand extends SoiCommand {
 
   factory _$SoiCommand([void Function(SoiCommandBuilder b)? updates]) =>
       (SoiCommandBuilder()..update(updates)).build() as _$SoiCommand;
+
+  factory _$SoiCommand.fromJson(core.Map<String, dynamic> json) {
+    var val = SoiCommandBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.type = json.containsKey('type') && json['type'] != null
+        ? SoiCommandEnumType(json['type'] as int)
+        : SoiCommandEnumType(0);
+    val.command = json.containsKey('command') && json['command'] != null
+        ? SoiCommandEnumCommand(json['command'] as int)
+        : SoiCommandEnumCommand(0);
+    val.settings = json.containsKey('settings') && json['settings'] != null
+        ? json['settings'] as String
+        : '';
+
+    SoiPlan? plan;
+    if (json.containsKey('plan') && json['plan'] != null) {
+      var msgJson = json['plan'] as core.Map<String, dynamic>;
+      if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+        var msgType = msgJson['abbrev'] as String;
+        var builder = messagesBuilders[msgType]?.call();
+        builder = builder?.fromJson(msgJson);
+        plan = builder?.build() as SoiPlan?;
+      }
+    }
+    val.plan = plan;
+    val.info = json.containsKey('info') && json['info'] != null
+        ? json['info'] as String
+        : '';
+
+    return val.build() as _$SoiCommand;
+  }
 
   _$SoiCommand._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -68227,9 +78711,9 @@ class _$SoiCommand extends SoiCommand {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'type': type.value,
         'command': command.value,
         'settings': settings,
@@ -68300,6 +78784,15 @@ class SoiCommandBuilder extends Object
   SoiCommandBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SoiCommandBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SoiCommand.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SoiCommandBuilder fromJson(core.Map<String, dynamic> json) =>
+      SoiCommandBuilder.fromJson(json);
 
   @override
   SoiCommandBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -68376,6 +78869,29 @@ class _$SoiState extends SoiState {
 
   factory _$SoiState([void Function(SoiStateBuilder b)? updates]) =>
       (SoiStateBuilder()..update(updates)).build() as _$SoiState;
+
+  factory _$SoiState.fromJson(core.Map<String, dynamic> json) {
+    var val = SoiStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.state = json.containsKey('state') && json['state'] != null
+        ? SoiStateEnumState(json['state'] as int)
+        : SoiStateEnumState(0);
+    val.planId = json.containsKey('plan_id') ? json['plan_id'] as int : 0;
+    val.wptId = json.containsKey('wpt_id') ? json['wpt_id'] as int : 0;
+    val.settingsChk =
+        json.containsKey('settings_chk') ? json['settings_chk'] as int : 0;
+
+    return val.build() as _$SoiState;
+  }
 
   _$SoiState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -68459,9 +78975,9 @@ class _$SoiState extends SoiState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'state': state.value,
         'plan_id': planId,
         'wpt_id': wptId,
@@ -68527,6 +79043,15 @@ class SoiStateBuilder extends Object
   SoiStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SoiStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SoiState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SoiStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      SoiStateBuilder.fromJson(json);
 
   @override
   SoiStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -68601,6 +79126,29 @@ class _$MessagePart extends MessagePart {
 
   factory _$MessagePart([void Function(MessagePartBuilder b)? updates]) =>
       (MessagePartBuilder()..update(updates)).build() as _$MessagePart;
+
+  factory _$MessagePart.fromJson(core.Map<String, dynamic> json) {
+    var val = MessagePartBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.uid = json.containsKey('uid') ? json['uid'] as int : 0;
+    val.fragNumber =
+        json.containsKey('frag_number') ? json['frag_number'] as int : 0;
+    val.numFrags = json.containsKey('num_frags') ? json['num_frags'] as int : 0;
+    val.data = json.containsKey('data')
+        ? base64.decode(json['data'] as String)
+        : <int>[];
+
+    return val.build() as _$MessagePart;
+  }
 
   _$MessagePart._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -68684,9 +79232,9 @@ class _$MessagePart extends MessagePart {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'uid': uid,
         'frag_number': fragNumber,
         'num_frags': numFrags,
@@ -68752,6 +79300,15 @@ class MessagePartBuilder extends Object
   MessagePartBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  MessagePartBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$MessagePart.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  MessagePartBuilder fromJson(core.Map<String, dynamic> json) =>
+      MessagePartBuilder.fromJson(json);
 
   @override
   MessagePartBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -68823,6 +79380,29 @@ class _$NeptusBlob extends NeptusBlob {
   factory _$NeptusBlob([void Function(NeptusBlobBuilder b)? updates]) =>
       (NeptusBlobBuilder()..update(updates)).build() as _$NeptusBlob;
 
+  factory _$NeptusBlob.fromJson(core.Map<String, dynamic> json) {
+    var val = NeptusBlobBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.contentType =
+        json.containsKey('content_type') && json['content_type'] != null
+            ? json['content_type'] as String
+            : '';
+    val.content = json.containsKey('content')
+        ? base64.decode(json['content'] as String)
+        : <int>[];
+
+    return val.build() as _$NeptusBlob;
+  }
+
   _$NeptusBlob._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -68893,9 +79473,9 @@ class _$NeptusBlob extends NeptusBlob {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'content_type': contentType,
         'content': base64.encode(content),
       };
@@ -68951,6 +79531,15 @@ class NeptusBlobBuilder extends Object
   NeptusBlobBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  NeptusBlobBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$NeptusBlob.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  NeptusBlobBuilder fromJson(core.Map<String, dynamic> json) =>
+      NeptusBlobBuilder.fromJson(json);
 
   @override
   NeptusBlobBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -69013,6 +79602,21 @@ class _$Aborted extends Aborted {
   factory _$Aborted([void Function(AbortedBuilder b)? updates]) =>
       (AbortedBuilder()..update(updates)).build() as _$Aborted;
 
+  factory _$Aborted.fromJson(core.Map<String, dynamic> json) {
+    var val = AbortedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$Aborted;
+  }
+
   _$Aborted._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -69071,9 +79675,9 @@ class _$Aborted extends Aborted {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -69119,6 +79723,15 @@ class AbortedBuilder extends Object
   AbortedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  AbortedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Aborted.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AbortedBuilder fromJson(core.Map<String, dynamic> json) =>
+      AbortedBuilder.fromJson(json);
 
   @override
   AbortedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -69183,6 +79796,26 @@ class _$UsblAngles extends UsblAngles {
 
   factory _$UsblAngles([void Function(UsblAnglesBuilder b)? updates]) =>
       (UsblAnglesBuilder()..update(updates)).build() as _$UsblAngles;
+
+  factory _$UsblAngles.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblAnglesBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') ? json['target'] as int : 0;
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.elevation =
+        json.containsKey('elevation') ? json['elevation'] as double : 0;
+
+    return val.build() as _$UsblAngles;
+  }
 
   _$UsblAngles._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -69261,9 +79894,9 @@ class _$UsblAngles extends UsblAngles {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'bearing': bearing,
         'elevation': elevation,
@@ -69324,6 +79957,15 @@ class UsblAnglesBuilder extends Object
   UsblAnglesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblAnglesBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblAngles.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblAnglesBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblAnglesBuilder.fromJson(json);
 
   @override
   UsblAnglesBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -69396,6 +80038,26 @@ class _$UsblPosition extends UsblPosition {
 
   factory _$UsblPosition([void Function(UsblPositionBuilder b)? updates]) =>
       (UsblPositionBuilder()..update(updates)).build() as _$UsblPosition;
+
+  factory _$UsblPosition.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblPositionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') ? json['target'] as int : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$UsblPosition;
+  }
 
   _$UsblPosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -69479,9 +80141,9 @@ class _$UsblPosition extends UsblPosition {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'x': x,
         'y': y,
@@ -69547,6 +80209,15 @@ class UsblPositionBuilder extends Object
   UsblPositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblPositionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblPosition.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblPositionBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblPositionBuilder.fromJson(json);
 
   @override
   UsblPositionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -69623,6 +80294,29 @@ class _$UsblFix extends UsblFix {
 
   factory _$UsblFix([void Function(UsblFixBuilder b)? updates]) =>
       (UsblFixBuilder()..update(updates)).build() as _$UsblFix;
+
+  factory _$UsblFix.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblFixBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') ? json['target'] as int : 0;
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$UsblFix;
+  }
 
   _$UsblFix._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -69713,9 +80407,9 @@ class _$UsblFix extends UsblFix {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'lat': lat,
         'lon': lon,
@@ -69786,6 +80480,15 @@ class UsblFixBuilder extends Object
   UsblFixBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblFixBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblFix.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblFixBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblFixBuilder.fromJson(json);
 
   @override
   UsblFixBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -69859,6 +80562,28 @@ class _$ParametersXml extends ParametersXml {
   factory _$ParametersXml([void Function(ParametersXmlBuilder b)? updates]) =>
       (ParametersXmlBuilder()..update(updates)).build() as _$ParametersXml;
 
+  factory _$ParametersXml.fromJson(core.Map<String, dynamic> json) {
+    var val = ParametersXmlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.locale = json.containsKey('locale') && json['locale'] != null
+        ? json['locale'] as String
+        : '';
+    val.config = json.containsKey('config')
+        ? base64.decode(json['config'] as String)
+        : <int>[];
+
+    return val.build() as _$ParametersXml;
+  }
+
   _$ParametersXml._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -69929,9 +80654,9 @@ class _$ParametersXml extends ParametersXml {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'locale': locale,
         'config': base64.encode(config),
       };
@@ -69987,6 +80712,15 @@ class ParametersXmlBuilder extends Object
   ParametersXmlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ParametersXmlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ParametersXml.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ParametersXmlBuilder fromJson(core.Map<String, dynamic> json) =>
+      ParametersXmlBuilder.fromJson(json);
 
   @override
   ParametersXmlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -70051,6 +80785,21 @@ class _$GetParametersXml extends GetParametersXml {
       (GetParametersXmlBuilder()..update(updates)).build()
           as _$GetParametersXml;
 
+  factory _$GetParametersXml.fromJson(core.Map<String, dynamic> json) {
+    var val = GetParametersXmlBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    return val.build() as _$GetParametersXml;
+  }
+
   _$GetParametersXml._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -70110,9 +80859,9 @@ class _$GetParametersXml extends GetParametersXml {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
       };
 }
 
@@ -70159,6 +80908,15 @@ class GetParametersXmlBuilder extends Object
   GetParametersXmlBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GetParametersXmlBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GetParametersXml.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GetParametersXmlBuilder fromJson(core.Map<String, dynamic> json) =>
+      GetParametersXmlBuilder.fromJson(json);
 
   @override
   GetParametersXmlBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -70223,6 +80981,25 @@ class _$SetImageCoords extends SetImageCoords {
 
   factory _$SetImageCoords([void Function(SetImageCoordsBuilder b)? updates]) =>
       (SetImageCoordsBuilder()..update(updates)).build() as _$SetImageCoords;
+
+  factory _$SetImageCoords.fromJson(core.Map<String, dynamic> json) {
+    var val = SetImageCoordsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.camId = json.containsKey('camId') ? json['camId'] as int : 0;
+    val.x = json.containsKey('x') ? json['x'] as int : 0;
+    val.y = json.containsKey('y') ? json['y'] as int : 0;
+
+    return val.build() as _$SetImageCoords;
+  }
 
   _$SetImageCoords._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -70299,9 +81076,9 @@ class _$SetImageCoords extends SetImageCoords {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'camId': camId,
         'x': x,
         'y': y,
@@ -70362,6 +81139,15 @@ class SetImageCoordsBuilder extends Object
   SetImageCoordsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SetImageCoordsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SetImageCoords.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SetImageCoordsBuilder fromJson(core.Map<String, dynamic> json) =>
+      SetImageCoordsBuilder.fromJson(json);
 
   @override
   SetImageCoordsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -70432,6 +81218,25 @@ class _$GetImageCoords extends GetImageCoords {
 
   factory _$GetImageCoords([void Function(GetImageCoordsBuilder b)? updates]) =>
       (GetImageCoordsBuilder()..update(updates)).build() as _$GetImageCoords;
+
+  factory _$GetImageCoords.fromJson(core.Map<String, dynamic> json) {
+    var val = GetImageCoordsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.camId = json.containsKey('camId') ? json['camId'] as int : 0;
+    val.x = json.containsKey('x') ? json['x'] as int : 0;
+    val.y = json.containsKey('y') ? json['y'] as int : 0;
+
+    return val.build() as _$GetImageCoords;
+  }
 
   _$GetImageCoords._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -70508,9 +81313,9 @@ class _$GetImageCoords extends GetImageCoords {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'camId': camId,
         'x': x,
         'y': y,
@@ -70571,6 +81376,15 @@ class GetImageCoordsBuilder extends Object
   GetImageCoordsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GetImageCoordsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GetImageCoords.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GetImageCoordsBuilder fromJson(core.Map<String, dynamic> json) =>
+      GetImageCoordsBuilder.fromJson(json);
 
   @override
   GetImageCoordsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -70649,6 +81463,30 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           [void Function(GetWorldCoordinatesBuilder b)? updates]) =>
       (GetWorldCoordinatesBuilder()..update(updates)).build()
           as _$GetWorldCoordinates;
+
+  factory _$GetWorldCoordinates.fromJson(core.Map<String, dynamic> json) {
+    var val = GetWorldCoordinatesBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.tracking = json.containsKey('tracking') && json['tracking'] != null
+        ? BooleanEnum(json['tracking'] as int)
+        : BooleanEnum(0);
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+
+    return val.build() as _$GetWorldCoordinates;
+  }
 
   _$GetWorldCoordinates._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -70747,9 +81585,9 @@ class _$GetWorldCoordinates extends GetWorldCoordinates {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'tracking': tracking.value,
         'lat': lat,
         'lon': lon,
@@ -70828,6 +81666,15 @@ class GetWorldCoordinatesBuilder extends Object
   GetWorldCoordinatesBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GetWorldCoordinatesBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GetWorldCoordinates.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GetWorldCoordinatesBuilder fromJson(core.Map<String, dynamic> json) =>
+      GetWorldCoordinatesBuilder.fromJson(json);
 
   @override
   GetWorldCoordinatesBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -70918,6 +81765,37 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           [void Function(UsblAnglesExtendedBuilder b)? updates]) =>
       (UsblAnglesExtendedBuilder()..update(updates)).build()
           as _$UsblAnglesExtended;
+
+  factory _$UsblAnglesExtended.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblAnglesExtendedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') && json['target'] != null
+        ? json['target'] as String
+        : '';
+    val.lbearing =
+        json.containsKey('lbearing') ? json['lbearing'] as double : 0;
+    val.lelevation =
+        json.containsKey('lelevation') ? json['lelevation'] as double : 0;
+    val.bearing = json.containsKey('bearing') ? json['bearing'] as double : 0;
+    val.elevation =
+        json.containsKey('elevation') ? json['elevation'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.accuracy =
+        json.containsKey('accuracy') ? json['accuracy'] as double : 0;
+
+    return val.build() as _$UsblAnglesExtended;
+  }
 
   _$UsblAnglesExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -71037,9 +81915,9 @@ class _$UsblAnglesExtended extends UsblAnglesExtended {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'lbearing': lbearing,
         'lelevation': lelevation,
@@ -71131,6 +82009,15 @@ class UsblAnglesExtendedBuilder extends Object
   UsblAnglesExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblAnglesExtendedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblAnglesExtended.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblAnglesExtendedBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblAnglesExtendedBuilder.fromJson(json);
 
   @override
   UsblAnglesExtendedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -71231,6 +82118,36 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           [void Function(UsblPositionExtendedBuilder b)? updates]) =>
       (UsblPositionExtendedBuilder()..update(updates)).build()
           as _$UsblPositionExtended;
+
+  factory _$UsblPositionExtended.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblPositionExtendedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') && json['target'] != null
+        ? json['target'] as String
+        : '';
+    val.x = json.containsKey('x') ? json['x'] as double : 0;
+    val.y = json.containsKey('y') ? json['y'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.n = json.containsKey('n') ? json['n'] as double : 0;
+    val.e = json.containsKey('e') ? json['e'] as double : 0;
+    val.d = json.containsKey('d') ? json['d'] as double : 0;
+    val.phi = json.containsKey('phi') ? json['phi'] as double : 0;
+    val.theta = json.containsKey('theta') ? json['theta'] as double : 0;
+    val.psi = json.containsKey('psi') ? json['psi'] as double : 0;
+    val.accuracy =
+        json.containsKey('accuracy') ? json['accuracy'] as double : 0;
+
+    return val.build() as _$UsblPositionExtended;
+  }
 
   _$UsblPositionExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -71354,9 +82271,9 @@ class _$UsblPositionExtended extends UsblPositionExtended {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'x': x,
         'y': y,
@@ -71461,6 +82378,15 @@ class UsblPositionExtendedBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  UsblPositionExtendedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblPositionExtended.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblPositionExtendedBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblPositionExtendedBuilder.fromJson(json);
+
   @override
   UsblPositionExtendedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       UsblPositionExtendedBuilder()..copyFromHeader(headerFrom);
@@ -71553,6 +82479,33 @@ class _$UsblFixExtended extends UsblFixExtended {
   factory _$UsblFixExtended(
           [void Function(UsblFixExtendedBuilder b)? updates]) =>
       (UsblFixExtendedBuilder()..update(updates)).build() as _$UsblFixExtended;
+
+  factory _$UsblFixExtended.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblFixExtendedBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.target = json.containsKey('target') && json['target'] != null
+        ? json['target'] as String
+        : '';
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.accuracy =
+        json.containsKey('accuracy') ? json['accuracy'] as double : 0;
+
+    return val.build() as _$UsblFixExtended;
+  }
 
   _$UsblFixExtended._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -71648,9 +82601,9 @@ class _$UsblFixExtended extends UsblFixExtended {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'target': target,
         'lat': lat,
         'lon': lon,
@@ -71727,6 +82680,15 @@ class UsblFixExtendedBuilder extends Object
   UsblFixExtendedBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblFixExtendedBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblFixExtended.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblFixExtendedBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblFixExtendedBuilder.fromJson(json);
 
   @override
   UsblFixExtendedBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -71807,6 +82769,31 @@ class _$UsblModem extends UsblModem {
 
   factory _$UsblModem([void Function(UsblModemBuilder b)? updates]) =>
       (UsblModemBuilder()..update(updates)).build() as _$UsblModem;
+
+  factory _$UsblModem.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblModemBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.z = json.containsKey('z') ? json['z'] as double : 0;
+    val.zUnits = json.containsKey('z_units') && json['z_units'] != null
+        ? ZUnitsEnum(json['z_units'] as int)
+        : ZUnitsEnum(0);
+
+    return val.build() as _$UsblModem;
+  }
 
   _$UsblModem._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -71897,9 +82884,9 @@ class _$UsblModem extends UsblModem {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'lat': lat,
         'lon': lon,
@@ -71970,6 +82957,15 @@ class UsblModemBuilder extends Object
   UsblModemBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblModemBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblModem.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblModemBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblModemBuilder.fromJson(json);
 
   @override
   UsblModemBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -72043,6 +83039,40 @@ class _$UsblConfig extends UsblConfig {
   factory _$UsblConfig([void Function(UsblConfigBuilder b)? updates]) =>
       (UsblConfigBuilder()..update(updates)).build() as _$UsblConfig;
 
+  factory _$UsblConfig.fromJson(core.Map<String, dynamic> json) {
+    var val = UsblConfigBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? UsblConfigEnumOp(json['op'] as int)
+        : UsblConfigEnumOp(0);
+    var modems = <UsblModem>[];
+    if (json.containsKey('modems') && json['modems'] != null) {
+      var listJson = json['modems'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as UsblModem?;
+          if (m != null) modems.add(m);
+        }
+      }
+    }
+    val.modems = modems;
+
+    return val.build() as _$UsblConfig;
+  }
+
   _$UsblConfig._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -72113,9 +83143,9 @@ class _$UsblConfig extends UsblConfig {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'modems': [
           ...modems.map((m) => m.toJson(false)).toList(),
@@ -72173,6 +83203,15 @@ class UsblConfigBuilder extends Object
   UsblConfigBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  UsblConfigBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$UsblConfig.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  UsblConfigBuilder fromJson(core.Map<String, dynamic> json) =>
+      UsblConfigBuilder.fromJson(json);
 
   @override
   UsblConfigBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -72241,6 +83280,26 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
           [void Function(DissolvedOrganicMatterBuilder b)? updates]) =>
       (DissolvedOrganicMatterBuilder()..update(updates)).build()
           as _$DissolvedOrganicMatter;
+
+  factory _$DissolvedOrganicMatter.fromJson(core.Map<String, dynamic> json) {
+    var val = DissolvedOrganicMatterBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+    val.type = json.containsKey('type') && json['type'] != null
+        ? DissolvedOrganicMatterEnumType(json['type'] as int)
+        : DissolvedOrganicMatterEnumType(0);
+
+    return val.build() as _$DissolvedOrganicMatter;
+  }
 
   _$DissolvedOrganicMatter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -72314,9 +83373,9 @@ class _$DissolvedOrganicMatter extends DissolvedOrganicMatter {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
         'type': type.value,
       };
@@ -72375,6 +83434,15 @@ class DissolvedOrganicMatterBuilder extends Object
   DissolvedOrganicMatterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  DissolvedOrganicMatterBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DissolvedOrganicMatter.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DissolvedOrganicMatterBuilder fromJson(core.Map<String, dynamic> json) =>
+      DissolvedOrganicMatterBuilder.fromJson(json);
 
   @override
   DissolvedOrganicMatterBuilder newInstance(
@@ -72443,6 +83511,23 @@ class _$OpticalBackscatter extends OpticalBackscatter {
       (OpticalBackscatterBuilder()..update(updates)).build()
           as _$OpticalBackscatter;
 
+  factory _$OpticalBackscatter.fromJson(core.Map<String, dynamic> json) {
+    var val = OpticalBackscatterBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$OpticalBackscatter;
+  }
+
   _$OpticalBackscatter._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -72510,9 +83595,9 @@ class _$OpticalBackscatter extends OpticalBackscatter {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -72564,6 +83649,15 @@ class OpticalBackscatterBuilder extends Object
   OpticalBackscatterBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  OpticalBackscatterBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$OpticalBackscatter.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  OpticalBackscatterBuilder fromJson(core.Map<String, dynamic> json) =>
+      OpticalBackscatterBuilder.fromJson(json);
 
   @override
   OpticalBackscatterBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -72656,6 +83750,64 @@ class _$Tachograph extends Tachograph {
 
   factory _$Tachograph([void Function(TachographBuilder b)? updates]) =>
       (TachographBuilder()..update(updates)).build() as _$Tachograph;
+
+  factory _$Tachograph.fromJson(core.Map<String, dynamic> json) {
+    var val = TachographBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.timestampLastService = json.containsKey('timestamp_last_service')
+        ? json['timestamp_last_service'] as double
+        : 0;
+    val.timeNextService = json.containsKey('time_next_service')
+        ? json['time_next_service'] as double
+        : 0;
+    val.timeMotorNextService = json.containsKey('time_motor_next_service')
+        ? json['time_motor_next_service'] as double
+        : 0;
+    val.timeIdleGround = json.containsKey('time_idle_ground')
+        ? json['time_idle_ground'] as double
+        : 0;
+    val.timeIdleAir =
+        json.containsKey('time_idle_air') ? json['time_idle_air'] as double : 0;
+    val.timeIdleWater = json.containsKey('time_idle_water')
+        ? json['time_idle_water'] as double
+        : 0;
+    val.timeIdleUnderwater = json.containsKey('time_idle_underwater')
+        ? json['time_idle_underwater'] as double
+        : 0;
+    val.timeIdleUnknown = json.containsKey('time_idle_unknown')
+        ? json['time_idle_unknown'] as double
+        : 0;
+    val.timeMotorGround = json.containsKey('time_motor_ground')
+        ? json['time_motor_ground'] as double
+        : 0;
+    val.timeMotorAir = json.containsKey('time_motor_air')
+        ? json['time_motor_air'] as double
+        : 0;
+    val.timeMotorWater = json.containsKey('time_motor_water')
+        ? json['time_motor_water'] as double
+        : 0;
+    val.timeMotorUnderwater = json.containsKey('time_motor_underwater')
+        ? json['time_motor_underwater'] as double
+        : 0;
+    val.timeMotorUnknown = json.containsKey('time_motor_unknown')
+        ? json['time_motor_unknown'] as double
+        : 0;
+    val.rpmMin = json.containsKey('rpm_min') ? json['rpm_min'] as int : 0;
+    val.rpmMax = json.containsKey('rpm_max') ? json['rpm_max'] as int : 0;
+    val.depthMax =
+        json.containsKey('depth_max') ? json['depth_max'] as double : 0;
+
+    return val.build() as _$Tachograph;
+  }
 
   _$Tachograph._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -72808,9 +83960,9 @@ class _$Tachograph extends Tachograph {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'timestamp_last_service': timestampLastService,
         'time_next_service': timeNextService,
         'time_motor_next_service': timeMotorNextService,
@@ -72948,6 +84100,15 @@ class TachographBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  TachographBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$Tachograph.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TachographBuilder fromJson(core.Map<String, dynamic> json) =>
+      TachographBuilder.fromJson(json);
+
   @override
   TachographBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       TachographBuilder()..copyFromHeader(headerFrom);
@@ -73042,6 +84203,28 @@ class _$ApmStatus extends ApmStatus {
   factory _$ApmStatus([void Function(ApmStatusBuilder b)? updates]) =>
       (ApmStatusBuilder()..update(updates)).build() as _$ApmStatus;
 
+  factory _$ApmStatus.fromJson(core.Map<String, dynamic> json) {
+    var val = ApmStatusBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.severity = json.containsKey('severity') && json['severity'] != null
+        ? ApmStatusEnumSeverity(json['severity'] as int)
+        : ApmStatusEnumSeverity(0);
+    val.text = json.containsKey('text') && json['text'] != null
+        ? json['text'] as String
+        : '';
+
+    return val.build() as _$ApmStatus;
+  }
+
   _$ApmStatus._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -73113,9 +84296,9 @@ class _$ApmStatus extends ApmStatus {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'severity': severity.value,
         'text': text,
       };
@@ -73171,6 +84354,15 @@ class ApmStatusBuilder extends Object
   ApmStatusBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ApmStatusBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ApmStatus.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ApmStatusBuilder fromJson(core.Map<String, dynamic> json) =>
+      ApmStatusBuilder.fromJson(json);
 
   @override
   ApmStatusBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -73239,6 +84431,27 @@ class _$SadcReadings extends SadcReadings {
 
   factory _$SadcReadings([void Function(SadcReadingsBuilder b)? updates]) =>
       (SadcReadingsBuilder()..update(updates)).build() as _$SadcReadings;
+
+  factory _$SadcReadings.fromJson(core.Map<String, dynamic> json) {
+    var val = SadcReadingsBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.channel = json.containsKey('channel') ? json['channel'] as int : 0;
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+    val.gain = json.containsKey('gain') && json['gain'] != null
+        ? SadcReadingsEnumGain(json['gain'] as int)
+        : SadcReadingsEnumGain(0);
+
+    return val.build() as _$SadcReadings;
+  }
 
   _$SadcReadings._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -73315,9 +84528,9 @@ class _$SadcReadings extends SadcReadings {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'channel': channel,
         'value': value,
         'gain': gain.value,
@@ -73378,6 +84591,15 @@ class SadcReadingsBuilder extends Object
   SadcReadingsBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  SadcReadingsBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$SadcReadings.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  SadcReadingsBuilder fromJson(core.Map<String, dynamic> json) =>
+      SadcReadingsBuilder.fromJson(json);
 
   @override
   SadcReadingsBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -73474,6 +84696,38 @@ class _$DmsDetection extends DmsDetection {
 
   factory _$DmsDetection([void Function(DmsDetectionBuilder b)? updates]) =>
       (DmsDetectionBuilder()..update(updates)).build() as _$DmsDetection;
+
+  factory _$DmsDetection.fromJson(core.Map<String, dynamic> json) {
+    var val = DmsDetectionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.ch01 = json.containsKey('ch01') ? json['ch01'] as double : 0;
+    val.ch02 = json.containsKey('ch02') ? json['ch02'] as double : 0;
+    val.ch03 = json.containsKey('ch03') ? json['ch03'] as double : 0;
+    val.ch04 = json.containsKey('ch04') ? json['ch04'] as double : 0;
+    val.ch05 = json.containsKey('ch05') ? json['ch05'] as double : 0;
+    val.ch06 = json.containsKey('ch06') ? json['ch06'] as double : 0;
+    val.ch07 = json.containsKey('ch07') ? json['ch07'] as double : 0;
+    val.ch08 = json.containsKey('ch08') ? json['ch08'] as double : 0;
+    val.ch09 = json.containsKey('ch09') ? json['ch09'] as double : 0;
+    val.ch10 = json.containsKey('ch10') ? json['ch10'] as double : 0;
+    val.ch11 = json.containsKey('ch11') ? json['ch11'] as double : 0;
+    val.ch12 = json.containsKey('ch12') ? json['ch12'] as double : 0;
+    val.ch13 = json.containsKey('ch13') ? json['ch13'] as double : 0;
+    val.ch14 = json.containsKey('ch14') ? json['ch14'] as double : 0;
+    val.ch15 = json.containsKey('ch15') ? json['ch15'] as double : 0;
+    val.ch16 = json.containsKey('ch16') ? json['ch16'] as double : 0;
+
+    return val.build() as _$DmsDetection;
+  }
 
   _$DmsDetection._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -73613,9 +84867,9 @@ class _$DmsDetection extends DmsDetection {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'ch01': ch01,
         'ch02': ch02,
         'ch03': ch03,
@@ -73742,6 +84996,15 @@ class DmsDetectionBuilder extends Object
     copyFromHeader(headerFrom);
   }
 
+  DmsDetectionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$DmsDetection.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  DmsDetectionBuilder fromJson(core.Map<String, dynamic> json) =>
+      DmsDetectionBuilder.fromJson(json);
+
   @override
   DmsDetectionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
       DmsDetectionBuilder()..copyFromHeader(headerFrom);
@@ -73844,6 +85107,30 @@ class _$HomePosition extends HomePosition {
   factory _$HomePosition([void Function(HomePositionBuilder b)? updates]) =>
       (HomePositionBuilder()..update(updates)).build() as _$HomePosition;
 
+  factory _$HomePosition.fromJson(core.Map<String, dynamic> json) {
+    var val = HomePositionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.op = json.containsKey('op') && json['op'] != null
+        ? HomePositionEnumOp(json['op'] as int)
+        : HomePositionEnumOp(0);
+    val.lat = json.containsKey('lat') ? json['lat'] as double : 0;
+    val.lon = json.containsKey('lon') ? json['lon'] as double : 0;
+    val.height = json.containsKey('height') ? json['height'] as double : 0;
+    val.depth = json.containsKey('depth') ? json['depth'] as double : 0;
+    val.alt = json.containsKey('alt') ? json['alt'] as double : 0;
+
+    return val.build() as _$HomePosition;
+  }
+
   _$HomePosition._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -73938,9 +85225,9 @@ class _$HomePosition extends HomePosition {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'lat': lat,
         'lon': lon,
@@ -74016,6 +85303,15 @@ class HomePositionBuilder extends Object
   HomePositionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  HomePositionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$HomePosition.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  HomePositionBuilder fromJson(core.Map<String, dynamic> json) =>
+      HomePositionBuilder.fromJson(json);
 
   @override
   HomePositionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -74094,6 +85390,42 @@ class _$CurrentProfile extends CurrentProfile {
 
   factory _$CurrentProfile([void Function(CurrentProfileBuilder b)? updates]) =>
       (CurrentProfileBuilder()..update(updates)).build() as _$CurrentProfile;
+
+  factory _$CurrentProfile.fromJson(core.Map<String, dynamic> json) {
+    var val = CurrentProfileBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.nbeams = json.containsKey('nbeams') ? json['nbeams'] as int : 0;
+    val.ncells = json.containsKey('ncells') ? json['ncells'] as int : 0;
+    val.coordSys = json.containsKey('coord_sys') && json['coord_sys'] != null
+        ? CurrentProfileBitfieldCoordSys(json['coord_sys'] as int)
+        : CurrentProfileBitfieldCoordSys(0);
+    var profile = <CurrentProfileCell>[];
+    if (json.containsKey('profile') && json['profile'] != null) {
+      var listJson = json['profile'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as CurrentProfileCell?;
+          if (m != null) profile.add(m);
+        }
+      }
+    }
+    val.profile = profile;
+
+    return val.build() as _$CurrentProfile;
+  }
 
   _$CurrentProfile._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -74178,9 +85510,9 @@ class _$CurrentProfile extends CurrentProfile {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'nbeams': nbeams,
         'ncells': ncells,
         'coord_sys': coordSys.value,
@@ -74249,6 +85581,15 @@ class CurrentProfileBuilder extends Object
   CurrentProfileBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CurrentProfileBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CurrentProfile.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CurrentProfileBuilder fromJson(core.Map<String, dynamic> json) =>
+      CurrentProfileBuilder.fromJson(json);
 
   @override
   CurrentProfileBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -74321,6 +85662,39 @@ class _$CurrentProfileCell extends CurrentProfileCell {
           [void Function(CurrentProfileCellBuilder b)? updates]) =>
       (CurrentProfileCellBuilder()..update(updates)).build()
           as _$CurrentProfileCell;
+
+  factory _$CurrentProfileCell.fromJson(core.Map<String, dynamic> json) {
+    var val = CurrentProfileCellBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.cellPosition =
+        json.containsKey('cell_position') ? json['cell_position'] as double : 0;
+    var beams = <ADCPBeam>[];
+    if (json.containsKey('beams') && json['beams'] != null) {
+      var listJson = json['beams'];
+      for (dynamic lJ in listJson) {
+        core.Map<String, dynamic> msgJson = lJ as core.Map<String, dynamic>;
+        if (msgJson.containsKey('abbrev') && msgJson['abbrev'] != null) {
+          var msgType = msgJson['abbrev'] as String;
+          var builder = messagesBuilders[msgType]?.call();
+          builder = builder?.fromJson(msgJson);
+          var m = builder?.build() as ADCPBeam?;
+          if (m != null) beams.add(m);
+        }
+      }
+    }
+    val.beams = beams;
+
+    return val.build() as _$CurrentProfileCell;
+  }
 
   _$CurrentProfileCell._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -74395,9 +85769,9 @@ class _$CurrentProfileCell extends CurrentProfileCell {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'cell_position': cellPosition,
         'beams': [
           ...beams.map((m) => m.toJson(false)).toList(),
@@ -74456,6 +85830,15 @@ class CurrentProfileCellBuilder extends Object
   CurrentProfileCellBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CurrentProfileCellBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CurrentProfileCell.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CurrentProfileCellBuilder fromJson(core.Map<String, dynamic> json) =>
+      CurrentProfileCellBuilder.fromJson(json);
 
   @override
   CurrentProfileCellBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -74524,6 +85907,25 @@ class _$ADCPBeam extends ADCPBeam {
 
   factory _$ADCPBeam([void Function(ADCPBeamBuilder b)? updates]) =>
       (ADCPBeamBuilder()..update(updates)).build() as _$ADCPBeam;
+
+  factory _$ADCPBeam.fromJson(core.Map<String, dynamic> json) {
+    var val = ADCPBeamBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.vel = json.containsKey('vel') ? json['vel'] as double : 0;
+    val.amp = json.containsKey('amp') ? json['amp'] as double : 0;
+    val.cor = json.containsKey('cor') ? json['cor'] as int : 0;
+
+    return val.build() as _$ADCPBeam;
+  }
 
   _$ADCPBeam._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -74600,9 +86002,9 @@ class _$ADCPBeam extends ADCPBeam {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'vel': vel,
         'amp': amp,
         'cor': cor,
@@ -74663,6 +86065,15 @@ class ADCPBeamBuilder extends Object
   ADCPBeamBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ADCPBeamBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$ADCPBeam.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ADCPBeamBuilder fromJson(core.Map<String, dynamic> json) =>
+      ADCPBeamBuilder.fromJson(json);
 
   @override
   ADCPBeamBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -74731,6 +86142,26 @@ class _$GpioState extends GpioState {
 
   factory _$GpioState([void Function(GpioStateBuilder b)? updates]) =>
       (GpioStateBuilder()..update(updates)).build() as _$GpioState;
+
+  factory _$GpioState.fromJson(core.Map<String, dynamic> json) {
+    var val = GpioStateBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$GpioState;
+  }
 
   _$GpioState._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -74802,9 +86233,9 @@ class _$GpioState extends GpioState {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'value': value,
       };
@@ -74860,6 +86291,15 @@ class GpioStateBuilder extends Object
   GpioStateBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GpioStateBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpioState.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpioStateBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpioStateBuilder.fromJson(json);
 
   @override
   GpioStateBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -74924,6 +86364,25 @@ class _$GpioStateGet extends GpioStateGet {
 
   factory _$GpioStateGet([void Function(GpioStateGetBuilder b)? updates]) =>
       (GpioStateGetBuilder()..update(updates)).build() as _$GpioStateGet;
+
+  factory _$GpioStateGet.fromJson(core.Map<String, dynamic> json) {
+    var val = GpioStateGetBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+
+    return val.build() as _$GpioStateGet;
+  }
 
   _$GpioStateGet._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -74990,9 +86449,9 @@ class _$GpioStateGet extends GpioStateGet {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
       };
 }
@@ -75043,6 +86502,15 @@ class GpioStateGetBuilder extends Object
   GpioStateGetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GpioStateGetBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpioStateGet.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpioStateGetBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpioStateGetBuilder.fromJson(json);
 
   @override
   GpioStateGetBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -75107,6 +86575,26 @@ class _$GpioStateSet extends GpioStateSet {
 
   factory _$GpioStateSet([void Function(GpioStateSetBuilder b)? updates]) =>
       (GpioStateSetBuilder()..update(updates)).build() as _$GpioStateSet;
+
+  factory _$GpioStateSet.fromJson(core.Map<String, dynamic> json) {
+    var val = GpioStateSetBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.name = json.containsKey('name') && json['name'] != null
+        ? json['name'] as String
+        : '';
+    val.value = json.containsKey('value') ? json['value'] as int : 0;
+
+    return val.build() as _$GpioStateSet;
+  }
 
   _$GpioStateSet._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -75178,9 +86666,9 @@ class _$GpioStateSet extends GpioStateSet {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'value': value,
       };
@@ -75236,6 +86724,15 @@ class GpioStateSetBuilder extends Object
   GpioStateSetBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  GpioStateSetBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$GpioStateSet.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  GpioStateSetBuilder fromJson(core.Map<String, dynamic> json) =>
+      GpioStateSetBuilder.fromJson(json);
 
   @override
   GpioStateSetBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -75302,6 +86799,24 @@ class _$ColoredDissolvedOrganicMatter extends ColoredDissolvedOrganicMatter {
           [void Function(ColoredDissolvedOrganicMatterBuilder b)? updates]) =>
       (ColoredDissolvedOrganicMatterBuilder()..update(updates)).build()
           as _$ColoredDissolvedOrganicMatter;
+
+  factory _$ColoredDissolvedOrganicMatter.fromJson(
+      core.Map<String, dynamic> json) {
+    var val = ColoredDissolvedOrganicMatterBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$ColoredDissolvedOrganicMatter;
+  }
 
   _$ColoredDissolvedOrganicMatter._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -75370,9 +86885,9 @@ class _$ColoredDissolvedOrganicMatter extends ColoredDissolvedOrganicMatter {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -75427,6 +86942,17 @@ class ColoredDissolvedOrganicMatterBuilder extends Object
       ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  ColoredDissolvedOrganicMatterBuilder.fromJson(
+      core.Map<String, dynamic> json) {
+    var v = _$ColoredDissolvedOrganicMatter.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  ColoredDissolvedOrganicMatterBuilder fromJson(
+          core.Map<String, dynamic> json) =>
+      ColoredDissolvedOrganicMatterBuilder.fromJson(json);
 
   @override
   ColoredDissolvedOrganicMatterBuilder newInstance(
@@ -75495,6 +87021,24 @@ class _$FluorescentDissolvedOrganicMatter
       (FluorescentDissolvedOrganicMatterBuilder()..update(updates)).build()
           as _$FluorescentDissolvedOrganicMatter;
 
+  factory _$FluorescentDissolvedOrganicMatter.fromJson(
+      core.Map<String, dynamic> json) {
+    var val = FluorescentDissolvedOrganicMatterBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$FluorescentDissolvedOrganicMatter;
+  }
+
   _$FluorescentDissolvedOrganicMatter._(
       {this.timestamp, //Should be DateTime.now() but is not const
       this.src = ImcId.nullId,
@@ -75562,9 +87106,9 @@ class _$FluorescentDissolvedOrganicMatter
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -75619,6 +87163,17 @@ class FluorescentDissolvedOrganicMatterBuilder extends Object
       ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  FluorescentDissolvedOrganicMatterBuilder.fromJson(
+      core.Map<String, dynamic> json) {
+    var v = _$FluorescentDissolvedOrganicMatter.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  FluorescentDissolvedOrganicMatterBuilder fromJson(
+          core.Map<String, dynamic> json) =>
+      FluorescentDissolvedOrganicMatterBuilder.fromJson(json);
 
   @override
   FluorescentDissolvedOrganicMatterBuilder newInstance(
@@ -75685,6 +87240,23 @@ class _$TotalMagIntensity extends TotalMagIntensity {
           [void Function(TotalMagIntensityBuilder b)? updates]) =>
       (TotalMagIntensityBuilder()..update(updates)).build()
           as _$TotalMagIntensity;
+
+  factory _$TotalMagIntensity.fromJson(core.Map<String, dynamic> json) {
+    var val = TotalMagIntensityBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.value = json.containsKey('value') ? json['value'] as double : 0;
+
+    return val.build() as _$TotalMagIntensity;
+  }
 
   _$TotalMagIntensity._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -75753,9 +87325,9 @@ class _$TotalMagIntensity extends TotalMagIntensity {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'value': value,
       };
 }
@@ -75807,6 +87379,15 @@ class TotalMagIntensityBuilder extends Object
   TotalMagIntensityBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  TotalMagIntensityBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$TotalMagIntensity.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  TotalMagIntensityBuilder fromJson(core.Map<String, dynamic> json) =>
+      TotalMagIntensityBuilder.fromJson(json);
 
   @override
   TotalMagIntensityBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
@@ -75872,6 +87453,29 @@ class _$CommRestriction extends CommRestriction {
   factory _$CommRestriction(
           [void Function(CommRestrictionBuilder b)? updates]) =>
       (CommRestrictionBuilder()..update(updates)).build() as _$CommRestriction;
+
+  factory _$CommRestriction.fromJson(core.Map<String, dynamic> json) {
+    var val = CommRestrictionBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.restriction =
+        json.containsKey('restriction') && json['restriction'] != null
+            ? CommRestrictionBitfieldRestriction(json['restriction'] as int)
+            : CommRestrictionBitfieldRestriction(0);
+    val.reason = json.containsKey('reason') && json['reason'] != null
+        ? json['reason'] as String
+        : '';
+
+    return val.build() as _$CommRestriction;
+  }
 
   _$CommRestriction._(
       {this.timestamp, //Should be DateTime.now() but is not const
@@ -75944,9 +87548,9 @@ class _$CommRestriction extends CommRestriction {
           'timestamp':
               (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
         if (includeHeader) 'src': src,
-        if (includeHeader) 'srcEnt': srcEnt,
+        if (includeHeader) 'src_ent': srcEnt,
         if (includeHeader) 'dst': dst,
-        if (includeHeader) 'dstEnt': dstEnt,
+        if (includeHeader) 'dst_ent': dstEnt,
         'restriction': restriction.value,
         'reason': reason,
       };
@@ -76005,6 +87609,15 @@ class CommRestrictionBuilder extends Object
   CommRestrictionBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
     copyFromHeader(headerFrom);
   }
+
+  CommRestrictionBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$CommRestriction.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  CommRestrictionBuilder fromJson(core.Map<String, dynamic> json) =>
+      CommRestrictionBuilder.fromJson(json);
 
   @override
   CommRestrictionBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
