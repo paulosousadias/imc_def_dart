@@ -73,7 +73,10 @@ abstract class ImcBuilderHeaderPart {
 abstract class BuilderWithInstanciator<V extends Built<V, B>,
     B extends Builder<V, B>> extends Builder<V, B> {
   /// Instanciates a new builder
-  B newInstance([ImcBuilderHeaderPart? headerFrom]);
+  BuilderWithInstanciator<V, B> newInstance([ImcBuilderHeaderPart? headerFrom]);
+
+  /// Instanciates from JSON
+  BuilderWithInstanciator<V, B> fromJson(Map<String, dynamic> json);
 
   void copyFromHeader(ImcBuilderHeaderPart other);
 }
