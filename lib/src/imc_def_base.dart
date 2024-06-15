@@ -12,6 +12,12 @@ extension ReverseSyncNumber on int {
   }
 }
 
+extension ReverseSyncNumberOnList on List<int> {
+  List<int> reverseAsSyncNumber() {
+    return map((e) => e.reverseAsSyncNumber()).toList();
+  }
+}
+
 /// This contains internal IMC field info
 class ImcField {
   final String name;
@@ -42,7 +48,7 @@ abstract class Message {
 }
 
 /// Is a mixin in the messages to get and set header fields
-abstract class ImcBuilderHeaderPart {
+abstract mixin class ImcBuilderHeaderPart {
   DateTime? get timestamp;
   set timestamp(DateTime? timestamp);
 
