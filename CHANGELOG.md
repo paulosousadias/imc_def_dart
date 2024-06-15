@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.0] - 15 Jun 2024
+
+* **Breaking change**: Reworked to use alternative syncNumbers to deserialize and also serialize with a specific syncNumber (**Use with care**).
+* Set minimum dart version to v3.4.
+* Cleanup formating warnings from lints package.
+* Updated IMC to v5.4.30 @Git#867be70.
+
 ## [4.0.0] - 20 Ago 2023
 
 * Update dependencies.
