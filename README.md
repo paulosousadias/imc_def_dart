@@ -77,3 +77,30 @@ Timer.periodic(Duration(milliseconds: 300), (Timer t) {
 });
 ...
 ```
+
+To use alternative sync numbers also do:
+
+```dart
+...
+imc.alternativeSyncNumbers = [0x0102];
+...
+var hbMsgB = imc.HeartbeatBuilder()
+  ..src = 0x16
+  ..dst = 0x17;
+var dstEnt = 0;
+Timer.periodic(Duration(milliseconds: 300), (Timer t) {
+  var msg = (hbMsgB
+        ..timestamp = DateTime.now()
+        ..dstEnt = dstEnt++ & 0xFF)
+      .build();
+  var dataB = imc.messagesIdsSerializers[msg.msgId]?.call().serialize(msg, 0x0102);
+  var bytes =
+      dataB?.buffer.asUint8List(dataB.offsetInBytes, dataB.lengthInBytes);
+  if (dataB != null && bytes != null) {
+    var bs = socket.send(bytes, InternetAddress("0.0.0.0"), 4444);
+    print(
+        "Bytes sent $bs | ${dataB.offsetInBytes}, ${dataB.lengthInBytes}");
+  }
+});
+...
+```
