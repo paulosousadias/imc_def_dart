@@ -48,7 +48,7 @@ const crcTable = <int>[
 /// This is the interface for serializing the IMC messages
 abstract class ImcSerializer<M extends Message?, B> {
   /// Call to serialize the all message, returns a [ByteData] with a serialized message
-  ByteData serialize(M message);
+  ByteData serialize(M message, [int? syncNumber]);
 
   /// Call to serialize only the payload, no header,
   /// returns a [int] with a serialized size
@@ -71,11 +71,12 @@ abstract class ImcSerializer<M extends Message?, B> {
 //       buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
 // }
 
-int? getMessageIdFromHeaderIfSyncNumberOk(ByteData byteData, int offset) {
-  var endianness = getEndianness(byteData, offset);
-  if (endianness == null) return null;
+(int?, int?) getMessageIdFromHeaderIfSyncNumberOk(
+    ByteData byteData, int offset) {
+  var (endianness, syncNumber) = getEndianness(byteData, offset);
+  if (endianness == null) return (null, null);
   var msgId = byteData.getUint16(offset + 2, endianness);
-  return msgId;
+  return (msgId, syncNumber);
 }
 
 int? deserializeHeader(
@@ -112,25 +113,36 @@ int? deserializeHeader(
   }
 }
 
-Endian? getEndianness(ByteData byteData, [int offset = 0]) {
+(Endian?, int?) getEndianness(ByteData byteData, [int offset = 0]) {
   var syncBE = byteData.getUint16(offset, Endian.big);
   if (syncBE == (fakeSyncNumber ?? syncNumber)) {
-    return Endian.big;
+    return (Endian.big, (fakeSyncNumber ?? syncNumber));
   }
   if (syncBE == (fakeSyncNumberReversed ?? syncNumberReversed)) {
-    return Endian.little;
+    return (Endian.little, (fakeSyncNumberReversed ?? syncNumberReversed));
   }
-  return null;
+
+  // Let us try the alternative sync numbers
+  for (var altSyncNumber in alternativeSyncNumbers ?? <int>[]) {
+    if (syncBE == altSyncNumber) {
+      return (Endian.big, altSyncNumber);
+    }
+    if (syncBE == altSyncNumber.reverseAsSyncNumber()) {
+      return (Endian.little, altSyncNumber.reverseAsSyncNumber());
+    }
+  }
+
+  return (null, null);
 }
 
 void writePayloadSize(ByteData byteData, int payloadSize) {
   byteData.setUint16(4, payloadSize, endianSer);
 }
 
-int serializeHeader(ImcMessage message, ByteData byteData) {
+int serializeHeader(ImcMessage message, ByteData byteData, [int? syncNumber]) {
   var byteOffset = 0;
 
-  byteData.setUint16(byteOffset, message.sync, endianSer);
+  byteData.setUint16(byteOffset, syncNumber ?? message.sync, endianSer);
   byteOffset += 2;
   byteData.setUint16(byteOffset, message.msgId, endianSer);
   byteOffset += 2;

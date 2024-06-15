@@ -827,7 +827,7 @@ void _writeMessageSerializer(
   var serClassStart = '''class ${abbrev}Serializer
     extends imc.ImcSerializer<imc.$abbrev?, imc.${abbrev}Builder> {
   @override
-  ByteData serialize(imc.$abbrev? message) {
+  ByteData serialize(imc.$abbrev? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -835,7 +835,7 @@ void _writeMessageSerializer(
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1017,7 +1017,7 @@ void _writeMessageSerializer(
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1779,11 +1779,22 @@ void main(List<String> args) async {
 
   sinks[_idxMsg].write('\n');
 
+  sinks[_idxMsg].write('/// WARNING!!! This is for advance usage only. '
+      'Uses these sync number for deserialization\n');
+  sinks[_idxMsg].write('List<int>? alternativeSyncNumbers;\n');
+  sinks[_idxMsg].write('List<int>? get alternativeSyncNumbersReversed =>\n'
+      'alternativeSyncNumbers?.reverseAsSyncNumber();\n');
+
+  sinks[_idxMsg].write('\n');
+
   sinks[_idxMsg].write('''/// The base IMCMessage
 ///
 abstract class ImcMessage extends Message {
+  int? _sync;
+
   @override
   int get sync => fakeSyncNumber ?? syncNumber;
+  set sync(int sync) => _sync = sync;
 
   /// To JSON object
   core.Map<String, dynamic> toJson([bool includeHeader = true]);

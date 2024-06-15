@@ -18,11 +18,19 @@ const String sha256Sum =
 int? fakeSyncNumber;
 int? get fakeSyncNumberReversed => fakeSyncNumber?.reverseAsSyncNumber();
 
+/// WARNING!!! This is for advance usage only. Uses these sync number for deserialization
+List<int>? alternativeSyncNumbers;
+List<int>? get alternativeSyncNumbersReversed =>
+    alternativeSyncNumbers?.reverseAsSyncNumber();
+
 /// The base IMCMessage
 ///
 abstract class ImcMessage extends Message {
+  int? _sync;
+
   @override
   int get sync => fakeSyncNumber ?? syncNumber;
+  set sync(int sync) => _sync = sync;
 
   /// To JSON object
   core.Map<String, dynamic> toJson([bool includeHeader = true]);

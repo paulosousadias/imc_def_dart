@@ -682,7 +682,7 @@ final messagesIdsSerializers = <int, ImcSerializerBuilder>{
 class EntityStateSerializer
     extends imc.ImcSerializer<imc.EntityState?, imc.EntityStateBuilder> {
   @override
-  ByteData serialize(imc.EntityState? message) {
+  ByteData serialize(imc.EntityState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -690,7 +690,7 @@ class EntityStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -734,7 +734,7 @@ class EntityStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -809,7 +809,7 @@ class EntityStateSerializer
 class QueryEntityStateSerializer extends imc
     .ImcSerializer<imc.QueryEntityState?, imc.QueryEntityStateBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityState? message) {
+  ByteData serialize(imc.QueryEntityState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -817,7 +817,7 @@ class QueryEntityStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -846,7 +846,7 @@ class QueryEntityStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -905,7 +905,7 @@ class QueryEntityStateSerializer extends imc
 class EntityInfoSerializer
     extends imc.ImcSerializer<imc.EntityInfo?, imc.EntityInfoBuilder> {
   @override
-  ByteData serialize(imc.EntityInfo? message) {
+  ByteData serialize(imc.EntityInfo? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -913,7 +913,7 @@ class EntityInfoSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -967,7 +967,7 @@ class EntityInfoSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1054,7 +1054,7 @@ class EntityInfoSerializer
 class QueryEntityInfoSerializer extends imc
     .ImcSerializer<imc.QueryEntityInfo?, imc.QueryEntityInfoBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityInfo? message) {
+  ByteData serialize(imc.QueryEntityInfo? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1062,7 +1062,7 @@ class QueryEntityInfoSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1095,7 +1095,7 @@ class QueryEntityInfoSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1158,7 +1158,7 @@ class QueryEntityInfoSerializer extends imc
 class EntityListSerializer
     extends imc.ImcSerializer<imc.EntityList?, imc.EntityListBuilder> {
   @override
-  ByteData serialize(imc.EntityList? message) {
+  ByteData serialize(imc.EntityList? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1166,7 +1166,7 @@ class EntityListSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1206,7 +1206,7 @@ class EntityListSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1278,7 +1278,7 @@ class EntityListSerializer
 class CpuUsageSerializer
     extends imc.ImcSerializer<imc.CpuUsage?, imc.CpuUsageBuilder> {
   @override
-  ByteData serialize(imc.CpuUsage? message) {
+  ByteData serialize(imc.CpuUsage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1286,7 +1286,7 @@ class CpuUsageSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1318,7 +1318,7 @@ class CpuUsageSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1381,7 +1381,7 @@ class CpuUsageSerializer
 class TransportBindingsSerializer extends imc
     .ImcSerializer<imc.TransportBindings?, imc.TransportBindingsBuilder> {
   @override
-  ByteData serialize(imc.TransportBindings? message) {
+  ByteData serialize(imc.TransportBindings? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1389,7 +1389,7 @@ class TransportBindingsSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1430,7 +1430,7 @@ class TransportBindingsSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1502,7 +1502,7 @@ class TransportBindingsSerializer extends imc
 class RestartSystemSerializer
     extends imc.ImcSerializer<imc.RestartSystem?, imc.RestartSystemBuilder> {
   @override
-  ByteData serialize(imc.RestartSystem? message) {
+  ByteData serialize(imc.RestartSystem? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1510,7 +1510,7 @@ class RestartSystemSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1543,7 +1543,7 @@ class RestartSystemSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1606,7 +1606,7 @@ class RestartSystemSerializer
 class DevCalibrationControlSerializer extends imc.ImcSerializer<
     imc.DevCalibrationControl?, imc.DevCalibrationControlBuilder> {
   @override
-  ByteData serialize(imc.DevCalibrationControl? message) {
+  ByteData serialize(imc.DevCalibrationControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1614,7 +1614,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1647,7 +1647,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1710,7 +1710,7 @@ class DevCalibrationControlSerializer extends imc.ImcSerializer<
 class DevCalibrationStateSerializer extends imc
     .ImcSerializer<imc.DevCalibrationState?, imc.DevCalibrationStateBuilder> {
   @override
-  ByteData serialize(imc.DevCalibrationState? message) {
+  ByteData serialize(imc.DevCalibrationState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1718,7 +1718,7 @@ class DevCalibrationStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1765,7 +1765,7 @@ class DevCalibrationStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1844,7 +1844,7 @@ class DevCalibrationStateSerializer extends imc
 class EntityActivationStateSerializer extends imc.ImcSerializer<
     imc.EntityActivationState?, imc.EntityActivationStateBuilder> {
   @override
-  ByteData serialize(imc.EntityActivationState? message) {
+  ByteData serialize(imc.EntityActivationState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1852,7 +1852,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -1893,7 +1893,7 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -1966,7 +1966,8 @@ class EntityActivationStateSerializer extends imc.ImcSerializer<
 class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     imc.QueryEntityActivationState?, imc.QueryEntityActivationStateBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityActivationState? message) {
+  ByteData serialize(imc.QueryEntityActivationState? message,
+      [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -1974,7 +1975,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2004,7 +2005,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2063,7 +2064,7 @@ class QueryEntityActivationStateSerializer extends imc.ImcSerializer<
 class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     imc.VehicleOperationalLimits?, imc.VehicleOperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.VehicleOperationalLimits? message) {
+  ByteData serialize(imc.VehicleOperationalLimits? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2071,7 +2072,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2155,7 +2156,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2270,7 +2271,7 @@ class VehicleOperationalLimitsSerializer extends imc.ImcSerializer<
 class MsgListSerializer
     extends imc.ImcSerializer<imc.MsgList?, imc.MsgListBuilder> {
   @override
-  ByteData serialize(imc.MsgList? message) {
+  ByteData serialize(imc.MsgList? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2278,7 +2279,7 @@ class MsgListSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2331,7 +2332,7 @@ class MsgListSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2414,7 +2415,7 @@ class MsgListSerializer
 class SimulatedStateSerializer
     extends imc.ImcSerializer<imc.SimulatedState?, imc.SimulatedStateBuilder> {
   @override
-  ByteData serialize(imc.SimulatedState? message) {
+  ByteData serialize(imc.SimulatedState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2422,7 +2423,7 @@ class SimulatedStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2506,7 +2507,7 @@ class SimulatedStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2620,7 +2621,7 @@ class SimulatedStateSerializer
 class LeakSimulationSerializer
     extends imc.ImcSerializer<imc.LeakSimulation?, imc.LeakSimulationBuilder> {
   @override
-  ByteData serialize(imc.LeakSimulation? message) {
+  ByteData serialize(imc.LeakSimulation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2628,7 +2629,7 @@ class LeakSimulationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2669,7 +2670,7 @@ class LeakSimulationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2741,7 +2742,7 @@ class LeakSimulationSerializer
 class UASimulationSerializer
     extends imc.ImcSerializer<imc.UASimulation?, imc.UASimulationBuilder> {
   @override
-  ByteData serialize(imc.UASimulation? message) {
+  ByteData serialize(imc.UASimulation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2749,7 +2750,7 @@ class UASimulationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2794,7 +2795,7 @@ class UASimulationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2868,7 +2869,7 @@ class UASimulationSerializer
 class DynamicsSimParamSerializer extends imc
     .ImcSerializer<imc.DynamicsSimParam?, imc.DynamicsSimParamBuilder> {
   @override
-  ByteData serialize(imc.DynamicsSimParam? message) {
+  ByteData serialize(imc.DynamicsSimParam? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2876,7 +2877,7 @@ class DynamicsSimParamSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -2915,7 +2916,7 @@ class DynamicsSimParamSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -2984,7 +2985,7 @@ class DynamicsSimParamSerializer extends imc
 class StorageUsageSerializer
     extends imc.ImcSerializer<imc.StorageUsage?, imc.StorageUsageBuilder> {
   @override
-  ByteData serialize(imc.StorageUsage? message) {
+  ByteData serialize(imc.StorageUsage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -2992,7 +2993,7 @@ class StorageUsageSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3028,7 +3029,7 @@ class StorageUsageSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3094,7 +3095,7 @@ class StorageUsageSerializer
 class CacheControlSerializer
     extends imc.ImcSerializer<imc.CacheControl?, imc.CacheControlBuilder> {
   @override
-  ByteData serialize(imc.CacheControl? message) {
+  ByteData serialize(imc.CacheControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3102,7 +3103,7 @@ class CacheControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3160,7 +3161,7 @@ class CacheControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3252,7 +3253,7 @@ class CacheControlSerializer
 class LoggingControlSerializer
     extends imc.ImcSerializer<imc.LoggingControl?, imc.LoggingControlBuilder> {
   @override
-  ByteData serialize(imc.LoggingControl? message) {
+  ByteData serialize(imc.LoggingControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3260,7 +3261,7 @@ class LoggingControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3301,7 +3302,7 @@ class LoggingControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3373,7 +3374,7 @@ class LoggingControlSerializer
 class LogBookEntrySerializer
     extends imc.ImcSerializer<imc.LogBookEntry?, imc.LogBookEntryBuilder> {
   @override
-  ByteData serialize(imc.LogBookEntry? message) {
+  ByteData serialize(imc.LogBookEntry? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3381,7 +3382,7 @@ class LogBookEntrySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3433,7 +3434,7 @@ class LogBookEntrySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3517,7 +3518,7 @@ class LogBookEntrySerializer
 class LogBookControlSerializer
     extends imc.ImcSerializer<imc.LogBookControl?, imc.LogBookControlBuilder> {
   @override
-  ByteData serialize(imc.LogBookControl? message) {
+  ByteData serialize(imc.LogBookControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3525,7 +3526,7 @@ class LogBookControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3585,7 +3586,7 @@ class LogBookControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3675,7 +3676,7 @@ class LogBookControlSerializer
 class ReplayControlSerializer
     extends imc.ImcSerializer<imc.ReplayControl?, imc.ReplayControlBuilder> {
   @override
-  ByteData serialize(imc.ReplayControl? message) {
+  ByteData serialize(imc.ReplayControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3683,7 +3684,7 @@ class ReplayControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3724,7 +3725,7 @@ class ReplayControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3796,7 +3797,7 @@ class ReplayControlSerializer
 class ClockControlSerializer
     extends imc.ImcSerializer<imc.ClockControl?, imc.ClockControlBuilder> {
   @override
-  ByteData serialize(imc.ClockControl? message) {
+  ByteData serialize(imc.ClockControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3804,7 +3805,7 @@ class ClockControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3843,7 +3844,7 @@ class ClockControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -3912,7 +3913,7 @@ class ClockControlSerializer
 class HistoricCTDSerializer
     extends imc.ImcSerializer<imc.HistoricCTD?, imc.HistoricCTDBuilder> {
   @override
-  ByteData serialize(imc.HistoricCTD? message) {
+  ByteData serialize(imc.HistoricCTD? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -3920,7 +3921,7 @@ class HistoricCTDSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -3959,7 +3960,7 @@ class HistoricCTDSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4028,7 +4029,7 @@ class HistoricCTDSerializer
 class HistoricTelemetrySerializer extends imc
     .ImcSerializer<imc.HistoricTelemetry?, imc.HistoricTelemetryBuilder> {
   @override
-  ByteData serialize(imc.HistoricTelemetry? message) {
+  ByteData serialize(imc.HistoricTelemetry? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4036,7 +4037,7 @@ class HistoricTelemetrySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4081,7 +4082,7 @@ class HistoricTelemetrySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4156,7 +4157,7 @@ class HistoricTelemetrySerializer extends imc
 class HistoricSonarDataSerializer extends imc
     .ImcSerializer<imc.HistoricSonarData?, imc.HistoricSonarDataBuilder> {
   @override
-  ByteData serialize(imc.HistoricSonarData? message) {
+  ByteData serialize(imc.HistoricSonarData? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4164,7 +4165,7 @@ class HistoricSonarDataSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4221,7 +4222,7 @@ class HistoricSonarDataSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4308,7 +4309,7 @@ class HistoricSonarDataSerializer extends imc
 class HistoricEventSerializer
     extends imc.ImcSerializer<imc.HistoricEvent?, imc.HistoricEventBuilder> {
   @override
-  ByteData serialize(imc.HistoricEvent? message) {
+  ByteData serialize(imc.HistoricEvent? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4316,7 +4317,7 @@ class HistoricEventSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4357,7 +4358,7 @@ class HistoricEventSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4429,7 +4430,7 @@ class HistoricEventSerializer
 class VerticalProfileSerializer extends imc
     .ImcSerializer<imc.VerticalProfile?, imc.VerticalProfileBuilder> {
   @override
-  ByteData serialize(imc.VerticalProfile? message) {
+  ByteData serialize(imc.VerticalProfile? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4437,7 +4438,7 @@ class VerticalProfileSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4503,7 +4504,7 @@ class VerticalProfileSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4599,7 +4600,7 @@ class VerticalProfileSerializer extends imc
 class ProfileSampleSerializer
     extends imc.ImcSerializer<imc.ProfileSample?, imc.ProfileSampleBuilder> {
   @override
-  ByteData serialize(imc.ProfileSample? message) {
+  ByteData serialize(imc.ProfileSample? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4607,7 +4608,7 @@ class ProfileSampleSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4643,7 +4644,7 @@ class ProfileSampleSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4709,7 +4710,7 @@ class ProfileSampleSerializer
 class HeartbeatSerializer
     extends imc.ImcSerializer<imc.Heartbeat?, imc.HeartbeatBuilder> {
   @override
-  ByteData serialize(imc.Heartbeat? message) {
+  ByteData serialize(imc.Heartbeat? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4717,7 +4718,7 @@ class HeartbeatSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4745,7 +4746,7 @@ class HeartbeatSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4804,7 +4805,7 @@ class HeartbeatSerializer
 class AnnounceSerializer
     extends imc.ImcSerializer<imc.Announce?, imc.AnnounceBuilder> {
   @override
-  ByteData serialize(imc.Announce? message) {
+  ByteData serialize(imc.Announce? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4812,7 +4813,7 @@ class AnnounceSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -4872,7 +4873,7 @@ class AnnounceSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -4965,7 +4966,7 @@ class AnnounceSerializer
 class AnnounceServiceSerializer extends imc
     .ImcSerializer<imc.AnnounceService?, imc.AnnounceServiceBuilder> {
   @override
-  ByteData serialize(imc.AnnounceService? message) {
+  ByteData serialize(imc.AnnounceService? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -4973,7 +4974,7 @@ class AnnounceServiceSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5014,7 +5015,7 @@ class AnnounceServiceSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5086,7 +5087,7 @@ class AnnounceServiceSerializer extends imc
 ///
 class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
   @override
-  ByteData serialize(imc.RSSI? message) {
+  ByteData serialize(imc.RSSI? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5094,7 +5095,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5126,7 +5127,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5188,7 +5189,7 @@ class RSSISerializer extends imc.ImcSerializer<imc.RSSI?, imc.RSSIBuilder> {
 ///
 class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
   @override
-  ByteData serialize(imc.VSWR? message) {
+  ByteData serialize(imc.VSWR? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5196,7 +5197,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5228,7 +5229,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5291,7 +5292,7 @@ class VSWRSerializer extends imc.ImcSerializer<imc.VSWR?, imc.VSWRBuilder> {
 class LinkLevelSerializer
     extends imc.ImcSerializer<imc.LinkLevel?, imc.LinkLevelBuilder> {
   @override
-  ByteData serialize(imc.LinkLevel? message) {
+  ByteData serialize(imc.LinkLevel? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5299,7 +5300,7 @@ class LinkLevelSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5331,7 +5332,7 @@ class LinkLevelSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5393,7 +5394,7 @@ class LinkLevelSerializer
 ///
 class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
   @override
-  ByteData serialize(imc.Sms? message) {
+  ByteData serialize(imc.Sms? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5401,7 +5402,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5449,7 +5450,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5529,7 +5530,7 @@ class SmsSerializer extends imc.ImcSerializer<imc.Sms?, imc.SmsBuilder> {
 ///
 class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
   @override
-  ByteData serialize(imc.SmsTx? message) {
+  ByteData serialize(imc.SmsTx? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5537,7 +5538,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5589,7 +5590,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5671,7 +5672,7 @@ class SmsTxSerializer extends imc.ImcSerializer<imc.SmsTx?, imc.SmsTxBuilder> {
 ///
 class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
   @override
-  ByteData serialize(imc.SmsRx? message) {
+  ByteData serialize(imc.SmsRx? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5679,7 +5680,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5725,7 +5726,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5802,7 +5803,7 @@ class SmsRxSerializer extends imc.ImcSerializer<imc.SmsRx?, imc.SmsRxBuilder> {
 class SmsStateSerializer
     extends imc.ImcSerializer<imc.SmsState?, imc.SmsStateBuilder> {
   @override
-  ByteData serialize(imc.SmsState? message) {
+  ByteData serialize(imc.SmsState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5810,7 +5811,7 @@ class SmsStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5853,7 +5854,7 @@ class SmsStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -5928,7 +5929,7 @@ class SmsStateSerializer
 class TextMessageSerializer
     extends imc.ImcSerializer<imc.TextMessage?, imc.TextMessageBuilder> {
   @override
-  ByteData serialize(imc.TextMessage? message) {
+  ByteData serialize(imc.TextMessage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -5936,7 +5937,7 @@ class TextMessageSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -5982,7 +5983,7 @@ class TextMessageSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6060,7 +6061,7 @@ class TextMessageSerializer
 class IridiumMsgRxSerializer
     extends imc.ImcSerializer<imc.IridiumMsgRx?, imc.IridiumMsgRxBuilder> {
   @override
-  ByteData serialize(imc.IridiumMsgRx? message) {
+  ByteData serialize(imc.IridiumMsgRx? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6068,7 +6069,7 @@ class IridiumMsgRxSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6124,7 +6125,7 @@ class IridiumMsgRxSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6210,7 +6211,7 @@ class IridiumMsgRxSerializer
 class IridiumMsgTxSerializer
     extends imc.ImcSerializer<imc.IridiumMsgTx?, imc.IridiumMsgTxBuilder> {
   @override
-  ByteData serialize(imc.IridiumMsgTx? message) {
+  ByteData serialize(imc.IridiumMsgTx? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6218,7 +6219,7 @@ class IridiumMsgTxSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6271,7 +6272,7 @@ class IridiumMsgTxSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6354,7 +6355,7 @@ class IridiumMsgTxSerializer
 class IridiumTxStatusSerializer extends imc
     .ImcSerializer<imc.IridiumTxStatus?, imc.IridiumTxStatusBuilder> {
   @override
-  ByteData serialize(imc.IridiumTxStatus? message) {
+  ByteData serialize(imc.IridiumTxStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6362,7 +6363,7 @@ class IridiumTxStatusSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6406,7 +6407,7 @@ class IridiumTxStatusSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6482,7 +6483,7 @@ class IridiumTxStatusSerializer extends imc
 class GroupMembershipStateSerializer extends imc
     .ImcSerializer<imc.GroupMembershipState?, imc.GroupMembershipStateBuilder> {
   @override
-  ByteData serialize(imc.GroupMembershipState? message) {
+  ByteData serialize(imc.GroupMembershipState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6490,7 +6491,7 @@ class GroupMembershipStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6531,7 +6532,7 @@ class GroupMembershipStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6603,7 +6604,7 @@ class GroupMembershipStateSerializer extends imc
 class SystemGroupSerializer
     extends imc.ImcSerializer<imc.SystemGroup?, imc.SystemGroupBuilder> {
   @override
-  ByteData serialize(imc.SystemGroup? message) {
+  ByteData serialize(imc.SystemGroup? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6611,7 +6612,7 @@ class SystemGroupSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6660,7 +6661,7 @@ class SystemGroupSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6741,7 +6742,7 @@ class SystemGroupSerializer
 class LinkLatencySerializer
     extends imc.ImcSerializer<imc.LinkLatency?, imc.LinkLatencyBuilder> {
   @override
-  ByteData serialize(imc.LinkLatency? message) {
+  ByteData serialize(imc.LinkLatency? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6749,7 +6750,7 @@ class LinkLatencySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6785,7 +6786,7 @@ class LinkLatencySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6851,7 +6852,7 @@ class LinkLatencySerializer
 class ExtendedRSSISerializer
     extends imc.ImcSerializer<imc.ExtendedRSSI?, imc.ExtendedRSSIBuilder> {
   @override
-  ByteData serialize(imc.ExtendedRSSI? message) {
+  ByteData serialize(imc.ExtendedRSSI? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6859,7 +6860,7 @@ class ExtendedRSSISerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -6895,7 +6896,7 @@ class ExtendedRSSISerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -6961,7 +6962,7 @@ class ExtendedRSSISerializer
 class HistoricDataSerializer
     extends imc.ImcSerializer<imc.HistoricData?, imc.HistoricDataBuilder> {
   @override
-  ByteData serialize(imc.HistoricData? message) {
+  ByteData serialize(imc.HistoricData? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -6969,7 +6970,7 @@ class HistoricDataSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7032,7 +7033,7 @@ class HistoricDataSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -7124,7 +7125,7 @@ class HistoricDataSerializer
 class CompressedHistorySerializer extends imc
     .ImcSerializer<imc.CompressedHistory?, imc.CompressedHistoryBuilder> {
   @override
-  ByteData serialize(imc.CompressedHistory? message) {
+  ByteData serialize(imc.CompressedHistory? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -7132,7 +7133,7 @@ class CompressedHistorySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7180,7 +7181,7 @@ class CompressedHistorySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -7257,7 +7258,7 @@ class CompressedHistorySerializer extends imc
 class HistoricSampleSerializer
     extends imc.ImcSerializer<imc.HistoricSample?, imc.HistoricSampleBuilder> {
   @override
-  ByteData serialize(imc.HistoricSample? message) {
+  ByteData serialize(imc.HistoricSample? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -7265,7 +7266,7 @@ class HistoricSampleSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7330,7 +7331,7 @@ class HistoricSampleSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -7428,7 +7429,7 @@ class HistoricSampleSerializer
 class HistoricDataQuerySerializer extends imc
     .ImcSerializer<imc.HistoricDataQuery?, imc.HistoricDataQueryBuilder> {
   @override
-  ByteData serialize(imc.HistoricDataQuery? message) {
+  ByteData serialize(imc.HistoricDataQuery? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -7436,7 +7437,7 @@ class HistoricDataQuerySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7492,7 +7493,7 @@ class HistoricDataQuerySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -7581,7 +7582,7 @@ class HistoricDataQuerySerializer extends imc
 class RemoteCommandSerializer
     extends imc.ImcSerializer<imc.RemoteCommand?, imc.RemoteCommandBuilder> {
   @override
-  ByteData serialize(imc.RemoteCommand? message) {
+  ByteData serialize(imc.RemoteCommand? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -7589,7 +7590,7 @@ class RemoteCommandSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7645,7 +7646,7 @@ class RemoteCommandSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -7734,7 +7735,7 @@ class RemoteCommandSerializer
 class CommSystemsQuerySerializer extends imc
     .ImcSerializer<imc.CommSystemsQuery?, imc.CommSystemsQueryBuilder> {
   @override
-  ByteData serialize(imc.CommSystemsQuery? message) {
+  ByteData serialize(imc.CommSystemsQuery? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -7742,7 +7743,7 @@ class CommSystemsQuerySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7789,7 +7790,7 @@ class CommSystemsQuerySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -7870,7 +7871,7 @@ class CommSystemsQuerySerializer extends imc
 class TelemetryMsgSerializer
     extends imc.ImcSerializer<imc.TelemetryMsg?, imc.TelemetryMsgBuilder> {
   @override
-  ByteData serialize(imc.TelemetryMsg? message) {
+  ByteData serialize(imc.TelemetryMsg? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -7878,7 +7879,7 @@ class TelemetryMsgSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -7951,7 +7952,7 @@ class TelemetryMsgSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8056,7 +8057,7 @@ class TelemetryMsgSerializer
 class LblRangeSerializer
     extends imc.ImcSerializer<imc.LblRange?, imc.LblRangeBuilder> {
   @override
-  ByteData serialize(imc.LblRange? message) {
+  ByteData serialize(imc.LblRange? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8064,7 +8065,7 @@ class LblRangeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -8099,7 +8100,7 @@ class LblRangeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8165,7 +8166,7 @@ class LblRangeSerializer
 class LblBeaconSerializer
     extends imc.ImcSerializer<imc.LblBeacon?, imc.LblBeaconBuilder> {
   @override
-  ByteData serialize(imc.LblBeacon? message) {
+  ByteData serialize(imc.LblBeacon? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8173,7 +8174,7 @@ class LblBeaconSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -8228,7 +8229,7 @@ class LblBeaconSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8315,7 +8316,7 @@ class LblBeaconSerializer
 class LblConfigSerializer
     extends imc.ImcSerializer<imc.LblConfig?, imc.LblConfigBuilder> {
   @override
-  ByteData serialize(imc.LblConfig? message) {
+  ByteData serialize(imc.LblConfig? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8323,7 +8324,7 @@ class LblConfigSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -8379,7 +8380,7 @@ class LblConfigSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8465,7 +8466,7 @@ class LblConfigSerializer
 class AcousticMessageSerializer extends imc
     .ImcSerializer<imc.AcousticMessage?, imc.AcousticMessageBuilder> {
   @override
-  ByteData serialize(imc.AcousticMessage? message) {
+  ByteData serialize(imc.AcousticMessage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8473,7 +8474,7 @@ class AcousticMessageSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -8520,7 +8521,7 @@ class AcousticMessageSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8600,7 +8601,7 @@ class AcousticMessageSerializer extends imc
 class SimAcousticMessageSerializer extends imc
     .ImcSerializer<imc.SimAcousticMessage?, imc.SimAcousticMessageBuilder> {
   @override
-  ByteData serialize(imc.SimAcousticMessage? message) {
+  ByteData serialize(imc.SimAcousticMessage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8608,7 +8609,7 @@ class SimAcousticMessageSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -8697,7 +8698,7 @@ class SimAcousticMessageSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8820,7 +8821,7 @@ class SimAcousticMessageSerializer extends imc
 class AcousticOperationSerializer extends imc
     .ImcSerializer<imc.AcousticOperation?, imc.AcousticOperationBuilder> {
   @override
-  ByteData serialize(imc.AcousticOperation? message) {
+  ByteData serialize(imc.AcousticOperation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8828,7 +8829,7 @@ class AcousticOperationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -8889,7 +8890,7 @@ class AcousticOperationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -8984,7 +8985,7 @@ class AcousticOperationSerializer extends imc
 class AcousticSystemsQuerySerializer extends imc
     .ImcSerializer<imc.AcousticSystemsQuery?, imc.AcousticSystemsQueryBuilder> {
   @override
-  ByteData serialize(imc.AcousticSystemsQuery? message) {
+  ByteData serialize(imc.AcousticSystemsQuery? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -8992,7 +8993,7 @@ class AcousticSystemsQuerySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9021,7 +9022,7 @@ class AcousticSystemsQuerySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9080,7 +9081,7 @@ class AcousticSystemsQuerySerializer extends imc
 class AcousticSystemsSerializer extends imc
     .ImcSerializer<imc.AcousticSystems?, imc.AcousticSystemsBuilder> {
   @override
-  ByteData serialize(imc.AcousticSystems? message) {
+  ByteData serialize(imc.AcousticSystems? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9088,7 +9089,7 @@ class AcousticSystemsSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9126,7 +9127,7 @@ class AcousticSystemsSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9195,7 +9196,7 @@ class AcousticSystemsSerializer extends imc
 class AcousticLinkSerializer
     extends imc.ImcSerializer<imc.AcousticLink?, imc.AcousticLinkBuilder> {
   @override
-  ByteData serialize(imc.AcousticLink? message) {
+  ByteData serialize(imc.AcousticLink? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9203,7 +9204,7 @@ class AcousticLinkSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9247,7 +9248,7 @@ class AcousticLinkSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9322,7 +9323,7 @@ class AcousticLinkSerializer
 class AcousticRequestSerializer extends imc
     .ImcSerializer<imc.AcousticRequest?, imc.AcousticRequestBuilder> {
   @override
-  ByteData serialize(imc.AcousticRequest? message) {
+  ByteData serialize(imc.AcousticRequest? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9330,7 +9331,7 @@ class AcousticRequestSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9397,7 +9398,7 @@ class AcousticRequestSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9498,7 +9499,7 @@ class AcousticRequestSerializer extends imc
 class AcousticStatusSerializer
     extends imc.ImcSerializer<imc.AcousticStatus?, imc.AcousticStatusBuilder> {
   @override
-  ByteData serialize(imc.AcousticStatus? message) {
+  ByteData serialize(imc.AcousticStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9506,7 +9507,7 @@ class AcousticStatusSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9556,7 +9557,7 @@ class AcousticStatusSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9637,7 +9638,7 @@ class AcousticStatusSerializer
 ///
 class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
   @override
-  ByteData serialize(imc.Rpm? message) {
+  ByteData serialize(imc.Rpm? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9645,7 +9646,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9677,7 +9678,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9740,7 +9741,7 @@ class RpmSerializer extends imc.ImcSerializer<imc.Rpm?, imc.RpmBuilder> {
 class VoltageSerializer
     extends imc.ImcSerializer<imc.Voltage?, imc.VoltageBuilder> {
   @override
-  ByteData serialize(imc.Voltage? message) {
+  ByteData serialize(imc.Voltage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9748,7 +9749,7 @@ class VoltageSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9780,7 +9781,7 @@ class VoltageSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9843,7 +9844,7 @@ class VoltageSerializer
 class CurrentSerializer
     extends imc.ImcSerializer<imc.Current?, imc.CurrentBuilder> {
   @override
-  ByteData serialize(imc.Current? message) {
+  ByteData serialize(imc.Current? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9851,7 +9852,7 @@ class CurrentSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -9883,7 +9884,7 @@ class CurrentSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -9946,7 +9947,7 @@ class CurrentSerializer
 class GpsFixSerializer
     extends imc.ImcSerializer<imc.GpsFix?, imc.GpsFixBuilder> {
   @override
-  ByteData serialize(imc.GpsFix? message) {
+  ByteData serialize(imc.GpsFix? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -9954,7 +9955,7 @@ class GpsFixSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10031,7 +10032,7 @@ class GpsFixSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10140,7 +10141,7 @@ class GpsFixSerializer
 class EulerAnglesSerializer
     extends imc.ImcSerializer<imc.EulerAngles?, imc.EulerAnglesBuilder> {
   @override
-  ByteData serialize(imc.EulerAngles? message) {
+  ByteData serialize(imc.EulerAngles? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10148,7 +10149,7 @@ class EulerAnglesSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10193,7 +10194,7 @@ class EulerAnglesSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10268,7 +10269,7 @@ class EulerAnglesSerializer
 class EulerAnglesDeltaSerializer extends imc
     .ImcSerializer<imc.EulerAnglesDelta?, imc.EulerAnglesDeltaBuilder> {
   @override
-  ByteData serialize(imc.EulerAnglesDelta? message) {
+  ByteData serialize(imc.EulerAnglesDelta? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10276,7 +10277,7 @@ class EulerAnglesDeltaSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10321,7 +10322,7 @@ class EulerAnglesDeltaSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10396,7 +10397,7 @@ class EulerAnglesDeltaSerializer extends imc
 class AngularVelocitySerializer extends imc
     .ImcSerializer<imc.AngularVelocity?, imc.AngularVelocityBuilder> {
   @override
-  ByteData serialize(imc.AngularVelocity? message) {
+  ByteData serialize(imc.AngularVelocity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10404,7 +10405,7 @@ class AngularVelocitySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10446,7 +10447,7 @@ class AngularVelocitySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10518,7 +10519,7 @@ class AngularVelocitySerializer extends imc
 class AccelerationSerializer
     extends imc.ImcSerializer<imc.Acceleration?, imc.AccelerationBuilder> {
   @override
-  ByteData serialize(imc.Acceleration? message) {
+  ByteData serialize(imc.Acceleration? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10526,7 +10527,7 @@ class AccelerationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10568,7 +10569,7 @@ class AccelerationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10640,7 +10641,7 @@ class AccelerationSerializer
 class MagneticFieldSerializer
     extends imc.ImcSerializer<imc.MagneticField?, imc.MagneticFieldBuilder> {
   @override
-  ByteData serialize(imc.MagneticField? message) {
+  ByteData serialize(imc.MagneticField? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10648,7 +10649,7 @@ class MagneticFieldSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10690,7 +10691,7 @@ class MagneticFieldSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10762,7 +10763,7 @@ class MagneticFieldSerializer
 class GroundVelocitySerializer
     extends imc.ImcSerializer<imc.GroundVelocity?, imc.GroundVelocityBuilder> {
   @override
-  ByteData serialize(imc.GroundVelocity? message) {
+  ByteData serialize(imc.GroundVelocity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10770,7 +10771,7 @@ class GroundVelocitySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10812,7 +10813,7 @@ class GroundVelocitySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -10885,7 +10886,7 @@ class GroundVelocitySerializer
 class WaterVelocitySerializer
     extends imc.ImcSerializer<imc.WaterVelocity?, imc.WaterVelocityBuilder> {
   @override
-  ByteData serialize(imc.WaterVelocity? message) {
+  ByteData serialize(imc.WaterVelocity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -10893,7 +10894,7 @@ class WaterVelocitySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -10935,7 +10936,7 @@ class WaterVelocitySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11008,7 +11009,7 @@ class WaterVelocitySerializer
 class VelocityDeltaSerializer
     extends imc.ImcSerializer<imc.VelocityDelta?, imc.VelocityDeltaBuilder> {
   @override
-  ByteData serialize(imc.VelocityDelta? message) {
+  ByteData serialize(imc.VelocityDelta? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11016,7 +11017,7 @@ class VelocityDeltaSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11058,7 +11059,7 @@ class VelocityDeltaSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11130,7 +11131,7 @@ class VelocityDeltaSerializer
 class DistanceSerializer
     extends imc.ImcSerializer<imc.Distance?, imc.DistanceBuilder> {
   @override
-  ByteData serialize(imc.Distance? message) {
+  ByteData serialize(imc.Distance? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11138,7 +11139,7 @@ class DistanceSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11221,7 +11222,7 @@ class DistanceSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11333,7 +11334,7 @@ class DistanceSerializer
 class TemperatureSerializer
     extends imc.ImcSerializer<imc.Temperature?, imc.TemperatureBuilder> {
   @override
-  ByteData serialize(imc.Temperature? message) {
+  ByteData serialize(imc.Temperature? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11341,7 +11342,7 @@ class TemperatureSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11374,7 +11375,7 @@ class TemperatureSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11437,7 +11438,7 @@ class TemperatureSerializer
 class PressureSerializer
     extends imc.ImcSerializer<imc.Pressure?, imc.PressureBuilder> {
   @override
-  ByteData serialize(imc.Pressure? message) {
+  ByteData serialize(imc.Pressure? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11445,7 +11446,7 @@ class PressureSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11477,7 +11478,7 @@ class PressureSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11539,7 +11540,7 @@ class PressureSerializer
 ///
 class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
   @override
-  ByteData serialize(imc.Depth? message) {
+  ByteData serialize(imc.Depth? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11547,7 +11548,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11579,7 +11580,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11642,7 +11643,7 @@ class DepthSerializer extends imc.ImcSerializer<imc.Depth?, imc.DepthBuilder> {
 class DepthOffsetSerializer
     extends imc.ImcSerializer<imc.DepthOffset?, imc.DepthOffsetBuilder> {
   @override
-  ByteData serialize(imc.DepthOffset? message) {
+  ByteData serialize(imc.DepthOffset? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11650,7 +11651,7 @@ class DepthOffsetSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11683,7 +11684,7 @@ class DepthOffsetSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11746,7 +11747,7 @@ class DepthOffsetSerializer
 class SoundSpeedSerializer
     extends imc.ImcSerializer<imc.SoundSpeed?, imc.SoundSpeedBuilder> {
   @override
-  ByteData serialize(imc.SoundSpeed? message) {
+  ByteData serialize(imc.SoundSpeed? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11754,7 +11755,7 @@ class SoundSpeedSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11786,7 +11787,7 @@ class SoundSpeedSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11849,7 +11850,7 @@ class SoundSpeedSerializer
 class WaterDensitySerializer
     extends imc.ImcSerializer<imc.WaterDensity?, imc.WaterDensityBuilder> {
   @override
-  ByteData serialize(imc.WaterDensity? message) {
+  ByteData serialize(imc.WaterDensity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11857,7 +11858,7 @@ class WaterDensitySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11890,7 +11891,7 @@ class WaterDensitySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -11953,7 +11954,7 @@ class WaterDensitySerializer
 class ConductivitySerializer
     extends imc.ImcSerializer<imc.Conductivity?, imc.ConductivityBuilder> {
   @override
-  ByteData serialize(imc.Conductivity? message) {
+  ByteData serialize(imc.Conductivity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -11961,7 +11962,7 @@ class ConductivitySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -11994,7 +11995,7 @@ class ConductivitySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12057,7 +12058,7 @@ class ConductivitySerializer
 class SalinitySerializer
     extends imc.ImcSerializer<imc.Salinity?, imc.SalinityBuilder> {
   @override
-  ByteData serialize(imc.Salinity? message) {
+  ByteData serialize(imc.Salinity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12065,7 +12066,7 @@ class SalinitySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12097,7 +12098,7 @@ class SalinitySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12160,7 +12161,7 @@ class SalinitySerializer
 class WindSpeedSerializer
     extends imc.ImcSerializer<imc.WindSpeed?, imc.WindSpeedBuilder> {
   @override
-  ByteData serialize(imc.WindSpeed? message) {
+  ByteData serialize(imc.WindSpeed? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12168,7 +12169,7 @@ class WindSpeedSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12206,7 +12207,7 @@ class WindSpeedSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12275,7 +12276,7 @@ class WindSpeedSerializer
 class RelativeHumiditySerializer extends imc
     .ImcSerializer<imc.RelativeHumidity?, imc.RelativeHumidityBuilder> {
   @override
-  ByteData serialize(imc.RelativeHumidity? message) {
+  ByteData serialize(imc.RelativeHumidity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12283,7 +12284,7 @@ class RelativeHumiditySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12316,7 +12317,7 @@ class RelativeHumiditySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12379,7 +12380,7 @@ class RelativeHumiditySerializer extends imc
 class DevDataTextSerializer
     extends imc.ImcSerializer<imc.DevDataText?, imc.DevDataTextBuilder> {
   @override
-  ByteData serialize(imc.DevDataText? message) {
+  ByteData serialize(imc.DevDataText? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12387,7 +12388,7 @@ class DevDataTextSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12425,7 +12426,7 @@ class DevDataTextSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12494,7 +12495,7 @@ class DevDataTextSerializer
 class DevDataBinarySerializer
     extends imc.ImcSerializer<imc.DevDataBinary?, imc.DevDataBinaryBuilder> {
   @override
-  ByteData serialize(imc.DevDataBinary? message) {
+  ByteData serialize(imc.DevDataBinary? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12502,7 +12503,7 @@ class DevDataBinarySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12541,7 +12542,7 @@ class DevDataBinarySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12608,7 +12609,7 @@ class DevDataBinarySerializer
 ///
 class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
   @override
-  ByteData serialize(imc.Force? message) {
+  ByteData serialize(imc.Force? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12616,7 +12617,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12648,7 +12649,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12711,7 +12712,7 @@ class ForceSerializer extends imc.ImcSerializer<imc.Force?, imc.ForceBuilder> {
 class SonarDataSerializer
     extends imc.ImcSerializer<imc.SonarData?, imc.SonarDataBuilder> {
   @override
-  ByteData serialize(imc.SonarData? message) {
+  ByteData serialize(imc.SonarData? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12719,7 +12720,7 @@ class SonarDataSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12799,7 +12800,7 @@ class SonarDataSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -12907,7 +12908,7 @@ class SonarDataSerializer
 ///
 class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
   @override
-  ByteData serialize(imc.Pulse? message) {
+  ByteData serialize(imc.Pulse? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -12915,7 +12916,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -12943,7 +12944,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13002,7 +13003,7 @@ class PulseSerializer extends imc.ImcSerializer<imc.Pulse?, imc.PulseBuilder> {
 class PulseDetectionControlSerializer extends imc.ImcSerializer<
     imc.PulseDetectionControl?, imc.PulseDetectionControlBuilder> {
   @override
-  ByteData serialize(imc.PulseDetectionControl? message) {
+  ByteData serialize(imc.PulseDetectionControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13010,7 +13011,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13043,7 +13044,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13106,7 +13107,7 @@ class PulseDetectionControlSerializer extends imc.ImcSerializer<
 class FuelLevelSerializer
     extends imc.ImcSerializer<imc.FuelLevel?, imc.FuelLevelBuilder> {
   @override
-  ByteData serialize(imc.FuelLevel? message) {
+  ByteData serialize(imc.FuelLevel? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13114,7 +13115,7 @@ class FuelLevelSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13157,7 +13158,7 @@ class FuelLevelSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13232,7 +13233,7 @@ class FuelLevelSerializer
 class GpsNavDataSerializer
     extends imc.ImcSerializer<imc.GpsNavData?, imc.GpsNavDataBuilder> {
   @override
-  ByteData serialize(imc.GpsNavData? message) {
+  ByteData serialize(imc.GpsNavData? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13240,7 +13241,7 @@ class GpsNavDataSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13314,7 +13315,7 @@ class GpsNavDataSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13419,7 +13420,7 @@ class GpsNavDataSerializer
 class ServoPositionSerializer
     extends imc.ImcSerializer<imc.ServoPosition?, imc.ServoPositionBuilder> {
   @override
-  ByteData serialize(imc.ServoPosition? message) {
+  ByteData serialize(imc.ServoPosition? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13427,7 +13428,7 @@ class ServoPositionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13463,7 +13464,7 @@ class ServoPositionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13529,7 +13530,7 @@ class ServoPositionSerializer
 class DeviceStateSerializer
     extends imc.ImcSerializer<imc.DeviceState?, imc.DeviceStateBuilder> {
   @override
-  ByteData serialize(imc.DeviceState? message) {
+  ByteData serialize(imc.DeviceState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13537,7 +13538,7 @@ class DeviceStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13585,7 +13586,7 @@ class DeviceStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13663,7 +13664,7 @@ class DeviceStateSerializer
 class BeamConfigSerializer
     extends imc.ImcSerializer<imc.BeamConfig?, imc.BeamConfigBuilder> {
   @override
-  ByteData serialize(imc.BeamConfig? message) {
+  ByteData serialize(imc.BeamConfig? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13671,7 +13672,7 @@ class BeamConfigSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13706,7 +13707,7 @@ class BeamConfigSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13772,7 +13773,7 @@ class BeamConfigSerializer
 class DataSanitySerializer
     extends imc.ImcSerializer<imc.DataSanity?, imc.DataSanityBuilder> {
   @override
-  ByteData serialize(imc.DataSanity? message) {
+  ByteData serialize(imc.DataSanity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13780,7 +13781,7 @@ class DataSanitySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13812,7 +13813,7 @@ class DataSanitySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13875,7 +13876,7 @@ class DataSanitySerializer
 class RhodamineDyeSerializer
     extends imc.ImcSerializer<imc.RhodamineDye?, imc.RhodamineDyeBuilder> {
   @override
-  ByteData serialize(imc.RhodamineDye? message) {
+  ByteData serialize(imc.RhodamineDye? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13883,7 +13884,7 @@ class RhodamineDyeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -13916,7 +13917,7 @@ class RhodamineDyeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -13979,7 +13980,7 @@ class RhodamineDyeSerializer
 class CrudeOilSerializer
     extends imc.ImcSerializer<imc.CrudeOil?, imc.CrudeOilBuilder> {
   @override
-  ByteData serialize(imc.CrudeOil? message) {
+  ByteData serialize(imc.CrudeOil? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -13987,7 +13988,7 @@ class CrudeOilSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14019,7 +14020,7 @@ class CrudeOilSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14082,7 +14083,7 @@ class CrudeOilSerializer
 class FineOilSerializer
     extends imc.ImcSerializer<imc.FineOil?, imc.FineOilBuilder> {
   @override
-  ByteData serialize(imc.FineOil? message) {
+  ByteData serialize(imc.FineOil? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14090,7 +14091,7 @@ class FineOilSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14122,7 +14123,7 @@ class FineOilSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14185,7 +14186,7 @@ class FineOilSerializer
 class TurbiditySerializer
     extends imc.ImcSerializer<imc.Turbidity?, imc.TurbidityBuilder> {
   @override
-  ByteData serialize(imc.Turbidity? message) {
+  ByteData serialize(imc.Turbidity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14193,7 +14194,7 @@ class TurbiditySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14225,7 +14226,7 @@ class TurbiditySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14288,7 +14289,7 @@ class TurbiditySerializer
 class ChlorophyllSerializer
     extends imc.ImcSerializer<imc.Chlorophyll?, imc.ChlorophyllBuilder> {
   @override
-  ByteData serialize(imc.Chlorophyll? message) {
+  ByteData serialize(imc.Chlorophyll? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14296,7 +14297,7 @@ class ChlorophyllSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14329,7 +14330,7 @@ class ChlorophyllSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14392,7 +14393,7 @@ class ChlorophyllSerializer
 class FluoresceinSerializer
     extends imc.ImcSerializer<imc.Fluorescein?, imc.FluoresceinBuilder> {
   @override
-  ByteData serialize(imc.Fluorescein? message) {
+  ByteData serialize(imc.Fluorescein? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14400,7 +14401,7 @@ class FluoresceinSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14433,7 +14434,7 @@ class FluoresceinSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14496,7 +14497,7 @@ class FluoresceinSerializer
 class PhycocyaninSerializer
     extends imc.ImcSerializer<imc.Phycocyanin?, imc.PhycocyaninBuilder> {
   @override
-  ByteData serialize(imc.Phycocyanin? message) {
+  ByteData serialize(imc.Phycocyanin? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14504,7 +14505,7 @@ class PhycocyaninSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14537,7 +14538,7 @@ class PhycocyaninSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14600,7 +14601,7 @@ class PhycocyaninSerializer
 class PhycoerythrinSerializer
     extends imc.ImcSerializer<imc.Phycoerythrin?, imc.PhycoerythrinBuilder> {
   @override
-  ByteData serialize(imc.Phycoerythrin? message) {
+  ByteData serialize(imc.Phycoerythrin? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14608,7 +14609,7 @@ class PhycoerythrinSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14641,7 +14642,7 @@ class PhycoerythrinSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14704,7 +14705,7 @@ class PhycoerythrinSerializer
 class GpsFixRtkSerializer
     extends imc.ImcSerializer<imc.GpsFixRtk?, imc.GpsFixRtkBuilder> {
   @override
-  ByteData serialize(imc.GpsFixRtk? message) {
+  ByteData serialize(imc.GpsFixRtk? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14712,7 +14713,7 @@ class GpsFixRtkSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14786,7 +14787,7 @@ class GpsFixRtkSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -14892,7 +14893,7 @@ class GpsFixRtkSerializer
 class ExternalNavDataSerializer extends imc
     .ImcSerializer<imc.ExternalNavData?, imc.ExternalNavDataBuilder> {
   @override
-  ByteData serialize(imc.ExternalNavData? message) {
+  ByteData serialize(imc.ExternalNavData? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -14900,7 +14901,7 @@ class ExternalNavDataSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -14950,7 +14951,7 @@ class ExternalNavDataSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15033,7 +15034,7 @@ class ExternalNavDataSerializer extends imc
 class DissolvedOxygenSerializer extends imc
     .ImcSerializer<imc.DissolvedOxygen?, imc.DissolvedOxygenBuilder> {
   @override
-  ByteData serialize(imc.DissolvedOxygen? message) {
+  ByteData serialize(imc.DissolvedOxygen? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15041,7 +15042,7 @@ class DissolvedOxygenSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15074,7 +15075,7 @@ class DissolvedOxygenSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15137,7 +15138,7 @@ class DissolvedOxygenSerializer extends imc
 class AirSaturationSerializer
     extends imc.ImcSerializer<imc.AirSaturation?, imc.AirSaturationBuilder> {
   @override
-  ByteData serialize(imc.AirSaturation? message) {
+  ByteData serialize(imc.AirSaturation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15145,7 +15146,7 @@ class AirSaturationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15178,7 +15179,7 @@ class AirSaturationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15241,7 +15242,7 @@ class AirSaturationSerializer
 class ThrottleSerializer
     extends imc.ImcSerializer<imc.Throttle?, imc.ThrottleBuilder> {
   @override
-  ByteData serialize(imc.Throttle? message) {
+  ByteData serialize(imc.Throttle? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15249,7 +15250,7 @@ class ThrottleSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15281,7 +15282,7 @@ class ThrottleSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15343,7 +15344,7 @@ class ThrottleSerializer
 ///
 class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
   @override
-  ByteData serialize(imc.PH? message) {
+  ByteData serialize(imc.PH? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15351,7 +15352,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15383,7 +15384,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15445,7 +15446,7 @@ class PHSerializer extends imc.ImcSerializer<imc.PH?, imc.PHBuilder> {
 ///
 class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
   @override
-  ByteData serialize(imc.Redox? message) {
+  ByteData serialize(imc.Redox? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15453,7 +15454,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15485,7 +15486,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15548,7 +15549,7 @@ class RedoxSerializer extends imc.ImcSerializer<imc.Redox?, imc.RedoxBuilder> {
 class CameraZoomSerializer
     extends imc.ImcSerializer<imc.CameraZoom?, imc.CameraZoomBuilder> {
   @override
-  ByteData serialize(imc.CameraZoom? message) {
+  ByteData serialize(imc.CameraZoom? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15556,7 +15557,7 @@ class CameraZoomSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15594,7 +15595,7 @@ class CameraZoomSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15663,7 +15664,7 @@ class CameraZoomSerializer
 class SetThrusterActuationSerializer extends imc
     .ImcSerializer<imc.SetThrusterActuation?, imc.SetThrusterActuationBuilder> {
   @override
-  ByteData serialize(imc.SetThrusterActuation? message) {
+  ByteData serialize(imc.SetThrusterActuation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15671,7 +15672,7 @@ class SetThrusterActuationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15707,7 +15708,7 @@ class SetThrusterActuationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15773,7 +15774,7 @@ class SetThrusterActuationSerializer extends imc
 class SetServoPositionSerializer extends imc
     .ImcSerializer<imc.SetServoPosition?, imc.SetServoPositionBuilder> {
   @override
-  ByteData serialize(imc.SetServoPosition? message) {
+  ByteData serialize(imc.SetServoPosition? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15781,7 +15782,7 @@ class SetServoPositionSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15817,7 +15818,7 @@ class SetServoPositionSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15883,7 +15884,8 @@ class SetServoPositionSerializer extends imc
 class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     imc.SetControlSurfaceDeflection?, imc.SetControlSurfaceDeflectionBuilder> {
   @override
-  ByteData serialize(imc.SetControlSurfaceDeflection? message) {
+  ByteData serialize(imc.SetControlSurfaceDeflection? message,
+      [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -15891,7 +15893,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -15928,7 +15930,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -15994,7 +15996,7 @@ class SetControlSurfaceDeflectionSerializer extends imc.ImcSerializer<
 class RemoteActionsRequestSerializer extends imc
     .ImcSerializer<imc.RemoteActionsRequest?, imc.RemoteActionsRequestBuilder> {
   @override
-  ByteData serialize(imc.RemoteActionsRequest? message) {
+  ByteData serialize(imc.RemoteActionsRequest? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16002,7 +16004,7 @@ class RemoteActionsRequestSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16043,7 +16045,7 @@ class RemoteActionsRequestSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16115,7 +16117,7 @@ class RemoteActionsRequestSerializer extends imc
 class RemoteActionsSerializer
     extends imc.ImcSerializer<imc.RemoteActions?, imc.RemoteActionsBuilder> {
   @override
-  ByteData serialize(imc.RemoteActions? message) {
+  ByteData serialize(imc.RemoteActions? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16123,7 +16125,7 @@ class RemoteActionsSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16161,7 +16163,7 @@ class RemoteActionsSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16230,7 +16232,7 @@ class RemoteActionsSerializer
 class ButtonEventSerializer
     extends imc.ImcSerializer<imc.ButtonEvent?, imc.ButtonEventBuilder> {
   @override
-  ByteData serialize(imc.ButtonEvent? message) {
+  ByteData serialize(imc.ButtonEvent? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16238,7 +16240,7 @@ class ButtonEventSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16274,7 +16276,7 @@ class ButtonEventSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16340,7 +16342,7 @@ class ButtonEventSerializer
 class LcdControlSerializer
     extends imc.ImcSerializer<imc.LcdControl?, imc.LcdControlBuilder> {
   @override
-  ByteData serialize(imc.LcdControl? message) {
+  ByteData serialize(imc.LcdControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16348,7 +16350,7 @@ class LcdControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16388,7 +16390,7 @@ class LcdControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16460,7 +16462,7 @@ class LcdControlSerializer
 class PowerOperationSerializer
     extends imc.ImcSerializer<imc.PowerOperation?, imc.PowerOperationBuilder> {
   @override
-  ByteData serialize(imc.PowerOperation? message) {
+  ByteData serialize(imc.PowerOperation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16468,7 +16470,7 @@ class PowerOperationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16507,7 +16509,7 @@ class PowerOperationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16576,7 +16578,7 @@ class PowerOperationSerializer
 class PowerChannelControlSerializer extends imc
     .ImcSerializer<imc.PowerChannelControl?, imc.PowerChannelControlBuilder> {
   @override
-  ByteData serialize(imc.PowerChannelControl? message) {
+  ByteData serialize(imc.PowerChannelControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16584,7 +16586,7 @@ class PowerChannelControlSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16628,7 +16630,7 @@ class PowerChannelControlSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16703,7 +16705,7 @@ class PowerChannelControlSerializer extends imc
 class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     imc.QueryPowerChannelState?, imc.QueryPowerChannelStateBuilder> {
   @override
-  ByteData serialize(imc.QueryPowerChannelState? message) {
+  ByteData serialize(imc.QueryPowerChannelState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16711,7 +16713,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16740,7 +16742,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16799,7 +16801,7 @@ class QueryPowerChannelStateSerializer extends imc.ImcSerializer<
 class PowerChannelStateSerializer extends imc
     .ImcSerializer<imc.PowerChannelState?, imc.PowerChannelStateBuilder> {
   @override
-  ByteData serialize(imc.PowerChannelState? message) {
+  ByteData serialize(imc.PowerChannelState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16807,7 +16809,7 @@ class PowerChannelStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16848,7 +16850,7 @@ class PowerChannelStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -16921,7 +16923,7 @@ class PowerChannelStateSerializer extends imc
 class LedBrightnessSerializer
     extends imc.ImcSerializer<imc.LedBrightness?, imc.LedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.LedBrightness? message) {
+  ByteData serialize(imc.LedBrightness? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -16929,7 +16931,7 @@ class LedBrightnessSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -16970,7 +16972,7 @@ class LedBrightnessSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17042,7 +17044,7 @@ class LedBrightnessSerializer
 class QueryLedBrightnessSerializer extends imc
     .ImcSerializer<imc.QueryLedBrightness?, imc.QueryLedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.QueryLedBrightness? message) {
+  ByteData serialize(imc.QueryLedBrightness? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17050,7 +17052,7 @@ class QueryLedBrightnessSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17088,7 +17090,7 @@ class QueryLedBrightnessSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17157,7 +17159,7 @@ class QueryLedBrightnessSerializer extends imc
 class SetLedBrightnessSerializer extends imc
     .ImcSerializer<imc.SetLedBrightness?, imc.SetLedBrightnessBuilder> {
   @override
-  ByteData serialize(imc.SetLedBrightness? message) {
+  ByteData serialize(imc.SetLedBrightness? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17165,7 +17167,7 @@ class SetLedBrightnessSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17206,7 +17208,7 @@ class SetLedBrightnessSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17278,7 +17280,7 @@ class SetLedBrightnessSerializer extends imc
 class SetPWMSerializer
     extends imc.ImcSerializer<imc.SetPWM?, imc.SetPWMBuilder> {
   @override
-  ByteData serialize(imc.SetPWM? message) {
+  ByteData serialize(imc.SetPWM? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17286,7 +17288,7 @@ class SetPWMSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17324,7 +17326,7 @@ class SetPWMSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17392,7 +17394,7 @@ class SetPWMSerializer
 ///
 class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
   @override
-  ByteData serialize(imc.PWM? message) {
+  ByteData serialize(imc.PWM? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17400,7 +17402,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17438,7 +17440,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17507,7 +17509,7 @@ class PWMSerializer extends imc.ImcSerializer<imc.PWM?, imc.PWMBuilder> {
 class EstimatedStateSerializer
     extends imc.ImcSerializer<imc.EstimatedState?, imc.EstimatedStateBuilder> {
   @override
-  ByteData serialize(imc.EstimatedState? message) {
+  ByteData serialize(imc.EstimatedState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17515,7 +17517,7 @@ class EstimatedStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17605,7 +17607,7 @@ class EstimatedStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17725,7 +17727,7 @@ class EstimatedStateSerializer
 class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     imc.EstimatedStreamVelocity?, imc.EstimatedStreamVelocityBuilder> {
   @override
-  ByteData serialize(imc.EstimatedStreamVelocity? message) {
+  ByteData serialize(imc.EstimatedStreamVelocity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17733,7 +17735,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17772,7 +17774,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17841,7 +17843,7 @@ class EstimatedStreamVelocitySerializer extends imc.ImcSerializer<
 class IndicatedSpeedSerializer
     extends imc.ImcSerializer<imc.IndicatedSpeed?, imc.IndicatedSpeedBuilder> {
   @override
-  ByteData serialize(imc.IndicatedSpeed? message) {
+  ByteData serialize(imc.IndicatedSpeed? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17849,7 +17851,7 @@ class IndicatedSpeedSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17882,7 +17884,7 @@ class IndicatedSpeedSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -17945,7 +17947,7 @@ class IndicatedSpeedSerializer
 class TrueSpeedSerializer
     extends imc.ImcSerializer<imc.TrueSpeed?, imc.TrueSpeedBuilder> {
   @override
-  ByteData serialize(imc.TrueSpeed? message) {
+  ByteData serialize(imc.TrueSpeed? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -17953,7 +17955,7 @@ class TrueSpeedSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -17985,7 +17987,7 @@ class TrueSpeedSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18048,7 +18050,7 @@ class TrueSpeedSerializer
 class NavigationUncertaintySerializer extends imc.ImcSerializer<
     imc.NavigationUncertainty?, imc.NavigationUncertaintyBuilder> {
   @override
-  ByteData serialize(imc.NavigationUncertainty? message) {
+  ByteData serialize(imc.NavigationUncertainty? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18056,7 +18058,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18128,7 +18130,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18230,7 +18232,7 @@ class NavigationUncertaintySerializer extends imc.ImcSerializer<
 class NavigationDataSerializer
     extends imc.ImcSerializer<imc.NavigationData?, imc.NavigationDataBuilder> {
   @override
-  ByteData serialize(imc.NavigationData? message) {
+  ByteData serialize(imc.NavigationData? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18238,7 +18240,7 @@ class NavigationDataSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18295,7 +18297,7 @@ class NavigationDataSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18382,7 +18384,7 @@ class NavigationDataSerializer
 class GpsFixRejectionSerializer extends imc
     .ImcSerializer<imc.GpsFixRejection?, imc.GpsFixRejectionBuilder> {
   @override
-  ByteData serialize(imc.GpsFixRejection? message) {
+  ByteData serialize(imc.GpsFixRejection? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18390,7 +18392,7 @@ class GpsFixRejectionSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18426,7 +18428,7 @@ class GpsFixRejectionSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18493,7 +18495,7 @@ class GpsFixRejectionSerializer extends imc
 class LblRangeAcceptanceSerializer extends imc
     .ImcSerializer<imc.LblRangeAcceptance?, imc.LblRangeAcceptanceBuilder> {
   @override
-  ByteData serialize(imc.LblRangeAcceptance? message) {
+  ByteData serialize(imc.LblRangeAcceptance? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18501,7 +18503,7 @@ class LblRangeAcceptanceSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18540,7 +18542,7 @@ class LblRangeAcceptanceSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18610,7 +18612,7 @@ class LblRangeAcceptanceSerializer extends imc
 class DvlRejectionSerializer
     extends imc.ImcSerializer<imc.DvlRejection?, imc.DvlRejectionBuilder> {
   @override
-  ByteData serialize(imc.DvlRejection? message) {
+  ByteData serialize(imc.DvlRejection? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18618,7 +18620,7 @@ class DvlRejectionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18660,7 +18662,7 @@ class DvlRejectionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18732,7 +18734,7 @@ class DvlRejectionSerializer
 class LblEstimateSerializer
     extends imc.ImcSerializer<imc.LblEstimate?, imc.LblEstimateBuilder> {
   @override
-  ByteData serialize(imc.LblEstimate? message) {
+  ByteData serialize(imc.LblEstimate? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18740,7 +18742,7 @@ class LblEstimateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18802,7 +18804,7 @@ class LblEstimateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -18897,7 +18899,7 @@ class LblEstimateSerializer
 class AlignmentStateSerializer
     extends imc.ImcSerializer<imc.AlignmentState?, imc.AlignmentStateBuilder> {
   @override
-  ByteData serialize(imc.AlignmentState? message) {
+  ByteData serialize(imc.AlignmentState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -18905,7 +18907,7 @@ class AlignmentStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -18938,7 +18940,7 @@ class AlignmentStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19001,7 +19003,7 @@ class AlignmentStateSerializer
 class GroupStreamVelocitySerializer extends imc
     .ImcSerializer<imc.GroupStreamVelocity?, imc.GroupStreamVelocityBuilder> {
   @override
-  ByteData serialize(imc.GroupStreamVelocity? message) {
+  ByteData serialize(imc.GroupStreamVelocity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19009,7 +19011,7 @@ class GroupStreamVelocitySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19048,7 +19050,7 @@ class GroupStreamVelocitySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19117,7 +19119,7 @@ class GroupStreamVelocitySerializer extends imc
 class AirflowSerializer
     extends imc.ImcSerializer<imc.Airflow?, imc.AirflowBuilder> {
   @override
-  ByteData serialize(imc.Airflow? message) {
+  ByteData serialize(imc.Airflow? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19125,7 +19127,7 @@ class AirflowSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19163,7 +19165,7 @@ class AirflowSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19232,7 +19234,7 @@ class AirflowSerializer
 class DesiredHeadingSerializer
     extends imc.ImcSerializer<imc.DesiredHeading?, imc.DesiredHeadingBuilder> {
   @override
-  ByteData serialize(imc.DesiredHeading? message) {
+  ByteData serialize(imc.DesiredHeading? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19240,7 +19242,7 @@ class DesiredHeadingSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19273,7 +19275,7 @@ class DesiredHeadingSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19336,7 +19338,7 @@ class DesiredHeadingSerializer
 class DesiredZSerializer
     extends imc.ImcSerializer<imc.DesiredZ?, imc.DesiredZBuilder> {
   @override
-  ByteData serialize(imc.DesiredZ? message) {
+  ByteData serialize(imc.DesiredZ? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19344,7 +19346,7 @@ class DesiredZSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19379,7 +19381,7 @@ class DesiredZSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19445,7 +19447,7 @@ class DesiredZSerializer
 class DesiredSpeedSerializer
     extends imc.ImcSerializer<imc.DesiredSpeed?, imc.DesiredSpeedBuilder> {
   @override
-  ByteData serialize(imc.DesiredSpeed? message) {
+  ByteData serialize(imc.DesiredSpeed? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19453,7 +19455,7 @@ class DesiredSpeedSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19489,7 +19491,7 @@ class DesiredSpeedSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19555,7 +19557,7 @@ class DesiredSpeedSerializer
 class DesiredRollSerializer
     extends imc.ImcSerializer<imc.DesiredRoll?, imc.DesiredRollBuilder> {
   @override
-  ByteData serialize(imc.DesiredRoll? message) {
+  ByteData serialize(imc.DesiredRoll? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19563,7 +19565,7 @@ class DesiredRollSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19596,7 +19598,7 @@ class DesiredRollSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19659,7 +19661,7 @@ class DesiredRollSerializer
 class DesiredPitchSerializer
     extends imc.ImcSerializer<imc.DesiredPitch?, imc.DesiredPitchBuilder> {
   @override
-  ByteData serialize(imc.DesiredPitch? message) {
+  ByteData serialize(imc.DesiredPitch? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19667,7 +19669,7 @@ class DesiredPitchSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19700,7 +19702,7 @@ class DesiredPitchSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19763,7 +19765,7 @@ class DesiredPitchSerializer
 class DesiredVerticalRateSerializer extends imc
     .ImcSerializer<imc.DesiredVerticalRate?, imc.DesiredVerticalRateBuilder> {
   @override
-  ByteData serialize(imc.DesiredVerticalRate? message) {
+  ByteData serialize(imc.DesiredVerticalRate? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19771,7 +19773,7 @@ class DesiredVerticalRateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19804,7 +19806,7 @@ class DesiredVerticalRateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -19867,7 +19869,7 @@ class DesiredVerticalRateSerializer extends imc
 class DesiredPathSerializer
     extends imc.ImcSerializer<imc.DesiredPath?, imc.DesiredPathBuilder> {
   @override
-  ByteData serialize(imc.DesiredPath? message) {
+  ByteData serialize(imc.DesiredPath? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -19875,7 +19877,7 @@ class DesiredPathSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -19944,7 +19946,7 @@ class DesiredPathSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20043,7 +20045,7 @@ class DesiredPathSerializer
 class DesiredControlSerializer
     extends imc.ImcSerializer<imc.DesiredControl?, imc.DesiredControlBuilder> {
   @override
-  ByteData serialize(imc.DesiredControl? message) {
+  ByteData serialize(imc.DesiredControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20051,7 +20053,7 @@ class DesiredControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20102,7 +20104,7 @@ class DesiredControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20184,7 +20186,7 @@ class DesiredControlSerializer
 class DesiredHeadingRateSerializer extends imc
     .ImcSerializer<imc.DesiredHeadingRate?, imc.DesiredHeadingRateBuilder> {
   @override
-  ByteData serialize(imc.DesiredHeadingRate? message) {
+  ByteData serialize(imc.DesiredHeadingRate? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20192,7 +20194,7 @@ class DesiredHeadingRateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20225,7 +20227,7 @@ class DesiredHeadingRateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20288,7 +20290,7 @@ class DesiredHeadingRateSerializer extends imc
 class DesiredVelocitySerializer extends imc
     .ImcSerializer<imc.DesiredVelocity?, imc.DesiredVelocityBuilder> {
   @override
-  ByteData serialize(imc.DesiredVelocity? message) {
+  ByteData serialize(imc.DesiredVelocity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20296,7 +20298,7 @@ class DesiredVelocitySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20347,7 +20349,7 @@ class DesiredVelocitySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20429,7 +20431,7 @@ class DesiredVelocitySerializer extends imc
 class PathControlStateSerializer extends imc
     .ImcSerializer<imc.PathControlState?, imc.PathControlStateBuilder> {
   @override
-  ByteData serialize(imc.PathControlState? message) {
+  ByteData serialize(imc.PathControlState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20437,7 +20439,7 @@ class PathControlStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20524,7 +20526,7 @@ class PathControlStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20642,7 +20644,7 @@ class PathControlStateSerializer extends imc
 class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     imc.AllocatedControlTorques?, imc.AllocatedControlTorquesBuilder> {
   @override
-  ByteData serialize(imc.AllocatedControlTorques? message) {
+  ByteData serialize(imc.AllocatedControlTorques? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20650,7 +20652,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20689,7 +20691,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20758,7 +20760,7 @@ class AllocatedControlTorquesSerializer extends imc.ImcSerializer<
 class ControlParcelSerializer
     extends imc.ImcSerializer<imc.ControlParcel?, imc.ControlParcelBuilder> {
   @override
-  ByteData serialize(imc.ControlParcel? message) {
+  ByteData serialize(imc.ControlParcel? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20766,7 +20768,7 @@ class ControlParcelSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20808,7 +20810,7 @@ class ControlParcelSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20879,7 +20881,7 @@ class ControlParcelSerializer
 ///
 class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
   @override
-  ByteData serialize(imc.Brake? message) {
+  ByteData serialize(imc.Brake? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20887,7 +20889,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -20919,7 +20921,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -20982,7 +20984,7 @@ class BrakeSerializer extends imc.ImcSerializer<imc.Brake?, imc.BrakeBuilder> {
 class DesiredLinearStateSerializer extends imc
     .ImcSerializer<imc.DesiredLinearState?, imc.DesiredLinearStateBuilder> {
   @override
-  ByteData serialize(imc.DesiredLinearState? message) {
+  ByteData serialize(imc.DesiredLinearState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -20990,7 +20992,7 @@ class DesiredLinearStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21050,7 +21052,7 @@ class DesiredLinearStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -21141,7 +21143,7 @@ class DesiredLinearStateSerializer extends imc
 class DesiredThrottleSerializer extends imc
     .ImcSerializer<imc.DesiredThrottle?, imc.DesiredThrottleBuilder> {
   @override
-  ByteData serialize(imc.DesiredThrottle? message) {
+  ByteData serialize(imc.DesiredThrottle? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -21149,7 +21151,7 @@ class DesiredThrottleSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21182,7 +21184,7 @@ class DesiredThrottleSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -21244,7 +21246,7 @@ class DesiredThrottleSerializer extends imc
 ///
 class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
   @override
-  ByteData serialize(imc.Goto? message) {
+  ByteData serialize(imc.Goto? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -21252,7 +21254,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21319,7 +21321,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -21417,7 +21419,7 @@ class GotoSerializer extends imc.ImcSerializer<imc.Goto?, imc.GotoBuilder> {
 ///
 class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
   @override
-  ByteData serialize(imc.PopUp? message) {
+  ByteData serialize(imc.PopUp? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -21425,7 +21427,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21492,7 +21494,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -21591,7 +21593,7 @@ class PopUpSerializer extends imc.ImcSerializer<imc.PopUp?, imc.PopUpBuilder> {
 class TeleoperationSerializer
     extends imc.ImcSerializer<imc.Teleoperation?, imc.TeleoperationBuilder> {
   @override
-  ByteData serialize(imc.Teleoperation? message) {
+  ByteData serialize(imc.Teleoperation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -21599,7 +21601,7 @@ class TeleoperationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21637,7 +21639,7 @@ class TeleoperationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -21706,7 +21708,7 @@ class TeleoperationSerializer
 class LoiterSerializer
     extends imc.ImcSerializer<imc.Loiter?, imc.LoiterBuilder> {
   @override
-  ByteData serialize(imc.Loiter? message) {
+  ByteData serialize(imc.Loiter? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -21714,7 +21716,7 @@ class LoiterSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21790,7 +21792,7 @@ class LoiterSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -21898,7 +21900,7 @@ class LoiterSerializer
 class IdleManeuverSerializer
     extends imc.ImcSerializer<imc.IdleManeuver?, imc.IdleManeuverBuilder> {
   @override
-  ByteData serialize(imc.IdleManeuver? message) {
+  ByteData serialize(imc.IdleManeuver? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -21906,7 +21908,7 @@ class IdleManeuverSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -21947,7 +21949,7 @@ class IdleManeuverSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22019,7 +22021,7 @@ class IdleManeuverSerializer
 class LowLevelControlSerializer extends imc
     .ImcSerializer<imc.LowLevelControl?, imc.LowLevelControlBuilder> {
   @override
-  ByteData serialize(imc.LowLevelControl? message) {
+  ByteData serialize(imc.LowLevelControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22027,7 +22029,7 @@ class LowLevelControlSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -22085,7 +22087,7 @@ class LowLevelControlSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22176,7 +22178,7 @@ class LowLevelControlSerializer extends imc
 ///
 class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
   @override
-  ByteData serialize(imc.Rows? message) {
+  ByteData serialize(imc.Rows? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22184,7 +22186,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -22266,7 +22268,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22380,7 +22382,7 @@ class RowsSerializer extends imc.ImcSerializer<imc.Rows?, imc.RowsBuilder> {
 class FollowPathSerializer
     extends imc.ImcSerializer<imc.FollowPath?, imc.FollowPathBuilder> {
   @override
-  ByteData serialize(imc.FollowPath? message) {
+  ByteData serialize(imc.FollowPath? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22388,7 +22390,7 @@ class FollowPathSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -22470,7 +22472,7 @@ class FollowPathSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22583,7 +22585,7 @@ class FollowPathSerializer
 class PathPointSerializer
     extends imc.ImcSerializer<imc.PathPoint?, imc.PathPointBuilder> {
   @override
-  ByteData serialize(imc.PathPoint? message) {
+  ByteData serialize(imc.PathPoint? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22591,7 +22593,7 @@ class PathPointSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -22629,7 +22631,7 @@ class PathPointSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22697,7 +22699,7 @@ class PathPointSerializer
 ///
 class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
   @override
-  ByteData serialize(imc.YoYo? message) {
+  ByteData serialize(imc.YoYo? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22705,7 +22707,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -22769,7 +22771,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22865,7 +22867,7 @@ class YoYoSerializer extends imc.ImcSerializer<imc.YoYo?, imc.YoYoBuilder> {
 class TeleoperationDoneSerializer extends imc
     .ImcSerializer<imc.TeleoperationDone?, imc.TeleoperationDoneBuilder> {
   @override
-  ByteData serialize(imc.TeleoperationDone? message) {
+  ByteData serialize(imc.TeleoperationDone? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22873,7 +22875,7 @@ class TeleoperationDoneSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -22902,7 +22904,7 @@ class TeleoperationDoneSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -22961,7 +22963,7 @@ class TeleoperationDoneSerializer extends imc
 class StationKeepingSerializer
     extends imc.ImcSerializer<imc.StationKeeping?, imc.StationKeepingBuilder> {
   @override
-  ByteData serialize(imc.StationKeeping? message) {
+  ByteData serialize(imc.StationKeeping? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -22969,7 +22971,7 @@ class StationKeepingSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -23031,7 +23033,7 @@ class StationKeepingSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -23124,7 +23126,7 @@ class StationKeepingSerializer
 class ElevatorSerializer
     extends imc.ImcSerializer<imc.Elevator?, imc.ElevatorBuilder> {
   @override
-  ByteData serialize(imc.Elevator? message) {
+  ByteData serialize(imc.Elevator? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -23132,7 +23134,7 @@ class ElevatorSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -23202,7 +23204,7 @@ class ElevatorSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -23304,7 +23306,7 @@ class ElevatorSerializer
 class FollowTrajectorySerializer extends imc
     .ImcSerializer<imc.FollowTrajectory?, imc.FollowTrajectoryBuilder> {
   @override
-  ByteData serialize(imc.FollowTrajectory? message) {
+  ByteData serialize(imc.FollowTrajectory? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -23312,7 +23314,7 @@ class FollowTrajectorySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -23395,7 +23397,7 @@ class FollowTrajectorySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -23508,7 +23510,7 @@ class FollowTrajectorySerializer extends imc
 class TrajectoryPointSerializer extends imc
     .ImcSerializer<imc.TrajectoryPoint?, imc.TrajectoryPointBuilder> {
   @override
-  ByteData serialize(imc.TrajectoryPoint? message) {
+  ByteData serialize(imc.TrajectoryPoint? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -23516,7 +23518,7 @@ class TrajectoryPointSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -23558,7 +23560,7 @@ class TrajectoryPointSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -23630,7 +23632,7 @@ class TrajectoryPointSerializer extends imc
 class CustomManeuverSerializer
     extends imc.ImcSerializer<imc.CustomManeuver?, imc.CustomManeuverBuilder> {
   @override
-  ByteData serialize(imc.CustomManeuver? message) {
+  ByteData serialize(imc.CustomManeuver? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -23638,7 +23640,7 @@ class CustomManeuverSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -23687,7 +23689,7 @@ class CustomManeuverSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -23768,7 +23770,7 @@ class CustomManeuverSerializer
 class VehicleFormationSerializer extends imc
     .ImcSerializer<imc.VehicleFormation?, imc.VehicleFormationBuilder> {
   @override
-  ByteData serialize(imc.VehicleFormation? message) {
+  ByteData serialize(imc.VehicleFormation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -23776,7 +23778,7 @@ class VehicleFormationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -23883,7 +23885,7 @@ class VehicleFormationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24022,7 +24024,8 @@ class VehicleFormationSerializer extends imc
 class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     imc.VehicleFormationParticipant?, imc.VehicleFormationParticipantBuilder> {
   @override
-  ByteData serialize(imc.VehicleFormationParticipant? message) {
+  ByteData serialize(imc.VehicleFormationParticipant? message,
+      [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24030,7 +24033,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24073,7 +24076,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24145,7 +24148,7 @@ class VehicleFormationParticipantSerializer extends imc.ImcSerializer<
 class StopManeuverSerializer
     extends imc.ImcSerializer<imc.StopManeuver?, imc.StopManeuverBuilder> {
   @override
-  ByteData serialize(imc.StopManeuver? message) {
+  ByteData serialize(imc.StopManeuver? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24153,7 +24156,7 @@ class StopManeuverSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24182,7 +24185,7 @@ class StopManeuverSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24241,7 +24244,7 @@ class StopManeuverSerializer
 class RegisterManeuverSerializer extends imc
     .ImcSerializer<imc.RegisterManeuver?, imc.RegisterManeuverBuilder> {
   @override
-  ByteData serialize(imc.RegisterManeuver? message) {
+  ByteData serialize(imc.RegisterManeuver? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24249,7 +24252,7 @@ class RegisterManeuverSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24282,7 +24285,7 @@ class RegisterManeuverSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24345,7 +24348,7 @@ class RegisterManeuverSerializer extends imc
 class ManeuverControlStateSerializer extends imc
     .ImcSerializer<imc.ManeuverControlState?, imc.ManeuverControlStateBuilder> {
   @override
-  ByteData serialize(imc.ManeuverControlState? message) {
+  ByteData serialize(imc.ManeuverControlState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24353,7 +24356,7 @@ class ManeuverControlStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24397,7 +24400,7 @@ class ManeuverControlStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24473,7 +24476,7 @@ class ManeuverControlStateSerializer extends imc
 class FollowSystemSerializer
     extends imc.ImcSerializer<imc.FollowSystem?, imc.FollowSystemBuilder> {
   @override
-  ByteData serialize(imc.FollowSystem? message) {
+  ByteData serialize(imc.FollowSystem? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24481,7 +24484,7 @@ class FollowSystemSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24535,7 +24538,7 @@ class FollowSystemSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24619,7 +24622,7 @@ class FollowSystemSerializer
 class CommsRelaySerializer
     extends imc.ImcSerializer<imc.CommsRelay?, imc.CommsRelayBuilder> {
   @override
-  ByteData serialize(imc.CommsRelay? message) {
+  ByteData serialize(imc.CommsRelay? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24627,7 +24630,7 @@ class CommsRelaySerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24680,7 +24683,7 @@ class CommsRelaySerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24764,7 +24767,7 @@ class CommsRelaySerializer
 class CoverAreaSerializer
     extends imc.ImcSerializer<imc.CoverArea?, imc.CoverAreaBuilder> {
   @override
-  ByteData serialize(imc.CoverArea? message) {
+  ByteData serialize(imc.CoverArea? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24772,7 +24775,7 @@ class CoverAreaSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -24851,7 +24854,7 @@ class CoverAreaSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -24961,7 +24964,7 @@ class CoverAreaSerializer
 class PolygonVertexSerializer
     extends imc.ImcSerializer<imc.PolygonVertex?, imc.PolygonVertexBuilder> {
   @override
-  ByteData serialize(imc.PolygonVertex? message) {
+  ByteData serialize(imc.PolygonVertex? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -24969,7 +24972,7 @@ class PolygonVertexSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -25005,7 +25008,7 @@ class PolygonVertexSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -25071,7 +25074,7 @@ class PolygonVertexSerializer
 class CompassCalibrationSerializer extends imc
     .ImcSerializer<imc.CompassCalibration?, imc.CompassCalibrationBuilder> {
   @override
-  ByteData serialize(imc.CompassCalibration? message) {
+  ByteData serialize(imc.CompassCalibration? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -25079,7 +25082,7 @@ class CompassCalibrationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -25153,7 +25156,7 @@ class CompassCalibrationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -25259,7 +25262,7 @@ class CompassCalibrationSerializer extends imc
 class FormationParametersSerializer extends imc
     .ImcSerializer<imc.FormationParameters?, imc.FormationParametersBuilder> {
   @override
-  ByteData serialize(imc.FormationParameters? message) {
+  ByteData serialize(imc.FormationParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -25267,7 +25270,7 @@ class FormationParametersSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -25340,7 +25343,7 @@ class FormationParametersSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -25448,7 +25451,7 @@ class FormationParametersSerializer extends imc
 class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     imc.FormationPlanExecution?, imc.FormationPlanExecutionBuilder> {
   @override
-  ByteData serialize(imc.FormationPlanExecution? message) {
+  ByteData serialize(imc.FormationPlanExecution? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -25456,7 +25459,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -25553,7 +25556,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -25685,7 +25688,7 @@ class FormationPlanExecutionSerializer extends imc.ImcSerializer<
 class FollowReferenceSerializer extends imc
     .ImcSerializer<imc.FollowReference?, imc.FollowReferenceBuilder> {
   @override
-  ByteData serialize(imc.FollowReference? message) {
+  ByteData serialize(imc.FollowReference? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -25693,7 +25696,7 @@ class FollowReferenceSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -25738,7 +25741,7 @@ class FollowReferenceSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -25813,7 +25816,7 @@ class FollowReferenceSerializer extends imc
 class ReferenceSerializer
     extends imc.ImcSerializer<imc.Reference?, imc.ReferenceBuilder> {
   @override
-  ByteData serialize(imc.Reference? message) {
+  ByteData serialize(imc.Reference? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -25821,7 +25824,7 @@ class ReferenceSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -25896,7 +25899,7 @@ class ReferenceSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -26008,7 +26011,7 @@ class ReferenceSerializer
 class FollowRefStateSerializer
     extends imc.ImcSerializer<imc.FollowRefState?, imc.FollowRefStateBuilder> {
   @override
-  ByteData serialize(imc.FollowRefState? message) {
+  ByteData serialize(imc.FollowRefState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -26016,7 +26019,7 @@ class FollowRefStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -26075,7 +26078,7 @@ class FollowRefStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -26168,7 +26171,7 @@ class FollowRefStateSerializer
 class FormationMonitorSerializer extends imc
     .ImcSerializer<imc.FormationMonitor?, imc.FormationMonitorBuilder> {
   @override
-  ByteData serialize(imc.FormationMonitor? message) {
+  ByteData serialize(imc.FormationMonitor? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -26176,7 +26179,7 @@ class FormationMonitorSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -26284,7 +26287,7 @@ class FormationMonitorSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -26421,7 +26424,7 @@ class FormationMonitorSerializer extends imc
 class RelativeStateSerializer
     extends imc.ImcSerializer<imc.RelativeState?, imc.RelativeStateBuilder> {
   @override
-  ByteData serialize(imc.RelativeState? message) {
+  ByteData serialize(imc.RelativeState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -26429,7 +26432,7 @@ class RelativeStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -26530,7 +26533,7 @@ class RelativeStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -26662,7 +26665,7 @@ class RelativeStateSerializer
 class DislodgeSerializer
     extends imc.ImcSerializer<imc.Dislodge?, imc.DislodgeBuilder> {
   @override
-  ByteData serialize(imc.Dislodge? message) {
+  ByteData serialize(imc.Dislodge? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -26670,7 +26673,7 @@ class DislodgeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -26716,7 +26719,7 @@ class DislodgeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -26795,7 +26798,7 @@ class DislodgeSerializer
 class FormationSerializer
     extends imc.ImcSerializer<imc.Formation?, imc.FormationBuilder> {
   @override
-  ByteData serialize(imc.Formation? message) {
+  ByteData serialize(imc.Formation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -26803,7 +26806,7 @@ class FormationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -26941,7 +26944,7 @@ class FormationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -27118,7 +27121,7 @@ class FormationSerializer
 class LaunchSerializer
     extends imc.ImcSerializer<imc.Launch?, imc.LaunchBuilder> {
   @override
-  ByteData serialize(imc.Launch? message) {
+  ByteData serialize(imc.Launch? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -27126,7 +27129,7 @@ class LaunchSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -27184,7 +27187,7 @@ class LaunchSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -27273,7 +27276,7 @@ class LaunchSerializer
 ///
 class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
   @override
-  ByteData serialize(imc.Drop? message) {
+  ByteData serialize(imc.Drop? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -27281,7 +27284,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -27339,7 +27342,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -27429,7 +27432,7 @@ class DropSerializer extends imc.ImcSerializer<imc.Drop?, imc.DropBuilder> {
 class ScheduledGotoSerializer
     extends imc.ImcSerializer<imc.ScheduledGoto?, imc.ScheduledGotoBuilder> {
   @override
-  ByteData serialize(imc.ScheduledGoto? message) {
+  ByteData serialize(imc.ScheduledGoto? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -27437,7 +27440,7 @@ class ScheduledGotoSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -27491,7 +27494,7 @@ class ScheduledGotoSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -27576,7 +27579,7 @@ class ScheduledGotoSerializer
 class RowsCoverageSerializer
     extends imc.ImcSerializer<imc.RowsCoverage?, imc.RowsCoverageBuilder> {
   @override
-  ByteData serialize(imc.RowsCoverage? message) {
+  ByteData serialize(imc.RowsCoverage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -27584,7 +27587,7 @@ class RowsCoverageSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -27667,7 +27670,7 @@ class RowsCoverageSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -27782,7 +27785,7 @@ class RowsCoverageSerializer
 class SampleSerializer
     extends imc.ImcSerializer<imc.Sample?, imc.SampleBuilder> {
   @override
-  ByteData serialize(imc.Sample? message) {
+  ByteData serialize(imc.Sample? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -27790,7 +27793,7 @@ class SampleSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -27857,7 +27860,7 @@ class SampleSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -27956,7 +27959,7 @@ class SampleSerializer
 class ImageTrackingSerializer
     extends imc.ImcSerializer<imc.ImageTracking?, imc.ImageTrackingBuilder> {
   @override
-  ByteData serialize(imc.ImageTracking? message) {
+  ByteData serialize(imc.ImageTracking? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -27964,7 +27967,7 @@ class ImageTrackingSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -27993,7 +27996,7 @@ class ImageTrackingSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -28052,7 +28055,7 @@ class ImageTrackingSerializer
 class TakeoffSerializer
     extends imc.ImcSerializer<imc.Takeoff?, imc.TakeoffBuilder> {
   @override
-  ByteData serialize(imc.Takeoff? message) {
+  ByteData serialize(imc.Takeoff? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -28060,7 +28063,7 @@ class TakeoffSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -28118,7 +28121,7 @@ class TakeoffSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -28207,7 +28210,7 @@ class TakeoffSerializer
 ///
 class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
   @override
-  ByteData serialize(imc.Land? message) {
+  ByteData serialize(imc.Land? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -28215,7 +28218,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -28282,7 +28285,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -28381,7 +28384,7 @@ class LandSerializer extends imc.ImcSerializer<imc.Land?, imc.LandBuilder> {
 class AutonomousSectionSerializer extends imc
     .ImcSerializer<imc.AutonomousSection?, imc.AutonomousSectionBuilder> {
   @override
-  ByteData serialize(imc.AutonomousSection? message) {
+  ByteData serialize(imc.AutonomousSection? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -28389,7 +28392,7 @@ class AutonomousSectionSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -28483,7 +28486,7 @@ class AutonomousSectionSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -28609,7 +28612,7 @@ class AutonomousSectionSerializer extends imc
 class FollowPointSerializer
     extends imc.ImcSerializer<imc.FollowPoint?, imc.FollowPointBuilder> {
   @override
-  ByteData serialize(imc.FollowPoint? message) {
+  ByteData serialize(imc.FollowPoint? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -28617,7 +28620,7 @@ class FollowPointSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -28681,7 +28684,7 @@ class FollowPointSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -28777,7 +28780,7 @@ class FollowPointSerializer
 class AlignmentSerializer
     extends imc.ImcSerializer<imc.Alignment?, imc.AlignmentBuilder> {
   @override
-  ByteData serialize(imc.Alignment? message) {
+  ByteData serialize(imc.Alignment? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -28785,7 +28788,7 @@ class AlignmentSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -28837,7 +28840,7 @@ class AlignmentSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -28921,7 +28924,7 @@ class AlignmentSerializer
 class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     imc.StationKeepingExtended?, imc.StationKeepingExtendedBuilder> {
   @override
-  ByteData serialize(imc.StationKeepingExtended? message) {
+  ByteData serialize(imc.StationKeepingExtended? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -28929,7 +28932,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29000,7 +29003,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -29103,7 +29106,7 @@ class StationKeepingExtendedSerializer extends imc.ImcSerializer<
 class ManeuverDoneSerializer
     extends imc.ImcSerializer<imc.ManeuverDone?, imc.ManeuverDoneBuilder> {
   @override
-  ByteData serialize(imc.ManeuverDone? message) {
+  ByteData serialize(imc.ManeuverDone? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -29111,7 +29114,7 @@ class ManeuverDoneSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29140,7 +29143,7 @@ class ManeuverDoneSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -29199,7 +29202,7 @@ class ManeuverDoneSerializer
 class MagnetometerSerializer
     extends imc.ImcSerializer<imc.Magnetometer?, imc.MagnetometerBuilder> {
   @override
-  ByteData serialize(imc.Magnetometer? message) {
+  ByteData serialize(imc.Magnetometer? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -29207,7 +29210,7 @@ class MagnetometerSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29275,7 +29278,7 @@ class MagnetometerSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -29375,7 +29378,7 @@ class MagnetometerSerializer
 class VehicleStateSerializer
     extends imc.ImcSerializer<imc.VehicleState?, imc.VehicleStateBuilder> {
   @override
-  ByteData serialize(imc.VehicleState? message) {
+  ByteData serialize(imc.VehicleState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -29383,7 +29386,7 @@ class VehicleStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29453,7 +29456,7 @@ class VehicleStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -29557,7 +29560,7 @@ class VehicleStateSerializer
 class VehicleCommandSerializer
     extends imc.ImcSerializer<imc.VehicleCommand?, imc.VehicleCommandBuilder> {
   @override
-  ByteData serialize(imc.VehicleCommand? message) {
+  ByteData serialize(imc.VehicleCommand? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -29565,7 +29568,7 @@ class VehicleCommandSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29632,7 +29635,7 @@ class VehicleCommandSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -29734,7 +29737,7 @@ class VehicleCommandSerializer
 class MonitorEntityStateSerializer extends imc
     .ImcSerializer<imc.MonitorEntityState?, imc.MonitorEntityStateBuilder> {
   @override
-  ByteData serialize(imc.MonitorEntityState? message) {
+  ByteData serialize(imc.MonitorEntityState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -29742,7 +29745,7 @@ class MonitorEntityStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29783,7 +29786,7 @@ class MonitorEntityStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -29856,7 +29859,7 @@ class MonitorEntityStateSerializer extends imc
 class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     imc.EntityMonitoringState?, imc.EntityMonitoringStateBuilder> {
   @override
-  ByteData serialize(imc.EntityMonitoringState? message) {
+  ByteData serialize(imc.EntityMonitoringState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -29864,7 +29867,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -29938,7 +29941,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30046,7 +30049,7 @@ class EntityMonitoringStateSerializer extends imc.ImcSerializer<
 class OperationalLimitsSerializer extends imc
     .ImcSerializer<imc.OperationalLimits?, imc.OperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.OperationalLimits? message) {
+  ByteData serialize(imc.OperationalLimits? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30054,7 +30057,7 @@ class OperationalLimitsSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30120,7 +30123,7 @@ class OperationalLimitsSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30216,7 +30219,7 @@ class OperationalLimitsSerializer extends imc
 class GetOperationalLimitsSerializer extends imc
     .ImcSerializer<imc.GetOperationalLimits?, imc.GetOperationalLimitsBuilder> {
   @override
-  ByteData serialize(imc.GetOperationalLimits? message) {
+  ByteData serialize(imc.GetOperationalLimits? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30224,7 +30227,7 @@ class GetOperationalLimitsSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30253,7 +30256,7 @@ class GetOperationalLimitsSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30312,7 +30315,7 @@ class GetOperationalLimitsSerializer extends imc
 class CalibrationSerializer
     extends imc.ImcSerializer<imc.Calibration?, imc.CalibrationBuilder> {
   @override
-  ByteData serialize(imc.Calibration? message) {
+  ByteData serialize(imc.Calibration? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30320,7 +30323,7 @@ class CalibrationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30353,7 +30356,7 @@ class CalibrationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30416,7 +30419,7 @@ class CalibrationSerializer
 class ControlLoopsSerializer
     extends imc.ImcSerializer<imc.ControlLoops?, imc.ControlLoopsBuilder> {
   @override
-  ByteData serialize(imc.ControlLoops? message) {
+  ByteData serialize(imc.ControlLoops? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30424,7 +30427,7 @@ class ControlLoopsSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30463,7 +30466,7 @@ class ControlLoopsSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30533,7 +30536,7 @@ class ControlLoopsSerializer
 class VehicleMediumSerializer
     extends imc.ImcSerializer<imc.VehicleMedium?, imc.VehicleMediumBuilder> {
   @override
-  ByteData serialize(imc.VehicleMedium? message) {
+  ByteData serialize(imc.VehicleMedium? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30541,7 +30544,7 @@ class VehicleMediumSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30574,7 +30577,7 @@ class VehicleMediumSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30637,7 +30640,7 @@ class VehicleMediumSerializer
 class CollisionSerializer
     extends imc.ImcSerializer<imc.Collision?, imc.CollisionBuilder> {
   @override
-  ByteData serialize(imc.Collision? message) {
+  ByteData serialize(imc.Collision? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30645,7 +30648,7 @@ class CollisionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30680,7 +30683,7 @@ class CollisionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30746,7 +30749,7 @@ class CollisionSerializer
 class FormStateSerializer
     extends imc.ImcSerializer<imc.FormState?, imc.FormStateBuilder> {
   @override
-  ByteData serialize(imc.FormState? message) {
+  ByteData serialize(imc.FormState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30754,7 +30757,7 @@ class FormStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30801,7 +30804,7 @@ class FormStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -30881,7 +30884,7 @@ class FormStateSerializer
 class AutopilotModeSerializer
     extends imc.ImcSerializer<imc.AutopilotMode?, imc.AutopilotModeBuilder> {
   @override
-  ByteData serialize(imc.AutopilotMode? message) {
+  ByteData serialize(imc.AutopilotMode? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -30889,7 +30892,7 @@ class AutopilotModeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -30930,7 +30933,7 @@ class AutopilotModeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31003,7 +31006,7 @@ class AutopilotModeSerializer
 class FormationStateSerializer
     extends imc.ImcSerializer<imc.FormationState?, imc.FormationStateBuilder> {
   @override
-  ByteData serialize(imc.FormationState? message) {
+  ByteData serialize(imc.FormationState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31011,7 +31014,7 @@ class FormationStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31065,7 +31068,7 @@ class FormationStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31152,7 +31155,7 @@ class FormationStateSerializer
 class ReportControlSerializer
     extends imc.ImcSerializer<imc.ReportControl?, imc.ReportControlBuilder> {
   @override
-  ByteData serialize(imc.ReportControl? message) {
+  ByteData serialize(imc.ReportControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31160,7 +31163,7 @@ class ReportControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31207,7 +31210,7 @@ class ReportControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31286,7 +31289,7 @@ class ReportControlSerializer
 class StateReportSerializer
     extends imc.ImcSerializer<imc.StateReport?, imc.StateReportBuilder> {
   @override
-  ByteData serialize(imc.StateReport? message) {
+  ByteData serialize(imc.StateReport? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31294,7 +31297,7 @@ class StateReportSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31354,7 +31357,7 @@ class StateReportSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31444,7 +31447,7 @@ class StateReportSerializer
 class TransmissionRequestSerializer extends imc
     .ImcSerializer<imc.TransmissionRequest?, imc.TransmissionRequestBuilder> {
   @override
-  ByteData serialize(imc.TransmissionRequest? message) {
+  ByteData serialize(imc.TransmissionRequest? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31452,7 +31455,7 @@ class TransmissionRequestSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31539,7 +31542,7 @@ class TransmissionRequestSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31662,7 +31665,7 @@ class TransmissionRequestSerializer extends imc
 class TransmissionStatusSerializer extends imc
     .ImcSerializer<imc.TransmissionStatus?, imc.TransmissionStatusBuilder> {
   @override
-  ByteData serialize(imc.TransmissionStatus? message) {
+  ByteData serialize(imc.TransmissionStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31670,7 +31673,7 @@ class TransmissionStatusSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31717,7 +31720,7 @@ class TransmissionStatusSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31796,7 +31799,7 @@ class TransmissionStatusSerializer extends imc
 class SmsRequestSerializer
     extends imc.ImcSerializer<imc.SmsRequest?, imc.SmsRequestBuilder> {
   @override
-  ByteData serialize(imc.SmsRequest? message) {
+  ByteData serialize(imc.SmsRequest? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31804,7 +31807,7 @@ class SmsRequestSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31855,7 +31858,7 @@ class SmsRequestSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -31939,7 +31942,7 @@ class SmsRequestSerializer
 class SmsStatusSerializer
     extends imc.ImcSerializer<imc.SmsStatus?, imc.SmsStatusBuilder> {
   @override
-  ByteData serialize(imc.SmsStatus? message) {
+  ByteData serialize(imc.SmsStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -31947,7 +31950,7 @@ class SmsStatusSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -31990,7 +31993,7 @@ class SmsStatusSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32065,7 +32068,7 @@ class SmsStatusSerializer
 class VtolStateSerializer
     extends imc.ImcSerializer<imc.VtolState?, imc.VtolStateBuilder> {
   @override
-  ByteData serialize(imc.VtolState? message) {
+  ByteData serialize(imc.VtolState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32073,7 +32076,7 @@ class VtolStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -32105,7 +32108,7 @@ class VtolStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32168,7 +32171,7 @@ class VtolStateSerializer
 class ArmingStateSerializer
     extends imc.ImcSerializer<imc.ArmingState?, imc.ArmingStateBuilder> {
   @override
-  ByteData serialize(imc.ArmingState? message) {
+  ByteData serialize(imc.ArmingState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32176,7 +32179,7 @@ class ArmingStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -32209,7 +32212,7 @@ class ArmingStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32272,7 +32275,7 @@ class ArmingStateSerializer
 class TCPRequestSerializer
     extends imc.ImcSerializer<imc.TCPRequest?, imc.TCPRequestBuilder> {
   @override
-  ByteData serialize(imc.TCPRequest? message) {
+  ByteData serialize(imc.TCPRequest? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32280,7 +32283,7 @@ class TCPRequestSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -32340,7 +32343,7 @@ class TCPRequestSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32435,7 +32438,7 @@ class TCPRequestSerializer
 class TCPStatusSerializer
     extends imc.ImcSerializer<imc.TCPStatus?, imc.TCPStatusBuilder> {
   @override
-  ByteData serialize(imc.TCPStatus? message) {
+  ByteData serialize(imc.TCPStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32443,7 +32446,7 @@ class TCPStatusSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -32486,7 +32489,7 @@ class TCPStatusSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32561,7 +32564,7 @@ class TCPStatusSerializer
 class AssetReportSerializer
     extends imc.ImcSerializer<imc.AssetReport?, imc.AssetReportBuilder> {
   @override
-  ByteData serialize(imc.AssetReport? message) {
+  ByteData serialize(imc.AssetReport? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32569,7 +32572,7 @@ class AssetReportSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -32655,7 +32658,7 @@ class AssetReportSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32770,7 +32773,7 @@ class AssetReportSerializer
 ///
 class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
   @override
-  ByteData serialize(imc.Abort? message) {
+  ByteData serialize(imc.Abort? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32778,7 +32781,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -32806,7 +32809,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -32865,7 +32868,7 @@ class AbortSerializer extends imc.ImcSerializer<imc.Abort?, imc.AbortBuilder> {
 class PlanSpecificationSerializer extends imc
     .ImcSerializer<imc.PlanSpecification?, imc.PlanSpecificationBuilder> {
   @override
-  ByteData serialize(imc.PlanSpecification? message) {
+  ByteData serialize(imc.PlanSpecification? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -32873,7 +32876,7 @@ class PlanSpecificationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -33055,7 +33058,7 @@ class PlanSpecificationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -33270,7 +33273,7 @@ class PlanSpecificationSerializer extends imc
 class PlanManeuverSerializer
     extends imc.ImcSerializer<imc.PlanManeuver?, imc.PlanManeuverBuilder> {
   @override
-  ByteData serialize(imc.PlanManeuver? message) {
+  ByteData serialize(imc.PlanManeuver? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -33278,7 +33281,7 @@ class PlanManeuverSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -33381,7 +33384,7 @@ class PlanManeuverSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -33518,7 +33521,7 @@ class PlanManeuverSerializer
 class PlanTransitionSerializer
     extends imc.ImcSerializer<imc.PlanTransition?, imc.PlanTransitionBuilder> {
   @override
-  ByteData serialize(imc.PlanTransition? message) {
+  ByteData serialize(imc.PlanTransition? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -33526,7 +33529,7 @@ class PlanTransitionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -33604,7 +33607,7 @@ class PlanTransitionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -33714,7 +33717,7 @@ class PlanTransitionSerializer
 class EmergencyControlSerializer extends imc
     .ImcSerializer<imc.EmergencyControl?, imc.EmergencyControlBuilder> {
   @override
-  ByteData serialize(imc.EmergencyControl? message) {
+  ByteData serialize(imc.EmergencyControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -33722,7 +33725,7 @@ class EmergencyControlSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -33772,7 +33775,7 @@ class EmergencyControlSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -33856,7 +33859,7 @@ class EmergencyControlSerializer extends imc
 class EmergencyControlStateSerializer extends imc.ImcSerializer<
     imc.EmergencyControlState?, imc.EmergencyControlStateBuilder> {
   @override
-  ByteData serialize(imc.EmergencyControlState? message) {
+  ByteData serialize(imc.EmergencyControlState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -33864,7 +33867,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -33908,7 +33911,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -33984,7 +33987,7 @@ class EmergencyControlStateSerializer extends imc.ImcSerializer<
 class PlanDBSerializer
     extends imc.ImcSerializer<imc.PlanDB?, imc.PlanDBBuilder> {
   @override
-  ByteData serialize(imc.PlanDB? message) {
+  ByteData serialize(imc.PlanDB? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -33992,7 +33995,7 @@ class PlanDBSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -34063,7 +34066,7 @@ class PlanDBSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -34170,7 +34173,7 @@ class PlanDBSerializer
 class PlanDBStateSerializer
     extends imc.ImcSerializer<imc.PlanDBState?, imc.PlanDBStateBuilder> {
   @override
-  ByteData serialize(imc.PlanDBState? message) {
+  ByteData serialize(imc.PlanDBState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -34178,7 +34181,7 @@ class PlanDBStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -34261,7 +34264,7 @@ class PlanDBStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -34373,7 +34376,7 @@ class PlanDBStateSerializer
 class PlanDBInformationSerializer extends imc
     .ImcSerializer<imc.PlanDBInformation?, imc.PlanDBInformationBuilder> {
   @override
-  ByteData serialize(imc.PlanDBInformation? message) {
+  ByteData serialize(imc.PlanDBInformation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -34381,7 +34384,7 @@ class PlanDBInformationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -34445,7 +34448,7 @@ class PlanDBInformationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -34540,7 +34543,7 @@ class PlanDBInformationSerializer extends imc
 class PlanControlSerializer
     extends imc.ImcSerializer<imc.PlanControl?, imc.PlanControlBuilder> {
   @override
-  ByteData serialize(imc.PlanControl? message) {
+  ByteData serialize(imc.PlanControl? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -34548,7 +34551,7 @@ class PlanControlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -34623,7 +34626,7 @@ class PlanControlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -34734,7 +34737,7 @@ class PlanControlSerializer
 class PlanControlStateSerializer extends imc
     .ImcSerializer<imc.PlanControlState?, imc.PlanControlStateBuilder> {
   @override
-  ByteData serialize(imc.PlanControlState? message) {
+  ByteData serialize(imc.PlanControlState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -34742,7 +34745,7 @@ class PlanControlStateSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -34806,7 +34809,7 @@ class PlanControlStateSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -34904,7 +34907,7 @@ class PlanControlStateSerializer extends imc
 class PlanVariableSerializer
     extends imc.ImcSerializer<imc.PlanVariable?, imc.PlanVariableBuilder> {
   @override
-  ByteData serialize(imc.PlanVariable? message) {
+  ByteData serialize(imc.PlanVariable? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -34912,7 +34915,7 @@ class PlanVariableSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -34964,7 +34967,7 @@ class PlanVariableSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -35048,7 +35051,7 @@ class PlanVariableSerializer
 class PlanGenerationSerializer
     extends imc.ImcSerializer<imc.PlanGeneration?, imc.PlanGenerationBuilder> {
   @override
-  ByteData serialize(imc.PlanGeneration? message) {
+  ByteData serialize(imc.PlanGeneration? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -35056,7 +35059,7 @@ class PlanGenerationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -35108,7 +35111,7 @@ class PlanGenerationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -35192,7 +35195,7 @@ class PlanGenerationSerializer
 class LeaderStateSerializer
     extends imc.ImcSerializer<imc.LeaderState?, imc.LeaderStateBuilder> {
   @override
-  ByteData serialize(imc.LeaderState? message) {
+  ByteData serialize(imc.LeaderState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -35200,7 +35203,7 @@ class LeaderStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -35295,7 +35298,7 @@ class LeaderStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -35421,7 +35424,7 @@ class LeaderStateSerializer
 class PlanStatisticsSerializer
     extends imc.ImcSerializer<imc.PlanStatistics?, imc.PlanStatisticsBuilder> {
   @override
-  ByteData serialize(imc.PlanStatistics? message) {
+  ByteData serialize(imc.PlanStatistics? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -35429,7 +35432,7 @@ class PlanStatisticsSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -35505,7 +35508,7 @@ class PlanStatisticsSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -35617,7 +35620,7 @@ class PlanStatisticsSerializer
 class ReportedStateSerializer
     extends imc.ImcSerializer<imc.ReportedState?, imc.ReportedStateBuilder> {
   @override
-  ByteData serialize(imc.ReportedState? message) {
+  ByteData serialize(imc.ReportedState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -35625,7 +35628,7 @@ class ReportedStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -35687,7 +35690,7 @@ class ReportedStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -35780,7 +35783,7 @@ class ReportedStateSerializer
 class RemoteSensorInfoSerializer extends imc
     .ImcSerializer<imc.RemoteSensorInfo?, imc.RemoteSensorInfoBuilder> {
   @override
-  ByteData serialize(imc.RemoteSensorInfo? message) {
+  ByteData serialize(imc.RemoteSensorInfo? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -35788,7 +35791,7 @@ class RemoteSensorInfoSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -35854,7 +35857,7 @@ class RemoteSensorInfoSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -35952,7 +35955,7 @@ class RemoteSensorInfoSerializer extends imc
 ///
 class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
   @override
-  ByteData serialize(imc.Map? message) {
+  ByteData serialize(imc.Map? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -35960,7 +35963,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36021,7 +36024,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -36113,7 +36116,7 @@ class MapSerializer extends imc.ImcSerializer<imc.Map?, imc.MapBuilder> {
 class MapFeatureSerializer
     extends imc.ImcSerializer<imc.MapFeature?, imc.MapFeatureBuilder> {
   @override
-  ByteData serialize(imc.MapFeature? message) {
+  ByteData serialize(imc.MapFeature? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -36121,7 +36124,7 @@ class MapFeatureSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36194,7 +36197,7 @@ class MapFeatureSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -36299,7 +36302,7 @@ class MapFeatureSerializer
 class MapPointSerializer
     extends imc.ImcSerializer<imc.MapPoint?, imc.MapPointBuilder> {
   @override
-  ByteData serialize(imc.MapPoint? message) {
+  ByteData serialize(imc.MapPoint? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -36307,7 +36310,7 @@ class MapPointSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36345,7 +36348,7 @@ class MapPointSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -36414,7 +36417,7 @@ class MapPointSerializer
 class CcuEventSerializer
     extends imc.ImcSerializer<imc.CcuEvent?, imc.CcuEventBuilder> {
   @override
-  ByteData serialize(imc.CcuEvent? message) {
+  ByteData serialize(imc.CcuEvent? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -36422,7 +36425,7 @@ class CcuEventSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36479,7 +36482,7 @@ class CcuEventSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -36571,7 +36574,7 @@ class CcuEventSerializer
 class VehicleLinksSerializer
     extends imc.ImcSerializer<imc.VehicleLinks?, imc.VehicleLinksBuilder> {
   @override
-  ByteData serialize(imc.VehicleLinks? message) {
+  ByteData serialize(imc.VehicleLinks? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -36579,7 +36582,7 @@ class VehicleLinksSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36641,7 +36644,7 @@ class VehicleLinksSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -36733,7 +36736,7 @@ class VehicleLinksSerializer
 class TrexObservationSerializer extends imc
     .ImcSerializer<imc.TrexObservation?, imc.TrexObservationBuilder> {
   @override
-  ByteData serialize(imc.TrexObservation? message) {
+  ByteData serialize(imc.TrexObservation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -36741,7 +36744,7 @@ class TrexObservationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36795,7 +36798,7 @@ class TrexObservationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -36882,7 +36885,7 @@ class TrexObservationSerializer extends imc
 class TrexCommandSerializer
     extends imc.ImcSerializer<imc.TrexCommand?, imc.TrexCommandBuilder> {
   @override
-  ByteData serialize(imc.TrexCommand? message) {
+  ByteData serialize(imc.TrexCommand? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -36890,7 +36893,7 @@ class TrexCommandSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -36939,7 +36942,7 @@ class TrexCommandSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37020,7 +37023,7 @@ class TrexCommandSerializer
 class TrexOperationSerializer
     extends imc.ImcSerializer<imc.TrexOperation?, imc.TrexOperationBuilder> {
   @override
-  ByteData serialize(imc.TrexOperation? message) {
+  ByteData serialize(imc.TrexOperation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37028,7 +37031,7 @@ class TrexOperationSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37086,7 +37089,7 @@ class TrexOperationSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37178,7 +37181,7 @@ class TrexOperationSerializer
 class TrexAttributeSerializer
     extends imc.ImcSerializer<imc.TrexAttribute?, imc.TrexAttributeBuilder> {
   @override
-  ByteData serialize(imc.TrexAttribute? message) {
+  ByteData serialize(imc.TrexAttribute? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37186,7 +37189,7 @@ class TrexAttributeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37243,7 +37246,7 @@ class TrexAttributeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37334,7 +37337,7 @@ class TrexAttributeSerializer
 class TrexTokenSerializer
     extends imc.ImcSerializer<imc.TrexToken?, imc.TrexTokenBuilder> {
   @override
-  ByteData serialize(imc.TrexToken? message) {
+  ByteData serialize(imc.TrexToken? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37342,7 +37345,7 @@ class TrexTokenSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37411,7 +37414,7 @@ class TrexTokenSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37512,7 +37515,7 @@ class TrexTokenSerializer
 class TrexPlanSerializer
     extends imc.ImcSerializer<imc.TrexPlan?, imc.TrexPlanBuilder> {
   @override
-  ByteData serialize(imc.TrexPlan? message) {
+  ByteData serialize(imc.TrexPlan? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37520,7 +37523,7 @@ class TrexPlanSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37581,7 +37584,7 @@ class TrexPlanSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37672,7 +37675,7 @@ class TrexPlanSerializer
 ///
 class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
   @override
-  ByteData serialize(imc.Event? message) {
+  ByteData serialize(imc.Event? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37680,7 +37683,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37725,7 +37728,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37803,7 +37806,7 @@ class EventSerializer extends imc.ImcSerializer<imc.Event?, imc.EventBuilder> {
 class CompressedImageSerializer extends imc
     .ImcSerializer<imc.CompressedImage?, imc.CompressedImageBuilder> {
   @override
-  ByteData serialize(imc.CompressedImage? message) {
+  ByteData serialize(imc.CompressedImage? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37811,7 +37814,7 @@ class CompressedImageSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37853,7 +37856,7 @@ class CompressedImageSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -37924,7 +37927,7 @@ class CompressedImageSerializer extends imc
 class ImageTxSettingsSerializer extends imc
     .ImcSerializer<imc.ImageTxSettings?, imc.ImageTxSettingsBuilder> {
   @override
-  ByteData serialize(imc.ImageTxSettings? message) {
+  ByteData serialize(imc.ImageTxSettings? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -37932,7 +37935,7 @@ class ImageTxSettingsSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -37974,7 +37977,7 @@ class ImageTxSettingsSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38046,7 +38049,7 @@ class ImageTxSettingsSerializer extends imc
 class RemoteStateSerializer
     extends imc.ImcSerializer<imc.RemoteState?, imc.RemoteStateBuilder> {
   @override
-  ByteData serialize(imc.RemoteState? message) {
+  ByteData serialize(imc.RemoteState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38054,7 +38057,7 @@ class RemoteStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38099,7 +38102,7 @@ class RemoteStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38174,7 +38177,7 @@ class RemoteStateSerializer
 class TargetSerializer
     extends imc.ImcSerializer<imc.Target?, imc.TargetBuilder> {
   @override
-  ByteData serialize(imc.Target? message) {
+  ByteData serialize(imc.Target? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38182,7 +38185,7 @@ class TargetSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38237,7 +38240,7 @@ class TargetSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38324,7 +38327,7 @@ class TargetSerializer
 class EntityParameterSerializer extends imc
     .ImcSerializer<imc.EntityParameter?, imc.EntityParameterBuilder> {
   @override
-  ByteData serialize(imc.EntityParameter? message) {
+  ByteData serialize(imc.EntityParameter? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38332,7 +38335,7 @@ class EntityParameterSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38378,7 +38381,7 @@ class EntityParameterSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38456,7 +38459,7 @@ class EntityParameterSerializer extends imc
 class EntityParametersSerializer extends imc
     .ImcSerializer<imc.EntityParameters?, imc.EntityParametersBuilder> {
   @override
-  ByteData serialize(imc.EntityParameters? message) {
+  ByteData serialize(imc.EntityParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38464,7 +38467,7 @@ class EntityParametersSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38526,7 +38529,7 @@ class EntityParametersSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38618,7 +38621,7 @@ class EntityParametersSerializer extends imc
 class QueryEntityParametersSerializer extends imc.ImcSerializer<
     imc.QueryEntityParameters?, imc.QueryEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.QueryEntityParameters? message) {
+  ByteData serialize(imc.QueryEntityParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38626,7 +38629,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38680,7 +38683,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38767,7 +38770,7 @@ class QueryEntityParametersSerializer extends imc.ImcSerializer<
 class SetEntityParametersSerializer extends imc
     .ImcSerializer<imc.SetEntityParameters?, imc.SetEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.SetEntityParameters? message) {
+  ByteData serialize(imc.SetEntityParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38775,7 +38778,7 @@ class SetEntityParametersSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38837,7 +38840,7 @@ class SetEntityParametersSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -38929,7 +38932,7 @@ class SetEntityParametersSerializer extends imc
 class SaveEntityParametersSerializer extends imc
     .ImcSerializer<imc.SaveEntityParameters?, imc.SaveEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.SaveEntityParameters? message) {
+  ByteData serialize(imc.SaveEntityParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -38937,7 +38940,7 @@ class SaveEntityParametersSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -38975,7 +38978,7 @@ class SaveEntityParametersSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39044,7 +39047,7 @@ class SaveEntityParametersSerializer extends imc
 class CreateSessionSerializer
     extends imc.ImcSerializer<imc.CreateSession?, imc.CreateSessionBuilder> {
   @override
-  ByteData serialize(imc.CreateSession? message) {
+  ByteData serialize(imc.CreateSession? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39052,7 +39055,7 @@ class CreateSessionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39085,7 +39088,7 @@ class CreateSessionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39148,7 +39151,7 @@ class CreateSessionSerializer
 class CloseSessionSerializer
     extends imc.ImcSerializer<imc.CloseSession?, imc.CloseSessionBuilder> {
   @override
-  ByteData serialize(imc.CloseSession? message) {
+  ByteData serialize(imc.CloseSession? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39156,7 +39159,7 @@ class CloseSessionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39189,7 +39192,7 @@ class CloseSessionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39252,7 +39255,7 @@ class CloseSessionSerializer
 class SessionSubscriptionSerializer extends imc
     .ImcSerializer<imc.SessionSubscription?, imc.SessionSubscriptionBuilder> {
   @override
-  ByteData serialize(imc.SessionSubscription? message) {
+  ByteData serialize(imc.SessionSubscription? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39260,7 +39263,7 @@ class SessionSubscriptionSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39301,7 +39304,7 @@ class SessionSubscriptionSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39373,7 +39376,7 @@ class SessionSubscriptionSerializer extends imc
 class SessionKeepAliveSerializer extends imc
     .ImcSerializer<imc.SessionKeepAlive?, imc.SessionKeepAliveBuilder> {
   @override
-  ByteData serialize(imc.SessionKeepAlive? message) {
+  ByteData serialize(imc.SessionKeepAlive? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39381,7 +39384,7 @@ class SessionKeepAliveSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39414,7 +39417,7 @@ class SessionKeepAliveSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39477,7 +39480,7 @@ class SessionKeepAliveSerializer extends imc
 class SessionStatusSerializer
     extends imc.ImcSerializer<imc.SessionStatus?, imc.SessionStatusBuilder> {
   @override
-  ByteData serialize(imc.SessionStatus? message) {
+  ByteData serialize(imc.SessionStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39485,7 +39488,7 @@ class SessionStatusSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39521,7 +39524,7 @@ class SessionStatusSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39587,7 +39590,7 @@ class SessionStatusSerializer
 class PushEntityParametersSerializer extends imc
     .ImcSerializer<imc.PushEntityParameters?, imc.PushEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.PushEntityParameters? message) {
+  ByteData serialize(imc.PushEntityParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39595,7 +39598,7 @@ class PushEntityParametersSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39633,7 +39636,7 @@ class PushEntityParametersSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39702,7 +39705,7 @@ class PushEntityParametersSerializer extends imc
 class PopEntityParametersSerializer extends imc
     .ImcSerializer<imc.PopEntityParameters?, imc.PopEntityParametersBuilder> {
   @override
-  ByteData serialize(imc.PopEntityParameters? message) {
+  ByteData serialize(imc.PopEntityParameters? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39710,7 +39713,7 @@ class PopEntityParametersSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39748,7 +39751,7 @@ class PopEntityParametersSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39817,7 +39820,7 @@ class PopEntityParametersSerializer extends imc
 class IoEventSerializer
     extends imc.ImcSerializer<imc.IoEvent?, imc.IoEventBuilder> {
   @override
-  ByteData serialize(imc.IoEvent? message) {
+  ByteData serialize(imc.IoEvent? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39825,7 +39828,7 @@ class IoEventSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39865,7 +39868,7 @@ class IoEventSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -39937,7 +39940,7 @@ class IoEventSerializer
 class UamTxFrameSerializer
     extends imc.ImcSerializer<imc.UamTxFrame?, imc.UamTxFrameBuilder> {
   @override
-  ByteData serialize(imc.UamTxFrame? message) {
+  ByteData serialize(imc.UamTxFrame? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -39945,7 +39948,7 @@ class UamTxFrameSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -39997,7 +40000,7 @@ class UamTxFrameSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40080,7 +40083,7 @@ class UamTxFrameSerializer
 class UamRxFrameSerializer
     extends imc.ImcSerializer<imc.UamRxFrame?, imc.UamRxFrameBuilder> {
   @override
-  ByteData serialize(imc.UamRxFrame? message) {
+  ByteData serialize(imc.UamRxFrame? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40088,7 +40091,7 @@ class UamRxFrameSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40145,7 +40148,7 @@ class UamRxFrameSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40234,7 +40237,7 @@ class UamRxFrameSerializer
 class UamTxStatusSerializer
     extends imc.ImcSerializer<imc.UamTxStatus?, imc.UamTxStatusBuilder> {
   @override
-  ByteData serialize(imc.UamTxStatus? message) {
+  ByteData serialize(imc.UamTxStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40242,7 +40245,7 @@ class UamTxStatusSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40286,7 +40289,7 @@ class UamTxStatusSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40361,7 +40364,7 @@ class UamTxStatusSerializer
 class UamRxRangeSerializer
     extends imc.ImcSerializer<imc.UamRxRange?, imc.UamRxRangeBuilder> {
   @override
-  ByteData serialize(imc.UamRxRange? message) {
+  ByteData serialize(imc.UamRxRange? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40369,7 +40372,7 @@ class UamRxRangeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40412,7 +40415,7 @@ class UamRxRangeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40487,7 +40490,7 @@ class UamRxRangeSerializer
 class UamTxRangeSerializer
     extends imc.ImcSerializer<imc.UamTxRange?, imc.UamTxRangeBuilder> {
   @override
-  ByteData serialize(imc.UamTxRange? message) {
+  ByteData serialize(imc.UamTxRange? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40495,7 +40498,7 @@ class UamTxRangeSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40538,7 +40541,7 @@ class UamTxRangeSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40613,7 +40616,7 @@ class UamTxRangeSerializer
 class FormCtrlParamSerializer
     extends imc.ImcSerializer<imc.FormCtrlParam?, imc.FormCtrlParamBuilder> {
   @override
-  ByteData serialize(imc.FormCtrlParam? message) {
+  ByteData serialize(imc.FormCtrlParam? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40621,7 +40624,7 @@ class FormCtrlParamSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40669,7 +40672,7 @@ class FormCtrlParamSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40747,7 +40750,7 @@ class FormCtrlParamSerializer
 class FormationEvalSerializer
     extends imc.ImcSerializer<imc.FormationEval?, imc.FormationEvalBuilder> {
   @override
-  ByteData serialize(imc.FormationEval? message) {
+  ByteData serialize(imc.FormationEval? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40755,7 +40758,7 @@ class FormationEvalSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40794,7 +40797,7 @@ class FormationEvalSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -40863,7 +40866,7 @@ class FormationEvalSerializer
 class FormationControlParamsSerializer extends imc.ImcSerializer<
     imc.FormationControlParams?, imc.FormationControlParamsBuilder> {
   @override
-  ByteData serialize(imc.FormationControlParams? message) {
+  ByteData serialize(imc.FormationControlParams? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -40871,7 +40874,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -40934,7 +40937,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41028,7 +41031,7 @@ class FormationControlParamsSerializer extends imc.ImcSerializer<
 class FormationEvaluationSerializer extends imc
     .ImcSerializer<imc.FormationEvaluation?, imc.FormationEvaluationBuilder> {
   @override
-  ByteData serialize(imc.FormationEvaluation? message) {
+  ByteData serialize(imc.FormationEvaluation? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41036,7 +41039,7 @@ class FormationEvaluationSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41104,7 +41107,7 @@ class FormationEvaluationSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41209,7 +41212,7 @@ class FormationEvaluationSerializer extends imc
 class SoiWaypointSerializer
     extends imc.ImcSerializer<imc.SoiWaypoint?, imc.SoiWaypointBuilder> {
   @override
-  ByteData serialize(imc.SoiWaypoint? message) {
+  ByteData serialize(imc.SoiWaypoint? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41217,7 +41220,7 @@ class SoiWaypointSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41259,7 +41262,7 @@ class SoiWaypointSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41331,7 +41334,7 @@ class SoiWaypointSerializer
 class SoiPlanSerializer
     extends imc.ImcSerializer<imc.SoiPlan?, imc.SoiPlanBuilder> {
   @override
-  ByteData serialize(imc.SoiPlan? message) {
+  ByteData serialize(imc.SoiPlan? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41339,7 +41342,7 @@ class SoiPlanSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41395,7 +41398,7 @@ class SoiPlanSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41481,7 +41484,7 @@ class SoiPlanSerializer
 class SoiCommandSerializer
     extends imc.ImcSerializer<imc.SoiCommand?, imc.SoiCommandBuilder> {
   @override
-  ByteData serialize(imc.SoiCommand? message) {
+  ByteData serialize(imc.SoiCommand? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41489,7 +41492,7 @@ class SoiCommandSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41557,7 +41560,7 @@ class SoiCommandSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41661,7 +41664,7 @@ class SoiCommandSerializer
 class SoiStateSerializer
     extends imc.ImcSerializer<imc.SoiState?, imc.SoiStateBuilder> {
   @override
-  ByteData serialize(imc.SoiState? message) {
+  ByteData serialize(imc.SoiState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41669,7 +41672,7 @@ class SoiStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41710,7 +41713,7 @@ class SoiStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41782,7 +41785,7 @@ class SoiStateSerializer
 class MessagePartSerializer
     extends imc.ImcSerializer<imc.MessagePart?, imc.MessagePartBuilder> {
   @override
-  ByteData serialize(imc.MessagePart? message) {
+  ByteData serialize(imc.MessagePart? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41790,7 +41793,7 @@ class MessagePartSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41838,7 +41841,7 @@ class MessagePartSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -41915,7 +41918,7 @@ class MessagePartSerializer
 class NeptusBlobSerializer
     extends imc.ImcSerializer<imc.NeptusBlob?, imc.NeptusBlobBuilder> {
   @override
-  ByteData serialize(imc.NeptusBlob? message) {
+  ByteData serialize(imc.NeptusBlob? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -41923,7 +41926,7 @@ class NeptusBlobSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -41969,7 +41972,7 @@ class NeptusBlobSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42046,7 +42049,7 @@ class NeptusBlobSerializer
 class AbortedSerializer
     extends imc.ImcSerializer<imc.Aborted?, imc.AbortedBuilder> {
   @override
-  ByteData serialize(imc.Aborted? message) {
+  ByteData serialize(imc.Aborted? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42054,7 +42057,7 @@ class AbortedSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42082,7 +42085,7 @@ class AbortedSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42141,7 +42144,7 @@ class AbortedSerializer
 class UsblAnglesSerializer
     extends imc.ImcSerializer<imc.UsblAngles?, imc.UsblAnglesBuilder> {
   @override
-  ByteData serialize(imc.UsblAngles? message) {
+  ByteData serialize(imc.UsblAngles? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42149,7 +42152,7 @@ class UsblAnglesSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42187,7 +42190,7 @@ class UsblAnglesSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42256,7 +42259,7 @@ class UsblAnglesSerializer
 class UsblPositionSerializer
     extends imc.ImcSerializer<imc.UsblPosition?, imc.UsblPositionBuilder> {
   @override
-  ByteData serialize(imc.UsblPosition? message) {
+  ByteData serialize(imc.UsblPosition? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42264,7 +42267,7 @@ class UsblPositionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42306,7 +42309,7 @@ class UsblPositionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42378,7 +42381,7 @@ class UsblPositionSerializer
 class UsblFixSerializer
     extends imc.ImcSerializer<imc.UsblFix?, imc.UsblFixBuilder> {
   @override
-  ByteData serialize(imc.UsblFix? message) {
+  ByteData serialize(imc.UsblFix? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42386,7 +42389,7 @@ class UsblFixSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42430,7 +42433,7 @@ class UsblFixSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42505,7 +42508,7 @@ class UsblFixSerializer
 class ParametersXmlSerializer
     extends imc.ImcSerializer<imc.ParametersXml?, imc.ParametersXmlBuilder> {
   @override
-  ByteData serialize(imc.ParametersXml? message) {
+  ByteData serialize(imc.ParametersXml? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42513,7 +42516,7 @@ class ParametersXmlSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42560,7 +42563,7 @@ class ParametersXmlSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42637,7 +42640,7 @@ class ParametersXmlSerializer
 class GetParametersXmlSerializer extends imc
     .ImcSerializer<imc.GetParametersXml?, imc.GetParametersXmlBuilder> {
   @override
-  ByteData serialize(imc.GetParametersXml? message) {
+  ByteData serialize(imc.GetParametersXml? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42645,7 +42648,7 @@ class GetParametersXmlSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42674,7 +42677,7 @@ class GetParametersXmlSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42733,7 +42736,7 @@ class GetParametersXmlSerializer extends imc
 class SetImageCoordsSerializer
     extends imc.ImcSerializer<imc.SetImageCoords?, imc.SetImageCoordsBuilder> {
   @override
-  ByteData serialize(imc.SetImageCoords? message) {
+  ByteData serialize(imc.SetImageCoords? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42741,7 +42744,7 @@ class SetImageCoordsSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42780,7 +42783,7 @@ class SetImageCoordsSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42849,7 +42852,7 @@ class SetImageCoordsSerializer
 class GetImageCoordsSerializer
     extends imc.ImcSerializer<imc.GetImageCoords?, imc.GetImageCoordsBuilder> {
   @override
-  ByteData serialize(imc.GetImageCoords? message) {
+  ByteData serialize(imc.GetImageCoords? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42857,7 +42860,7 @@ class GetImageCoordsSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -42896,7 +42899,7 @@ class GetImageCoordsSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -42965,7 +42968,7 @@ class GetImageCoordsSerializer
 class GetWorldCoordinatesSerializer extends imc
     .ImcSerializer<imc.GetWorldCoordinates?, imc.GetWorldCoordinatesBuilder> {
   @override
-  ByteData serialize(imc.GetWorldCoordinates? message) {
+  ByteData serialize(imc.GetWorldCoordinates? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -42973,7 +42976,7 @@ class GetWorldCoordinatesSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43021,7 +43024,7 @@ class GetWorldCoordinatesSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43099,7 +43102,7 @@ class GetWorldCoordinatesSerializer extends imc
 class UsblAnglesExtendedSerializer extends imc
     .ImcSerializer<imc.UsblAnglesExtended?, imc.UsblAnglesExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblAnglesExtended? message) {
+  ByteData serialize(imc.UsblAnglesExtended? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43107,7 +43110,7 @@ class UsblAnglesExtendedSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43169,7 +43172,7 @@ class UsblAnglesExtendedSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43262,7 +43265,7 @@ class UsblAnglesExtendedSerializer extends imc
 class UsblPositionExtendedSerializer extends imc
     .ImcSerializer<imc.UsblPositionExtended?, imc.UsblPositionExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblPositionExtended? message) {
+  ByteData serialize(imc.UsblPositionExtended? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43270,7 +43273,7 @@ class UsblPositionExtendedSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43338,7 +43341,7 @@ class UsblPositionExtendedSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43437,7 +43440,7 @@ class UsblPositionExtendedSerializer extends imc
 class UsblFixExtendedSerializer extends imc
     .ImcSerializer<imc.UsblFixExtended?, imc.UsblFixExtendedBuilder> {
   @override
-  ByteData serialize(imc.UsblFixExtended? message) {
+  ByteData serialize(imc.UsblFixExtended? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43445,7 +43448,7 @@ class UsblFixExtendedSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43498,7 +43501,7 @@ class UsblFixExtendedSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43582,7 +43585,7 @@ class UsblFixExtendedSerializer extends imc
 class UsblModemSerializer
     extends imc.ImcSerializer<imc.UsblModem?, imc.UsblModemBuilder> {
   @override
-  ByteData serialize(imc.UsblModem? message) {
+  ByteData serialize(imc.UsblModem? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43590,7 +43593,7 @@ class UsblModemSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43639,7 +43642,7 @@ class UsblModemSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43720,7 +43723,7 @@ class UsblModemSerializer
 class UsblConfigSerializer
     extends imc.ImcSerializer<imc.UsblConfig?, imc.UsblConfigBuilder> {
   @override
-  ByteData serialize(imc.UsblConfig? message) {
+  ByteData serialize(imc.UsblConfig? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43728,7 +43731,7 @@ class UsblConfigSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43784,7 +43787,7 @@ class UsblConfigSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43870,7 +43873,7 @@ class UsblConfigSerializer
 class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     imc.DissolvedOrganicMatter?, imc.DissolvedOrganicMatterBuilder> {
   @override
-  ByteData serialize(imc.DissolvedOrganicMatter? message) {
+  ByteData serialize(imc.DissolvedOrganicMatter? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43878,7 +43881,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -43914,7 +43917,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -43981,7 +43984,7 @@ class DissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 class OpticalBackscatterSerializer extends imc
     .ImcSerializer<imc.OpticalBackscatter?, imc.OpticalBackscatterBuilder> {
   @override
-  ByteData serialize(imc.OpticalBackscatter? message) {
+  ByteData serialize(imc.OpticalBackscatter? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -43989,7 +43992,7 @@ class OpticalBackscatterSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44022,7 +44025,7 @@ class OpticalBackscatterSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -44085,7 +44088,7 @@ class OpticalBackscatterSerializer extends imc
 class TachographSerializer
     extends imc.ImcSerializer<imc.Tachograph?, imc.TachographBuilder> {
   @override
-  ByteData serialize(imc.Tachograph? message) {
+  ByteData serialize(imc.Tachograph? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -44093,7 +44096,7 @@ class TachographSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44172,7 +44175,7 @@ class TachographSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -44280,7 +44283,7 @@ class TachographSerializer
 class ApmStatusSerializer
     extends imc.ImcSerializer<imc.ApmStatus?, imc.ApmStatusBuilder> {
   @override
-  ByteData serialize(imc.ApmStatus? message) {
+  ByteData serialize(imc.ApmStatus? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -44288,7 +44291,7 @@ class ApmStatusSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44328,7 +44331,7 @@ class ApmStatusSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -44400,7 +44403,7 @@ class ApmStatusSerializer
 class SadcReadingsSerializer
     extends imc.ImcSerializer<imc.SadcReadings?, imc.SadcReadingsBuilder> {
   @override
-  ByteData serialize(imc.SadcReadings? message) {
+  ByteData serialize(imc.SadcReadings? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -44408,7 +44411,7 @@ class SadcReadingsSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44447,7 +44450,7 @@ class SadcReadingsSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -44516,7 +44519,7 @@ class SadcReadingsSerializer
 class DmsDetectionSerializer
     extends imc.ImcSerializer<imc.DmsDetection?, imc.DmsDetectionBuilder> {
   @override
-  ByteData serialize(imc.DmsDetection? message) {
+  ByteData serialize(imc.DmsDetection? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -44524,7 +44527,7 @@ class DmsDetectionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44602,7 +44605,7 @@ class DmsDetectionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -44710,7 +44713,7 @@ class DmsDetectionSerializer
 class HomePositionSerializer
     extends imc.ImcSerializer<imc.HomePosition?, imc.HomePositionBuilder> {
   @override
-  ByteData serialize(imc.HomePosition? message) {
+  ByteData serialize(imc.HomePosition? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -44718,7 +44721,7 @@ class HomePositionSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44766,7 +44769,7 @@ class HomePositionSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -44844,7 +44847,7 @@ class HomePositionSerializer
 class CurrentProfileSerializer
     extends imc.ImcSerializer<imc.CurrentProfile?, imc.CurrentProfileBuilder> {
   @override
-  ByteData serialize(imc.CurrentProfile? message) {
+  ByteData serialize(imc.CurrentProfile? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -44852,7 +44855,7 @@ class CurrentProfileSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -44915,7 +44918,7 @@ class CurrentProfileSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45008,7 +45011,7 @@ class CurrentProfileSerializer
 class CurrentProfileCellSerializer extends imc
     .ImcSerializer<imc.CurrentProfileCell?, imc.CurrentProfileCellBuilder> {
   @override
-  ByteData serialize(imc.CurrentProfileCell? message) {
+  ByteData serialize(imc.CurrentProfileCell? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45016,7 +45019,7 @@ class CurrentProfileCellSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45073,7 +45076,7 @@ class CurrentProfileCellSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45159,7 +45162,7 @@ class CurrentProfileCellSerializer extends imc
 class ADCPBeamSerializer
     extends imc.ImcSerializer<imc.ADCPBeam?, imc.ADCPBeamBuilder> {
   @override
-  ByteData serialize(imc.ADCPBeam? message) {
+  ByteData serialize(imc.ADCPBeam? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45167,7 +45170,7 @@ class ADCPBeamSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45205,7 +45208,7 @@ class ADCPBeamSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45274,7 +45277,7 @@ class ADCPBeamSerializer
 class GpioStateSerializer
     extends imc.ImcSerializer<imc.GpioState?, imc.GpioStateBuilder> {
   @override
-  ByteData serialize(imc.GpioState? message) {
+  ByteData serialize(imc.GpioState? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45282,7 +45285,7 @@ class GpioStateSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45322,7 +45325,7 @@ class GpioStateSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45394,7 +45397,7 @@ class GpioStateSerializer
 class GpioStateGetSerializer
     extends imc.ImcSerializer<imc.GpioStateGet?, imc.GpioStateGetBuilder> {
   @override
-  ByteData serialize(imc.GpioStateGet? message) {
+  ByteData serialize(imc.GpioStateGet? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45402,7 +45405,7 @@ class GpioStateGetSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45440,7 +45443,7 @@ class GpioStateGetSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45509,7 +45512,7 @@ class GpioStateGetSerializer
 class GpioStateSetSerializer
     extends imc.ImcSerializer<imc.GpioStateSet?, imc.GpioStateSetBuilder> {
   @override
-  ByteData serialize(imc.GpioStateSet? message) {
+  ByteData serialize(imc.GpioStateSet? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45517,7 +45520,7 @@ class GpioStateSetSerializer
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45558,7 +45561,7 @@ class GpioStateSetSerializer
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45631,7 +45634,8 @@ class ColoredDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     imc.ColoredDissolvedOrganicMatter?,
     imc.ColoredDissolvedOrganicMatterBuilder> {
   @override
-  ByteData serialize(imc.ColoredDissolvedOrganicMatter? message) {
+  ByteData serialize(imc.ColoredDissolvedOrganicMatter? message,
+      [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45639,7 +45643,7 @@ class ColoredDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45673,7 +45677,7 @@ class ColoredDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45737,7 +45741,8 @@ class FluorescentDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     imc.FluorescentDissolvedOrganicMatter?,
     imc.FluorescentDissolvedOrganicMatterBuilder> {
   @override
-  ByteData serialize(imc.FluorescentDissolvedOrganicMatter? message) {
+  ByteData serialize(imc.FluorescentDissolvedOrganicMatter? message,
+      [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45745,7 +45750,7 @@ class FluorescentDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45779,7 +45784,7 @@ class FluorescentDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45842,7 +45847,7 @@ class FluorescentDissolvedOrganicMatterSerializer extends imc.ImcSerializer<
 class TotalMagIntensitySerializer extends imc
     .ImcSerializer<imc.TotalMagIntensity?, imc.TotalMagIntensityBuilder> {
   @override
-  ByteData serialize(imc.TotalMagIntensity? message) {
+  ByteData serialize(imc.TotalMagIntensity? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45850,7 +45855,7 @@ class TotalMagIntensitySerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45883,7 +45888,7 @@ class TotalMagIntensitySerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
@@ -45946,7 +45951,7 @@ class TotalMagIntensitySerializer extends imc
 class CommRestrictionSerializer extends imc
     .ImcSerializer<imc.CommRestriction?, imc.CommRestrictionBuilder> {
   @override
-  ByteData serialize(imc.CommRestriction? message) {
+  ByteData serialize(imc.CommRestriction? message, [int? syncNumber]) {
     var byteOffset = 0;
     var byteData = ByteData(0xFFFF);
 
@@ -45954,7 +45959,7 @@ class CommRestrictionSerializer extends imc
       return byteData.buffer.asByteData(0, byteOffset);
     }
 
-    byteOffset = imc.serializeHeader(message, byteData);
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
     var headerSize = byteOffset;
 
     // Payload
@@ -45995,7 +46000,7 @@ class CommRestrictionSerializer extends imc
     var byteOffset = offset;
     var byteData = data.buffer.asByteData(offset);
 
-    var endianness = imc.getEndianness(byteData, byteOffset);
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
     byteOffset += 2;
     if (endianness == null) {
       return null;
