@@ -1641,6 +1641,31 @@ class AcousticStatusEnumStatus extends EnumType {
   }
 }
 
+class AcousticReleaseEnumOp extends EnumType {
+  static const aropOpen = AcousticReleaseEnumOp(0);
+  static const aropClose = AcousticReleaseEnumOp(1);
+
+  static List<AcousticReleaseEnumOp> get values => <AcousticReleaseEnumOp>[
+        aropOpen,
+        aropClose,
+      ];
+
+  static core.Map<AcousticReleaseEnumOp, String> get names =>
+      <AcousticReleaseEnumOp, String>{
+        aropOpen: '''Open''',
+        aropClose: '''Close''',
+      };
+
+  const AcousticReleaseEnumOp(super.value);
+
+  @override
+  String toPrettyString() {
+    var ret = names[this];
+    if (ret != null) return ret;
+    return super.toPrettyString();
+  }
+}
+
 /// Validity of fields.
 class GpsFixBitfieldValidity extends BitfieldType {
   /// Fields 'utc_year', 'utc_month' and 'utc_day' are valid.

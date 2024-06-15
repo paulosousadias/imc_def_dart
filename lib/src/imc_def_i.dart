@@ -16965,6 +16965,234 @@ class AcousticStatusBuilder extends Object
   }
 }
 
+/// Acoustic Release Request immutable class
+///
+class _$AcousticRelease extends AcousticRelease {
+  @override
+  final DateTime? timestamp;
+  @override
+  final int src;
+  @override
+  final int srcEnt;
+  @override
+  final int dst;
+  @override
+  final int dstEnt;
+
+  @override
+  final String system;
+  @override
+  final AcousticReleaseEnumOp op;
+
+  factory _$AcousticRelease(
+          [void Function(AcousticReleaseBuilder b)? updates]) =>
+      (AcousticReleaseBuilder()..update(updates)).build() as _$AcousticRelease;
+
+  factory _$AcousticRelease.fromJson(core.Map<String, dynamic> json) {
+    var val = AcousticReleaseBuilder();
+    val.timestamp = json.containsKey('timestamp') && json['timestamp'] != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+            ((json['timestamp'] as double) * 1E3).toInt(),
+            isUtc: true)
+        : DateTime.now();
+    if (json.containsKey('src')) val.src = json['src'] as int;
+    if (json.containsKey('src_ent')) val.srcEnt = json['src_ent'] as int;
+    if (json.containsKey('dst')) val.dst = json['dst'] as int;
+    if (json.containsKey('dst_ent')) val.dstEnt = json['dst_ent'] as int;
+
+    val.system = json.containsKey('system') && json['system'] != null
+        ? json['system'] as String
+        : '';
+    val.op = json.containsKey('op') && json['op'] != null
+        ? AcousticReleaseEnumOp(json['op'] as int)
+        : AcousticReleaseEnumOp(0);
+
+    return val.build() as _$AcousticRelease;
+  }
+
+  _$AcousticRelease._(
+      {this.timestamp, //Should be DateTime.now() but is not const
+      this.src = ImcId.nullId,
+      this.srcEnt = ImcEntityId.nullId,
+      this.dst = ImcId.nullId,
+      this.dstEnt = ImcEntityId.nullId,
+      required this.system,
+      required this.op})
+      : super._();
+
+  @override
+  AcousticRelease rebuild(void Function(AcousticReleaseBuilder b) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AcousticReleaseBuilder toBuilder() => AcousticReleaseBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AcousticRelease &&
+        timestamp == other.timestamp &&
+        src == other.src &&
+        srcEnt == other.srcEnt &&
+        dst == other.dst &&
+        dstEnt == other.dstEnt &&
+        system == other.system &&
+        op == other.op;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc($jc(0, timestamp?.hashCode ?? null.hashCode),
+                            src.hashCode),
+                        srcEnt.hashCode),
+                    dst.hashCode),
+                dstEnt.hashCode),
+            system.hashCode),
+        op.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('AcousticRelease')
+          ..add('timestamp', timestamp)
+          ..add('src', '0x${src.toRadixString(16)} ($src)')
+          ..add('srcEnt', '0x${srcEnt.toRadixString(16)} ($srcEnt)')
+          ..add('dst', '0x${dst.toRadixString(16)} ($dst)')
+          ..add('dstEnt', '0x${dstEnt.toRadixString(16)} ($dstEnt)')
+          ..add('system', system)
+          ..add('op', '$op (Enumerated) [${op.toPrettyString()}]'))
+        .toString();
+  }
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]) =>
+      _toJson(includeHeader);
+
+  core.Map<String, dynamic> _toJson([bool includeHeader = true]) => {
+        'abbrev': 'AcousticRelease',
+        if (includeHeader)
+          'timestamp':
+              (timestamp ?? DateTime.now()).millisecondsSinceEpoch / 1E3,
+        if (includeHeader) 'src': src,
+        if (includeHeader) 'src_ent': srcEnt,
+        if (includeHeader) 'dst': dst,
+        if (includeHeader) 'dst_ent': dstEnt,
+        'system': system,
+        'op': op.value,
+      };
+}
+
+/// Acoustic Release Request builder class
+///
+class AcousticReleaseBuilder extends Object
+    with ImcBuilderHeaderPart
+    implements
+        BuilderWithInstanciator<AcousticRelease, AcousticReleaseBuilder> {
+  _$AcousticRelease? _$v;
+
+  DateTime? _timestamp = DateTime.now();
+  @override
+  DateTime? get timestamp => _$this._timestamp;
+  @override
+  set timestamp(DateTime? timestamp) => _$this._timestamp = timestamp;
+
+  int _src = ImcId.nullId;
+  @override
+  int get src => _$this._src;
+  @override
+  set src(int src) => _$this._src = src;
+
+  int _srcEnt = ImcEntityId.nullId;
+  @override
+  int get srcEnt => _$this._srcEnt;
+  @override
+  set srcEnt(int srcEnt) => _$this._srcEnt = srcEnt;
+
+  int _dst = ImcId.nullId;
+  @override
+  int get dst => _$this._dst;
+  @override
+  set dst(int dst) => _$this._dst = dst;
+
+  int _dstEnt = ImcEntityId.nullId;
+  @override
+  int get dstEnt => _$this._dstEnt;
+  @override
+  set dstEnt(int dstEnt) => _$this._dstEnt = dstEnt;
+
+  String _system = '';
+  String get system => _$this._system;
+  set system(String system) => _$this._system = system;
+
+  AcousticReleaseEnumOp _op = AcousticReleaseEnumOp(0);
+  AcousticReleaseEnumOp get op => _$this._op;
+  set op(AcousticReleaseEnumOp op) => _$this._op = op;
+
+  AcousticReleaseBuilder();
+
+  AcousticReleaseBuilder.fromHeader(ImcBuilderHeaderPart headerFrom) {
+    copyFromHeader(headerFrom);
+  }
+
+  AcousticReleaseBuilder.fromJson(core.Map<String, dynamic> json) {
+    var v = _$AcousticRelease.fromJson(json);
+    replace(v);
+  }
+
+  @override
+  AcousticReleaseBuilder fromJson(core.Map<String, dynamic> json) =>
+      AcousticReleaseBuilder.fromJson(json);
+
+  @override
+  AcousticReleaseBuilder newInstance([ImcBuilderHeaderPart? headerFrom]) =>
+      AcousticReleaseBuilder()..copyFromHeader(headerFrom);
+
+  AcousticReleaseBuilder get _$this {
+    if (_$v != null) {
+      _timestamp = _$v!.timestamp;
+      _src = _$v!.src;
+      _srcEnt = _$v!.srcEnt;
+      _dst = _$v!.dst;
+      _dstEnt = _$v!.dstEnt;
+      _system = _$v!.system;
+      _op = _$v!.op;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(AcousticRelease other) {
+    _$v = other as _$AcousticRelease;
+  }
+
+  @override
+  void update(void Function(AcousticReleaseBuilder b)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AcousticRelease build() {
+    final result = _$v ??
+        _$AcousticRelease._(
+            timestamp: timestamp ?? DateTime.now(),
+            src: src,
+            srcEnt: srcEnt,
+            dst: dst,
+            dstEnt: dstEnt,
+            system: system,
+            op: op);
+    replace(result);
+    return result;
+  }
+}
+
 /// Revolutions Per Minute immutable class
 ///
 class _$Rpm extends Rpm {

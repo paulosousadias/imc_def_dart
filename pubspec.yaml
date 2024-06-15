@@ -29,7 +29,7 @@ executables:
 
 imc_def:
   imc: lib/xml/IMC.xml
-  githash: lsts@6038ec6
+  githash: lsts@867be70
   mode: local
 
 # For information on the generic Dart part of this file, see the

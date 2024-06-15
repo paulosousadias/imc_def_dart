@@ -81,6 +81,7 @@ final messagesSerializers = <String, ImcSerializerBuilder>{
   'AcousticLink': () => AcousticLinkSerializer(),
   'AcousticRequest': () => AcousticRequestSerializer(),
   'AcousticStatus': () => AcousticStatusSerializer(),
+  'AcousticRelease': () => AcousticReleaseSerializer(),
   'Rpm': () => RpmSerializer(),
   'Voltage': () => VoltageSerializer(),
   'Current': () => CurrentSerializer(),
@@ -414,6 +415,7 @@ final messagesIdsSerializers = <int, ImcSerializerBuilder>{
   214: () => AcousticLinkSerializer(),
   215: () => AcousticRequestSerializer(),
   216: () => AcousticStatusSerializer(),
+  217: () => AcousticReleaseSerializer(),
   250: () => RpmSerializer(),
   251: () => VoltageSerializer(),
   252: () => CurrentSerializer(),
@@ -9629,6 +9631,127 @@ class AcousticStatusSerializer
     // field range
     builder.range = byteData.getFloat32(byteOffset, endianness);
     byteOffset += 4;
+
+    return byteOffset - offset;
+  }
+}
+
+/// Acoustic Release Request serializer class
+///
+class AcousticReleaseSerializer extends imc
+    .ImcSerializer<imc.AcousticRelease?, imc.AcousticReleaseBuilder> {
+  @override
+  ByteData serialize(imc.AcousticRelease? message, [int? syncNumber]) {
+    var byteOffset = 0;
+    var byteData = ByteData(0xFFFF);
+
+    if (message == null) {
+      return byteData.buffer.asByteData(0, byteOffset);
+    }
+
+    byteOffset = imc.serializeHeader(message, byteData, syncNumber);
+    var headerSize = byteOffset;
+
+    // Payload
+    var payloadSize = serializePayload(message, byteData, byteOffset);
+    // End payload
+
+    byteOffset = headerSize + payloadSize;
+    imc.writePayloadSize(byteData, payloadSize);
+    imc.calcAndAddFooter(byteData, 0, headerSize + payloadSize);
+    byteOffset += 2;
+    return byteData.buffer.asByteData(0, byteOffset);
+  }
+
+  @override
+  int serializePayload(
+      imc.AcousticRelease? message, ByteData byteData, int offset) {
+    if (message == null) return 0;
+
+    var byteOffset = offset;
+
+    // field system
+    var systemEncoded = utf8.encode(message.system);
+    var systemSSize = systemEncoded.length;
+    byteData.setUint16(byteOffset, systemSSize, imc.endianSer);
+    byteOffset += 2;
+    for (var b in systemEncoded) {
+      byteData.setUint8(byteOffset++, b);
+    }
+    // field op
+    byteData.setUint8(byteOffset, message.op.value);
+    byteOffset += 1;
+
+    return byteOffset - offset;
+  }
+
+  @override
+  imc.AcousticRelease? deserialize(Uint8List data, [int offset = 0]) {
+    var byteOffset = offset;
+    var byteData = data.buffer.asByteData(offset);
+
+    var (endianness, _) = imc.getEndianness(byteData, byteOffset);
+    byteOffset += 2;
+    if (endianness == null) {
+      return null;
+    }
+
+    var msgId = byteData.getUint16(byteOffset, endianness);
+    byteOffset += 2;
+    if (msgId != imc.AcousticRelease.staticId) {
+      return null;
+    }
+
+    var builder = imc.AcousticReleaseBuilder();
+    var payloadSize =
+        imc.deserializeHeader(builder, byteData, endianness, offset);
+    if (payloadSize == null) {
+      return null;
+    }
+
+    byteOffset = offset + imc.headerSize;
+
+    var calcCrc = imc.calcCrc(byteData, offset, imc.headerSize + payloadSize);
+    var readCrc = imc.getCrcFooter(
+        byteData, offset + imc.headerSize + payloadSize, endianness);
+    if (calcCrc != readCrc) {
+      return null;
+    }
+
+    // Payload
+    int payloadSizeRead;
+    try {
+      payloadSizeRead =
+          deserializePayload(builder, byteData, endianness, byteOffset);
+    } catch (_) {
+      return null;
+    }
+    // End payload
+
+    if (payloadSizeRead != payloadSize) {
+      return null;
+    }
+    byteOffset = offset + imc.headerSize + payloadSize;
+    return builder.build();
+  }
+
+  @override
+  int deserializePayload(imc.AcousticReleaseBuilder builder, ByteData byteData,
+      Endian endianness, int offset) {
+    var byteOffset = offset;
+
+    // field system
+    var systemSSize = byteData.getUint16(byteOffset, endianness);
+    byteOffset += 2;
+    var systemDData = List.filled(systemSSize, 0);
+    for (var i = 0; i < systemSSize; i++) {
+      systemDData[i] = byteData.getUint8(byteOffset++);
+    }
+    var systemDecoded = utf8.decode(systemDData);
+    builder.system = systemDecoded;
+    // field op
+    builder.op = imc.AcousticReleaseEnumOp(byteData.getUint8(byteOffset));
+    byteOffset += 1;
 
     return byteOffset - offset;
   }

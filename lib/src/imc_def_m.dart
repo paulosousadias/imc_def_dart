@@ -9,10 +9,10 @@ part of 'imc_def_gen.dart';
 const String version = '5.4.30';
 const int syncNumber = 0xFE54;
 const int syncNumberReversed = 0x54FE;
-const String gitHashString = 'lsts@6038ec6';
-const String md5Sum = '7c85ff5d263ff393410ff4a137fc3940';
+const String gitHashString = 'lsts@867be70';
+const String md5Sum = '762ef830be415e1c3e6f5b429829f51a';
 const String sha256Sum =
-    '71d5786010dc6d34d808c2b21e40538cd73af9479e6d3906473e03014819f37e';
+    'ec46cdbcbfde870cfb2d7db4eff1b2fb156f51778c56f9c9dc95595413938204';
 
 /// WARNING!!! This is for advance usage only. If set not null, CHANGES the used sync number
 int? fakeSyncNumber;
@@ -2353,6 +2353,33 @@ abstract class AcousticStatus extends ImcMessage
   core.Map<String, dynamic> toJson([bool includeHeader = true]);
 }
 
+/// Acoustic Release Request class
+///
+/// Request a system (local or remote) to activate its acoustic release.
+abstract class AcousticRelease extends ImcMessage
+    implements Built<AcousticRelease, AcousticReleaseBuilder> {
+  static const staticId = 217;
+  AcousticRelease._();
+  factory AcousticRelease([void Function(AcousticReleaseBuilder b)? updates]) =
+      _$AcousticRelease;
+
+  @override
+  int get msgId => staticId;
+  @override
+  String get abbrev => 'AcousticRelease';
+
+  /// The name of the system that should execute an acoustic release.
+  @ImcField('System', 'system', ImcType.typePlaintext)
+  String get system;
+
+  @ImcField('Operation', 'op', ImcType.typeUInt8)
+  AcousticReleaseEnumOp get op;
+
+  /// To JSON object
+  @override
+  core.Map<String, dynamic> toJson([bool includeHeader = true]);
+}
+
 /// Revolutions Per Minute class
 ///
 /// Number of revolutions per minute.
@@ -4140,6 +4167,61 @@ abstract class SetControlSurfaceDeflection extends ImcMessage
 /// returning the tuplelist with the pairs: Action,Type
 /// (operation=REPORT). The type of action can be Axis, Hat or
 /// Button.
+///
+/// Verbs to use:
+///
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Verb          | Type         | LAUV Use | Verb alternatives                          |  Notes                                |
+/// +===============+==============+==========+============================================+=======================================+
+/// | Accelerate    | Button       | yes      |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Arm           | Button       |          |                                            | Should use ArmState message for state |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Decelerate    | Button       | yes      |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Disarm        | Button       |          |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Exit          | Button       | yes      |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Heading       | Axis         | yes      | Yaw, Rotate, Turning                       |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Lateral       | Axis         |          | Sway, Sideways                             |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Pitch         | Axis         |          |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Roll          | Axis         |          | Bank                                       |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Stop          | Button       | yes      |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Thrust        | Axis         | yes      | Surge, Forward, Throtle                    |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | Vertical      | Axis         |          | Heave, Up, Ascende, VerticalRate, Depth, Z |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+/// | *             | (type)       |          |                                            |                                       |
+/// +---------------+--------------+----------+--------------------------------------------+---------------------------------------+
+///
+///
+/// Special actions for configuration:
+///
+/// +---------------+-------------------+----------------------------------------------------+
+/// | Verb          | Special Type      | Notes                                              |
+/// +===============+===================+====================================================+
+/// | Ranges        | Decimal, Range127 | Decimal [-1.0; 1.0], Range127[-127; 127] (default) |
+/// +---------------+-------------------+----------------------------------------------------+
+///
+/// Types:
+///
+/// +-------------------+------------------------------------------------------+
+/// | Type              | Note                                                 |
+/// +===================+======================================================+
+/// | Axis              | Axis like (full range)                               |
+/// +-------------------+------------------------------------------------------+
+/// | Button            | A button (0 for release, 1 for press)                |
+/// +-------------------+------------------------------------------------------+
+/// | Slider            | Slider like (full range)                             |
+/// +-------------------+------------------------------------------------------+
+/// | HalfSlider        | Slider like, but only the positive half of the range |
+/// +-------------------+------------------------------------------------------+
 abstract class RemoteActionsRequest extends ImcMessage
     implements Built<RemoteActionsRequest, RemoteActionsRequestBuilder> {
   static const staticId = 304;
@@ -4157,7 +4239,7 @@ abstract class RemoteActionsRequest extends ImcMessage
   @ImcField('operation', 'op', ImcType.typeUInt8)
   RemoteActionsRequestEnumOp get op;
 
-  /// Example: "Propulsion=Axis,PanTilt=Hat,Lights=Button"
+  /// Example: "Propulsion=Axis,Lights=Button"
   @ImcField('Actions', 'actions', ImcType.typePlaintext, units: 'TupleList')
   String get actions;
 
