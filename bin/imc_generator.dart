@@ -616,7 +616,7 @@ void _writeMessageImmutable(
     switch (type) {
       case 'message-list': // List<M extends IMCMessage>
         toJsonStr += '''      '$abbrev': [
-        ...${_convertToFieldName(abbrev)}.map((m) => m.toJson(false)).toList(),
+        ...${_convertToFieldName(abbrev)}.map((m) => m.toJson(false)),
           ],\n''';
         break;
       case 'rawdata': // List<int>

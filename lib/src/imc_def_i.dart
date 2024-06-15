@@ -3321,7 +3321,7 @@ class _$MsgList extends MsgList {
         if (includeHeader) 'dst': dst,
         if (includeHeader) 'dst_ent': dstEnt,
         'msgs': [
-          ...msgs.map((m) => m.toJson(false)).toList(),
+          ...msgs.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -5696,7 +5696,7 @@ class _$LogBookControl extends LogBookControl {
         'command': command.value,
         'htime': htime,
         'msg': [
-          ...msg.map((m) => m.toJson(false)).toList(),
+          ...msg.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -7496,7 +7496,7 @@ class _$VerticalProfile extends VerticalProfile {
         'parameter': parameter.value,
         'numSamples': numSamples,
         'samples': [
-          ...samples.map((m) => m.toJson(false)).toList(),
+          ...samples.map((m) => m.toJson(false)),
         ],
         'lat': lat,
         'lon': lon,
@@ -12238,7 +12238,7 @@ class _$HistoricData extends HistoricData {
         'base_lon': baseLon,
         'base_time': baseTime,
         'data': [
-          ...data.map((m) => m.toJson(false)).toList(),
+          ...data.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -14757,7 +14757,7 @@ class _$LblConfig extends LblConfig {
         if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'beacons': [
-          ...beacons.map((m) => m.toJson(false)).toList(),
+          ...beacons.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -20270,10 +20270,10 @@ class _$Distance extends Distance {
         if (includeHeader) 'dst_ent': dstEnt,
         'validity': validity.value,
         'location': [
-          ...location.map((m) => m.toJson(false)).toList(),
+          ...location.map((m) => m.toJson(false)),
         ],
         'beam_config': [
-          ...beamConfig.map((m) => m.toJson(false)).toList(),
+          ...beamConfig.map((m) => m.toJson(false)),
         ],
         'value': value,
       };
@@ -23323,7 +23323,7 @@ class _$SonarData extends SonarData {
         'bits_per_point': bitsPerPoint,
         'scale_factor': scaleFactor,
         'beam_config': [
-          ...beamConfig.map((m) => m.toJson(false)).toList(),
+          ...beamConfig.map((m) => m.toJson(false)),
         ],
         'data': base64.encode(data),
       };
@@ -43093,7 +43093,7 @@ class _$FollowPath extends FollowPath {
         'speed': speed,
         'speed_units': speedUnits.value,
         'points': [
-          ...points.map((m) => m.toJson(false)).toList(),
+          ...points.map((m) => m.toJson(false)),
         ],
         'custom': custom,
       };
@@ -44970,7 +44970,7 @@ class _$FollowTrajectory extends FollowTrajectory {
         'speed': speed,
         'speed_units': speedUnits.value,
         'points': [
-          ...points.map((m) => m.toJson(false)).toList(),
+          ...points.map((m) => m.toJson(false)),
         ],
         'custom': custom,
       };
@@ -45849,10 +45849,10 @@ class _$VehicleFormation extends VehicleFormation {
         'speed': speed,
         'speed_units': speedUnits.value,
         'points': [
-          ...points.map((m) => m.toJson(false)).toList(),
+          ...points.map((m) => m.toJson(false)),
         ],
         'participants': [
-          ...participants.map((m) => m.toJson(false)).toList(),
+          ...participants.map((m) => m.toJson(false)),
         ],
         'start_time': startTime,
         'custom': custom,
@@ -47765,7 +47765,7 @@ class _$CoverArea extends CoverArea {
         'speed': speed,
         'speed_units': speedUnits.value,
         'polygon': [
-          ...polygon.map((m) => m.toJson(false)).toList(),
+          ...polygon.map((m) => m.toJson(false)),
         ],
         'custom': custom,
       };
@@ -48704,7 +48704,7 @@ class _$FormationParameters extends FormationParameters {
         'formation_name': formationName,
         'reference_frame': referenceFrame.value,
         'participants': [
-          ...participants.map((m) => m.toJson(false)).toList(),
+          ...participants.map((m) => m.toJson(false)),
         ],
         'custom': custom,
       };
@@ -50449,7 +50449,7 @@ class _$FormationMonitor extends FormationMonitor {
         'ss_y': ssY,
         'ss_z': ssZ,
         'rel_state': [
-          ...relState.map((m) => m.toJson(false)).toList(),
+          ...relState.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -51764,7 +51764,7 @@ class _$Formation extends Formation {
         'description': description,
         'reference_frame': referenceFrame.value,
         'participants': [
-          ...participants.map((m) => m.toJson(false)).toList(),
+          ...participants.map((m) => m.toJson(false)),
         ],
         'leader_bank_lim': leaderBankLim,
         'leader_speed_min': leaderSpeedMin,
@@ -54933,7 +54933,7 @@ class _$AutonomousSection extends AutonomousSection {
         'min_alt': minAlt,
         'time_limit': timeLimit,
         'area_limits': [
-          ...areaLimits.map((m) => m.toJson(false)).toList(),
+          ...areaLimits.map((m) => m.toJson(false)),
         ],
         'controller': controller,
         'custom': custom,
@@ -63144,7 +63144,7 @@ class _$AssetReport extends AssetReport {
         'sog': sog,
         'cog': cog,
         'msgs': [
-          ...msgs.map((m) => m.toJson(false)).toList(),
+          ...msgs.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -63752,20 +63752,20 @@ class _$PlanSpecification extends PlanSpecification {
         'description': description,
         'vnamespace': vnamespace,
         'variables': [
-          ...variables.map((m) => m.toJson(false)).toList(),
+          ...variables.map((m) => m.toJson(false)),
         ],
         'start_man_id': startManId,
         'maneuvers': [
-          ...maneuvers.map((m) => m.toJson(false)).toList(),
+          ...maneuvers.map((m) => m.toJson(false)),
         ],
         'transitions': [
-          ...transitions.map((m) => m.toJson(false)).toList(),
+          ...transitions.map((m) => m.toJson(false)),
         ],
         'start_actions': [
-          ...startActions.map((m) => m.toJson(false)).toList(),
+          ...startActions.map((m) => m.toJson(false)),
         ],
         'end_actions': [
-          ...endActions.map((m) => m.toJson(false)).toList(),
+          ...endActions.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -64096,10 +64096,10 @@ class _$PlanManeuver extends PlanManeuver {
         'maneuver_id': maneuverId,
         'data': data?.toJson(false),
         'start_actions': [
-          ...startActions.map((m) => m.toJson(false)).toList(),
+          ...startActions.map((m) => m.toJson(false)),
         ],
         'end_actions': [
-          ...endActions.map((m) => m.toJson(false)).toList(),
+          ...endActions.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -64378,7 +64378,7 @@ class _$PlanTransition extends PlanTransition {
         'dest_man': destMan,
         'conditions': conditions,
         'actions': [
-          ...actions.map((m) => m.toJson(false)).toList(),
+          ...actions.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -65482,7 +65482,7 @@ class _$PlanDBState extends PlanDBState {
         'change_sname': changeSname,
         'md5': base64.encode(md5),
         'plans_info': [
-          ...plansInfo.map((m) => m.toJson(false)).toList(),
+          ...plansInfo.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -68689,7 +68689,7 @@ class _$Map extends Map {
         if (includeHeader) 'dst_ent': dstEnt,
         'id': id,
         'features': [
-          ...features.map((m) => m.toJson(false)).toList(),
+          ...features.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -68973,7 +68973,7 @@ class _$MapFeature extends MapFeature {
         'rgb_green': rgbGreen,
         'rgb_blue': rgbBlue,
         'feature': [
-          ...feature.map((m) => m.toJson(false)).toList(),
+          ...feature.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -69727,7 +69727,7 @@ class _$VehicleLinks extends VehicleLinks {
         if (includeHeader) 'dst_ent': dstEnt,
         'localname': localname,
         'links': [
-          ...links.map((m) => m.toJson(false)).toList(),
+          ...links.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -70984,7 +70984,7 @@ class _$TrexToken extends TrexToken {
         'timeline': timeline,
         'predicate': predicate,
         'attributes': [
-          ...attributes.map((m) => m.toJson(false)).toList(),
+          ...attributes.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -71231,7 +71231,7 @@ class _$TrexPlan extends TrexPlan {
         if (includeHeader) 'dst_ent': dstEnt,
         'reactor': reactor,
         'tokens': [
-          ...tokens.map((m) => m.toJson(false)).toList(),
+          ...tokens.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -72986,7 +72986,7 @@ class _$EntityParameters extends EntityParameters {
         if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'params': [
-          ...params.map((m) => m.toJson(false)).toList(),
+          ...params.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -73483,7 +73483,7 @@ class _$SetEntityParameters extends SetEntityParameters {
         if (includeHeader) 'dst_ent': dstEnt,
         'name': name,
         'params': [
-          ...params.map((m) => m.toJson(false)).toList(),
+          ...params.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -78444,7 +78444,7 @@ class _$SoiPlan extends SoiPlan {
         if (includeHeader) 'dst_ent': dstEnt,
         'plan_id': planId,
         'waypoints': [
-          ...waypoints.map((m) => m.toJson(false)).toList(),
+          ...waypoints.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -83148,7 +83148,7 @@ class _$UsblConfig extends UsblConfig {
         if (includeHeader) 'dst_ent': dstEnt,
         'op': op.value,
         'modems': [
-          ...modems.map((m) => m.toJson(false)).toList(),
+          ...modems.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -85517,7 +85517,7 @@ class _$CurrentProfile extends CurrentProfile {
         'ncells': ncells,
         'coord_sys': coordSys.value,
         'profile': [
-          ...profile.map((m) => m.toJson(false)).toList(),
+          ...profile.map((m) => m.toJson(false)),
         ],
       };
 }
@@ -85774,7 +85774,7 @@ class _$CurrentProfileCell extends CurrentProfileCell {
         if (includeHeader) 'dst_ent': dstEnt,
         'cell_position': cellPosition,
         'beams': [
-          ...beams.map((m) => m.toJson(false)).toList(),
+          ...beams.map((m) => m.toJson(false)),
         ],
       };
 }
