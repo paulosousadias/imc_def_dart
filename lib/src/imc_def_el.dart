@@ -31,7 +31,7 @@ class EntityStateEnumState extends EnumType {
         estaFailure: '''Failure''',
       };
 
-  const EntityStateEnumState(int value) : super(value);
+  const EntityStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -53,7 +53,7 @@ class EntityStateBitfieldFlags extends BitfieldType {
         eflaHumanIntervention: '''Human Intervention Required'''
       };
 
-  const EntityStateBitfieldFlags(int value) : super(value);
+  const EntityStateBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -101,7 +101,7 @@ class EntityListEnumOp extends EnumType {
         opQuery: '''Query''',
       };
 
-  const EntityListEnumOp(int value) : super(value);
+  const EntityListEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -129,7 +129,7 @@ class RestartSystemEnumType extends EnumType {
         rstypeSystem: '''System''',
       };
 
-  const RestartSystemEnumType(int value) : super(value);
+  const RestartSystemEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -169,7 +169,7 @@ class DevCalibrationControlEnumOp extends EnumType {
         dcalStepPrevious: '''Perform Previous Calibration Step''',
       };
 
-  const DevCalibrationControlEnumOp(int value) : super(value);
+  const DevCalibrationControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -217,7 +217,7 @@ class DevCalibrationStateBitfieldFlags extends BitfieldType {
         dcsCompleted: '''Calibration Procedure Completed''',
       };
 
-  const DevCalibrationStateBitfieldFlags(int value) : super(value);
+  const DevCalibrationStateBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -300,7 +300,7 @@ class EntityActivationStateEnumState extends EnumType {
         easDeactFail: '''Deactivation Failed''',
       };
 
-  const EntityActivationStateEnumState(int value) : super(value);
+  const EntityActivationStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -330,7 +330,7 @@ class VehicleOperationalLimitsEnumOp extends EnumType {
         opReport: '''Report''',
       };
 
-  const VehicleOperationalLimitsEnumOp(int value) : super(value);
+  const VehicleOperationalLimitsEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -356,7 +356,7 @@ class LeakSimulationEnumOp extends EnumType {
         lsimOn: '''Leaks On''',
       };
 
-  const LeakSimulationEnumOp(int value) : super(value);
+  const LeakSimulationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -385,7 +385,7 @@ class UASimulationEnumType extends EnumType {
         uasPingReply: '''Ping Reply''',
       };
 
-  const UASimulationEnumType(int value) : super(value);
+  const UASimulationEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -414,7 +414,7 @@ class DynamicsSimParamEnumOp extends EnumType {
         opReport: '''Report''',
       };
 
-  const DynamicsSimParamEnumOp(int value) : super(value);
+  const DynamicsSimParamEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -449,7 +449,7 @@ class CacheControlEnumOp extends EnumType {
         copCopyComplete: '''Snapshot Copy Complete''',
       };
 
-  const CacheControlEnumOp(int value) : super(value);
+  const CacheControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -518,7 +518,7 @@ class LoggingControlEnumOp extends EnumType {
         copCurrentName: '''Current Log Name''',
       };
 
-  const LoggingControlEnumOp(int value) : super(value);
+  const LoggingControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -553,7 +553,7 @@ class LogBookEntryEnumType extends EnumType {
         lbetDebug: '''Debug''',
       };
 
-  const LogBookEntryEnumType(int value) : super(value);
+  const LogBookEntryEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -594,7 +594,7 @@ class LogBookControlEnumCommand extends EnumType {
         lbcReply: '''Reply''',
       };
 
-  const LogBookControlEnumCommand(int value) : super(value);
+  const LogBookControlEnumCommand(super.value);
 
   @override
   String toPrettyString() {
@@ -626,7 +626,7 @@ class ReplayControlEnumOp extends EnumType {
         ropResume: '''Resume''',
       };
 
-  const ReplayControlEnumOp(int value) : super(value);
+  const ReplayControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -675,7 +675,7 @@ class ClockControlEnumOp extends EnumType {
         copSetTzDone: '''Timezone Setup''',
       };
 
-  const ClockControlEnumOp(int value) : super(value);
+  const ClockControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -704,7 +704,7 @@ class HistoricSonarDataEnumEncoding extends EnumType {
         encJpeg: '''JPEG compressed image''',
       };
 
-  const HistoricSonarDataEnumEncoding(int value) : super(value);
+  const HistoricSonarDataEnumEncoding(super.value);
 
   @override
   String toPrettyString() {
@@ -730,7 +730,7 @@ class HistoricEventEnumType extends EnumType {
         evtypeError: '''Error''',
       };
 
-  const HistoricEventEnumType(int value) : super(value);
+  const HistoricEventEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -772,7 +772,7 @@ class VerticalProfileEnumParameter extends EnumType {
         profTurbidity: '''Turbidity''',
       };
 
-  const VerticalProfileEnumParameter(int value) : super(value);
+  const VerticalProfileEnumParameter(super.value);
 
   @override
   String toPrettyString() {
@@ -800,7 +800,7 @@ class AnnounceServiceBitfieldServiceType extends BitfieldType {
         srvTypeLocal: '''Local''',
       };
 
-  const AnnounceServiceBitfieldServiceType(int value) : super(value);
+  const AnnounceServiceBitfieldServiceType(super.value);
 
   @override
   String toPrettyString() {
@@ -864,7 +864,7 @@ class SmsStateEnumState extends EnumType {
         smsReceiving: '''Receiving''',
       };
 
-  const SmsStateEnumState(int value) : super(value);
+  const SmsStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -903,7 +903,7 @@ class IridiumTxStatusEnumStatus extends EnumType {
         txstatusEmpty: '''No more messages to be transmitted or received.''',
       };
 
-  const IridiumTxStatusEnumStatus(int value) : super(value);
+  const IridiumTxStatusEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -941,7 +941,7 @@ class SystemGroupEnumAction extends EnumType {
         opFrc: '''Force''',
       };
 
-  const SystemGroupEnumAction(int value) : super(value);
+  const SystemGroupEnumAction(super.value);
 
   @override
   String toPrettyString() {
@@ -975,7 +975,7 @@ class HistoricDataQueryEnumType extends EnumType {
         hrtypeClear: '''Clear''',
       };
 
-  const HistoricDataQueryEnumType(int value) : super(value);
+  const HistoricDataQueryEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -1004,7 +1004,7 @@ class CommSystemsQueryBitfieldType extends BitfieldType {
         ciqReply: '''Reply''',
       };
 
-  const CommSystemsQueryBitfieldType(int value) : super(value);
+  const CommSystemsQueryBitfieldType(super.value);
 
   @override
   String toPrettyString() {
@@ -1072,7 +1072,7 @@ class CommSystemsQueryBitfieldCommInterface extends BitfieldType {
         ciqRadio: '''Radio''',
       };
 
-  const CommSystemsQueryBitfieldCommInterface(int value) : super(value);
+  const CommSystemsQueryBitfieldCommInterface(super.value);
 
   @override
   String toPrettyString() {
@@ -1130,7 +1130,7 @@ class CommSystemsQueryEnumModel extends EnumType {
         ciqRdfxxxxptp: '''RDFXXXxPtP''',
       };
 
-  const CommSystemsQueryEnumModel(int value) : super(value);
+  const CommSystemsQueryEnumModel(super.value);
 
   @override
   String toPrettyString() {
@@ -1164,7 +1164,7 @@ class TelemetryMsgEnumType extends EnumType {
         tmTxstatus: '''TxStatus''',
       };
 
-  const TelemetryMsgEnumType(int value) : super(value);
+  const TelemetryMsgEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -1204,7 +1204,7 @@ class TelemetryMsgEnumCode extends EnumType {
         tmCodeRaw: '''Code raw''',
       };
 
-  const TelemetryMsgEnumCode(int value) : super(value);
+  const TelemetryMsgEnumCode(super.value);
 
   @override
   String toPrettyString() {
@@ -1234,7 +1234,7 @@ class TelemetryMsgBitfieldAcknowledge extends BitfieldType {
         tmAk: '''acknowledge''',
       };
 
-  const TelemetryMsgBitfieldAcknowledge(int value) : super(value);
+  const TelemetryMsgBitfieldAcknowledge(super.value);
 
   @override
   String toPrettyString() {
@@ -1304,7 +1304,7 @@ class TelemetryMsgEnumStatus extends EnumType {
         tmInvSize: '''Invalid transmission size''',
       };
 
-  const TelemetryMsgEnumStatus(int value) : super(value);
+  const TelemetryMsgEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -1336,7 +1336,7 @@ class LblConfigEnumOp extends EnumType {
         opCurCfg: '''Reply to a GET command''',
       };
 
-  const LblConfigEnumOp(int value) : super(value);
+  const LblConfigEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -1365,7 +1365,7 @@ class SimAcousticMessageBitfieldFlags extends BitfieldType {
         samReply: '''Reply''',
       };
 
-  const SimAcousticMessageBitfieldFlags(int value) : super(value);
+  const SimAcousticMessageBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -1516,7 +1516,7 @@ class AcousticOperationEnumOp extends EnumType {
         aopForcedAbort: '''Forced Abort''',
       };
 
-  const AcousticOperationEnumOp(int value) : super(value);
+  const AcousticOperationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -1550,7 +1550,7 @@ class AcousticRequestEnumType extends EnumType {
         typeRaw: '''Raw''',
       };
 
-  const AcousticRequestEnumType(int value) : super(value);
+  const AcousticRequestEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -1584,7 +1584,7 @@ class AcousticStatusEnumType extends EnumType {
         typeRaw: '''Raw''',
       };
 
-  const AcousticStatusEnumType(int value) : super(value);
+  const AcousticStatusEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -1631,7 +1631,7 @@ class AcousticStatusEnumStatus extends EnumType {
         statusUnsupported: '''Message Type is not defined or is unsupported''',
       };
 
-  const AcousticStatusEnumStatus(int value) : super(value);
+  const AcousticStatusEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -1695,7 +1695,7 @@ class GpsFixBitfieldValidity extends BitfieldType {
         gfvValidVdop: '''Valid Vertical Dilution of Precision''',
       };
 
-  const GpsFixBitfieldValidity(int value) : super(value);
+  const GpsFixBitfieldValidity(super.value);
 
   @override
   String toPrettyString() {
@@ -1759,7 +1759,7 @@ class GpsFixEnumType extends EnumType {
         gftSimulation: '''Simulation''',
       };
 
-  const GpsFixEnumType(int value) : super(value);
+  const GpsFixEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -1790,7 +1790,7 @@ class GroundVelocityBitfieldValidity extends BitfieldType {
         valVelZ: '''Z component is valid''',
       };
 
-  const GroundVelocityBitfieldValidity(int value) : super(value);
+  const GroundVelocityBitfieldValidity(super.value);
 
   @override
   String toPrettyString() {
@@ -1844,7 +1844,7 @@ class WaterVelocityBitfieldValidity extends BitfieldType {
         valVelZ: '''Z component is valid''',
       };
 
-  const WaterVelocityBitfieldValidity(int value) : super(value);
+  const WaterVelocityBitfieldValidity(super.value);
 
   @override
   String toPrettyString() {
@@ -1896,7 +1896,7 @@ class DistanceEnumValidity extends EnumType {
         dvValid: '''Valid''',
       };
 
-  const DistanceEnumValidity(int value) : super(value);
+  const DistanceEnumValidity(super.value);
 
   @override
   String toPrettyString() {
@@ -1925,7 +1925,7 @@ class SonarDataEnumType extends EnumType {
         stMultibeam: '''Multibeam''',
       };
 
-  const SonarDataEnumType(int value) : super(value);
+  const SonarDataEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -1952,7 +1952,7 @@ class PulseDetectionControlEnumOp extends EnumType {
         popOn: '''Pulse Detection ON''',
       };
 
-  const PulseDetectionControlEnumOp(int value) : super(value);
+  const PulseDetectionControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -1981,7 +1981,7 @@ class DataSanityEnumSane extends EnumType {
         dsNotSane: '''Not Sane''',
       };
 
-  const DataSanityEnumSane(int value) : super(value);
+  const DataSanityEnumSane(super.value);
 
   @override
   String toPrettyString() {
@@ -2021,7 +2021,7 @@ class GpsFixRtkBitfieldValidity extends BitfieldType {
         rfvValidVel: '''Valid Velocity''',
       };
 
-  const GpsFixRtkBitfieldValidity(int value) : super(value);
+  const GpsFixRtkBitfieldValidity(super.value);
 
   @override
   String toPrettyString() {
@@ -2082,7 +2082,7 @@ class GpsFixRtkEnumType extends EnumType {
         rtkFixed: '''Fixed''',
       };
 
-  const GpsFixRtkEnumType(int value) : super(value);
+  const GpsFixRtkEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -2111,7 +2111,7 @@ class ExternalNavDataEnumType extends EnumType {
         extnavPosref: '''Position Reference System only''',
       };
 
-  const ExternalNavDataEnumType(int value) : super(value);
+  const ExternalNavDataEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -2143,7 +2143,7 @@ class CameraZoomEnumAction extends EnumType {
         actionZoomStop: '''Stop Zooming''',
       };
 
-  const CameraZoomEnumAction(int value) : super(value);
+  const CameraZoomEnumAction(super.value);
 
   @override
   String toPrettyString() {
@@ -2170,7 +2170,7 @@ class RemoteActionsRequestEnumOp extends EnumType {
         opQuery: '''Query''',
       };
 
-  const RemoteActionsRequestEnumOp(int value) : super(value);
+  const RemoteActionsRequestEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -2205,7 +2205,7 @@ class LcdControlEnumOp extends EnumType {
         opWrite1: '''Write Line #1''',
       };
 
-  const LcdControlEnumOp(int value) : super(value);
+  const LcdControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -2269,7 +2269,7 @@ class PowerOperationEnumOp extends EnumType {
         popSchedPwrUp: '''Schedule Power Up''',
       };
 
-  const PowerOperationEnumOp(int value) : super(value);
+  const PowerOperationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -2333,7 +2333,7 @@ class PowerChannelControlEnumOp extends EnumType {
         pccOpRestart: '''Restart''',
       };
 
-  const PowerChannelControlEnumOp(int value) : super(value);
+  const PowerChannelControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -2363,7 +2363,7 @@ class PowerChannelStateEnumState extends EnumType {
         pcsOn: '''On''',
       };
 
-  const PowerChannelStateEnumState(int value) : super(value);
+  const PowerChannelStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -2408,7 +2408,7 @@ class GpsFixRejectionEnumReason extends EnumType {
         rrLostValBit: '''Lost Validity Bit''',
       };
 
-  const GpsFixRejectionEnumReason(int value) : super(value);
+  const GpsFixRejectionEnumReason(super.value);
 
   @override
   String toPrettyString() {
@@ -2453,7 +2453,7 @@ class LblRangeAcceptanceEnumAcceptance extends EnumType {
         rrAtSurface: '''Rejected - Vehicle At Surface''',
       };
 
-  const LblRangeAcceptanceEnumAcceptance(int value) : super(value);
+  const LblRangeAcceptanceEnumAcceptance(super.value);
 
   @override
   String toPrettyString() {
@@ -2480,7 +2480,7 @@ class DvlRejectionBitfieldType extends BitfieldType {
         typeWv: '''Water velocity''',
       };
 
-  const DvlRejectionBitfieldType(int value) : super(value);
+  const DvlRejectionBitfieldType(super.value);
 
   @override
   String toPrettyString() {
@@ -2559,7 +2559,7 @@ class DvlRejectionEnumReason extends EnumType {
         rrAbsThresholdY: '''Absolute Threshold - Y''',
       };
 
-  const DvlRejectionEnumReason(int value) : super(value);
+  const DvlRejectionEnumReason(super.value);
 
   @override
   String toPrettyString() {
@@ -2603,7 +2603,7 @@ class AlignmentStateEnumState extends EnumType {
         asSystemReady: '''System Ready''',
       };
 
-  const AlignmentStateEnumState(int value) : super(value);
+  const AlignmentStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -2673,7 +2673,7 @@ class DesiredPathBitfieldFlags extends BitfieldType {
         flLand: '''Land''',
       };
 
-  const DesiredPathBitfieldFlags(int value) : super(value);
+  const DesiredPathBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -2745,7 +2745,7 @@ class DesiredControlBitfieldFlags extends BitfieldType {
         flN: '''Value of N is meaningful''',
       };
 
-  const DesiredControlBitfieldFlags(int value) : super(value);
+  const DesiredControlBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -2817,7 +2817,7 @@ class DesiredVelocityBitfieldFlags extends BitfieldType {
         flYaw: '''Value of r is meaningful''',
       };
 
-  const DesiredVelocityBitfieldFlags(int value) : super(value);
+  const DesiredVelocityBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -2887,7 +2887,7 @@ class PathControlStateBitfieldFlags extends BitfieldType {
         flCclockw: '''Counter-Clockwise loiter''',
       };
 
-  const PathControlStateBitfieldFlags(int value) : super(value);
+  const PathControlStateBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -2943,7 +2943,7 @@ class BrakeEnumOp extends EnumType {
         opRevert: '''Revert Actuation''',
       };
 
-  const BrakeEnumOp(int value) : super(value);
+  const BrakeEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -3008,7 +3008,7 @@ class DesiredLinearStateBitfieldFlags extends BitfieldType {
         flAz: '''Value of az is meaningful''',
       };
 
-  const DesiredLinearStateBitfieldFlags(int value) : super(value);
+  const DesiredLinearStateBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3070,7 +3070,7 @@ class PopUpBitfieldFlags extends BitfieldType {
         flgStationKeep: '''Station keeping''',
       };
 
-  const PopUpBitfieldFlags(int value) : super(value);
+  const PopUpBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3124,7 +3124,7 @@ class LoiterEnumType extends EnumType {
         ltHover: '''Hover''',
       };
 
-  const LoiterEnumType(int value) : super(value);
+  const LoiterEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -3156,7 +3156,7 @@ class LoiterEnumDirection extends EnumType {
         ldIwindcurr: '''Into the wind/current''',
       };
 
-  const LoiterEnumDirection(int value) : super(value);
+  const LoiterEnumDirection(super.value);
 
   @override
   String toPrettyString() {
@@ -3182,7 +3182,7 @@ class RowsBitfieldFlags extends BitfieldType {
         flgCurveRight: '''First Curve Right''',
       };
 
-  const RowsBitfieldFlags(int value) : super(value);
+  const RowsBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3227,7 +3227,7 @@ class ElevatorBitfieldFlags extends BitfieldType {
         flgCurrPos: '''Start from current position'''
       };
 
-  const ElevatorBitfieldFlags(int value) : super(value);
+  const ElevatorBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3287,7 +3287,7 @@ class ManeuverControlStateEnumState extends EnumType {
         mcsStopped: '''Maneuver stopped''',
       };
 
-  const ManeuverControlStateEnumState(int value) : super(value);
+  const ManeuverControlStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -3320,7 +3320,7 @@ class CompassCalibrationEnumDirection extends EnumType {
         ldIwindcurr: '''Into the wind/current''',
       };
 
-  const CompassCalibrationEnumDirection(int value) : super(value);
+  const CompassCalibrationEnumDirection(super.value);
 
   @override
   String toPrettyString() {
@@ -3350,7 +3350,7 @@ class FormationParametersEnumReferenceFrame extends EnumType {
         opPathCurved: '''Path Curved''',
       };
 
-  const FormationParametersEnumReferenceFrame(int value) : super(value);
+  const FormationParametersEnumReferenceFrame(super.value);
 
   @override
   String toPrettyString() {
@@ -3392,7 +3392,7 @@ class ReferenceBitfieldFlags extends BitfieldType {
         flagMandone: '''Flag Maneuver Completion''',
       };
 
-  const ReferenceBitfieldFlags(int value) : super(value);
+  const ReferenceBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3450,7 +3450,7 @@ class FollowRefStateEnumState extends EnumType {
         frTimeout: '''Controlling system timed out''',
       };
 
-  const FollowRefStateEnumState(int value) : super(value);
+  const FollowRefStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -3485,7 +3485,7 @@ class FollowRefStateBitfieldProximity extends BitfieldType {
         proxZUnreachable: '''Unreachable in the vertical plane''',
       };
 
-  const FollowRefStateBitfieldProximity(int value) : super(value);
+  const FollowRefStateBitfieldProximity(super.value);
 
   @override
   String toPrettyString() {
@@ -3537,7 +3537,7 @@ class DislodgeEnumDirection extends EnumType {
         dirBackward: '''Attempt to move backward''',
       };
 
-  const DislodgeEnumDirection(int value) : super(value);
+  const DislodgeEnumDirection(super.value);
 
   @override
   String toPrettyString() {
@@ -3563,7 +3563,7 @@ class FormationEnumType extends EnumType {
         fcReport: '''Report''',
       };
 
-  const FormationEnumType(int value) : super(value);
+  const FormationEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -3607,7 +3607,7 @@ class FormationEnumOp extends EnumType {
         opFailure: '''Failure''',
       };
 
-  const FormationEnumOp(int value) : super(value);
+  const FormationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -3637,7 +3637,7 @@ class FormationEnumReferenceFrame extends EnumType {
         opPathCurved: '''Path Curved''',
       };
 
-  const FormationEnumReferenceFrame(int value) : super(value);
+  const FormationEnumReferenceFrame(super.value);
 
   @override
   String toPrettyString() {
@@ -3675,7 +3675,7 @@ class ScheduledGotoEnumDelayed extends EnumType {
         dbehFail: '''Fail''',
       };
 
-  const ScheduledGotoEnumDelayed(int value) : super(value);
+  const ScheduledGotoEnumDelayed(super.value);
 
   @override
   String toPrettyString() {
@@ -3705,7 +3705,7 @@ class RowsCoverageBitfieldFlags extends BitfieldType {
         flgCurveRight: '''First Curve Right''',
       };
 
-  const RowsCoverageBitfieldFlags(int value) : super(value);
+  const RowsCoverageBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3759,7 +3759,7 @@ class AutonomousSectionBitfieldLimits extends BitfieldType {
         enforceArea2d: '''Polygonal Area Limits''',
       };
 
-  const AutonomousSectionBitfieldLimits(int value) : super(value);
+  const AutonomousSectionBitfieldLimits(super.value);
 
   @override
   String toPrettyString() {
@@ -3806,7 +3806,7 @@ class StationKeepingExtendedBitfieldFlags extends BitfieldType {
         flgKeepSafe: '''Keep safe behaviour'''
       };
 
-  const StationKeepingExtendedBitfieldFlags(int value) : super(value);
+  const StationKeepingExtendedBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3857,7 +3857,7 @@ class MagnetometerEnumDirection extends EnumType {
         mdCclockwFirst: '''Counter Clockwise First''',
       };
 
-  const MagnetometerEnumDirection(int value) : super(value);
+  const MagnetometerEnumDirection(super.value);
 
   @override
   String toPrettyString() {
@@ -3906,7 +3906,7 @@ class VehicleStateEnumOpMode extends EnumType {
         vsBoot: '''Boot''',
       };
 
-  const VehicleStateEnumOpMode(int value) : super(value);
+  const VehicleStateEnumOpMode(super.value);
 
   @override
   String toPrettyString() {
@@ -3927,7 +3927,7 @@ class VehicleStateBitfieldFlags extends BitfieldType {
         vflgManeuverDone: '''Maneuver Done'''
       };
 
-  const VehicleStateBitfieldFlags(int value) : super(value);
+  const VehicleStateBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -3980,7 +3980,7 @@ class VehicleCommandEnumType extends EnumType {
         vcFailure: '''Reply -- Failure''',
       };
 
-  const VehicleCommandEnumType(int value) : super(value);
+  const VehicleCommandEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -4020,7 +4020,7 @@ class VehicleCommandEnumCommand extends EnumType {
         vcStopCalibration: '''Stop Calibration''',
       };
 
-  const VehicleCommandEnumCommand(int value) : super(value);
+  const VehicleCommandEnumCommand(super.value);
 
   @override
   String toPrettyString() {
@@ -4057,7 +4057,7 @@ class MonitorEntityStateEnumCommand extends EnumType {
         mesStatus: '''Status Report''',
       };
 
-  const MonitorEntityStateEnumCommand(int value) : super(value);
+  const MonitorEntityStateEnumCommand(super.value);
 
   @override
   String toPrettyString() {
@@ -4082,7 +4082,7 @@ class ControlLoopsEnumEnable extends EnumType {
         clEnable: '''Enable''',
       };
 
-  const ControlLoopsEnumEnable(int value) : super(value);
+  const ControlLoopsEnumEnable(super.value);
 
   @override
   String toPrettyString() {
@@ -4126,7 +4126,7 @@ class VehicleMediumEnumMedium extends EnumType {
         vmUnknown: '''Unknown''',
       };
 
-  const VehicleMediumEnumMedium(int value) : super(value);
+  const VehicleMediumEnumMedium(super.value);
 
   @override
   String toPrettyString() {
@@ -4165,7 +4165,7 @@ class CollisionBitfieldType extends BitfieldType {
         cdImpact: '''Impact''',
       };
 
-  const CollisionBitfieldType(int value) : super(value);
+  const CollisionBitfieldType(super.value);
 
   @override
   String toPrettyString() {
@@ -4214,7 +4214,7 @@ class FormStateEnumPosSimMon extends EnumType {
         posLim: '''Limit threshold''',
       };
 
-  const FormStateEnumPosSimMon(int value) : super(value);
+  const FormStateEnumPosSimMon(super.value);
 
   @override
   String toPrettyString() {
@@ -4240,7 +4240,7 @@ class FormStateEnumCommMon extends EnumType {
         commsTimeout: '''Timeout''',
       };
 
-  const FormStateEnumCommMon(int value) : super(value);
+  const FormStateEnumCommMon(super.value);
 
   @override
   String toPrettyString() {
@@ -4266,7 +4266,7 @@ class FormStateEnumConvergMon extends EnumType {
         convTimeout: '''Timeout''',
       };
 
-  const FormStateEnumConvergMon(int value) : super(value);
+  const FormStateEnumConvergMon(super.value);
 
   @override
   String toPrettyString() {
@@ -4301,7 +4301,7 @@ class AutopilotModeEnumAutonomy extends EnumType {
         alAuto: '''Auto''',
       };
 
-  const AutopilotModeEnumAutonomy(int value) : super(value);
+  const AutopilotModeEnumAutonomy(super.value);
 
   @override
   String toPrettyString() {
@@ -4327,7 +4327,7 @@ class FormationStateEnumType extends EnumType {
         fcReport: '''Report''',
       };
 
-  const FormationStateEnumType(int value) : super(value);
+  const FormationStateEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -4356,7 +4356,7 @@ class FormationStateEnumOp extends EnumType {
         opStop: '''Stop''',
       };
 
-  const FormationStateEnumOp(int value) : super(value);
+  const FormationStateEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -4386,7 +4386,7 @@ class FormationStateEnumPosSimMon extends EnumType {
         posLim: '''Limit threshold''',
       };
 
-  const FormationStateEnumPosSimMon(int value) : super(value);
+  const FormationStateEnumPosSimMon(super.value);
 
   @override
   String toPrettyString() {
@@ -4413,7 +4413,7 @@ class FormationStateEnumCommMon extends EnumType {
         commsTimeout: '''Timeout''',
       };
 
-  const FormationStateEnumCommMon(int value) : super(value);
+  const FormationStateEnumCommMon(super.value);
 
   @override
   String toPrettyString() {
@@ -4440,7 +4440,7 @@ class FormationStateEnumConvergMon extends EnumType {
         convTimeout: '''Timeout''',
       };
 
-  const FormationStateEnumConvergMon(int value) : super(value);
+  const FormationStateEnumConvergMon(super.value);
 
   @override
   String toPrettyString() {
@@ -4506,7 +4506,7 @@ class ReportControlEnumOp extends EnumType {
         opReportSent: '''Single Report Sent''',
       };
 
-  const ReportControlEnumOp(int value) : super(value);
+  const ReportControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -4551,7 +4551,7 @@ class ReportControlBitfieldCommInterface extends BitfieldType {
         ciRadio: '''Radio''',
       };
 
-  const ReportControlBitfieldCommInterface(int value) : super(value);
+  const ReportControlBitfieldCommInterface(super.value);
 
   @override
   String toPrettyString() {
@@ -4613,7 +4613,7 @@ class TransmissionRequestEnumCommMean extends EnumType {
         cmeanAll: '''All''',
       };
 
-  const TransmissionRequestEnumCommMean(int value) : super(value);
+  const TransmissionRequestEnumCommMean(super.value);
 
   @override
   String toPrettyString() {
@@ -4653,7 +4653,7 @@ class TransmissionRequestEnumDataMode extends EnumType {
         dmodeReverseRange: '''Reverse Range''',
       };
 
-  const TransmissionRequestEnumDataMode(int value) : super(value);
+  const TransmissionRequestEnumDataMode(super.value);
 
   @override
   String toPrettyString() {
@@ -4697,7 +4697,7 @@ class TransmissionStatusEnumStatus extends EnumType {
         tstatPermanentFailure: '''Permanent Failure''',
       };
 
-  const TransmissionStatusEnumStatus(int value) : super(value);
+  const TransmissionStatusEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -4728,7 +4728,7 @@ class SmsStatusEnumStatus extends EnumType {
         smsstatError: '''Error trying to send sms''',
       };
 
-  const SmsStatusEnumStatus(int value) : super(value);
+  const SmsStatusEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -4771,7 +4771,7 @@ class VtolStateEnumState extends EnumType {
         vtolStateFw: '''Fixed-Wing''',
       };
 
-  const VtolStateEnumState(int value) : super(value);
+  const VtolStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -4796,7 +4796,7 @@ class ArmingStateEnumState extends EnumType {
         motorsDisarmed: '''Disarmed''',
       };
 
-  const ArmingStateEnumState(int value) : super(value);
+  const ArmingStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -4833,7 +4833,7 @@ class TCPStatusEnumStatus extends EnumType {
         tcpstatError: '''Error trying to send sms''',
       };
 
-  const TCPStatusEnumStatus(int value) : super(value);
+  const TCPStatusEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -4864,7 +4864,7 @@ class AssetReportEnumMedium extends EnumType {
         rmSms: '''SMS''',
       };
 
-  const AssetReportEnumMedium(int value) : super(value);
+  const AssetReportEnumMedium(super.value);
 
   @override
   String toPrettyString() {
@@ -4902,7 +4902,7 @@ class EmergencyControlEnumCommand extends EnumType {
         ectlSetPlan: '''Set Plan''',
       };
 
-  const EmergencyControlEnumCommand(int value) : super(value);
+  const EmergencyControlEnumCommand(super.value);
 
   @override
   String toPrettyString() {
@@ -4940,7 +4940,7 @@ class EmergencyControlStateEnumState extends EnumType {
         ecsStopping: '''Stopping''',
       };
 
-  const EmergencyControlStateEnumState(int value) : super(value);
+  const EmergencyControlStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -4972,7 +4972,7 @@ class PlanDBEnumType extends EnumType {
         dbtInProgress: '''Reply -- In Progress''',
       };
 
-  const PlanDBEnumType(int value) : super(value);
+  const PlanDBEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -5054,7 +5054,7 @@ class PlanDBEnumOp extends EnumType {
         dbopBoot: '''Boot Notification''',
       };
 
-  const PlanDBEnumOp(int value) : super(value);
+  const PlanDBEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -5089,7 +5089,7 @@ class PlanControlEnumType extends EnumType {
         pcInProgress: '''Reply -- In Progress''',
       };
 
-  const PlanControlEnumType(int value) : super(value);
+  const PlanControlEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -5141,7 +5141,7 @@ class PlanControlEnumOp extends EnumType {
         pcGet: '''Get Plan''',
       };
 
-  const PlanControlEnumOp(int value) : super(value);
+  const PlanControlEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -5170,7 +5170,7 @@ class PlanControlBitfieldFlags extends BitfieldType {
         flgIgnoreErrors: '''Ignore Errors''',
       };
 
-  const PlanControlBitfieldFlags(int value) : super(value);
+  const PlanControlBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -5233,7 +5233,7 @@ class PlanControlStateEnumState extends EnumType {
         pcsExecuting: '''Executing''',
       };
 
-  const PlanControlStateEnumState(int value) : super(value);
+  const PlanControlStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -5268,7 +5268,7 @@ class PlanControlStateEnumLastOutcome extends EnumType {
         lpoFailure: '''Failure''',
       };
 
-  const PlanControlStateEnumLastOutcome(int value) : super(value);
+  const PlanControlStateEnumLastOutcome(super.value);
 
   @override
   String toPrettyString() {
@@ -5299,7 +5299,7 @@ class PlanVariableEnumType extends EnumType {
         pvtMessage: '''Message''',
       };
 
-  const PlanVariableEnumType(int value) : super(value);
+  const PlanVariableEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -5327,7 +5327,7 @@ class PlanVariableEnumAccess extends EnumType {
         pvaLocal: '''Local''',
       };
 
-  const PlanVariableEnumAccess(int value) : super(value);
+  const PlanVariableEnumAccess(super.value);
 
   @override
   String toPrettyString() {
@@ -5355,7 +5355,7 @@ class PlanGenerationEnumCmd extends EnumType {
         cmdExecute: '''Execute''',
       };
 
-  const PlanGenerationEnumCmd(int value) : super(value);
+  const PlanGenerationEnumCmd(super.value);
 
   @override
   String toPrettyString() {
@@ -5390,7 +5390,7 @@ class PlanGenerationEnumOp extends EnumType {
         opSuccess: '''Success''',
       };
 
-  const PlanGenerationEnumOp(int value) : super(value);
+  const PlanGenerationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -5419,7 +5419,7 @@ class LeaderStateEnumOp extends EnumType {
         opReport: '''Report''',
       };
 
-  const LeaderStateEnumOp(int value) : super(value);
+  const LeaderStateEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -5448,7 +5448,7 @@ class PlanStatisticsEnumType extends EnumType {
         tpPostplan: '''After Plan''',
       };
 
-  const PlanStatisticsEnumType(int value) : super(value);
+  const PlanStatisticsEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -5492,7 +5492,7 @@ class PlanStatisticsBitfieldProperties extends BitfieldType {
         prpAll: '''All''',
       };
 
-  const PlanStatisticsBitfieldProperties(int value) : super(value);
+  const PlanStatisticsBitfieldProperties(super.value);
 
   @override
   String toPrettyString() {
@@ -5550,7 +5550,7 @@ class ReportedStateEnumSType extends EnumType {
         stypeUnknown: '''Unknown source''',
       };
 
-  const ReportedStateEnumSType(int value) : super(value);
+  const ReportedStateEnumSType(super.value);
 
   @override
   String toPrettyString() {
@@ -5605,7 +5605,7 @@ class MapFeatureEnumFeatureType extends EnumType {
         ftypeHomeref: '''Home Reference''',
       };
 
-  const MapFeatureEnumFeatureType(int value) : super(value);
+  const MapFeatureEnumFeatureType(super.value);
 
   @override
   String toPrettyString() {
@@ -5653,7 +5653,7 @@ class CcuEventEnumType extends EnumType {
             '''The sender stopped teleoperating the vehicle''',
       };
 
-  const CcuEventEnumType(int value) : super(value);
+  const CcuEventEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -5690,7 +5690,7 @@ class TrexCommandEnumCommand extends EnumType {
         opReportPlan: '''Report current plan''',
       };
 
-  const TrexCommandEnumCommand(int value) : super(value);
+  const TrexCommandEnumCommand(super.value);
 
   @override
   String toPrettyString() {
@@ -5724,7 +5724,7 @@ class TrexOperationEnumOp extends EnumType {
         opReportPlan: '''Report current plan''',
       };
 
-  const TrexOperationEnumOp(int value) : super(value);
+  const TrexOperationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -5759,7 +5759,7 @@ class TrexAttributeEnumAttrType extends EnumType {
         typeEnum: '''Enumerated Domain''',
       };
 
-  const TrexAttributeEnumAttrType(int value) : super(value);
+  const TrexAttributeEnumAttrType(super.value);
 
   @override
   String toPrettyString() {
@@ -5784,7 +5784,7 @@ class SessionStatusEnumStatus extends EnumType {
         statusClosed: '''Closed''',
       };
 
-  const SessionStatusEnumStatus(int value) : super(value);
+  const SessionStatusEnumStatus(super.value);
 
   @override
   String toPrettyString() {
@@ -5810,7 +5810,7 @@ class IoEventEnumType extends EnumType {
         iovTypeInputError: '''Input Error''',
       };
 
-  const IoEventEnumType(int value) : super(value);
+  const IoEventEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -5847,7 +5847,7 @@ class UamTxFrameBitfieldFlags extends BitfieldType {
         utfForced: '''Forced''',
       };
 
-  const UamTxFrameBitfieldFlags(int value) : super(value);
+  const UamTxFrameBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -5898,7 +5898,7 @@ class UamRxFrameBitfieldFlags extends BitfieldType {
         urfDelayed: '''Delayed''',
       };
 
-  const UamRxFrameBitfieldFlags(int value) : super(value);
+  const UamRxFrameBitfieldFlags(super.value);
 
   @override
   String toPrettyString() {
@@ -5993,7 +5993,7 @@ class UamTxStatusEnumValue extends EnumType {
         utsDelivered: '''Message has been acknowledged by the destination''',
       };
 
-  const UamTxStatusEnumValue(int value) : super(value);
+  const UamTxStatusEnumValue(super.value);
 
   @override
   String toPrettyString() {
@@ -6022,7 +6022,7 @@ class FormCtrlParamEnumAction extends EnumType {
         opRep: '''Report''',
       };
 
-  const FormCtrlParamEnumAction(int value) : super(value);
+  const FormCtrlParamEnumAction(super.value);
 
   @override
   String toPrettyString() {
@@ -6052,7 +6052,7 @@ class FormationControlParamsEnumAction extends EnumType {
         opRep: '''Report''',
       };
 
-  const FormationControlParamsEnumAction(int value) : super(value);
+  const FormationControlParamsEnumAction(super.value);
 
   @override
   String toPrettyString() {
@@ -6079,7 +6079,7 @@ class FormationEvaluationEnumType extends EnumType {
         fcReport: '''Report''',
       };
 
-  const FormationEvaluationEnumType(int value) : super(value);
+  const FormationEvaluationEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -6124,7 +6124,7 @@ class FormationEvaluationEnumOp extends EnumType {
         opFailure: '''Failure''',
       };
 
-  const FormationEvaluationEnumOp(int value) : super(value);
+  const FormationEvaluationEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -6152,7 +6152,7 @@ class SoiCommandEnumType extends EnumType {
         soitypeError: '''Error''',
       };
 
-  const SoiCommandEnumType(int value) : super(value);
+  const SoiCommandEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -6189,7 +6189,7 @@ class SoiCommandEnumCommand extends EnumType {
         soicmdResume: '''Resume Execution''',
       };
 
-  const SoiCommandEnumCommand(int value) : super(value);
+  const SoiCommandEnumCommand(super.value);
 
   @override
   String toPrettyString() {
@@ -6217,7 +6217,7 @@ class SoiStateEnumState extends EnumType {
         soistateInactive: '''Inactive''',
       };
 
-  const SoiStateEnumState(int value) : super(value);
+  const SoiStateEnumState(super.value);
 
   @override
   String toPrettyString() {
@@ -6249,7 +6249,7 @@ class UsblConfigEnumOp extends EnumType {
         opCurCfg: '''Reply to a GET command''',
       };
 
-  const UsblConfigEnumOp(int value) : super(value);
+  const UsblConfigEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -6276,7 +6276,7 @@ class DissolvedOrganicMatterEnumType extends EnumType {
         dtFluorescent: '''Fluorescent''',
       };
 
-  const DissolvedOrganicMatterEnumType(int value) : super(value);
+  const DissolvedOrganicMatterEnumType(super.value);
 
   @override
   String toPrettyString() {
@@ -6320,7 +6320,7 @@ class ApmStatusEnumSeverity extends EnumType {
         apmDebug: '''Debug''',
       };
 
-  const ApmStatusEnumSeverity(int value) : super(value);
+  const ApmStatusEnumSeverity(super.value);
 
   @override
   String toPrettyString() {
@@ -6349,7 +6349,7 @@ class SadcReadingsEnumGain extends EnumType {
         gainX100: '''x100''',
       };
 
-  const SadcReadingsEnumGain(int value) : super(value);
+  const SadcReadingsEnumGain(super.value);
 
   @override
   String toPrettyString() {
@@ -6375,7 +6375,7 @@ class HomePositionEnumOp extends EnumType {
         opReport: '''Report''',
       };
 
-  const HomePositionEnumOp(int value) : super(value);
+  const HomePositionEnumOp(super.value);
 
   @override
   String toPrettyString() {
@@ -6405,7 +6405,7 @@ class CurrentProfileBitfieldCoordSys extends BitfieldType {
         utfBeams: '''beams''',
       };
 
-  const CurrentProfileBitfieldCoordSys(int value) : super(value);
+  const CurrentProfileBitfieldCoordSys(super.value);
 
   @override
   String toPrettyString() {
@@ -6461,7 +6461,7 @@ class CommRestrictionBitfieldRestriction extends BitfieldType {
         meanGsm: '''GSM''',
       };
 
-  const CommRestrictionBitfieldRestriction(int value) : super(value);
+  const CommRestrictionBitfieldRestriction(super.value);
 
   @override
   String toPrettyString() {

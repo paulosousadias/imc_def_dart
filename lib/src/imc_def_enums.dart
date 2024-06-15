@@ -111,7 +111,7 @@ class ImcType extends EnumType {
   final String name;
   final int size;
 
-  const ImcType._(int value, this.name, {this.size = -1}) : super(value);
+  const ImcType._(super.value, this.name, {this.size = -1});
 
   String getTypeName() => name;
   int getSizeInBytes() => size;
@@ -145,5 +145,5 @@ class Flags extends EnumType {
 
   static List<Flags> get values => <Flags>[periodic, deprecated];
 
-  const Flags._(int value) : super(value);
+  const Flags._(super.value);
 }

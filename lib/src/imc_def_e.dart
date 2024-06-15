@@ -20,7 +20,7 @@ class BooleanEnum extends EnumType {
         boolTrue: '''True''',
       };
 
-  const BooleanEnum(int value) : super(value);
+  const BooleanEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -50,7 +50,7 @@ class ControlledModeEnum extends EnumType {
         ctlmdOverrideCtl: '''Override Control''',
       };
 
-  const ControlledModeEnum(int value) : super(value);
+  const ControlledModeEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -77,7 +77,7 @@ class SpeedUnitsEnum extends EnumType {
         sunitsPercentage: '''Percentage''',
       };
 
-  const SpeedUnitsEnum(int value) : super(value);
+  const SpeedUnitsEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -122,7 +122,7 @@ class SystemTypeEnum extends EnumType {
         systemtypeWsn: '''Wireless Sensor Network''',
       };
 
-  const SystemTypeEnum(int value) : super(value);
+  const SystemTypeEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -152,7 +152,7 @@ class ZUnitsEnum extends EnumType {
         zHeight: '''Height''',
       };
 
-  const ZUnitsEnum(int value) : super(value);
+  const ZUnitsEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -176,7 +176,7 @@ class RSSIUnitsEnum extends EnumType {
         rssiunitsPercentage: '''Percentage''',
       };
 
-  const RSSIUnitsEnum(int value) : super(value);
+  const RSSIUnitsEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -203,7 +203,7 @@ class UAVTypeEnum extends EnumType {
         uavtypeVtol: '''Vtol''',
       };
 
-  const UAVTypeEnum(int value) : super(value);
+  const UAVTypeEnum(super.value);
 
   @override
   String toPrettyString() {
@@ -276,7 +276,7 @@ class CLoopsMaskBitfield extends BitfieldType {
         clAll: '''All''',
       };
 
-  const CLoopsMaskBitfield(int value) : super(value);
+  const CLoopsMaskBitfield(super.value);
 
   @override
   String toPrettyString() {
@@ -336,7 +336,7 @@ class OpLimitsMaskBitfield extends BitfieldType {
         oplArea: '''Operation Area''',
       };
 
-  const OpLimitsMaskBitfield(int value) : super(value);
+  const OpLimitsMaskBitfield(super.value);
 
   @override
   String toPrettyString() {

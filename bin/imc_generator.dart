@@ -1512,7 +1512,7 @@ void _writeEnumLikeWorker(
   static core.Map<$eName, String> get names =>
       <$eName, String>{$eNameList${vLst.length <= 1 ? '\n      ' : ''}};
 
-  const $eName(int value) : super(value);
+  const $eName(super.value);
 ''';
   sink.write(body2);
 
