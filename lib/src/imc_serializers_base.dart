@@ -119,7 +119,7 @@ int? deserializeHeader(
     return (Endian.big, (fakeSyncNumber ?? syncNumber));
   }
   if (syncBE == (fakeSyncNumberReversed ?? syncNumberReversed)) {
-    return (Endian.little, (fakeSyncNumberReversed ?? syncNumberReversed));
+    return (Endian.little, (fakeSyncNumber ?? syncNumber));
   }
 
   // Let us try the alternative sync numbers
@@ -128,7 +128,7 @@ int? deserializeHeader(
       return (Endian.big, altSyncNumber);
     }
     if (syncBE == altSyncNumber.reverseAsSyncNumber()) {
-      return (Endian.little, altSyncNumber.reverseAsSyncNumber());
+      return (Endian.little, altSyncNumber);
     }
   }
 
