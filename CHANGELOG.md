@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.0.1] - 15 Jun 2024
+
+* Fix to return always the deserialized sync number as the not reversed.
+
 ## [5.0.0] - 15 Jun 2024
 
 * **Breaking change**: Reworked to use alternative syncNumbers to deserialize and also serialize with a specific syncNumber (**Use with care**).
