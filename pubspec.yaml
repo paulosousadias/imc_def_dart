@@ -34,3 +34,6 @@ imc_def:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
+
+# Use this command to check for new packages
+# dart pub outdated --no-dev-dependencies --up-to-date --no-dependency-overrides
