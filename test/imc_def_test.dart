@@ -529,4 +529,15 @@ void main() {
     globalSW.stop();
     print('---------- Took ${globalSW.elapsed}');
   });
+
+  test('multiple syncnumbers test', () {
+    imc.alternativeSyncNumbers = [0xFE57];
+
+    ByteData data = ByteData(20);
+    data.setUint16(0, 0xFE57);
+
+    var (endianness, syncNumber) = imc.getEndianness(data, 0);
+    expect(endianness, Endian.big);
+    expect(syncNumber, 0xFE57);
+  });
 }
