@@ -1435,7 +1435,9 @@ void _writeGlobalEnumLike(xml.XmlElement def, String unit, IOSink sink) {
 void _writeLocalEnumLike(String abbrev, xml.XmlElement field,
     xml.XmlElement message, String? unit, IOSink sink) {
   if (field.getAttribute('enum-def') != null ||
-      field.getAttribute('bitfield-def') != null) return;
+      field.getAttribute('bitfield-def') != null) {
+    return;
+  }
 
   // So writting local enums like
   var eName = _getTypeForEnumLike(abbrev, field, message, unit);
