@@ -26,6 +26,7 @@ List<int>? get alternativeSyncNumbersReversed =>
 /// The base IMCMessage
 ///
 abstract class ImcMessage extends Message {
+  // ignore: unused_field
   int? _sync;
 
   @override
